@@ -262,7 +262,7 @@ entry {
   }
 
   progress {
-    margin: 0 -$cont_padding;
+    margin: 0 -6px;
     border-radius: 0;
     border-width: 0 0 2px;
     border-color: $progress_color;
@@ -639,7 +639,7 @@ toolbar.inline-toolbar toolbutton {
 }
 
 // special case, because path-bars are bugged
-@mixin pathbar_linking_rules($sep_color:if($variant=='light', transparentize($button_border, 0.6), transparentize($button_border, 0.5))) {
+@mixin pathbar_linking_rules($sep_color:if($variant=='light', rgba($button_border, 0.1), rgba($button_border, 0.1))) {
 
   > button + button { border-left-style: none; }
 
@@ -822,7 +822,7 @@ spinbutton {
     > button:hover + button { box-shadow: inset 1px 0 $button_border; }
 
     > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
-    > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled { box-shadow: inset 1px 0 transparentize($button_border, 0.5); }
+    > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled { box-shadow: inset 1px 0 rgba($button_border, 0.05); }
 
     > button:first-child:hover:not(:active),
     > button.up:dir(rtl):hover:not(:active),
@@ -945,7 +945,7 @@ toolbar {
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-image: linear-gradient(to bottom, opacify($button_border, 0.9), $button_border) 1 0 1 0; //temporary hack for rhythmbox 3.1
+  border-image: linear-gradient(to bottom, rgba($button_border, 0.09), $button_border) 1 0 1 0; //temporary hack for rhythmbox 3.1
 
   //&:backdrop { background-color: opacify($header_bg_backdrop, 1); }
 
@@ -1066,7 +1066,7 @@ headerbar,
       border: none;
       min-height: $medium_size;
       min-width: $medium_size;
-      margin-right: -$cont_padding;
+      margin-right: -6px;
       padding: 0;
     }
   }
@@ -2221,7 +2221,7 @@ scale {
   slider {
     min-height: 15px;
     min-width: 15px;
-    margin: -$cont_padding;
+    margin: -6px;
   }
 
   // Click-and-hold the slider to activate
@@ -2239,7 +2239,7 @@ scale {
 
   // Trough
   trough {
-    $_scale_trough_bg: if($variant == 'light', $button_border, darken($bg_color, 5%));
+    $_scale_trough_bg: darken($bg_color, 5%);
 
     outline-offset: 2px;
     -gtk-outline-radius: 4.5px;
@@ -2296,7 +2296,7 @@ scale {
   }
 
   slider {
-    $_slider_border: if($variant=='light', transparentize(darken($button_border,25%), 0.5), transparentize($button_border, 0.5));
+    $_slider_border: if($variant=='light', rgba(darken($button_border,25%), 0.1), rgba($button_border, 0.1));
 
     background-color: $selected_fg_color;
     border: 1px solid $_slider_border;
@@ -3292,7 +3292,7 @@ headerbar,
     }
 
     &.close { margin-right: -10px; }
-    &.maximize, &.minimize { margin-right: -$cont_padding; }
+    &.maximize, &.minimize { margin-right: -6px; }
 
     // Load png assets for each button, Fix the Chrome window restore button bug
     @each $k in ('close', 'maximize', 'minimize', 'restore') {

@@ -319,7 +319,7 @@ entry:drop(active):focus, entry:drop(active) {
 }
 
 entry progress {
-  margin: -6px;
+  margin: 0 -6px;
   border-radius: 0;
   border-width: 0 0 2px;
   border-color: #5294e2;
@@ -1137,7 +1137,7 @@ spinbutton:not(.vertical) > button:hover + button {
 
 spinbutton:not(.vertical) > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
 spinbutton:not(.vertical) > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled {
-  box-shadow: inset 1px 0 rgba(255, 255, 255, 0);
+  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -1273,7 +1273,7 @@ toolbar:not(.inline-toolbar) .linked > entry,
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.1)) 1 0 1 0;
+  border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.1)) 1 0 1 0;
 }
 
 .inline-toolbar {
@@ -3228,7 +3228,7 @@ scale fill:disabled {
 
 scale slider {
   background-color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 100%;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-property: background, border;
@@ -3247,7 +3247,7 @@ scale slider:active {
 
 scale slider:disabled {
   background-color: #e6e6e6;
-  border-color: rgba(242, 242, 242, 0);
+  border-color: rgba(242, 242, 242, 0.1);
 }
 
 menuitem:hover scale slider,
