@@ -1383,8 +1383,8 @@ window.background.chromium {
     // from nav_button_provider_gtk3.cc (> 62.0.3202?)
     button.titlebutton { // title-buttons
       // define global titlebutton class sizing
-      min-width: 42px; // > 16px causes image blurring
-      min-height: 42px;
+      min-width: 40px; // > 16px causes image blurring
+      min-height: 40px;
       margin-right: -10px; // unset margins
       padding: 0;
       color: transparent; // hide stock icons

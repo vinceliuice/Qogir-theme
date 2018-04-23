@@ -979,7 +979,7 @@ $_header_radius: 0;
 
 headerbar,
 %titlebar {
-  min-height: 42px;
+  min-height: 40px;
   padding: 0 10px;
   color: $header_fg;
   box-shadow: inset 0 -1px $borders_color;
@@ -2071,9 +2071,9 @@ scrollbar {
 //
 switch {
   font-size: 0;
-  min-width: 52px;
-  min-height: 24px;
-  background-size: 52px 24px;
+  min-width: 50px;
+  min-height: 20px;
+  background-size: 50px 20px;
   background-repeat: no-repeat;
   background-position: center center;
   transition: all 350ms $ease-out-quad;
@@ -3270,8 +3270,8 @@ headerbar,
 
     &.close, &.maximize, &.minimize, &.restore { // csd windows control titlebuttons
       padding: 0;
-      min-width: 42px;
-      min-height: 42px;
+      min-width: 40px;
+      min-height: 40px;
       color: transparent;
       background-color: transparent;
       background-position: center;
