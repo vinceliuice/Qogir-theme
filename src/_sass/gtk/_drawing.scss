@@ -67,7 +67,7 @@
   // insensitive entry
   //
     color: $insensitive_fg_color;
-    border-color: transparentize($entry_border, 0.45);
+    border-color: $alt_borders_color;
     background-color: transparentize($entry_bg, 0.45);
   }
 
@@ -162,7 +162,7 @@
   // pushed button
   //
     color: $selected_fg_color;
-    border-color: if($variant=='light', $selected_bg_color, $button_border);
+    border-color: $sec_selected_bg_color;
     background-color: $selected_bg_color;
   }
 
@@ -172,7 +172,7 @@
   //
     label, & { color: $insensitive_fg_color; }
 
-    border-color: transparentize($button_border, 0.45);
+    border-color: $alt_borders_color;
     background-color: transparentize($button_bg, 0.45);
   }
 
@@ -212,7 +212,7 @@
   // pushed header-bar button
   //
     color: $selected_fg_color;
-    border-color: darken($selected_bg_color, 8%);
+    border-color: $sec_selected_bg_color;
     background-color: $selected_bg_color;
   }
 

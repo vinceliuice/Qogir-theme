@@ -10,11 +10,11 @@ $asset_suffix: if($variant == 'dark', '-dark', '');
 $asset_suffix_dark: if($titlebar == 'dark', '-dark', '');
 
 // sizes
-$small_size: 20px;
-$medium_size: 32px;
-$large_size: 44px;
+$small_size: 17px;
+$medium_size: 28px;
+$large_size: 40px;
 
-$container_padding: 6px;
+$cont_padding: 6px;
 $menuitem_size: 28px;
 
 // radiuses

@@ -16,8 +16,8 @@ $sec_fg_color: scale-alpha($fg_color, 0.6);
 $selected_fg_color: #ffffff;
 $selected_bg_color: #5294e2;
 
-$alt_selected_bg_color: lighten($selected_bg_color, 4%);
-$sec_selected_bg_color: lighten($selected_bg_color, 6%);
+$alt_selected_bg_color: lighten($selected_bg_color, 5%);
+$sec_selected_bg_color: darken($selected_bg_color, 10%);
 $alt_selected_fg_color: scale-alpha($selected_fg_color, 0.75);
 $sec_selected_fg_color: scale-alpha($selected_fg_color, 0.6);
 
@@ -35,8 +35,8 @@ $suggested_fg_color: white;
 $drop_target_color: #F08437;
 $progress_color: $selected_bg_color;
 
-$selected_borders_color: darken($selected_bg_color, 20%);
 $borders_color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
+$alt_borders_color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.05));
 $highlight: if($variant == 'light', scale-alpha(white, 0.13), scale-alpha(white, 0.10));
 $alt_highlight_color: scale-alpha(white, 0.2);
 
@@ -57,18 +57,18 @@ $header_bg: black;
 
 $header_bg_backdrop: if($titlebar == 'true' or $variant == 'dark', lighten($header_bg, 1.5%), lighten($header_bg, 3%));
 
-$header_border: if($variant == 'light' and $titlebar == 'light', darken($header_bg, 7%), darken($header_bg, 4%));
+$header_border: if($variant == 'light' and $titlebar == 'light', darken($header_bg, 8%), lighten($header_bg, 10%));
 
 $header_fg: if($titlebar == 'dark', saturate(rgba(#D3DAE3, 0.8), 10%), saturate(rgba($fg_color, 0.8), 10%));
 
 $dark_sidebar_bg: white;
 @if $trans == 'true' and $variant == 'light' { $dark_sidebar_bg: rgba(#F6F6FB, 0.95); }
 @if $trans == 'false' and $variant == 'light' { $dark_sidebar_bg: #F6F6FB; }
-@if $trans == 'true' and $variant == 'dark' { $dark_sidebar_bg: rgba(#272830, 0.95); }
-@if $trans == 'false' and $variant == 'dark' { $dark_sidebar_bg: #272830; }
+@if $trans == 'true' and $variant == 'dark' { $dark_sidebar_bg: rgba(#272931, 0.95); }
+@if $trans == 'false' and $variant == 'dark' { $dark_sidebar_bg: #272931; }
 
 $dark_sidebar_fg: if($variant == 'light', #646972, #C4CAD1);
-$alt_dark_sidebar_fg: if($variant == 'light', darken($dark_sidebar_fg, 5%), lighten($dark_sidebar_fg, 5%));
+$alt_dark_sidebar_fg: if($variant == 'light', darken($dark_sidebar_fg, 10%), lighten($dark_sidebar_fg, 10%));
 $dark_sidebar_icon_fg: #F6F6FB;
 $dark_sidebar_icon_bg: #32343D;
 $dark_sidebar_border: if($variant == 'light', darken($dark_sidebar_bg, 5%), lighten($dark_sidebar_bg, 5%));
@@ -90,7 +90,7 @@ $panel_bg: darken($header_bg, 5%);
 $panel_fg: $header_fg;
 
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));
-$entry_border: if($variant == 'light', #cfd6e6, darken($borders_color, 0%));
+$entry_border: $borders_color;
 
 $header_entry_bg: if($titlebar == 'dark' or $variant == 'dark', rgba(lighten($header_bg, 22%), 0.4), rgba($base_color, 0.9));
 $header_entry_border: if($titlebar == 'dark' or $variant == 'dark', rgba(darken($header_bg, 12%), 0.4), rgba($header_fg, 0.3));
