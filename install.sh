@@ -14,7 +14,7 @@ SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Qogir
 COLOR_VARIANTS=('' '-dark' '-light')
-CIRCLE_VARIANTS=('' '-c')
+CIRCLE_VARIANTS=('' '-circle')
 
 install() {
   local dest=${1}

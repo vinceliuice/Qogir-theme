@@ -1381,7 +1381,7 @@ $chrome_borders_color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.
 
 window.background.chromium {
   // checked-tab & toolbar & button widgets
-  background-color: if($variant == 'light', darken($bg_color, 3%), lighten($bg_color, 8%));
+  background-color: $bg_color;
   color: $text_color;
 
   headerbar.titlebar {
