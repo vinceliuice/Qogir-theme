@@ -2,11 +2,8 @@
 
 Qogir is a flat Design theme for GTK 3, GTK 2 and Gnome-Shell which supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
 
-GTK theme is based on Arc gtk theme
+based on Arc gtk theme
 horst3180 - Arc gtk theme: https://github.com/horst3180/Arc-theme
-
-Gnome-shell theme is based on materia gtk theme
-nana-4 - materia gtk theme: https://github.com/nana-4/materia-theme
 
 ## Info
 
