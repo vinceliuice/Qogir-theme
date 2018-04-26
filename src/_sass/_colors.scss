@@ -37,6 +37,7 @@ $progress_color: $selected_bg_color;
 
 $borders_color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
 $alt_borders_color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.05));
+$solid_borders_color: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 5%));
 $highlight: if($variant == 'light', scale-alpha(white, 0.13), scale-alpha(white, 0.10));
 $alt_highlight_color: scale-alpha(white, 0.2);
 

@@ -95,6 +95,8 @@ terminal-window,
 
   searchbar { border-top: 1px solid $borders_color; }
   .searchbar-container { margin-top: -1px; }
+  actionbar { border-color: $solid_borders_color; }
+
 }
 
 .nautilus-window notebook,
@@ -1366,14 +1368,26 @@ window.background:not(.csd) {
   ***************/
 $chrome_borders_color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.15));
 
+%circle_chrome {
+  min-width: 23px;
+  min-height: 23px;
+}
+
+%square_chrome {
+  min-width: $large_size;
+  min-height: $large_size;
+  margin-right: -10px;
+}
+
 window.background.chromium {
   // checked-tab & toolbar & button widgets
   background-color: if($variant == 'light', darken($bg_color, 3%), lighten($bg_color, 8%));
   color: $text_color;
 
   headerbar.titlebar {
-    margin: 0;
-    padding: 0;
+
+    @if $titlebutton == 'square' { margin: 0; padding: 0; }
+
     button.toggle { // account-button (> 64.0.3282?)
       @include button(header-normal);
       &:hover { @include button(header-hover); }
@@ -1383,9 +1397,8 @@ window.background.chromium {
     // from nav_button_provider_gtk3.cc (> 62.0.3202?)
     button.titlebutton { // title-buttons
       // define global titlebutton class sizing
-      min-width: 40px; // > 16px causes image blurring
-      min-height: 40px;
-      margin-right: -10px; // unset margins
+      @if $titlebutton == 'square' { @extend %square_chrome; }
+      @else if $titlebutton == 'circle' { @extend %circle_chrome; }
       padding: 0;
       color: transparent; // hide stock icons
     }

@@ -18,6 +18,14 @@ filechooser,
 
       .sidebar-icon { color: transparentize($dark_sidebar_icon_fg, 0.15); }
 
+      image.sidebar-icon {
+         padding-right: 2px;
+      }
+
+      label.sidebar-label {
+        padding-right: 2px; padding-left: $small_size + 4px;
+      }
+
       &.has-open-popup,
       &:hover {
         transition: none;
@@ -34,9 +42,12 @@ filechooser,
       &:selected.has-open-popup,
       &:selected, &:selected:hover, &:active:hover {
         transition: box-shadow 0.2s;
-        box-shadow: inset -2px 0 $selected_bg_color,
-                    inset 38px 0 0 0 $selected_bg_color;
-        background-color: transparent;
+        box-shadow: inset 38px 0 0 0 $selected_bg_color;
+        background-color: rgba($selected_bg_color, 0.0);
+        background-image: -gtk-scaled(url("assets/selected-dot.png"),
+                                      url("assets/selected-dot@2.png"));
+        background-repeat: no-repeat;
+        background-position: 42px center;
         .sidebar-label { color: $alt_dark_sidebar_fg; }
 //        .sidebar-icon { color: inherit; }
       }

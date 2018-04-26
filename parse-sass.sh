@@ -15,4 +15,6 @@ fi
 for color in "${_COLOR_VARIANTS[@]}"; do
   sassc $SASSC_OPT src/gtk-3.0/gtk${color}.{scss,css}
   echo "==> Generating the gtk${color}.css..."
+  sassc $SASSC_OPT src/gtk-3.0/gtk${color}-c.{scss,css}
+  echo "==> Generating the gtk${color}-c.css..."
 done

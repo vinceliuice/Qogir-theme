@@ -750,6 +750,7 @@ modelbutton.flat {
     &, arrow { @extend %selected_items; }
   }
   &:checked { color: $fg_color; }
+  &:disabled { color: $insensitive_fg_color; }
 
   // FIXME: temporary workaround
   check:last-child,
@@ -985,7 +986,7 @@ $_header_radius: 0;
 
 headerbar,
 %titlebar {
-  min-height: $large_size;
+  height: $large_size;
   padding: 0 10px;
   color: $header_fg;
   box-shadow: inset 0 -1px $borders_color;
@@ -1008,7 +1009,8 @@ headerbar,
   }
 
   .subtitle {
-    font-size: smaller;
+    font-size: 80%;
+    margin-top: -2px;
     padding-left: 12px;
     padding-right: 12px;
     @extend .dim-label;
@@ -1063,11 +1065,18 @@ headerbar,
     .fullscreen & { box-shadow: none; }
 
     button.titlebutton {
+      @if $titlebutton == 'square' {
+        min-height: $medium_size;
+        min-width: $medium_size;
+        margin-right: -6px;
+        padding: 0;
+      }
+      @else if $titlebutton == 'circle' {
+        min-height: 23px;
+        min-width: 23px;
+        padding: 2px;
+      }
       border: none;
-      min-height: $medium_size;
-      min-width: $medium_size;
-      margin-right: -6px;
-      padding: 0;
     }
   }
 
@@ -1309,7 +1318,7 @@ headerbar {
     > button {
       background-color: lighten($header_bg, 10%);
       color: $header_fg;
-      border-color: $header_border;
+      border-color: $borders_color;
       &:hover { background-color: lighten($header_bg, 15%); }
       &:active, &:checked { @include button(header-active); }
       &:disabled { color: rgba($header_fg, 0.4); label { color: rgba($header_fg, 0.4); } }
@@ -1648,6 +1657,7 @@ menubar,
   padding: 0px;
   background-color: opacify($header_bg, 1);
   color: $header_fg;
+  border-bottom: 1px solid $borders_color;
 
   &:backdrop {
     color: transparentize($header_fg, 0.3);
@@ -2821,14 +2831,13 @@ placessidebar {
     > revealer {
       padding: 0 10px;
     }
-
     image.sidebar-icon {
-      &:dir(ltr) { padding-right: 2px; }
-      &:dir(rtl) { padding-left: 2px; }
+      &:dir(ltr) { padding-right: 8px; }
+      &:dir(rtl) { padding-left: 8px; }
     }
     label.sidebar-label {
-      &:dir(ltr) { padding-right: 2px; padding-left: $small_size; }
-      &:dir(rtl) { padding-left: $small_size; padding-right: 2px; }
+      &:dir(ltr) { padding-right: 2px; }
+      &:dir(rtl) { padding-left: 2px; }
     }
     @at-root button.sidebar-button {
       min-width: 22px;
@@ -3212,7 +3221,8 @@ decoration {
   border-width: 0;
 
   box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
-              0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05));
+              0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
+              0 0 0 1px $borders_color;
 
   // this is used for the resize cursor area
   margin: $cont_padding;
@@ -3221,7 +3231,8 @@ decoration {
     // the transparent shadow here is to enforce that the shadow extents don't
     // change when we go to backdrop, to prevent jumping windows
     box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent,
-                0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.06), opacify($_wm_border, 0.03));
+                0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.06), opacify($_wm_border, 0.03)),
+                0 0 0 1px $borders_color;
     transition: $backdrop_transition;
   }
   .fullscreen &,
@@ -3260,7 +3271,11 @@ decoration {
 //
 headerbar,
 .titlebar {
+   @if $titlebutton == 'square' { @extend %square_titlebutton; }
+   @else if $titlebutton == 'circle' { @extend %circle_titlebutton; }
+}
 
+%square_titlebutton {
   button.titlebutton { // csd titlebuttons
     margin: 0;
     padding: 0;
@@ -3310,6 +3325,58 @@ headerbar,
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
       &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}.png'),
                                                       url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}@2.png')); }
+      }
+    }
+  }
+}
+
+%circle_titlebutton {
+  button.titlebutton { // csd titlebuttons
+    margin: 0;
+    padding: 0;
+    min-width: $medium_size;
+    min-height: $medium_size;
+
+    @include button(undecorated);
+    background-color: transparentize($header_bg, 1);
+
+    &:hover {
+      @include button(header-hover);
+    }
+    &:active, &:checked {
+      @include button(header-active);
+    }
+
+    &.close, &.maximize, &.minimize, &.restore { // csd windows control titlebuttons
+      padding: 0;
+      min-width: 27px;
+      min-height: 27px;
+      color: transparent;
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-width: 0;
+      border-radius: 0;
+
+      &:backdrop { opacity: 1; }
+    }
+
+    // Load png assets for each button, Fix the Chrome window restore button bug
+    @each $k in ('close', 'maximize', 'minimize', 'restore') {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-c.png'),
+                                                        url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-c@2.png')); }
+      }
+    }
+  }
+
+  .fullscreen &,
+  .maximized & {
+    button.titlebutton {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-c.png'),
+                                                      url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-c@2.png')); }
       }
     }
   }
