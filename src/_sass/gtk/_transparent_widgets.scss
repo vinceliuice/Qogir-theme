@@ -28,9 +28,7 @@ filechooser,
 
       &.has-open-popup,
       &:hover {
-        transition: none;
-        animation: none;
-        background-color: transparentize($dark_sidebar_fg, 0.85);
+        background-color: transparentize($dark_sidebar_fg, 0.95);
         box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
                     inset 38px 0 0 0 $dark_sidebar_icon_bg;
       }
@@ -39,9 +37,10 @@ filechooser,
         &, label, image { color: transparentize($dark_sidebar_fg, 0.6); }
       }
 
+      &:active { transition: box-shadow 0.2s; }
+
       &:selected.has-open-popup,
       &:selected, &:selected:hover, &:active:hover {
-        transition: box-shadow 0.2s;
         box-shadow: inset 38px 0 0 0 $selected_bg_color;
         background-color: rgba($selected_bg_color, 0.0);
         background-image: -gtk-scaled(url("assets/selected-dot.png"),
@@ -50,6 +49,16 @@ filechooser,
         background-position: 42px center;
         .sidebar-label { color: $alt_dark_sidebar_fg; }
 //        .sidebar-icon { color: inherit; }
+      }
+
+      &:selected:hover, &:active:hover {
+        background-color: transparentize($dark_sidebar_fg, 0.95);
+        box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
+                    inset 38px 0 0 0 $selected_bg_color;
+        background-image: -gtk-scaled(url("assets/selected-dot.png"),
+                                      url("assets/selected-dot@2.png"));
+        background-repeat: no-repeat;
+        background-position: 42px center;
       }
 
       &:not(:selected) button.sidebar-button {

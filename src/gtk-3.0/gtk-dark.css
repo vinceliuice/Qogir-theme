@@ -7354,9 +7354,7 @@ filechooser placessidebar.sidebar row.sidebar-row label.sidebar-label,
 filechooser placessidebar.sidebar row.sidebar-row.has-open-popup, filechooser placessidebar.sidebar row.sidebar-row:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup,
 .nautilus-window placessidebar.sidebar row.sidebar-row:hover {
-  transition: none;
-  animation: none;
-  background-color: rgba(196, 202, 209, 0.15);
+  background-color: rgba(196, 202, 209, 0.05);
   box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #32343D;
 }
 
@@ -7367,12 +7365,16 @@ filechooser placessidebar.sidebar row.sidebar-row:disabled, filechooser placessi
   color: rgba(196, 202, 209, 0.4);
 }
 
+filechooser placessidebar.sidebar row.sidebar-row:active,
+.nautilus-window placessidebar.sidebar row.sidebar-row:active {
+  transition: box-shadow 0.2s;
+}
+
 filechooser placessidebar.sidebar row.sidebar-row:selected.has-open-popup, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected.has-open-popup,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
-  transition: box-shadow 0.2s;
   box-shadow: inset 38px 0 0 0 #5294e2;
   background-color: rgba(82, 148, 226, 0);
   background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
@@ -7386,6 +7388,16 @@ filechooser placessidebar.sidebar row.sidebar-row:selected.has-open-popup .sideb
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-label,
 .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover .sidebar-label {
   color: #e1e4e7;
+}
+
+filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover,
+.nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
+  background-color: rgba(196, 202, 209, 0.05);
+  box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #5294e2;
+  background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
+  background-repeat: no-repeat;
+  background-position: 42px center;
 }
 
 filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button,
