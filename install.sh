@@ -58,7 +58,12 @@ install() {
   cp -ur ${SRC_DIR}/src/gtk-3.0/assets                                               ${THEME_DIR}/gtk-3.0
   cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${color}${circle}.css                             ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk-dark.css                                         ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk-dark${circle}.css                                ${THEME_DIR}/gtk-3.0/gtk-dark.css
+
+  mkdir -p                                                                           ${THEME_DIR}/gnome-shell
+  cp -ur ${SRC_DIR}/src/gnome-shell/common-assets                                    ${THEME_DIR}/gnome-shell
+  cp -ur ${SRC_DIR}/src/gnome-shell/assets${ELSE_DARK}                               ${THEME_DIR}/gnome-shell/assets
+  cp -ur ${SRC_DIR}/src/gnome-shell/gnome-shell${color}.css                          ${THEME_DIR}/gnome-shell/gnome-shell.css
 
   mkdir -p                                                                           ${THEME_DIR}/metacity-1
   cp -ur ${SRC_DIR}/src/metacity-1/*.svg                                             ${THEME_DIR}/metacity-1
