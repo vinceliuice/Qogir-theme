@@ -737,11 +737,11 @@ StScrollBar {
 }
 
 .resize-popup {
-  color: $osd_fg_color;
+  color: white;
   background: none;
   border: none;
   border-radius: 5px;
-	border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
   padding: 12px;
 }
 
@@ -883,15 +883,13 @@ StScrollBar {
 // Top Bar
 //
 #panel {
-  $_panel_fg_color: $_shell_fg_color;
+  $_panel_fg_color: $header_fg;
 
   font-weight: bold;
   height: 2.1em;
   min-height: 27px;
-  background-gradient-direction: none;
-  background-color: transparent;
-  border-bottom-width: 0;
-  border-image: url('common-assets/panel/panel.svg') 1 1 1 1;
+  background-color: $header_bg;
+  border: none;
 
   // Fix dynamic top bar extension
   &.dynamic-top-bar-white-btn { border-image: none; }
@@ -903,20 +901,20 @@ StScrollBar {
     border-image: none;
   }
 
-  &:overview { border-image: url('common-assets/panel/panel-overview.svg') 1 1 1 1; }
+  &:overview { }
 
   #panelLeft, #panelCenter { // spacing between activities<>app menu and such
     spacing: 8px;
   }
 
   .panel-corner {
-    -corner_radius: $corner_radius;
+    -corner_radius: 0;
     -panel-corner-background-color: transparentize(black, 1);
-    -panel-corner-border-width: 0px;
-    -panel-corner-border-color: black;
+    -panel-corner-border-width: 0;
+    -panel-corner-border-color: transparent;
 
     &:active, &:overview, &:focus {
-      -panel-corner-border-color: black;
+      -panel-corner-border-color: transparent;
     }
 
     &.lock-screen, &.login-screen, &unlock-screen {
@@ -934,6 +932,7 @@ StScrollBar {
     transition-duration: 100ms;
     border-bottom-width: 1px;
     border-color: transparent;
+    text-shadow: none;
 
     .app-menu-icon {
       width: 0;
@@ -942,19 +941,25 @@ StScrollBar {
       margin-right: 0px;
     }
 
+    .system-status-icon,
+    .app-menu-icon > StIcon,
+    .popup-menu-arrow {
+      icon-shadow: none;
+    }
+
     &:hover {
       color: $_panel_fg_color;
-      background-color: transparentize(black, 0.83);
+      background-color: transparentize(black, 0.95);
       border-bottom-width: 1px;
       border-color: transparent;
     }
 
     &:active, &:overview, &:focus, &:checked {
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
-      box-shadow: none;
-      border-bottom-width: 1px;
-      border-color: black;
+      color: $_panel_fg_color;
+      background-color: transparentize(black, 0.9);
+      box-shadow: inset 0 -2px 0 $selected_bg_color;
+      text-shadow: none;
+      border: none;
 
       & > .system-status-icon { icon-shadow: none; }
     }
@@ -968,7 +973,7 @@ StScrollBar {
     }
   }
 
-    #panelActivities.panel-button { -natural-hpadding: 12px; }
+  #panelActivities.panel-button { -natural-hpadding: 12px; }
 
   .panel-status-indicators-box,
   .panel-status-menu-box {
@@ -978,6 +983,36 @@ StScrollBar {
   // spacing between power icon and (optional) percentage label
   .power-status.panel-status-indicators-box {
     spacing: 0;
+  }
+
+  &.solid {
+//    background-color: $header_bg;
+    /* transition from transparent to solid */
+    transition-duration: 250ms;
+    background-gradient-direction: none; // for Ubuntu session
+    text-shadow: none; // for Ubuntu session
+
+    &:overview { background-color: transparent; } // for Ubuntu session
+
+    .panel-corner {
+      -panel-corner-background-color: $header_bg;
+    }
+
+    .panel-button {
+//      color: $fg_color;
+      text-shadow: none;
+
+      &:hover, &:active, &:overview, &:focus, &:checked {
+//        color: $fg_color;
+        text-shadow: none;
+      }
+    }
+
+    .system-status-icon,
+    .app-menu-icon > StIcon,
+    .popup-menu-arrow {
+      icon-shadow: none;
+    }
   }
 
   .screencast-indicator { color: $error_color; }
@@ -994,7 +1029,7 @@ StScrollBar {
 #panel #panelActivities.panel-button {
 
   > * {
-    background-image: url("common-assets/panel/activities.svg");
+    background-image: url("assets/misc/activities.svg");
     background-position: center top;
     width: 24px;
     height: 24px;
@@ -1013,7 +1048,7 @@ StScrollBar {
     border-bottom-width: 1px;
     border-color: transparent;
 
-    > * { background-image: url("common-assets/panel/activities-active.svg"); }
+    > * { background-image: url("assets/misc/activities-active.svg"); }
   }
 }
 
@@ -1526,7 +1561,7 @@ StScrollBar {
 
 .window-caption, .window-caption:hover {
   spacing: 25px;
-  color: $osd_fg_color;
+  color: white;
   background-color: transparentize(black, 0.3);
   border-radius: 2px;
   padding: 4px 12px;
@@ -1613,7 +1648,7 @@ StScrollBar {
 //
 #dash {
   font-size: 1em;
-  color: $osd_fg_color;
+  color: $dark_sidebar_icon_fg;
   background-color: $dark_sidebar_icon_bg;
   border-color: rgba(0,0,0,0.4);
   padding: 4px 0;
@@ -2364,7 +2399,7 @@ $legacy_icon_size: 24px;
   border: 1px solid black;
   border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
   border-radius: 2px;
-  color: $osd_fg_color;
+  color: white;
 
   & > #Toolbar {
     padding: 3px;
