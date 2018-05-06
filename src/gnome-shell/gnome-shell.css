@@ -35,7 +35,7 @@ stage {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
 }
 
@@ -51,7 +51,7 @@ stage {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
 }
 
@@ -89,7 +89,7 @@ StEntry {
   border-radius: 3px;
   color: #5c616c;
   background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
@@ -103,7 +103,7 @@ StEntry:focus, StEntry:hover {
 StEntry:insensitive {
   color: rgba(92, 97, 108, 0.55);
   background-color: #fdfdfe;
-  border-color: 1px solid rgba(235, 236, 237, 0.505);
+  border-color: 1px solid rgba(232, 233, 234, 0.516);
   box-shadow: inset 0 2px 4px rgba(253, 253, 254, 0.05);
 }
 
@@ -152,7 +152,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .slider {
   -slider-height: 4px;
-  -slider-background-color: rgba(0, 0, 0, 0.1);
+  -slider-background-color: rgba(0, 0, 0, 0.12);
   -slider-border-color: transparent;
   -slider-active-background-color: #5294e2;
   -slider-active-border-color: transparent;
@@ -569,7 +569,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .audio-selection-device {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 3px;
 }
 
@@ -1211,7 +1211,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
 }
 
@@ -1553,7 +1553,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 2px;
   icon-size: 16px;
   padding: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .ripple-box {
@@ -1635,7 +1635,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .nm-dialog-scroll-view {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 2px;
   background-color: #ffffff;
 }
@@ -1927,7 +1927,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 4px 32px;
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #D3DAE3;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background-color: rgba(89, 94, 114, 0.4);
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.05);
 }
@@ -1935,7 +1935,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-view-control:hover {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #D3DAE3;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background-color: rgba(105, 110, 134, 0.5);
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.05);
 }
@@ -2015,7 +2015,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-well-app.app-folder > .overview-icon {
   background-color: rgba(50, 52, 61, 0.75);
-  border: rgba(0, 0, 0, 0.1);
+  border: rgba(0, 0, 0, 0.12);
 }
 
 .app-well-app.app-folder:hover > .overview-icon {
@@ -2035,7 +2035,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-folder-popup {
   -arrow-border-radius: 2px;
   -arrow-background-color: rgba(32, 33, 39, 0.65);
-  -arrow-border-color: rgba(0, 0, 0, 0.1);
+  -arrow-border-color: rgba(0, 0, 0, 0.12);
   -arrow-border-width: 1px;
   -arrow-base: 5;
   -arrow-rise: 5;
@@ -2366,7 +2366,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #D3DAE3;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background-color: rgba(89, 94, 114, 0.4);
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.05);
 }
@@ -2374,7 +2374,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .keyboard-key:hover {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #D3DAE3;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background-color: rgba(105, 110, 134, 0.5);
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.05);
 }
@@ -2382,7 +2382,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .keyboard-key:active, .keyboard-key:checked {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background-color: #5294e2;
   box-shadow: inset 0 1px rgba(82, 148, 226, 0.05);
 }
@@ -2390,7 +2390,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .keyboard-key:grayed {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: rgba(207, 218, 231, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background-color: rgba(89, 94, 114, 0.25);
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.05);
 }
@@ -2493,7 +2493,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
 }
 
@@ -2501,7 +2501,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
 }
 

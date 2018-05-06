@@ -2759,7 +2759,12 @@ messagedialog { // Message Dialog styling
 // Filechooser
 //
 filechooser {
-  #pathbarbox { border-bottom: 1px solid transparentize($borders_color, 0.5); }
+  .dialog-action-box { border-top: 1px solid $borders_color; }
+
+  #pathbarbox {
+    border-bottom: 1px solid $borders_color;
+    background-color: $bg_color;
+  }
 }
 
 filechooserbutton:drop(active) {
@@ -2887,7 +2892,9 @@ placesview {
     transition: 200ms $ease-out-quad;
     -gtk-icon-transform: rotate(-0.5turn);
   }
-
+  > actionbar {
+    border-top: 1px solid $borders_color;
+  }
   // this selects the "connect to server" label
   > actionbar > revealer > box > label {
     padding-left: 8px;
