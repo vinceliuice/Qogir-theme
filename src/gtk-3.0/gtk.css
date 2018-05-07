@@ -1331,13 +1331,11 @@ headerbar .title,
 .titlebar:not(headerbar) .title {
   padding-left: 12px;
   padding-right: 12px;
-  margin-top: -1px;
 }
 
 headerbar .subtitle,
 .titlebar:not(headerbar) .subtitle {
   font-size: 80%;
-  margin-top: -1px;
   padding-left: 12px;
   padding-right: 12px;
 }
