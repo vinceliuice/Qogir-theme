@@ -29,7 +29,7 @@ $warning_fg_color: white;
 $error_fg_color: white;
 $success_color: #73d216;
 $destructive_color: #F04A50;
-$suggested_color: #4DADD4;
+$suggested_color: #3a94ff;
 $destructive_fg_color: white;
 $suggested_fg_color: white;
 $drop_target_color: #F08437;
@@ -38,8 +38,8 @@ $progress_color: $selected_bg_color;
 $borders_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.12));
 $alt_borders_color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.05));
 $solid_borders_color: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 5%));
-$highlight: if($variant == 'light', scale-alpha(white, 0.13), scale-alpha(white, 0.10));
-$alt_highlight_color: scale-alpha(white, 0.2);
+$highlight: if($variant == 'light', rgba(white, 0.13), rgba(white, 0.10));
+$alt_highlight_color: rgba(white, 0.2);
 
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%),
                                      lighten($selected_bg_color, 20%));
