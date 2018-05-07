@@ -162,7 +162,7 @@
   // pushed button
   //
     color: $selected_fg_color;
-    border-color: $sec_selected_bg_color;
+    border-color: if($titlebar == 'light', $sec_selected_bg_color, $borders_color);
     background-color: $selected_bg_color;
   }
 
@@ -212,7 +212,7 @@
   // pushed header-bar button
   //
     color: $selected_fg_color;
-    border-color: $sec_selected_bg_color;
+    border-color: if($titlebar == 'light', $sec_selected_bg_color, $borders_color);
     background-color: $selected_bg_color;
   }
 
