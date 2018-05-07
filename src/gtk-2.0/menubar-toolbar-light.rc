@@ -15,7 +15,7 @@ style "menubar" {
     image {
       function = BOX
       file  = "assets/menubar.png"
-      stretch  = FALSE
+      stretch  = TRUE
       border = { 1, 1, 1, 1 }
     }
   }

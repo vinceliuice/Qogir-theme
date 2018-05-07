@@ -2222,13 +2222,14 @@ menubar > menuitem,
   padding: 4px 8px;
   border: solid transparent;
   border-width: 0;
-  border-radius: 2px 2px 0 0;
+  border-radius: 0;
 }
 
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
-  background-color: #5294e2;
-  color: #ffffff;
+  background-color: transparent;
+  box-shadow: inset 0 -2px #5294e2;
+  color: rgba(241, 244, 248, 0.8);
 }
 
 menubar > menuitem:disabled,
@@ -4562,7 +4563,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 }
 
 .nautilus-window paned > separator {
-  background-image: linear-gradient(to bottom, #e4e4f3, #e4e4f3);
+  background-image: linear-gradient(to bottom, #e4edf3, #e4edf3);
 }
 
 .nautilus-window headerbar {
@@ -7235,7 +7236,7 @@ GtkListBox .h4 {
   border-bottom-right-radius: 3px;
   border: solid rgba(0, 0, 0, 0.1);
   border-width: 0 1px 1px 1px;
-  box-shadow: inset 0 1px #e4e4f3;
+  box-shadow: inset 0 1px #e4edf3;
 }
 
 #buttonbox_frame button {
@@ -7324,7 +7325,7 @@ GtkListBox .h4 {
 }
 
 filechooser paned > separator {
-  background-image: linear-gradient(to bottom, #e4e4f3, #e4e4f3);
+  background-image: linear-gradient(to bottom, #e4edf3, #e4edf3);
 }
 
 filechooser.csd.background, filechooser placessidebar list,
@@ -7336,7 +7337,7 @@ filechooser.csd.background, filechooser placessidebar list,
 filechooser placessidebar.sidebar,
 .nautilus-window placessidebar.sidebar {
   box-shadow: inset 38px 0 0 0 #32343D;
-  background-color: #F6F6FB;
+  background-color: #f6f9fb;
 }
 
 filechooser placessidebar.sidebar row.sidebar-row,
@@ -7470,12 +7471,12 @@ filechooser placessidebar.sidebar separator,
 
 filechooser.maximized placessidebar.sidebar,
 .nautilus-window.maximized placessidebar.sidebar {
-  background-color: #f6f6fb;
+  background-color: #f6f9fb;
 }
 
 .nemo-window .sidebar {
   color: #646972;
-  background-color: #F6F6FB;
+  background-color: #f6f9fb;
 }
 
 .nemo-window .sidebar .view, .nemo-window .sidebar iconview, .nemo-window .sidebar row {
@@ -7489,7 +7490,7 @@ filechooser.maximized placessidebar.sidebar,
 }
 
 .nemo-window .sidebar .view.expander, .nemo-window .sidebar iconview.expander, .nemo-window .sidebar row.expander {
-  color: #adb0b7;
+  color: #adb1b7;
 }
 
 .nemo-window .sidebar .view.expander:hover, .nemo-window .sidebar iconview.expander:hover, .nemo-window .sidebar row.expander:hover {
@@ -7506,7 +7507,7 @@ filechooser.maximized placessidebar.sidebar,
 .caja-side-pane treeview {
   color: #646972;
   caret-color: #646972;
-  background-color: #f6f6fb;
+  background-color: #f6f9fb;
 }
 
 .caja-side-pane > box button:not(:active):not(:checked) {
@@ -7514,17 +7515,17 @@ filechooser.maximized placessidebar.sidebar,
 }
 
 .caja-side-pane .frame {
-  border-color: #e4e4f3;
+  border-color: #e4edf3;
 }
 
 .caja-side-pane junction {
-  background-color: #e4e4f3;
+  background-color: #e4edf3;
 }
 
 filechooser actionbar {
   color: #646972;
-  background-color: #F6F6FB;
-  border-color: #ddddf0;
+  background-color: #f6f9fb;
+  border-color: #dde9f0;
 }
 
 filechooser actionbar label, filechooser actionbar combobox {
@@ -7536,7 +7537,7 @@ filechooser actionbar label, filechooser actionbar combobox {
 }
 
 .gedit-side-panel-paned > separator {
-  background-image: linear-gradient(to bottom, #e4e4f3, #e4e4f3);
+  background-image: linear-gradient(to bottom, #e4edf3, #e4edf3);
 }
 
 .gedit-bottom-panel-paned > separator {
@@ -7544,11 +7545,11 @@ filechooser actionbar label, filechooser actionbar combobox {
 }
 
 .gedit-document-panel {
-  background-color: #F6F6FB;
+  background-color: #f6f9fb;
 }
 
 .maximized .gedit-document-panel {
-  background-color: #f6f6fb;
+  background-color: #f6f9fb;
 }
 
 .gedit-document-panel row {
@@ -7629,7 +7630,7 @@ filechooser actionbar entry:disabled {
 
 filechooser placessidebar.sidebar scrollbar,
 .nautilus-window placessidebar.sidebar scrollbar, .nemo-window .sidebar scrollbar, .caja-side-pane scrollbar {
-  border-color: #e4e4f3;
+  border-color: #e4edf3;
 }
 
 filechooser placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .caja-side-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
@@ -7654,7 +7655,7 @@ filechooser placessidebar.sidebar scrollbar slider:disabled, .nautilus-window pl
 }
 
 filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessidebar.sidebar scrollbar trough, .nemo-window .sidebar scrollbar trough, .caja-side-pane scrollbar trough {
-  background-color: #e4e4f3;
+  background-color: #e4edf3;
 }
 
 @define-color theme_fg_color #5c616c;

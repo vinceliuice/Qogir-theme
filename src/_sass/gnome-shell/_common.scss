@@ -930,9 +930,8 @@ StScrollBar {
     font-weight: bold;
     color: $_panel_fg_color;
     transition-duration: 100ms;
-    border-bottom-width: 1px;
-    border-color: transparent;
     text-shadow: none;
+    border: none;
 
     .app-menu-icon {
       width: 0;
@@ -949,17 +948,13 @@ StScrollBar {
 
     &:hover {
       color: $_panel_fg_color;
-      background-color: transparentize(black, 0.95);
-      border-bottom-width: 1px;
-      border-color: transparent;
+      background-color: rgba($_panel_fg_color, 0.05);
     }
 
     &:active, &:overview, &:focus, &:checked {
       color: $_panel_fg_color;
-      background-color: transparentize(black, 0.9);
+      background-color: rgba($_panel_fg_color, 0.1);
       box-shadow: inset 0 -2px 0 $selected_bg_color;
-      text-shadow: none;
-      border: none;
 
       & > .system-status-icon { icon-shadow: none; }
     }

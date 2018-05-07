@@ -1669,11 +1669,12 @@ menubar,
     padding: 4px 8px;
     border: solid transparent;
     border-width: 0;
-    border-radius: 2px 2px 0 0;
+    border-radius: 0;
 
     &:hover { //Seems like it :hover even with keyboard focus
-      background-color: $selected_bg_color;
-      color: $selected_fg_color;
+      background-color: transparent;
+      box-shadow: inset 0 -2px $selected_bg_color;
+      color: $alt_header_fg;
     }
     &:disabled {
       color: rgba($header_fg, 0.3);
