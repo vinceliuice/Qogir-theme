@@ -8,12 +8,6 @@ horst3180 - Arc gtk theme: https://github.com/horst3180/Arc-theme
 ## Info
 
 ### GTK+ 3.20 or later
-- Update your gtk(gnome) version on Mint if you want use Qogir on Linux Mint 18 or Ubuntu16.04.
-
-        sudo add-apt-repository ppa:gnome3-team/gnome3-staging
-        sudo add-apt-repository ppa:gnome3-team/gnome3
-        sudo apt-get update
-        sudo apt-get dist-upgrade
 
 ### GTK2 engines requirment
 - GTK2 engine Murrine 0.98.1.1 or later.
@@ -44,5 +38,7 @@ Run
     ./install.sh
 
 ## Screenshots
-
+![1](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot01.png?raw=true)
+![2](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot02.jpeg?raw=true)
+![3](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot03.jpeg?raw=true)
 
