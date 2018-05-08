@@ -883,12 +883,10 @@ StScrollBar {
 // Top Bar
 //
 #panel {
-  $_panel_fg_color: $header_fg;
-
   font-weight: bold;
   height: 2.1em;
   min-height: 27px;
-  background-color: $header_bg;
+  background-color: $panel_bg;
   border: none;
 
   // Fix dynamic top bar extension
@@ -928,7 +926,7 @@ StScrollBar {
     -natural-hpadding: 10px;
     -minimum-hpadding: 6px;
     font-weight: bold;
-    color: $_panel_fg_color;
+    color: $panel_fg;
     transition-duration: 100ms;
     text-shadow: none;
     border: none;
@@ -947,13 +945,13 @@ StScrollBar {
     }
 
     &:hover {
-      color: $_panel_fg_color;
-      background-color: rgba($_panel_fg_color, 0.05);
+      color: $panel_fg;
+      background-color: rgba($panel_fg, 0.05);
     }
 
     &:active, &:overview, &:focus, &:checked {
-      color: $_panel_fg_color;
-      background-color: rgba($_panel_fg_color, 0.1);
+      color: $panel_fg;
+      background-color: rgba($panel_fg, 0.1);
       box-shadow: inset 0 -2px 0 $selected_bg_color;
 
       & > .system-status-icon { icon-shadow: none; }
@@ -963,8 +961,8 @@ StScrollBar {
     .unlock-screen &,
     .login-screen &,
     .lock-screen & {
-      color: lighten($fg_color, 10%);
-      &:focus, &:hover, &:active { color: lighten($fg_color, 10%); }
+      color: lighten($panel_fg, 10%);
+      &:focus, &:hover, &:active { color: lighten($panel_fg, 10%); }
     }
   }
 
@@ -1024,7 +1022,7 @@ StScrollBar {
 #panel #panelActivities.panel-button {
 
   > * {
-    background-image: url("assets/misc/activities.svg");
+    background-image: url("common-assets/misc/activities.svg");
     background-position: center top;
     width: 24px;
     height: 24px;
@@ -1043,7 +1041,7 @@ StScrollBar {
     border-bottom-width: 1px;
     border-color: transparent;
 
-    > * { background-image: url("assets/misc/activities-active.svg"); }
+    > * { background-image: url("common-assets/misc/activities-active.svg"); }
   }
 }
 

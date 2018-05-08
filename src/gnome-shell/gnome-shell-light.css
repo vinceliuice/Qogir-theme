@@ -917,7 +917,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
   height: 2.1em;
   min-height: 27px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #282A33;
   border: none;
 }
 
@@ -955,7 +955,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -natural-hpadding: 10px;
   -minimum-hpadding: 6px;
   font-weight: bold;
-  color: rgba(82, 93, 118, 0.8);
+  color: #D3DAE3;
   transition-duration: 100ms;
   text-shadow: none;
   border: none;
@@ -975,13 +975,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button:hover {
-  color: rgba(82, 93, 118, 0.8);
-  background-color: rgba(82, 93, 118, 0.05);
+  color: #D3DAE3;
+  background-color: rgba(211, 218, 227, 0.05);
 }
 
 #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
-  color: rgba(82, 93, 118, 0.8);
-  background-color: rgba(82, 93, 118, 0.1);
+  color: #D3DAE3;
+  background-color: rgba(211, 218, 227, 0.1);
   box-shadow: inset 0 -2px 0 #5294e2;
 }
 
@@ -997,7 +997,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .unlock-screen #panel .panel-button,
 .login-screen #panel .panel-button,
 .lock-screen #panel .panel-button {
-  color: #737a88;
+  color: #f2f4f7;
 }
 
 .unlock-screen #panel .panel-button:focus, .unlock-screen #panel .panel-button:hover, .unlock-screen #panel .panel-button:active,
@@ -1007,7 +1007,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .lock-screen #panel .panel-button:focus,
 .lock-screen #panel .panel-button:hover,
 .lock-screen #panel .panel-button:active {
-  color: #737a88;
+  color: #f2f4f7;
 }
 
 #panel #panelActivities.panel-button {
@@ -1066,7 +1066,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel #panelActivities.panel-button > * {
-  background-image: url("assets/misc/activities.svg");
+  background-image: url("common-assets/misc/activities.svg");
   background-position: center top;
   width: 24px;
   height: 24px;
@@ -1087,7 +1087,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel #panelActivities.panel-button:active > *, #panel #panelActivities.panel-button:overview > *, #panel #panelActivities.panel-button:focus > *, #panel #panelActivities.panel-button:checked > * {
-  background-image: url("assets/misc/activities-active.svg");
+  background-image: url("common-assets/misc/activities-active.svg");
 }
 
 .system-switch-user-submenu-icon {
@@ -2277,7 +2277,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .legacy-tray {
-  background-color: rgba(242, 242, 242, 0.95);
+  background-color: #282A33;
 }
 
 .legacy-tray:ltr {
