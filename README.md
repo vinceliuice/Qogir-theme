@@ -38,7 +38,9 @@ Run
     ./install.sh
 
 ## Screenshots
-![1](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot01.jpeg?raw=true)
-![2](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot02.jpeg?raw=true)
-![3](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot03.jpeg?raw=true)
+![1](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot01.png?raw=true)
+![2](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot02.png?raw=true)
+![3](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot03.png?raw=true)
+![4](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot04.png?raw=true)
+![5](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot05.png?raw=true)
 

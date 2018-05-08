@@ -1685,12 +1685,6 @@ popover.background.user-menu {
   }
 }
 
-// Raven Trigger
-button.raven-trigger {
-  // padding: 0 4px;
-  &:hover, &:active, &:checked { color: $header_fg; }
-}
-
 // Places Menu
 popover.background.places-menu {
   padding: 8px;
@@ -1747,25 +1741,25 @@ popover.background.places-menu {
 // Panel
 .budgie-panel {
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
-  background-color: $header_bg;
-  color: $header_fg;
+  background-color: $panel_bg;
+  color: $panel_fg;
   font-weight: 500;
 
-  &.transparent { background-color: rgba($header_bg, 0.65); }
+  &.transparent { background-color: rgba($panel_bg, 0.65); }
 
   button {
     min-height: 16px;
     min-width: 16px;
     padding: 0;
     border-radius: 0;
-    color: $header_fg;
+    color: $panel_fg;
     border-top-width: 0;
     border-bottom-width: 0;
     border: none;
 
-    &:hover { background-color: rgba($header_fg, 0.15); }
-    &:active { background-color: rgba($header_fg, 0.1); }
-    &:checked { background-color: rgba($header_fg, 0.12); }
+    &:hover { background-color: rgba($panel_fg, 0.15); }
+    &:active { background-color: rgba($panel_fg, 0.1); }
+    &:checked { background-color: rgba($panel_fg, 0.12); }
   }
 
   &.horizontal button { padding: 0 4px; }
@@ -1778,7 +1772,7 @@ popover.background.places-menu {
   menubar,
   .menubar {
     box-shadow: none;
-    color: $header_fg;
+    color: $panel_fg;
     background-image: none;
     background-color: transparent;
 
@@ -1791,7 +1785,7 @@ popover.background.places-menu {
         background-color: $selected_bg_color;
       }
       &:disabled {
-        color: transparentize($header_fg, 0.6);
+        color: transparentize($panel_fg, 0.6);
       }
     }
   }
@@ -1822,11 +1816,11 @@ popover.background.places-menu {
 
     // for indicator colors
     &:not(:checked) {
-      color: $fg_color;
+      color: $panel_fg;
 
-      &:hover, &:active { color: rgba($fg_color, 0.8); }
+      &:hover, &:active { color: rgba($panel_fg, 0.8); }
 
-      &:disabled { color: rgba($fg_color, 0.5); }
+      &:disabled { color: rgba($panel_fg, 0.5); }
     }
   }
 
@@ -1877,6 +1871,12 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
   // Shadows
   // .#{$pos} .shadow-block { background-image: linear-gradient(to $b_pos, $borders_color, transparent); }
+}
+
+// Raven Trigger
+button.raven-trigger {
+  // padding: 0 4px;
+  &:hover, &:active, &:checked { color: $panel_fg; }
 }
 
 // Raven

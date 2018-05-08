@@ -6198,10 +6198,6 @@ popover.background.user-menu row {
   background-image: none;
 }
 
-button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:checked {
-  color: rgba(207, 218, 231, 0.8);
-}
-
 popover.background.places-menu {
   padding: 8px;
 }
@@ -6242,13 +6238,13 @@ popover.background.places-menu row {
 
 .budgie-panel {
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
-  background-color: #282A33;
-  color: rgba(207, 218, 231, 0.8);
+  background-color: #24252d;
+  color: #D3DAE3;
   font-weight: 500;
 }
 
 .budgie-panel.transparent {
-  background-color: rgba(40, 42, 51, 0.65);
+  background-color: rgba(36, 37, 45, 0.65);
 }
 
 .budgie-panel button {
@@ -6256,22 +6252,22 @@ popover.background.places-menu row {
   min-width: 16px;
   padding: 0;
   border-radius: 0;
-  color: rgba(207, 218, 231, 0.8);
+  color: #D3DAE3;
   border-top-width: 0;
   border-bottom-width: 0;
   border: none;
 }
 
 .budgie-panel button:hover {
-  background-color: rgba(207, 218, 231, 0.15);
+  background-color: rgba(211, 218, 227, 0.15);
 }
 
 .budgie-panel button:active {
-  background-color: rgba(207, 218, 231, 0.1);
+  background-color: rgba(211, 218, 227, 0.1);
 }
 
 .budgie-panel button:checked {
-  background-color: rgba(207, 218, 231, 0.12);
+  background-color: rgba(211, 218, 227, 0.12);
 }
 
 .budgie-panel.horizontal button {
@@ -6289,7 +6285,7 @@ popover.background.places-menu row {
 .budgie-panel menubar,
 .budgie-panel .menubar {
   box-shadow: none;
-  color: rgba(207, 218, 231, 0.8);
+  color: #D3DAE3;
   background-image: none;
   background-color: transparent;
 }
@@ -6308,7 +6304,7 @@ popover.background.places-menu row {
 
 .budgie-panel menubar > menuitem:disabled,
 .budgie-panel .menubar > menuitem:disabled {
-  color: rgba(207, 218, 231, 0.2);
+  color: rgba(211, 218, 227, 0.4);
 }
 
 .budgie-panel .alert {
@@ -6336,7 +6332,7 @@ button.launcher.sidebar-button:not(:checked),
 button.launcher.budgie-menu-launcher:not(:checked),
 .budgie-panel .launcher#tasklist-button:not(:checked),
 button.launcher.flat:not(:checked) {
-  color: #5c616c;
+  color: #D3DAE3;
 }
 
 button.flat.-panel-icon-button:not(:checked):hover, button.-panel-icon-button.sidebar-button:not(:checked):hover, button.-panel-icon-button.budgie-menu-launcher:not(:checked):hover, .budgie-panel .-panel-icon-button#tasklist-button:not(:checked):hover, button.flat.-panel-icon-button:not(:checked):active, button.-panel-icon-button.sidebar-button:not(:checked):active, button.-panel-icon-button.budgie-menu-launcher:not(:checked):active, .budgie-panel .-panel-icon-button#tasklist-button:not(:checked):active,
@@ -6348,7 +6344,7 @@ button.launcher.sidebar-button:not(:checked):active,
 button.launcher.budgie-menu-launcher:not(:checked):active,
 .budgie-panel .launcher#tasklist-button:not(:checked):active,
 button.launcher.flat:not(:checked):active {
-  color: rgba(92, 97, 108, 0.8);
+  color: rgba(211, 218, 227, 0.8);
 }
 
 button.flat.-panel-icon-button:not(:checked):disabled, button.-panel-icon-button.sidebar-button:not(:checked):disabled, button.-panel-icon-button.budgie-menu-launcher:not(:checked):disabled, .budgie-panel .-panel-icon-button#tasklist-button:not(:checked):disabled,
@@ -6356,7 +6352,7 @@ button.launcher.sidebar-button:not(:checked):disabled,
 button.launcher.budgie-menu-launcher:not(:checked):disabled,
 .budgie-panel .launcher#tasklist-button:not(:checked):disabled,
 button.launcher.flat:not(:checked):disabled {
-  color: rgba(92, 97, 108, 0.5);
+  color: rgba(211, 218, 227, 0.5);
 }
 
 .top .budgie-panel #tasklist-button, .budgie-panel .top #tasklist-button, .top button.flat.-panel-icon-button,
@@ -6426,6 +6422,10 @@ frame.raven-frame > border {
 
 .right frame.raven-frame > border {
   margin-left: 32px;
+}
+
+button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:checked {
+  color: #D3DAE3;
 }
 
 .raven {
