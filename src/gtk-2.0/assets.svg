@@ -555,15 +555,6 @@
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#selected_bg_color"
-       id="linearGradient5020"
-       x1="257.5"
-       y1="-152.63782"
-       x2="257.5"
-       y2="-137.63782"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#selected_fg_color"
        id="linearGradient5048"
        x1="188.98808"
@@ -806,6 +797,15 @@
        y1="6.362186"
        x2="124.5"
        y2="11.362186" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#selected_bg_color"
+       id="linearGradient1737"
+       gradientUnits="userSpaceOnUse"
+       x1="257.5"
+       y1="-152.63782"
+       x2="257.5"
+       y2="-137.63782" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -814,17 +814,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.656854"
-     inkscape:cx="272.14841"
-     inkscape:cy="397.47229"
+     inkscape:zoom="22.627416"
+     inkscape:cx="525.71075"
+     inkscape:cy="274.08635"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      showborder="false"
-     inkscape:window-width="1293"
-     inkscape:window-height="713"
-     inkscape:window-x="67"
-     inkscape:window-y="27"
+     inkscape:window-width="1920"
+     inkscape:window-height="972"
+     inkscape:window-x="0"
+     inkscape:window-y="31"
      inkscape:window-maximized="1"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
@@ -4239,19 +4239,6 @@
        width="2"
        inkscape:label="#image6329" />
     <g
-       id="menubar_button"
-       inkscape:label="#g5032"
-       transform="translate(11,0)">
-      <rect
-         inkscape:label="#rect5007"
-         y="-152.63782"
-         x="245"
-         height="15"
-         width="25"
-         id="wsad"
-         style="opacity:1;fill:url(#linearGradient5020);fill-opacity:1.0;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    </g>
-    <g
        transform="matrix(0,1,-1,0,188.36218,-309.63782)"
        style="display:inline"
        id="trough-progressbar"
@@ -4894,7 +4881,7 @@
          height="1"
          width="24"
          id="rect6168-6-7"
-         style="opacity:0.1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="opacity:0.1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
     <g
        style="display:inline"
@@ -6108,6 +6095,36 @@
          id="rect4253"
          style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:url(#linearGradient4267);fill-opacity:1;stroke:none;stroke-width:0.55255312;marker:none;enable-background:accumulate"
          ry="0.66145831" />
+    </g>
+    <g
+       id="menubar_button"
+       inkscape:label="#g1743">
+      <g
+         transform="translate(11,0)"
+         inkscape:label="#g5032"
+         id="menubar_button_bg">
+        <rect
+           style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="wsad"
+           width="25"
+           height="15"
+           x="245"
+           y="-152.63782"
+           inkscape:label="#rect5007" />
+      </g>
+      <g
+         id="g1733"
+         inkscape:label="#g5032"
+         transform="matrix(1,0,0,0.13333351,11,-119.28608)">
+        <rect
+           inkscape:label="#rect5007"
+           y="-152.63782"
+           x="245"
+           height="15"
+           width="25"
+           id="rect1731"
+           style="opacity:1;fill:url(#linearGradient1737);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      </g>
     </g>
   </g>
 </svg>

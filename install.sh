@@ -72,6 +72,10 @@ install() {
   ln -s metacity-theme-1.xml metacity-theme-2.xml
   ln -s metacity-theme-1.xml metacity-theme-3.xml
 
+  mkdir -p                                                                           ${THEME_DIR}/xfwm4
+  cp -ur ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                   ${THEME_DIR}/xfwm4/themerc
+  cp -ur ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}/*.png                              ${THEME_DIR}/xfwm4
+
 }
 
 for color in "${circles[@]:-${CIRCLE_VARIANTS[@]}}"; do

@@ -5,11 +5,11 @@ style "theme-panel" {
 
   bg[NORMAL] = shade(1.0, @tooltip_bg_color)
   bg[ACTIVE] = @selected_bg_color
-  bg[PRELIGHT] = shade(1.2, @tooltip_bg_color)
+  bg[PRELIGHT] = shade(0.9, @tooltip_bg_color)
   bg[SELECTED] = @selected_bg_color
 
   fg[NORMAL] = shade(1.0, @tooltip_fg_color)
-  fg[PRELIGHT] = @selected_fg_color
+  fg[PRELIGHT] = @tooltip_fg_color
   fg[ACTIVE] = @selected_fg_color
   fg[SELECTED] = @selected_fg_color
 
