@@ -6294,7 +6294,7 @@ popover.background.places-menu row {
 }
 
 .budgie-panel separator {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(211, 218, 227, 0.12);
 }
 
 .budgie-panel menubar,
@@ -6315,6 +6315,7 @@ popover.background.places-menu row {
 .budgie-panel menubar > menuitem:hover,
 .budgie-panel .menubar > menuitem:hover {
   background-color: #5294e2;
+  color: #ffffff;
 }
 
 .budgie-panel menubar > menuitem:disabled,

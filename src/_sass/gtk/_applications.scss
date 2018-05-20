@@ -1766,7 +1766,7 @@ popover.background.places-menu {
 
   &.vertical button { padding: 4px 0; }
 
-  separator { background-color: $borders_color; }
+  separator { background-color: rgba($panel_fg, 0.12); }
 
   // Budgie styled Gtk Menus
   menubar,
@@ -1783,6 +1783,7 @@ popover.background.places-menu {
 
       &:hover {
         background-color: $selected_bg_color;
+        color: $selected_fg_color;
       }
       &:disabled {
         color: transparentize($panel_fg, 0.6);
