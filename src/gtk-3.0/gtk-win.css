@@ -4660,74 +4660,29 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   background-color: #5294e2;
 }
 
-.nemo-window .nemo-places-sidebar.frame {
-  border-width: 0;
+.nautilus-window .floating-bar {
+  padding: 1px;
+  background-color: #5294e2;
+  color: #ffffff;
+  border-radius: 2px 2px 0 0;
 }
 
-.nemo-window notebook {
-  background-color: #ffffff;
+.nautilus-window .floating-bar.bottom.left {
+  border-top-left-radius: 0;
 }
 
-.nemo-window .nemo-window-pane widget.entry {
-  border: 1px solid;
-  border-radius: 3px;
-  color: #5c616c;
-  border-color: #5294e2;
-  background-color: #ffffff;
+.nautilus-window .floating-bar.bottom.right {
+  border-top-right-radius: 0;
 }
 
-.nemo-window .primary-toolbar {
+.nautilus-window .floating-bar button {
   border: none;
-  color: #ffffff;
-  background-color: #282a33;
-}
-
-.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button {
-  padding-bottom: 2px;
-  margin: 0;
-  color: #cccccc;
-  background-color: #282A33;
-}
-
-.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:not(:last-child):not(:only-child) {
-  margin: 0;
-}
-
-.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:hover {
-  color: #ffffff;
-  background-color: #3a3d4a;
-}
-
-.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:active, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:checked {
-  transition: background-color 0.00001s 0.3s;
-  animation: header_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
-  color: #ffffff;
-  background-color: #121216;
-  box-shadow: inset 0 -2px #7eafe9;
-}
-
-.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:disabled {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button + button {
-  border-left-style: none;
-}
-
-.caja-notebook {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.caja-side-pane .frame {
-  border-width: 1px 0 0;
-}
-
-.caja-notebook .frame {
-  border-width: 0 0 1px;
-}
-
-.caja-desktop > widget.entry, .caja-desktop > widget.entry:focus {
-  transition: none;
+  border-radius: 100px;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  margin-right: 6px;
+  -gtk-icon-shadow: none;
 }
 
 .open-document-selector-treeview.view, iconview.open-document-selector-treeview {
@@ -4834,187 +4789,6 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   border-right-width: 1px;
 }
 
-.pluma-window statusbar frame > border {
-  border: none;
-}
-
-.pluma-window notebook > stack scrolledwindow {
-  border-width: 0 0 1px 0;
-}
-
-#pluma-status-combo-button {
-  min-height: 0;
-  padding: 0;
-  border-top: none;
-  border-bottom: none;
-  border-radius: 0;
-}
-
-.gb-search-entry-occurrences-tag {
-  background: none;
-}
-
-workbench.csd > stack.titlebar:not(headerbar) {
-  padding: 0;
-  background: none;
-  border: none;
-  box-shadow: none;
-}
-
-workbench.csd > stack.titlebar:not(headerbar) headerbar, workbench.csd > stack.titlebar:not(headerbar) headerbar:first-child, workbench.csd > stack.titlebar:not(headerbar) headerbar:last-child {
-  border-radius: 0 0 0 0;
-}
-
-editortweak .linked > entry.search:focus + .gb-linked-scroller {
-  border-top-color: #5294e2;
-}
-
-layouttab {
-  background-color: #ffffff;
-}
-
-layout {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  -PnlDockBin-handle-size: 1;
-}
-
-eggsearchbar box.search-bar {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-pillbox {
-  color: #ffffff;
-  background-color: #5294e2;
-  border-radius: 3px;
-}
-
-pillbox:disabled label {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-docktabstrip {
-  padding: 0 6px;
-  background-color: #fafbfc;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-docktabstrip docktab {
-  min-height: 28px;
-  border: solid transparent;
-  border-width: 0 1px;
-}
-
-docktabstrip docktab label {
-  opacity: 0.5;
-}
-
-docktabstrip docktab:checked label, docktabstrip docktab:hover label {
-  opacity: 1;
-}
-
-docktabstrip docktab:checked {
-  border-color: rgba(0, 0, 0, 0.12);
-  background-color: #ffffff;
-}
-
-dockbin {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  -PnlDockBin-handle-size: 1;
-}
-
-dockpaned {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-dockoverlayedge {
-  background-color: #fafbfc;
-}
-
-dockoverlayedge docktabstrip {
-  padding: 0;
-  border: none;
-}
-
-dockoverlayedge.left-edge tab:checked,
-dockoverlayedge.right-edge tab:checked {
-  border-width: 1px 0;
-}
-
-popover.messagepopover.background {
-  padding: 0;
-}
-
-popover.messagepopover .popover-content-area {
-  margin: 16px;
-}
-
-popover.messagepopover .popover-action-area {
-  margin: 8px;
-}
-
-popover.messagepopover .popover-action-area button:not(:first-child):not(:last-child) {
-  margin: 0 4px;
-}
-
-popover.popover-selector {
-  padding: 0;
-}
-
-popover.popover-selector list row {
-  padding: 5px 0;
-}
-
-popover.popover-selector list row image {
-  margin-left: 3px;
-  margin-right: 10px;
-}
-
-entry.search.preferences-search {
-  border: none;
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 0;
-}
-
-preferences stacksidebar.sidebar list {
-  background-image: linear-gradient(to bottom, #ffffff, #ffffff);
-}
-
-preferences stacksidebar.sidebar list separator {
-  background-color: transparent;
-}
-
-devhelppanel entry:focus,
-symboltreepanel entry:focus {
-  border-color: rgba(0, 0, 0, 0.12);
-}
-
-button.run-arrow-button {
-  min-width: 12px;
-}
-
-omnibar.linked > entry:not(:only-child) {
-  border-style: solid;
-  border-radius: 3px;
-  margin-left: 1px;
-  margin-right: 1px;
-}
-
-gstyleslidein #scale_box button.toggle:checked,
-gstyleslidein #strings_controls button.toggle:checked,
-gstyleslidein #palette_controls button.toggle:checked,
-gstyleslidein #components_controls button.toggle:checked {
-  color: #5c616c;
-}
-
-configurationview entry.flat, configurationview .raven .raven-background spinbutton:not(.vertical), .raven .raven-background configurationview spinbutton:not(.vertical) {
-  background: none;
-}
-
-configurationview list {
-  border-width: 0;
-}
-
 eog-thumb-nav scrolledwindow {
   border-top: none;
 }
@@ -5098,10 +4872,6 @@ button.documents-favorite:active:hover {
 .tr-workarea undershoot,
 .tr-workarea overshoot {
   border-color: transparent;
-}
-
-.atril-window .primary-toolbar toolbar, .atril-window .primary-toolbar .inline-toolbar {
-  background: none;
 }
 
 #gf-bubble, #gf-bubble.solid,
@@ -5470,70 +5240,255 @@ window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem > .l
   margin: 0;
 }
 
-MsdOsdWindow.background.osd {
-  border-radius: 2px;
-  border: 1px solid #16171c;
+.nemo-window .nemo-places-sidebar.frame {
+  border-width: 0;
 }
 
-MsdOsdWindow.background.osd .progressbar {
-  background-color: #5294e2;
+.nemo-window notebook {
+  background-color: #ffffff;
+}
+
+.nemo-window .nemo-window-pane widget.entry {
+  border: 1px solid;
+  border-radius: 3px;
+  color: #5c616c;
+  border-color: #5294e2;
+  background-color: #ffffff;
+}
+
+.nemo-window .primary-toolbar {
   border: none;
-  border-color: red;
-  border-radius: 5px;
+  color: #ffffff;
+  background-color: #282a33;
 }
 
-MsdOsdWindow.background.osd .trough {
-  background-color: #1d1e25;
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button {
+  padding-bottom: 2px;
+  margin: 0;
+  color: #cccccc;
+  background-color: #282A33;
+}
+
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:not(:last-child):not(:only-child) {
+  margin: 0;
+}
+
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:hover {
+  color: #ffffff;
+  background-color: #3a3d4a;
+}
+
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:active, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:checked {
+  transition: background-color 0.00001s 0.3s;
+  animation: header_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
+  color: #ffffff;
+  background-color: #121216;
+  box-shadow: inset 0 -2px #7eafe9;
+}
+
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:disabled {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button + button {
+  border-left-style: none;
+}
+
+.caja-notebook {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.caja-side-pane .frame {
+  border-width: 1px 0 0;
+}
+
+.caja-notebook .frame {
+  border-width: 0 0 1px;
+}
+
+.caja-desktop > widget.entry, .caja-desktop > widget.entry:focus {
+  transition: none;
+}
+
+.pluma-window statusbar frame > border {
   border: none;
-  border-radius: 5px;
 }
 
-.mate-panel-menu-bar, .mate-panel-menu-bar menubar,
-panel-toplevel.background,
-panel-toplevel.background menubar {
-  background-color: #24252d;
+.pluma-window notebook > stack scrolledwindow {
+  border-width: 0 0 1px 0;
 }
 
-.mate-panel-menu-bar menubar,
-.mate-panel-menu-bar #PanelApplet label,
-.mate-panel-menu-bar #PanelApplet image,
-panel-toplevel.background menubar,
-panel-toplevel.background #PanelApplet label,
-panel-toplevel.background #PanelApplet image {
-  color: #D3DAE3;
+#pluma-status-combo-button {
+  min-height: 0;
+  padding: 0;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0;
 }
 
-.mate-panel-menu-bar button label, .mate-panel-menu-bar button image,
-.mate-panel-menu-bar #tasklist-button label,
-.mate-panel-menu-bar #tasklist-button image,
-panel-toplevel.background button label,
-panel-toplevel.background button image,
-panel-toplevel.background #tasklist-button label,
-panel-toplevel.background #tasklist-button image {
-  color: inherit;
+.gb-search-entry-occurrences-tag {
+  background: none;
 }
 
-.mate-panel-menu-bar .wnck-pager,
-panel-toplevel.background .wnck-pager {
-  color: #6a6d72;
-  background-color: #0d0e11;
+workbench.csd > stack.titlebar:not(headerbar) {
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
-.mate-panel-menu-bar .wnck-pager:hover,
-panel-toplevel.background .wnck-pager:hover {
-  background-color: #2f313c;
+workbench.csd > stack.titlebar:not(headerbar) headerbar, workbench.csd > stack.titlebar:not(headerbar) headerbar:first-child, workbench.csd > stack.titlebar:not(headerbar) headerbar:last-child {
+  border-radius: 0 0 0 0;
 }
 
-.mate-panel-menu-bar .wnck-pager:selected,
-panel-toplevel.background .wnck-pager:selected {
-  color: #a9caf1;
+editortweak .linked > entry.search:focus + .gb-linked-scroller {
+  border-top-color: #5294e2;
+}
+
+layouttab {
+  background-color: #ffffff;
+}
+
+layout {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  -PnlDockBin-handle-size: 1;
+}
+
+eggsearchbar box.search-bar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+pillbox {
+  color: #ffffff;
   background-color: #5294e2;
+  border-radius: 3px;
 }
 
-.mate-panel-menu-bar na-tray-applet,
-panel-toplevel.background na-tray-applet {
-  -NaTrayApplet-icon-padding: 0;
-  -NaTrayApplet-icon-size: 16px;
+pillbox:disabled label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+docktabstrip {
+  padding: 0 6px;
+  background-color: #fafbfc;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+docktabstrip docktab {
+  min-height: 28px;
+  border: solid transparent;
+  border-width: 0 1px;
+}
+
+docktabstrip docktab label {
+  opacity: 0.5;
+}
+
+docktabstrip docktab:checked label, docktabstrip docktab:hover label {
+  opacity: 1;
+}
+
+docktabstrip docktab:checked {
+  border-color: rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+}
+
+dockbin {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  -PnlDockBin-handle-size: 1;
+}
+
+dockpaned {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+dockoverlayedge {
+  background-color: #fafbfc;
+}
+
+dockoverlayedge docktabstrip {
+  padding: 0;
+  border: none;
+}
+
+dockoverlayedge.left-edge tab:checked,
+dockoverlayedge.right-edge tab:checked {
+  border-width: 1px 0;
+}
+
+popover.messagepopover.background {
+  padding: 0;
+}
+
+popover.messagepopover .popover-content-area {
+  margin: 16px;
+}
+
+popover.messagepopover .popover-action-area {
+  margin: 8px;
+}
+
+popover.messagepopover .popover-action-area button:not(:first-child):not(:last-child) {
+  margin: 0 4px;
+}
+
+popover.popover-selector {
+  padding: 0;
+}
+
+popover.popover-selector list row {
+  padding: 5px 0;
+}
+
+popover.popover-selector list row image {
+  margin-left: 3px;
+  margin-right: 10px;
+}
+
+entry.search.preferences-search {
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+}
+
+preferences stacksidebar.sidebar list {
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+}
+
+preferences stacksidebar.sidebar list separator {
+  background-color: transparent;
+}
+
+devhelppanel entry:focus,
+symboltreepanel entry:focus {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+button.run-arrow-button {
+  min-width: 12px;
+}
+
+omnibar.linked > entry:not(:only-child) {
+  border-style: solid;
+  border-radius: 3px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+gstyleslidein #scale_box button.toggle:checked,
+gstyleslidein #strings_controls button.toggle:checked,
+gstyleslidein #palette_controls button.toggle:checked,
+gstyleslidein #components_controls button.toggle:checked {
+  color: #5c616c;
+}
+
+configurationview entry.flat, configurationview .raven .raven-background spinbutton:not(.vertical), .raven .raven-background configurationview spinbutton:not(.vertical) {
+  background: none;
+}
+
+configurationview list {
+  border-width: 0;
 }
 
 .xfce4-panel.panel {
@@ -5560,55 +5515,30 @@ panel-toplevel.background na-tray-applet {
   box-shadow: inset 0 -2px #5294e2;
 }
 
-.mate-panel-menu-bar button:not(#tasklist-button),
-panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel button.flat, .xfce4-panel.panel button.sidebar-button, .xfce4-panel.panel button.budgie-menu-launcher, .xfce4-panel.panel .budgie-panel #tasklist-button, .budgie-panel .xfce4-panel.panel #tasklist-button {
+.xfce4-panel.panel button.flat, .xfce4-panel.panel button.sidebar-button, .xfce4-panel.panel button.budgie-menu-launcher, .xfce4-panel.panel .budgie-panel #tasklist-button, .budgie-panel .xfce4-panel.panel #tasklist-button, .mate-panel-menu-bar button:not(#tasklist-button),
+panel-toplevel.background button:not(#tasklist-button) {
   color: #D3DAE3;
   border-radius: 0;
   border: none;
   background-color: rgba(36, 37, 45, 0);
 }
 
-.mate-panel-menu-bar button:hover:not(#tasklist-button),
-panel-toplevel.background button:hover:not(#tasklist-button), .xfce4-panel.panel button.flat:hover, .xfce4-panel.panel button.sidebar-button:hover, .xfce4-panel.panel button.budgie-menu-launcher:hover, .xfce4-panel.panel .budgie-panel #tasklist-button:hover, .budgie-panel .xfce4-panel.panel #tasklist-button:hover {
+.xfce4-panel.panel button.flat:hover, .xfce4-panel.panel button.sidebar-button:hover, .xfce4-panel.panel button.budgie-menu-launcher:hover, .xfce4-panel.panel .budgie-panel #tasklist-button:hover, .budgie-panel .xfce4-panel.panel #tasklist-button:hover, .mate-panel-menu-bar button:hover:not(#tasklist-button),
+panel-toplevel.background button:hover:not(#tasklist-button) {
   border: none;
   background-color: #3a3d4a;
 }
 
-.mate-panel-menu-bar button:active:not(#tasklist-button),
-panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel.panel button.flat:active, .xfce4-panel.panel button.sidebar-button:active, .xfce4-panel.panel button.budgie-menu-launcher:active, .xfce4-panel.panel .budgie-panel #tasklist-button:active, .budgie-panel .xfce4-panel.panel #tasklist-button:active, .mate-panel-menu-bar button:checked:not(#tasklist-button),
-panel-toplevel.background button:checked:not(#tasklist-button), .xfce4-panel.panel button.flat:checked, .xfce4-panel.panel button.sidebar-button:checked, .xfce4-panel.panel button.budgie-menu-launcher:checked, .xfce4-panel.panel .budgie-panel #tasklist-button:checked, .budgie-panel .xfce4-panel.panel #tasklist-button:checked {
+.xfce4-panel.panel button.flat:active, .xfce4-panel.panel button.sidebar-button:active, .xfce4-panel.panel button.budgie-menu-launcher:active, .xfce4-panel.panel .budgie-panel #tasklist-button:active, .budgie-panel .xfce4-panel.panel #tasklist-button:active, .mate-panel-menu-bar button:active:not(#tasklist-button),
+panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel.panel button.flat:checked, .xfce4-panel.panel button.sidebar-button:checked, .xfce4-panel.panel button.budgie-menu-launcher:checked, .xfce4-panel.panel .budgie-panel #tasklist-button:checked, .budgie-panel .xfce4-panel.panel #tasklist-button:checked, .mate-panel-menu-bar button:checked:not(#tasklist-button),
+panel-toplevel.background button:checked:not(#tasklist-button) {
   color: #ffffff;
   border: none;
   background-color: #5294e2;
 }
 
-.mate-panel-menu-bar button:active:not(#tasklist-button) label, panel-toplevel.background button:active:not(#tasklist-button) label, .xfce4-panel.panel button.flat:active label, .xfce4-panel.panel button.sidebar-button:active label, .xfce4-panel.panel button.budgie-menu-launcher:active label, .xfce4-panel.panel .budgie-panel #tasklist-button:active label, .budgie-panel .xfce4-panel.panel #tasklist-button:active label, .mate-panel-menu-bar button:active:not(#tasklist-button) image, panel-toplevel.background button:active:not(#tasklist-button) image, .xfce4-panel.panel button.flat:active image, .xfce4-panel.panel button.sidebar-button:active image, .xfce4-panel.panel button.budgie-menu-launcher:active image, .xfce4-panel.panel .budgie-panel #tasklist-button:active image, .budgie-panel .xfce4-panel.panel #tasklist-button:active image, .mate-panel-menu-bar button:checked:not(#tasklist-button) label, panel-toplevel.background button:checked:not(#tasklist-button) label, .xfce4-panel.panel button.flat:checked label, .xfce4-panel.panel button.sidebar-button:checked label, .xfce4-panel.panel button.budgie-menu-launcher:checked label, .xfce4-panel.panel .budgie-panel #tasklist-button:checked label, .budgie-panel .xfce4-panel.panel #tasklist-button:checked label, .mate-panel-menu-bar button:checked:not(#tasklist-button) image, panel-toplevel.background button:checked:not(#tasklist-button) image, .xfce4-panel.panel button.flat:checked image, .xfce4-panel.panel button.sidebar-button:checked image, .xfce4-panel.panel button.budgie-menu-launcher:checked image, .xfce4-panel.panel .budgie-panel #tasklist-button:checked image, .budgie-panel .xfce4-panel.panel #tasklist-button:checked image {
+.xfce4-panel.panel button.flat:active label, .xfce4-panel.panel button.sidebar-button:active label, .xfce4-panel.panel button.budgie-menu-launcher:active label, .xfce4-panel.panel .budgie-panel #tasklist-button:active label, .budgie-panel .xfce4-panel.panel #tasklist-button:active label, .mate-panel-menu-bar button:active:not(#tasklist-button) label, panel-toplevel.background button:active:not(#tasklist-button) label, .xfce4-panel.panel button.flat:active image, .xfce4-panel.panel button.sidebar-button:active image, .xfce4-panel.panel button.budgie-menu-launcher:active image, .xfce4-panel.panel .budgie-panel #tasklist-button:active image, .budgie-panel .xfce4-panel.panel #tasklist-button:active image, .mate-panel-menu-bar button:active:not(#tasklist-button) image, panel-toplevel.background button:active:not(#tasklist-button) image, .xfce4-panel.panel button.flat:checked label, .xfce4-panel.panel button.sidebar-button:checked label, .xfce4-panel.panel button.budgie-menu-launcher:checked label, .xfce4-panel.panel .budgie-panel #tasklist-button:checked label, .budgie-panel .xfce4-panel.panel #tasklist-button:checked label, .mate-panel-menu-bar button:checked:not(#tasklist-button) label, panel-toplevel.background button:checked:not(#tasklist-button) label, .xfce4-panel.panel button.flat:checked image, .xfce4-panel.panel button.sidebar-button:checked image, .xfce4-panel.panel button.budgie-menu-launcher:checked image, .xfce4-panel.panel .budgie-panel #tasklist-button:checked image, .budgie-panel .xfce4-panel.panel #tasklist-button:checked image, .mate-panel-menu-bar button:checked:not(#tasklist-button) image, panel-toplevel.background button:checked:not(#tasklist-button) image {
   color: inherit;
-}
-
-.nautilus-window .floating-bar {
-  padding: 1px;
-  background-color: #5294e2;
-  color: #ffffff;
-  border-radius: 2px 2px 0 0;
-}
-
-.nautilus-window .floating-bar.bottom.left {
-  border-top-left-radius: 0;
-}
-
-.nautilus-window .floating-bar.bottom.right {
-  border-top-right-radius: 0;
-}
-
-.nautilus-window .floating-bar button {
-  border: none;
-  border-radius: 100px;
-  min-height: 0;
-  min-width: 0;
-  padding: 0;
-  margin-right: 6px;
-  -gtk-icon-shadow: none;
 }
 
 .marlin-pathbar.pathbar {
@@ -5937,6 +5867,318 @@ window.background:not(.solid-csd) > notebook:not(.frame) {
 window.background:not(.solid-csd) > notebook:not(.frame) > stack {
   border: none;
   box-shadow: none;
+}
+
+/**************
+  * Vala-Panel *
+  **************/
+window#ValaPanel.background {
+  background-color: #24252d;
+  color: #D3DAE3;
+}
+
+window#ValaPanel.background decoration {
+  all: unset;
+}
+
+window#ValaPanel.background widget.-vala-panel-background > separator {
+  background-color: #24252d;
+}
+
+button.flat.-panel-button, button.-panel-button.sidebar-button, button.-panel-button.budgie-menu-launcher, .budgie-panel .-panel-button#tasklist-button {
+  border-radius: 0;
+  color: #D3DAE3;
+  font-weight: 700;
+  border: none;
+}
+
+button.flat.-panel-button:hover, button.-panel-button.sidebar-button:hover, button.-panel-button.budgie-menu-launcher:hover, .budgie-panel .-panel-button#tasklist-button:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+button.flat.-panel-button:active, button.-panel-button.sidebar-button:active, button.-panel-button.budgie-menu-launcher:active, .budgie-panel .-panel-button#tasklist-button:active {
+  color: #ffffff;
+}
+
+button.flat.-panel-button:checked, button.-panel-button.sidebar-button:checked, button.-panel-button.budgie-menu-launcher:checked, .budgie-panel .-panel-button#tasklist-button:checked {
+  background-color: transparent;
+  color: #ffffff;
+  box-shadow: inset 0 -2px #5294e2;
+}
+
+button.flat.-panel-button:checked:hover, button.-panel-button.sidebar-button:checked:hover, button.-panel-button.budgie-menu-launcher:checked:hover, .budgie-panel .-panel-button#tasklist-button:checked:hover {
+  background-image: radial-gradient(circle farthest-corner at center, rgba(211, 218, 227, 0) 100%, transparent 0%), image(rgba(211, 218, 227, 0));
+}
+
+button.flat.-panel-button:disabled, button.-panel-button.sidebar-button:disabled, button.-panel-button.budgie-menu-launcher:disabled, .budgie-panel .-panel-button#tasklist-button:disabled {
+  color: rgba(211, 218, 227, 0.5);
+}
+
+button.-panel-icon-button.sidebar-button:hover, button.-panel-icon-button.budgie-menu-launcher:hover, .budgie-panel .-panel-icon-button#tasklist-button:hover, button.-panel-icon-button.flat:hover {
+  box-shadow: inset 0 -2px rgba(211, 218, 227, 0.4);
+}
+
+button.-panel-icon-button.sidebar-button:active, button.-panel-icon-button.budgie-menu-launcher:active, .budgie-panel .-panel-icon-button#tasklist-button:active, button.-panel-icon-button.flat:active, button.-panel-icon-button.sidebar-button:checked, button.-panel-icon-button.budgie-menu-launcher:checked, .budgie-panel .-panel-icon-button#tasklist-button:checked, button.-panel-icon-button.flat:checked {
+  box-shadow: inset 0 -2px #5294e2;
+}
+
+.unpinned button.-panel-icon-button.sidebar-button, .unpinned button.-panel-icon-button.budgie-menu-launcher, .unpinned .budgie-panel .-panel-icon-button#tasklist-button, .budgie-panel .unpinned .-panel-icon-button#tasklist-button, .unpinned button.-panel-icon-button.flat {
+  border-radius: 0;
+}
+
+.unpinned button.-panel-icon-button.sidebar-button:hover, .unpinned button.-panel-icon-button.budgie-menu-launcher:hover, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:hover, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:hover, .unpinned button.-panel-icon-button.flat:hover {
+  -gtk-icon-effect: highlight;
+}
+
+.unpinned button.-panel-icon-button.sidebar-button:hover, .unpinned button.-panel-icon-button.budgie-menu-launcher:hover, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:hover, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:hover, .unpinned button.-panel-icon-button.flat:hover, .unpinned button.-panel-icon-button.sidebar-button:active, .unpinned button.-panel-icon-button.budgie-menu-launcher:active, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:active, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:active, .unpinned button.-panel-icon-button.flat:active, .unpinned button.-panel-icon-button.sidebar-button:checked, .unpinned button.-panel-icon-button.budgie-menu-launcher:checked, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:checked, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:checked, .unpinned button.-panel-icon-button.flat:checked {
+  box-shadow: inset 0 -2px #5294e2;
+}
+
+.pinned button.-panel-icon-button.running.sidebar-button, .pinned button.-panel-icon-button.running.budgie-menu-launcher, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button, .pinned button.-panel-icon-button.running.flat {
+  border-radius: 0;
+}
+
+.pinned button.-panel-icon-button.running.sidebar-button > image, .pinned button.-panel-icon-button.running.budgie-menu-launcher > image, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button > image, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button > image, .pinned button.-panel-icon-button.running.flat > image {
+  background-position: bottom center;
+}
+
+.pinned button.-panel-icon-button.running.sidebar-button:hover, .pinned button.-panel-icon-button.running.budgie-menu-launcher:hover, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:hover, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:hover, .pinned button.-panel-icon-button.running.flat:hover {
+  -gtk-icon-effect: highlight;
+}
+
+.pinned button.-panel-icon-button.running.sidebar-button:hover, .pinned button.-panel-icon-button.running.budgie-menu-launcher:hover, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:hover, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:hover, .pinned button.-panel-icon-button.running.flat:hover, .pinned button.-panel-icon-button.running.sidebar-button:active, .pinned button.-panel-icon-button.running.budgie-menu-launcher:active, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:active, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:active, .pinned button.-panel-icon-button.running.flat:active, .pinned button.-panel-icon-button.running.sidebar-button:checked, .pinned button.-panel-icon-button.running.budgie-menu-launcher:checked, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:checked, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:checked, .pinned button.-panel-icon-button.running.flat:checked {
+  box-shadow: inset 0 -2px #5294e2;
+}
+
+menubar.-vala-panel-background > menuitem {
+  padding: 0 4px;
+  font-weight: 700;
+}
+
+UnityDecoration {
+  -UnityDecoration-extents: 28px 1 1 1;
+  -UnityDecoration-input-extents: 10px;
+  -UnityDecoration-shadow-offset-x: 0px;
+  -UnityDecoration-shadow-offset-y: 3px;
+  -UnityDecoration-active-shadow-color: rgba(0, 0, 0, 0.2);
+  -UnityDecoration-active-shadow-radius: 12px;
+  -UnityDecoration-inactive-shadow-color: rgba(0, 0, 0, 0.07);
+  -UnityDecoration-inactive-shadow-radius: 7px;
+  -UnityDecoration-glow-size: 10px;
+  -UnityDecoration-glow-color: #5294e2;
+  -UnityDecoration-title-indent: 10px;
+  -UnityDecoration-title-fade: 35px;
+  -UnityDecoration-title-alignment: 0.0;
+}
+
+UnityDecoration .top {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom-width: 0;
+  border-radius: 4px 4px 0 0;
+  padding: 1px 6px 0 6px;
+  background-image: linear-gradient(to bottom, #282a33, #282a33);
+  color: rgba(207, 218, 231, 0.8);
+  box-shadow: inset 0 1px #2f313c;
+}
+
+UnityDecoration .top:backdrop {
+  border-bottom-width: 0;
+  color: rgba(207, 218, 231, 0.5);
+}
+
+UnityDecoration .left, UnityDecoration .right, UnityDecoration .bottom,
+UnityDecoration .left:backdrop, UnityDecoration .right:backdrop, UnityDecoration .bottom:backdrop {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}
+
+UnityPanelWidget,
+.unity-panel {
+  background-image: linear-gradient(to bottom, #1b2224, #1b2224);
+  color: white;
+  box-shadow: none;
+}
+
+UnityPanelWidget:backdrop,
+.unity-panel:backdrop {
+  color: #d6dde5;
+}
+
+.unity-panel.menubar.menuitem:hover,
+.unity-panel.menubar .menuitem *:hover {
+  border-radius: 0;
+  color: #ffffff;
+  background-image: linear-gradient(to bottom, #5294e2, #5294e2);
+  border-bottom: none;
+}
+
+.lightdm.menu {
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  padding: 1px;
+  color: white;
+}
+
+.lightdm-combo .menu {
+  background-color: #3a3d4a;
+  border-radius: 0px;
+  padding: 0px;
+  color: white;
+}
+
+.lightdm.menu .menuitem *,
+.lightdm.menu .menuitem.check:active,
+.lightdm.menu .menuitem.radio:active {
+  color: white;
+}
+
+.lightdm.menubar {
+  color: rgba(255, 255, 255, 0.8);
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.lightdm.menubar > .menuitem {
+  padding: 2px 6px;
+}
+
+.lightdm-combo.combobox-entry .button,
+.lightdm-combo .cell,
+.lightdm-combo .button,
+.lightdm-combo .entry,
+.lightdm.button,
+.lightdm.entry {
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  padding: 7px;
+  color: white;
+  text-shadow: none;
+}
+
+.lightdm.button,
+.lightdm.button:hover,
+.lightdm.button:active,
+.lightdm.button:active:focus,
+.lightdm.entry,
+.lightdm.entry:hover,
+.lightdm.entry:active,
+.lightdm.entry:active:focus {
+  background-image: none;
+  border-image: none;
+}
+
+.lightdm.button:focus,
+.lightdm.entry:focus {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-width: 1px;
+  border-style: solid;
+  color: white;
+}
+
+.lightdm.entry:selected {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.lightdm.entry:active {
+  -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+  animation: dashentry_spinner 1s infinite linear;
+}
+
+.lightdm.option-button {
+  padding: 2px;
+  background: none;
+  border: 0;
+}
+
+.lightdm.toggle-button {
+  background: none;
+  border-width: 0;
+}
+
+.lightdm.toggle-button.selected {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-width: 1px;
+}
+
+@keyframes dashentry_spinner {
+  to {
+    -gtk-icon-transform: rotate(1turn);
+  }
+}
+
+.atril-window .primary-toolbar toolbar, .atril-window .primary-toolbar .inline-toolbar {
+  background: none;
+}
+
+MsdOsdWindow.background.osd {
+  border-radius: 2px;
+  border: 1px solid #16171c;
+}
+
+MsdOsdWindow.background.osd .progressbar {
+  background-color: #5294e2;
+  border: none;
+  border-color: red;
+  border-radius: 5px;
+}
+
+MsdOsdWindow.background.osd .trough {
+  background-color: #1d1e25;
+  border: none;
+  border-radius: 5px;
+}
+
+.mate-panel-menu-bar, .mate-panel-menu-bar menubar,
+panel-toplevel.background,
+panel-toplevel.background menubar {
+  background-color: #24252d;
+}
+
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar #PanelApplet label,
+.mate-panel-menu-bar #PanelApplet image,
+panel-toplevel.background menubar,
+panel-toplevel.background #PanelApplet label,
+panel-toplevel.background #PanelApplet image {
+  color: #D3DAE3;
+}
+
+.mate-panel-menu-bar button label, .mate-panel-menu-bar button image,
+.mate-panel-menu-bar #tasklist-button label,
+.mate-panel-menu-bar #tasklist-button image,
+panel-toplevel.background button label,
+panel-toplevel.background button image,
+panel-toplevel.background #tasklist-button label,
+panel-toplevel.background #tasklist-button image {
+  color: inherit;
+}
+
+.mate-panel-menu-bar .wnck-pager,
+panel-toplevel.background .wnck-pager {
+  color: #6a6d72;
+  background-color: #0d0e11;
+}
+
+.mate-panel-menu-bar .wnck-pager:hover,
+panel-toplevel.background .wnck-pager:hover {
+  background-color: #2f313c;
+}
+
+.mate-panel-menu-bar .wnck-pager:selected,
+panel-toplevel.background .wnck-pager:selected {
+  color: #a9caf1;
+  background-color: #5294e2;
+}
+
+.mate-panel-menu-bar na-tray-applet,
+panel-toplevel.background na-tray-applet {
+  -NaTrayApplet-icon-padding: 0;
+  -NaTrayApplet-icon-size: 16px;
 }
 
 /******************
@@ -6717,246 +6959,175 @@ calendar.raven-calendar:selected {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-/**************
-  * Vala-Panel *
-  **************/
-window#ValaPanel.background {
+#panel_window {
   background-color: #24252d;
   color: #D3DAE3;
+  font-weight: bold;
+  box-shadow: inset 0 -1px #141519;
 }
 
-window#ValaPanel.background decoration {
-  all: unset;
+#panel_window menubar {
+  padding-left: 5px;
 }
 
-window#ValaPanel.background widget.-vala-panel-background > separator {
-  background-color: #24252d;
-}
-
-button.flat.-panel-button, button.-panel-button.sidebar-button, button.-panel-button.budgie-menu-launcher, .budgie-panel .-panel-button#tasklist-button {
-  border-radius: 0;
-  color: #D3DAE3;
-  font-weight: 700;
-  border: none;
-}
-
-button.flat.-panel-button:hover, button.-panel-button.sidebar-button:hover, button.-panel-button.budgie-menu-launcher:hover, .budgie-panel .-panel-button#tasklist-button:hover {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-button.flat.-panel-button:active, button.-panel-button.sidebar-button:active, button.-panel-button.budgie-menu-launcher:active, .budgie-panel .-panel-button#tasklist-button:active {
-  color: #ffffff;
-}
-
-button.flat.-panel-button:checked, button.-panel-button.sidebar-button:checked, button.-panel-button.budgie-menu-launcher:checked, .budgie-panel .-panel-button#tasklist-button:checked {
+#panel_window menubar, #panel_window menubar > menuitem {
   background-color: transparent;
-  color: #ffffff;
-  box-shadow: inset 0 -2px #5294e2;
+  color: #D3DAE3;
+  font-weight: bold;
 }
 
-button.flat.-panel-button:checked:hover, button.-panel-button.sidebar-button:checked:hover, button.-panel-button.budgie-menu-launcher:checked:hover, .budgie-panel .-panel-button#tasklist-button:checked:hover {
-  background-image: radial-gradient(circle farthest-corner at center, rgba(211, 218, 227, 0) 100%, transparent 0%), image(rgba(211, 218, 227, 0));
-}
-
-button.flat.-panel-button:disabled, button.-panel-button.sidebar-button:disabled, button.-panel-button.budgie-menu-launcher:disabled, .budgie-panel .-panel-button#tasklist-button:disabled {
+#panel_window menubar menuitem:disabled {
   color: rgba(211, 218, 227, 0.5);
 }
 
-button.-panel-icon-button.sidebar-button:hover, button.-panel-icon-button.budgie-menu-launcher:hover, .budgie-panel .-panel-icon-button#tasklist-button:hover, button.-panel-icon-button.flat:hover {
-  box-shadow: inset 0 -2px rgba(211, 218, 227, 0.4);
+#panel_window menubar menuitem:disabled label {
+  color: inherit;
 }
 
-button.-panel-icon-button.sidebar-button:active, button.-panel-icon-button.budgie-menu-launcher:active, .budgie-panel .-panel-icon-button#tasklist-button:active, button.-panel-icon-button.flat:active, button.-panel-icon-button.sidebar-button:checked, button.-panel-icon-button.budgie-menu-launcher:checked, .budgie-panel .-panel-icon-button#tasklist-button:checked, button.-panel-icon-button.flat:checked {
-  box-shadow: inset 0 -2px #5294e2;
+#panel_window menubar menu > menuitem {
+  font-weight: normal;
 }
 
-.unpinned button.-panel-icon-button.sidebar-button, .unpinned button.-panel-icon-button.budgie-menu-launcher, .unpinned .budgie-panel .-panel-icon-button#tasklist-button, .budgie-panel .unpinned .-panel-icon-button#tasklist-button, .unpinned button.-panel-icon-button.flat {
-  border-radius: 0;
-}
-
-.unpinned button.-panel-icon-button.sidebar-button:hover, .unpinned button.-panel-icon-button.budgie-menu-launcher:hover, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:hover, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:hover, .unpinned button.-panel-icon-button.flat:hover {
-  -gtk-icon-effect: highlight;
-}
-
-.unpinned button.-panel-icon-button.sidebar-button:hover, .unpinned button.-panel-icon-button.budgie-menu-launcher:hover, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:hover, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:hover, .unpinned button.-panel-icon-button.flat:hover, .unpinned button.-panel-icon-button.sidebar-button:active, .unpinned button.-panel-icon-button.budgie-menu-launcher:active, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:active, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:active, .unpinned button.-panel-icon-button.flat:active, .unpinned button.-panel-icon-button.sidebar-button:checked, .unpinned button.-panel-icon-button.budgie-menu-launcher:checked, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:checked, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:checked, .unpinned button.-panel-icon-button.flat:checked {
-  box-shadow: inset 0 -2px #5294e2;
-}
-
-.pinned button.-panel-icon-button.running.sidebar-button, .pinned button.-panel-icon-button.running.budgie-menu-launcher, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button, .pinned button.-panel-icon-button.running.flat {
-  border-radius: 0;
-}
-
-.pinned button.-panel-icon-button.running.sidebar-button > image, .pinned button.-panel-icon-button.running.budgie-menu-launcher > image, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button > image, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button > image, .pinned button.-panel-icon-button.running.flat > image {
-  background-position: bottom center;
-}
-
-.pinned button.-panel-icon-button.running.sidebar-button:hover, .pinned button.-panel-icon-button.running.budgie-menu-launcher:hover, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:hover, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:hover, .pinned button.-panel-icon-button.running.flat:hover {
-  -gtk-icon-effect: highlight;
-}
-
-.pinned button.-panel-icon-button.running.sidebar-button:hover, .pinned button.-panel-icon-button.running.budgie-menu-launcher:hover, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:hover, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:hover, .pinned button.-panel-icon-button.running.flat:hover, .pinned button.-panel-icon-button.running.sidebar-button:active, .pinned button.-panel-icon-button.running.budgie-menu-launcher:active, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:active, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:active, .pinned button.-panel-icon-button.running.flat:active, .pinned button.-panel-icon-button.running.sidebar-button:checked, .pinned button.-panel-icon-button.running.budgie-menu-launcher:checked, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:checked, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:checked, .pinned button.-panel-icon-button.running.flat:checked {
-  box-shadow: inset 0 -2px #5294e2;
-}
-
-menubar.-vala-panel-background > menuitem {
-  padding: 0 4px;
-  font-weight: 700;
-}
-
-UnityDecoration {
-  -UnityDecoration-extents: 28px 1 1 1;
-  -UnityDecoration-input-extents: 10px;
-  -UnityDecoration-shadow-offset-x: 0px;
-  -UnityDecoration-shadow-offset-y: 3px;
-  -UnityDecoration-active-shadow-color: rgba(0, 0, 0, 0.2);
-  -UnityDecoration-active-shadow-radius: 12px;
-  -UnityDecoration-inactive-shadow-color: rgba(0, 0, 0, 0.07);
-  -UnityDecoration-inactive-shadow-radius: 7px;
-  -UnityDecoration-glow-size: 10px;
-  -UnityDecoration-glow-color: #5294e2;
-  -UnityDecoration-title-indent: 10px;
-  -UnityDecoration-title-fade: 35px;
-  -UnityDecoration-title-alignment: 0.0;
-}
-
-UnityDecoration .top {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom-width: 0;
-  border-radius: 4px 4px 0 0;
-  padding: 1px 6px 0 6px;
-  background-image: linear-gradient(to bottom, #282a33, #282a33);
-  color: rgba(207, 218, 231, 0.8);
-  box-shadow: inset 0 1px #2f313c;
-}
-
-UnityDecoration .top:backdrop {
-  border-bottom-width: 0;
-  color: rgba(207, 218, 231, 0.5);
-}
-
-UnityDecoration .left, UnityDecoration .right, UnityDecoration .bottom,
-UnityDecoration .left:backdrop, UnityDecoration .right:backdrop, UnityDecoration .bottom:backdrop {
+#login_window,
+#shutdown_dialog,
+#restart_dialog {
+  font-weight: normal;
+  border-style: none;
   background-color: transparent;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  color: #5c616c;
 }
 
-UnityPanelWidget,
-.unity-panel {
-  background-image: linear-gradient(to bottom, #1b2224, #1b2224);
-  color: white;
-  box-shadow: none;
+#content_frame {
+  padding-bottom: 14px;
+  background-color: #fafbfc;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border: solid rgba(0, 0, 0, 0.1);
+  border-width: 1px 1px 0 1px;
 }
 
-UnityPanelWidget:backdrop,
-.unity-panel:backdrop {
-  color: #d6dde5;
+#content_frame button {
+  color: #5c616c;
+  border-color: rgba(0, 0, 0, 0.12);
+  background-color: white;
 }
 
-.unity-panel.menubar.menuitem:hover,
-.unity-panel.menubar .menuitem *:hover {
-  border-radius: 0;
+#content_frame button:hover {
+  color: #393c43;
+  border-color: rgba(0, 0, 0, 0.12);
+  background-color: white;
+}
+
+#content_frame button:active, #content_frame button:checked {
   color: #ffffff;
-  background-image: linear-gradient(to bottom, #5294e2, #5294e2);
-  border-bottom: none;
+  border-color: rgba(0, 0, 0, 0.12);
+  background-color: #5294e2;
 }
 
-.lightdm.menu {
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-color: rgba(255, 255, 255, 0.8);
-  border-radius: 4px;
-  padding: 1px;
-  color: white;
+#content_frame button:disabled {
+  border-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.55);
 }
 
-.lightdm-combo .menu {
-  background-color: #3a3d4a;
-  border-radius: 0px;
-  padding: 0px;
-  color: white;
+#content_frame button:disabled label, #content_frame button:disabled {
+  color: rgba(92, 97, 108, 0.55);
 }
 
-.lightdm.menu .menuitem *,
-.lightdm.menu .menuitem.check:active,
-.lightdm.menu .menuitem.radio:active {
-  color: white;
+#buttonbox_frame {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  border-style: none;
+  background-color: #282A33;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border: solid rgba(0, 0, 0, 0.1);
+  border-width: 0 1px 1px 1px;
+  box-shadow: inset 0 1px #e4edf3;
 }
 
-.lightdm.menubar {
-  color: rgba(255, 255, 255, 0.8);
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.5);
+#buttonbox_frame button {
+  color: #D3DAE3;
+  border-color: rgba(13, 14, 17, 0.4);
+  background-color: rgba(89, 94, 114, 0.4);
 }
 
-.lightdm.menubar > .menuitem {
-  padding: 2px 6px;
+#buttonbox_frame button:hover {
+  color: #D3DAE3;
+  border-color: rgba(13, 14, 17, 0.4);
+  background-color: rgba(105, 110, 134, 0.5);
 }
 
-.lightdm-combo.combobox-entry .button,
-.lightdm-combo .cell,
-.lightdm-combo .button,
-.lightdm-combo .entry,
-.lightdm.button,
-.lightdm.entry {
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
-  padding: 7px;
-  color: white;
-  text-shadow: none;
+#buttonbox_frame button:active, #buttonbox_frame button:checked {
+  color: #ffffff;
+  border-color: rgba(13, 14, 17, 0.4);
+  background-color: #5294e2;
 }
 
-.lightdm.button,
-.lightdm.button:hover,
-.lightdm.button:active,
-.lightdm.button:active:focus,
-.lightdm.entry,
-.lightdm.entry:hover,
-.lightdm.entry:active,
-.lightdm.entry:active:focus {
-  background-image: none;
-  border-image: none;
+#buttonbox_frame button:disabled {
+  color: #5b5f68;
+  border-color: rgba(13, 14, 17, 0.4);
+  background-color: rgba(89, 94, 114, 0.25);
 }
 
-.lightdm.button:focus,
-.lightdm.entry:focus {
-  border-color: rgba(255, 255, 255, 0.1);
-  border-width: 1px;
-  border-style: solid;
-  color: white;
+#login_window #user_combobox {
+  color: #5c616c;
+  font-size: 13px;
 }
 
-.lightdm.entry:selected {
-  background-color: rgba(255, 255, 255, 0.8);
+#login_window #user_combobox menu {
+  font-weight: normal;
 }
 
-.lightdm.entry:active {
-  -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
-  animation: dashentry_spinner 1s infinite linear;
+#user_image {
+  padding: 3px;
+  border-radius: 2px;
 }
 
-.lightdm.option-button {
-  padding: 2px;
-  background: none;
-  border: 0;
+#shutdown_button.button {
+  background-clip: border-box;
+  color: green;
+  background-color: #F04A50;
+  border-color: #F04A50;
 }
 
-.lightdm.toggle-button {
-  background: none;
-  border-width: 0;
+#shutdown_button.button:hover {
+  background-clip: border-box;
+  color: green;
+  background-color: #f4797e;
+  border-color: #f4797e;
 }
 
-.lightdm.toggle-button.selected {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-width: 1px;
+#shutdown_button.button:active, #shutdown_button.button:checked {
+  background-clip: border-box;
+  color: green;
+  background-color: #ec1b22;
+  border-color: #ec1b22;
 }
 
-@keyframes dashentry_spinner {
-  to {
-    -gtk-icon-transform: rotate(1turn);
-  }
+#restart_button.button {
+  background-clip: border-box;
+  color: green;
+  background-color: #3a94ff;
+  border-color: #3a94ff;
+}
+
+#restart_button.button:hover {
+  background-clip: border-box;
+  color: green;
+  background-color: #6db0ff;
+  border-color: #6db0ff;
+}
+
+#restart_button.button:active, #restart_button.button:checked {
+  background-clip: border-box;
+  color: green;
+  background-color: #0778ff;
+  border-color: #0778ff;
+}
+
+#greeter_infobar {
+  border-bottom-width: 0;
+  font-weight: bold;
 }
 
 .overlay-bar {
@@ -7154,177 +7325,6 @@ GraniteWidgetsXsEntry entry {
 
 GtkListBox .h4 {
   padding-left: 6px;
-}
-
-#panel_window {
-  background-color: #24252d;
-  color: #D3DAE3;
-  font-weight: bold;
-  box-shadow: inset 0 -1px #141519;
-}
-
-#panel_window menubar {
-  padding-left: 5px;
-}
-
-#panel_window menubar, #panel_window menubar > menuitem {
-  background-color: transparent;
-  color: #D3DAE3;
-  font-weight: bold;
-}
-
-#panel_window menubar menuitem:disabled {
-  color: rgba(211, 218, 227, 0.5);
-}
-
-#panel_window menubar menuitem:disabled label {
-  color: inherit;
-}
-
-#panel_window menubar menu > menuitem {
-  font-weight: normal;
-}
-
-#login_window,
-#shutdown_dialog,
-#restart_dialog {
-  font-weight: normal;
-  border-style: none;
-  background-color: transparent;
-  color: #5c616c;
-}
-
-#content_frame {
-  padding-bottom: 14px;
-  background-color: #fafbfc;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  border: solid rgba(0, 0, 0, 0.1);
-  border-width: 1px 1px 0 1px;
-}
-
-#content_frame button {
-  color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.12);
-  background-color: white;
-}
-
-#content_frame button:hover {
-  color: #393c43;
-  border-color: rgba(0, 0, 0, 0.12);
-  background-color: white;
-}
-
-#content_frame button:active, #content_frame button:checked {
-  color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.12);
-  background-color: #5294e2;
-}
-
-#content_frame button:disabled {
-  border-color: rgba(0, 0, 0, 0.05);
-  background-color: rgba(255, 255, 255, 0.55);
-}
-
-#content_frame button:disabled label, #content_frame button:disabled {
-  color: rgba(92, 97, 108, 0.55);
-}
-
-#buttonbox_frame {
-  padding-top: 20px;
-  padding-bottom: 0px;
-  border-style: none;
-  background-color: #282A33;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border: solid rgba(0, 0, 0, 0.1);
-  border-width: 0 1px 1px 1px;
-  box-shadow: inset 0 1px #e4edf3;
-}
-
-#buttonbox_frame button {
-  color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
-  background-color: rgba(89, 94, 114, 0.4);
-}
-
-#buttonbox_frame button:hover {
-  color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
-  background-color: rgba(105, 110, 134, 0.5);
-}
-
-#buttonbox_frame button:active, #buttonbox_frame button:checked {
-  color: #ffffff;
-  border-color: rgba(13, 14, 17, 0.4);
-  background-color: #5294e2;
-}
-
-#buttonbox_frame button:disabled {
-  color: #5b5f68;
-  border-color: rgba(13, 14, 17, 0.4);
-  background-color: rgba(89, 94, 114, 0.25);
-}
-
-#login_window #user_combobox {
-  color: #5c616c;
-  font-size: 13px;
-}
-
-#login_window #user_combobox menu {
-  font-weight: normal;
-}
-
-#user_image {
-  padding: 3px;
-  border-radius: 2px;
-}
-
-#shutdown_button.button {
-  background-clip: border-box;
-  color: green;
-  background-color: #F04A50;
-  border-color: #F04A50;
-}
-
-#shutdown_button.button:hover {
-  background-clip: border-box;
-  color: green;
-  background-color: #f4797e;
-  border-color: #f4797e;
-}
-
-#shutdown_button.button:active, #shutdown_button.button:checked {
-  background-clip: border-box;
-  color: green;
-  background-color: #ec1b22;
-  border-color: #ec1b22;
-}
-
-#restart_button.button {
-  background-clip: border-box;
-  color: green;
-  background-color: #3a94ff;
-  border-color: #3a94ff;
-}
-
-#restart_button.button:hover {
-  background-clip: border-box;
-  color: green;
-  background-color: #6db0ff;
-  border-color: #6db0ff;
-}
-
-#restart_button.button:active, #restart_button.button:checked {
-  background-clip: border-box;
-  color: green;
-  background-color: #0778ff;
-  border-color: #0778ff;
-}
-
-#greeter_infobar {
-  border-bottom-width: 0;
-  font-weight: bold;
 }
 
 filechooser paned > separator {
