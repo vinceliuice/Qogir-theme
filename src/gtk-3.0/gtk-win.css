@@ -7414,27 +7414,27 @@ filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser pl
   background-position: 42px center;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button,
-.nautilus-window placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button {
+filechooser placessidebar.sidebar row.sidebar-row button.sidebar-button,
+.nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button {
   color: #646972;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:hover,
-.nautilus-window placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:hover {
-  color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
-  background-color: rgba(105, 110, 134, 0.5);
+filechooser placessidebar.sidebar row.sidebar-row button.sidebar-button:hover,
+.nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button:hover {
+  color: #393c43;
+  border-color: rgba(0, 0, 0, 0.12);
+  background-color: white;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:active,
-.nautilus-window placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:active {
+filechooser placessidebar.sidebar row.sidebar-row button.sidebar-button:active,
+.nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button:active {
   color: #ffffff;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: #5294e2;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:not(:hover):not(:active) > image,
-.nautilus-window placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:not(:hover):not(:active) > image {
+filechooser placessidebar.sidebar row.sidebar-row button.sidebar-button:not(:hover):not(:active) > image,
+.nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button:not(:hover):not(:active) > image {
   opacity: 0.5;
 }
 
