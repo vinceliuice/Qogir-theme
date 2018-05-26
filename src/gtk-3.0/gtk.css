@@ -6706,7 +6706,7 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 }
 
 .raven .raven-header.top {
-  padding: 0;
+  padding: 0 6px;
   background-color: #282A33;
   color: rgba(207, 218, 231, 0.8);
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
