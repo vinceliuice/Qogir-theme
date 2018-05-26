@@ -1278,7 +1278,7 @@ toolbar:not(.inline-toolbar) .linked > entry,
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.12)) 1 0 1 0;
+  border-image: linear-gradient(to bottom, #dae2e9, #dae2e9) 1 0 1 0;
 }
 
 .inline-toolbar {
@@ -6556,8 +6556,9 @@ popover.background.places-menu row {
 
 .budgie-panel menubar > menuitem:hover,
 .budgie-panel .menubar > menuitem:hover {
-  background-color: #5294e2;
+  background-color: transparent;
   color: #ffffff;
+  box-shadow: inset 0 -2px #5294e2, 0 1px #5294e2;
 }
 
 .budgie-panel menubar > menuitem:disabled,
