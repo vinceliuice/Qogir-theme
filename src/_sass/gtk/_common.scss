@@ -1989,7 +1989,7 @@ notebook {
 //
 // Scrollbars
 //
-$_scrollbar_bg_color: darken($base_color, 1%);
+$_scrollbar_bg_color: rgba(black, 0.05);
 
 scrollbar {
   $_slider_min_length: $large_size;

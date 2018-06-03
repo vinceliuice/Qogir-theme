@@ -907,6 +907,7 @@ StScrollBar {
 
   .panel-corner {
     -corner_radius: 0;
+    -panel-corner-radius: 0;
     -panel-corner-background-color: transparentize(black, 1);
     -panel-corner-border-width: 0;
     -panel-corner-border-color: transparent;
@@ -917,6 +918,7 @@ StScrollBar {
 
     &.lock-screen, &.login-screen, &unlock-screen {
       -corner_radius: 0;
+      -panel-corner-radius: 0;
       -panel-corner-background-color: transparent;
       -panel-corner-border-color: transparent;
     }
@@ -2370,7 +2372,7 @@ $legacy_icon_size: 24px;
 }
 
 #lockDialogGroup {
-  background: #2e3436 url(misc/noise-texture.png);
+  background: $osd_bg_color url(misc/noise-texture.png);
   background-repeat: repeat;
 }
 
