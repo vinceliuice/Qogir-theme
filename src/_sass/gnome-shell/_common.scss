@@ -1230,16 +1230,16 @@ StScrollBar {
   margin: 2px;
   border-radius: 12.5px;
 
-  &:hover, &:focus { background-color: transparentize(black, 0.9); }
+  &:hover, &:focus { background-color: $alt_bg_color; }
 
   &:active, &:selected {
     color: $fg_color;
-    background-color: transparentize(black, 0.85);
+    background-color: $sec_bg_color;
     border-width: 0; //avoid jumparound due to today
   }
 
   &.calendar-day-heading {  //day of week heading
-    color: transparentize($fg_color, 0.15);
+    color: $alt_fg_color;
     margin-top: 1em;
     font-size: 70%;
   }
@@ -1316,6 +1316,8 @@ StScrollBar {
   &-clear-button.button {
     margin: 1.5em 1.5em 0;
     padding: 4px 12px;
+    &:hover,&:focus { background-color: $alt_bg_color; }
+    &:active { background-color: $selected_bg_color; }
   }
 
   &-section-close {
@@ -1395,6 +1397,26 @@ StScrollBar {
     padding: 8px;
     font-size: 1em;
   }
+}
+
+// message close button
+.message-content * > StIcon {
+  icon-size: 16px;
+  border-radius: 16px;
+  padding: 2px;
+  color: $alt_fg_color;
+}
+
+/* FIXME: how do you do this in sass? */
+.message-content *:hover > StIcon,
+.message-content *:focus > StIcon {
+  color: $fg_color;
+  background-color: $alt_bg_color;
+}
+
+.message-content *:active > StIcon {
+  color: $fg_color;
+  background-color: $sec_bg_color;
 }
 
 .message-media-control {
@@ -1732,15 +1754,23 @@ StScrollBar {
 
 .show-apps {
 
+  .show-apps-icon {
+    color: $alt_header_fg;
+  }
+
+  &:hover, &:focus {
+    .show-apps-icon { color: $selected_fg_color; }
+  }
+
   .overview-icon {
-    background-color: transparentize(black, 0.5);
+    background-color: transparent;
     border-radius: 2px;
     border: 0px solid;
+    color: $header_fg;
   }
 
   &:hover .overview-icon {
-    background-color: transparentize(black, 0.3);
-    color: $selected_bg_color;
+    background-color: rgba(white, 0.1);
   }
 
   &:active .overview-icon,

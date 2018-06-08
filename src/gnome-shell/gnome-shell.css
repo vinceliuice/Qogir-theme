@@ -1325,17 +1325,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar-day-base:hover, .calendar-day-base:focus {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #eaeef2;
 }
 
 .calendar-day-base:active, .calendar-day-base:selected {
   color: #5c616c;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: dif(true, #dae2e9, white);
   border-width: 0;
 }
 
 .calendar-day-base.calendar-day-heading {
-  color: rgba(92, 97, 108, 0.85);
+  color: scale-alpha(#5c616c, 0.75);
   margin-top: 1em;
   font-size: 70%;
 }
@@ -1425,6 +1425,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 4px 12px;
 }
 
+.message-list-clear-button.button:hover, .message-list-clear-button.button:focus {
+  background-color: #eaeef2;
+}
+
+.message-list-clear-button.button:active {
+  background-color: #5294e2;
+}
+
 .message-list-section-close > StIcon {
   icon-size: 18px;
   border-radius: 0px;
@@ -1509,6 +1517,25 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: inherit;
   padding: 8px;
   font-size: 1em;
+}
+
+.message-content * > StIcon {
+  icon-size: 16px;
+  border-radius: 16px;
+  padding: 2px;
+  color: scale-alpha(#5c616c, 0.75);
+}
+
+/* FIXME: how do you do this in sass? */
+.message-content *:hover > StIcon,
+.message-content *:focus > StIcon {
+  color: #5c616c;
+  background-color: #eaeef2;
+}
+
+.message-content *:active > StIcon {
+  color: #5c616c;
+  background-color: dif(true, #dae2e9, white);
 }
 
 .message-media-control {
@@ -1885,15 +1912,23 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: url("common-assets/dash/running4.svg");
 }
 
+.show-apps .show-apps-icon {
+  color: rgba(241, 244, 248, 0.8);
+}
+
+.show-apps:hover .show-apps-icon, .show-apps:focus .show-apps-icon {
+  color: #ffffff;
+}
+
 .show-apps .overview-icon {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
   border-radius: 2px;
   border: 0px solid;
+  color: rgba(207, 218, 231, 0.8);
 }
 
 .show-apps:hover .overview-icon {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #5294e2;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .show-apps:active .overview-icon,
