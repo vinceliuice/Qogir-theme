@@ -6,10 +6,10 @@ $text_color: if($variant == 'light', #5c616c, #D3DAE3);
 $bg_color: if($variant =='light', #fafbfc, #32343D);
 $fg_color: if($variant =='light', #5c616c, #D3DAE3);
 
-$alt_base_color: darken($base_color, 2%);
-$sec_base_color: darken($base_color, 4%);
-$alt_bg_color: darken($bg_color, 2%);
-$sec_bg_color: darken($bg_color, 4%);
+$alt_base_color: if($variant == 'light', darken($base_color, 5%), lighten($base_color, 5%));
+$sec_base_color: if($variant == 'light', darken($base_color, 10%), lighten($base_color, 10%));
+$alt_bg_color: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 5%));
+$sec_bg_color: dif($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 10%));
 $alt_fg_color: scale-alpha($fg_color, 0.75);
 $sec_fg_color: scale-alpha($fg_color, 0.6);
 

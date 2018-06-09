@@ -5854,6 +5854,50 @@ window.background:not(.solid-csd) > notebook:not(.frame) > stack {
   box-shadow: none;
 }
 
+/***********
+  *  Geary  *
+  ***********/
+.sidebar.vertical > paned.sidebar-pane-separator .folder-frame > border, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > border {
+  border-width: 0;
+}
+
+.sidebar.vertical > paned.sidebar-pane-separator .conversation-frame > border, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-conversation-frame > border {
+  border: none;
+}
+
+.sidebar.vertical > paned.sidebar-pane-separator .conversation-frame treeview.view, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-conversation-frame treeview.view {
+  background-color: #ffffff;
+}
+
+.sidebar.vertical > paned.sidebar-pane-separator .conversation-frame treeview.view:selected, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-conversation-frame treeview.view:selected, .sidebar.vertical > paned.sidebar-pane-separator .conversation-frame treeview.view:selected:focus, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-conversation-frame treeview.view:selected:focus {
+  background-color: rgba(82, 148, 226, 0.15);
+  color: #5c616c;
+}
+
+.sidebar.vertical > paned.sidebar-pane-separator .conversation-frame treeview.view:selected:dir(ltr), .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-conversation-frame treeview.view:selected:dir(ltr), .sidebar.vertical > paned.sidebar-pane-separator .conversation-frame treeview.view:selected:focus:dir(ltr), .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-conversation-frame treeview.view:selected:focus:dir(ltr) {
+  box-shadow: inset 2px 0 #5294e2;
+}
+
+.sidebar.vertical > paned.sidebar-pane-separator .conversation-frame treeview.view:selected:dir(rtl), .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-conversation-frame treeview.view:selected:dir(rtl), .sidebar.vertical > paned.sidebar-pane-separator .conversation-frame treeview.view:selected:focus:dir(rtl), .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-conversation-frame treeview.view:selected:focus:dir(rtl) {
+  box-shadow: inset -2px 0 #5294e2;
+}
+
+.sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow:dir(ltr), .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow:dir(ltr) {
+  border: none;
+}
+
+.sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow:dir(rtl), .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow:dir(rtl) {
+  border: none;
+}
+
+.geary-titlebar-left separator {
+  opacity: 0;
+}
+
+stack#conversation_viewer scrolledwindow.geary-conversation-scroller > viewport.frame {
+  border: none;
+}
+
 /**************
   * Vala-Panel *
   **************/
@@ -7615,12 +7659,12 @@ filechooser actionbar entry:disabled {
 
 filechooser placessidebar.sidebar scrollbar,
 .nautilus-window placessidebar.sidebar scrollbar, .nemo-window .sidebar scrollbar, .caja-side-pane scrollbar {
-  border-color: #e4edf3;
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 filechooser placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .caja-side-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
   background-color: #8a8f98;
-  border: 1px solid #dae2e9;
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 filechooser placessidebar.sidebar scrollbar slider, .nautilus-window placessidebar.sidebar scrollbar slider, .nemo-window .sidebar scrollbar slider, .caja-side-pane scrollbar slider {
