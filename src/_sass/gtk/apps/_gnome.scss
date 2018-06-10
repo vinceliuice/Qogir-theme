@@ -213,33 +213,25 @@ $disk_space_free: darken($bg_color, 3%);
 
 .gedit-document-panel {
 
+  row.activatable { padding: 4px 0; }
+
   row button {
     min-width: 22px;
     min-height: 22px;
     padding: 0;
-
-    color: transparent;
-    background: none;
-    border: none;
-    box-shadow: none;
+    margin: 0 6px;
+    border-radius: 100px;
+    -gtk-outline-radius: 100px;
 
     image { color: inherit; }
   }
 
   row:hover:not(:selected) button {
-    color: mix($bg_color, $fg_color, 35%);
 
-    &:hover { color: lighten(red, 15%); }
-    &:active { color: $fg_color; }
-  }
-
-  row:hover:selected button:hover {
-    color: lighten(red, 20%);
-    background: none;
-    border: none;
-    box-shadow: none;
-
-    &:active { color: $selected_fg_color; }
+    &:active {
+      background-color: rgba($fg_color, 0.15);
+      border-color: $borders_color;
+    }
   }
 }
 

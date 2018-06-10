@@ -3926,7 +3926,7 @@ paned > separator {
   -gtk-icon-source: none;
   border-style: none;
   background-color: transparent;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12));
+  background-image: linear-gradient(to bottom, #494c59, #494c59);
   background-size: 1px 1px;
 }
 
@@ -3938,7 +3938,7 @@ paned > separator.wide {
   min-width: 5px;
   min-height: 5px;
   background-color: #32343D;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12));
+  background-image: linear-gradient(to bottom, #494c59, #494c59), linear-gradient(to bottom, #494c59, #494c59);
   background-size: 1px 1px, 1px 1px;
 }
 
@@ -4703,41 +4703,26 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   color: rgba(255, 255, 255, 0.9);
 }
 
+.gedit-document-panel row.activatable, .gedit-document-panel .budgie-menu button, .budgie-menu .gedit-document-panel button {
+  padding: 4px 0;
+}
+
 .gedit-document-panel row button {
   min-width: 22px;
   min-height: 22px;
   padding: 0;
-  color: transparent;
-  background: none;
-  border: none;
-  box-shadow: none;
+  margin: 0 6px;
+  border-radius: 100px;
+  -gtk-outline-radius: 100px;
 }
 
 .gedit-document-panel row button image {
   color: inherit;
 }
 
-.gedit-document-panel row:hover:not(:selected) button {
-  color: #9ba0a9;
-}
-
-.gedit-document-panel row:hover:not(:selected) button:hover {
-  color: #ff4d4d;
-}
-
 .gedit-document-panel row:hover:not(:selected) button:active {
-  color: #D3DAE3;
-}
-
-.gedit-document-panel row:hover:selected button:hover {
-  color: #ff6666;
-  background: none;
-  border: none;
-  box-shadow: none;
-}
-
-.gedit-document-panel row:hover:selected button:hover:active {
-  color: #ffffff;
+  background-color: rgba(211, 218, 227, 0.15);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .gedit-document-panel-dragged-row {

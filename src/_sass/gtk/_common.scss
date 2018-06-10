@@ -2913,7 +2913,7 @@ paned {
     -gtk-icon-source: none;
     border-style: none;
     background-color: transparent;
-    background-image: _solid($borders_color);
+    background-image: _solid($solid_borders_color);
     background-size: 1px 1px;
 
     &:selected { background-image: _solid($selected_bg_color); }
@@ -2922,7 +2922,7 @@ paned {
       min-width: 5px;
       min-height: 5px;
       background-color: $bg_color;
-      background-image: _solid($borders_color), _solid($borders_color);
+      background-image: _solid($solid_borders_color), _solid($solid_borders_color);
       background-size: 1px 1px, 1px 1px;
     }
   }
