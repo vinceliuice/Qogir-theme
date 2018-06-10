@@ -5174,14 +5174,6 @@ flowboxchild.bookmark-tag-widget-selected {
   background-color: #f0f3f6;
 }
 
-.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button > widget > box > image {
-  padding: 0;
-}
-
-.sidebar-paned scrolledwindow {
-  border: none;
-}
-
 window.csd > box.vertical > box.vertical > toolbar.horizontal, window.csd > box.vertical > box.vertical > .horizontal.inline-toolbar,
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal,
 window.solid-csd > box.vertical > box.vertical > .horizontal.inline-toolbar {
