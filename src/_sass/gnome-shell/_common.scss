@@ -1719,7 +1719,8 @@ StScrollBar {
   .right &:hover .overview-icon,
   .bottom &:hover .overview-icon,
   .top &:hover .overview-icon {
-    background-color: $selected_bg_color;
+    background-color: rgba($selected_bg_color, 0.5);
+    border: 1px solid $selected_bg_color;
   }
 
   &:active .overview-icon,
@@ -1727,7 +1728,8 @@ StScrollBar {
   .bottom &:active .overview-icon,
   .top &:active .overview-icon {
     box-shadow: none;
-    background-color: darken($selected_bg_color, 10%);
+    background-color: $selected_bg_color;
+    border: 1px solid darken($selected_bg_color, 10%);
   }
 
   &-running-dot {
