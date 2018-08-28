@@ -3839,7 +3839,7 @@ placessidebar > viewport.frame {
 placessidebar row {
   min-height: 28px;
   padding: 2px;
-  outline-offset: -3px -3px -3px -41px;
+  outline-offset: -3px;
 }
 
 placessidebar row > revealer {

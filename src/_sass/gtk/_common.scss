@@ -2830,7 +2830,7 @@ placessidebar {
     // Needs overriding of the GtkListBoxRow padding
     min-height: $medium_size;
     padding: 2px;
-    outline-offset: -3px -3px -3px -41px;
+    outline-offset: -3px;
 
     // Using margins/padding directly in the SidebarRow
     // will make the animation of the new bookmark row jump
