@@ -35,11 +35,13 @@ Or open the terminal at current directory.
 
 Run
 
-    ./Install                    (install all themes)
+    ./Install                     (Install all themes)
 
-    ./Install -t cir             (install default circle titlebutton style themes)
+    ./Install -t cir              (Install default circle titlebutton style themes)
 
-    ./Install -t win             (install Windows 10 like titlebutton style themes)
+    ./Install -t win              (Install Windows 10 like titlebutton style themes)
+
+    ./Install_with_background_img (Install themes with nautilus background imge)
 
 ## Screenshots
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot01.png?raw=true)

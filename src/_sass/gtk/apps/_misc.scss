@@ -16,14 +16,15 @@
 
     @include entry(focus);
 
-    &:selected { &:focus, & { @extend %selected_items; }}
+    &:selected { &:focus, & { @extend %selected_items; } }
   }
 
   .primary-toolbar {
       @extend %header_widgets;
       border: none;
-      color: $selected_fg_color;
+      color: $header_fg;
       background-color: opacify($header_bg, 1);
+      box-shadow: inset 0 -1px $borders_color;
     }
 
   // Pathbar
@@ -32,23 +33,23 @@
     > button {
       &:not(:last-child):not(:only-child) { margin: 0; }
 
-    padding-bottom: 2px;
-    margin: 0;
-    color: darken($selected_fg_color, 20%);
-    background-color: $header_bg;
+      padding-bottom: 2px;
+      margin: 0;
+      color: $header_fg;
+      background-color: $header_bg;
+      border: none;
 
-      &:hover { color: $selected_fg_color; background-color: lighten($header_bg, 8%); }
+      &:hover { color: darken($header_fg, 10%); box-shadow: inset 0 -2px rgba($alt_selected_bg_color, 0.5); }
       &:active, &:checked { 
-          transition: background-color 0.00001s 0.3s;
-          animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
-          color: $selected_fg_color; background-color: darken($header_bg, 10%); box-shadow: inset 0 -2px lighten($selected_bg_color, 10%);
+          color: $header_fg;
+          box-shadow: inset 0 -2px $alt_selected_bg_color;
         }
-      &:disabled { color: transparentize($selected_fg_color, 0.4); }
+      &:disabled { color: transparentize($header_fg, 0.4); }
 
       &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
     }
 
-    @include pathbar_linking_rules($sep_color:$header_button_border);
+   // @include pathbar_linking_rules($sep_color:$header_button_border);
   }
 }
 

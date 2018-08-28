@@ -1655,7 +1655,7 @@ menubar,
   padding: 0px;
   background-color: opacify($header_bg, 1);
   color: $header_fg;
-  border-bottom: 1px solid $borders_color;
+  box-shadow: inset 0 -1px $borders_color;
 
   &:backdrop {
     color: transparentize($header_fg, 0.3);

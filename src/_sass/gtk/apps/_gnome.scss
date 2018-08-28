@@ -74,21 +74,30 @@ terminal-window,
   }
 }
 
-.nautilus-window,
-.nautilus-window notebook,
-.nautilus-window notebook > stack {
-  background-image: -gtk-scaled(url("assets/backimage#{$asset_suffix}.png"),
+%nautilus_backimage {
+  background-image: -gtk-+scaled(url("assets/backimage#{$asset_suffix}.png"),
                                 url("assets/backimage#{$asset_suffix}@2.png"));
   background-repeat: no-repeat;
   background-position: bottom right;
 }
 
-// Set nautilus background pictures
-.nautilus-window headerbar {
+%headerbar_image {
   background-image: -gtk-scaled(url("assets/logo.png"),
                                 url("assets/logo@2.png"));
   background-repeat: no-repeat;
   background-position: top left;
+}
+
+.nautilus-window,
+.nautilus-window notebook,
+.nautilus-window notebook > stack {
+  background-image: none;
+  // @extend %nautilus_backimage;
+}
+
+// Set nautilus background pictures
+.nautilus-window headerbar {
+  @extend %headerbar_image;
 }
 
 .nautilus-window {

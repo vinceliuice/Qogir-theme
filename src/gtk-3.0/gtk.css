@@ -2205,7 +2205,7 @@ menubar,
   padding: 0px;
   background-color: #282a33;
   color: rgba(207, 218, 231, 0.8);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 menubar:backdrop,
@@ -4564,18 +4564,16 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   box-shadow: inset 0 -1px rgba(50, 52, 61, 0.15);
 }
 
-.nautilus-window,
-.nautilus-window notebook,
-.nautilus-window notebook > stack {
-  background-image: -gtk-scaled(url("assets/backimage.png"), url("assets/backimage@2.png"));
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}
-
 .nautilus-window headerbar {
   background-image: -gtk-scaled(url("assets/logo.png"), url("assets/logo@2.png"));
   background-repeat: no-repeat;
   background-position: top left;
+}
+
+.nautilus-window,
+.nautilus-window notebook,
+.nautilus-window notebook > stack {
+  background-image: none;
 }
 
 .nautilus-window searchbar {
@@ -5226,15 +5224,17 @@ window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem > .l
 
 .nemo-window .primary-toolbar {
   border: none;
-  color: #ffffff;
+  color: rgba(207, 218, 231, 0.8);
   background-color: #282a33;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button {
   padding-bottom: 2px;
   margin: 0;
-  color: #cccccc;
+  color: rgba(207, 218, 231, 0.8);
   background-color: #282A33;
+  border: none;
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:not(:last-child):not(:only-child) {
@@ -5242,24 +5242,17 @@ window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem > .l
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:hover {
-  color: #ffffff;
-  background-color: #3a3d4a;
+  color: rgba(174, 191, 213, 0.8);
+  box-shadow: inset 0 -2px rgba(104, 162, 230, 0.5);
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:active, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:checked {
-  transition: background-color 0.00001s 0.3s;
-  animation: header_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
-  color: #ffffff;
-  background-color: #121216;
-  box-shadow: inset 0 -2px #7eafe9;
+  color: rgba(207, 218, 231, 0.8);
+  box-shadow: inset 0 -2px #68a2e6;
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:disabled {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button + button {
-  border-left-style: none;
+  color: rgba(207, 218, 231, 0.4);
 }
 
 .caja-notebook {
