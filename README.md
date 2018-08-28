@@ -35,7 +35,11 @@ Or open the terminal at current directory.
 
 Run
 
-    ./install.sh
+    ./Install                    (install all themes)
+
+    ./Install -t cir             (install default circle titlebutton style themes)
+
+    ./Install -t win             (install Windows 10 like titlebutton style themes)
 
 ## Screenshots
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot01.png?raw=true)

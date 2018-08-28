@@ -13,19 +13,32 @@ fi
 SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Qogir
+WIN_VARIANTS=('' '-win')
 COLOR_VARIANTS=('' '-dark' '-light')
-CIRCLE_VARIANTS=('' '-win')
+
+usage() {
+  printf "%s\n" "Usage: $0 [OPTIONS...]"
+  printf "\n%s\n" "OPTIONS:"
+  printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
+  printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
+  printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [light|dark] (Default: All variants)"
+  printf "  %-25s%s\n" "-t, --titlebutton VARIANTS..." "Specify theme titlebutton variant(s) [cir|win] (Default: All variants)"
+  printf "  %-25s%s\n" "-h, --help" "Show this help"
+}
 
 install() {
   local dest=${1}
   local name=${2}
-  local color=${3}
-  local circle=${4}
+  local win=${3}
+  local color=${4}
 
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
-  local THEME_DIR=${DEST_DIR}/${name}${circle}${color}
+  [[ ${win} == '' ]] && local WM_CIR=${win}
+  [[ ${win} == '-win' ]] && local WM_WIN=${win}
+
+  local THEME_DIR=${DEST_DIR}/${name}${win}${color}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -37,13 +50,13 @@ install() {
 
   echo "[Desktop Entry]" >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme" >> ${THEME_DIR}/index.theme
-  echo "Name=Qogir${circle}${color}" >> ${THEME_DIR}/index.theme
+  echo "Name=Qogir${win}${color}" >> ${THEME_DIR}/index.theme
   echo "Comment=An Clean Gtk+ theme based on Flat Design" >> ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8" >> ${THEME_DIR}/index.theme
   echo "" >> ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]" >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=Qogir${circle}${color}" >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=Qogir${circle}${color}" >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=Qogir${win}${color}" >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=Qogir${win}${color}" >> ${THEME_DIR}/index.theme
   echo "IconTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close" >> ${THEME_DIR}/index.theme
@@ -56,9 +69,9 @@ install() {
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
   cp -ur ${SRC_DIR}/src/gtk-3.0/assets                                               ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${circle}${color}.css                             ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${win}${color}.css                                ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${circle}-dark.css                                ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${win}-dark.css                                   ${THEME_DIR}/gtk-3.0/gtk-dark.css
 
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
   cp -ur ${SRC_DIR}/src/gnome-shell/common-assets                                    ${THEME_DIR}/gnome-shell
@@ -78,9 +91,81 @@ install() {
 
 }
 
-for color in "${circles[@]:-${CIRCLE_VARIANTS[@]}}"; do
-  for circle in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${circle}" "${color}"
+while [[ $# -gt 0 ]]; do
+  case "${1}" in
+    -d|--dest)
+      dest="${2}"
+      if [[ ! -d "${dest}" ]]; then
+        echo "ERROR: Destination directory does not exist."
+        exit 1
+      fi
+      shift 2
+      ;;
+    -n|--name)
+      name="${2}"
+      shift 2
+      ;;
+    -t|--title)
+      shift
+      for variant in "${@}"; do
+        case "${variant}" in
+          win)
+            wins+=("${WIN_VARIANTS[1]}")
+            shift
+            ;;
+          cir)
+            wins+=("${WM_CIR}")
+            shift
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized thin variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
+      ;;
+    -c|--color)
+      shift
+      for variant in "${@}"; do
+        case "${variant}" in
+          light)
+            colors+=("${COLOR_VARIANTS[1]}")
+            shift
+            ;;
+          dark)
+            colors+=("${COLOR_VARIANTS[2]}")
+            shift
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized color variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      echo "ERROR: Unrecognized installation option '$1'."
+      echo "Try '$0 --help' for more information."
+      exit 1
+      ;;
+  esac
+done
+
+for win in "${wins[@]:-${WIN_VARIANTS[@]}}"; do
+  for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
+    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${win}" "${color}"
   done
 done
 
