@@ -15,17 +15,9 @@
    id="svg7539"
    version="1.1"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="switch-on-selected.svg">
+   sodipodi:docname="switch-on.svg">
   <defs
      id="defs7541">
-    <linearGradient
-       id="selected_fg_color"
-       osb:paint="solid">
-      <stop
-         style="stop-color:#ffffffgit;stop-opacity:1;"
-         offset="0"
-         id="stop4171" />
-    </linearGradient>
     <linearGradient
        id="selected_bg_color"
        osb:paint="solid">
@@ -111,14 +103,14 @@
   </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#595959"
+     pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0"
+     inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8.2495794"
-     inkscape:cx="19.245405"
-     inkscape:cy="6.2098944"
+     inkscape:zoom="11.666667"
+     inkscape:cx="0.51651058"
+     inkscape:cy="16.13001"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
@@ -157,7 +149,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -168,27 +160,27 @@
      transform="translate(-120,87.999997)">
     <g
        style="display:inline"
+       id="switch-active-dark"
        transform="translate(270,184.63782)"
-       id="switch-active-selected"
-       inkscape:label="#g1617">
+       inkscape:label="#g1583">
       <path
-         inkscape:connector-curvature="0"
-         style="opacity:0.75;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.57977116;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         style="opacity:1;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.57977116;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          d="m -132,13 c -5.54,0 -10,4.46 -10,10 0,5.54 4.46,10 10,10 h 30 c 5.54,0 10,-4.46 10,-10 0,-5.54 -4.46,-10 -10,-10 z m 0,1 h 30 c 4.985999,0 9,4.014001 9,9 0,4.985999 -4.014001,9 -9,9 h -30 c -4.986,0 -9,-4.014001 -9,-9 0,-4.985999 4.014,-9 9,-9 z"
          transform="translate(-8.000005,-285.63782)"
-         id="path1611" />
+         id="path1577"
+         inkscape:connector-curvature="0" />
       <circle
-         style="opacity:0.75;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.07692313;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="circle1613"
+         style="opacity:1;fill:#5294e2;fill-opacity:1;stroke:none;stroke-width:1.07692313;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="circle1579"
          cx="-110"
          cy="-262.63782"
          r="7" />
       <path
-         inkscape:connector-curvature="0"
-         style="opacity:0.75;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.07692313;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         style="opacity:1;fill:#1d78df;fill-opacity:1;stroke:none;stroke-width:1.07692313;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          d="m -102,16 a 7,7 0 0 0 -7,7 7,7 0 0 0 7,7 7,7 0 0 0 7,-7 7,7 0 0 0 -7,-7 z m 0,1 a 6,6 0 0 1 6,6 6,6 0 0 1 -6,6 6,6 0 0 1 -6,-6 6,6 0 0 1 6,-6 z"
          transform="translate(-8.000005,-285.63782)"
-         id="path1615" />
+         id="path1581"
+         inkscape:connector-curvature="0" />
     </g>
   </g>
 </svg>

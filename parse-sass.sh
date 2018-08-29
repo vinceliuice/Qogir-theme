@@ -19,4 +19,6 @@ for color in "${_COLOR_VARIANTS[@]}"; do
   echo "==> Generating the gtk-win${color}.css..."
   sassc $SASSC_OPT src/gnome-shell/gnome-shell${color}.{scss,css}
   echo "==> Generating the gnome-shell${color}.css..."
+  sassc $SASSC_OPT src/cinnamon/cinnamon${color}.{scss,css}
+  echo "==> Generating the cinnamon${color}.css..."
 done
