@@ -1855,7 +1855,7 @@ notebook {
         border-#{$_bpos}: 1px solid $borders_color;
 
         > tabs > tab {
-          padding: 3px $small_size $cont_padding $small_size;
+          padding: 2px $small_size 4px $small_size;
           min-width: $small_size;
           min-height: $small_size;
           border-radius: 0;

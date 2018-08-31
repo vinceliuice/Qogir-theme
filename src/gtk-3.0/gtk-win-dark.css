@@ -2441,7 +2441,7 @@ notebook > header.top {
 }
 
 notebook > header.top > tabs > tab {
-  padding: 3px 17px 6px 17px;
+  padding: 2px 17px 4px 17px;
   min-width: 17px;
   min-height: 17px;
   border-radius: 0;
@@ -2472,7 +2472,7 @@ notebook > header.bottom {
 }
 
 notebook > header.bottom > tabs > tab {
-  padding: 3px 17px 6px 17px;
+  padding: 2px 17px 4px 17px;
   min-width: 17px;
   min-height: 17px;
   border-radius: 0;
@@ -2503,7 +2503,7 @@ notebook > header.right {
 }
 
 notebook > header.right > tabs > tab {
-  padding: 3px 17px 6px 17px;
+  padding: 2px 17px 4px 17px;
   min-width: 17px;
   min-height: 17px;
   border-radius: 0;
@@ -2534,7 +2534,7 @@ notebook > header.left {
 }
 
 notebook > header.left > tabs > tab {
-  padding: 3px 17px 6px 17px;
+  padding: 2px 17px 4px 17px;
   min-width: 17px;
   min-height: 17px;
   border-radius: 0;
@@ -4513,7 +4513,7 @@ terminal-window notebook {
 */
 terminal-window notebook > header.top,
 .mate-terminal notebook > header.top {
-  padding-top: 3px;
+  margin-top: -1px;
   box-shadow: inset 0 1px #3e4250;
 }
 
