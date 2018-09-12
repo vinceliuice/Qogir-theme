@@ -2221,10 +2221,16 @@ $legacy_icon_size: 24px;
 
   .candidate-page-button {
     padding: 4px;
+    border: none;
+    @include button(osd);
+
+    &:hover { @include button(osd-hover); }
+    &:active, &:checked { @include button(osd-active); }
+    &:insensitive { background-color: transparent; box-shadow: none; }
   }
 
-  .candidate-page-button-previous { border-radius: 2px 0px 0px 2px; border-right-width: 0; }
-  .candidate-page-button-next { border-radius: 0px 2px 2px 0px;  }
+  .candidate-page-button-previous { border-radius: 2px 0px 0px 2px; }
+  .candidate-page-button-next { border-radius: 0px 2px 2px 0px; }
   .candidate-page-button-icon { icon-size: 1em; }
 
 //

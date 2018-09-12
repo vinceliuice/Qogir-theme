@@ -2487,11 +2487,37 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .candidate-page-button {
   padding: 4px;
+  border: none;
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #D3DAE3;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: rgba(89, 94, 114, 0.4);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.candidate-page-button:hover {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #D3DAE3;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: rgba(105, 110, 134, 0.5);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.candidate-page-button:active, .candidate-page-button:checked {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #5294e2;
+  box-shadow: inset 0 1px rgba(82, 148, 226, 0.05);
+}
+
+.candidate-page-button:insensitive {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .candidate-page-button-previous {
   border-radius: 2px 0px 0px 2px;
-  border-right-width: 0;
 }
 
 .candidate-page-button-next {

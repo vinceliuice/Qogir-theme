@@ -153,7 +153,7 @@
   // hovered button
   //
     color: darken($fg_color, 15%);
-    border-color: if($variant=='light', darken($button_border, 5%), $button_border);
+    border-color: if($variant=='light', darken($button_border, 5%), lighten($button_border, 5%));
     background-color: lighten($button_bg, 8%);
   }
 
@@ -162,7 +162,7 @@
   // pushed button
   //
     color: $selected_fg_color;
-    border-color: if($titlebar == 'light', $sec_selected_bg_color, $borders_color);
+    border-color: if($variant == 'light', $sec_selected_bg_color, $alt_selected_bg_color);
     background-color: $selected_bg_color;
   }
 
@@ -203,7 +203,7 @@
   // hovered header-bar button
   //
     color: $header_fg;
-    border-color: $borders_color;
+    border-color: if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
     background-color: if($titlebar == 'light', darken($header_bg, 5%), lighten($header_bg, 5%));
   }
 
@@ -212,7 +212,7 @@
   // pushed header-bar button
   //
     color: $selected_fg_color;
-    border-color: if($titlebar == 'light', $sec_selected_bg_color, $borders_color);
+    border-color: if($titlebar == 'light', $sec_selected_bg_color, $alt_selected_bg_color);
     background-color: $selected_bg_color;
   }
 

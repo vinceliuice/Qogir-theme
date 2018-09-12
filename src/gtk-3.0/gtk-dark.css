@@ -390,7 +390,7 @@ button:hover {
 
 button:active, button:checked {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #68a2e6;
   background-color: #5294e2;
   background-clip: padding-box;
   transition-duration: 50ms;
@@ -714,7 +714,7 @@ button.font separator, button.file separator {
 
 .inline-toolbar toolbutton > button:active, .inline-toolbar toolbutton > button:checked {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #68a2e6;
   background-color: #5294e2;
 }
 
@@ -1585,7 +1585,7 @@ headerbar button:hover, .nemo-window .primary-toolbar button:hover {
 headerbar button:active, .nemo-window .primary-toolbar button:active, headerbar button:checked, .nemo-window .primary-toolbar button:checked {
   transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #68a2e6;
   background-color: #5294e2;
   background-clip: padding-box;
 }
@@ -1752,7 +1752,7 @@ headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover, .
 
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #68a2e6;
   background-color: #5294e2;
 }
 
@@ -1871,7 +1871,7 @@ headerbar spinbutton:not(.vertical) button:hover, .nemo-window .primary-toolbar 
 
 headerbar spinbutton:not(.vertical) button:active, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:active, headerbar spinbutton:not(.vertical) button:checked, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:checked {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #68a2e6;
   background-color: #5294e2;
 }
 
@@ -4301,7 +4301,7 @@ headerbar button.titlebutton:hover, .titlebar button.titlebutton:hover {
 
 headerbar button.titlebutton:active, .titlebar button.titlebutton:active, headerbar button.titlebutton:checked, .titlebar button.titlebutton:checked {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #68a2e6;
   background-color: #5294e2;
 }
 
@@ -4620,7 +4620,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   }
   100% {
     color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: #68a2e6;
     background-color: #5294e2;
   }
 }
@@ -5762,7 +5762,7 @@ window.background.chromium headerbar.titlebar button.toggle:hover {
 
 window.background.chromium headerbar.titlebar button.toggle:checked, window.background.chromium headerbar.titlebar button.toggle:active {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #68a2e6;
   background-color: #5294e2;
 }
 
@@ -7019,7 +7019,7 @@ calendar.raven-calendar:selected {
 
 #content_frame button:active, #content_frame button:checked {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #68a2e6;
   background-color: #5294e2;
 }
 
@@ -7428,7 +7428,7 @@ filechooser placessidebar.sidebar row.sidebar-row button.sidebar-button:hover,
 filechooser placessidebar.sidebar row.sidebar-row button.sidebar-button:active,
 .nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button:active {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #68a2e6;
   background-color: #5294e2;
 }
 
@@ -7595,7 +7595,7 @@ filechooser actionbar button {
 
 filechooser actionbar button:active, filechooser actionbar button:checked {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: #68a2e6;
   background-color: #5294e2;
 }
 
