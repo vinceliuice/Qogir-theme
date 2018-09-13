@@ -913,7 +913,7 @@ toolbar {
     padding: 7px;
     border: 1px solid $borders_color;
     border-radius: 3px;
-    background-color: transparentize($osd_bg_color, 0.1);
+    background-color: $osd_bg_color;
 
     &.left,
     &.right,

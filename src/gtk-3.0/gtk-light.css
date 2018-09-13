@@ -1230,7 +1230,7 @@ toolbar.osd, .osd.inline-toolbar {
   padding: 7px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 3px;
-  background-color: rgba(40, 42, 51, 0.9);
+  background-color: #282A33;
 }
 
 toolbar.osd.left, .osd.left.inline-toolbar, toolbar.osd.right, .osd.right.inline-toolbar, toolbar.osd.top, .osd.top.inline-toolbar, toolbar.osd.bottom, .osd.bottom.inline-toolbar {
