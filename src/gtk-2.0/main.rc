@@ -701,8 +701,17 @@ style "menu" {
 
 style "menu_framed_box" {
 
-#  engine "adwaita" { # defoult menu border
+#  engine "adwaita" { # default menu border
 #  }
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      file     = "assets/frame.png"
+      border   = { 1, 1, 2, 1 }
+      stretch  = TRUE
+    }
+  }
 
 }
 

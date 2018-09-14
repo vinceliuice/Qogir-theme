@@ -1689,10 +1689,12 @@ menu,
   padding: 4px 0;
   border-radius: 0;
   background-color: $_menu_bg;
+  border: 1px solid $borders_color;
 
   .csd & {
     padding: 4px 0;
     border-radius: 0;
+    border: none;
   }
 
   separator,

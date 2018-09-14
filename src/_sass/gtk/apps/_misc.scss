@@ -457,6 +457,11 @@ window.background:not(.csd) {
     }
   }
 
+//  .menu { // context-menus
+//    border-radius: 0;
+//    border: none;
+//  }
+
   > menu > separator { color: $borders_color; }
   > menu > menuitem > label:disabled { color: $insensitive_fg_color; }
 }
