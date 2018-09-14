@@ -806,6 +806,24 @@
        y1="-152.63782"
        x2="257.5"
        y2="-137.63782" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#selected_bg_color"
+       id="linearGradient964"
+       gradientUnits="userSpaceOnUse"
+       x1="257.5"
+       y1="-152.63782"
+       x2="257.5"
+       y2="-137.63782" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#selected_bg_color"
+       id="linearGradient5496"
+       gradientUnits="userSpaceOnUse"
+       x1="257.5"
+       y1="-152.63782"
+       x2="257.5"
+       y2="-137.63782" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -815,8 +833,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.313708"
-     inkscape:cx="237.44111"
-     inkscape:cy="36.685879"
+     inkscape:cx="337.61778"
+     inkscape:cy="257.0347"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -6140,6 +6158,71 @@
            width="25"
            id="rect1731"
            style="opacity:1;fill:url(#linearGradient1737);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      </g>
+    </g>
+    <g
+       id="pathbar_button_active"
+       inkscape:label="#g5484">
+      <g
+         style="fill:#fafbfc;fill-opacity:1"
+         id="g946"
+         inkscape:label="#g5032"
+         transform="translate(57.5)">
+        <rect
+           inkscape:label="#rect5007"
+           y="-152.63782"
+           x="245"
+           height="15"
+           width="25"
+           id="rect944"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      </g>
+      <g
+         transform="matrix(1,0,0,0.13333351,57.5,-119.28608)"
+         inkscape:label="#g5032"
+         id="g950">
+        <rect
+           style="opacity:1;fill:url(#linearGradient964);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect948"
+           width="25"
+           height="15"
+           x="245"
+           y="-152.63782"
+           inkscape:label="#rect5007" />
+      </g>
+    </g>
+    <g
+       id="pathbar_button_prelight"
+       transform="translate(0,24.999993)"
+       style="opacity:0.5"
+       inkscape:label="#g5494">
+      <g
+         transform="translate(57.5)"
+         inkscape:label="#g5032"
+         id="g5488"
+         style="fill:#fafbfc;fill-opacity:1">
+        <rect
+           style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect5486"
+           width="25"
+           height="15"
+           x="245"
+           y="-152.63782"
+           inkscape:label="#rect5007" />
+      </g>
+      <g
+         id="g5492"
+         inkscape:label="#g5032"
+         transform="matrix(1,0,0,0.13333351,57.5,-119.28608)"
+         style="">
+        <rect
+           inkscape:label="#rect5007"
+           y="-152.63782"
+           x="245"
+           height="15"
+           width="25"
+           id="rect5490"
+           style="opacity:1;fill:url(#linearGradient5496);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       </g>
     </g>
   </g>

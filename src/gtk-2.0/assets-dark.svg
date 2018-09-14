@@ -814,9 +814,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.627416"
-     inkscape:cx="261.86118"
-     inkscape:cy="50.345103"
+     inkscape:zoom="5.656854"
+     inkscape:cx="285.91026"
+     inkscape:cy="276.06306"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -5966,7 +5966,7 @@
          inkscape:label="#g5032"
          id="menubar_button_bg">
         <rect
-           style="opacity:1;fill:#282a33;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
            id="wsad"
            width="25"
            height="15"
@@ -5986,6 +5986,72 @@
            width="25"
            id="rect2271"
            style="opacity:1;fill:url(#linearGradient2275);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      </g>
+    </g>
+    <g
+       transform="translate(0,-2.6171875e-6)"
+       style="display:inline"
+       id="pathbar_button_active"
+       inkscape:label="#g5484">
+      <g
+         style="fill:#fafbfc;fill-opacity:1"
+         id="g946"
+         inkscape:label="#g5032"
+         transform="translate(57.5)">
+        <rect
+           inkscape:label="#rect5007"
+           y="-152.63782"
+           x="245"
+           height="15"
+           width="25"
+           id="rect944"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      </g>
+      <g
+         transform="matrix(1,0,0,0.13333351,57.5,-119.28608)"
+         inkscape:label="#g5032"
+         id="g950">
+        <rect
+           style="opacity:1;fill:#5294e2;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect948"
+           width="25"
+           height="15"
+           x="245"
+           y="-152.63782"
+           inkscape:label="#rect5007" />
+      </g>
+    </g>
+    <g
+       id="pathbar_button_prelight"
+       transform="translate(0,24.999987)"
+       style="display:inline;opacity:0.5"
+       inkscape:label="#g5494">
+      <g
+         transform="translate(57.5)"
+         inkscape:label="#g5032"
+         id="g5488"
+         style="fill:#fafbfc;fill-opacity:1">
+        <rect
+           style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect5486"
+           width="25"
+           height="15"
+           x="245"
+           y="-152.63782"
+           inkscape:label="#rect5007" />
+      </g>
+      <g
+         id="g5492"
+         inkscape:label="#g5032"
+         transform="matrix(1,0,0,0.13333351,57.5,-119.28608)">
+        <rect
+           inkscape:label="#rect5007"
+           y="-152.63782"
+           x="245"
+           height="15"
+           width="25"
+           id="rect5490"
+           style="opacity:1;fill:#5294e2;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       </g>
     </g>
   </g>
