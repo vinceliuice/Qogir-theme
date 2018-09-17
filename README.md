@@ -35,11 +35,11 @@ Or open the terminal at current directory.
 
 Run
 
-    ./Install                     (Install all themes)
+    ./Install                        (Install all themes)
 
-    ./Install -t cir              (Install default circle titlebutton style themes)
+    ./Install -t budgie              (Install themes for budgie desktop)
 
-    ./Install -t win              (Install Windows 10 like titlebutton style themes)
+    ./Install -t gnome               (Install themes for gnome desktop)
 
     ./Install_with_background_img (Install themes with nautilus background imge)
 
