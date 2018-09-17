@@ -15,9 +15,9 @@ style "default" {
   GtkWidget::tooltip-alpha = 235
   GtkWidget::new-tooltip-style = 1 #for compatibility
 
-  GtkSeparatorMenuItem::horizontal-padding = 3
-  GtkSeparatorMenuItem::wide-separators = 1
-  GtkSeparatorMenuItem::separator-height = 1
+  GtkSeparatorMenuItem::horizontal-padding = 2
+  GtkSeparatorMenuItem::wide-separators = 0
+  GtkSeparatorMenuItem::separator-height = 0
 
   GtkButton::child-displacement-y = 0
   GtkButton::default-border = { 0, 0, 0, 0 }
@@ -708,7 +708,7 @@ style "menu_framed_box" {
     image {
       function = BOX
       file     = "assets/frame.png"
-      border   = { 1, 1, 2, 1 }
+      border   = { 1, 1, 1, 1 }
       stretch  = TRUE
     }
   }
