@@ -13,7 +13,7 @@ fi
 SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Qogir
-WIN_VARIANTS=('' '-win')
+DESK_VARIANTS=('' '-gnome')
 COLOR_VARIANTS=('' '-dark' '-light')
 
 usage() {
@@ -22,23 +22,23 @@ usage() {
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [light|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-t, --titlebutton VARIANTS..." "Specify theme titlebutton variant(s) [cir|win] (Default: All variants)"
+  printf "  %-25s%s\n" "-t, --desktop VARIANTS..." "Specify theme desktop variant(s) [budgie|gnome] (Default: All variants)"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 
 install() {
   local dest=${1}
   local name=${2}
-  local win=${3}
+  local desk=${3}
   local color=${4}
 
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
-  [[ ${win} == '' ]] && local WM_CIR=${win}
-  [[ ${win} == '-win' ]] && local WM_WIN=${win}
+  [[ ${desk} == '' ]] && local WM_BUD=${desk}
+  [[ ${desk} == '-gnome' ]] && local WM_GNO=${desk}
 
-  local THEME_DIR=${DEST_DIR}/${name}${win}${color}
+  local THEME_DIR=${DEST_DIR}/${name}${desk}${color}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -50,13 +50,13 @@ install() {
 
   echo "[Desktop Entry]" >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme" >> ${THEME_DIR}/index.theme
-  echo "Name=Qogir${win}${color}" >> ${THEME_DIR}/index.theme
+  echo "Name=Qogir${desk}${color}" >> ${THEME_DIR}/index.theme
   echo "Comment=An Clean Gtk+ theme based on Flat Design" >> ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8" >> ${THEME_DIR}/index.theme
   echo "" >> ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]" >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=Qogir${win}${color}" >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=Qogir${win}${color}" >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=Qogir${desk}${color}" >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=Qogir${desk}${color}" >> ${THEME_DIR}/index.theme
   echo "IconTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close" >> ${THEME_DIR}/index.theme
@@ -69,9 +69,9 @@ install() {
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
   cp -ur ${SRC_DIR}/src/gtk-3.0/assets                                               ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${win}${color}.css                                ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${desk}${color}.css                               ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${win}-dark.css                                   ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${desk}-dark.css                                  ${THEME_DIR}/gtk-3.0/gtk-dark.css
   cp -ur ${SRC_DIR}/src/gtk-3.0/thumbnail${ELSE_DARK}.png                            ${THEME_DIR}/gtk-3.0/thumbnail.png
 
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
@@ -113,16 +113,16 @@ while [[ $# -gt 0 ]]; do
       name="${2}"
       shift 2
       ;;
-    -t|--title)
+    -t|--desktop)
       shift
       for variant in "${@}"; do
         case "${variant}" in
-          win)
-            wins+=("${WIN_VARIANTS[1]}")
+          budgie)
+            desks+=("${DESK_VARIANTS[1]}")
             shift
             ;;
-          cir)
-            wins+=("${WM_CIR}")
+          gnome)
+            desks+=("${DESK_VARIANTS[2]}")
             shift
             ;;
           -*|--*)
@@ -171,9 +171,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-for win in "${wins[@]:-${WIN_VARIANTS[@]}}"; do
+for desk in "${desks[@]:-${DESK_VARIANTS[@]}}"; do
   for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${win}" "${color}"
+    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${desk}" "${color}"
   done
 done
 

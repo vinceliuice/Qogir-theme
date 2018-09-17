@@ -83,15 +83,21 @@ terminal-window,
   }
 
   headerbar {
-    padding-left: 6px;
+    padding-left: if($desktop == 'budgie', 6px, 44px);
+    @if $desktop == 'gnome' { @extend %headerbar_image; } // Set nautilus headerbar mountain icon
+
     &, &:backdrop {
       box-shadow: inset 0 -1px if($variant=='light', rgba($dark_sidebar_icon_bg, 0.15), $dark_sidebar_icon_bg),
-                  inset 38px 0 0 0 $dark_sidebar_icon_bg;
+                  inset 38px 0 0 0 if($desktop=='budgie', $dark_sidebar_icon_bg, transparent);
     }
 
+    @if $desktop == 'budgie' {
     button.titlebutton {
-      &.appmenu  {
+      &.appmenu  { // appmenu button
+        margin-left: -2px;
         border: none;
+        min-height: 30px;
+        min-width: 30px;
         border-radius: 50px;
         color: transparent;
         background-color: transparent;
@@ -99,7 +105,8 @@ terminal-window,
                                       url("assets/logo@2.png"));
         background-repeat: no-repeat;
         background-position: center;
-        image { opacity: 0; }
+
+        image { opacity: 0; } // Make menu button icon invisible
 
         &:hover {
           background-image: -gtk-scaled(url("assets/logo-hover.png"),
@@ -107,6 +114,7 @@ terminal-window,
           background-repeat: no-repeat;
           background-position: center;
         }
+
         &:checked, &:active {
           background-image: -gtk-scaled(url("assets/logo-active.png"),
                                         url("assets/logo-active@2.png"));
@@ -114,6 +122,7 @@ terminal-window,
           background-position: center;
         }
       }
+    }
     }
   }
 }
@@ -123,11 +132,6 @@ terminal-window,
 .nautilus-window notebook > stack {
   background-image: none;
   // @extend %nautilus_backimage;
-}
-
-// Set nautilus background pictures
-.nautilus-window headerbar {
-//  @extend %headerbar_image;
 }
 
 .nautilus-window {
