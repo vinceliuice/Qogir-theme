@@ -35,9 +35,6 @@ install() {
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
-  [[ ${desk} == '' ]] && local WM_BUD=${desk}
-  [[ ${desk} == '-gnome' ]] && local WM_GNO=${desk}
-
   local THEME_DIR=${DEST_DIR}/${name}${desk}${color}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
@@ -117,11 +114,11 @@ while [[ $# -gt 0 ]]; do
       shift
       for variant in "${@}"; do
         case "${variant}" in
-          budgie)
+          gnome)
             desks+=("${DESK_VARIANTS[1]}")
             shift
             ;;
-          gnome)
+          budgie)
             desks+=("${DESK_VARIANTS[2]}")
             shift
             ;;
