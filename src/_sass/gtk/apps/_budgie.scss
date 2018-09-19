@@ -4,10 +4,31 @@
  ******************/
 $bt_radius: 2px;
 
-%budgiebutton.flat {
+%budgie_button {
   transition: $button_transition;
   &:hover { transition: $button_transition; transition-duration: 350ms; }
   &:checked, &:active { transition: $button_transition; }
+}
+
+%budgie_flat_button {
+  color: $selected_fg_color;
+
+  &:hover {
+    color: $selected_fg_color;
+    background-color: rgba(white, 0.15);
+  }
+
+  &:disabled { color: rgba($selected_fg_color, 0.5); }
+
+  &:checked, &:active {
+    background-color: rgba(white, 0.25);
+    color: $selected_fg_color;
+  }
+
+  &:checked:disabled {
+    background-color: rgba(white, 0.1);
+    color: rgba($selected_fg_color, 0.65);
+  }
 }
 
 .budgie-container { background-color: transparent; }
@@ -17,7 +38,7 @@ $bt_radius: 2px;
 
   button {
     @extend %linked;
-    @extend %budgiebutton.flat;
+    @extend %budgie_button;
   }
 }
 
@@ -45,7 +66,7 @@ $bt_radius: 2px;
   }
 
   &:not(.budgie-menu) button.flat:not(.image-button) {
-    @extend %budgiebutton.flat;
+    @extend %budgie_button;
     min-height: 28px;
     padding: 0 8px;
     color: rgba($fg_color, 0.85);
@@ -449,7 +470,7 @@ button.raven-trigger {
       margin-top: -6px; // remove extra spaces, but not perfect :(
 
       button {
-        @extend %budgiebutton.flat;
+        @extend %budgie_button;
         min-height: 28px;
         min-width: 28px;
         margin: 0;
@@ -570,8 +591,10 @@ calendar.raven-calendar {
 
   button.image-button {
     padding: 8px;
+    border: none;
+    border-radius: 100px;
 
-    @extend %budgiebutton.flat;
+    @extend %budgie_flat_button;
   }
 }
 
@@ -618,7 +641,7 @@ calendar.raven-calendar {
   background-color: $header_bg;
   color: $header_fg;
 
-  button { @extend %budgiebutton.flat; }
+  button { @extend %budgie_button; }
 
   .linked > button { border-radius: $bt_radius; }
 }
