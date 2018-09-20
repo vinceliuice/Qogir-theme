@@ -2298,7 +2298,7 @@ scale {
   }
 
   slider {
-    $_slider_border: if($variant=='light', rgba(darken($button_border,25%), 0.1), rgba($button_border, 0.1));
+    $_slider_border: if($variant=='light', rgba(darken($button_border, 35%), 0.15), rgba($button_border, 0.1));
 
     background-color: $selected_fg_color;
     border: 1px solid $_slider_border;
@@ -3246,6 +3246,10 @@ decoration {
     border-radius: if($variant=='light', 4px 4px 0 0, 3px 3px 0 0);
     box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
     &.maximized { border-radius: 0; }
+  }
+  .popup & {
+    border-radius: 0;
+    box-shadow: none;
   }
   .csd.popup & {
     border-radius: 0;
