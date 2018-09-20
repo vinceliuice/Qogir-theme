@@ -671,11 +671,11 @@ calendar.raven-calendar {
 .budgie-polkit-dialog {
   @extend %budgie_dialog;
 
-  label:not(:last-child),
-  .dialog-title { font-size: 120%; }
+//  label:not(:last-child),
+//  .dialog-title { font-size: 90%; }
 
   .linked.horizontal > button {
-    padding: 8px 16px;
+    padding: 6px 16px;
     border: none;
     border-top: 1px solid $borders_color;
     border-radius: 0;
