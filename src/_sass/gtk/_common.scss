@@ -3247,6 +3247,10 @@ decoration {
     box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
     &.maximized { border-radius: 0; }
   }
+  .popup & {
+    border-radius: 0;
+    box-shadow: none;
+  }
   .csd.popup & {
     border-radius: 0;
     box-shadow: 0 3px $cont_padding if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
