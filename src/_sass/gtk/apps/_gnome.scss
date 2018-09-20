@@ -414,6 +414,32 @@ button.documents-favorite:active:hover {
 }
 
 //
+// Workaround for 3.26
+//
+
+row#Focus,
+row#ClickMethod,
+row#StaticWorkspaceTweak, // for 3.26.0
+row#dynamic-workspaces,
+row#PrimaryWorkspaceTweak, // for 3.26.0
+row#workspaces-only-on-primary {
+  padding: 0;
+  border: 1px solid $borders_color;
+
+  row:not(:last-child) { border-bottom: 1px solid $borders_color; }
+
+  &.tweak > list { margin-top: -3px; }
+}
+
+// Add more spaces between title and list
+row#Focus,
+row#ClickMethod,
+row#PrimaryWorkspaceTweak, // for 3.26.0
+row#workspaces-only-on-primary {
+  margin-top: 4px;
+}
+
+//
 // Transmission
 //
 .tr-workarea undershoot,

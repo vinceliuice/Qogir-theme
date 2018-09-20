@@ -2687,14 +2687,16 @@ messagedialog { // Message Dialog styling
     min-height: 20px;
     background-color: $header_bg;
     border-bottom: none;
+    border-top-left-radius: $bt_radius;
+    border-top-right-radius: $bt_radius;
   }
 
   .dialog-action-area button { padding: 8px; min-height: 0; }
 
   &.csd { // rounded bottom border styling for csd version
     &.background {
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: $bt_radius;
+      border-bottom-right-radius: $bt_radius;
       border: none;
     }
     .dialog-action-area button {
@@ -3253,7 +3255,7 @@ decoration {
   }
   .csd.popup & {
     border-radius: 0;
-    box-shadow: 0 3px $cont_padding if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
+    box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
   }
   tooltip.csd & {
     border-radius: 2px;

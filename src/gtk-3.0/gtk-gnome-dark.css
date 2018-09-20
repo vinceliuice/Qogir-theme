@@ -3726,6 +3726,8 @@ messagedialog .titlebar {
   min-height: 20px;
   background-color: #282A33;
   border-bottom: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
 messagedialog .dialog-action-area button {
@@ -3734,8 +3736,8 @@ messagedialog .dialog-action-area button {
 }
 
 messagedialog.csd.background {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
   border: none;
 }
 
@@ -4884,6 +4886,41 @@ button.documents-favorite:active:hover {
   background-image: linear-gradient(to bottom, #282A33, #282A33);
 }
 
+row#Focus,
+row#ClickMethod,
+row#StaticWorkspaceTweak,
+row#dynamic-workspaces,
+row#PrimaryWorkspaceTweak,
+row#workspaces-only-on-primary {
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+row#Focus row:not(:last-child),
+row#ClickMethod row:not(:last-child),
+row#StaticWorkspaceTweak row:not(:last-child),
+row#dynamic-workspaces row:not(:last-child),
+row#PrimaryWorkspaceTweak row:not(:last-child),
+row#workspaces-only-on-primary row:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+row#Focus.tweak > list,
+row#ClickMethod.tweak > list,
+row#StaticWorkspaceTweak.tweak > list,
+row#dynamic-workspaces.tweak > list,
+row#PrimaryWorkspaceTweak.tweak > list,
+row#workspaces-only-on-primary.tweak > list {
+  margin-top: -3px;
+}
+
+row#Focus,
+row#ClickMethod,
+row#PrimaryWorkspaceTweak,
+row#workspaces-only-on-primary {
+  margin-top: 4px;
+}
+
 .tr-workarea undershoot,
 .tr-workarea overshoot {
   border-color: transparent;
@@ -5699,6 +5736,11 @@ window.background:not(.csd) > widget > spinbutton:active {
 window.background:not(.csd) > widget > spinbutton .entry {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+window.background:not(.csd) .menu {
+  border-radius: 0;
+  border: none;
 }
 
 window.background:not(.csd) > menu > separator {
@@ -6967,12 +7009,14 @@ calendar.raven-calendar:selected {
   border-radius: 2px;
 }
 
-.budgie-session-dialog, .budgie-polkit-dialog, .budgie-run-dialog {
+.budgie-session-dialog,
+.budgie-polkit-dialog, .budgie-run-dialog {
   border-radius: 2px;
   background-color: #32343D;
 }
 
-.background.budgie-session-dialog, .background.budgie-polkit-dialog, .background.budgie-run-dialog {
+.background.budgie-session-dialog,
+.background.budgie-polkit-dialog, .background.budgie-run-dialog {
   border-radius: 2px;
 }
 
@@ -6980,38 +7024,41 @@ calendar.raven-calendar:selected {
   border-radius: 2px;
 }
 
-.budgie-session-dialog label:not(:last-child),
-.budgie-session-dialog .dialog-title {
-  font-size: 120%;
-}
-
-.budgie-session-dialog .linked.horizontal > button {
-  padding: 8px 16px;
+.budgie-session-dialog .linked.horizontal > button,
+.budgie-polkit-dialog .linked.horizontal > button {
+  padding: 6px 16px;
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 0;
 }
 
-.budgie-session-dialog .linked.horizontal > button:active, .budgie-session-dialog .linked.horizontal > button:checked {
+.budgie-session-dialog .linked.horizontal > button:active, .budgie-session-dialog .linked.horizontal > button:checked,
+.budgie-polkit-dialog .linked.horizontal > button:active,
+.budgie-polkit-dialog .linked.horizontal > button:checked {
   transition: background-color 0.00001s 0.3s;
   animation: ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
-.budgie-session-dialog .linked.horizontal > button:first-child {
+.budgie-session-dialog .linked.horizontal > button:first-child,
+.budgie-polkit-dialog .linked.horizontal > button:first-child {
   border-bottom-left-radius: 2px;
 }
 
-.budgie-session-dialog .linked.horizontal > button:last-child {
+.budgie-session-dialog .linked.horizontal > button:last-child,
+.budgie-polkit-dialog .linked.horizontal > button:last-child {
   border-bottom-right-radius: 2px;
 }
 
-.budgie-session-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):hover {
+.budgie-session-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):hover,
+.budgie-polkit-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):hover {
   background-color: alpha(#D3DAE3,0.06);
   border-color: rgba(255, 255, 255, 0.12);
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.budgie-session-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):active, .budgie-session-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):checked {
+.budgie-session-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):active, .budgie-session-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):checked,
+.budgie-polkit-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):active,
+.budgie-polkit-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):checked {
   color: #D3DAE3;
   background-color: alpha(#D3DAE3,0.1);
   border-color: rgba(255, 255, 255, 0.12);
