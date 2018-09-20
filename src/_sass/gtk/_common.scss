@@ -2687,14 +2687,16 @@ messagedialog { // Message Dialog styling
     min-height: 20px;
     background-color: $header_bg;
     border-bottom: none;
+    border-top-left-radius: $bt_radius;
+    border-top-right-radius: $bt_radius;
   }
 
   .dialog-action-area button { padding: 8px; min-height: 0; }
 
   &.csd { // rounded bottom border styling for csd version
     &.background {
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: $bt_radius;
+      border-bottom-right-radius: $bt_radius;
       border: none;
     }
     .dialog-action-area button {

@@ -3726,6 +3726,8 @@ messagedialog .titlebar {
   min-height: 20px;
   background-color: #282A33;
   border-bottom: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
 messagedialog .dialog-action-area button {
@@ -3734,8 +3736,8 @@ messagedialog .dialog-action-area button {
 }
 
 messagedialog.csd.background {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
   border: none;
 }
 
@@ -4902,6 +4904,22 @@ row#dynamic-workspaces row:not(:last-child),
 row#PrimaryWorkspaceTweak row:not(:last-child),
 row#workspaces-only-on-primary row:not(:last-child) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+row#Focus.tweak > list,
+row#ClickMethod.tweak > list,
+row#StaticWorkspaceTweak.tweak > list,
+row#dynamic-workspaces.tweak > list,
+row#PrimaryWorkspaceTweak.tweak > list,
+row#workspaces-only-on-primary.tweak > list {
+  margin-top: -3px;
+}
+
+row#Focus,
+row#ClickMethod,
+row#PrimaryWorkspaceTweak,
+row#workspaces-only-on-primary {
+  margin-top: 4px;
 }
 
 .tr-workarea undershoot,
