@@ -502,7 +502,8 @@ button.raven-trigger {
 
         &.image-button {
           border-radius: 100px;
-          -gtk-outline-radius: 100px; }
+          -gtk-outline-radius: 100px;
+        }
       }
     }
 
@@ -517,6 +518,7 @@ button.raven-trigger {
       stackswitcher button {
         margin: -4px 0;
         min-height: 36px;
+        min-width: 100px;
         border: none;
         border-radius: 0;
         background-color: transparent;

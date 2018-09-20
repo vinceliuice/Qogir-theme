@@ -6889,6 +6889,7 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 .raven .raven-header.top stackswitcher button {
   margin: -4px 0;
   min-height: 36px;
+  min-width: 100px;
   border: none;
   border-radius: 0;
   background-color: transparent;
