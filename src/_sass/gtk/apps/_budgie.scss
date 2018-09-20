@@ -624,6 +624,68 @@ calendar.raven-calendar {
   }
 }
 
+  // notification list
+  box.vertical > stack > box.vertical {
+
+    > .raven-background > viewport.frame {
+      padding: 0; // reset padding for full-width list node
+
+      list { background-color: transparent; }
+
+      > list > row.activatable {
+        padding-bottom: 4px;
+        background-color: transparent;
+        &:selected {
+          background-color: rgba($selected_bg_color, 0.75);
+//          &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
+//          &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
+
+          > grid > *, // legacy
+          > box.vertical * {
+            color: $selected_fg_color;
+            opacity: 1.0;
+          }
+        }
+
+        button.image-button { // 'dismiss'
+          margin: 0;
+          padding: 0;
+          border: none;
+          min-height: 28px;
+          min-width: 28px;
+          border-radius: 100px;
+          -gtk-outline-radius: 100px;
+
+//          &:hover { @include button(hover); }
+          &:active, &:checked { background-color: rgba(white, 0.35); }
+        }
+
+        // sub-list rows grouping
+        list {
+          border-radius: 2px;
+          border: 1px solid rgba(white, 0.12);
+
+          > row.activatable {
+            border-bottom: 1px solid rgba(white, 0.12);
+            &:last-child { border-bottom: none; }
+
+            &:selected {
+              background-color: rgba($selected_bg_color, 1);
+            }
+
+            button.image-button { // 'close'
+              min-height: 24px;
+              min-width: 24px;
+            }
+
+            // title labels
+//            box.horizontal > label:first-child { font-weight: 500; }
+          }
+        }
+      }
+    }
+  }
+
 // Notifications
 .budgie-notification-window {
     background-color: transparent;
@@ -635,6 +697,14 @@ calendar.raven-calendar {
   .notification-title { font-size: 120%; }
 
   .notification-body { @extend .dim-label; }
+
+  button.image-button { // 'close'
+    margin: 0;
+    padding: 0;
+    min-height: 28px;
+    min-width: 28px;
+    border-radius: 100px;
+  }
 }
 
 // On Screen Display in Budgie

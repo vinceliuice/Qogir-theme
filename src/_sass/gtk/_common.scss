@@ -543,6 +543,15 @@ button {
     @extend %linked;
   }
 
+  @at-root %circle_button,
+  &.close,
+  &.circular { // The Bloody Circul Button
+    border-radius: 100px;
+    -gtk-outline-radius: 100px;
+
+    // label { padding: 0; }
+  }
+
   .linked:not(.vertical) > &,
   .linked:not(.vertical) > &:hover,
   .linked:not(.vertical) > &:active,
@@ -2618,7 +2627,13 @@ row {
 
   button {
     @include button(osd);
+    margin: 0 0 0 0;
+    min-height: 24px;
+    min-width: 24px;
+    border-radius: 100px;
+    -gtk-outline-radius: 100px;
     &.flat {
+      border-radius: 100px;
       @extend %undecorated_button;
       border-color: transparentize($selected_bg_color, 1);
       &:disabled { @extend %undecorated_button; }

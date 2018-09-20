@@ -700,6 +700,11 @@ button.font separator, button.file separator {
   border-width: 1px;
 }
 
+button.close, button.circular, button.nautilus-circular-button.image-button {
+  border-radius: 100px;
+  -gtk-outline-radius: 100px;
+}
+
 .inline-toolbar toolbutton > button {
   color: #5c616c;
   border-color: rgba(0, 0, 0, 0.12);
@@ -3643,9 +3648,15 @@ row.activatable:selected.has-open-popup, .budgie-menu button:selected.has-open-p
   color: #D3DAE3;
   border-color: rgba(13, 14, 17, 0.4);
   background-color: rgba(89, 94, 114, 0.4);
+  margin: 0 0 0 0;
+  min-height: 24px;
+  min-width: 24px;
+  border-radius: 100px;
+  -gtk-outline-radius: 100px;
 }
 
 .app-notification button.flat, .app-notification button.sidebar-button, .app-notification button.budgie-menu-launcher, .app-notification .budgie-panel #tasklist-button, .budgie-panel .app-notification #tasklist-button {
+  border-radius: 100px;
   border-color: rgba(82, 148, 226, 0);
 }
 
@@ -7006,6 +7017,66 @@ calendar.raven-calendar:selected {
   border-radius: 100px;
 }
 
+box.vertical > stack > box.vertical > .raven-background > viewport.frame {
+  padding: 0;
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame list {
+  background-color: transparent;
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button {
+  padding-bottom: 4px;
+  background-color: transparent;
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected {
+  background-color: rgba(82, 148, 226, 0.75);
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected > grid > *, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected > grid > *,
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected > box.vertical *,
+.budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected > box.vertical * {
+  color: #ffffff;
+  opacity: 1.0;
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-height: 28px;
+  min-width: 28px;
+  border-radius: 100px;
+  -gtk-outline-radius: 100px;
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button:active, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:active, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button:checked, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:checked {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list {
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button:last-child {
+  border-bottom: none;
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable:selected, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button:selected {
+  background-color: #5294e2;
+}
+
+box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable button.image-button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button button.image-button {
+  min-height: 24px;
+  min-width: 24px;
+}
+
 .budgie-notification-window, .budgie-osd-window, .budgie-switcher-window {
   background-color: transparent;
   background-image: none;
@@ -7014,6 +7085,14 @@ calendar.raven-calendar:selected {
 
 .budgie-notification .notification-title, .budgie-switcher .notification-title {
   font-size: 120%;
+}
+
+.budgie-notification button.image-button, .budgie-switcher button.image-button {
+  margin: 0;
+  padding: 0;
+  min-height: 28px;
+  min-width: 28px;
+  border-radius: 100px;
 }
 
 .budgie-osd .budgie-osd-text {
