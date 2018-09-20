@@ -3255,7 +3255,7 @@ decoration {
   }
   .csd.popup & {
     border-radius: 0;
-    box-shadow: 0 3px $cont_padding if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
+    box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
   }
   tooltip.csd & {
     border-radius: 2px;

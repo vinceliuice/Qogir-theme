@@ -5738,6 +5738,11 @@ window.background:not(.csd) > widget > spinbutton .entry {
   border-bottom-right-radius: 0;
 }
 
+window.background:not(.csd) .menu {
+  border-radius: 0;
+  border: none;
+}
+
 window.background:not(.csd) > menu > separator {
   color: rgba(255, 255, 255, 0.12);
 }
