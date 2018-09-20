@@ -668,7 +668,8 @@ calendar.raven-calendar {
 }
 
 // Session Dialog
-.budgie-session-dialog {
+.budgie-session-dialog,
+.budgie-polkit-dialog {
   @extend %budgie_dialog;
 
   label:not(:last-child),
