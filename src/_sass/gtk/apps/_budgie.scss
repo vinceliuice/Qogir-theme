@@ -45,14 +45,13 @@ $bt_radius: 2px;
 .budgie-popover {
   margin: 0;
   padding: 0;
-  border: 1px solid $solid_borders_color;
+  border-color: $borders_color;
   border-radius: $bt_radius;
-  box-shadow: 0 1px 2px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
-              0 2px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
+  box-shadow: 0 3px 5px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
 
   background-color: $base_color;
 
-  .container { padding: 2px; }
+  .container { padding: 2px; border: none; }
 
   border { border: none; }
 
@@ -118,6 +117,21 @@ $bt_radius: 2px;
     separator { margin: 4px 0; }
 
     flowboxchild { padding: 0; }
+  }
+}
+
+// budgie specific popover widgets
+window.budgie-popover:not(.csd) {
+
+  > frame.container {
+    margin: 0 -1px -1px; // remove gap
+
+    .bottom & { padding: 2px 0 2px; } // revive bottom padding
+
+    &,
+    > border {
+      border-style: none; // hide container borders
+    }
   }
 }
 

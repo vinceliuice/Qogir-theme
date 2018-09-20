@@ -6269,14 +6269,15 @@ panel-toplevel.background na-tray-applet {
 .budgie-popover {
   margin: 0;
   padding: 0;
-  border: 1px solid #494c59;
+  border-color: rgba(255, 255, 255, 0.12);
   border-radius: 2px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.12);
   background-color: #282A33;
 }
 
 .budgie-popover .container {
   padding: 2px;
+  border: none;
 }
 
 .budgie-popover border {
@@ -6365,6 +6366,19 @@ panel-toplevel.background na-tray-applet {
 
 .budgie-popover.workspace-popover flowboxchild {
   padding: 0;
+}
+
+window.budgie-popover:not(.csd) > frame.container {
+  margin: 0 -1px -1px;
+}
+
+.bottom window.budgie-popover:not(.csd) > frame.container {
+  padding: 2px 0 2px;
+}
+
+window.budgie-popover:not(.csd) > frame.container,
+window.budgie-popover:not(.csd) > frame.container > border {
+  border-style: none;
 }
 
 .workspace-switcher .workspace-layout {
