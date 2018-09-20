@@ -4274,7 +4274,7 @@ decoration:backdrop {
 
 tooltip.csd decoration {
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 transparent;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
 }
 
 messagedialog.csd decoration {
@@ -6774,6 +6774,10 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   margin-bottom: -10px;
 }
 
+.raven stackswitcher {
+  padding: 0 8px 12px 8px;
+}
+
 .raven .raven-header {
   min-height: 36px;
   padding: 3px;
@@ -6800,6 +6804,10 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   background-color: #282A33;
   color: rgba(207, 218, 231, 0.8);
   box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
+}
+
+.raven .raven-header.top stackswitcher {
+  padding: 0;
 }
 
 .raven .raven-header.top stackswitcher button {
