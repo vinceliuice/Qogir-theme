@@ -2173,11 +2173,23 @@ switch {
 }
 
 // Selectionmode
+.view.content-view.check:not(list),
+.content-view .tile check:not(list) {
+  min-height: 40px;
+  min-width: 40px;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+}
+
 @each $s,$as in ('','-selectionmode'),
                   (':checked', '-checked-selectionmode') {
-  .view.content-view.check#{$s}:not(list) {
+  .view.content-view.check#{$s}:not(list),
+  .content-view .tile check#{$s}:not(list) {
     -gtk-icon-source: -gtk-scaled(url("assets/checkbox#{$as}#{$asset_suffix}.png"),
-                                    url("assets/checkbox#{$as}#{$asset_suffix}@2.png"));
+                                  url("assets/checkbox#{$as}#{$asset_suffix}@2.png"));
     background-color: transparent;
   }
 }
