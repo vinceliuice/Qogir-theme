@@ -635,44 +635,35 @@ calendar.raven-calendar {
       list { background-color: transparent; }
 
       > list > row.activatable {
-        padding-bottom: 4px;
+        padding: 4px;
         background-color: transparent;
-        &:selected {
-          background-color: rgba($selected_bg_color, 0.75);
-//          &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
-//          &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
 
-          > grid > *, // legacy
-          > box.vertical * {
-            color: $selected_fg_color;
-            opacity: 1.0;
-          }
-        }
+        > grid > *, // legacy
+        > box.vertical * { color: $fg_color; }
 
         button.image-button { // 'dismiss'
           margin: 0;
           padding: 0;
-          border: none;
-          min-height: 28px;
-          min-width: 28px;
+          min-height: 32px;
+          min-width: 32px;
           border-radius: 100px;
           -gtk-outline-radius: 100px;
 
-//          &:hover { @include button(hover); }
-          &:active, &:checked { background-color: rgba(white, 0.35); }
+          &:hover { @include button(header-hover); }
+          &:active, &:checked { @include button(header-active); image { color: white; } }
         }
 
         // sub-list rows grouping
         list {
           border-radius: 2px;
-          border: 1px solid rgba(white, 0.12);
+          border: 1px solid $borders_color;
 
           > row.activatable {
-            border-bottom: 1px solid rgba(white, 0.12);
+            border-bottom: 1px solid $borders_color;
             &:last-child { border-bottom: none; }
 
             &:selected {
-              background-color: rgba($selected_bg_color, 1);
+              background-color: rgba($fg_color, 0.06);
             }
 
             button.image-button { // 'close'
@@ -680,8 +671,36 @@ calendar.raven-calendar {
               min-width: 24px;
             }
 
-            // title labels
-//            box.horizontal > label:first-child { font-weight: 500; }
+//            box.horizontal > label:first-child { font-weight: 500; } // title labels
+          }
+        }
+
+        &:selected {
+          background-color: rgba($selected_bg_color, 0.75);
+//          &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
+//          &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
+
+          > grid > *,
+          > box.vertical * { color: $selected_fg_color; }
+
+          button.image-button { // 'dismiss'
+            border: none;
+
+            &:hover { background-color: rgba(white, 0.25); }
+            &:active, &:checked { background-color: rgba(white, 0.35); }
+          }
+
+          list {
+            border: 1px solid rgba(white, 0.12);
+
+            > row.activatable {
+              border-bottom: 1px solid rgba(white, 0.12);
+              &:last-child { border-bottom: none; }
+
+              &:selected {
+                background-color: rgba($selected_bg_color, 0.65);
+              }
+            }
           }
         }
       }
@@ -690,15 +709,17 @@ calendar.raven-calendar {
 
 // Notifications
 .budgie-notification-window {
-    background-color: transparent;
-    background-image: none;
-    border-radius: $bt_radius;
-}
+  background-color: transparent;
+  background-image: none;
+  border-radius: $bt_radius;
 
-.budgie-notification {
-  .notification-title { font-size: 120%; }
+  button {
+    @include button(header-normal);
 
-  .notification-body { @extend .dim-label; }
+    &:hover { @include button(header-hover); }
+    &:active, &:checked { @include button(header-active); }
+    &:disabled { @include button(header-insensitive); }
+  }
 
   button.image-button { // 'close'
     margin: 0;
@@ -707,6 +728,12 @@ calendar.raven-calendar {
     min-width: 28px;
     border-radius: 100px;
   }
+}
+
+.budgie-notification {
+  .notification-title { font-size: 120%; }
+
+  .notification-body {@extend .dim-label; }
 }
 
 // On Screen Display in Budgie
