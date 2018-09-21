@@ -417,7 +417,7 @@ configurationview {
 // * Firefox and Thunderbird *
 //
 
-$firefox_border: if($variant =='light', rgba(black, 0.15), rgba(black, 0.2));
+$firefox_border: if($variant == 'light', darken($button_bg, 15%), lighten($button_bg, 15%));
 
 window.background:not(.csd) {
   > widget {
@@ -429,11 +429,11 @@ window.background:not(.csd) {
 
     // emphasize borders color
     > scrollbar,
-    > frame > border { border-color: $firefox_border; }
+    > frame > border { border-color: $borders_color; }
 
     > entry,
     > button > button {
-      border: 1px solid $firefox_border;
+      border: 1px solid $borders_color;
       border-radius: 2px;
     }
 
@@ -442,18 +442,25 @@ window.background:not(.csd) {
 //      min-height: 26px;
       border-radius: 2px;
       background-image: image($base_color);
-      border: 1px solid $firefox_border;
+      border: 1px solid $borders_color;
 
       &:focus { border-color: $selected_bg_color; }
     }
 
     > spinbutton {
       background-image: image($button_bg);
-      border: 1px solid $firefox_border;
-      &:active { background-image: image($selected_bg_color); }
+      border: 1px solid $borders_color;
+      &:active { background-image: image(if($variant == 'light', darken($button_bg, 5%), lighten($button_bg, 5%))); }
 
       // Fixed thunderbird linked entry spinbutton border-radius.
       .entry { border-top-right-radius: 0;  border-bottom-right-radius: 0; }
+    }
+
+    > button > button {
+      &:active, &:checked {
+        border: 1px solid $firefox_border;
+        background-image: image(if($variant == 'light', darken($button_bg, 5%), lighten($button_bg, 5%)));
+      }
     }
   }
 

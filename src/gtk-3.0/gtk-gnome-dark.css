@@ -5714,12 +5714,12 @@ window.background:not(.csd) > widget > scrollbar {
 
 window.background:not(.csd) > widget > scrollbar,
 window.background:not(.csd) > widget > frame > border {
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 window.background:not(.csd) > widget > entry,
 window.background:not(.csd) > widget > button > button {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 2px;
 }
 
@@ -5727,7 +5727,7 @@ window.background:not(.csd) > widget > entry,
 window.background:not(.csd) > widget .entry {
   border-radius: 2px;
   background-image: image(#282A33);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 window.background:not(.csd) > widget > entry:focus,
@@ -5737,16 +5737,21 @@ window.background:not(.csd) > widget .entry:focus {
 
 window.background:not(.csd) > widget > spinbutton {
   background-image: image(#2c2f39);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 window.background:not(.csd) > widget > spinbutton:active {
-  background-image: image(#5294e2);
+  background-image: image(#383a47);
 }
 
 window.background:not(.csd) > widget > spinbutton .entry {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+window.background:not(.csd) > widget > button > button:active, window.background:not(.csd) > widget > button > button:checked {
+  border: 1px solid #4e5264;
+  background-image: image(#383a47);
 }
 
 window.background:not(.csd) .menu {
@@ -5810,15 +5815,15 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 #MozillaGtkWidget.background > window.background > menu > separator {
   padding: 0;
   border: none;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #4e5264;
 }
 
 #MozillaGtkWidget.background > widget border {
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: #4e5264;
 }
 
 #MozillaGtkWidget.background > widget separator {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #4e5264;
 }
 
 #MozillaGtkWidget.background > widget > scrolledwindow > textview {
