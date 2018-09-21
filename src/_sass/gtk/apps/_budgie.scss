@@ -487,12 +487,7 @@ button.raven-trigger {
 //  }
 
   button.image-button {
-    min-height: 28px;
-    min-width: 28px;
-    margin: 0;
-    padding: 0;
-    border-radius: 100px;
-    -gtk-outline-radius: 100px;
+    @extend %circle_button;
   }
 
   .raven-header {
@@ -629,8 +624,6 @@ calendar.raven-calendar {
   button.image-button {
     padding: 6px;
     border: none;
-    border-radius: 100px;
-
     @extend %budgie_flat_button;
   }
 }
@@ -644,19 +637,20 @@ calendar.raven-calendar {
       list { background-color: transparent; }
 
       > list > row.activatable {
-        padding: 4px;
+        margin-left: -8px;
+        margin-right: -2px;
         background-color: transparent;
 
         > grid > *, // legacy
         > box.vertical * { color: $fg_color; }
 
+        image { padding-left: 8px; }
+
         button.image-button { // 'dismiss'
-          margin: 0;
-          padding: 0;
           min-height: 32px;
           min-width: 32px;
-          border-radius: 100px;
-          -gtk-outline-radius: 100px;
+          margin: 0 8px;
+          image { padding: 0; }
 
           &:hover { @include button(header-hover); }
           &:active, &:checked { @include button(header-active); image { color: white; } }
@@ -665,7 +659,8 @@ calendar.raven-calendar {
         // sub-list rows grouping
         list {
           border-radius: 2px;
-          border: 1px solid $borders_color;
+          border-top: 1px solid $borders_color;
+          border-bottom: 1px solid $borders_color;
 
           > row.activatable {
             border-bottom: 1px solid $borders_color;
@@ -675,9 +670,12 @@ calendar.raven-calendar {
               background-color: rgba($fg_color, 0.06);
             }
 
+            label { padding: 0 16px; }
+
             button.image-button { // 'close'
               min-height: 24px;
               min-width: 24px;
+              image { padding: 0; }
             }
 
 //            box.horizontal > label:first-child { font-weight: 500; } // title labels
