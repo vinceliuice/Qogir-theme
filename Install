@@ -35,7 +35,7 @@ install() {
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
-  local THEME_DIR=${DEST_DIR}/${name}${desk}${color}
+  local THEME_DIR=${dest}/${name}${desk}${color}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
