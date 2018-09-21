@@ -486,6 +486,15 @@ button.raven-trigger {
 //    &, &:hover, &:active, &:checked, &:disabled { border-radius: 0; }
 //  }
 
+  button.image-button {
+    min-height: 28px;
+    min-width: 28px;
+    margin: 0;
+    padding: 0;
+    border-radius: 100px;
+    -gtk-outline-radius: 100px;
+  }
+
   .raven-header {
     min-height: 36px;
     padding: 3px;
@@ -618,7 +627,7 @@ calendar.raven-calendar {
   label { min-height: 24px; }
 
   button.image-button {
-    padding: 8px 7px;
+    padding: 6px;
     border: none;
     border-radius: 100px;
 

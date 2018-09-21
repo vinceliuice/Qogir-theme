@@ -6859,6 +6859,15 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   padding: 0 8px 12px 8px;
 }
 
+.raven button.image-button {
+  min-height: 28px;
+  min-width: 28px;
+  margin: 0;
+  padding: 0;
+  border-radius: 100px;
+  -gtk-outline-radius: 100px;
+}
+
 .raven .raven-header {
   min-height: 36px;
   padding: 3px;
@@ -7017,7 +7026,7 @@ calendar.raven-calendar:selected {
 }
 
 .raven-mpris button.image-button {
-  padding: 8px 7px;
+  padding: 6px;
   border: none;
   border-radius: 100px;
 }
