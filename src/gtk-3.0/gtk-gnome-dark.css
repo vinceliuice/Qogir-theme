@@ -6372,6 +6372,10 @@ panel-toplevel.background na-tray-applet {
   background-color: transparent;
 }
 
+.budgie-popover switch {
+  margin-left: 64px;
+}
+
 .budgie-popover:not(.budgie-menu) button.flat:not(.image-button), .budgie-popover:not(.budgie-menu) button.sidebar-button:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:not(.image-button), .budgie-popover:not(.budgie-menu) .budgie-panel #tasklist-button:not(.image-button), .budgie-panel .budgie-popover:not(.budgie-menu) #tasklist-button:not(.image-button) {
   min-height: 28px;
   padding: 0 8px;
@@ -7041,7 +7045,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button {
   min-height: 32px;
   min-width: 32px;
-  margin: 0 8px;
+  margin: 8px;
 }
 
 box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button image, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button image {
