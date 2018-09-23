@@ -700,10 +700,10 @@ button.font separator, button.file separator {
   border-width: 1px;
 }
 
-.raven button.image-button, button.close, button.circular, button.nautilus-circular-button.image-button {
-  min-height: 28px;
-  min-width: 28px;
-  padding: 0;
+.app-notification button.flat, .app-notification button.sidebar-button, .app-notification button.budgie-menu-launcher, .app-notification .budgie-panel #tasklist-button, .budgie-panel .app-notification #tasklist-button, .raven button.image-button, button.close, button.circular, button.nautilus-circular-button.image-button {
+  min-height: 24px;
+  min-width: 24px;
+  padding: 2px;
   border-radius: 100px;
   -gtk-outline-radius: 100px;
 }
@@ -3664,15 +3664,9 @@ row.activatable:selected.has-open-popup, .budgie-menu button:selected.has-open-p
   color: #D3DAE3;
   border-color: rgba(13, 14, 17, 0.4);
   background-color: rgba(89, 94, 114, 0.4);
-  margin: 0 0 0 0;
-  min-height: 24px;
-  min-width: 24px;
-  border-radius: 100px;
-  -gtk-outline-radius: 100px;
 }
 
 .app-notification button.flat, .app-notification button.sidebar-button, .app-notification button.budgie-menu-launcher, .app-notification .budgie-panel #tasklist-button, .budgie-panel .app-notification #tasklist-button {
-  border-radius: 100px;
   border-color: rgba(82, 148, 226, 0);
 }
 
@@ -4228,11 +4222,11 @@ popover.background.touch-selection, .csd popover.background.touch-selection {
 button.circular, button.nautilus-circular-button.image-button,
 button.circular-button {
   padding: 0;
-  min-width: 17px;
+  min-width: 24px;
   min-height: 24px;
-  padding: 2px 6px;
-  border-radius: 50%;
-  -gtk-outline-radius: 50%;
+  padding: 2px;
+  border-radius: 100px;
+  -gtk-outline-radius: 100px;
 }
 
 button.circular label, button.nautilus-circular-button.image-button label,
