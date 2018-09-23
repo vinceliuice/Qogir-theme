@@ -6373,7 +6373,7 @@ panel-toplevel.background na-tray-applet {
 }
 
 .budgie-popover switch {
-  margin-left: 64px;
+  margin-left: 56px;
 }
 
 .budgie-popover:not(.budgie-menu) button.flat:not(.image-button), .budgie-popover:not(.budgie-menu) button.sidebar-button:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:not(.image-button), .budgie-popover:not(.budgie-menu) .budgie-panel #tasklist-button:not(.image-button), .budgie-panel .budgie-popover:not(.budgie-menu) #tasklist-button:not(.image-button) {
@@ -6765,6 +6765,10 @@ button.launcher.budgie-menu-launcher:not(:checked):disabled,
 .budgie-panel .launcher#tasklist-button:not(:checked):disabled,
 button.launcher.flat:not(:checked):disabled {
   color: rgba(211, 218, 227, 0.5);
+}
+
+menubar.-vala-panel-background > menuitem {
+  font-weight: 500;
 }
 
 .top .budgie-panel #tasklist-button, .budgie-panel .top #tasklist-button, .top button.flat.-panel-icon-button,

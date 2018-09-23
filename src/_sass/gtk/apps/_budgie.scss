@@ -409,6 +409,11 @@ popover.background.places-menu {
   .pinned button.flat.launcher.running { @extend %underscores:checked; }
 }
 
+// menubar-style'ed app menu
+menubar.-vala-panel-background > menuitem { // override global values
+  font-weight: 500;
+}
+
 %underscores {
   @each $pos, $b_pos, $b_wid in (top,    center calc(1px),        2 0 0 0 / 2px 0 0 0),
                                 (bottom, center calc(100% - 1px), 0 0 2 0 / 0 0 2px 0),
