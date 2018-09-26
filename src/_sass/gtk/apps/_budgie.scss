@@ -545,8 +545,6 @@ widget.icon-tasklist {
 
 frame.raven-frame > border {
   border-style: none;
-  box-shadow: 0 0 5px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
-              0 0 8px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
 }
 
 $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
@@ -557,12 +555,15 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
   // Raven borders
   .#{$pos} frame.raven-frame > border {
-    margin-#{$b_pos}: 32px;
-    // border-#{$b_pos}: 1px solid $borders_color;
+//     border-#{$b_pos}: 1px solid $borders_color;
   }
 
   // Shadows
-  // .#{$pos} .shadow-block { background-image: linear-gradient(to $b_pos, $borders_color, transparent); }
+   .#{$pos} .shadow-block {
+     padding: 0;
+     margin: 0;
+     background-color: transparent;
+     background-image: linear-gradient(to $b_pos, rgba(black, 0.23), rgba(black, 0.08), transparent); }
 }
 
 // Raven Trigger
@@ -963,4 +964,3 @@ box.vertical > stack > box.vertical {
 
   scrolledwindow { border-top: 1px solid $borders_color; }
 }
-
