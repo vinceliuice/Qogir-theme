@@ -398,7 +398,7 @@ popover.background.places-menu {
   // Tasklist
   #tasklist-button {
     padding: 0 4px;
-    @extend button.flat;
+//    @extend button.flat;
     @extend %underscores;
   }
 
@@ -408,7 +408,7 @@ popover.background.places-menu {
   @at-root %budgie_icon_tasklist_button,
   button.flat.launcher {
     padding: 0;
-    @extend button.flat;
+//    @extend button.flat;
     @extend %underscores;
 
     // for indicator colors
@@ -422,7 +422,10 @@ popover.background.places-menu {
   }
 
   .unpinned button.flat.launcher,
-  .pinned button.flat.launcher.running { @extend %underscores:checked; }
+  .pinned button.flat.launcher.running,
+  .pinned button.launcher.running.sidebar-button{
+    &:active, &:checked { @extend %underscores:checked; }
+  }
 }
 
 // menubar-style'ed app menu
@@ -451,6 +454,93 @@ menubar.-vala-panel-background > menuitem { // override global values
       }
     }
   }
+}
+
+.budgie-panel {
+  @at-root %budgie_icon_tasklist_button,
+  button.flat.launcher {
+    min-width: 16px;
+    min-height: 16px;
+    padding: 0;
+    border-radius: 0;
+    background-position: center center;
+
+    > image { opacity: 0.87; }
+
+    &:hover {
+      -gtk-icon-effect: highlight;
+      > image { opacity: 1.0; }
+    }
+    &:active {
+      > image { opacity: 1.0; }
+    }
+    &:checked {
+      &:hover { -gtk-icon-effect: highlight; }
+      > image { opacity: 1.0; }
+    }
+  }
+
+  @at-root %running_budgie_icon_tasklist_button,
+  .unpinned button.flat.launcher,
+  .pinned button.flat.launcher.running,
+  .pinned button.launcher.running.sidebar-button {
+    &:hover { -gtk-icon-effect: highlight; }
+
+    > image {
+      background-repeat: no-repeat;
+      opacity: 1.0;
+    }
+
+    &:active,
+    &:checked {
+      > image { background-image: none; }
+    }
+  }
+}
+
+// draw dots
+@each $position, $_dot in (top, 4px 4px),
+                          (bottom, 4px 4px),
+                          (left, 4px 4px),
+                          (right, 4px 4px) {
+  .#{$position} .budgie-panel {
+
+    .unpinned button.flat.launcher,
+    .pinned button.flat.launcher.running,
+    .pinned button.launcher.running.sidebar-button {
+      > image {
+        background-size: #{$_dot};
+        background-position: #{$position} center;
+        background-image: -gtk-scaled(url("assets/selected-dot.png"),
+                                      url("assets/selected-dot@2.png"));
+      }
+
+      &:active, &:checked { > image { background-image: none; } }
+    }
+  }
+}
+
+// icon tasklist styling
+%icon_tasklist_droptarget,
+box.pinned { // drop-target
+  &:drop(active) {
+    border: none;
+    border-radius: 0;
+    background-color: rgba($selected_bg_color, 0.2);
+    box-shadow: inset 0 0 0 1px $selected_bg_color;
+  }
+}
+
+// upcoming icon tasklist
+widget.icon-tasklist {
+  > box:drop(active) { // drop-target
+    @extend %icon_tasklist_droptarget;
+  }
+}
+
+*:drop(active):focus,
+*:drop(active) {
+    box-shadow: inset 0 0 0 1px $selected_bg_color;
 }
 
 frame.raven-frame > border {
