@@ -13,7 +13,7 @@ fi
 SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Qogir
-DESK_VARIANTS=('' '-gnome')
+MENU_VARIANTS=('' '-gnome')
 COLOR_VARIANTS=('' '-dark' '-light')
 
 usage() {
@@ -22,20 +22,22 @@ usage() {
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [light|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-t, --desktop VARIANTS..." "Specify theme desktop variant(s) [budgie|gnome] (Default: All variants)"
+  printf "  %-25s%s\n" "-m, --menu VARIANTS..." "Specify theme appmenu button variant(s) [budgie|gnome] (Default: All variants)"
+  printf "  %-25s%s\n" "-i, --image VARIANTS..." "Specify theme nautilus background image variant(s)"
+  printf "  %-25s%s\n" "-s, --square VARIANTS..." "Specify theme square titlebutton variant(s)"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 
 install() {
   local dest=${1}
   local name=${2}
-  local desk=${3}
+  local menu=${3}
   local color=${4}
 
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
-  local THEME_DIR=${dest}/${name}${desk}${color}
+  local THEME_DIR=${dest}/${name}${menu}${color}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -47,13 +49,13 @@ install() {
 
   echo "[Desktop Entry]" >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme" >> ${THEME_DIR}/index.theme
-  echo "Name=Qogir${desk}${color}" >> ${THEME_DIR}/index.theme
+  echo "Name=Qogir${menu}${color}" >> ${THEME_DIR}/index.theme
   echo "Comment=An Clean Gtk+ theme based on Flat Design" >> ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8" >> ${THEME_DIR}/index.theme
   echo "" >> ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]" >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=Qogir${desk}${color}" >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=Qogir${desk}${color}" >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=Qogir${menu}${color}" >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=Qogir${menu}${color}" >> ${THEME_DIR}/index.theme
   echo "IconTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close" >> ${THEME_DIR}/index.theme
@@ -66,9 +68,9 @@ install() {
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
   cp -ur ${SRC_DIR}/src/gtk-3.0/assets                                               ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${desk}${color}.css                               ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${menu}${color}.css                               ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${desk}-dark.css                                  ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${menu}-dark.css                                  ${THEME_DIR}/gtk-3.0/gtk-dark.css
   cp -ur ${SRC_DIR}/src/gtk-3.0/thumbnail${ELSE_DARK}.png                            ${THEME_DIR}/gtk-3.0/thumbnail.png
 
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
@@ -96,6 +98,95 @@ install() {
 
 }
 
+# check command avalibility
+function has_command() {
+    command -v $1 > /dev/null
+}
+
+install_package() {
+  if [ ! "$(which sassc 2> /dev/null)" ]; then
+     echo sassc needs to be installed to generate the css.
+     if has_command zypper; then
+
+      # openSUSE
+      sudo zypper in sassc
+        elif has_command apt-get; then
+
+      # Debian or Debian-like
+      sudo apt-get install sassc
+        elif has_command dnf; then
+
+      # Fedora
+      sudo dnf install sassc
+        elif has_command yum; then
+
+      # RedHat
+      sudo yum install sassc
+        elif has_command pacman; then
+
+      # ArchLinux
+      sudo pacman -S --noconfirm sassc
+      fi
+  fi
+}
+
+install_square() {
+
+  TITLE_BUTTON_C="@extend %circle_titlebutton"
+  TITLE_BUTTON_S="@extend %square_titlebutton"
+
+  CSD_TITLE_BUTTON_C="@extend %csd_circle_titlebutton"
+  CSD_TITLE_BUTTON_S="@extend %csd_square_titlebutton"
+
+  CHROME_C="@extend %circle_chrome"
+  CHROME_S="@extend %square_chrome"
+
+  cd ${SRC_DIR}/src/_sass/gtk
+  cp -an _common.scss _common.scss.bak
+  sed -i "s/$TITLE_BUTTON_C/$TITLE_BUTTON_S/g" _common.scss
+  sed -i "s/$CSD_TITLE_BUTTON_C/$CSD_TITLE_BUTTON_S/g" _common.scss
+
+  cd ${SRC_DIR}/src/_sass/gtk/apps
+  cp -an _misc.scss _misc.scss.bak
+  sed -i "s/$CHROME_C/$CHROME_S/g" _misc.scss
+
+  # Install Packages
+  install_package
+
+  echo -e "\nInstalling specify theme with square titlebuttons ...\n"
+
+  # compile scss to css
+  cd ${SRC_DIR}
+  ./parse-sass.sh
+
+  # install
+  ./Install
+
+}
+
+install_img() {
+
+  NBG_N="background-image: none;" 
+  NBG_I="@extend %nautilus_backimage;"
+
+  cd ${SRC_DIR}/src/_sass/gtk/apps
+  cp -an _gnome.scss _gnome.scss.bak
+  sed -i "s/$NBG_N/$NBG_I/g" _gnome.scss
+
+  # Install Packages
+  install_package
+
+  echo -e "\nInstalling specify theme with nautilus background image ...\n"
+
+  # compile scss to css
+  cd ${SRC_DIR}
+  ./parse-sass.sh
+
+  # install
+  ./Install
+
+}
+
 while [[ $# -gt 0 ]]; do
   case "${1}" in
     -d|--dest)
@@ -110,16 +201,24 @@ while [[ $# -gt 0 ]]; do
       name="${2}"
       shift 2
       ;;
-    -t|--desktop)
+    -s|--square)
+      install_square
+      exit 0
+      ;;
+    -i|--image)
+      install_img
+      exit 0
+      ;;
+    -m|--menu)
       shift
       for variant in "${@}"; do
         case "${variant}" in
           gnome)
-            desks+=("${DESK_VARIANTS[1]}")
+            menus+=("${MENU_VARIANTS[1]}")
             shift
             ;;
           budgie)
-            desks+=("${DESK_VARIANTS[2]}")
+            menus+=("${MENU_VARIANTS[2]}")
             shift
             ;;
           -*|--*)
@@ -168,9 +267,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-for desk in "${desks[@]:-${DESK_VARIANTS[@]}}"; do
+for menu in "${menus[@]:-${MENU_VARIANTS[@]}}"; do
   for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${desk}" "${color}"
+    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${menu}" "${color}"
   done
 done
 

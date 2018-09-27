@@ -1064,6 +1064,19 @@ headerbar,
     &:backdrop { background-color: opacify($header_bg_backdrop, 1); }
   }
 
+  %square_titlebutton {
+    min-height: $medium_size;
+    min-width: $medium_size;
+    margin-right: -6px;
+    padding: 0;
+  }
+
+  %circle_titlebutton {
+    min-height: 23px;
+    min-width: 23px;
+    padding: 2px;
+  }
+
   &.default-decoration {
     min-height: $medium_size;
     padding: 0 $cont_padding;
@@ -1075,9 +1088,7 @@ headerbar,
     .fullscreen & { box-shadow: none; }
 
     button.titlebutton {
-      min-height: 23px;
-      min-width: 23px;
-      padding: 2px;
+      @extend %circle_titlebutton;
       border: none;
     }
   }
@@ -3303,7 +3314,65 @@ decoration {
 //
 headerbar,
 .titlebar {
+  @extend %csd_circle_titlebutton;
+}
 
+%csd_square_titlebutton {
+  button.titlebutton { // csd titlebuttons
+    margin: 0;
+    padding: 0;
+    min-width: $medium_size;
+    min-height: $medium_size;
+
+    @include button(undecorated);
+    background-color: transparentize($header_bg, 1);
+
+    &:hover {
+      @include button(header-hover);
+    }
+    &:active, &:checked {
+      @include button(header-active);
+    }
+
+    &.close, &.maximize, &.minimize, &.restore { // csd windows control titlebuttons
+      padding: 0;
+      min-width: $large_size;
+      min-height: $large_size;
+      color: transparent;
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-width: 0;
+      border-radius: 0;
+
+      &:backdrop { opacity: 1; }
+    }
+
+    &.close { margin-right: -10px; }
+    &.maximize, &.minimize { margin-right: -6px; }
+
+    // Load png assets for each button, Fix the Chrome window restore button bug
+    @each $k in ('close', 'maximize', 'minimize', 'restore') {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-win.png'),
+                                                        url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-win@2.png')); }
+      }
+    }
+  }
+
+  .fullscreen &,
+  .maximized & {
+    button.titlebutton {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-win.png'),
+                                                      url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-win@2.png')); }
+      }
+    }
+  }
+}
+
+%csd_circle_titlebutton {
   button.titlebutton { // csd titlebuttons
     margin: 0;
     padding: 0;

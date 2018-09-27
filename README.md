@@ -37,11 +37,13 @@ Run
 
     ./Install                        (Install all themes)
 
-    ./Install -t budgie              (Install themes for budgie desktop)
+    ./Install -m budgie              (Install themes for appmenu button on header)
 
-    ./Install -t gnome               (Install themes for gnome desktop)
+    ./Install -m gnome               (Install themes for appmenu button on panel)
 
-    ./Install_with_background_img (Install themes with nautilus background imge)
+    ./Install -i                     (Install themes with nautilus background imge)
+
+    ./Install -s                     (Install themes with square titlebutons)
 
 ## Screenshots
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot01.png?raw=true)
