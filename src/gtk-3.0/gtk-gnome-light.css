@@ -3698,11 +3698,11 @@ calendar {
   color: #5c616c;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 3px;
-  padding: 2px;
+  padding: 2px 7px;
 }
 
 calendar:selected {
-  border-radius: 1.5px;
+  border-radius: 6px;
 }
 
 calendar.header {
@@ -6327,8 +6327,8 @@ panel-toplevel.background na-tray-applet {
   padding: 0;
   border-color: rgba(0, 0, 0, 0.12);
   border-radius: 2px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.12);
   background-color: #ffffff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
 .budgie-popover .container {

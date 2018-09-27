@@ -46,9 +46,8 @@
   padding: 0;
   border-color: $borders_color;
   border-radius: $bt_radius;
-  box-shadow: 0 3px 5px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
-
   background-color: if($variant=='light', $base_color, $bg_color);
+  box-shadow: 0 3px 5px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
 
   .container { padding: 2px; border: none; }
 

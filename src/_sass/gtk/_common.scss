@@ -2677,11 +2677,11 @@ calendar {
   color: $fg_color;
   border: 1px solid $borders_color;
   border-radius: 3px;
-  padding: 2px;
+  padding: 2px 7px;
 
   &:selected {
     @extend %selected_items;
-    border-radius: 1.5px;
+    border-radius: 6px;
   }
 
   &.header {
@@ -2692,14 +2692,14 @@ calendar {
   &.button {
     @extend %undecorated_button;
 
-    color: transparentize($fg_color,0.55);
+    color: transparentize($fg_color, 0.55);
 
     &:hover { color: $fg_color; }
 
     &:disabled { color: $insensitive_fg_color; }
   }
 
-  &:indeterminate { color: gtkalpha(currentColor,0.55); }
+  &:indeterminate { color: gtkalpha(currentColor, 0.55); }
   &.highlight { color: $fg_color; }
 }
 
