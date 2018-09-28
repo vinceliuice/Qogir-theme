@@ -4291,7 +4291,7 @@ decoration:backdrop {
 
 tooltip.csd decoration {
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 transparent;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
 }
 
 messagedialog.csd decoration {
@@ -6945,28 +6945,8 @@ button.launcher.budgie-menu-launcher:checked > image {
   background-image: none;
 }
 
-box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher:hover, box:not(.unpinned):not(.pinned) > revealer > button.launcher.sidebar-button:hover, box:not(.unpinned):not(.pinned) > revealer > button.launcher.budgie-menu-launcher:hover, box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher:checked, box:not(.unpinned):not(.pinned) > revealer > button.launcher.sidebar-button:checked, box:not(.unpinned):not(.pinned) > revealer > button.launcher.budgie-menu-launcher:checked, box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher.running, box:not(.unpinned):not(.pinned) > revealer > button.launcher.running.sidebar-button, box:not(.unpinned):not(.pinned) > revealer > button.launcher.running.budgie-menu-launcher {
+box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher, box:not(.unpinned):not(.pinned) > revealer > button.launcher.sidebar-button, box:not(.unpinned):not(.pinned) > revealer > button.launcher.budgie-menu-launcher {
   border-image: none;
-}
-
-box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher:active, box:not(.unpinned):not(.pinned) > revealer > button.launcher.sidebar-button:active, box:not(.unpinned):not(.pinned) > revealer > button.launcher.budgie-menu-launcher:active {
-  border-image: none;
-}
-
-.top box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher:not(:checked):hover.running, .top box:not(.unpinned):not(.pinned) > revealer > button.launcher.sidebar-button:not(:checked):hover.running, .top box:not(.unpinned):not(.pinned) > revealer > button.launcher.budgie-menu-launcher:not(:checked):hover.running {
-  box-shadow: inset 0 3px #68a2e6;
-}
-
-.bottom box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher:not(:checked):hover.running, .bottom box:not(.unpinned):not(.pinned) > revealer > button.launcher.sidebar-button:not(:checked):hover.running, .bottom box:not(.unpinned):not(.pinned) > revealer > button.launcher.budgie-menu-launcher:not(:checked):hover.running {
-  box-shadow: inset 0 -3px #68a2e6;
-}
-
-.left box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher:not(:checked):hover.running, .left box:not(.unpinned):not(.pinned) > revealer > button.launcher.sidebar-button:not(:checked):hover.running, .left box:not(.unpinned):not(.pinned) > revealer > button.launcher.budgie-menu-launcher:not(:checked):hover.running {
-  box-shadow: inset 3px 0 #68a2e6;
-}
-
-.right box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher:not(:checked):hover.running, .right box:not(.unpinned):not(.pinned) > revealer > button.launcher.sidebar-button:not(:checked):hover.running, .right box:not(.unpinned):not(.pinned) > revealer > button.launcher.budgie-menu-launcher:not(:checked):hover.running {
-  box-shadow: inset -3px 0 #68a2e6;
 }
 
 widget.icon-tasklist > box:drop(active),
