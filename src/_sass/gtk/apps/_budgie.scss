@@ -75,6 +75,7 @@
     padding: 0 8px;
     color: rgba($fg_color, 0.85);
     font-weight: normal;
+    border: 1px solid transparent;
 
     &:hover {
       background-color: if($variant=='light', mix($fg_color,$bg_color,5%), mix($fg_color,$bg_color,10%));

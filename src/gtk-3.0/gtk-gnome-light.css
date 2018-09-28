@@ -6348,6 +6348,7 @@ panel-toplevel.background na-tray-applet {
   padding: 0 8px;
   color: rgba(92, 97, 108, 0.85);
   font-weight: normal;
+  border: 1px solid transparent;
 }
 
 .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):hover, .budgie-popover:not(.budgie-menu) button.sidebar-button:not(.image-button):hover, .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:not(.image-button):hover, .budgie-popover:not(.budgie-menu) .budgie-panel #tasklist-button:not(.image-button):hover, .budgie-panel .budgie-popover:not(.budgie-menu) #tasklist-button:not(.image-button):hover {
