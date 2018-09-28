@@ -41,10 +41,8 @@ $solid_borders_color: if($variant == 'light', darken($bg_color, 10%), lighten($b
 $highlight: if($variant == 'light', rgba(white, 0.13), rgba(white, 0.10));
 $alt_highlight_color: rgba(white, 0.2);
 
-$link_color: if($variant == 'light', darken($selected_bg_color, 10%),
-                                     lighten($selected_bg_color, 20%));
-$link_visited_color: if($variant == 'light', darken($text_color, 5%),
-                                     lighten($text_color, 10%));
+$link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
+$link_visited_color: if($variant == 'light', darken($text_color, 5%), lighten($text_color, 10%));
 
 //insensitive state derived colors
 $insensitive_fg_color: if($variant == 'light', transparentize($fg_color, 0.45), transparentize($fg_color, 0.55));
@@ -102,3 +100,23 @@ $button_border: $entry_border;
 
 $header_button_bg: if($titlebar == 'dark' or $variant == 'dark', rgba(lighten($header_bg, 22%), 0.4), rgba($button_bg, 0.9));
 $header_button_border: if($titlebar == 'dark' or $variant == 'dark', rgba(darken($header_bg, 12%), 0.4), rgba($header_fg, 0.3));
+
+//WM Buttons
+
+// Close
+$wm_button_close_bg: if($variant == 'light' and $titlebar == 'light', #f46067, #cc575d);
+$wm_button_close_hover_bg: if($variant == 'light' and $titlebar == 'light', #f68086, #d7787d);
+$wm_button_close_active_bg: if($variant == 'light' and $titlebar == 'light', #f13039, #be3841);
+
+$wm_icon_close_bg: if($variant == 'light' and $titlebar == 'light',#F8F8F9 , #2f343f);
+
+// Minimize, Maximize
+$wm_button_hover_bg: if($variant == 'light' and $titlebar == 'light', #fdfdfd, #454C5C);
+$wm_button_active_bg: $selected_bg_color;
+
+$wm_button_hover_border: if($variant == 'light' and $titlebar == 'light', #D1D3DA, #262932);
+
+$wm_icon_bg: if($variant == 'light' and $titlebar == 'light', #90949E, #90939B);
+$wm_icon_unfocused_bg: if($variant == 'light' and $titlebar == 'light', #B6B8C0, #666A74);
+$wm_icon_hover_bg: if($variant == 'light' and $titlebar == 'light', #7A7F8B, #C4C7CC);
+$wm_icon_active_bg: $selected_fg_color;

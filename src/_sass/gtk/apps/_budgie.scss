@@ -408,7 +408,7 @@ popover.background.places-menu {
   button.flat.launcher {
     padding: 0;
 //    @extend button.flat;
-    @extend %underscores;
+//    @extend %underscores;
 
     // for indicator colors
     &:not(:checked) {
@@ -420,16 +420,11 @@ popover.background.places-menu {
     }
   }
 
-  .unpinned button.flat.launcher,
-  .pinned button.flat.launcher.running,
-  .pinned button.launcher.running.sidebar-button{
-    &:active, &:checked { @extend %underscores:checked; }
-  }
-}
-
-// menubar-style'ed app menu
-menubar.-vala-panel-background > menuitem { // override global values
-  font-weight: 500;
+//  .unpinned button.flat.launcher,
+//  .pinned button.flat.launcher.running,
+//  .pinned button.launcher.running.sidebar-button{
+//    &:active, &:checked { @extend %underscores:checked; }
+//  }
 }
 
 %underscores {

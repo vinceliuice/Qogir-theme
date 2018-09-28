@@ -440,6 +440,17 @@ row#workspaces-only-on-primary {
 }
 
 //
+// Gnome-Software
+//
+
+button.round-button { // categories expander button
+  // > 3.25.90, dropped from upstream CSS
+  min-height: 28px;
+  min-width: 28px;
+  padding: 0;
+}
+
+//
 // Transmission
 //
 .tr-workarea undershoot,
