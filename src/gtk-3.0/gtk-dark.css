@@ -1290,7 +1290,7 @@ toolbar:not(.inline-toolbar) .linked > entry,
   border-color: rgba(255, 255, 255, 0.12);
   border-width: 0 1px 1px;
   padding: 3px;
-  border-radius: 0  0 3px 3px;
+  border-radius: 0 0 3px 3px;
 }
 
 searchbar {
@@ -1728,7 +1728,7 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:checked + entry,
 }
 
 headerbar .linked:not(.vertical):not(.stack-switcher).path-bar > button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar > button {
-  margin: 0 0 0 0;
+  margin: 0;
   color: rgba(207, 218, 231, 0.8);
   border-radius: 0;
   border: none;
@@ -4291,7 +4291,7 @@ decoration:backdrop {
 
 tooltip.csd decoration {
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 3px 0 transparent;
 }
 
 messagedialog.csd decoration {

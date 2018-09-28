@@ -974,7 +974,7 @@ toolbar {
   border-color: $borders_color;
   border-width: 0 1px 1px;
   padding: 3px;
-  border-radius: 0  0 3px 3px;
+  border-radius: 0 0 3px 3px;
 }
 
 searchbar {
@@ -1305,7 +1305,7 @@ headerbar {
   .linked:not(.vertical):not(.stack-switcher).path-bar {
 
     > button {
-      margin: 0 0 0 0;
+      margin: 0;
       color: $header_fg;
       border-radius: 0;
       border: none;
@@ -1331,8 +1331,8 @@ headerbar {
     > button {
       background-color: lighten($header_bg, 10%);
       color: $header_fg;
-      border-color: $borders_color;
-      &:hover { background-color: lighten($header_bg, 15%); }
+      border-color: if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
+      &:hover { background-color: if($titlebar == 'light', darken($header_bg, 3%), lighten($header_bg, 15%)); }
       &:active, &:checked { @include button(header-active); }
       &:disabled { color: rgba($header_fg, 0.4); label { color: rgba($header_fg, 0.4); } }
       &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
