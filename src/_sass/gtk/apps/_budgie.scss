@@ -397,7 +397,6 @@ popover.background.places-menu {
   // Tasklist
   #tasklist-button {
     padding: 0 4px;
-//    @extend button.flat;
     @extend %underscores;
   }
 
@@ -407,8 +406,6 @@ popover.background.places-menu {
   @at-root %budgie_icon_tasklist_button,
   button.flat.launcher {
     padding: 0;
-//    @extend button.flat;
-//    @extend %underscores;
 
     // for indicator colors
     &:not(:checked) {
@@ -419,12 +416,6 @@ popover.background.places-menu {
       &:disabled { color: rgba($panel_fg, 0.5); }
     }
   }
-
-//  .unpinned button.flat.launcher,
-//  .pinned button.flat.launcher.running,
-//  .pinned button.launcher.running.sidebar-button{
-//    &:active, &:checked { @extend %underscores:checked; }
-//  }
 }
 
 %underscores {
@@ -492,12 +483,22 @@ popover.background.places-menu {
   }
 }
 
-// draw dots
-@each $position, $_dot in (top, 4px 4px),
-                          (bottom, 4px 4px),
-                          (left, 4px 4px),
-                          (right, 4px 4px) {
+// draw underscores and dots
+@each $position, $_line, $_dot in (top, 0 3px, 4px 4px),
+                                  (bottom, 0 -3px, 4px 4px),
+                                  (left, 3px 0, 4px 4px),
+                                  (right, -3px 0, 4px 4px) {
   .#{$position} .budgie-panel {
+
+    button.flat.launcher {
+      &:hover {
+        box-shadow: inset #{$_line} $alt_selected_bg_color;
+      }
+      &:active,
+      &:checked {
+        box-shadow: inset #{$_line} $selected_bg_color;
+      }
+    }
 
     .unpinned button.flat.launcher,
     .pinned button.flat.launcher.running,
@@ -510,6 +511,35 @@ popover.background.places-menu {
       }
 
       &:active, &:checked { > image { background-image: none; } }
+    }
+  }
+}
+
+box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
+  transition: 200ms;
+
+  &:hover,
+  &:checked,
+  &.running { box-shadow: none; } // unset before drawing indicators
+
+  &:active {
+    box-shadow: none;
+    transition: 200ms;
+  }
+}
+
+@each $position, $_line in (top, 0 3px),
+                           (bottom, 0 -3px),
+                           (left, 3px 0),
+                           (right, -3px 0) {
+  .#{$position} {
+    box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
+      &:not(:checked):hover {
+        box-shadow: inset #{$_line} $alt_selected_bg_color;
+        &.running {
+          box-shadow: inset #{$_line} $selected_bg_color;
+        }
+      }
     }
   }
 }
