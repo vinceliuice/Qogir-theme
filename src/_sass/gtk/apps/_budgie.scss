@@ -406,7 +406,7 @@ popover.background.places-menu {
   @at-root %budgie_icon_tasklist_button,
   button.flat.launcher {
     padding: 0;
-
+    @extend %underscores;
     // for indicator colors
     &:not(:checked) {
       color: $panel_fg;
@@ -490,15 +490,15 @@ popover.background.places-menu {
                                   (right, -3px 0, 4px 4px) {
   .#{$position} .budgie-panel {
 
-    button.flat.launcher {
-      &:hover {
-        box-shadow: inset #{$_line} $alt_selected_bg_color;
-      }
-      &:active,
-      &:checked {
-        box-shadow: inset #{$_line} $selected_bg_color;
-      }
-    }
+//    button.flat.launcher {
+//      &:hover {
+//        box-shadow: inset #{$_line} $alt_selected_bg_color;
+//      }
+//      &:active,
+//      &:checked {
+//        box-shadow: inset #{$_line} $selected_bg_color;
+//      }
+//    }
 
     .unpinned button.flat.launcher,
     .pinned button.flat.launcher.running,
@@ -516,15 +516,13 @@ popover.background.places-menu {
 }
 
 box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
-  transition: 200ms;
 
   &:hover,
   &:checked,
-  &.running { box-shadow: none; } // unset before drawing indicators
+  &.running { border-image: none; } // unset before drawing indicators
 
   &:active {
-    box-shadow: none;
-    transition: 200ms;
+    border-image: none;
   }
 }
 
@@ -535,9 +533,8 @@ box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
   .#{$position} {
     box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
       &:not(:checked):hover {
-        box-shadow: inset #{$_line} $alt_selected_bg_color;
         &.running {
-          box-shadow: inset #{$_line} $selected_bg_color;
+          box-shadow: inset #{$_line} $alt_selected_bg_color;
         }
       }
     }
