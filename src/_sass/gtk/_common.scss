@@ -336,7 +336,7 @@ button {
 
     &:hover {
       transition: $button_transition;
-      transition-duration: 350ms;
+      transition-duration: 250ms;
 
       &:active { transition: $button_transition; }
     }
