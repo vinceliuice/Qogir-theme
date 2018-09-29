@@ -43,7 +43,7 @@ Run
 
     ./Install -i                     (Install themes with nautilus background imge)
 
-    ./Install -s                     (Install themes with square titlebutons)
+    ./Install -s                     (Install themes with square titlebuttons)
 
 ## Screenshots
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot01.png?raw=true)
