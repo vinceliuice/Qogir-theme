@@ -361,7 +361,7 @@ popover.background.places-menu {
   color: $panel_fg;
   font-weight: 500;
 
-  &.transparent { background-color: rgba($panel_bg, 0.65); }
+  &.transparent { background-color: rgba($panel_bg, 0.85); }
 
   button {
     min-height: 16px;
