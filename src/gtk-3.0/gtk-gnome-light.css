@@ -6896,27 +6896,16 @@ button.launcher.budgie-menu-launcher:checked > image,
 }
 
 
-.unpinned button.flat.launcher:active > image,
-.unpinned button.launcher.sidebar-button:active > image,
-.unpinned button.launcher.budgie-menu-launcher:active > image,
-.unpinned .budgie-panel .launcher#tasklist-button:active > image,
-.budgie-panel .unpinned .launcher#tasklist-button:active > image,
 .unpinned button.flat.launcher:checked > image,
 .unpinned button.launcher.sidebar-button:checked > image,
 .unpinned button.launcher.budgie-menu-launcher:checked > image,
 .unpinned .budgie-panel .launcher#tasklist-button:checked > image,
 .budgie-panel .unpinned .launcher#tasklist-button:checked > image,
-.pinned button.flat.launcher.running:active > image,
-.pinned button.launcher.running.sidebar-button:active > image,
-.pinned button.launcher.running.budgie-menu-launcher:active > image,
-.pinned .budgie-panel .launcher.running#tasklist-button:active > image,
-.budgie-panel .pinned .launcher.running#tasklist-button:active > image,
 .pinned button.flat.launcher.running:checked > image,
 .pinned button.launcher.running.sidebar-button:checked > image,
 .pinned button.launcher.running.budgie-menu-launcher:checked > image,
 .pinned .budgie-panel .launcher.running#tasklist-button:checked > image,
 .budgie-panel .pinned .launcher.running#tasklist-button:checked > image,
-.pinned button.launcher.running.sidebar-button:active > image,
 .pinned button.launcher.running.sidebar-button:checked > image {
   background-image: none;
 }
@@ -6932,16 +6921,11 @@ button.launcher.budgie-menu-launcher:checked > image,
   background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
 }
 
-.top .budgie-panel .unpinned button.flat.launcher:active > image, .top .budgie-panel .unpinned button.launcher.sidebar-button:active > image, .top .budgie-panel .unpinned button.launcher.budgie-menu-launcher:active > image, .top .budgie-panel .unpinned .launcher#tasklist-button:active > image, .top .budgie-panel .unpinned button.flat.launcher:checked > image, .top .budgie-panel .unpinned button.launcher.sidebar-button:checked > image, .top .budgie-panel .unpinned button.launcher.budgie-menu-launcher:checked > image, .top .budgie-panel .unpinned .launcher#tasklist-button:checked > image,
-.top .budgie-panel .pinned button.flat.launcher.running:active > image,
-.top .budgie-panel .pinned button.launcher.running.sidebar-button:active > image,
-.top .budgie-panel .pinned button.launcher.running.budgie-menu-launcher:active > image,
-.top .budgie-panel .pinned .launcher.running#tasklist-button:active > image,
+.top .budgie-panel .unpinned button.flat.launcher:checked > image, .top .budgie-panel .unpinned button.launcher.sidebar-button:checked > image, .top .budgie-panel .unpinned button.launcher.budgie-menu-launcher:checked > image, .top .budgie-panel .unpinned .launcher#tasklist-button:checked > image,
 .top .budgie-panel .pinned button.flat.launcher.running:checked > image,
 .top .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image,
 .top .budgie-panel .pinned button.launcher.running.budgie-menu-launcher:checked > image,
 .top .budgie-panel .pinned .launcher.running#tasklist-button:checked > image,
-.top .budgie-panel .pinned button.launcher.running.sidebar-button:active > image,
 .top .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image {
   background-image: none;
 }
@@ -6957,16 +6941,11 @@ button.launcher.budgie-menu-launcher:checked > image,
   background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
 }
 
-.bottom .budgie-panel .unpinned button.flat.launcher:active > image, .bottom .budgie-panel .unpinned button.launcher.sidebar-button:active > image, .bottom .budgie-panel .unpinned button.launcher.budgie-menu-launcher:active > image, .bottom .budgie-panel .unpinned .launcher#tasklist-button:active > image, .bottom .budgie-panel .unpinned button.flat.launcher:checked > image, .bottom .budgie-panel .unpinned button.launcher.sidebar-button:checked > image, .bottom .budgie-panel .unpinned button.launcher.budgie-menu-launcher:checked > image, .bottom .budgie-panel .unpinned .launcher#tasklist-button:checked > image,
-.bottom .budgie-panel .pinned button.flat.launcher.running:active > image,
-.bottom .budgie-panel .pinned button.launcher.running.sidebar-button:active > image,
-.bottom .budgie-panel .pinned button.launcher.running.budgie-menu-launcher:active > image,
-.bottom .budgie-panel .pinned .launcher.running#tasklist-button:active > image,
+.bottom .budgie-panel .unpinned button.flat.launcher:checked > image, .bottom .budgie-panel .unpinned button.launcher.sidebar-button:checked > image, .bottom .budgie-panel .unpinned button.launcher.budgie-menu-launcher:checked > image, .bottom .budgie-panel .unpinned .launcher#tasklist-button:checked > image,
 .bottom .budgie-panel .pinned button.flat.launcher.running:checked > image,
 .bottom .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image,
 .bottom .budgie-panel .pinned button.launcher.running.budgie-menu-launcher:checked > image,
 .bottom .budgie-panel .pinned .launcher.running#tasklist-button:checked > image,
-.bottom .budgie-panel .pinned button.launcher.running.sidebar-button:active > image,
 .bottom .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image {
   background-image: none;
 }
@@ -6982,16 +6961,11 @@ button.launcher.budgie-menu-launcher:checked > image,
   background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
 }
 
-.left .budgie-panel .unpinned button.flat.launcher:active > image, .left .budgie-panel .unpinned button.launcher.sidebar-button:active > image, .left .budgie-panel .unpinned button.launcher.budgie-menu-launcher:active > image, .left .budgie-panel .unpinned .launcher#tasklist-button:active > image, .left .budgie-panel .unpinned button.flat.launcher:checked > image, .left .budgie-panel .unpinned button.launcher.sidebar-button:checked > image, .left .budgie-panel .unpinned button.launcher.budgie-menu-launcher:checked > image, .left .budgie-panel .unpinned .launcher#tasklist-button:checked > image,
-.left .budgie-panel .pinned button.flat.launcher.running:active > image,
-.left .budgie-panel .pinned button.launcher.running.sidebar-button:active > image,
-.left .budgie-panel .pinned button.launcher.running.budgie-menu-launcher:active > image,
-.left .budgie-panel .pinned .launcher.running#tasklist-button:active > image,
+.left .budgie-panel .unpinned button.flat.launcher:checked > image, .left .budgie-panel .unpinned button.launcher.sidebar-button:checked > image, .left .budgie-panel .unpinned button.launcher.budgie-menu-launcher:checked > image, .left .budgie-panel .unpinned .launcher#tasklist-button:checked > image,
 .left .budgie-panel .pinned button.flat.launcher.running:checked > image,
 .left .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image,
 .left .budgie-panel .pinned button.launcher.running.budgie-menu-launcher:checked > image,
 .left .budgie-panel .pinned .launcher.running#tasklist-button:checked > image,
-.left .budgie-panel .pinned button.launcher.running.sidebar-button:active > image,
 .left .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image {
   background-image: none;
 }
@@ -7007,16 +6981,11 @@ button.launcher.budgie-menu-launcher:checked > image,
   background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
 }
 
-.right .budgie-panel .unpinned button.flat.launcher:active > image, .right .budgie-panel .unpinned button.launcher.sidebar-button:active > image, .right .budgie-panel .unpinned button.launcher.budgie-menu-launcher:active > image, .right .budgie-panel .unpinned .launcher#tasklist-button:active > image, .right .budgie-panel .unpinned button.flat.launcher:checked > image, .right .budgie-panel .unpinned button.launcher.sidebar-button:checked > image, .right .budgie-panel .unpinned button.launcher.budgie-menu-launcher:checked > image, .right .budgie-panel .unpinned .launcher#tasklist-button:checked > image,
-.right .budgie-panel .pinned button.flat.launcher.running:active > image,
-.right .budgie-panel .pinned button.launcher.running.sidebar-button:active > image,
-.right .budgie-panel .pinned button.launcher.running.budgie-menu-launcher:active > image,
-.right .budgie-panel .pinned .launcher.running#tasklist-button:active > image,
+.right .budgie-panel .unpinned button.flat.launcher:checked > image, .right .budgie-panel .unpinned button.launcher.sidebar-button:checked > image, .right .budgie-panel .unpinned button.launcher.budgie-menu-launcher:checked > image, .right .budgie-panel .unpinned .launcher#tasklist-button:checked > image,
 .right .budgie-panel .pinned button.flat.launcher.running:checked > image,
 .right .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image,
 .right .budgie-panel .pinned button.launcher.running.budgie-menu-launcher:checked > image,
 .right .budgie-panel .pinned .launcher.running#tasklist-button:checked > image,
-.right .budgie-panel .pinned button.launcher.running.sidebar-button:active > image,
 .right .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image {
   background-image: none;
 }

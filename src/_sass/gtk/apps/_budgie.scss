@@ -501,7 +501,6 @@ popover.background.places-menu {
       opacity: 1.0;
     }
 
-    &:active,
     &:checked {
       > image { background-image: none; }
     }
@@ -525,7 +524,7 @@ popover.background.places-menu {
                                       url("assets/selected-dot@2.png"));
       }
 
-      &:active, &:checked { > image { background-image: none; } }
+      &:checked { > image { background-image: none; } }
     }
   }
 }
