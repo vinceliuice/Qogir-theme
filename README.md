@@ -44,16 +44,25 @@ Usage:  ./Install  [OPTIONS...]
 
 **FOR EXAMPLE:**
 ```sh
-$ ./Install                 (Install all themes)
-
-$ ./Install -m budgie       (Install themes for appmenu button on header)
-
-$ ./Install -m gnome        (Install themes for appmenu button on panel)
-
-$ ./Install -i              (Install themes with nautilus background imge)
-
-$ ./Install -s              (Install themes with square titlebuttons)
+$ ./Install
 ```
+(Install all themes)
+```sh
+$ ./Install -m budgie
+```
+(Install themes for appmenu button on header)
+```sh
+$ ./Install -m gnome
+```
+(Install themes for appmenu button on panel)
+```sh
+$ ./Install -i
+```
+(Install themes with nautilus background imge)
+```sh
+$ ./Install -s
+```
+(Install themes with square titlebuttons)
 
 ## Screenshots
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot01.png?raw=true)
