@@ -36,8 +36,8 @@ Usage:  ./Install  [OPTIONS...]
 |:-------------|:-------------|
 | -d, --dest   | destination directory (Default: /home/vince/.themes) |
 | -n, --name   | name (Default: Qogir) |
-| -c, --color  | color variant(s) (light|dark) |
-| -m, --menu   | appmenu button variant(s) (budgie|gnome) |
+| -c, --color  | color variant(s) (light/dark) |
+| -m, --menu   | appmenu button variant(s) (budgie/gnome) |
 | -i, --image  | Install theme with nautilus background image |
 | -s, --square | Install theme with square titlebutton |
 | -h, --help   | Show this help |
