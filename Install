@@ -23,8 +23,8 @@ usage() {
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [light|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-m, --menu VARIANTS..." "Specify theme appmenu button variant(s) [budgie|gnome] (Default: All variants)"
-  printf "  %-25s%s\n" "-i, --image VARIANTS..." "Specify theme nautilus background image variant(s)"
-  printf "  %-25s%s\n" "-s, --square VARIANTS..." "Specify theme square titlebutton variant(s)"
+  printf "  %-25s%s\n" "-i, --image VARIANTS..." "Install theme with nautilus background image"
+  printf "  %-25s%s\n" "-s, --square VARIANTS..." "Install theme with square titlebutton"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 
@@ -98,9 +98,21 @@ install() {
 
 }
 
+TITLE_BUTTON_C="@extend %circle_titlebutton"
+TITLE_BUTTON_S="@extend %square_titlebutton"
+
+CSD_TITLE_BUTTON_C="@extend %csd_circle_titlebutton"
+CSD_TITLE_BUTTON_S="@extend %csd_square_titlebutton"
+
+CHROME_C="@extend %circle_chrome"
+CHROME_S="@extend %square_chrome"
+
+NBG_N="background-image: none;" 
+NBG_I="@extend %nautilus_backimage;"
+
 # check command avalibility
 function has_command() {
-    command -v $1 > /dev/null
+  command -v $1 > /dev/null
 }
 
 install_package() {
@@ -108,49 +120,36 @@ install_package() {
      echo sassc needs to be installed to generate the css.
      if has_command zypper; then
 
-      # openSUSE
       sudo zypper in sassc
         elif has_command apt-get; then
 
-      # Debian or Debian-like
       sudo apt-get install sassc
         elif has_command dnf; then
 
-      # Fedora
       sudo dnf install sassc
         elif has_command yum; then
 
-      # RedHat
       sudo yum install sassc
         elif has_command pacman; then
 
-      # ArchLinux
       sudo pacman -S --noconfirm sassc
       fi
   fi
 }
 
-install_theme() {
+parse_sass() {
+  cd ${SRC_DIR} && ./parse-sass.sh
+}
 
+install_theme() {
 for menu in "${menus[@]:-${MENU_VARIANTS[@]}}"; do
   for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
     install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${menu}" "${color}"
   done
 done
-
 }
 
 install_square() {
-
-  TITLE_BUTTON_C="@extend %circle_titlebutton"
-  TITLE_BUTTON_S="@extend %square_titlebutton"
-
-  CSD_TITLE_BUTTON_C="@extend %csd_circle_titlebutton"
-  CSD_TITLE_BUTTON_S="@extend %csd_square_titlebutton"
-
-  CHROME_C="@extend %circle_chrome"
-  CHROME_S="@extend %square_chrome"
-
   cd ${SRC_DIR}/src/_sass/gtk
   cp -an _common.scss _common.scss.bak
   sed -i "s/$TITLE_BUTTON_C/$TITLE_BUTTON_S/g" _common.scss
@@ -159,42 +158,14 @@ install_square() {
   cd ${SRC_DIR}/src/_sass/gtk/apps
   cp -an _misc.scss _misc.scss.bak
   sed -i "s/$CHROME_C/$CHROME_S/g" _misc.scss
-
-  # Install Packages
-  install_package
-
-  echo -e "\nInstalling specify theme with square titlebuttons ...\n"
-
-  # compile scss to css
-  cd ${SRC_DIR}
-  ./parse-sass.sh
-
-  # install
-  install_theme
-
+  echo -e "Specify theme with square titlebuttons ..."
 }
 
 install_img() {
-
-  NBG_N="background-image: none;" 
-  NBG_I="@extend %nautilus_backimage;"
-
   cd ${SRC_DIR}/src/_sass/gtk/apps
   cp -an _gnome.scss _gnome.scss.bak
   sed -i "s/$NBG_N/$NBG_I/g" _gnome.scss
-
-  # Install Packages
-  install_package
-
-  echo -e "\nInstalling specify theme with nautilus background image ...\n"
-
-  # compile scss to css
-  cd ${SRC_DIR}
-  ./parse-sass.sh
-
-  # install
-  install_theme
-
+  echo -e "Specify theme with nautilus background image ..."
 }
 
 while [[ $# -gt 0 ]]; do
@@ -212,12 +183,12 @@ while [[ $# -gt 0 ]]; do
       shift 2
       ;;
     -s|--square)
-      install_square
-      exit 0
+      square='true'
+      shift
       ;;
     -i|--image)
-      install_img
-      exit 0
+      image='true'
+      shift
       ;;
     -m|--menu)
       shift
@@ -248,11 +219,11 @@ while [[ $# -gt 0 ]]; do
         case "${variant}" in
           light)
             colors+=("${COLOR_VARIANTS[1]}")
-            shift
+            shift 1
             ;;
           dark)
             colors+=("${COLOR_VARIANTS[2]}")
-            shift
+            shift 1
             ;;
           -*|--*)
             break
@@ -277,7 +248,21 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-install_theme
+if [[ "${square:-}" != 'true' && "${image:-}" != 'true' ]]; then
+  install_theme
+fi
+
+if [[ "${square:-}" == 'true' && "${image:-}" != 'true' ]]; then
+  install_package && install_square && parse_sass && install_theme
+fi
+
+if [[ "${square:-}" != 'true' && "${image:-}" == 'true'  ]]; then
+  install_package && install_img && parse_sass && install_theme
+fi
+
+if [[ "${square:-}" == 'true' && "${image:-}" == 'true' ]]; then
+  install_package && install_square && install_img && parse_sass && install_theme
+fi
 
 echo
 echo Done.
