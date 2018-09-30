@@ -32,27 +32,28 @@ Search for the engines in your distributions repository or install the engines f
 
 Usage:  ./Install  [OPTIONS...]
 
-|  OPTIONS:    |                                                                                |
-|:-------------|:-------------------------------------------------------------------------------|
-| -d, --dest   | Specify theme destination directory (Default: /home/vince/.themes)             |
-| -n, --name   | Specify theme name (Default: Qogir)                                            |
-| -c, --color  | Specify theme color variant(s) [light|dark] (Default: All variants)            |
-| -m, --menu   | Specify theme appmenu button variant(s) [budgie|gnome] (Default: All variants) |
-| -i, --image  | Install theme with nautilus background image                                   |
-| -s, --square | Install theme with square titlebutton                                          |
-| -h, --help   | Show this help                                                                 |
+|  OPTIONS:    | |
+|:-------------|:-----------------|
+| -d, --dest   | destination directory (Default: /home/vince/.themes) |
+| -n, --name   | name (Default: Qogir) |
+| -c, --color  | color variant(s) [light|dark] |
+| -m, --menu   | appmenu button variant(s) [budgie|gnome] |
+| -i, --image  | Install theme with nautilus background image |
+| -s, --square | Install theme with square titlebutton |
+| -h, --help   | Show this help |
 
 **FOR EXAMPLE:**
+```sh
+$ ./Install                 (Install all themes)
 
-`./Install `----------------------(Install all themes)
+$ ./Install -m budgie       (Install themes for appmenu button on header)
 
-`./Install -m budgie`----------(Install themes for appmenu button on header)
+$ ./Install -m gnome        (Install themes for appmenu button on panel)
 
-`./Install -m gnome`----------(Install themes for appmenu button on panel)
+$ ./Install -i              (Install themes with nautilus background imge)
 
-`./Install -i`--------------------(Install themes with nautilus background imge)
-
-`./Install -s`-------------------(Install themes with square titlebuttons)
+$ ./Install -s              (Install themes with square titlebuttons)
+```
 
 ## Screenshots
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot01.png?raw=true)
