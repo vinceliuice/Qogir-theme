@@ -44,23 +44,23 @@ Usage:  ./Install  [OPTIONS...]
 
 **FOR EXAMPLE:**
 ```sh
-$ ./Install
+./Install
 ```
 (Install all themes)
 ```sh
-$ ./Install -m budgie
+./Install -m budgie
 ```
 (Install themes for appmenu button on header)
 ```sh
-$ ./Install -m gnome
+./Install -m gnome
 ```
 (Install themes for appmenu button on panel)
 ```sh
-$ ./Install -i
+./Install -i
 ```
 (Install themes with nautilus background imge)
 ```sh
-$ ./Install -s
+./Install -s
 ```
 (Install themes with square titlebuttons)
 
