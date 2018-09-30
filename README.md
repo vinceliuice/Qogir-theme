@@ -48,7 +48,7 @@ Usage:  ./Install  [OPTIONS...]
 ```
 (Install all themes)
 ```sh
-./Install -m default
+./Install -m standard
 ```
 (Install themes for appmenu button on header)
 ```sh
