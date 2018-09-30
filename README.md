@@ -32,8 +32,8 @@ Search for the engines in your distributions repository or install the engines f
 
 Usage: ./Install [OPTIONS...]
 
-OPTIONS:
-|:-----:|:-----:|
+|  OPTIONS:                |                                                                                    |
+|:-------------------------|:-----------------------------------------------------------------------------------|
 | -d, --dest DIR           | Specify theme destination directory (Default: /home/vince/.themes)                 |
 | -n, --name NAME          | Specify theme name (Default: Qogir)                                                |
 | -c, --color VARIANTS...  | Specify theme color variant(s) [light|dark] (Default: All variants)                |
