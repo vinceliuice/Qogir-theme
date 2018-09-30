@@ -21,8 +21,8 @@ usage() {
   printf "\n%s\n" "OPTIONS:"
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
-  printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [default|light|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-m, --menu VARIANTS..." "Specify theme appmenu button variant(s) [default|gnome] (Default: All variants)"
+  printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
+  printf "  %-25s%s\n" "-m, --menu VARIANTS..." "Specify theme appmenu button variant(s) [standard|gnome] (Default: All variants)"
   printf "  %-25s%s\n" "-i, --image VARIANTS..." "Install theme with nautilus background image"
   printf "  %-25s%s\n" "-s, --square VARIANTS..." "Install theme with square titlebutton"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
@@ -194,7 +194,7 @@ while [[ $# -gt 0 ]]; do
       shift
       for menu in "${@}"; do
         case "${menu}" in
-          default)
+          standard)
             menus+=("${MENU_VARIANTS[0]}")
             shift
             ;;
@@ -217,7 +217,7 @@ while [[ $# -gt 0 ]]; do
       shift
       for color in "${@}"; do
         case "${color}" in
-          default)
+          standard)
             colors+=("${COLOR_VARIANTS[0]}")
             shift 1
             ;;
