@@ -130,6 +130,16 @@ install_package() {
   fi
 }
 
+install_theme() {
+
+for menu in "${menus[@]:-${MENU_VARIANTS[@]}}"; do
+  for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
+    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${menu}" "${color}"
+  done
+done
+
+}
+
 install_square() {
 
   TITLE_BUTTON_C="@extend %circle_titlebutton"
@@ -160,7 +170,7 @@ install_square() {
   ./parse-sass.sh
 
   # install
-  ./Install
+  install_theme
 
 }
 
@@ -183,7 +193,7 @@ install_img() {
   ./parse-sass.sh
 
   # install
-  ./Install
+  install_theme
 
 }
 
@@ -267,11 +277,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-for menu in "${menus[@]:-${MENU_VARIANTS[@]}}"; do
-  for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${menu}" "${color}"
-  done
-done
+install_theme
 
 echo
 echo Done.

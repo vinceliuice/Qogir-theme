@@ -699,7 +699,7 @@ button.font separator, button.file separator {
   border-width: 1px;
 }
 
-.app-notification button.flat, .app-notification button.sidebar-button, .app-notification button.budgie-menu-launcher, .app-notification .budgie-panel #tasklist-button, .budgie-panel .app-notification #tasklist-button, .raven button.image-button, button.close, button.circular, button.nautilus-circular-button.image-button {
+.app-notification button.flat, .app-notification button.sidebar-button, .app-notification button.budgie-menu-launcher, .app-notification .budgie-panel #tasklist-button, .budgie-panel .app-notification #tasklist-button, .raven button.image-button, .budgie-notification-window button.image-button, .budgie-osd-window button.image-button, .budgie-switcher-window button.image-button, button.close, button.circular, button.nautilus-circular-button.image-button {
   min-height: 24px;
   min-width: 24px;
   padding: 2px;
@@ -7394,14 +7394,6 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 
 .budgie-notification-window button:disabled label, .budgie-osd-window button:disabled label, .budgie-switcher-window button:disabled label, .budgie-notification-window button:disabled, .budgie-osd-window button:disabled, .budgie-switcher-window button:disabled {
   color: rgba(207, 218, 231, 0.3);
-}
-
-.budgie-notification-window button.image-button, .budgie-osd-window button.image-button, .budgie-switcher-window button.image-button {
-  margin: 0;
-  padding: 0;
-  min-height: 28px;
-  min-width: 28px;
-  border-radius: 100px;
 }
 
 .budgie-notification .notification-title, .budgie-switcher .notification-title {
