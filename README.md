@@ -51,4 +51,3 @@ Run
 ![3](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot03.png?raw=true)
 ![4](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot04.png?raw=true)
 ![5](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot05.png?raw=true)
-
