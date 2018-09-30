@@ -14,15 +14,15 @@ SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Qogir
 MENU_VARIANTS=('' '-gnome')
-COLOR_VARIANTS=('' '-dark' '-light')
+COLOR_VARIANTS=('' '-light' '-dark')
 
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
-  printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [light|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-m, --menu VARIANTS..." "Specify theme appmenu button variant(s) [budgie|gnome] (Default: All variants)"
+  printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [default|light|dark] (Default: All variants)"
+  printf "  %-25s%s\n" "-m, --menu VARIANTS..." "Specify theme appmenu button variant(s) [default|gnome] (Default: All variants)"
   printf "  %-25s%s\n" "-i, --image VARIANTS..." "Install theme with nautilus background image"
   printf "  %-25s%s\n" "-s, --square VARIANTS..." "Install theme with square titlebutton"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
@@ -192,14 +192,14 @@ while [[ $# -gt 0 ]]; do
       ;;
     -m|--menu)
       shift
-      for variant in "${@}"; do
-        case "${variant}" in
-          gnome)
-            menus+=("${MENU_VARIANTS[1]}")
+      for menu in "${@}"; do
+        case "${menu}" in
+          default)
+            menus+=("${MENU_VARIANTS[0]}")
             shift
             ;;
-          budgie)
-            menus+=("${MENU_VARIANTS[2]}")
+          gnome)
+            menus+=("${MENU_VARIANTS[1]}")
             shift
             ;;
           -*|--*)
@@ -215,8 +215,12 @@ while [[ $# -gt 0 ]]; do
       ;;
     -c|--color)
       shift
-      for variant in "${@}"; do
-        case "${variant}" in
+      for color in "${@}"; do
+        case "${color}" in
+          default)
+            colors+=("${COLOR_VARIANTS[0]}")
+            shift 1
+            ;;
           light)
             colors+=("${COLOR_VARIANTS[1]}")
             shift 1
