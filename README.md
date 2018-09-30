@@ -44,9 +44,13 @@ Usage:  ./Install  [OPTIONS...]
 
 **FOR EXAMPLE:**
 >./Install                  (Install all themes)
+
 >./Install -m budgie        (Install themes for appmenu button on header)
+
 >./Install -m gnome         (Install themes for appmenu button on panel)
->./Install -i               (Install themes with nautilus background imge) 
+
+>./Install -i               (Install themes with nautilus background imge)
+
 >./Install -s               (Install themes with square titlebuttons)
 
 ## Screenshots
