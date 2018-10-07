@@ -89,7 +89,7 @@
   //
     color: lighten($header_fg, 20%);
     border-color: $selected_bg_color;
-    background-color: if($variant=='light', darken($header_entry_bg, 2%), darken($header_entry_bg, 10%));
+    background-color: if($variant=='light', lighten($header_entry_bg, 2%), lighten($header_entry_bg, 5%));
   }
 
   @if $t==header-insensitive {

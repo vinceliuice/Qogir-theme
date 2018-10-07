@@ -1285,6 +1285,10 @@ headerbar {
         &:focus { border-color: $selected_bg_color; }
       }
 
+    combobox > box > button.combo {
+        &:hover { border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12)); }
+      }
+
     @each $e_type in (':focus', ':drop(active)', '.warning:focus', '.error:focus') {
 
       > entry + entry#{$e_type}:not(:last-child),
@@ -1294,6 +1298,11 @@ headerbar {
         + entry,
         + button,
         + combobox > box > button.combo { border-left-color: transparent; }
+      }
+
+      > entry#{$e_type}:not(:only-child) {
+        + button:hover,
+        + combobox > box > button.combo:hover { border-left-color: if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12)); }
       }
     }
 
@@ -1473,6 +1482,32 @@ headerbar {
       background-color: $_trough_bg;
 
       &:disabled { background-color: if($variant=='light', transparentize($_trough_bg, 0.05), transparentize($_trough_bg, 0.1)); }
+    }
+  }
+}
+
+.titlebar {
+  :not(headerbar) .path-bar {
+    margin: 0;
+    button {
+      color: $header_fg;
+      border-radius: 0;
+      border: none;
+      background-color: transparent;
+
+      &:hover {
+        color: darken($header_fg, 10%);
+        box-shadow: 0 2px rgba($alt_selected_bg_color, 0.5);
+      }
+      &:active, &:checked {
+        transition: box-shadow 0.2s;
+//        animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+        color: $header_fg;
+        background-color: transparent;
+        box-shadow: 0 2px $alt_selected_bg_color;
+      }
+
+      &:disabled { color: rgba($header_fg, 0.4); }
     }
   }
 }
