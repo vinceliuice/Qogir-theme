@@ -2033,10 +2033,6 @@ headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disa
   background-color: rgba(18, 18, 22, 0.95);
 }
 
-.titlebar :not(headerbar) .path-bar {
-  margin: 0;
-}
-
 .titlebar :not(headerbar) .path-bar button {
   color: rgba(207, 218, 231, 0.8);
   border-radius: 0;
