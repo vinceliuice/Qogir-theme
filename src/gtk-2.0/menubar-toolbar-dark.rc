@@ -1,11 +1,11 @@
 style "menubar" {
 
-  bg[NORMAL] = @tooltip_bg_color
-  fg[NORMAL] = @tooltip_fg_color
-  fg[PRELIGHT] = shade(1.15, @tooltip_fg_color)
-  fg[ACTIVE] = shade(1.15, @tooltip_fg_color)
+  bg[NORMAL] = @base_color
+  fg[NORMAL] = @text_color
+  fg[PRELIGHT] = shade(1.15, @text_color)
+  fg[ACTIVE] = shade(1.15, @text_color)
   fg[SELECTED] = @selected_fg_color
-  fg[INSENSITIVE] = shade(0.7, @tooltip_fg_color)
+  fg[INSENSITIVE] = shade(0.7, @text_color)
 
   xthickness = 0
   ythickness = 0
@@ -23,10 +23,10 @@ style "menubar" {
 
 style "menubar-borderless" {
 
-  bg[NORMAL] = @tooltip_bg_color
-  fg[NORMAL] = @tooltip_fg_color
+  bg[NORMAL] = @base_color
+  fg[NORMAL] = @text_color
   fg[SELECTED] = @selected_fg_color
-  fg[INSENSITIVE] = shade(0.7, @tooltip_fg_color)
+  fg[INSENSITIVE] = shade(0.7, @text_color)
 
   xthickness = 0
   ythickness = 0
