@@ -3816,8 +3816,37 @@ messagedialog .titlebar {
 }
 
 messagedialog .dialog-action-area button {
-  padding: 8px;
-  min-height: 0;
+  padding: 4px 8px;
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+messagedialog .dialog-action-area button:active, messagedialog .dialog-action-area button:checked {
+  transition: background-color 0.00001s 0.3s;
+  animation: ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+messagedialog .dialog-action-area button:first-child {
+  border-radius: 0;
+  border-top-left-radius: 0;
+}
+
+messagedialog .dialog-action-area button:last-child {
+  border-radius: 0;
+  border-top-right-radius: 0;
+}
+
+messagedialog.csd .dialog-action-area button:hover:not(.suggested-action):not(.destructive-action),
+messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):hover {
+  background-color: alpha(#D3DAE3,0.06);
+}
+
+messagedialog.csd .dialog-action-area button:active:not(.suggested-action):not(.destructive-action), messagedialog.csd .dialog-action-area button:checked:not(.suggested-action):not(.destructive-action),
+messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):active,
+messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):checked {
+  background-color: alpha(#D3DAE3,0.1);
+  color: #D3DAE3;
 }
 
 messagedialog.csd.background {
@@ -3829,15 +3858,6 @@ messagedialog.csd.background {
 messagedialog.csd .dialog-action-area button:active, messagedialog.csd .dialog-action-area button:checked {
   transition: background-color 0.00001s 0.3s;
   animation: ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
-}
-
-messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):hover {
-  background-color: alpha(#D3DAE3,0.06);
-}
-
-messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):active, messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destructive-action):checked {
-  background-color: alpha(#D3DAE3,0.1);
-  color: #D3DAE3;
 }
 
 messagedialog.csd .dialog-action-area button {

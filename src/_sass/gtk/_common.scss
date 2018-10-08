@@ -2762,7 +2762,40 @@ messagedialog { // Message Dialog styling
     border-top-right-radius: $bt_radius;
   }
 
-  .dialog-action-area button { padding: 8px; min-height: 0; }
+  .dialog-action-area button {
+    padding: 4px 8px;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid $borders_color;
+
+    &:active, &:checked {
+      transition: background-color 0.00001s 0.3s;
+      animation: ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    }
+
+    &:first-child {
+      border-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    &:last-child {
+      border-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  %dialog_button,
+  .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
+
+    &:hover {
+      background-color: gtkalpha($fg_color, 0.06);
+    }
+
+    &:active, &:checked {
+      background-color: gtkalpha($fg_color, 0.1);
+      color: $fg_color;
+    }
+  }
 
   &.csd { // rounded bottom border styling for csd version
     &.background {
@@ -2783,17 +2816,7 @@ messagedialog { // Message Dialog styling
       &:only-child { @extend %single_button; }
     }
 
-    .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
-
-      &:hover {
-        background-color: gtkalpha($fg_color, 0.06);
-      }
-
-      &:active, &:checked {
-        background-color: gtkalpha($fg_color, 0.1);
-        color: $fg_color;
-      }
-    }
+    .dialog-action-area button:not(.suggested-action):not(.destructive-action) { @extend %dialog_button; }
 
     %middle_button {
       border-radius: 0;
