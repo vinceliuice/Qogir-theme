@@ -55,6 +55,7 @@
 
 .view,
 %view {
+  @extend row.activatable;
   color: $text_color;
   background-color: $base_color;
 
@@ -653,15 +654,15 @@ toolbar.inline-toolbar toolbutton {
 // special case, because path-bars are bugged
 @mixin pathbar_linking_rules($sep_color:if($variant=='light', rgba($button_border, 0.1), rgba($button_border, 0.1))) {
 
-  > button + button { border-left-style: none; }
+  > button + button { border-left-color: transparent; }
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
     &:hover {
-//      box-shadow: none;
+      box-shadow: none;
     }
-//    &:first-child:hover { box-shadow: none; }
-//    &:last-child:hover { box-shadow: none; }
+    &:first-child:hover { box-shadow: none; }
+    &:last-child:hover { box-shadow: none; }
   }
 }
 

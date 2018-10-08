@@ -362,22 +362,16 @@ window#whiskermenu-window {
 
   scrolledwindow {
     > viewport button.radio {
-      &:not(:disabled) {
-        border-radius: 0;
-        background-image: none;
-        animation: none;
-        transition: none;
-      }
-//      &:hover { background-color: $track_color; }
-      &:checked {
-        background-color: rgba($selected_bg_color, 0.12);
-        color: $selected_bg_color;
+      &:hover { background-color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.12)); }
+      &:checked, &:active {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
       }
     }
 
     treeview.view {
       &:selected:hover {
-        background-color: transparent;
+        background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
         color: $fg_color;
       }
     }
