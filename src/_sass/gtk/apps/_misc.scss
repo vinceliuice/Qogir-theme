@@ -346,6 +346,7 @@ XfdesktopIconView.view {
 
   &:active, &:checked {
     background-color: $selected_bg_color;
+    color: $selected_fg_color;
     text-shadow: none;
   }
 
@@ -393,7 +394,10 @@ window.thunar {
 
   notebook {
     // hide unneeded border
-    stack > scrolledwindow.frame.standard-view { border-top-width: 0; }
+    stack > scrolledwindow.frame.standard-view {
+      border-top-width: 0;
+      border-right-width: 0;
+    }
 
     // an allocation height of label node affects to close button's
     // image height (it's quite weird).

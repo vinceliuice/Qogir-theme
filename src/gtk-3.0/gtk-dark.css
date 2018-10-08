@@ -5731,6 +5731,7 @@ XfdesktopIconView.view {
 
 XfdesktopIconView.view:active, XfdesktopIconView.view:checked {
   background-color: #5294e2;
+  color: #ffffff;
   text-shadow: none;
 }
 
@@ -5766,6 +5767,7 @@ window.thunar toolbar#location-toolbar entry, window.thunar #location-toolbar.in
 
 window.thunar notebook stack > scrolledwindow.frame.standard-view {
   border-top-width: 0;
+  border-right-width: 0;
 }
 
 window.thunar notebook header.top tab.reorderable-page > box > label {
