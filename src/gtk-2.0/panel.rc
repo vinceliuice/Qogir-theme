@@ -1,3 +1,8 @@
+
+style "xfce-heading" {
+  base[NORMAL] = @bg_color
+}
+
 style "theme-panel" {
   GtkButton::inner-border = { 0, 0, 0, 0 }
   xthickness = 2
@@ -17,6 +22,15 @@ style "theme-panel" {
   text[PRELIGHT] = shade(1.1, @tooltip_fg_color)
   text[ACTIVE] = shade(1.0, @tooltip_fg_color)
   text[SELECTED] = @selected_fg_color
+
+  engine "pixmap" {
+    image {
+      function = SHADOW
+      file     = "assets/null.png"
+      border   = { 0, 0, 0, 0 }
+      stretch  = TRUE
+    }
+  }
 }
 
 style "theme-panel-progressbar" {
@@ -129,6 +143,7 @@ style "indicator" = "theme-panel" {
   ythickness = 0
 }
 
+widget_class "*XfceHeading*"                          style "xfce-heading"
 widget "*tasklist*"                                   style "panelbuttons"
 widget_class "*Xfce*Panel*.GtkToggleButton"           style "panelbuttons"
 widget_class "*Xfce*NetkTasklist*GtkToggleButton"     style "panelbuttons"
