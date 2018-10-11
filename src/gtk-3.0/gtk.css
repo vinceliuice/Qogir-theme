@@ -2045,29 +2045,6 @@ headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disa
   background-color: rgba(18, 18, 22, 0.95);
 }
 
-.titlebar :not(headerbar) .path-bar button {
-  color: rgba(207, 218, 231, 0.8);
-  border-radius: 0;
-  border: none;
-  background-color: transparent;
-}
-
-.titlebar :not(headerbar) .path-bar button:hover {
-  color: rgba(174, 191, 213, 0.8);
-  box-shadow: 0 2px rgba(104, 162, 230, 0.5);
-}
-
-.titlebar :not(headerbar) .path-bar button:active, .titlebar :not(headerbar) .path-bar button:checked {
-  transition: box-shadow 0.2s;
-  color: rgba(207, 218, 231, 0.8);
-  background-color: transparent;
-  box-shadow: 0 2px #68a2e6;
-}
-
-.titlebar :not(headerbar) .path-bar button:disabled {
-  color: rgba(207, 218, 231, 0.4);
-}
-
 .path-bar button:hover {
   background-color: rgba(92, 97, 108, 0.06);
 }
@@ -3816,7 +3793,7 @@ messagedialog .titlebar {
 }
 
 messagedialog .dialog-action-area button {
-  padding: 4px 8px;
+  padding: 6px 10px;
   border-radius: 0;
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
@@ -4627,6 +4604,42 @@ terminal-window notebook > header.top button,
   padding: 0;
   min-width: 24px;
   min-height: 24px;
+}
+
+.nautilus-window headerbar .path-bar-box button {
+  margin: 0;
+  padding: 1px 8px 3px 8px;
+  border-radius: 0;
+  background: none;
+  border: none;
+}
+
+.nautilus-window headerbar .path-bar-box button:hover {
+  background: none;
+  box-shadow: inset 0 -1px rgba(82, 148, 226, 0.5), 0 1px rgba(82, 148, 226, 0.5);
+}
+
+.nautilus-window headerbar .path-bar-box button:checked, .nautilus-window headerbar .path-bar-box button:active {
+  color: rgba(207, 218, 231, 0.8);
+  background: none;
+  box-shadow: inset 0 -1px #5294e2, 0 1px #5294e2;
+}
+
+.nautilus-window headerbar .path-bar-box {
+  margin: 6px 0;
+  border-radius: 2px;
+  color: rgba(207, 218, 231, 0.8);
+  background-color: transparent;
+}
+
+.nautilus-window headerbar .path-bar-box.width-maximized {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(207, 218, 231, 0.06);
+}
+
+.nautilus-window headerbar .path-bar-box.background.frame {
+  border: none;
+  background-color: transparent;
 }
 
 .nautilus-canvas-item, .caja-canvas-item {

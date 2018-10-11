@@ -1487,30 +1487,29 @@ headerbar {
   }
 }
 
-.titlebar {
-  :not(headerbar) .path-bar {
-    button {
-      color: $header_fg;
-      border-radius: 0;
-      border: none;
-      background-color: transparent;
-
-      &:hover {
-        color: darken($header_fg, 10%);
-        box-shadow: 0 2px rgba($alt_selected_bg_color, 0.5);
-      }
-      &:active, &:checked {
-        transition: box-shadow 0.2s;
-//        animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
-        color: $header_fg;
-        background-color: transparent;
-        box-shadow: 0 2px $alt_selected_bg_color;
-      }
-
-      &:disabled { color: rgba($header_fg, 0.4); }
-    }
-  }
-}
+//.titlebar {
+//  :not(headerbar) .path-bar {
+//    button {
+//      color: $header_fg;
+//      border-radius: 0;
+//      border: none;
+//      background-color: transparent;
+//
+//      &:hover {
+//        color: darken($header_fg, 10%);
+//        box-shadow: 0 2px rgba($alt_selected_bg_color, 0.5);
+//      }
+//      &:active, &:checked {
+//        transition: box-shadow 0.2s;
+//        color: $header_fg;
+//        background-color: transparent;
+//        box-shadow: 0 2px $alt_selected_bg_color;
+//      }
+//
+//      &:disabled { color: rgba($header_fg, 0.4); }
+//    }
+//  }
+//}
 
 //
 // Pathbars
@@ -2763,7 +2762,7 @@ messagedialog { // Message Dialog styling
   }
 
   .dialog-action-area button {
-    padding: 4px 8px;
+    padding: 6px 10px;
     border-radius: 0;
     border: none;
     border-top: 1px solid $borders_color;
