@@ -46,7 +46,7 @@
         }
       &:disabled { color: transparentize($header_fg, 0.4); }
 
-      &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
+      &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
     }
 
    // @include pathbar_linking_rules($sep_color:$header_button_border);

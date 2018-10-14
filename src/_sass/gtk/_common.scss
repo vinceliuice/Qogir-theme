@@ -639,7 +639,6 @@ toolbar.inline-toolbar toolbutton {
     > button.suggested-action + #{$_uncolored_button}:hover,
     > button.destructive-action + #{$_uncolored_button}:hover,
     > entry + #{$_uncolored_button}:hover:not(:only-child),
-
     > #{$_uncolored_button}:first-child:disabled,
     > #{$_uncolored_button}:disabled + #{$_uncolored_button}:disabled,
     > #{$_uncolored_button}:first-child:hover,
@@ -654,12 +653,12 @@ toolbar.inline-toolbar toolbutton {
 // special case, because path-bars are bugged
 @mixin pathbar_linking_rules($sep_color:if($variant=='light', rgba($button_border, 0.1), rgba($button_border, 0.1))) {
 
-  > button + button { border-left-color: transparent; }
+  > button + button { border-left: none; }
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
     &:hover {
-      box-shadow: none;
+//      box-shadow: none;
     }
     &:first-child:hover { box-shadow: none; }
     &:last-child:hover { box-shadow: none; }
@@ -668,8 +667,8 @@ toolbar.inline-toolbar toolbutton {
 
 // Apply the rules defined above
 .linked:not(.vertical) {
-  &:not(.path-bar) { @include linking_rules(); }
-  &.path-bar { @include pathbar_linking_rules(); }
+  &:not(.path-bar):not(.stack-switcher) { @include linking_rules(); }
+  &.path-bar:not(.stack-switcher) { @include pathbar_linking_rules(); }
 }
 
 .linked.vertical { @include linking_rules($vert:'true'); }
@@ -696,19 +695,22 @@ toolbar.inline-toolbar toolbutton {
   }
 }
 
-%linked-flat {
-  @extend %linked_middle;
+%linked_flat {
+  border-radius: 0;
+  border-right-style: none;
+  border-left-style: none;
   &:first-child {
     border-top-left-radius: 3px;
-    border-bottom-left-radius: 0;
+    border-bottom-left-radius: 3px;
+    border-left-style: solid;
   }
   &:last-child {
     border-top-right-radius: 3px;
-    border-bottom-right-radius: 0;
+    border-bottom-right-radius: 3px;
     border-right-style: solid;
   }
   &:only-child {
-    border-radius: 3px 3px 0 0;
+    border-radius: 3px;
     border-style: solid;
   }
 }
@@ -1321,7 +1323,10 @@ headerbar {
       border: none;
       background-color: transparent;
 
-      &:hover { color: darken($header_fg, 10%); box-shadow: inset 0 -2px rgba($alt_selected_bg_color, 0.5); }
+      &:hover {
+        color: darken($header_fg, 10%);
+        box-shadow: inset 0 -2px rgba($alt_selected_bg_color, 0.5);
+      }
       &:active, &:checked { 
         transition: box-shadow 0.2s;
 //        animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
@@ -1331,7 +1336,7 @@ headerbar {
       }
 
       &:disabled { color: rgba($header_fg, 0.4); }
-//      &, &:hover, &:active, &:checked, &:disabled { @extend %linked-flat; }
+//      &, &:hover, &:active, &:checked, &:disabled { @extend %linked_flat; }
     }
 //    @include pathbar_linking_rules($sep_color:$header_button_border);
   }
@@ -1345,7 +1350,7 @@ headerbar {
       &:hover { background-color: if($titlebar == 'light', darken($header_bg, 3%), lighten($header_bg, 15%)); }
       &:active, &:checked { @include button(header-active); }
       &:disabled { color: rgba($header_fg, 0.4); label { color: rgba($header_fg, 0.4); } }
-      &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
+      &, &:hover, &:active, &:checked, &:disabled { @extend %linked_flat; }
     }
   }
 
