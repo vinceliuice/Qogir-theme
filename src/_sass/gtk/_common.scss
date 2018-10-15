@@ -711,7 +711,12 @@ toolbar.inline-toolbar toolbutton {
 // special case, because path-bars are bugged
 @mixin pathbar_linking_rules($sep_color:if($variant=='light', rgba($button_border, 0.1), rgba($button_border, 0.1))) {
 
-  > button + button { border-left: none; }
+  > button {
+    border-left-style: none;
+    border-right-style: none;
+    &:first-child { border-left-style: solid; }
+    &:last-child { border-right-style: solid; }
+  }
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
 

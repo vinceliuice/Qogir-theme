@@ -842,8 +842,17 @@ button.font separator, button.file separator {
   box-shadow: none;
 }
 
-.linked:not(.vertical).path-bar:not(.stack-switcher) > button + button {
-  border-left: none;
+.linked:not(.vertical).path-bar:not(.stack-switcher) > button {
+  border-left-style: none;
+  border-right-style: none;
+}
+
+.linked:not(.vertical).path-bar:not(.stack-switcher) > button:first-child {
+  border-left-style: solid;
+}
+
+.linked:not(.vertical).path-bar:not(.stack-switcher) > button:last-child {
+  border-right-style: solid;
 }
 
 .linked:not(.vertical).path-bar:not(.stack-switcher) > button:hover:not(:checked):not(:active):not(:only-child):first-child:hover {
