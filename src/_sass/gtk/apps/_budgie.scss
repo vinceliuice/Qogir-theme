@@ -79,6 +79,7 @@
   row {
     padding: 0;
     background-color: transparent;
+    background-color: transparent;
 
     &:hover { box-shadow: none; background-color: transparent; }
   }
@@ -930,19 +931,17 @@ box.vertical > stack > box.vertical {
   }
 
   .linked.horizontal > button:not(.suggested-action):not(.destructive-action) {
-
-      &:hover {
-        background-color: gtkalpha($fg_color, 0.06);
-        border-color: $borders_color;
-        transition: $button_transition;
-       }
-
-      &:active, &:checked {
-        color: $fg_color;
-        background-color: gtkalpha($fg_color, 0.1);
-        border-color: $borders_color;
-      }
-   }
+    &:hover {
+      background-color: gtkalpha($fg_color, 0.06);
+      border-color: $borders_color;
+      transition: $button_transition;
+    }
+    &:active, &:checked {
+      color: $fg_color;
+      background-color: gtkalpha($fg_color, 0.1);
+      border-color: $borders_color;
+    }
+  }
 }
 
 // PolKit Dialog
@@ -950,7 +949,6 @@ box.vertical > stack > box.vertical {
   @extend %budgie_dialog;
 
   .message { color: gtkalpha(currentColor, 0.6); }
-
   .failure { color: $destructive_color; }
 }
 
