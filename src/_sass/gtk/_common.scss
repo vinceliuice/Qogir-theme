@@ -623,6 +623,7 @@ toolbar.inline-toolbar toolbutton {
     > button:active + entry,
     > button:checked + entry { border-#{$_border}-color: $selected_bg_color; }
   }
+
   @if $button_rules=='true' {
     $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
 
@@ -648,6 +649,63 @@ toolbar.inline-toolbar toolbutton {
     > button.destructive-action + #{$_uncolored_button}:disabled,
     > entry + #{$_uncolored_button}:disabled:not(:only-child), { box-shadow: none; }
   }
+
+  @if $entry_rules=='false' {
+    > entry + entry,
+    > entry.error + entry,
+    > entry + entry.error,
+    > entry.warning + entry,
+    > entry + entry.warning,
+    > entry.error + entry.warning,
+    > entry.warning + entry.error { border-#{$_border}-color: transparent; }
+
+    @each $e_type, $e_color in (':focus', transparent),
+                               (':drop(active)', transparent),
+                               ('.warning:focus', transparent),
+                               ('.error:focus', transparent) {
+
+      > entry + entry#{$e_type}:not(:last-child),
+      > entry + entry#{$e_type}:last-child { border-#{$_border}-color: transparent; }
+
+      > entry#{$e_type}:not(:only-child) {
+        + entry,
+        + button,
+        + combobox > box > button.combo { border-#{$_border}-color: transparent; }
+      }
+    }
+    > button:active + entry,
+    > button:checked + entry { border-#{$_border}-color: transparent; }
+  }
+
+  @if $button_rules=='false' {
+    $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
+
+    > button + button { border-#{$_border}-style: solid; }
+
+    > #{$_uncolored_button}:hover:not(:only-child),
+    > #{$_uncolored_button}:hover + #{$_uncolored_button} { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
+
+    > #{$_uncolored_button}:disabled:not(:only-child),
+    > #{$_uncolored_button}:disabled + #{$_uncolored_button}:not(:hover) { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
+
+    > #{$_uncolored_button}:first-child:disabled,
+    > #{$_uncolored_button}:disabled + #{$_uncolored_button}:disabled,
+    > button:active + #{$_uncolored_button}:disabled,
+    > button:checked + #{$_uncolored_button}:disabled,
+    > button.suggested-action + #{$_uncolored_button}:disabled,
+    > button.destructive-action + #{$_uncolored_button}:disabled,
+    > entry + #{$_uncolored_button}:disabled:not(:only-child), { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
+
+    > button:active + #{$_uncolored_button}:hover,
+    > button:checked + #{$_uncolored_button}:hover,
+    > button.suggested-action + #{$_uncolored_button}:hover,
+    > button.destructive-action + #{$_uncolored_button}:hover,
+    > entry + #{$_uncolored_button}:hover:not(:only-child),
+    > #{$_uncolored_button}:first-child:hover, {
+      box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border;
+      border-#{$_border}-color: if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
+    }
+  }
 }
 
 // special case, because path-bars are bugged
@@ -657,9 +715,9 @@ toolbar.inline-toolbar toolbutton {
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
-    &:hover {
+//    &:hover {
 //      box-shadow: none;
-    }
+//    }
     &:first-child:hover { box-shadow: none; }
     &:last-child:hover { box-shadow: none; }
   }
@@ -667,8 +725,13 @@ toolbar.inline-toolbar toolbutton {
 
 // Apply the rules defined above
 .linked:not(.vertical) {
-  &:not(.path-bar):not(.stack-switcher) { @include linking_rules(); }
+  &:not(.path-bar) { @include linking_rules(); }
   &.path-bar:not(.stack-switcher) { @include pathbar_linking_rules(); }
+}
+
+headerbar,
+.titlebar {
+  .linked:not(.vertical) { @include linking_rules($entry_rules:'false', $button_rules:'false'); }
 }
 
 .linked.vertical { @include linking_rules($vert:'true'); }
@@ -1283,34 +1346,11 @@ headerbar {
   .linked:not(.vertical):not(.path-bar) {
     // Reset headerbar linked rules
     > entry {
-        border-radius: 3px;
-        border: 1px solid $header_entry_border;
-        &:focus { border-color: $selected_bg_color; }
-      }
-
-    combobox > box > button.combo {
-        &:hover { border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12)); }
-      }
-
-    @each $e_type in (':focus', ':drop(active)', '.warning:focus', '.error:focus') {
-
-      > entry + entry#{$e_type}:not(:last-child),
-      > entry + entry#{$e_type}:last-child { border-left-color: transparent; }
-
-      > entry#{$e_type}:not(:only-child) {
-        + entry,
-        + button,
-        + combobox > box > button.combo { border-left-color: transparent; }
-      }
-
-      > entry#{$e_type}:not(:only-child) {
-        + button:hover,
-        + combobox > box > button.combo:hover { border-left-color: if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12)); }
-      }
+      margin-left: 1px;
+      border-radius: 3px;
+      border: 1px solid $header_entry_border;
+      &:focus { border-color: $selected_bg_color; }
     }
-
-    > button:active + entry,
-    > button:checked + entry { border-left-color: transparent; }
   }
  
   // special case for path-bars
@@ -1394,18 +1434,14 @@ headerbar {
       &:disabled { color: transparentize($header_fg, 0.6); }
     }
 
-    > button + button { border-left-style: none; }
-
-    > button:hover:not(:active),
-    > button:hover + button { box-shadow: inset 1px 0 $header_button_border; }
-
-    > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
-    > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled { box-shadow: inset 1px 0 $header_button_border; }
-
-    > button:first-child:hover:not(:active),
-    > entry + button:not(:active):hover { box-shadow: none; }
-
-    > entry:focus + button { box-shadow: none; }
+//    > button + button { border-left-style: none; }
+//    > button:hover:not(:active),
+//    > button:hover + button { box-shadow: inset 1px 0 $header_button_border; }
+//    > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
+//    > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled { box-shadow: inset 1px 0 $header_button_border; }
+//    > button:first-child:hover:not(:active),
+//    > entry + button:not(:active):hover { box-shadow: none; }
+//    > entry:focus + button { box-shadow: none; }
   }
 
   // Headerbar ComboBoxes
@@ -1422,12 +1458,10 @@ headerbar {
     > .linked > entry.combo {
       &:dir(ltr) {
         border-right-style: none;
-
         &:focus { box-shadow: 1px 0 $selected_bg_color; }
       }
       &:dir(rtl) {
         border-left-style: none;
-
         &:focus { box-shadow: -1px 0 $selected_bg_color; }
       }
     }
