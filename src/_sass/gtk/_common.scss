@@ -709,7 +709,7 @@ toolbar.inline-toolbar toolbutton {
 }
 
 // special case, because path-bars are bugged
-@mixin pathbar_linking_rules($sep_color:if($variant=='light', rgba($button_border, 0.1), rgba($button_border, 0.1))) {
+@mixin pathbar_linking_rules( $sep_color: $borders_color ) {
 
   > button {
     border-left-style: none;
