@@ -863,143 +863,143 @@ button.font separator, button.file separator {
   box-shadow: none;
 }
 
-headerbar .linked:not(.vertical) > entry + entry,
-headerbar .linked:not(.vertical) > entry.error + entry,
-headerbar .linked:not(.vertical) > entry + entry.error,
-headerbar .linked:not(.vertical) > entry.warning + entry,
-headerbar .linked:not(.vertical) > entry + entry.warning,
-headerbar .linked:not(.vertical) > entry.error + entry.warning,
-headerbar .linked:not(.vertical) > entry.warning + entry.error,
-.titlebar .linked:not(.vertical) > entry + entry,
-.titlebar .linked:not(.vertical) > entry.error + entry,
-.titlebar .linked:not(.vertical) > entry + entry.error,
-.titlebar .linked:not(.vertical) > entry.warning + entry,
-.titlebar .linked:not(.vertical) > entry + entry.warning,
-.titlebar .linked:not(.vertical) > entry.error + entry.warning,
-.titlebar .linked:not(.vertical) > entry.warning + entry.error {
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry,
+headerbar .linked:not(.vertical):not(.path-bar) > entry.error + entry,
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.error,
+headerbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry,
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.warning,
+headerbar .linked:not(.vertical):not(.path-bar) > entry.error + entry.warning,
+headerbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.error,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry.error + entry,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.error,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning + entry,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.warning,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry.error + entry.warning,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.error {
   border-left-color: transparent;
 }
 
-headerbar .linked:not(.vertical) > entry + entry:focus:not(:last-child),
-headerbar .linked:not(.vertical) > entry + entry:focus:last-child,
-.titlebar .linked:not(.vertical) > entry + entry:focus:not(:last-child),
-.titlebar .linked:not(.vertical) > entry + entry:focus:last-child {
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:not(:last-child),
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:last-child,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:not(:last-child),
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:last-child {
   border-left-color: transparent;
 }
 
-headerbar .linked:not(.vertical) > entry:focus:not(:only-child) + entry,
-headerbar .linked:not(.vertical) > entry:focus:not(:only-child) + button,
-headerbar .linked:not(.vertical) > entry:focus:not(:only-child) + combobox > box > button.combo,
-.titlebar .linked:not(.vertical) > entry:focus:not(:only-child) + entry,
-.titlebar .linked:not(.vertical) > entry:focus:not(:only-child) + button,
-.titlebar .linked:not(.vertical) > entry:focus:not(:only-child) + combobox > box > button.combo {
+headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + entry,
+headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + button,
+headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + combobox > box > button.combo,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + entry,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + button,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + combobox > box > button.combo {
   border-left-color: transparent;
 }
 
-headerbar .linked:not(.vertical) > entry + entry:drop(active):not(:last-child),
-headerbar .linked:not(.vertical) > entry + entry:drop(active):last-child,
-.titlebar .linked:not(.vertical) > entry + entry:drop(active):not(:last-child),
-.titlebar .linked:not(.vertical) > entry + entry:drop(active):last-child {
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry:drop(active):not(:last-child),
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry:drop(active):last-child,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry:drop(active):not(:last-child),
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry:drop(active):last-child {
   border-left-color: transparent;
 }
 
-headerbar .linked:not(.vertical) > entry:drop(active):not(:only-child) + entry,
-headerbar .linked:not(.vertical) > entry:drop(active):not(:only-child) + button,
-headerbar .linked:not(.vertical) > entry:drop(active):not(:only-child) + combobox > box > button.combo,
-.titlebar .linked:not(.vertical) > entry:drop(active):not(:only-child) + entry,
-.titlebar .linked:not(.vertical) > entry:drop(active):not(:only-child) + button,
-.titlebar .linked:not(.vertical) > entry:drop(active):not(:only-child) + combobox > box > button.combo {
+headerbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + entry,
+headerbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + button,
+headerbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + combobox > box > button.combo,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + entry,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + button,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + combobox > box > button.combo {
   border-left-color: transparent;
 }
 
-headerbar .linked:not(.vertical) > entry + entry.warning:focus:not(:last-child),
-headerbar .linked:not(.vertical) > entry + entry.warning:focus:last-child,
-.titlebar .linked:not(.vertical) > entry + entry.warning:focus:not(:last-child),
-.titlebar .linked:not(.vertical) > entry + entry.warning:focus:last-child {
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.warning:focus:not(:last-child),
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.warning:focus:last-child,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.warning:focus:not(:last-child),
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.warning:focus:last-child {
   border-left-color: transparent;
 }
 
-headerbar .linked:not(.vertical) > entry.warning:focus:not(:only-child) + entry,
-headerbar .linked:not(.vertical) > entry.warning:focus:not(:only-child) + button,
-headerbar .linked:not(.vertical) > entry.warning:focus:not(:only-child) + combobox > box > button.combo,
-.titlebar .linked:not(.vertical) > entry.warning:focus:not(:only-child) + entry,
-.titlebar .linked:not(.vertical) > entry.warning:focus:not(:only-child) + button,
-.titlebar .linked:not(.vertical) > entry.warning:focus:not(:only-child) + combobox > box > button.combo {
+headerbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + entry,
+headerbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + button,
+headerbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + combobox > box > button.combo,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + entry,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + button,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + combobox > box > button.combo {
   border-left-color: transparent;
 }
 
-headerbar .linked:not(.vertical) > entry + entry.error:focus:not(:last-child),
-headerbar .linked:not(.vertical) > entry + entry.error:focus:last-child,
-.titlebar .linked:not(.vertical) > entry + entry.error:focus:not(:last-child),
-.titlebar .linked:not(.vertical) > entry + entry.error:focus:last-child {
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.error:focus:not(:last-child),
+headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.error:focus:last-child,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.error:focus:not(:last-child),
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.error:focus:last-child {
   border-left-color: transparent;
 }
 
-headerbar .linked:not(.vertical) > entry.error:focus:not(:only-child) + entry,
-headerbar .linked:not(.vertical) > entry.error:focus:not(:only-child) + button,
-headerbar .linked:not(.vertical) > entry.error:focus:not(:only-child) + combobox > box > button.combo,
-.titlebar .linked:not(.vertical) > entry.error:focus:not(:only-child) + entry,
-.titlebar .linked:not(.vertical) > entry.error:focus:not(:only-child) + button,
-.titlebar .linked:not(.vertical) > entry.error:focus:not(:only-child) + combobox > box > button.combo {
+headerbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + entry,
+headerbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + button,
+headerbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + combobox > box > button.combo,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + entry,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + button,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + combobox > box > button.combo {
   border-left-color: transparent;
 }
 
-headerbar .linked:not(.vertical) > button:active + entry,
-headerbar .linked:not(.vertical) > button:checked + entry,
-.titlebar .linked:not(.vertical) > button:active + entry,
-.titlebar .linked:not(.vertical) > button:checked + entry {
+headerbar .linked:not(.vertical):not(.path-bar) > button:active + entry,
+headerbar .linked:not(.vertical):not(.path-bar) > button:checked + entry,
+.titlebar .linked:not(.vertical):not(.path-bar) > button:active + entry,
+.titlebar .linked:not(.vertical):not(.path-bar) > button:checked + entry {
   border-left-color: transparent;
 }
 
-headerbar .linked:not(.vertical) > button + button,
-.titlebar .linked:not(.vertical) > button + button {
+headerbar .linked:not(.vertical):not(.path-bar) > button + button,
+.titlebar .linked:not(.vertical):not(.path-bar) > button + button {
   border-left-style: solid;
 }
 
-headerbar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
-headerbar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action),
-.titlebar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
-.titlebar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action) {
-  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.12);
+headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
+headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action),
+.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
+.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action) {
+  box-shadow: inset 1px 0 transparent;
 }
 
-headerbar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
-headerbar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover),
-.titlebar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
-.titlebar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
-  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.12);
+headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
+headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover),
+.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
+.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
+  box-shadow: inset 1px 0 transparent;
 }
 
-headerbar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:disabled,
-headerbar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
-headerbar .linked:not(.vertical) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
-headerbar .linked:not(.vertical) > button:checked + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
-headerbar .linked:not(.vertical) > button.suggested-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
-headerbar .linked:not(.vertical) > button.destructive-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
-headerbar .linked:not(.vertical) > entry + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
-.titlebar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:disabled,
-.titlebar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
-.titlebar .linked:not(.vertical) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
-.titlebar .linked:not(.vertical) > button:checked + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
-.titlebar .linked:not(.vertical) > button.suggested-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
-.titlebar .linked:not(.vertical) > button.destructive-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
-.titlebar .linked:not(.vertical) > entry + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child) {
-  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.12);
+headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:disabled,
+headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+headerbar .linked:not(.vertical):not(.path-bar) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+headerbar .linked:not(.vertical):not(.path-bar) > button:checked + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+headerbar .linked:not(.vertical):not(.path-bar) > button.suggested-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+headerbar .linked:not(.vertical):not(.path-bar) > button.destructive-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+headerbar .linked:not(.vertical):not(.path-bar) > entry + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
+.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:disabled,
+.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+.titlebar .linked:not(.vertical):not(.path-bar) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+.titlebar .linked:not(.vertical):not(.path-bar) > button:checked + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+.titlebar .linked:not(.vertical):not(.path-bar) > button.suggested-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+.titlebar .linked:not(.vertical):not(.path-bar) > button.destructive-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child) {
+  box-shadow: inset 1px 0 transparent;
 }
 
-headerbar .linked:not(.vertical) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
-headerbar .linked:not(.vertical) > button:checked + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
-headerbar .linked:not(.vertical) > button.suggested-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
-headerbar .linked:not(.vertical) > button.destructive-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
-headerbar .linked:not(.vertical) > entry + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
-headerbar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:hover,
-.titlebar .linked:not(.vertical) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
-.titlebar .linked:not(.vertical) > button:checked + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
-.titlebar .linked:not(.vertical) > button.suggested-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
-.titlebar .linked:not(.vertical) > button.destructive-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
-.titlebar .linked:not(.vertical) > entry + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
-.titlebar .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:hover {
-  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.12);
+headerbar .linked:not(.vertical):not(.path-bar) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+headerbar .linked:not(.vertical):not(.path-bar) > button:checked + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+headerbar .linked:not(.vertical):not(.path-bar) > button.suggested-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+headerbar .linked:not(.vertical):not(.path-bar) > button.destructive-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+headerbar .linked:not(.vertical):not(.path-bar) > entry + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
+headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:hover,
+.titlebar .linked:not(.vertical):not(.path-bar) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.titlebar .linked:not(.vertical):not(.path-bar) > button:checked + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.titlebar .linked:not(.vertical):not(.path-bar) > button.suggested-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.titlebar .linked:not(.vertical):not(.path-bar) > button.destructive-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.titlebar .linked:not(.vertical):not(.path-bar) > entry + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
+.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:hover {
+  box-shadow: inset 1px 0 transparent;
   border-left-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -4395,7 +4395,7 @@ decoration:backdrop {
 
 tooltip.csd decoration {
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 3px 0 transparent;
 }
 
 messagedialog.csd decoration {

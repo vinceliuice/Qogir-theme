@@ -679,6 +679,7 @@ toolbar.inline-toolbar toolbutton {
 
   @if $button_rules=='false' {
     $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
+    $b_border: transparent;
 
     > button + button { border-#{$_border}-style: solid; }
 
@@ -723,6 +724,7 @@ toolbar.inline-toolbar toolbutton {
 //    &:hover {
 //      box-shadow: none;
 //    }
+
     &:first-child:hover { box-shadow: none; }
     &:last-child:hover { box-shadow: none; }
   }
@@ -736,7 +738,9 @@ toolbar.inline-toolbar toolbutton {
 
 headerbar,
 .titlebar {
-  .linked:not(.vertical) { @include linking_rules($entry_rules:'false', $button_rules:'false'); }
+  .linked:not(.vertical):not(.path-bar) {
+    @include linking_rules($entry_rules:'false', $button_rules:'false');
+  }
 }
 
 .linked.vertical { @include linking_rules($vert:'true'); }
