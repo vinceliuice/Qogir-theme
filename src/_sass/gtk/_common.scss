@@ -659,10 +659,7 @@ toolbar.inline-toolbar toolbutton {
     > entry.error + entry.warning,
     > entry.warning + entry.error { border-#{$_border}-color: transparent; }
 
-    @each $e_type, $e_color in (':focus', transparent),
-                               (':drop(active)', transparent),
-                               ('.warning:focus', transparent),
-                               ('.error:focus', transparent) {
+    @each $e_type in (':focus', ':drop(active)', '.warning:focus', '.error:focus') {
 
       > entry + entry#{$e_type}:not(:last-child),
       > entry + entry#{$e_type}:last-child { border-#{$_border}-color: transparent; }
@@ -679,7 +676,6 @@ toolbar.inline-toolbar toolbutton {
 
   @if $button_rules=='false' {
     $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
-    $b_border: transparent;
 
     > button + button { border-#{$_border}-style: solid; }
 
@@ -739,7 +735,7 @@ toolbar.inline-toolbar toolbutton {
 headerbar,
 .titlebar {
   .linked:not(.vertical):not(.path-bar) {
-    @include linking_rules($entry_rules:'false', $button_rules:'false');
+    @include linking_rules($entry_rules:'false', $button_rules:'false', $b_border: transparent);
   }
 }
 
