@@ -532,7 +532,7 @@ window.background > box.vertical > overlay > stack > widget > stack {
 }
 
 .application-details-infobar {
-  background-image: image($bg_color);
+  background-image: image($base_color);
   border-image: linear-gradient(to bottom, $solid_borders_color, $solid_borders_color) 1 1 1 1 / 1px 1px 1px 1px stretch;
 }
 
