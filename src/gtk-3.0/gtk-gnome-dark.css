@@ -1476,10 +1476,12 @@ headerbar,
   color: rgba(207, 218, 231, 0.8);
   box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
   background-color: #282a33;
+  min-height: 28px;
 }
 
 .csd headerbar, .csd .titlebar:not(headerbar) {
   background-color: #282A33;
+  min-height: 28px;
 }
 
 headerbar:backdrop,
@@ -3914,6 +3916,10 @@ filechooserbutton:drop(active) {
   border-color: transparent;
 }
 
+.background.csd .vertical.dialog-vbox searchbar {
+  box-shadow: none;
+}
+
 .sidebar {
   border-style: none;
   background-color: #32343D;
@@ -4395,7 +4401,7 @@ decoration:backdrop {
 
 tooltip.csd decoration {
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 3px 0 transparent;
 }
 
 messagedialog.csd decoration {
@@ -4739,10 +4745,6 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   background-image: none;
 }
 
-.nautilus-window searchbar {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
 .nautilus-window .searchbar-container {
   margin-top: -1px;
 }
@@ -5045,6 +5047,59 @@ button.round-button {
   min-height: 28px;
   min-width: 28px;
   padding: 0;
+}
+
+window.background > box.vertical > searchbar {
+  box-shadow: none;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack > box.vertical > scrolledwindow > viewport.frame > widget > list {
+  background-color: #32343D;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack > box.vertical > scrolledwindow > viewport.frame > widget > list > separator {
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack widget > box.vertical.app-list {
+  background-image: image(#32343D);
+}
+
+window.background > box.vertical > overlay > stack > widget > stack widget > box.vertical.app-list > box.vertical > list {
+  background-color: #32343D;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack widget > box.vertical.app-list separator {
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+.category_page_header_filter_box {
+  background-image: image(#32343D);
+  border-image: linear-gradient(to bottom, #494c59, #494c59) 0 0 1 0/0 0 1px 0 stretch;
+}
+
+.category_page_header_filter_box button {
+  color: rgba(211, 218, 227, 0.45);
+  background-image: image(#32343D);
+}
+
+.category_page_header_filter_box button:prelight {
+  color: rgba(211, 218, 227, 0.75);
+}
+
+.category_page_header_filter_box button:checked {
+  color: #D3DAE3;
+}
+
+.category_page_header_filter_box button:disabled {
+  color: rgba(211, 218, 227, 0.65);
+}
+
+.application-details-infobar {
+  background-image: image(#32343D);
+  border-image: linear-gradient(to bottom, #494c59, #494c59) 1 1 1 1/1px 1px 1px 1px stretch;
 }
 
 .tr-workarea undershoot,

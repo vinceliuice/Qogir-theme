@@ -1072,9 +1072,11 @@ headerbar,
   color: $header_fg;
   box-shadow: inset 0 -1px $borders_color;
   background-color: opacify($header_bg, 1);
+  min-height: 28px;
 
   .csd & {  // Transparent header-bars only in csd windows
     background-color: $header_bg;
+    min-height: 28px;
   }
 
   &:backdrop {
@@ -2889,6 +2891,7 @@ messagedialog { // Message Dialog styling
 //
 // Filechooser
 //
+
 filechooser {
   .dialog-action-box { border-top: 1px solid $borders_color; }
 
@@ -2901,6 +2904,16 @@ filechooser {
 filechooserbutton:drop(active) {
   box-shadow: none;
   border-color: transparent;
+}
+
+//
+// GtkAppChooserDialog
+//
+
+.background.csd {
+  .vertical.dialog-vbox {
+    searchbar { box-shadow: none; }
+  }
 }
 
 //

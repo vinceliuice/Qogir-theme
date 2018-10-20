@@ -745,7 +745,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical):not(.path-bar) > entry + entry {
-  border-left-color: rgba(0, 0, 0, 0);
+  border-left-color: transparent;
 }
 
 .linked:not(.vertical):not(.path-bar) > entry.error + entry,
@@ -823,7 +823,7 @@ button.font separator, button.file separator {
 
 .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
 .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0);
+  box-shadow: inset 1px 0 transparent;
 }
 
 .linked:not(.vertical):not(.path-bar) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
@@ -1004,7 +1004,7 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:acti
 }
 
 .linked.vertical > entry + entry {
-  border-top-color: rgba(0, 0, 0, 0);
+  border-top-color: transparent;
 }
 
 .linked.vertical > entry.error + entry,
@@ -1082,7 +1082,7 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:acti
 
 .linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
 .linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
-  box-shadow: inset 0 1px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 1px transparent;
 }
 
 .linked.vertical > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
@@ -1476,10 +1476,12 @@ headerbar,
   color: rgba(82, 93, 118, 0.8);
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
   background-color: white;
+  min-height: 28px;
 }
 
 .csd headerbar, .csd .titlebar:not(headerbar) {
   background-color: #ffffff;
+  min-height: 28px;
 }
 
 headerbar:backdrop,
@@ -3914,6 +3916,10 @@ filechooserbutton:drop(active) {
   border-color: transparent;
 }
 
+.background.csd .vertical.dialog-vbox searchbar {
+  box-shadow: none;
+}
+
 .sidebar {
   border-style: none;
   background-color: #fafbfc;
@@ -4762,10 +4768,6 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   background-image: none;
 }
 
-.nautilus-window searchbar {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-}
-
 .nautilus-window .searchbar-container {
   margin-top: -1px;
 }
@@ -5069,6 +5071,59 @@ button.round-button {
   min-height: 28px;
   min-width: 28px;
   padding: 0;
+}
+
+window.background > box.vertical > searchbar {
+  box-shadow: none;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack > box.vertical > scrolledwindow > viewport.frame > widget > list {
+  background-color: #fafbfc;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack > box.vertical > scrolledwindow > viewport.frame > widget > list > separator {
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack widget > box.vertical.app-list {
+  background-image: image(#fafbfc);
+}
+
+window.background > box.vertical > overlay > stack > widget > stack widget > box.vertical.app-list > box.vertical > list {
+  background-color: #fafbfc;
+}
+
+window.background > box.vertical > overlay > stack > widget > stack widget > box.vertical.app-list separator {
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+.category_page_header_filter_box {
+  background-image: image(#fafbfc);
+  border-image: linear-gradient(to bottom, #dae2e9, #dae2e9) 0 0 1 0/0 0 1px 0 stretch;
+}
+
+.category_page_header_filter_box button {
+  color: rgba(92, 97, 108, 0.55);
+  background-image: image(#fafbfc);
+}
+
+.category_page_header_filter_box button:prelight {
+  color: rgba(92, 97, 108, 0.75);
+}
+
+.category_page_header_filter_box button:checked {
+  color: #5c616c;
+}
+
+.category_page_header_filter_box button:disabled {
+  color: rgba(92, 97, 108, 0.65);
+}
+
+.application-details-infobar {
+  background-image: image(#fafbfc);
+  border-image: linear-gradient(to bottom, #dae2e9, #dae2e9) 1 1 1 1/1px 1px 1px 1px stretch;
 }
 
 .tr-workarea undershoot,
