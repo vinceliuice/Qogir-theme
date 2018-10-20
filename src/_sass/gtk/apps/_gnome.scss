@@ -132,37 +132,37 @@ terminal-window,
     }
 
     @if $menu == 'budgie' {
-    button.titlebutton {
-      &.appmenu  { // appmenu button
-        margin-left: -2px;
-        border: none;
-        min-height: 30px;
-        min-width: 30px;
-        border-radius: 50px;
-        color: transparent;
-        background-color: transparent;
-        background-image: -gtk-scaled(url("assets/logo.png"),
-                                      url("assets/logo@2.png"));
-        background-repeat: no-repeat;
-        background-position: center;
-
-        image { opacity: 0; } // Make menu button icon invisible
-
-        &:hover {
-          background-image: -gtk-scaled(url("assets/logo-hover.png"),
-                                        url("assets/logo-hover@2.png"));
+      button.titlebutton {
+        &.appmenu  { // appmenu button
+          margin-left: -2px;
+          border: none;
+          min-height: 30px;
+          min-width: 30px;
+          border-radius: 50px;
+          color: transparent;
+          background-color: transparent;
+          background-image: -gtk-scaled(url("assets/logo.png"),
+                                        url("assets/logo@2.png"));
           background-repeat: no-repeat;
           background-position: center;
-        }
 
-        &:checked, &:active {
-          background-image: -gtk-scaled(url("assets/logo-active.png"),
+          image { opacity: 0; } // Make menu button icon invisible
+
+          &:hover {
+            background-image: -gtk-scaled(url("assets/logo-hover.png"),
+                                          url("assets/logo-hover@2.png"));
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+          &:checked, &:active {
+            background-image: -gtk-scaled(url("assets/logo-active.png"),
                                         url("assets/logo-active@2.png"));
-          background-repeat: no-repeat;
-          background-position: center;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
         }
       }
-    }
     }
   }
 }
@@ -175,11 +175,9 @@ terminal-window,
 }
 
 .nautilus-window {
-
-  searchbar { border-top: 1px solid $borders_color; }
+//  searchbar { border-bottom: none; }
   .searchbar-container { margin-top: -1px; }
   actionbar { border-color: $solid_borders_color; }
-
 }
 
 .nautilus-window notebook,
@@ -488,6 +486,54 @@ button.round-button { // categories expander button
   min-height: 28px;
   min-width: 28px;
   padding: 0;
+}
+
+window.background > box.vertical > searchbar { box-shadow: none; }
+
+window.background > box.vertical > overlay > stack > widget > stack {
+
+  // "Installed" stack
+  > box.vertical > scrolledwindow > viewport.frame > widget > list {
+    background-color: $bg_color; // override $base_color
+
+    // use asymmetrical separators
+    > separator {
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+    }
+  }
+
+  // "Updates" stack
+  widget > box.vertical.app-list {
+    // override $base_color
+    background-image: image($bg_color);
+
+    > box.vertical > list { background-color: $bg_color; }
+
+    // use asymmetrical separators
+    separator {
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+    }
+  }
+}
+
+.category_page_header_filter_box {
+  background-image: image($bg_color);
+  border-image: linear-gradient(to bottom, $solid_borders_color, $solid_borders_color) 0 0 1 0 / 0 0 1px 0 stretch;
+
+  button {
+    color: $insensitive_fg_color;
+    background-image: image($bg_color);
+    &:prelight { color: mix($fg_color, rgba($fg_color, 0.5), 50%); }
+    &:checked { color: $fg_color; }
+    &:disabled { color: rgba($insensitive_fg_color, 0.65); }
+  }
+}
+
+.application-details-infobar {
+  background-image: image($bg_color);
+  border-image: linear-gradient(to bottom, $solid_borders_color, $solid_borders_color) 1 1 1 1 / 1px 1px 1px 1px stretch;
 }
 
 //
