@@ -8,6 +8,9 @@ horst3180 - Arc gtk theme: https://github.com/horst3180/Arc-theme
 ## Info
 
 ### GTK+ 3.20 or later
+- Set windows button on gnome for a better experience.
+
+		gsettings set org.gnome.desktop.wm.preferences button-layout appmenu:minimize,maximize,close
 
 ### GTK2 engines requirment
 - GTK2 engine Murrine 0.98.1.1 or later.

@@ -666,7 +666,6 @@ $chrome_borders_color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.
 %square_chrome {
   min-width: $large_size;
   min-height: $large_size;
-  margin-right: -10px;
 }
 
 window.background.chromium {

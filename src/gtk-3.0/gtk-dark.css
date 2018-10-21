@@ -1572,8 +1572,8 @@ headerbar.default-decoration .titlebar:not(headerbar) button.titlebutton,
 
 headerbar.default-decoration,
 .default-decoration.titlebar:not(headerbar) {
-  min-height: 28px;
-  padding: 0 6px;
+  min-height: 30px;
+  padding: 0 8px;
   margin: 0;
   background-color: #282a33;
 }
@@ -2351,7 +2351,7 @@ menu .separator:not(label),
 menu menuitem,
 .menu menuitem {
   min-height: 17px;
-  min-width: 40px;
+  min-width: 38px;
   padding: 4px 6px;
 }
 
@@ -2825,12 +2825,12 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal slider {
   margin: 0 2px;
-  min-width: 40px;
+  min-width: 38px;
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical slider {
   margin: 2px 0;
-  min-height: 40px;
+  min-height: 38px;
 }
 
 scrollbar.overlay-indicator.dragging, scrollbar.overlay-indicator.hovering {
@@ -2838,11 +2838,11 @@ scrollbar.overlay-indicator.dragging, scrollbar.overlay-indicator.hovering {
 }
 
 scrollbar.horizontal slider {
-  min-width: 40px;
+  min-width: 38px;
 }
 
 scrollbar.vertical slider {
-  min-height: 40px;
+  min-height: 38px;
 }
 
 switch {
@@ -4673,6 +4673,7 @@ terminal-window notebook > header.top button,
   border-radius: 2px;
   color: rgba(207, 218, 231, 0.8);
   background-color: transparent;
+  border: 1px solid transparent;
 }
 
 .nautilus-window headerbar .path-bar-box.width-maximized {

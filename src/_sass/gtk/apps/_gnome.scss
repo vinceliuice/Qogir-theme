@@ -46,6 +46,13 @@ terminal-window,
                                 url("assets/logo@2.png"));
   background-repeat: no-repeat;
   background-position: top left;
+
+  &:backdrop {
+    background-image: -gtk-scaled(url("assets/logo-backdrop.png"),
+                                url("assets/logo-backdrop@2.png"));
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
 }
 
 %pathbar_box_button {
@@ -68,11 +75,11 @@ terminal-window,
 
 .nautilus-window headerbar {
   .path-bar-box {
-    margin: 6px 0;
+    margin: $icon_padding 0;
     border-radius: 2px;
     color: $header_fg;
     background-color: transparent;
-
+    border: 1px solid transparent;
     button { @extend %pathbar_box_button; }
 
     &.width-maximized {
@@ -123,7 +130,7 @@ terminal-window,
   }
 
   headerbar {
-    padding-left: if($menu == 'budgie', 6px, 44px);
+    padding-left: if($menu == 'budgie', 6px + $header_padding, 48px);
     @if $menu == 'gnome' { @extend %headerbar_image; } // Set nautilus headerbar mountain icon
 
     &, &:backdrop {
@@ -134,7 +141,7 @@ terminal-window,
     @if $menu == 'budgie' {
       button.titlebutton {
         &.appmenu  { // appmenu button
-          margin-left: -2px;
+          margin-left: -2px - $header_padding;
           border: none;
           min-height: 30px;
           min-width: 30px;

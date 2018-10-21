@@ -12,10 +12,12 @@ $asset_suffix_dark: if($titlebar == 'dark', '-dark', '');
 // sizes
 $small_size: 17px;
 $medium_size: 28px;
-$large_size: 40px;
+$large_size: 38px;
 
 $cont_padding: 6px;
 $menuitem_size: 28px;
+$icon_padding:6px;
+$header_padding:0;
 
 // radiuses
 $bt_radius: 2px;
