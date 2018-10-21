@@ -68,8 +68,8 @@ Usage:  ./Install  [OPTIONS...]
 (Install themes with square titlebuttons)
 
 ## Screenshots
-![1](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot01.png?raw=true)
-![2](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot02.png?raw=true)
-![3](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot03.png?raw=true)
-![4](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot04.png?raw=true)
-![5](https://github.com/vinceliuice/Qogir-theme/blob/master/screenshots/screenshot05.png?raw=true)
+![1](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot01.png?raw=true)
+![2](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot02.png?raw=true)
+![3](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot03.png?raw=true)
+![4](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot04.png?raw=true)
+![5](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot05.png?raw=true)
