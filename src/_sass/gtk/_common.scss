@@ -2795,6 +2795,36 @@ calendar {
 //
 // Dialogs
 //
+
+%middle_button {
+  border-radius: 0;
+  border-top: 1px solid $borders_color;
+  border-right: none;
+  border-bottom: none;
+}
+
+%last_button {
+  border-bottom-right-radius: $bt_radius;
+  border-top-right-radius: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+%first_button {
+  border-bottom-left-radius: $bt_radius;
+  border-top-left-radius: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+%single_button {
+  border-bottom-left-radius: $bt_radius;
+  border-bottom-right-radius: $bt_radius;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
 messagedialog { // Message Dialog styling
 
   .titlebar {
@@ -2806,7 +2836,7 @@ messagedialog { // Message Dialog styling
   }
 
   .dialog-action-area button {
-    padding: 6px 10px;
+    padding: 6px 10px 8px 10px;
     border-radius: 0;
     border: none;
     border-top: 1px solid $borders_color;
@@ -2815,19 +2845,19 @@ messagedialog { // Message Dialog styling
       transition: background-color 0.00001s 0.3s;
       animation: ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
     }
-
-    &:first-child {
-      border-radius: 0;
-      border-top-left-radius: 0;
-    }
-
-    &:last-child {
-      border-radius: 0;
-      border-top-right-radius: 0;
-    }
   }
 
-  %dialog_button,
+  .linked:not(.vertical) > button,
+  .linked:not(.vertical) > button:hover,
+  .linked:not(.vertical) > button:active,
+  .linked:not(.vertical) > button:checked,
+  .linked:not(.vertical) > button:disabled {
+    @extend %middle_button;
+    &:first-child { @extend %first_button; }
+    &:last-child { @extend %last_button; }
+    &:only-child { @extend %single_button; }
+  }
+
   .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
 
     &:hover {
@@ -2845,43 +2875,6 @@ messagedialog { // Message Dialog styling
       border-bottom-left-radius: $bt_radius;
       border-bottom-right-radius: $bt_radius;
       border: none;
-    }
-    .dialog-action-area button {
-
-      &:active, &:checked {
-        transition: background-color 0.00001s 0.3s;
-        animation: ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
-      }
-
-      @extend %middle_button;
-      &:first-child{ @extend %first_button; }
-      &:last-child { @extend %last_button; }
-      &:only-child { @extend %single_button; }
-    }
-
-    .dialog-action-area button:not(.suggested-action):not(.destructive-action) { @extend %dialog_button; }
-
-    %middle_button {
-      border-radius: 0;
-      border-top: 1px solid $borders_color;
-      border-right-style: none;
-      border-bottom-style: none;
-    }
-    %last_button {
-      border-radius: 0 0 3px 0;
-      border-right-style: none;
-      border-bottom-style: none;
-    }
-    %first_button {
-      border-radius: 0 0 0 3px;
-      border-left-style: none;
-      border-bottom-style: none;
-    }
-    %single_button {
-      border-radius: 0 0 3px 3px;
-      border-left-style: none;
-      border-right-style: none;
-      border-bottom-style: none;
     }
   }
 }
