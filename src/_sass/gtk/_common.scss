@@ -2696,6 +2696,8 @@ row {
     button { @extend %selected-button; }
   }
 
+	button { &:active, &:checked { background-image: image($selected_bg_color); } } // Fixed Cinnamon theme setting row button active background issue
+
   &.activatable {
     &.has-open-popup,
     &:hover { background-color: if($variant == 'light', transparentize(black, 0.95), transparentize(white, 0.97)); }
@@ -2973,14 +2975,17 @@ placessidebar {
     > revealer {
       padding: 0 10px;
     }
+
     image.sidebar-icon {
       &:dir(ltr) { padding-right: 8px; }
       &:dir(rtl) { padding-left: 8px; }
     }
+
     label.sidebar-label {
       &:dir(ltr) { padding-right: 2px; }
       &:dir(rtl) { padding-left: 2px; }
     }
+
     @at-root button.sidebar-button {
       min-width: 22px;
       min-height: 22px;

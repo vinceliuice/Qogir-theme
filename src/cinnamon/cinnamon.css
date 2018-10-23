@@ -1551,6 +1551,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-gradient-end: #F27835;
 }
 
+.window-list-preview {
+  padding: 12px;
+  spacing: 8px;
+  border: none;
+  border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  color: #5c616c;
+  background: none;
+}
+
 .sound-button {
   width: 22px;
   height: 13px;
@@ -1768,9 +1777,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .panel-launcher,
 .launcher {
-  margin: 1px;
-  padding: 1px;
-  transition-duration: 200;
+  padding: 2px;
+  transition-duration: 200ms;
 }
 
 .panel-launcher:hover,
@@ -1781,24 +1789,67 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .panel-bottom .panel-launcher:hover, .panel-bottom
 .launcher:hover {
-  border-bottom-width: 1px;
+  border-bottom-width: 2px;
+  padding-bottom: 0;
 }
 
 .panel-top .panel-launcher:hover, .panel-top
 .launcher:hover {
-  border-top-width: 1px;
+  border-top-width: 2px;
+  padding-top: 0;
 }
 
 .panel-left .panel-launcher:hover, .panel-left
 .launcher:hover {
-  border-left-width: 1px;
+  border-left-width: 2px;
   padding-left: 0;
 }
 
 .panel-right .panel-launcher:hover, .panel-right
 .launcher:hover {
-  border-right-width: 1px;
+  border-right-width: 2px;
   padding-right: 0;
+}
+
+.window-list-item-box {
+  border: 0 solid transparent;
+}
+
+.panel-top .window-list-item-box {
+  border-top-width: 2px;
+}
+
+.panel-bottom .window-list-item-box {
+  border-bottom-width: 2px;
+}
+
+.panel-left .window-list-item-box {
+  border-left-width: 2px;
+}
+
+.panel-right .window-list-item-box {
+  border-right-width: 2px;
+}
+
+.window-list-item-box:hover {
+  border: 0 solid rgba(82, 148, 226, 0.5);
+  background-gradient-direction: none;
+}
+
+.panel-top .window-list-item-box:hover {
+  border-top-width: 2px;
+}
+
+.panel-bottom .window-list-item-box:hover {
+  border-bottom-width: 2px;
+}
+
+.panel-left .window-list-item-box:hover {
+  border-left-width: 2px;
+}
+
+.panel-right .window-list-item-box:hover {
+  border-right-width: 2px;
 }
 
 #overview-corner {

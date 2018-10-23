@@ -1305,6 +1305,16 @@ StScrollBar {
     background-gradient-start: $warning_color;
     background-gradient-end: $warning_color;
   }
+
+  // >= 3.6.7
+  &-preview { // thumbnail popup windows = .switcher-list
+    padding: 20px - 8px; // = .switcher-list - .item-box
+    spacing: 8px; // = .switcher-list-item-container
+    border: none;
+    border-image: url("#{$asset_path}/menu/menu.svg") 9 9 9 9;
+    color: $fg_color;
+    background: none;
+  }
 }
 
 ///
@@ -1499,18 +1509,43 @@ StScrollBar {
 
 .panel-launcher,
 .launcher {
-  margin: 1px;
-  padding: 1px;
-  transition-duration: 200;
+  padding: 2px;
+  transition-duration: 200ms;
 
   &:hover {
     background-gradient-direction: none;
     border: 0px solid $selected_bg_color;
 
-    .panel-bottom & { border-bottom-width: 1px; }
-    .panel-top & { border-top-width: 1px; }
-    .panel-left & { border-left-width: 1px; padding-left: 0; }
-    .panel-right & { border-right-width: 1px; padding-right: 0; }
+    .panel-bottom & { border-bottom-width: 2px; padding-bottom: 0;}
+    .panel-top & { border-top-width: 2px; padding-top: 0;}
+    .panel-left & { border-left-width: 2px; padding-left: 0; }
+    .panel-right & { border-right-width: 2px; padding-right: 0; }
+  }
+}
+
+.window-list-item-box {
+  border: 0 solid transparent;
+  @each $position in (top),
+                     (bottom),
+                     (left),
+                     (right) {
+    .panel-#{$position} & {
+      border-#{$position}-width: 2px;
+    }
+  }
+
+  &:hover {
+    border: 0 solid rgba($selected_bg_color, 0.5);
+    background-gradient-direction: none;
+
+    @each $position in (top),
+                       (bottom),
+                       (left),
+                       (right) {
+      .panel-#{$position} & {
+        border-#{$position}-width: 2px;
+      }
+    }
   }
 }
 
