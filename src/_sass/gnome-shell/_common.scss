@@ -223,17 +223,19 @@ StScrollBar {
 
 .modal-dialog {
   color: $fg_color;
-  background-color: transparentize($bg_color, 1);
+  background-color: $bg_color;
+	border-radius: 2px;
   border: none;
-  border-image: url("assets/misc/modal.svg") 9 9 9 67;
-  padding: 0 5px 6px 5px;
+//  border-image: url("assets/misc/modal.svg") 9 9 9 67;
+  padding: 0;
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25), 0 3px 3px rgba(0, 0, 0, 0.3);
 
   .modal-dialog-content-box {
-    padding: 20px 10px 10px 10px;
+    padding: 24px;
   }
 
   &-linked-button {
-    height: if($variant=='light', 39px, 38px);
+    height: if($variant=='light', 38px, 37px);
     padding: 0;
     box-shadow: inset 0 0 black;
     border-top-width: if($variant=='light', 0px, 1px);
@@ -241,7 +243,7 @@ StScrollBar {
 
     color: $osd_fg_color;
     background-color: $osd_bg_color;
-    border-color: if($variant=='light', darken($osd_bg_color, 5%), darken($osd_bg_color, 8%));
+    border-color: darken($osd_bg_color, 5%);
 
     &:hover { background-color: lighten($osd_bg_color, 5%); }
     &:focus { color: $selected_bg_color; }

@@ -242,18 +242,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .modal-dialog {
   color: #5c616c;
-  background-color: rgba(250, 251, 252, 0);
+  background-color: #fafbfc;
+  border-radius: 2px;
   border: none;
-  border-image: url("assets/misc/modal.svg") 9 9 9 67;
-  padding: 0 5px 6px 5px;
+  padding: 0;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25), 0 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .modal-dialog .modal-dialog-content-box {
-  padding: 20px 10px 10px 10px;
+  padding: 24px;
 }
 
 .modal-dialog-linked-button {
-  height: 39px;
+  height: 38px;
   padding: 0;
   box-shadow: inset 0 0 black;
   border-top-width: 0px;
