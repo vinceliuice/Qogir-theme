@@ -2190,10 +2190,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 34em;
   margin: 5px;
   padding: 10px;
+  border-radius: 2px;
   color: #D3DAE3;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  background-color: #282A33;
+  border: none;
+  border-image: none;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.25);
 }
 
 .notification-banner .notification-icon,
@@ -2226,7 +2228,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .notification-banner .notification-button,
 .notification-banner:hover .notification-button,
 .notification-banner:focus .notification-button {
-  padding: 4px 4px 5px;
+  padding: 2px 4px;
 }
 
 .notification-banner .notification-button:first-child, .notification-banner .notification-button:last-child,

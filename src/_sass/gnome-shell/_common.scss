@@ -2033,10 +2033,12 @@ StScrollBar {
   width: 34em;
   margin: 5px;
   padding: 10px;
+	border-radius: 2px;
   color: $fg_color;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  background-color: $base_color;
+  border: none;
+  border-image: none;
+	box-shadow: 0 3px 5px rgba(black, 0.15), 0 2px 3px rgba(black, 0.25);
 
   .notification-icon { padding: 5px; }
 
@@ -2050,7 +2052,7 @@ StScrollBar {
     spacing: 3px;
   }
   .notification-button {
-    padding: 4px 4px 5px;
+    padding: 2px 4px;
     @extend %button;
 
     &:first-child, &:last-child { border-radius: 2px; }
