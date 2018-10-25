@@ -7429,13 +7429,14 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   min-height: 36px;
   min-width: 100px;
   border-radius: 0;
+  border: none;
   background-color: transparent;
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 0%, transparent 0%) 0 0 0/0 0 0;
   color: rgba(207, 218, 231, 0.8);
 }
 
 .raven .raven-header.top stackswitcher button:hover {
   color: rgba(241, 244, 248, 0.8);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), rgba(82, 148, 226, 0.5) 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 .raven .raven-header.top stackswitcher button:active, .raven .raven-header.top stackswitcher button:checked {
