@@ -4402,7 +4402,7 @@ decoration:backdrop {
 
 tooltip.csd decoration {
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 3px 0 transparent;
 }
 
 messagedialog.csd decoration {
@@ -5059,6 +5059,171 @@ row#workspaces-only-on-primary {
   margin-top: 4px;
 }
 
+.gb-search-entry-occurrences-tag {
+  background: none;
+}
+
+workbench.csd > stack.titlebar:not(headerbar) {
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+workbench.csd > stack.titlebar:not(headerbar) headerbar, workbench.csd > stack.titlebar:not(headerbar) headerbar:first-child, workbench.csd > stack.titlebar:not(headerbar) headerbar:last-child {
+  border-radius: 0 0 0 0;
+}
+
+editortweak .linked > entry.search:focus + .gb-linked-scroller {
+  border-top-color: #5294e2;
+}
+
+layouttab {
+  background-color: #282A33;
+}
+
+layout {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  -PnlDockBin-handle-size: 1;
+}
+
+eggsearchbar box.search-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+pillbox {
+  color: #ffffff;
+  background-color: #5294e2;
+  border-radius: 3px;
+}
+
+pillbox:disabled label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+docktabstrip {
+  padding: 0 6px;
+  background-color: #32343D;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+docktabstrip docktab {
+  min-height: 28px;
+  border: solid transparent;
+  border-width: 0 1px;
+}
+
+docktabstrip docktab label {
+  opacity: 0.5;
+}
+
+docktabstrip docktab:checked label, docktabstrip docktab:hover label {
+  opacity: 1;
+}
+
+docktabstrip docktab:checked {
+  border-color: rgba(255, 255, 255, 0.12);
+  background-color: #282A33;
+}
+
+dockbin {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  -PnlDockBin-handle-size: 1;
+}
+
+dockpaned {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+dockoverlayedge {
+  background-color: #32343D;
+}
+
+dockoverlayedge docktabstrip {
+  padding: 0;
+  border: none;
+}
+
+dockoverlayedge.left-edge tab:checked,
+dockoverlayedge.right-edge tab:checked {
+  border-width: 1px 0;
+}
+
+popover.messagepopover.background {
+  padding: 0;
+}
+
+popover.messagepopover .popover-content-area {
+  margin: 16px;
+}
+
+popover.messagepopover .popover-action-area {
+  margin: 8px;
+}
+
+popover.messagepopover .popover-action-area button:not(:first-child):not(:last-child) {
+  margin: 0 4px;
+}
+
+popover.popover-selector {
+  padding: 0;
+}
+
+popover.popover-selector list row {
+  padding: 5px 0;
+}
+
+popover.popover-selector list row image {
+  margin-left: 3px;
+  margin-right: 10px;
+}
+
+entry.search.preferences-search {
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+}
+
+preferences stacksidebar.sidebar list {
+  background-image: linear-gradient(to bottom, #282A33, #282A33);
+}
+
+preferences stacksidebar.sidebar list separator {
+  background-color: transparent;
+}
+
+devhelppanel entry:focus,
+symboltreepanel entry:focus {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+button.run-arrow-button {
+  min-width: 12px;
+}
+
+omnibar.linked > entry:not(:only-child) {
+  border-style: solid;
+  border-radius: 3px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+gstyleslidein #scale_box button.toggle:checked,
+gstyleslidein #strings_controls button.toggle:checked,
+gstyleslidein #palette_controls button.toggle:checked,
+gstyleslidein #components_controls button.toggle:checked {
+  color: #D3DAE3;
+}
+
+configurationview entry.flat, configurationview .raven .raven-background spinbutton:not(.vertical), .raven .raven-background configurationview spinbutton:not(.vertical) {
+  background: none;
+}
+
+configurationview list {
+  border-width: 0;
+}
+
 button.round-button {
   min-height: 28px;
   min-width: 28px;
@@ -5581,171 +5746,6 @@ window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem > .l
   border-top: none;
   border-bottom: none;
   border-radius: 0;
-}
-
-.gb-search-entry-occurrences-tag {
-  background: none;
-}
-
-workbench.csd > stack.titlebar:not(headerbar) {
-  padding: 0;
-  background: none;
-  border: none;
-  box-shadow: none;
-}
-
-workbench.csd > stack.titlebar:not(headerbar) headerbar, workbench.csd > stack.titlebar:not(headerbar) headerbar:first-child, workbench.csd > stack.titlebar:not(headerbar) headerbar:last-child {
-  border-radius: 0 0 0 0;
-}
-
-editortweak .linked > entry.search:focus + .gb-linked-scroller {
-  border-top-color: #5294e2;
-}
-
-layouttab {
-  background-color: #282A33;
-}
-
-layout {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  -PnlDockBin-handle-size: 1;
-}
-
-eggsearchbar box.search-bar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-pillbox {
-  color: #ffffff;
-  background-color: #5294e2;
-  border-radius: 3px;
-}
-
-pillbox:disabled label {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-docktabstrip {
-  padding: 0 6px;
-  background-color: #32343D;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-docktabstrip docktab {
-  min-height: 28px;
-  border: solid transparent;
-  border-width: 0 1px;
-}
-
-docktabstrip docktab label {
-  opacity: 0.5;
-}
-
-docktabstrip docktab:checked label, docktabstrip docktab:hover label {
-  opacity: 1;
-}
-
-docktabstrip docktab:checked {
-  border-color: rgba(255, 255, 255, 0.12);
-  background-color: #282A33;
-}
-
-dockbin {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  -PnlDockBin-handle-size: 1;
-}
-
-dockpaned {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-dockoverlayedge {
-  background-color: #32343D;
-}
-
-dockoverlayedge docktabstrip {
-  padding: 0;
-  border: none;
-}
-
-dockoverlayedge.left-edge tab:checked,
-dockoverlayedge.right-edge tab:checked {
-  border-width: 1px 0;
-}
-
-popover.messagepopover.background {
-  padding: 0;
-}
-
-popover.messagepopover .popover-content-area {
-  margin: 16px;
-}
-
-popover.messagepopover .popover-action-area {
-  margin: 8px;
-}
-
-popover.messagepopover .popover-action-area button:not(:first-child):not(:last-child) {
-  margin: 0 4px;
-}
-
-popover.popover-selector {
-  padding: 0;
-}
-
-popover.popover-selector list row {
-  padding: 5px 0;
-}
-
-popover.popover-selector list row image {
-  margin-left: 3px;
-  margin-right: 10px;
-}
-
-entry.search.preferences-search {
-  border: none;
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0;
-}
-
-preferences stacksidebar.sidebar list {
-  background-image: linear-gradient(to bottom, #282A33, #282A33);
-}
-
-preferences stacksidebar.sidebar list separator {
-  background-color: transparent;
-}
-
-devhelppanel entry:focus,
-symboltreepanel entry:focus {
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-button.run-arrow-button {
-  min-width: 12px;
-}
-
-omnibar.linked > entry:not(:only-child) {
-  border-style: solid;
-  border-radius: 3px;
-  margin-left: 1px;
-  margin-right: 1px;
-}
-
-gstyleslidein #scale_box button.toggle:checked,
-gstyleslidein #strings_controls button.toggle:checked,
-gstyleslidein #palette_controls button.toggle:checked,
-gstyleslidein #components_controls button.toggle:checked {
-  color: #D3DAE3;
-}
-
-configurationview entry.flat, configurationview .raven .raven-background spinbutton:not(.vertical), .raven .raven-background configurationview spinbutton:not(.vertical) {
-  background: none;
-}
-
-configurationview list {
-  border-width: 0;
 }
 
 .xfce4-panel button.flat, .xfce4-panel button.sidebar-button, .xfce4-panel button.budgie-menu-launcher, .xfce4-panel .budgie-panel #tasklist-button, .budgie-panel .xfce4-panel #tasklist-button, .xfce4-panel button, .mate-panel-menu-bar button:not(#tasklist-button),
@@ -7859,6 +7859,80 @@ textview box.vertical > stack > box.vertical > .raven-background > viewport.fram
 
 .budgie-run-dialog scrolledwindow {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.budgie-panel box.titlebar {
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 0;
+  background: unset;
+  box-shadow: none;
+  border: none;
+}
+
+.budgie-panel box.titlebar > widget > label {
+  color: #D3DAE3;
+}
+
+.budgie-panel box.titlebar > button.image-button.titlebutton {
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  box-shadow: none;
+  color: #D3DAE3;
+}
+
+.budgie-panel box.titlebar > button.image-button.titlebutton image {
+  border-radius: 100px;
+  background-size: 20px 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition-duration: 0;
+}
+
+.budgie-panel box.titlebar > button.image-button.titlebutton:hover, .budgie-panel box.titlebar > button.image-button.titlebutton:active {
+  background: none;
+  box-shadow: none;
+  color: #ffffff;
+  animation: none;
+}
+
+.budgie-panel box.titlebar > button.image-button.titlebutton.close:hover image {
+  background-image: image(#F04A50);
+}
+
+.budgie-panel box.titlebar > button.image-button.titlebutton.close:active image {
+  background-image: image(#ec1b22);
+}
+
+.budgie-panel box.titlebar > button.image-button.titlebutton:not(.close):hover image {
+  background-image: image(rgba(255, 255, 255, 0.2));
+}
+
+.budgie-panel box.titlebar > button.image-button.titlebutton:not(.close):active image {
+  background-image: image(rgba(255, 255, 255, 0.35));
+}
+
+.budgie-panel box.titlebar > button.image-button.titlebutton:disabled image {
+  opacity: 0;
+}
+
+.budgie-panel box.titlebar.horizontal {
+  padding: 0 3px;
+}
+
+.budgie-panel box.titlebar.horizontal > widget > label:dir(ltr) {
+  padding-right: 3px;
+}
+
+.budgie-panel box.titlebar.horizontal > widget > label:dir(rtl) {
+  padding-left: 3px;
+}
+
+.budgie-panel box.titlebar.horizontal > button.image-button.titlebutton {
+  padding: 0 3px;
 }
 
 #panel_window {

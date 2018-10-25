@@ -978,3 +978,71 @@ box.vertical > stack > box.vertical {
 
   scrolledwindow { border-top: 1px solid $borders_color; }
 }
+
+
+// pixel-saver(?) applet
+.budgie-panel box.titlebar {
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 0;
+  background: unset;
+  box-shadow: none;
+  border: none;
+
+  > widget > label { color: $panel_fg; } // titles
+
+  > button.image-button.titlebutton {
+    min-width: 20px;
+    min-height: 20px;
+    padding: 0;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+    color: $panel_fg;
+
+    image {
+      border-radius: 100px;
+      background-size: 20px 20px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition-duration: 0;
+    }
+
+    &:hover,
+    &:active {
+      background: none;
+      box-shadow: none;
+      color: $selected_fg_color;
+      animation: none;
+    }
+
+    &.close {
+      &:hover image { background-image: image($destructive_color); }
+      &:active image { background-image: image(darken($destructive_color, 10%)); }
+    }
+
+    &:not(.close) {
+      &:hover image {
+        background-image: image(rgba($selected_fg_color, 0.2));
+      }
+
+      &:active image {
+        background-image: image(rgba($selected_fg_color, 0.35));
+      }
+    }
+
+    // hide unneeded button images when Raven widget was shown
+    &:disabled image { opacity: 0; }
+  }
+
+  &.horizontal { // spacing
+    padding: 0 3px;
+
+    > widget > label {
+      &:dir(ltr) { padding-right: 3px; }
+      &:dir(rtl) { padding-left: 3px; }
+    }
+
+    > button.image-button.titlebutton { padding: 0 3px; }
+  }
+}

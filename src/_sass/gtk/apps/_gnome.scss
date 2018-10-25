@@ -458,10 +458,7 @@ button.documents-favorite:active:hover {
   background-image: _solid($base_color);
 }
 
-//
 // Workaround for 3.26
-//
-
 row#Focus,
 row#ClickMethod,
 row#StaticWorkspaceTweak, // for 3.26.0
@@ -482,6 +479,151 @@ row#ClickMethod,
 row#PrimaryWorkspaceTweak, // for 3.26.0
 row#workspaces-only-on-primary {
   margin-top: 4px;
+}
+
+//
+// Gnome Builder
+//
+// TODO: Merge this with the upstream stylesheet
+
+.gb-search-entry-occurrences-tag { background: none; }
+
+workbench.csd > stack.titlebar:not(headerbar) {
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  headerbar {
+    &,
+    &:first-child,
+    &:last-child { border-radius: $_header_radius $_header_radius 0 0; }
+  }
+}
+
+editortweak .linked > entry.search:focus + .gb-linked-scroller { border-top-color: $selected_bg_color; }
+
+layouttab {
+  background-color: $base_color;
+}
+
+layout {
+  border: 1px solid $borders_color;
+  -PnlDockBin-handle-size: 1;
+}
+
+eggsearchbar box.search-bar {
+  border-bottom: 1px solid $borders_color;
+}
+
+pillbox {
+  color: $selected_fg_color;
+  background-color: $selected_bg_color;
+  border-radius: 3px;
+
+  &:disabled label { color: transparentize($selected_fg_color, 0.5) }
+}
+
+docktabstrip {
+  padding: 0 6px;
+
+  background-color: $bg_color;
+  border-bottom: 1px solid $borders_color;
+
+  docktab {
+    min-height: 28px;
+    border: solid transparent;
+    border-width: 0 1px;
+
+    label { opacity: 0.5; }
+    &:checked, &:hover { label { opacity: 1; }}
+
+    &:checked {
+      border-color: $borders_color;
+      background-color: $base_color;
+    }
+  }
+}
+
+dockbin {
+  border: 1px solid $borders_color;
+  -PnlDockBin-handle-size: 1;
+}
+
+dockpaned {
+  border: 1px solid $borders_color;
+}
+
+dockoverlayedge {
+  background-color: $bg_color;
+
+  docktabstrip {
+    padding: 0;
+    border: none;
+  }
+
+  &.left-edge tab:checked,
+  &.right-edge tab:checked {
+    border-width: 1px 0;
+  }
+}
+
+popover.messagepopover {
+  &.background { padding: 0; }
+
+  .popover-content-area { margin: 16px; }
+  .popover-action-area {
+    margin: 8px;
+
+    button:not(:first-child):not(:last-child) { margin: 0 4px; }
+  }
+}
+
+popover.popover-selector {
+  padding: 0;
+
+  list {
+    row { padding: 5px 0; }
+    row image { margin-left: 3px; margin-right: 10px; }
+  }
+}
+
+entry.search.preferences-search {
+  border: none;
+  border-right: 1px solid $borders_color;
+  border-bottom: 1px solid $borders_color;
+  border-radius: 0;
+}
+
+preferences stacksidebar.sidebar {
+  list { background-image: _solid($base_color); }
+
+  list separator { background-color: transparent; }
+}
+
+devhelppanel entry:focus,
+symboltreepanel entry:focus {
+  border-color: $borders_color
+}
+
+button.run-arrow-button {
+  min-width: 12px;
+}
+
+omnibar.linked > entry:not(:only-child) { border-style: solid; border-radius: 3px; margin-left: 1px; margin-right: 1px; }
+
+gstyleslidein {
+  #scale_box,
+  #strings_controls,
+  #palette_controls,
+  #components_controls {
+    button.toggle:checked { color: $fg_color; }
+  }
+}
+
+configurationview {
+  entry.flat { background: none; }
+  list { border-width: 0; }
 }
 
 //
