@@ -5284,6 +5284,10 @@ window.background > box.vertical > overlay > stack > widget > stack widget > box
   border-image: linear-gradient(to bottom, #dae2e9, #dae2e9) 1 1 1 1/1px 1px 1px 1px stretch;
 }
 
+.maps-popover button.radio.layer-radio-button:checked {
+  box-shadow: 0 0 0 2px #5294e2;
+}
+
 .tr-workarea undershoot,
 .tr-workarea overshoot {
   border-color: transparent;

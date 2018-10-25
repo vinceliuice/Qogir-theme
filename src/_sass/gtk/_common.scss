@@ -1902,19 +1902,18 @@ popover.background {
     &.osd { @extend %osd; }
   }
 
-   button:not(.suggested-action):not(.destructive-action)
-    {
-      &:hover {
-        background-color: if($variant=='light', rgba(black, 0.05), lighten($button_bg, 8%));
-        color: $text_color;
+  button:not(.suggested-action):not(.destructive-action) {
+    &:hover {
+      background-color: if($variant=='light', rgba(black, 0.05), lighten($button_bg, 8%));
+      color: $text_color;
     }
 
-      &:checked,
-      &:active {
-        background-color: $selected_bg_color;
-        color: $selected_fg_color;
+    &:checked,
+    &:active {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
     }
-   }
+  }
 }
 
 //touch selection handlebars for the Popover.osd above
@@ -2933,7 +2932,7 @@ filechooserbutton:drop(active) {
 
   list { background-color: transparent; }
 
-  paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
+  paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; } }
 }
 
 stacksidebar {

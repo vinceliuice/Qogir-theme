@@ -686,6 +686,17 @@ window.background > box.vertical > overlay > stack > widget > stack {
 }
 
 //
+// Gnome map
+//
+.maps-popover {
+  button.radio.layer-radio-button {
+    &:checked {
+      box-shadow: 0 0 0 2px $selected_bg_color;
+    }
+  }
+}
+
+//
 // Transmission
 //
 .tr-workarea undershoot,
