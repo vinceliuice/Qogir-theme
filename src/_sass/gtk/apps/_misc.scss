@@ -483,18 +483,30 @@ treeview.view.sidebar {
     padding-top: 3px;
     padding-bottom: 3px;
     @extend row.activatable;
-  &.expander {
-    &:hover { background-color: rgba($selected_bg_color, 0.75); }
-  }
-  }
-
-  &.expander {
-    &:hover { background-color: rgba($selected_bg_color, 0.75); }
   }
 }
 
-iconview.view.cell {
-  &:selected { background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08)); }
+.dynamic-notebook {
+  notebook {
+    iconview.view.cell {
+      &:selected { background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08)); }
+    }
+  }
+}
+
+headerbar.titlebar {
+
+  entry.pathbar {
+    min-height: 0;
+  }
+
+  button.flat.image-button.toggle {
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 9px;
+    margin-bottom: 10px;
+  }
 }
 
 // Gala
@@ -600,7 +612,8 @@ window.background:not(.csd) {
 
   headerbar.titlebar { // >= nightly 60.0a1(2018-02-02)
     // FIXME: no backdrop state, no maximized state, bullshit...
-		padding: 10px;
+	padding-left: 10px;
+    padding-right: 10px;
     &.default-decoration { @extend %csd_circle_titlebutton; }
   }
 
@@ -817,6 +830,79 @@ stack#conversation_viewer {
   scrolledwindow.geary-conversation-scroller > viewport.frame {
     border: none; // unset borders
   }
+}
+
+
+// /*********
+//  * Tilix *
+//  *********/
+
+// in-line titlebars
+widget > box.terminal-titlebar {
+  padding: 0 6px;
+
+  > button.flat.popup.toggle {
+    border: none;
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  transparent 100%,
+                                  transparent 0%)
+                                  0 0 2 / 0 0 2px;
+
+    &:dir(ltr) { padding-right: 6px; }
+    &:dir(rtl) { padding-left: 6px; }
+
+    &:hover {
+      box-shadow: inset 0 -2px $selected_bg_color;
+      background: none;
+    }
+
+    &:checked, &:active {
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $selected_bg_color 100%,
+                                    transparent 0%)
+                                    0 0 2 / 0 0 2px;
+      background-color: transparent;
+      color: $fg_color;
+    }
+  }
+
+  > button.image-button { // 'plus' and 'close'
+    &, &.toggle {
+      margin: 2px 0;
+      padding: 0;
+      min-height: 24px;
+      min-width: 24px;
+      border-radius: 100px;
+      -gtk-outline-radius: 100px;
+    }
+  }
+}
+
+list.tilix-session-sidebar {
+  // use -image property instead
+  background-image: image($dark_sidebar_bg);
+
+  button.tilix-sidebar-close-button {
+    min-height: 20px;
+    min-width: 20px;
+    padding: 0;
+    border-radius: 100px;
+    -gtk-outline-radius: 100px;
+    background-color: $destructive_color;
+    &, &:hover, &:active, &:checked { color: white; }
+
+    &:hover { background-color: lighten($destructive_color, 10%); }
+
+    &:active,
+    &:checked { background-image: image(darken($destructive_color, 10%)); }
+  }
+
+//  frame.tilix-session-index {
+//    padding: 0;
+//  }
 }
 
  /**************

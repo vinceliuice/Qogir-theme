@@ -14,6 +14,19 @@ terminal-window notebook {
 terminal-window,
 .mate-terminal {
 
+  decoration {
+    box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
+                0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
+                0 0 0 2px $borders_color, 0 0 0 1px $base_color;
+
+    &:backdrop {
+      box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent,
+                0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.06), opacify($_wm_border, 0.03)),
+                0 0 0 2px $borders_color, 0 0 0 1px $base_color;
+      transition: $backdrop_transition;
+    }
+  }
+
   notebook {
     > header.top {
       //padding-top: 3px;
@@ -27,6 +40,11 @@ terminal-window,
         min-height: 24px;
       }
     }
+  }
+
+  scrollbar {
+    border: none;
+    background: none;
   }
 }
 

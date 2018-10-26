@@ -94,7 +94,6 @@ flowbox {
 
     &:selected {
       @extend %selected_items;
-
       outline-offset: -2px;
     }
   }
@@ -538,9 +537,7 @@ button {
 
   //inline-toolbar buttons
   .inline-toolbar &, .inline-toolbar &:backdrop {
-    border-radius: 2px;
-    border-width: 1px;
-    @extend %linked;
+    &, &.flat { @extend %linked_flat; }
   }
 
   @at-root %circle_button,
@@ -581,10 +578,10 @@ button {
 
 // More inline toolbar buttons
 toolbar.inline-toolbar toolbutton {
-  & > button.flat { @extend %linked_middle; }
-  &:first-child > button.flat { @extend %linked:first-child; }
-  &:last-child > button.flat { @extend %linked:last-child; }
-  &:only-child > button.flat { @extend %linked:only-child; }
+  & > button.flat { @extend %linked_flat_middle; }
+  &:first-child > button.flat { @extend %linked_flat:first-child; }
+  &:last-child > button.flat { @extend %linked_flat:last-child; }
+  &:only-child > button.flat { @extend %linked_flat:only-child; }
 }
 
 // Some crazy linking stuff
@@ -656,21 +653,28 @@ toolbar.inline-toolbar toolbutton {
     > entry.warning + entry,
     > entry + entry.warning,
     > entry.error + entry.warning,
-    > entry.warning + entry.error { border-#{$_border}-color: transparent; }
+    > entry.warning + entry.error { border-#{$_border}-color: $e_border; }
 
-    @each $e_type in (':focus', ':drop(active)', '.warning:focus', '.error:focus') {
+    @each $e_type, $e_color in (':focus',$selected_bg_color),
+                               (':drop(active)', $drop_target_color),
+                               ('.warning:focus', $warning_color),
+                               ('.error:focus', $error_color) {
 
       > entry + entry#{$e_type}:not(:last-child),
-      > entry + entry#{$e_type}:last-child { border-#{$_border}-color: transparent; }
+      > entry + entry#{$e_type}:last-child { border-#{$_border}-color: $e_color; }
 
       > entry#{$e_type}:not(:only-child) {
-        + entry,
+        + entry { border-#{$_border}-color: $e_border; }
+      }
+
+      > entry#{$e_type}:not(:only-child) {
         + button,
         + combobox > box > button.combo { border-#{$_border}-color: transparent; }
       }
     }
+
     > button:active + entry,
-    > button:checked + entry { border-#{$_border}-color: transparent; }
+    > button:checked + entry { border-#{$_border}-color: $e_border; }
   }
 
   @if $button_rules=='false' {
@@ -714,6 +718,12 @@ toolbar.inline-toolbar toolbutton {
     &:last-child { border-right-style: solid; }
   }
 
+  > button + button {
+    border-left-style: none;
+    border-right-style: none;
+    &:last-child { border-right-style: solid; }
+  }
+
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
 //    &:hover {
@@ -732,7 +742,7 @@ toolbar.inline-toolbar toolbutton {
 }
 
 headerbar,
-.titlebar {
+headerbar.titlebar {
   .linked:not(.vertical):not(.path-bar) {
     @include linking_rules($entry_rules:'false', $button_rules:'false', $b_border: transparent);
   }
@@ -743,6 +753,12 @@ headerbar,
 %linked_middle {
   border-radius: 0;
   border-right-style: none;
+}
+
+%linked_flat_middle {
+  border-radius: 0;
+  border-right-style: none;
+  border-left-style: none;
 }
 
 %linked {
@@ -763,22 +779,23 @@ headerbar,
 }
 
 %linked_flat {
-  border-radius: 0;
-  border-right-style: none;
-  border-left-style: none;
+  @extend %linked_flat_middle;
   &:first-child {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     border-left-style: solid;
+    border-right-style: none;
   }
   &:last-child {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     border-right-style: solid;
+    border-left-style: none;
   }
   &:only-child {
     border-radius: 3px;
-    border-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
   }
 }
 
@@ -1052,6 +1069,11 @@ searchbar {
   border: none;
   box-shadow: inset 0 -1px $borders_color;
   padding: 3px;
+
+  .titlebar & {
+    box-shadow: inset 0 -2px $borders_color, inset 0 -1px $base_color;  // Removed double borders under headerbar
+    entry, button { margin-bottom: 3px; }
+  }
 }
 
 actionbar {
@@ -1394,8 +1416,9 @@ headerbar {
       &:hover { background-color: if($titlebar == 'light', darken($header_bg, 3%), lighten($header_bg, 15%)); }
       &:active, &:checked { @include button(header-active); }
       &:disabled { color: rgba($header_fg, 0.4); label { color: rgba($header_fg, 0.4); } }
-      &, &:hover, &:active, &:checked, &:disabled { @extend %linked_flat; }
+//      &, &:hover, &:active, &:checked, &:disabled { @extend %linked_flat; }
     }
+    @include pathbar_linking_rules();
   }
 
   // Headerbar Suggested and Destructive Action buttons
@@ -1851,7 +1874,7 @@ menu,
 //    border: 1px solid $borders_color;
 
     &.top {
-      margin-top: -12px;
+      margin-top: -6px;
       border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
@@ -3365,7 +3388,7 @@ $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(bl
 
 decoration {
   border-radius: 0;
-  border-width: 0;
+  border: none;
 
   box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
               0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
@@ -3391,6 +3414,7 @@ decoration {
   .ssd & {
     border-radius: 0;
     box-shadow: 0 0 0 1px $borders_color;
+    border: none;
 //    &.maximized { border-radius: 0; }
   }
   .popup & {
