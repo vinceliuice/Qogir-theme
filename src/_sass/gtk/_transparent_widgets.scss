@@ -3,7 +3,6 @@
 filechooser paned > separator { background-image: _solid($dark_sidebar_border); }
 
 // Dark transparent sidebars
-filechooser,
 .nautilus-window {
 
   &.csd.background, placessidebar list { background-color: transparent; }
