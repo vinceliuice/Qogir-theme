@@ -729,7 +729,7 @@ window.background.chromium {
  * Libre-Office *
  ****************/
 
-window.background:not(.csd):not(.solid-csd) {
+window.background {
 // reserved area at the most-right side of GtkMenuBar
   > grid.horizontal > grid.horizontal {
     background-color: $header_bg;
