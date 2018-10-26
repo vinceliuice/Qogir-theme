@@ -74,15 +74,21 @@
 
   border { border: none; }
 
-  list { background-color: transparent; }
+  list {
+    background-color: transparent;
+//    > row,
+//    > .activatable { @extend row.activatable; }
+  }
 
   row {
     padding: 0;
     background-color: transparent;
-    background-color: transparent;
 
-    &:hover { box-shadow: none; background-color: transparent; }
+    &:hover { box-shadow: none; }
+//    @extend row.activatable;
   }
+
+//  > .view { @extend row.activatable; }
 
   switch { margin-left: 56px; }
 

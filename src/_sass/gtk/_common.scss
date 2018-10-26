@@ -2709,7 +2709,18 @@ list {
 }
 
 row {
-  &:not(:hover) { transition: all 150ms $ease-out-quad; }
+//  &:not(:hover) { transition: all 150ms $ease-out-quad; }
+
+//  &:hover {
+//    transition: none;
+//    animation: none;
+//    background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03));
+//  }
+//
+//  &:active, &:checked {
+//    color: $fg_color;
+//    background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08));
+//  }
 
   &:selected {
     @extend %selected_items;
@@ -2717,13 +2728,23 @@ row {
     button { @extend %selected-button; }
   }
 
-	button { &:active, &:checked { background-image: image($selected_bg_color); } } // Fixed Cinnamon theme setting row button active background issue
+  button { &:active, &:checked { background-image: image($selected_bg_color); } } // Fixed Cinnamon theme setting row button active background issue
 
   &.activatable {
     &.has-open-popup,
-    &:hover { background-color: if($variant == 'light', transparentize(black, 0.95), transparentize(white, 0.97)); }
+    &:hover {
+      transition: none;
+      animation: none;
+      background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03));
+    }
 
-    &:active { color: $fg_color; }
+    &:active, &:checked {
+      transition: all 150ms $ease-out-quad;
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+//      background-image: image(if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08)));
+    }
+
     &:disabled {
       color: $insensitive_fg_color;
       image { color: inherit; }
