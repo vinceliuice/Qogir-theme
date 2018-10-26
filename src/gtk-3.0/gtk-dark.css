@@ -3742,8 +3742,6 @@ row.activatable.has-open-popup, .has-open-popup.view, textview text.has-open-pop
 
 row.activatable:active, .view:active, textview text:active, iconview:active, .panel popover .sidebar .view:active, treeview.view.sidebar.source-list:active, .budgie-menu button:active, row.activatable:checked, .view:checked, textview text:checked, iconview:checked, .panel popover .sidebar .view:checked, treeview.view.sidebar.source-list:checked, .budgie-menu button:checked {
   transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  color: #ffffff;
-  background-color: #5294e2;
 }
 
 row.activatable:disabled, .view:disabled, textview text:disabled, iconview:disabled, .panel popover .sidebar .view:disabled, treeview.view.sidebar.source-list:disabled, .budgie-menu button:disabled {
@@ -5950,6 +5948,8 @@ window.thunar notebook header.top tab.reorderable-page > box > label {
 
 menubar .panel,
 .panel menubar {
+  padding-top: 2px;
+  padding-bottom: 2px;
   box-shadow: none;
   border: none;
   background: none;
@@ -5980,6 +5980,8 @@ menubar .panel,
 .panel popover {
   padding: 2px 4px;
   font-weight: normal;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .panel popover button {
@@ -6164,6 +6166,14 @@ headerbar.titlebar button.flat.image-button.toggle, headerbar.titlebar button.im
   padding-bottom: 0;
   margin-top: 9px;
   margin-bottom: 10px;
+}
+
+headerbar.titlebar > grid.linked.horizontal.format-bar {
+  background-image: image(#282A33);
+}
+
+popover radiobutton.color-button.color-light, popover radiobutton.color-button.color-dark, popover radiobutton.color-button.color-white {
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .gala-notification {

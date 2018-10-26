@@ -284,6 +284,8 @@ window.thunar {
 
   menubar &,
   & menubar {
+    padding-top: 2px;
+    padding-bottom: 2px;
     box-shadow: none;
     border: none;
     background: none;
@@ -321,6 +323,8 @@ window.thunar {
   popover {
     padding: 2px 4px;
     font-weight: normal;
+    border: 1px solid if($variant == 'light', rgba(black, 0.25), rgba(white, 0.12));
+    box-shadow: 0 2px 3px rgba(black, 0.12), 0 3px 6px rgba(black, 0.08);
 
     button {
 //      box-shadow: none;
@@ -506,6 +510,21 @@ headerbar.titlebar {
     padding-bottom: 0;
     margin-top: 9px;
     margin-bottom: 10px;
+  }
+
+  > grid.linked.horizontal.format-bar {
+    background-image: image($header_bg); // Hide Code header format-bar
+  }
+}
+
+// Code
+popover {
+  radiobutton {
+    &.color-button {
+      &.color-light, &.color-dark, &.color-white {
+        border: 1px solid $borders_color;
+      }
+    }
   }
 }
 
