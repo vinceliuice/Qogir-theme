@@ -1970,9 +1970,9 @@ notebook {
         border-#{$_bpos}: 1px solid $borders_color;
 
         > tabs > tab {
-          padding: 2px $small_size 4px $small_size;
-          min-width: $small_size;
-          min-height: $small_size;
+          padding: 2px 16px 4px 16px;
+          min-width: 24px;
+          min-height: 24px;
           border-radius: 0;
           outline-offset: -4px;
 
