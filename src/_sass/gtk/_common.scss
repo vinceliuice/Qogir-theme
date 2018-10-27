@@ -2357,7 +2357,7 @@ scale {
 
   // Trough
   trough {
-    $_scale_trough_bg: darken($bg_color, 5%);
+    $_scale_trough_bg: $borders_color;
 
     outline-offset: 2px;
     -gtk-outline-radius: 4.5px;
@@ -2365,7 +2365,7 @@ scale {
     border-radius: 2.5px;
     background-color: $_scale_trough_bg;
 
-    &:disabled { background-color: transparentize($_scale_trough_bg, 0.45); }
+    &:disabled { background-color: rgba($_scale_trough_bg, 0.045); }
 
     //OSD troughs
     .osd & {
@@ -2373,11 +2373,7 @@ scale {
 
       highlight {
         background-color: $selected_bg_color;
-
-        &:disabled {  }
       }
-
-      &:disabled {  }
     }
 
     // Troughs in selected list-rows and infobars
@@ -2423,12 +2419,16 @@ scale {
     transition: $button_transition;
     transition-property: background, border;
 
-    &:hover { background-color: lighten($selected_bg_color, 3%); border-color: $selected_bg_color;}
+    &:hover {
+      background-clip: border-box;
+      background-color: lighten($selected_bg_color, 3%);
+      border-color: lighten($selected_bg_color, 3%);
+    }
 
     &:active {
       background-clip: border-box;
       background-color: darken($selected_bg_color, 3%);
-      border-color: $selected_bg_color;
+      border-color: darken($selected_bg_color, 3%);
     }
 
     &:disabled {
@@ -2557,7 +2557,7 @@ progressbar {
   trough {
     border: none;
     border-radius: 3px;
-    background-color: if($variant == 'light', $button_border, darken($bg_color, 5%));
+    background-color: $borders_color;
 
     row:selected &,
     infobar & { background-color: transparentize(black, 0.8); }
@@ -2581,7 +2581,7 @@ levelbar {
     border: none;
     padding: 3px;
     border-radius: 3px;
-    background-color: if($variant == 'light', $button_border, darken($bg_color, 5%));
+    background-color: $borders_color;
   }
 
   &.horizontal.discrete block { margin: 0 1px; }

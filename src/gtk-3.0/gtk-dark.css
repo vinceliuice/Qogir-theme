@@ -3313,11 +3313,11 @@ scale trough {
   outline-offset: 2px;
   -gtk-outline-radius: 4.5px;
   border-radius: 2.5px;
-  background-color: #27282f;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 scale trough:disabled {
-  background-color: rgba(39, 40, 47, 0.55);
+  background-color: rgba(255, 255, 255, 0.045);
 }
 
 .osd scale trough {
@@ -3379,14 +3379,15 @@ scale slider {
 }
 
 scale slider:hover {
+  background-clip: border-box;
   background-color: #5f9ce4;
-  border-color: #5294e2;
+  border-color: #5f9ce4;
 }
 
 scale slider:active {
   background-clip: border-box;
   background-color: #458ce0;
-  border-color: #5294e2;
+  border-color: #458ce0;
 }
 
 scale slider:disabled {
@@ -3538,7 +3539,7 @@ infobar progressbar progress {
 progressbar trough {
   border: none;
   border-radius: 3px;
-  background-color: #27282f;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 row:selected progressbar trough,
@@ -3560,7 +3561,7 @@ levelbar trough {
   border: none;
   padding: 3px;
   border-radius: 3px;
-  background-color: #27282f;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 levelbar.horizontal.discrete block {
