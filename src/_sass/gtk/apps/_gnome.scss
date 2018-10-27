@@ -21,8 +21,8 @@ terminal-window,
 
     &:backdrop {
       box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent,
-                0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.06), opacify($_wm_border, 0.03)),
-                0 0 0 2px $borders_color, 0 0 0 1px $base_color;
+                  0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.06), opacify($_wm_border, 0.03)),
+                  0 0 0 2px $borders_color, 0 0 0 1px $base_color;
       transition: $backdrop_transition;
     }
   }

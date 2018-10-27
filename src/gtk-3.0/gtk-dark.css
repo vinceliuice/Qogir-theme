@@ -4434,7 +4434,7 @@ decoration:backdrop {
 
 tooltip.csd decoration {
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 transparent;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
 }
 
 messagedialog.csd decoration {
@@ -8578,64 +8578,47 @@ filechooser paned > separator {
   background-image: linear-gradient(to bottom, #32353f, #32353f);
 }
 
-filechooser.csd.background, filechooser placessidebar list,
-.nautilus-window.csd.background,
-.nautilus-window placessidebar list {
+.nautilus-window.csd.background, .nautilus-window placessidebar list {
   background-color: transparent;
 }
 
-filechooser placessidebar.sidebar,
 .nautilus-window placessidebar.sidebar {
   box-shadow: inset 38px 0 0 0 #32343D;
   background-color: #272931;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row,
 .nautilus-window placessidebar.sidebar row.sidebar-row {
   transition: none;
   color: #C4CAD1;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
 .nautilus-window placessidebar.sidebar row.sidebar-row .sidebar-icon {
   color: rgba(246, 246, 251, 0.85);
 }
 
-filechooser placessidebar.sidebar row.sidebar-row image.sidebar-icon,
 .nautilus-window placessidebar.sidebar row.sidebar-row image.sidebar-icon {
   padding-right: 2px;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row label.sidebar-label,
 .nautilus-window placessidebar.sidebar row.sidebar-row label.sidebar-label {
   padding-right: 2px;
   padding-left: 21px;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row.has-open-popup, filechooser placessidebar.sidebar row.sidebar-row:hover,
-.nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup,
-.nautilus-window placessidebar.sidebar row.sidebar-row:hover {
+.nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup, .nautilus-window placessidebar.sidebar row.sidebar-row:hover {
   background-color: rgba(196, 202, 209, 0.05);
   box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #32343D;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:disabled, filechooser placessidebar.sidebar row.sidebar-row:disabled label, filechooser placessidebar.sidebar row.sidebar-row:disabled image,
-.nautilus-window placessidebar.sidebar row.sidebar-row:disabled,
-.nautilus-window placessidebar.sidebar row.sidebar-row:disabled label,
-.nautilus-window placessidebar.sidebar row.sidebar-row:disabled image {
+.nautilus-window placessidebar.sidebar row.sidebar-row:disabled, .nautilus-window placessidebar.sidebar row.sidebar-row:disabled label, .nautilus-window placessidebar.sidebar row.sidebar-row:disabled image {
   color: rgba(196, 202, 209, 0.4);
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:active,
 .nautilus-window placessidebar.sidebar row.sidebar-row:active {
   transition: box-shadow 0.2s;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:selected.has-open-popup, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected.has-open-popup,
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected,
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover,
-.nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected.has-open-popup, .nautilus-window placessidebar.sidebar row.sidebar-row:selected, .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
   box-shadow: inset 38px 0 0 0 #5294e2;
   background-color: rgba(82, 148, 226, 0);
   background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
@@ -8643,17 +8626,11 @@ filechooser placessidebar.sidebar row.sidebar-row:selected.has-open-popup, filec
   background-position: 42px center;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:selected.has-open-popup .sidebar-label, filechooser placessidebar.sidebar row.sidebar-row:selected .sidebar-label, filechooser placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-label, filechooser placessidebar.sidebar row.sidebar-row:active:hover .sidebar-label,
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected.has-open-popup .sidebar-label,
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected .sidebar-label,
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-label,
-.nautilus-window placessidebar.sidebar row.sidebar-row:active:hover .sidebar-label {
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected.has-open-popup .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:selected .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover .sidebar-label {
   color: #e1e4e7;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover,
-.nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
   background-color: rgba(196, 202, 209, 0.05);
   box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #5294e2;
   background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
@@ -8661,65 +8638,50 @@ filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser pl
   background-position: 42px center;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row button.sidebar-button,
 .nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button {
   color: #C4CAD1;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row button.sidebar-button:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button:hover {
   color: #a4b3c5;
   border-color: rgba(255, 255, 255, 0.12);
   background-color: #3e4250;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row button.sidebar-button:active,
 .nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button:active {
   color: #ffffff;
   border-color: #68a2e6;
   background-color: #5294e2;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row button.sidebar-button:not(:hover):not(:active) > image,
 .nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button:not(:hover):not(:active) > image {
   opacity: 0.5;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row.sidebar-new-bookmark-row,
 .nautilus-window placessidebar.sidebar row.sidebar-row.sidebar-new-bookmark-row {
   color: #5294e2;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:backdrop,
 .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop {
   opacity: 0.75;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled), filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) label, filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) .sidebar-icon,
-.nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled),
-.nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) label,
-.nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) .sidebar-icon {
+.nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled), .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) label, .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) .sidebar-icon {
   color: #F08437;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected {
   background-color: #F08437;
 }
 
-filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected, filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected label, filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected .sidebar-icon,
-.nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected,
-.nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected label,
-.nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected .sidebar-icon {
+.nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected, .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected label, .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected .sidebar-icon {
   color: #ffffff;
 }
 
-filechooser placessidebar.sidebar separator,
 .nautilus-window placessidebar.sidebar separator {
   background-color: transparent;
 }
 
-filechooser.maximized placessidebar.sidebar,
 .nautilus-window.maximized placessidebar.sidebar {
   background-color: #272931;
 }
@@ -8874,33 +8836,32 @@ filechooser actionbar entry:disabled {
   background-color: rgba(40, 42, 51, 0.55);
 }
 
-filechooser placessidebar.sidebar scrollbar,
 .nautilus-window placessidebar.sidebar scrollbar, .nemo-window .sidebar scrollbar, .caja-side-pane scrollbar {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-filechooser placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .caja-side-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+.nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .caja-side-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
   background-color: #eff1f3;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-filechooser placessidebar.sidebar scrollbar slider, .nautilus-window placessidebar.sidebar scrollbar slider, .nemo-window .sidebar scrollbar slider, .caja-side-pane scrollbar slider {
+.nautilus-window placessidebar.sidebar scrollbar slider, .nemo-window .sidebar scrollbar slider, .caja-side-pane scrollbar slider {
   background-color: rgba(239, 241, 243, 0.7);
 }
 
-filechooser placessidebar.sidebar scrollbar slider:hover, .nautilus-window placessidebar.sidebar scrollbar slider:hover, .nemo-window .sidebar scrollbar slider:hover, .caja-side-pane scrollbar slider:hover {
+.nautilus-window placessidebar.sidebar scrollbar slider:hover, .nemo-window .sidebar scrollbar slider:hover, .caja-side-pane scrollbar slider:hover {
   background-color: #fdfdfe;
 }
 
-filechooser placessidebar.sidebar scrollbar slider:hover:active, .nautilus-window placessidebar.sidebar scrollbar slider:hover:active, .nemo-window .sidebar scrollbar slider:hover:active, .caja-side-pane scrollbar slider:hover:active {
+.nautilus-window placessidebar.sidebar scrollbar slider:hover:active, .nemo-window .sidebar scrollbar slider:hover:active, .caja-side-pane scrollbar slider:hover:active {
   background-color: #5294e2;
 }
 
-filechooser placessidebar.sidebar scrollbar slider:disabled, .nautilus-window placessidebar.sidebar scrollbar slider:disabled, .nemo-window .sidebar scrollbar slider:disabled, .caja-side-pane scrollbar slider:disabled {
+.nautilus-window placessidebar.sidebar scrollbar slider:disabled, .nemo-window .sidebar scrollbar slider:disabled, .caja-side-pane scrollbar slider:disabled {
   background-color: transparent;
 }
 
-filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessidebar.sidebar scrollbar trough, .nemo-window .sidebar scrollbar trough, .caja-side-pane scrollbar trough {
+.nautilus-window placessidebar.sidebar scrollbar trough, .nemo-window .sidebar scrollbar trough, .caja-side-pane scrollbar trough {
   background-color: #1c1d23;
 }
 
