@@ -6300,6 +6300,10 @@ actionbar.inline-toolbar button + button {
   margin-left: -6px;
 }
 
+scale.warmth trough {
+  background-image: linear-gradient(to right, #5294e2, #F04A50);
+}
+
 window.background:not(.csd) > widget > separator {
   color: rgba(0, 0, 0, 0.12);
 }

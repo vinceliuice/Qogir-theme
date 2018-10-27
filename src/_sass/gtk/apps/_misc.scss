@@ -556,6 +556,11 @@ actionbar.inline-toolbar {
   }
 }
 
+// Nightlight warmth trough
+scale.warmth trough {
+  background-image: linear-gradient(to right, $suggested_color, $destructive_color);
+}
+
 //
 // * Firefox and Thunderbird *
 //
