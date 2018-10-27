@@ -266,8 +266,21 @@ $disk_space_free: darken($bg_color, 3%);
 
 dialog.background.csd {
   box.dialog-vbox {
-    scrolledwindow.frame {
-      border: none; // Removed ugly border
+    grid.horizontal {
+      scrolledwindow.frame {
+        border: none; //removed ugly boders
+//        list {
+//          separator { //removed separaters
+//            background: none;
+//            border: none;
+//            min-height: 0;
+//            min-width: 0;
+//          }
+//          row {
+//            border-bottom: 1px solid $borders_color; // Add borders as separaters
+//          }
+//        }
+      }
     }
   }
 }
@@ -1197,6 +1210,25 @@ window.background > box.vertical > toolbar.primary-toolbar {
       min-width: 28px;
       padding: 0;
       margin: 0;
+    }
+  }
+}
+
+//
+// gtk3-widgets-tool
+//
+stack {
+  overlay {
+    frame {
+      scrolledwindow.frame { // removed double borders
+        border-left-width: 0;
+        border-right-width: 0;
+      }
+
+      searchbar {
+        box-shadow: none;
+        border-top: 1px solid $borders_color;
+      }
     }
   }
 }

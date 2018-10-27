@@ -2656,18 +2656,6 @@ frame > border.flat,
   border-style: none;
 }
 
-frame {
-  scrolledwindow.frame { // removed double borders
-    border-left-width: 0;
-    border-right-width: 0;
-  }
-
-  searchbar {
-    box-shadow: none;
-    border-top: 1px solid $borders_color;
-  }
-}
-
 scrolledwindow {
 
   viewport.frame { // avoid double borders when viewport inside scrolled window

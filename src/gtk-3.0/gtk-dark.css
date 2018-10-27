@@ -3639,16 +3639,6 @@ frame > border.flat,
   border-style: none;
 }
 
-frame scrolledwindow.frame {
-  border-left-width: 0;
-  border-right-width: 0;
-}
-
-frame searchbar {
-  box-shadow: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
 scrolledwindow viewport.frame {
   border-style: none;
 }
@@ -4923,7 +4913,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   background-color: #5294e2;
 }
 
-dialog.background.csd box.dialog-vbox scrolledwindow.frame {
+dialog.background.csd box.dialog-vbox grid.horizontal scrolledwindow.frame {
   border: none;
 }
 
@@ -5814,6 +5804,16 @@ window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem > .l
   min-width: 28px;
   padding: 0;
   margin: 0;
+}
+
+stack overlay frame scrolledwindow.frame {
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+stack overlay frame searchbar {
+  box-shadow: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .nemo-window .nemo-places-sidebar.frame {
