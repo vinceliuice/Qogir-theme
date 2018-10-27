@@ -538,7 +538,7 @@ button {
 
   //inline-toolbar buttons
   .inline-toolbar &, .inline-toolbar &:backdrop {
-    &, &.flat { @extend %linked_flat; }
+    @extend %linked_flat;
   }
 
   @at-root %circle_button,
@@ -800,8 +800,7 @@ headerbar.titlebar {
   }
   &:only-child {
     border-radius: 3px;
-    border-left-style: solid;
-    border-right-style: solid;
+    border-style: solid;
   }
 }
 
@@ -1900,7 +1899,9 @@ popover.background {
   background-clip: border-box;
   background-color: $_popover_bg;
 
-  box-shadow: 0 2px $cont_padding 0 if($variant=='light', transparentize(black, 0.93), transparentize(black, 0.65));
+  &, &.menu {
+    box-shadow: 0 2px $cont_padding 0 if($variant=='light', transparentize(black, 0.93), transparentize(black, 0.65));
+  }
 
   .csd &, & { border: 1px solid $borders_color; border-radius: 3px; }
 

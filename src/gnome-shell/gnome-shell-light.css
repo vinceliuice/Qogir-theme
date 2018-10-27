@@ -1358,7 +1358,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar-day-base.calendar-day-heading {
-  color: scale-alpha(#5c616c, 0.75);
+  color: rgba(92, 97, 108, 0.75);
   margin-top: 1em;
   font-size: 70%;
 }
@@ -1546,7 +1546,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 16px;
   border-radius: 16px;
   padding: 2px;
-  color: scale-alpha(#5c616c, 0.75);
+  color: rgba(92, 97, 108, 0.75);
 }
 
 /* FIXME: how do you do this in sass? */

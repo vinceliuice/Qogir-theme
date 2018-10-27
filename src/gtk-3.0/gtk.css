@@ -1128,7 +1128,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):
   border-right-style: none;
 }
 
-toolbar.inline-toolbar toolbutton > button.flat, .inline-toolbar toolbutton > button.flat, toolbar.inline-toolbar toolbutton > button.sidebar-button, .inline-toolbar toolbutton > button.sidebar-button, toolbar.inline-toolbar toolbutton > button.budgie-menu-launcher, .inline-toolbar toolbutton > button.budgie-menu-launcher, .inline-toolbar button, .inline-toolbar button.flat, .inline-toolbar button.sidebar-button, .inline-toolbar button.budgie-menu-launcher, .inline-toolbar .budgie-panel #tasklist-button, .budgie-panel .inline-toolbar #tasklist-button, .inline-toolbar button:backdrop, .inline-toolbar button.flat:backdrop, .inline-toolbar button.sidebar-button:backdrop, .inline-toolbar button.budgie-menu-launcher:backdrop {
+toolbar.inline-toolbar toolbutton > button.flat, .inline-toolbar toolbutton > button.flat, toolbar.inline-toolbar toolbutton > button.sidebar-button, .inline-toolbar toolbutton > button.sidebar-button, toolbar.inline-toolbar toolbutton > button.budgie-menu-launcher, .inline-toolbar toolbutton > button.budgie-menu-launcher, .inline-toolbar .budgie-panel toolbutton > #tasklist-button, .budgie-panel .inline-toolbar toolbutton > #tasklist-button, .inline-toolbar button, .inline-toolbar button:backdrop {
   border-radius: 0;
   border-right-style: none;
   border-left-style: none;
@@ -1150,24 +1150,23 @@ toolbar.inline-toolbar toolbutton > button.flat, .inline-toolbar toolbutton > bu
   border-style: solid;
 }
 
-.inline-toolbar button:first-child, .inline-toolbar .budgie-panel #tasklist-button:first-child, .budgie-panel .inline-toolbar #tasklist-button:first-child, .inline-toolbar button.flat:first-child:backdrop, .inline-toolbar button.sidebar-button:first-child:backdrop, .inline-toolbar button.budgie-menu-launcher:first-child:backdrop, toolbar.inline-toolbar toolbutton:first-child > button.flat, .inline-toolbar toolbutton:first-child > button.flat, toolbar.inline-toolbar toolbutton:first-child > button.sidebar-button, .inline-toolbar toolbutton:first-child > button.sidebar-button, toolbar.inline-toolbar toolbutton:first-child > button.budgie-menu-launcher, .inline-toolbar toolbutton:first-child > button.budgie-menu-launcher, .inline-toolbar .budgie-panel toolbutton:first-child > #tasklist-button, .budgie-panel .inline-toolbar toolbutton:first-child > #tasklist-button {
+.inline-toolbar button:first-child, toolbar.inline-toolbar toolbutton:first-child > button.flat, .inline-toolbar toolbutton:first-child > button.flat, toolbar.inline-toolbar toolbutton:first-child > button.sidebar-button, .inline-toolbar toolbutton:first-child > button.sidebar-button, toolbar.inline-toolbar toolbutton:first-child > button.budgie-menu-launcher, .inline-toolbar toolbutton:first-child > button.budgie-menu-launcher, .inline-toolbar .budgie-panel toolbutton:first-child > #tasklist-button, .budgie-panel .inline-toolbar toolbutton:first-child > #tasklist-button {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   border-left-style: solid;
   border-right-style: none;
 }
 
-.inline-toolbar button:last-child, .inline-toolbar .budgie-panel #tasklist-button:last-child, .budgie-panel .inline-toolbar #tasklist-button:last-child, .inline-toolbar button.flat:last-child:backdrop, .inline-toolbar button.sidebar-button:last-child:backdrop, .inline-toolbar button.budgie-menu-launcher:last-child:backdrop, toolbar.inline-toolbar toolbutton:last-child > button.flat, .inline-toolbar toolbutton:last-child > button.flat, toolbar.inline-toolbar toolbutton:last-child > button.sidebar-button, .inline-toolbar toolbutton:last-child > button.sidebar-button, toolbar.inline-toolbar toolbutton:last-child > button.budgie-menu-launcher, .inline-toolbar toolbutton:last-child > button.budgie-menu-launcher, .inline-toolbar .budgie-panel toolbutton:last-child > #tasklist-button, .budgie-panel .inline-toolbar toolbutton:last-child > #tasklist-button {
+.inline-toolbar button:last-child, toolbar.inline-toolbar toolbutton:last-child > button.flat, .inline-toolbar toolbutton:last-child > button.flat, toolbar.inline-toolbar toolbutton:last-child > button.sidebar-button, .inline-toolbar toolbutton:last-child > button.sidebar-button, toolbar.inline-toolbar toolbutton:last-child > button.budgie-menu-launcher, .inline-toolbar toolbutton:last-child > button.budgie-menu-launcher, .inline-toolbar .budgie-panel toolbutton:last-child > #tasklist-button, .budgie-panel .inline-toolbar toolbutton:last-child > #tasklist-button {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-right-style: solid;
   border-left-style: none;
 }
 
-.inline-toolbar button:only-child, .inline-toolbar .budgie-panel #tasklist-button:only-child, .budgie-panel .inline-toolbar #tasklist-button:only-child, .inline-toolbar button.flat:only-child:backdrop, .inline-toolbar button.sidebar-button:only-child:backdrop, .inline-toolbar button.budgie-menu-launcher:only-child:backdrop, toolbar.inline-toolbar toolbutton:only-child > button.flat, .inline-toolbar toolbutton:only-child > button.flat, toolbar.inline-toolbar toolbutton:only-child > button.sidebar-button, .inline-toolbar toolbutton:only-child > button.sidebar-button, toolbar.inline-toolbar toolbutton:only-child > button.budgie-menu-launcher, .inline-toolbar toolbutton:only-child > button.budgie-menu-launcher, .inline-toolbar .budgie-panel toolbutton:only-child > #tasklist-button, .budgie-panel .inline-toolbar toolbutton:only-child > #tasklist-button {
+.inline-toolbar button:only-child, toolbar.inline-toolbar toolbutton:only-child > button.flat, .inline-toolbar toolbutton:only-child > button.flat, toolbar.inline-toolbar toolbutton:only-child > button.sidebar-button, .inline-toolbar toolbutton:only-child > button.sidebar-button, toolbar.inline-toolbar toolbutton:only-child > button.budgie-menu-launcher, .inline-toolbar toolbutton:only-child > button.budgie-menu-launcher, .inline-toolbar .budgie-panel toolbutton:only-child > #tasklist-button, .budgie-panel .inline-toolbar toolbutton:only-child > #tasklist-button {
   border-radius: 3px;
-  border-left-style: solid;
-  border-right-style: solid;
+  border-style: solid;
 }
 
 .linked.vertical > entry,
@@ -2519,6 +2518,11 @@ popover.background {
   border-radius: 3px;
   background-clip: border-box;
   background-color: #ffffff;
+}
+
+popover, popover.menu,
+popover.background,
+popover.background.menu {
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
 }
 
@@ -4917,6 +4921,14 @@ dialog.background.csd box.dialog-vbox grid.horizontal scrolledwindow.frame {
   border: none;
 }
 
+dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+dialog.background.csd headerbar.default-decoration {
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+}
+
 .nautilus-window .floating-bar {
   padding: 1px;
   background-color: #5294e2;
@@ -5133,11 +5145,11 @@ widget#STORAGE list {
 }
 
 widget#STORAGE list row.activatable, widget#STORAGE list .view, widget#STORAGE list textview text, textview widget#STORAGE list text, widget#STORAGE list iconview, widget#STORAGE list .panel popover .sidebar .view, .panel popover .sidebar widget#STORAGE list .view, widget#STORAGE list treeview.view.sidebar.source-list, widget#STORAGE list .budgie-menu button, .budgie-menu widget#STORAGE list button {
-  color: scale-alpha(#5c616c, 0.75);
+  color: rgba(92, 97, 108, 0.75);
 }
 
 widget#STORAGE list row.activatable:hover, widget#STORAGE list .view:hover, widget#STORAGE list textview text:hover, textview widget#STORAGE list text:hover, widget#STORAGE list iconview:hover, widget#STORAGE list .panel popover .sidebar .view:hover, .panel popover .sidebar widget#STORAGE list .view:hover, widget#STORAGE list treeview.view.sidebar.source-list:hover, widget#STORAGE list .budgie-menu button:hover, .budgie-menu widget#STORAGE list button:hover, widget#STORAGE list row.activatable:active, widget#STORAGE list .view:active, widget#STORAGE list textview text:active, textview widget#STORAGE list text:active, widget#STORAGE list iconview:active, widget#STORAGE list .panel popover .sidebar .view:active, .panel popover .sidebar widget#STORAGE list .view:active, widget#STORAGE list treeview.view.sidebar.source-list:active, widget#STORAGE list .budgie-menu button:active, .budgie-menu widget#STORAGE list button:active {
-  color: scale-alpha(#5c616c, 0.75);
+  color: rgba(92, 97, 108, 0.75);
 }
 
 widget#STORAGE list separator.list {
@@ -5153,7 +5165,7 @@ widget#PERFORMANCE searchbar entry, widget#PERFORMANCE searchbar button {
 }
 
 graph-switcher-button.toggle {
-  color: scale-alpha(#5c616c, 0.75);
+  color: rgba(92, 97, 108, 0.75);
   font-weight: 500;
 }
 
@@ -5432,7 +5444,7 @@ window.background > box.vertical > overlay > stack > widget > stack widget > box
   background-image: image(#fafbfc);
 }
 
-.category_page_header_filter_box button:prelight {
+.category_page_header_filter_box button:hover {
   color: rgba(92, 97, 108, 0.75);
 }
 
@@ -6158,7 +6170,7 @@ button.flat.toggle.switcher:hover image, button.toggle.switcher.sidebar-button:h
   color: #5294e2;
 }
 
-.circular label:insensitive {
+.circular label:disabled {
   color: rgba(92, 97, 108, 0.55);
 }
 
@@ -6313,8 +6325,17 @@ actionbar.inline-toolbar {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-actionbar.inline-toolbar button + button {
-  margin-left: -6px;
+actionbar.inline-toolbar button {
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+actionbar.inline-toolbar button:first-child {
+  border-right-style: solid;
+}
+
+actionbar.inline-toolbar button:last-child {
+  border-left-style: solid;
 }
 
 scale.warmth trough {

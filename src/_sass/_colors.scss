@@ -10,16 +10,16 @@ $alt_base_color: if($variant == 'light', darken($base_color, 5%), lighten($base_
 $sec_base_color: if($variant == 'light', darken($base_color, 10%), lighten($base_color, 10%));
 $alt_bg_color: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 5%));
 $sec_bg_color: dif($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 10%));
-$alt_fg_color: scale-alpha($fg_color, 0.75);
-$sec_fg_color: scale-alpha($fg_color, 0.6);
+$alt_fg_color: rgba($fg_color, 0.75);
+$sec_fg_color: rgba($fg_color, 0.6);
 
 $selected_fg_color: #ffffff;
 $selected_bg_color: #5294e2;
 
 $alt_selected_bg_color: lighten($selected_bg_color, 5%);
 $sec_selected_bg_color: darken($selected_bg_color, 10%);
-$alt_selected_fg_color: scale-alpha($selected_fg_color, 0.75);
-$sec_selected_fg_color: scale-alpha($selected_fg_color, 0.6);
+$alt_selected_fg_color: rgba($selected_fg_color, 0.75);
+$sec_selected_fg_color: rgba($selected_fg_color, 0.6);
 
 $selection_mode_bg: if($trans == 'true', rgba($selected_bg_color, 0.95), $selected_bg_color);
 $selection_mode_fg: $selected_fg_color;

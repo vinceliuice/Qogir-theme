@@ -378,6 +378,7 @@ window.thunar {
   }
 }
 
+// Popover switcher dots
 button.flat.toggle.switcher {
   &:hover, &:active, &:checked, &:selected {
     image {
@@ -386,9 +387,10 @@ button.flat.toggle.switcher {
   }
 }
 
-.circular {
-  label:insensitive { color: $insensitive_fg_color; }
-  &.accent {
+// Calendar Popover
+.circular { // Calendar popover date button
+  label:disabled { color: $insensitive_fg_color; }
+  &.accent { // Today button
     color: $selected_fg_color;
     background-color: $selected_bg_color;
   }
@@ -551,8 +553,19 @@ actionbar.inline-toolbar {
   border: none;
   border-top: 1px solid $borders_color;
 
-  button + button {
-    margin-left: -6px;
+//  button + button {
+//    margin-left: -6px;
+//  }
+
+  button { // Reset buttons
+    border-radius: 3px;
+    border: 1px solid $borders_color;
+    &:first-child {
+      border-right-style: solid;
+    }
+    &:last-child {
+      border-left-style: solid;
+    }
   }
 }
 
