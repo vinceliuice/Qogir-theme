@@ -4906,6 +4906,10 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   background-color: #5294e2;
 }
 
+dialog.background.csd box.dialog-vbox scrolledwindow.frame {
+  border: none;
+}
+
 .nautilus-window .floating-bar {
   padding: 1px;
   background-color: #5294e2;
@@ -6552,6 +6556,16 @@ window.background:not(.solid-csd) > notebook:not(.frame) > stack {
 
 stack#conversation_viewer scrolledwindow.geary-conversation-scroller > viewport.frame {
   border: none;
+}
+
+overlay.window-overlay grid.horizontal stack paned.horizontal stack widget.view.frame,
+overlay.window-overlay grid.horizontal stack paned.horizontal stack scrolledwindow.frame {
+  border-left: none;
+  border-right: none;
+}
+
+overlay.window-overlay grid.horizontal stack .sidebar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 widget > box.terminal-titlebar {
