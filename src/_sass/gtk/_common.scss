@@ -2653,6 +2653,9 @@ frame {
 }
 
 scrolledwindow {
+
+  &.frame,
+  &.frame.emptyGrid,
   viewport.frame { // avoid double borders when viewport inside scrolled window
     border-style: none;
   }
@@ -2706,7 +2709,10 @@ row {
   &:selected {
     @extend %selected_items;
 
-    button { @extend %selected-button; }
+    button {
+      @extend %selected-button;
+      &:active, &:checked { background-image: image($selected_fg_color); }
+    }
   }
 
   button { &:active, &:checked { background-image: image($selected_bg_color); } } // Fixed Cinnamon theme setting row button active background issue

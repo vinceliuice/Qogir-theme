@@ -3631,6 +3631,7 @@ frame searchbar {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+scrolledwindow.frame, scrolledwindow.frame.emptyGrid,
 scrolledwindow viewport.frame {
   border-style: none;
 }
@@ -3742,6 +3743,10 @@ list {
 
 list row {
   padding: 2px;
+}
+
+row:selected button:active, row:selected button:checked {
+  background-image: image(#ffffff);
 }
 
 row button:active, row button:checked {
