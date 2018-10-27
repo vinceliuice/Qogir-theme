@@ -378,13 +378,23 @@ $disk_space_free: darken($bg_color, 3%);
   }
 }
 
-
 //
 // Epiphany
 //
+
 //EphyWindow .floating-bar { // Epiphany overrides the floating-bar style, so reset it
 //  color: $fg_color;
 //}
+
+//
+// gnome-sound-recorder
+//
+stack {
+  grid.vertical {
+    scrolledwindow.frame,
+    scrolledwindow.frame.emptyGrid { border: none; } // Removed ugly borders
+  }
+}
 
 //
 // Eog

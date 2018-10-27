@@ -1114,6 +1114,11 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):
   box-shadow: none;
 }
 
+.linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):last-child:disabled,
+.linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):last-child:hover {
+  box-shadow: none;
+}
+
 .linked:not(.vertical) > entry,
 .linked:not(.vertical) > entry:focus, .linked:not(.vertical) > button,
 .linked:not(.vertical) > button:hover,
@@ -1303,6 +1308,18 @@ spinbutton button:active {
 
 spinbutton:disabled {
   color: rgba(211, 218, 227, 0.45);
+}
+
+.linked.vertical > spinbutton:not(.vertical):not(:last-child) button, .linked.vertical > spinbutton:not(.vertical):not(:last-child) entry {
+  border-bottom: none;
+}
+
+.linked.vertical > spinbutton:not(.vertical):not(:last-child) entry:focus {
+  box-shadow: inset 0 -1px #5294e2;
+}
+
+.linked.vertical > spinbutton:not(.vertical):not(:last-child):not(:first-child) button, .linked.vertical > spinbutton:not(.vertical):not(:last-child):not(:first-child) entry {
+  border-radius: 0;
 }
 
 spinbutton:not(.vertical) entry {
@@ -3632,7 +3649,6 @@ frame searchbar {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-scrolledwindow.frame, scrolledwindow.frame.emptyGrid,
 scrolledwindow viewport.frame {
   border-style: none;
 }
@@ -5018,6 +5034,11 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .gedit-map-frame border:dir(rtl) {
   border-right-width: 1px;
+}
+
+stack grid.vertical scrolledwindow.frame,
+stack grid.vertical scrolledwindow.frame.emptyGrid {
+  border: none;
 }
 
 eog-thumb-nav scrolledwindow, eog-thumb-nav scrolledwindow.frame,

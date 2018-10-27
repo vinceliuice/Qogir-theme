@@ -645,6 +645,11 @@ toolbar.inline-toolbar toolbutton {
     > button.suggested-action + #{$_uncolored_button}:disabled,
     > button.destructive-action + #{$_uncolored_button}:disabled,
     > entry + #{$_uncolored_button}:disabled:not(:only-child), { box-shadow: none; }
+
+    @if $vert=='true' {
+      > #{$_uncolored_button}:last-child:disabled,
+      > #{$_uncolored_button}:last-child:hover { box-shadow: none; }
+    }
   }
 
   @if $entry_rules=='false' {
@@ -910,6 +915,17 @@ spinbutton {
   &:disabled { color: $insensitive_fg_color; }
 
   &:not(.vertical) {
+
+    .linked.vertical > & {
+      &:not(:last-child) {
+        button, entry { border-bottom: none; }
+        entry:focus { box-shadow: inset 0 -1px $selected_bg_color; }
+      }
+      &:not(:last-child):not(:first-child) {
+        button, entry { border-radius: 0; }
+      }
+    }
+
     entry { min-width: $medium_size; }
 
     button, entry { @extend %linked; }
@@ -2654,8 +2670,6 @@ frame {
 
 scrolledwindow {
 
-  &.frame,
-  &.frame.emptyGrid,
   viewport.frame { // avoid double borders when viewport inside scrolled window
     border-style: none;
   }
