@@ -468,6 +468,87 @@ button.documents-favorite:active:hover {
     transition: opacity 0.2s ease-out;
 }
 
+// /***************
+//  * Gnome-Usage *
+//  ***************/
+
+// FIXME: why was 'adwaita.css' used for all user-themes? :/
+widget {
+  &#PROCESSOR,
+  &#MEMORY {
+    list {
+      row {
+        margin: -1px; // kill ugly parent borders
+        border: 1px solid $solid_borders_color;
+
+        &.max {
+          color: $osd_bg_color; // enforce dark foreground
+          // FIXME: we can't override the salmon-pinky background
+          // background-image: image($destructive_color);
+          // border: 1px solid $destructive_color;
+        }
+      }
+
+      // kill ugly separators
+      separator.list {
+        box-shadow: inset 0 0 0 1px $solid_borders_color;
+      }
+    }
+  }
+
+  &#STORAGE {
+    list {
+      margin: -1px; // kill ugly borders
+
+      row.activatable {
+        color: $alt_fg_color;
+        &:hover,
+        &:active { color: $alt_fg_color; }
+      }
+
+      // kill ugly separators
+      separator.list {
+        box-shadow: inset 0 0 0 1px $solid_borders_color;
+      }
+    }
+  }
+
+  &#PERFORMANCE {
+    searchbar {
+      box-shadow: inset 0 -2px $borders_color, inset 0 -1px $bg_color;  // Removed double borders under headerbar
+      entry, button { margin-bottom: 2px; }
+    }
+  }
+}
+
+graph-switcher-button.toggle {
+  color: $alt_fg_color;
+  font-weight: 500;
+  &:hover { // use opaque
+    color: $fg_color;
+    background-image: image(if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03)));
+  }
+}
+
+rg-graph.big {
+  // FIXME: We need to re-define these properties to prevent weird
+  // 'non-repeated' imaging behind the main graph.
+  background-position: left top;
+  background-origin: border-box;
+  background-repeat: repeat;
+}
+
+box.speedometer {
+  // FIXME: 'outter' meant 'outer'?
+  // circular progress should be drawn with our $accent_color though,
+  // damned adwaita.css picks @theme_selected_bg_color up.
+  &-outter { opacity: 0.8; } // reduce alpha for our troughs
+
+  &-content-area { // cover up meter troughs with selection colour
+    box-shadow: 0 0 0 4px rgba($selected_bg_color, 0.2);
+  }
+}
+
 //
 // Gnome Tweak Tool
 //

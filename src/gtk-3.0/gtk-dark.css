@@ -5075,6 +5075,67 @@ button.documents-favorite:active:hover {
   transition: opacity 0.2s ease-out;
 }
 
+widget#PROCESSOR list row, widget#MEMORY list row {
+  margin: -1px;
+  border: 1px solid #494c59;
+}
+
+widget#PROCESSOR list row.max, widget#MEMORY list row.max {
+  color: #282A33;
+}
+
+widget#PROCESSOR list separator.list, widget#MEMORY list separator.list {
+  box-shadow: inset 0 0 0 1px #494c59;
+}
+
+widget#STORAGE list {
+  margin: -1px;
+}
+
+widget#STORAGE list row.activatable, widget#STORAGE list .view, widget#STORAGE list textview text, textview widget#STORAGE list text, widget#STORAGE list iconview, widget#STORAGE list .panel popover .sidebar .view, .panel popover .sidebar widget#STORAGE list .view, widget#STORAGE list treeview.view.sidebar.source-list, widget#STORAGE list .budgie-menu button, .budgie-menu widget#STORAGE list button {
+  color: scale-alpha(#D3DAE3, 0.75);
+}
+
+widget#STORAGE list row.activatable:hover, widget#STORAGE list .view:hover, widget#STORAGE list textview text:hover, textview widget#STORAGE list text:hover, widget#STORAGE list iconview:hover, widget#STORAGE list .panel popover .sidebar .view:hover, .panel popover .sidebar widget#STORAGE list .view:hover, widget#STORAGE list treeview.view.sidebar.source-list:hover, widget#STORAGE list .budgie-menu button:hover, .budgie-menu widget#STORAGE list button:hover, widget#STORAGE list row.activatable:active, widget#STORAGE list .view:active, widget#STORAGE list textview text:active, textview widget#STORAGE list text:active, widget#STORAGE list iconview:active, widget#STORAGE list .panel popover .sidebar .view:active, .panel popover .sidebar widget#STORAGE list .view:active, widget#STORAGE list treeview.view.sidebar.source-list:active, widget#STORAGE list .budgie-menu button:active, .budgie-menu widget#STORAGE list button:active {
+  color: scale-alpha(#D3DAE3, 0.75);
+}
+
+widget#STORAGE list separator.list {
+  box-shadow: inset 0 0 0 1px #494c59;
+}
+
+widget#PERFORMANCE searchbar {
+  box-shadow: inset 0 -2px rgba(255, 255, 255, 0.12), inset 0 -1px #32343D;
+}
+
+widget#PERFORMANCE searchbar entry, widget#PERFORMANCE searchbar button {
+  margin-bottom: 2px;
+}
+
+graph-switcher-button.toggle {
+  color: scale-alpha(#D3DAE3, 0.75);
+  font-weight: 500;
+}
+
+graph-switcher-button.toggle:hover {
+  color: #D3DAE3;
+  background-image: image(rgba(255, 255, 255, 0.03));
+}
+
+rg-graph.big {
+  background-position: left top;
+  background-origin: border-box;
+  background-repeat: repeat;
+}
+
+box.speedometer-outter {
+  opacity: 0.8;
+}
+
+box.speedometer-content-area {
+  box-shadow: 0 0 0 4px rgba(82, 148, 226, 0.2);
+}
+
 .tweak-categories,
 .tweak-category:not(:selected):not(:hover) {
   background-image: linear-gradient(to bottom, #282A33, #282A33);
