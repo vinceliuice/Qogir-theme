@@ -279,7 +279,7 @@
 
     color: $actionb_fg;
     background-color: $actionb_bg;
-    border-color: $actionb_bg;
+    border-color: darken($actionb_bg, 5%);
   }
 
   @else if $t==undecorated {

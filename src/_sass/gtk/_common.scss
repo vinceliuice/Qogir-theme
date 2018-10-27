@@ -75,6 +75,7 @@ textview {
   }
 }
 
+
 textview border { background-color: mix($bg_color, $base_color, 50%); }
 
 iconview { @extend %view; }
@@ -804,7 +805,7 @@ headerbar.titlebar {
   border-bottom-style: none;
 }
 
-%linked_vertical{
+%linked_vertical {
   @extend %linked_vertical_middle;
   &:first-child {
     border-top-left-radius: 3px;
@@ -1323,6 +1324,10 @@ headerbar {
 
     &:disabled { @include button(header-insensitive); }
     &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
+
+    &.flat.toggle.popup {
+      &:hover { box-shadow: inset 0 -1px $borders_color; }
+    }
   }
 
   &.selection-mode button {
@@ -1449,8 +1454,8 @@ headerbar {
   // Headerbar Spinbuttons
   spinbutton:not(.vertical) {
     &:focus {
-    color: $selected_fg_color;
-    caret-color: $selected_fg_color;
+      color: $selected_fg_color;
+      caret-color: $selected_fg_color;
     }
 
     button {
@@ -1552,30 +1557,6 @@ headerbar {
     }
   }
 }
-
-//.titlebar {
-//  :not(headerbar) .path-bar {
-//    button {
-//      color: $header_fg;
-//      border-radius: 0;
-//      border: none;
-//      background-color: transparent;
-//
-//      &:hover {
-//        color: darken($header_fg, 10%);
-//        box-shadow: 0 2px rgba($alt_selected_bg_color, 0.5);
-//      }
-//      &:active, &:checked {
-//        transition: box-shadow 0.2s;
-//        color: $header_fg;
-//        background-color: transparent;
-//        box-shadow: 0 2px $alt_selected_bg_color;
-//      }
-//
-//      &:disabled { color: rgba($header_fg, 0.4); }
-//    }
-//  }
-//}
 
 //
 // Pathbars
@@ -1699,13 +1680,13 @@ treeview.view {
   }
   &.trough { // progress bar trough in treeviews
     color: $fg_color;
-    background-color: $button_border;
+    background-color: $borders_color;
     border-radius: 3px;
     border-width: 0;
 
     &:selected, &:selected:focus {
       color: $selected_fg_color;
-      background-color: transparentize(black, 0.8);
+      background-color: rgba(black, 0.2);
       border-radius: 3px;
       border-width: 0;
     }
@@ -2657,6 +2638,18 @@ frame.flat > border,
 frame > border.flat,
 .frame.flat {
   border-style: none;
+}
+
+frame {
+  scrolledwindow.frame { // removed double borders
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+
+  searchbar {
+    box-shadow: none;
+    border-top: 1px solid $borders_color;
+  }
 }
 
 scrolledwindow {

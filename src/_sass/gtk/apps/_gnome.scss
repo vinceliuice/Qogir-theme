@@ -389,11 +389,20 @@ $disk_space_free: darken($bg_color, 3%);
 //
 // Eog
 //
-eog-thumb-nav {
-  scrolledwindow { border-top: none; }
+eog-thumb-nav,
+#eog-thumb-nav {
 
-  button { -gtk-outline-radius: 2px;
-           border-radius: 2px; }
+  scrolledwindow {
+    &, &.frame {
+      border-top: none;
+    }
+  }
+
+  button {
+    -gtk-outline-radius: 2px;
+    border-radius: 2px;
+    border-top: none;
+  }
 }
 
 //

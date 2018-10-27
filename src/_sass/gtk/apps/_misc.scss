@@ -479,14 +479,19 @@ MarlinViewWindow {
   }
 }
 
-treeview.view.sidebar {
-  color: $dark_sidebar_fg;
-  background-color: $dark_sidebar_bg;
+treeview.view {
 
-  &.source-list {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    @extend row.activatable;
+  &.sidebar {
+    color: $dark_sidebar_fg;
+    background-color: $dark_sidebar_bg;
+
+    &.source-list {
+      padding-top: 3px;
+      padding-bottom: 3px;
+      @extend row.activatable;
+
+      &.trough { @extend treeview.view.trough }
+    }
   }
 }
 
