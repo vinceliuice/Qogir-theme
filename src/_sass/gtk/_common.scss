@@ -2691,7 +2691,7 @@ scrolledwindow {
 
 //vbox and hbox separators
 separator {
-  background-color: transparentize(black, 0.9);
+  background-color: $borders_color;
   min-width: 1px;
   min-height: 1px;
 }

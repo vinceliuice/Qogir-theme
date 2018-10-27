@@ -270,14 +270,14 @@ dialog.background.csd {
       scrolledwindow.frame {
         border: none; //removed ugly boders
 //        list {
-//          separator { //removed separaters
+//          separator { //removed separators
 //            background: none;
 //            border: none;
 //            min-height: 0;
 //            min-width: 0;
 //          }
 //          row {
-//            border-bottom: 1px solid $borders_color; // Add borders as separaters
+//            border-bottom: 1px solid $borders_color; // Add borders as separators
 //          }
 //        }
       }
@@ -617,6 +617,18 @@ row#ClickMethod,
 row#PrimaryWorkspaceTweak, // for 3.26.0
 row#workspaces-only-on-primary {
   margin-top: 4px;
+}
+
+
+row#AutostartTitle.tweak {
+  padding: 3px;
+  background-color: $base_color;
+}
+
+list#AutostartListBoxTweakGroup {
+  &.tweak-group-startup {
+    border: 1px solid $borders_color;
+  }
 }
 
 //

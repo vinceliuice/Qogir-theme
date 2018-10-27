@@ -3738,7 +3738,7 @@ scrolledwindow junction:dir(rtl) {
 }
 
 separator {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
   min-width: 1px;
   min-height: 1px;
 }
@@ -5213,6 +5213,15 @@ row#ClickMethod,
 row#PrimaryWorkspaceTweak,
 row#workspaces-only-on-primary {
   margin-top: 4px;
+}
+
+row#AutostartTitle.tweak {
+  padding: 3px;
+  background-color: #282A33;
+}
+
+list#AutostartListBoxTweakGroup.tweak-group-startup {
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .gb-search-entry-occurrences-tag {
