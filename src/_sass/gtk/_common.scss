@@ -1233,26 +1233,7 @@ headerbar {
     margin-top: $icon_padding;
     margin-bottom: $icon_padding;
   }
-
-  // Fixes split headerbars
-  separator:first-child + &,
-  &:first-child {
-    &, &:backdrop {
-      border-top-left-radius: $_header_radius;
-
-      .maximized &,
-      .tiled & { border-radius: 0; }
-    }
-  }
-
-  &:last-child {
-    &, &:backdrop {
-      border-top-right-radius: $_header_radius;
-
-      .maximized &,
-      .tiled & { border-radius: 0; }
-    }
-  }
+  separator { @extend %header_separator; }
 }
 
 // Fixes split headerbars too
@@ -1276,14 +1257,8 @@ headerbar {
   min-width: 0;
   min-height: 0;
   background: none;
-  border-width: 0 0;
-  border-image: linear-gradient(to bottom,
-                                transparentize($header_fg, 1) 25%,
-                                transparentize($header_fg, 0.65) 25%,
-                                transparentize($header_fg, 0.65) 75%,
-                                transparentize($header_fg, 1) 75%) 0 1/0 0 stretch;
-
-  &:backdrop { opacity: 0.6; }
+  border-width: 0;
+  border-image: none;
 }
 
 %header_widgets {
@@ -1482,7 +1457,7 @@ headerbar {
     }
 
     button {
-      &,&:disabled { @include button(header-hover); }
+      &, &:disabled { @include button(header-hover); }
 
       &:hover { background-color: lighten($header_button_bg, 15%); }
       &:active, &:checked { @include button(header-active); }
@@ -1504,10 +1479,10 @@ headerbar {
     &:disabled { color: transparentize($header_fg, 0.6); }
 
     > .linked > button.combo {
-      @include entry(header-normal);
+      @include button(header-normal);
 
-      &:hover { @include entry(header-focus); box-shadow: none; }
-      &:disabled { @include entry(header-insensitive); }
+      &:hover { @include button(header-hover); box-shadow: none; }
+      &:disabled { @include button(header-insensitive); }
     }
 
     > .linked > entry.combo {
@@ -1518,20 +1493,6 @@ headerbar {
       &:dir(rtl) {
         border-left-style: none;
         &:focus { box-shadow: -1px 0 $selected_bg_color; }
-      }
-    }
-    > .linked > button.combo {
-      &:dir(ltr) {
-        &, &:hover, &:active, &:checked, &:disabled {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-        }
-      }
-      &:dir(rtl) {
-        &, &:hover, &:active, &:checked, &:disabled {
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-        }
       }
     }
   }
@@ -2738,8 +2699,8 @@ row {
 
     &:active, &:checked {
       transition: all 150ms $ease-out-quad;
-//      color: $selected_fg_color;
-//      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
 //      background-image: image(if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08)));
     }
 
