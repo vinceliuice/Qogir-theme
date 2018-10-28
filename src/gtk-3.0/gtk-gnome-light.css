@@ -67,6 +67,12 @@
   color: #ffffff;
 }
 
+button.gtkstyle-fallback:active, button.gtkstyle-fallback:checked {
+  color: #ffffff;
+  border-color: #2679db;
+  background-color: #5294e2;
+}
+
 .view,
 textview text,
 iconview {
@@ -744,6 +750,16 @@ button.font separator, button.file separator {
 
 .inline-toolbar toolbutton > button:disabled:active label, .inline-toolbar toolbutton > button:disabled:active, .inline-toolbar toolbutton > button:disabled:checked label, .inline-toolbar toolbutton > button:disabled:checked {
   color: rgba(255, 255, 255, 0.8);
+}
+
+toolbar.inline-toolbar toolbutton:hover, .inline-toolbar toolbutton:hover {
+  background-color: rgba(92, 97, 108, 0.03);
+}
+
+toolbar.inline-toolbar toolbutton:active, .inline-toolbar toolbutton:active, toolbar.inline-toolbar toolbutton:checked, .inline-toolbar toolbutton:checked {
+  color: #ffffff;
+  border-color: #2679db;
+  background-color: #5294e2;
 }
 
 .linked:not(.vertical):not(.path-bar) > entry + entry {

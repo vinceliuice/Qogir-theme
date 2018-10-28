@@ -53,6 +53,10 @@
   }
 }
 
+button.gtkstyle-fallback { // For Cinnamon system setting
+  &:active, &:checked { @include button(active); }
+}
+
 .view,
 %view {
   @extend row.activatable;
@@ -585,6 +589,8 @@ toolbar.inline-toolbar toolbutton {
   &:first-child > button.flat { @extend %linked_flat:first-child; }
   &:last-child > button.flat { @extend %linked_flat:last-child; }
   &:only-child > button.flat { @extend %linked_flat:only-child; }
+  &:hover { background-color: if($variant=='light', rgba($fg_color, 0.03), rgba($fg_color, 0.08)); }
+  &:active, &:checked { @include button(active); }
 }
 
 // Some crazy linking stuff
