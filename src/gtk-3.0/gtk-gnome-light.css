@@ -4900,18 +4900,6 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   background-color: #5294e2;
 }
 
-dialog.background.csd box.dialog-vbox grid.horizontal scrolledwindow.frame {
-  border: none;
-}
-
-dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-dialog.background.csd headerbar.default-decoration {
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
-}
-
 .nautilus-window .floating-bar {
   padding: 1px;
   background-color: #5294e2;
@@ -5756,7 +5744,7 @@ flowboxchild.bookmark-tag-widget-selected {
 window.csd > box.vertical > box.vertical > toolbar.horizontal, window.csd > box.vertical > box.vertical > .horizontal.inline-toolbar,
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal,
 window.solid-csd > box.vertical > box.vertical > .horizontal.inline-toolbar {
-  margin: -1px 0;
+  margin-top: -1px;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: none;
   background-color: transparent;
@@ -5774,7 +5762,7 @@ window.solid-csd > box.vertical > box.vertical > .horizontal.inline-toolbar butt
 
 window.csd > box.vertical > box.vertical > frame,
 window.solid-csd > box.vertical > box.vertical > frame {
-  margin: -1px 0;
+  margin-top: -1px;
   padding: 0;
 }
 
@@ -5809,6 +5797,26 @@ window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem > .l
   min-width: 28px;
   padding: 0;
   margin: 0;
+}
+
+dialog.background.csd box.dialog-vbox grid.horizontal scrolledwindow.frame {
+  border: none;
+}
+
+dialog.background.csd box.dialog-vbox grid.horizontal scrolledwindow.frame viewport.frame {
+  border: none;
+}
+
+dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+dialog.background.csd box.dialog-vbox scrolledwindow viewport.frame {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+dialog.background.csd headerbar.default-decoration {
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 stack overlay frame scrolledwindow.frame {
