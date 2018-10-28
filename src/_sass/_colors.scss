@@ -77,7 +77,7 @@ $osd_fg_color: #D3DAE3;
 $osd_bg_color: #282A33;
 
 $osd_button_bg: rgba(lighten($osd_bg_color, 22%), 0.4);
-$osd_button_border: rgba(darken($osd_bg_color, 12%), 0.4);
+$osd_button_border: rgba(lighten($osd_bg_color, 26%), 0.55);
 
 $osd_entry_bg: rgba(lighten($osd_bg_color, 22%), 0.4);
 $osd_entry_border: rgba(darken($osd_bg_color, 12%), 0.4);

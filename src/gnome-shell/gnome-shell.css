@@ -2945,7 +2945,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .lg-extension {
-  border: 1px solid rgba(13, 14, 17, 0.4);
+  border: 1px solid rgba(98, 103, 125, 0.55);
   border-radius: 2px;
   background-color: #282A33;
   padding: 4px;

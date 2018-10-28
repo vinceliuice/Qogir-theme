@@ -98,14 +98,14 @@ stage {
   border-radius: 2px;
   text-shadow: 0 1px rgba(40, 42, 51, 0);
   color: #D3DAE3;
-  border: 1px solid rgba(13, 14, 17, 0.4);
+  border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.4);
 }
 
 .notification-button:hover, .notification-icon-button:hover, .modal-dialog-button-box .modal-dialog-button:hover {
   text-shadow: 0 1px rgba(40, 42, 51, 0);
   color: #D3DAE3;
-  border: 1px solid rgba(13, 14, 17, 0.4);
+  border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(105, 110, 134, 0.5);
 }
 
@@ -123,7 +123,7 @@ stage {
 .notification-button:insensitive, .notification-icon-button:insensitive, .modal-dialog-button-box .modal-dialog-button:insensitive {
   text-shadow: 0 1px rgba(40, 42, 51, 0);
   color: #5b5f68;
-  border: 1px solid rgba(13, 14, 17, 0.4);
+  border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.25);
 }
 
@@ -1281,14 +1281,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
   text-shadow: 0 1px rgba(40, 42, 51, 0);
   color: #D3DAE3;
-  border: 1px solid rgba(13, 14, 17, 0.4);
+  border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.4);
 }
 
 .keyboard-key:hover {
   text-shadow: 0 1px rgba(40, 42, 51, 0);
   color: #D3DAE3;
-  border: 1px solid rgba(13, 14, 17, 0.4);
+  border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(105, 110, 134, 0.5);
 }
 
@@ -1302,7 +1302,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .keyboard-key:grayed {
   text-shadow: 0 1px rgba(40, 42, 51, 0);
   color: #5b5f68;
-  border: 1px solid rgba(13, 14, 17, 0.4);
+  border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.25);
 }
 
@@ -1679,7 +1679,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .sound-player-overlay StButton:hover {
   text-shadow: 0 1px rgba(40, 42, 51, 0);
   color: #D3DAE3;
-  border: 1px solid rgba(13, 14, 17, 0.4);
+  border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(105, 110, 134, 0.5);
 }
 

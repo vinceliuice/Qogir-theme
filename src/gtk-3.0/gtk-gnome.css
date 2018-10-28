@@ -496,38 +496,38 @@ button.osd:hover {
 
 button.osd:active, button.osd:checked {
   color: #ffffff;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: #5294e2;
   background-color: #5294e2;
 }
 
 button.osd:disabled {
   color: #5b5f68;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.25);
 }
 
 .osd button {
   color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.4);
 }
 
 .osd button:hover {
   color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(105, 110, 134, 0.5);
 }
 
 .osd button:active, .osd button:checked {
   background-clip: padding-box;
   color: #ffffff;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: #5294e2;
   background-color: #5294e2;
 }
 
 .osd button:disabled {
   color: #5b5f68;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.25);
 }
 
@@ -540,20 +540,20 @@ button.osd:disabled {
 
 .osd button.flat:hover, .osd button.sidebar-button:hover, .osd button.budgie-menu-launcher:hover, .osd .budgie-panel #tasklist-button:hover, .budgie-panel .osd #tasklist-button:hover {
   color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(105, 110, 134, 0.5);
 }
 
 .osd button.flat:disabled, .osd button.sidebar-button:disabled, .osd button.budgie-menu-launcher:disabled, .osd .budgie-panel #tasklist-button:disabled, .budgie-panel .osd #tasklist-button:disabled {
   color: #5b5f68;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.25);
   background-image: none;
 }
 
 .osd button.flat:active, .osd button.sidebar-button:active, .osd button.budgie-menu-launcher:active, .osd .budgie-panel #tasklist-button:active, .budgie-panel .osd #tasklist-button:active, .osd button.flat:checked, .osd button.sidebar-button:checked, .osd button.budgie-menu-launcher:checked, .osd .budgie-panel #tasklist-button:checked, .budgie-panel .osd #tasklist-button:checked {
   color: #ffffff;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: #5294e2;
   background-color: #5294e2;
 }
 
@@ -1386,7 +1386,7 @@ spinbutton:not(.vertical) > entry:drop(active) + button {
 
 .osd spinbutton:not(.vertical) > button:hover:not(:active),
 .osd spinbutton:not(.vertical) > button:hover + button {
-  border-left-color: rgba(13, 14, 17, 0.4);
+  border-left-color: rgba(98, 103, 125, 0.55);
 }
 
 .osd spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -3779,7 +3779,7 @@ row.activatable:selected.has-open-popup, .view:selected.has-open-popup, textview
   border-radius: 0 0 2px 2px;
   border-width: 0 1px 1px 1px;
   border-style: solid;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
 }
 
 .app-notification border {
@@ -3788,7 +3788,7 @@ row.activatable:selected.has-open-popup, .view:selected.has-open-popup, textview
 
 .app-notification button {
   color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.4);
 }
 
@@ -3798,20 +3798,20 @@ row.activatable:selected.has-open-popup, .view:selected.has-open-popup, textview
 
 .app-notification button:hover {
   color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(105, 110, 134, 0.5);
 }
 
 .app-notification button:active, .app-notification button:checked {
   color: #ffffff;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: #5294e2;
   background-color: #5294e2;
   background-clip: padding-box;
 }
 
 .app-notification button:disabled {
   color: #5b5f68;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.25);
 }
 
@@ -8453,25 +8453,25 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 
 #buttonbox_frame button {
   color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.4);
 }
 
 #buttonbox_frame button:hover {
   color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(105, 110, 134, 0.5);
 }
 
 #buttonbox_frame button:active, #buttonbox_frame button:checked {
   color: #ffffff;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: #5294e2;
   background-color: #5294e2;
 }
 
 #buttonbox_frame button:disabled {
   color: #5b5f68;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.25);
 }
 
