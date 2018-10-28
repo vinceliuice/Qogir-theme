@@ -658,7 +658,7 @@ button.raven-trigger {
                                         transparent 0%)
                                         0 0 2 / 0 0 2px;
         }
-        &:disabled { color: rgba($header_fg, 0.4); label { color: rgba($header_fg, 0.4); } }
+        &:disabled { color: rgba($header_fg, 0.5); label { color: rgba($header_fg, 0.5); }}
       }
 
       // for <10.4

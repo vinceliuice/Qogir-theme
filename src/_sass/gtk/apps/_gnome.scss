@@ -1,50 +1,21 @@
-//
-// Tab overrides
-//
-/*
-.gedit-bottom-panel-paned notebook,
-terminal-window notebook {
-  > header.top > tabs > tab:checked { box-shadow: inset 0 -1px $borders_color; }
-}
-*/
 
 //
 // GNOME Terminal, MATE Terminal
 //
 terminal-window,
 .mate-terminal {
-
-  decoration {
-    box-shadow: 0 3px 5px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
-                0 8px 8px 0 if($variant == 'light', opacify($_wm_border, 0.1), opacify($_wm_border, 0.05)),
-                0 0 0 2px $borders_color, 0 0 0 1px $base_color;
-
-    &:backdrop {
-      box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent,
-                  0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.06), opacify($_wm_border, 0.03)),
-                  0 0 0 2px $borders_color, 0 0 0 1px $base_color;
-      transition: $backdrop_transition;
-    }
-  }
-
   notebook {
+    padding: 0 1px 1px;
     > header.top {
-      //padding-top: 3px;
-      margin-top: -1px;
-
-      box-shadow: inset 0 1px opacify($header_border, 1);
-
       button {
         padding: 0;
         min-width: 24px;
         min-height: 24px;
       }
     }
-  }
-
-  scrollbar {
-    border: none;
-    background: none;
+    scrollbar {
+      background: none;
+    }
   }
 }
 
@@ -1225,7 +1196,7 @@ dialog.background.csd {
     }
     scrolledwindow {
       viewport.frame {
-        border: 1px solid $borders_color; // Add border for RhythmBox plugin setting dialog
+//        border: 1px solid $borders_color; // Add border for RhythmBox plugin setting dialog
       }
     }
     toolbar.inline-toolbar.horizontal {

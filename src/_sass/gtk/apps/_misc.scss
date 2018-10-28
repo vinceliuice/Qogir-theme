@@ -6,8 +6,45 @@
 
 .nemo-window {
 
-  .nemo-places-sidebar.frame { border-width: 0; }
-  notebook { background-color: $base_color; }
+  .nemo-places-sidebar {
+    &.frame { border-width: 0; }
+    .places-treeview {
+      @extend row.activatable;
+    }
+  }
+
+  notebook {
+    background-color: $base_color;
+    .primary-toolbar {
+      background-color: $bg_color;
+
+      button,
+      combobox > .linked > button.combo {
+        @include button(normal);
+        &:hover {
+          @include button(hover);
+          -gtk-icon-effect: highlight;
+        }
+        &:active, &:checked {
+          @include button(active);
+          &:not(:disabled) label:disabled { color: inherit; opacity: 0.6; }
+        }
+        &:disabled {
+          @include button(insensitive);
+          &:active, &:checked {
+            @include button(insensitive-active);
+          }
+        }
+      }
+
+      entry {
+        min-height: 24px;
+        min-width: 24px;
+        @include entry(normal);
+        &:focus { @include entry(focus); }
+      }
+    }
+  }
 
   // Rename entry
   .nemo-window-pane widget.entry {
@@ -20,36 +57,44 @@
   }
 
   .primary-toolbar {
-      @extend %header_widgets;
-      border: none;
-      color: $header_fg;
-      background-color: opacify($header_bg, 1);
-      box-shadow: inset 0 -1px $borders_color;
+    padding-top: 0;
+    padding-bottom: 0;
+    @extend %header_widgets;
+    border: none;
+    color: $header_fg;
+    background-color: opacify($header_bg, 1);
+    box-shadow: inset 0 -1px $borders_color;
+    button, entry {
+      min-height: 16px;
+      margin-top: 6px;
+      margin-bottom: 6px;
     }
+  }
 
   // Pathbar
-  .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) {
-
-    > button {
-      &:not(:last-child):not(:only-child) { margin: 0; }
-
-      padding-bottom: 2px;
-      margin: 0;
+  .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) {
+    button {
+      padding: 0 10px;
       color: $header_fg;
       background-color: $header_bg;
       border: none;
 
-      &:hover { color: darken($header_fg, 10%); box-shadow: inset 0 -2px rgba($alt_selected_bg_color, 0.5); }
-      &:active, &:checked { 
-          color: $header_fg;
-          box-shadow: inset 0 -2px $alt_selected_bg_color;
-        }
-      &:disabled { color: transparentize($header_fg, 0.4); }
-
-      &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
+      &:hover {
+        color: $alt_header_fg;
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      rgba($selected_bg_color, 0.5) 100%,
+                                      transparent 0%)
+                                      0 0 2 / 0 0 2px;
+      }
+      &:active, &:checked {
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $selected_bg_color 100%,
+                                      transparent 0%)
+                                      0 0 2 / 0 0 2px;
+      }
+      &:disabled { color: rgba($header_fg, 0.5); }
+      &, &:hover, &:active, &:checked, &:disabled { border-radius: 0; }
     }
-
-   // @include pathbar_linking_rules($sep_color:$header_button_border);
   }
 }
 
