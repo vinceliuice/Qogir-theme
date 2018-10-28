@@ -72,12 +72,14 @@
   }
 
   // Pathbar
+  .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar,
   .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) {
     button {
-      padding: 0 10px;
       color: $header_fg;
       background-color: $header_bg;
       border: none;
+      margin-top: 6px;
+      margin-bottom: 6px;
 
       &:hover {
         color: $alt_header_fg;

@@ -4497,7 +4497,7 @@ decoration:backdrop {
 
 tooltip.csd decoration {
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 transparent;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
 }
 
 messagedialog.csd decoration {
@@ -5945,27 +5945,38 @@ stack overlay frame searchbar {
   margin-bottom: 6px;
 }
 
+.nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button {
-  padding: 0 10px;
   color: rgba(207, 218, 231, 0.8);
   background-color: #282A33;
   border: none;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
+.nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:hover,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:hover {
   color: rgba(241, 244, 248, 0.8);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), rgba(82, 148, 226, 0.5) 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:active, .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:checked {
+.nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:active, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:checked,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:active,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
+.nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:disabled,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:disabled {
   color: rgba(207, 218, 231, 0.5);
 }
 
-.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button, .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:hover, .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:active, .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:checked, .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:disabled {
+.nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:hover, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:active, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:checked, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button:disabled,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:hover,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:active,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:checked,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:disabled {
   border-radius: 0;
 }
 
