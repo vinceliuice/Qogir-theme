@@ -539,6 +539,8 @@ button {
   //inline-toolbar buttons
   .inline-toolbar &, .inline-toolbar &:backdrop {
     @extend %linked_flat;
+    &:hover { background-color: if($variant=='light', rgba($fg_color, 0.03), rgba($fg_color, 0.08)); }
+    &:active, &:checked { @include button(active); }
   }
 
   @at-root %circle_button,
