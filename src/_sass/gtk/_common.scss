@@ -2677,7 +2677,6 @@ list {
 }
 
 row {
-
   &:selected {
     @extend %selected_items;
 
@@ -2699,8 +2698,8 @@ row {
 
     &:active, &:checked {
       transition: all 150ms $ease-out-quad;
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
+//      color: $selected_fg_color;
+//      background-color: $selected_bg_color;
 //      background-image: image(if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08)));
     }
 

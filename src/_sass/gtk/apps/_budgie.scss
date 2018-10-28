@@ -74,21 +74,15 @@
 
   border { border: none; }
 
-  list {
-    background-color: transparent;
-//    > row,
-//    > .activatable { @extend row.activatable; }
-  }
+  list { background-color: transparent; }
 
   row {
     padding: 0;
     background-color: transparent;
 
     &:hover { box-shadow: none; }
-//    @extend row.activatable;
+    @extend row.activatable;
   }
-
-//  > .view { @extend row.activatable; }
 
   switch { margin-left: 56px; }
 
@@ -275,7 +269,7 @@ window.budgie-popover:not(.csd) {
 
     &:disabled { color: $insensitive_fg_color; }
 
-    &:checked { @extend %selected_items; }
+    &:active, &:checked { @extend %selected_items; }
 
     &:checked:disabled { background-color: $selected_bg_color; } // overriding
   }
