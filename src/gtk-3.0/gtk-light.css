@@ -707,12 +707,17 @@ button.font separator, button.file separator {
   background-color: #5294e2;
 }
 
-.app-notification button.flat, .app-notification button.sidebar-button, .app-notification button.budgie-menu-launcher, .app-notification .budgie-panel #tasklist-button, .budgie-panel .app-notification #tasklist-button, .raven button.image-button, .budgie-notification-window button.image-button, .budgie-osd-window button.image-button, .budgie-switcher-window button.image-button, button.close, button.circular, button.nautilus-circular-button.image-button {
+.app-notification button.flat, .app-notification button.sidebar-button, .app-notification button.budgie-menu-launcher, .app-notification .budgie-panel #tasklist-button, .budgie-panel .app-notification #tasklist-button, button.circular, button.nautilus-circular-button.image-button,
+button.circular-button, .raven button.image-button, .raven .expander-button, .budgie-notification-window button.image-button, .budgie-osd-window button.image-button, .budgie-switcher-window button.image-button, button.close, button.circular, button.nautilus-circular-button.image-button {
   min-height: 24px;
   min-width: 24px;
   padding: 2px;
   border-radius: 100px;
   -gtk-outline-radius: 100px;
+}
+
+.app-notification button.flat label, .app-notification button.sidebar-button label, .app-notification button.budgie-menu-launcher label, .app-notification .budgie-panel #tasklist-button label, .budgie-panel .app-notification #tasklist-button label, button.circular label, button.nautilus-circular-button.image-button label, button.circular-button label, .raven button.image-button label, .raven .expander-button label, .budgie-notification-window button.image-button label, .budgie-osd-window button.image-button label, .budgie-switcher-window button.image-button label, button.close label, button.circular label, button.nautilus-circular-button.image-button label {
+  padding: 0;
 }
 
 .inline-toolbar toolbutton > button {
@@ -4385,21 +4390,6 @@ popover.background.touch-selection, .csd popover.background.touch-selection {
   font-family: Monospace;
 }
 
-button.circular, button.nautilus-circular-button.image-button,
-button.circular-button {
-  padding: 0;
-  min-width: 24px;
-  min-height: 24px;
-  padding: 2px;
-  border-radius: 100px;
-  -gtk-outline-radius: 100px;
-}
-
-button.circular label, button.nautilus-circular-button.image-button label,
-button.circular-button label {
-  padding: 0;
-}
-
 .keycap {
   min-width: 17px;
   min-height: 20px;
@@ -7956,11 +7946,6 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 
 .raven viewport.frame .raven-header {
   margin-top: -8px;
-}
-
-.raven .expander-button {
-  border-radius: 100px;
-  -gtk-outline-radius: 100px;
 }
 
 .raven .raven-background {

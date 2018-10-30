@@ -676,9 +676,7 @@ button.raven-trigger {
 
   viewport.frame .raven-header { margin-top: -8px; }
 
-  .expander-button {
-    border-radius: 100px;
-    -gtk-outline-radius: 100px; }
+  .expander-button { @extend %circle_button; }
 
   .raven-background {
     border-style: solid none;

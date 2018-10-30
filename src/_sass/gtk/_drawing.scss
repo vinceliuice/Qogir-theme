@@ -323,10 +323,10 @@
   }
 
   background-image: -gtk-gradient(radial,
-                                $_position, 0,
-                                $_position, 0.6,
-                                from(transparentize($c, 0.8)),
-                                to(transparentize($c, 1)));
+                                  $_position, 0,
+                                  $_position, 0.6,
+                                  from(transparentize($c, 0.8)),
+                                  to(transparentize($c, 1)));
 
   background-size: $_big_gradient_size;
   background-repeat: no-repeat;
@@ -365,8 +365,8 @@
   }
 
   background-image: linear-gradient(to $_gradient_dir, // this is the dashed line
-                                    $_undershoot_color_light 50%,
-                                    $_undershoot_color_dark 50%);
+                                       $_undershoot_color_light 50%,
+                                       $_undershoot_color_dark 50%);
 
   padding-#{$p}: 1px;
   background-size: $_dash_bg_size;
