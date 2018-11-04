@@ -1263,67 +1263,73 @@ headerbar {
   border-image: none;
 }
 
-%header_widgets {
+%header_entry {
+  @include entry(header-normal);
 
-  // Headerbar Entries
-  entry {
-    @include entry(header-normal);
+  &:backdrop { opacity: 0.85; }
 
-    &:backdrop { opacity: 0.85; }
+  &:focus {
+    @include entry(header-focus);
+    background-clip: if($variant=='light', border-box, padding-box);
 
-    &:focus {
-      @include entry(header-focus);
-      background-clip: if($variant=='light', border-box, padding-box);
+    image { color: $selected_bg_color; }
+  }
+  &:disabled { @include entry(header-insensitive); }
 
-      image { color: $selected_bg_color; }
-    }
-    &:disabled { @include entry(header-insensitive); }
+  selection:focus {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+  }
 
-    selection:focus {
-      background-color: $selected_bg_color;
-      color: $selected_fg_color;
-    }
+  progress {
+    border-color: $progress_color;
+    background-image: none;
+    background-color: transparent;
+  }
 
-    progress {
-      border-color: $progress_color;
-      background-image: none;
-      background-color: transparent;
-    }
+  @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
+                                          (error, $error_color, $error_fg_color) {
+    &.#{$e_type} {
+      color: $e_fg_color;
+      border-color: if($variant=='light', $e_color, $header_entry_border);
+      background-color: mix($e_color, $header_bg, 60%);
 
-    @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
-                                            (error, $error_color, $error_fg_color) {
-      &.#{$e_type} {
+      &:focus {
         color: $e_fg_color;
-        border-color: if($variant=='light', $e_color, $header_entry_border);
-        background-color: mix($e_color, $header_bg, 60%);
-
-        &:focus {
-          color: $e_fg_color;
-          background-color: $e_color;
-        }
-        selection, selection:focus {
-          background-color: $e_fg_color;
-          color: $e_color;
-        }
+        background-color: $e_color;
+      }
+      selection, selection:focus {
+        background-color: $e_fg_color;
+        color: $e_color;
       }
     }
   }
+}
+
+%header_button {
+  @include button(header-normal);
+
+  &:backdrop { opacity: 0.7; }
+
+  &:hover { @include button(header-hover); }
+  &:active, &:checked {
+    transition: 200ms $ease-out-quad;
+    @include button(header-active);
+    background-clip: if($variant=='light', border-box, padding-box);
+  }
+
+  &:disabled { @include button(header-insensitive); }
+  &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
+}
+
+%header_widgets {
+
+  // Headerbar Entries
+  entry { @extend %header_entry; }
 
   // Headerbar Buttons
   button {
-    @include button(header-normal);
-
-    &:backdrop { opacity: 0.7; }
-
-    &:hover { @include button(header-hover); }
-    &:active, &:checked {
-      transition: 200ms $ease-out-quad;
-      @include button(header-active);
-      background-clip: if($variant=='light', border-box, padding-box);
-    }
-
-    &:disabled { @include button(header-insensitive); }
-    &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
+    @extend %header_button;
 
     &.flat.popup.toggle.sources-button { // For Gnome-Calendar
       &:hover { box-shadow: inset 0 -1px $borders_color; }
@@ -1395,12 +1401,11 @@ headerbar {
       background-color: transparent;
 
       &:hover {
-        color: darken($header_fg, 10%);
+        color: $alt_header_fg;
         box-shadow: inset 0 -2px rgba($alt_selected_bg_color, 0.5);
       }
       &:active, &:checked { 
         transition: box-shadow 0.2s;
-//        animation: header_ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
         color: $header_fg;
         background-color: transparent;
         box-shadow: inset 0 -2px $alt_selected_bg_color;
@@ -1465,15 +1470,6 @@ headerbar {
       &:active, &:checked { @include button(header-active); }
       &:disabled { color: transparentize($header_fg, 0.6); }
     }
-
-//    > button + button { border-left-style: none; }
-//    > button:hover:not(:active),
-//    > button:hover + button { box-shadow: inset 1px 0 $header_button_border; }
-//    > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
-//    > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled { box-shadow: inset 1px 0 $header_button_border; }
-//    > button:first-child:hover:not(:active),
-//    > entry + button:not(:active):hover { box-shadow: none; }
-//    > entry:focus + button { box-shadow: none; }
   }
 
   // Headerbar ComboBoxes
@@ -1596,6 +1592,8 @@ treeview.view {
     -GtkTreeView-tree-line-pattern: '';
     -GtkTreeView-expander-size: 16;
   }
+
+  @extend row.activatable;
 
   border-left-color: transparentize($fg_color, 0.85);   // this is actually the tree lines color,
   border-top-color: transparentize(black, 0.9);         // while this is the grid lines color, better then nothing

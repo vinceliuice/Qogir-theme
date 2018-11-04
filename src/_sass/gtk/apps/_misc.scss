@@ -64,6 +64,7 @@
     color: $header_fg;
     background-color: opacify($header_bg, 1);
     box-shadow: inset 0 -1px $borders_color;
+
     button, entry {
       min-height: 16px;
       margin-top: 6px;
@@ -76,10 +77,10 @@
   .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) {
     button {
       color: $header_fg;
-      background-color: $header_bg;
+      background-color: transparent;
       border: none;
-      margin-top: 6px;
-      margin-bottom: 6px;
+      margin-top: 4px;
+      margin-bottom: 4px;
 
       &:hover {
         color: $alt_header_fg;
@@ -285,12 +286,44 @@ window#whiskermenu-window {
 //  * Thunar *
 //
 
-window.thunar {
-  toolbar#location-toolbar {
-    border-bottom: 1px solid $borders_color;
+%header_pathbar_button {
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  color: $header_fg;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                $selected_bg_color 0%,
+                                transparent 0%)
+                                0 0 0 / 0 0 0;
+  &:hover {
+    color: $alt_header_fg;
+    background: none;
+    box-shadow: inset 0 -2px rgba($selected_bg_color, 0.5);
+  }
+  &:active, &:checked {
+    color: $header_fg;
+    background: none;
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $selected_bg_color 100%,
+                                  transparent 0%)
+                                  0 0 2 / 0 0 2px;
+  }
+  &:disabled { color: rgba($header_fg, 0.4); }
+  &:checked:disabled {
+    color: rgba($header_fg, 0.4);
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  rgba($selected_bg_color, 0.4) 100%,
+                                  transparent 0%)
+                                  0 0 2 / 0 0 2px;
+  }
+}
 
-    // FIXME: need to unset for weird allocation height
-    entry { min-height: 0; }
+window.thunar {
+
+  .sidebar treeview.view {
+    @extend treeview.view;
+    background-color: $dark_sidebar_bg;
+    color: $dark_sidebar_fg;
   }
 
   notebook {
@@ -303,6 +336,24 @@ window.thunar {
     // an allocation height of label node affects to close button's
     // image height (it's quite weird).
     header.top tab.reorderable-page > box > label { min-height: 0; }
+  }
+
+  toolbar#location-toolbar {
+    background-color: $header_bg;
+    color: $header_fg;
+    box-shadow: inset 0 -1px $borders_color;
+
+    button { @extend %header_button; }
+
+    entry { @extend %header_entry; }
+
+    .linked:not(.vertical):not(.stack-switcher).path-bar {
+      button {
+        margin: 0;
+        padding: 4px;
+        @extend %header_pathbar_button;
+      }
+    }
   }
 }
 
