@@ -1,12 +1,3 @@
-@keyframes border_ripple_effect {
-  from {
-    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 0%, transparent 0%) 0 0 0/0 0 0;
-  }
-  to {
-    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 100%, transparent 0%) 0 0 2/0 0 2px;
-  }
-}
-
 @keyframes header_ripple_effect {
   from {
     background-image: radial-gradient(circle farthest-corner at center, #282A33 0%, transparent 0%);
