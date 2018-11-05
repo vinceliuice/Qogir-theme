@@ -107,6 +107,10 @@ flowbox flowboxchild:selected {
   outline-offset: -2px;
 }
 
+flowbox.search-bar {
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+}
+
 label.separator, popover label.separator,
 popover.background label.separator {
   color: #5c616c;
@@ -115,6 +119,10 @@ popover.background label.separator {
 label selection {
   color: #ffffff;
   background-color: #5294e2;
+}
+
+label:disabled {
+  color: rgba(92, 97, 108, 0.55);
 }
 
 .dim-label, label.separator, popover label.separator,
@@ -2380,8 +2388,13 @@ menubar > menuitem:hover,
 
 menubar > menuitem:disabled,
 .menubar > menuitem:disabled {
-  color: rgba(207, 218, 231, 0.3);
+  color: rgba(207, 218, 231, 0.4);
   border-color: transparent;
+}
+
+menubar > menuitem label:disabled,
+.menubar > menuitem label:disabled {
+  color: rgba(207, 218, 231, 0.4);
 }
 
 menu,
@@ -9019,7 +9032,7 @@ filechooser actionbar entry:disabled {
 @define-color selected_bg_color #5294e2;
 @define-color selected_fg_color #ffffff;
 @define-color insensitive_bg_color white;
-@define-color insensitive_fg_color alpha(rgba(92, 97, 108, 0.55), 0.5);
+@define-color insensitive_fg_color rgba(92, 97, 108, 0.55);
 @define-color insensitive_base_color #ffffff;
 @define-color theme_unfocused_fg_color #5c616c;
 @define-color theme_unfocused_text_color #5c616c;

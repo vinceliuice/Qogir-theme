@@ -15,7 +15,7 @@
 @define-color selected_bg_color #{"" + $selected_bg_color};
 @define-color selected_fg_color #{"" + $selected_fg_color};
 @define-color insensitive_bg_color #{"" + $insensitive_bg_color};
-@define-color insensitive_fg_color alpha(#{"" + $insensitive_fg_color}, 0.5);
+@define-color insensitive_fg_color #{"" + $insensitive_fg_color};
 @define-color insensitive_base_color #{"" + $base_color};
 @define-color theme_unfocused_fg_color #{"" + $fg_color};
 @define-color theme_unfocused_text_color #{"" + $text_color};

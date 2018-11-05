@@ -102,6 +102,8 @@ flowbox {
       outline-offset: -2px;
     }
   }
+
+  &.search-bar { box-shadow: inset 0 -1px $borders_color; }
 }
 
 label {
@@ -120,7 +122,7 @@ label {
   }
 
   &:disabled {
-//    color: $insensitive_fg_color;
+    color: $insensitive_fg_color;
     selection { @extend %selected_items:disabled; }
   }
 }
@@ -1757,11 +1759,11 @@ menubar,
       color: $alt_header_fg;
     }
     &:disabled {
-      color: rgba($header_fg, 0.3);
+      color: rgba($header_fg, 0.4);
       border-color: transparent;
     }
 
-//    label { &:disabled { color: rgba($header_fg, 0.3); } }
+    label { &:disabled { color: rgba($header_fg, 0.4); }}
 
   }
 }
