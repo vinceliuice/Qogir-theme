@@ -2388,13 +2388,13 @@ menubar > menuitem:hover,
 
 menubar > menuitem:disabled,
 .menubar > menuitem:disabled {
-  color: rgba(82, 93, 118, 0.4);
+  color: rgba(82, 93, 118, 0.5);
   border-color: transparent;
 }
 
 menubar > menuitem label:disabled,
 .menubar > menuitem label:disabled {
-  color: rgba(82, 93, 118, 0.4);
+  color: rgba(82, 93, 118, 0.5);
 }
 
 menu,
@@ -2444,6 +2444,11 @@ menu menuitem:hover,
 
 menu menuitem:disabled,
 .menu menuitem:disabled {
+  color: rgba(92, 97, 108, 0.55);
+}
+
+menu menuitem label:disabled,
+.menu menuitem label:disabled {
   color: rgba(92, 97, 108, 0.55);
 }
 
@@ -6670,6 +6675,14 @@ stack#conversation_viewer scrolledwindow.geary-conversation-scroller > viewport.
   border: none;
 }
 
+popover.background list.geary-folder-popover-list row.activatable.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.view label, popover.background list.geary-folder-popover-list textview text.geary-folder-popover-list-row label, textview popover.background list.geary-folder-popover-list text.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list iconview.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list .nemo-window .nemo-places-sidebar .geary-folder-popover-list-row.places-treeview label, .nemo-window .nemo-places-sidebar popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.places-treeview label, .panel popover.background list.geary-folder-popover-list .sidebar .geary-folder-popover-list-row.view label, .panel popover.background .sidebar list.geary-folder-popover-list .geary-folder-popover-list-row.view label, popover.background list.geary-folder-popover-list treeview.geary-folder-popover-list-row.view.sidebar.source-list label, popover.background list.geary-folder-popover-list .budgie-popover row.geary-folder-popover-list-row label, .budgie-popover popover.background list.geary-folder-popover-list row.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list .budgie-menu button.geary-folder-popover-list-row label, .budgie-menu popover.background list.geary-folder-popover-list button.geary-folder-popover-list-row label {
+  color: #5c616c;
+}
+
+popover.background list.geary-folder-popover-list row.activatable.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.view label:disabled, popover.background list.geary-folder-popover-list textview text.geary-folder-popover-list-row label:disabled, textview popover.background list.geary-folder-popover-list text.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list iconview.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list .nemo-window .nemo-places-sidebar .geary-folder-popover-list-row.places-treeview label:disabled, .nemo-window .nemo-places-sidebar popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.places-treeview label:disabled, .panel popover.background list.geary-folder-popover-list .sidebar .geary-folder-popover-list-row.view label:disabled, .panel popover.background .sidebar list.geary-folder-popover-list .geary-folder-popover-list-row.view label:disabled, popover.background list.geary-folder-popover-list treeview.geary-folder-popover-list-row.view.sidebar.source-list label:disabled, popover.background list.geary-folder-popover-list .budgie-popover row.geary-folder-popover-list-row label:disabled, .budgie-popover popover.background list.geary-folder-popover-list row.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list .budgie-menu button.geary-folder-popover-list-row label:disabled, .budgie-menu popover.background list.geary-folder-popover-list button.geary-folder-popover-list-row label:disabled {
+  color: rgba(92, 97, 108, 0.55);
+}
+
 overlay.window-overlay grid.horizontal stack paned.horizontal stack widget.view.frame,
 overlay.window-overlay grid.horizontal stack paned.horizontal stack scrolledwindow.frame {
   border-left: none;
@@ -9019,25 +9032,28 @@ filechooser actionbar entry:disabled {
   background-color: #e4edf3;
 }
 
-@define-color theme_fg_color #5c616c;
-@define-color theme_text_color #5c616c;
+@define-color theme_fg_color currentColor;
+@define-color theme_text_color currentColor;
 @define-color theme_bg_color #fafbfc;
 @define-color theme_base_color #ffffff;
 @define-color theme_selected_bg_color #5294e2;
 @define-color theme_selected_fg_color #ffffff;
-@define-color fg_color #5c616c;
+@define-color fg_color currentColor;
 @define-color text_color #5c616c;
 @define-color bg_color #fafbfc;
 @define-color base_color #ffffff;
 @define-color selected_bg_color #5294e2;
 @define-color selected_fg_color #ffffff;
 @define-color insensitive_bg_color white;
-@define-color insensitive_fg_color rgba(92, 97, 108, 0.55);
+@define-color insensitive_fg_color alpha(currentColor,0.5);
 @define-color insensitive_base_color #ffffff;
-@define-color theme_unfocused_fg_color #5c616c;
-@define-color theme_unfocused_text_color #5c616c;
+@define-color theme_unfocused_fg_color currentColor;
+@define-color theme_unfocused_text_color currentColor;
 @define-color theme_unfocused_bg_color #fafbfc;
 @define-color theme_unfocused_base_color #ffffff;
+@define-color theme_unfocused_selected_bg_color #5294e2;
+@define-color theme_unfocused_selected_fg_color #ffffff;
+@define-color unfocused_insensitive_color alpha(currentColor,0.5);
 @define-color borders rgba(0, 0, 0, 0.12);
 @define-color unfocused_borders rgba(0, 0, 0, 0.12);
 @define-color warning_color #F27835;
