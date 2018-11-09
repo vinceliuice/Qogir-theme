@@ -1020,9 +1020,9 @@ widget > box.terminal-titlebar {
     padding-top: 0;
     padding-bottom: 0;
     border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                  transparent 100%,
+                                  $selected_bg_color 0%,
                                   transparent 0%)
-                                  0 0 2 / 0 0 2px;
+                                  0 0 0 / 0 0 0;
 
     &:dir(ltr) { padding-right: 6px; }
     &:dir(rtl) { padding-left: 6px; }

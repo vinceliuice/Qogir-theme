@@ -153,9 +153,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .slider {
   -slider-height: 4px;
   -slider-background-color: rgba(255, 255, 255, 0.12);
-  -slider-border-color: rgba(0, 0, 0, 0);
+  -slider-border-color: transparent;
   -slider-active-background-color: #5294e2;
-  -slider-active-border-color: rgba(0, 0, 0, 0);
+  -slider-active-border-color: transparent;
   -slider-border-width: 0;
   -slider-handle-radius: 0px;
   height: 18px;
@@ -536,7 +536,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .hidden {
-  color: rgba(0, 0, 0, 0);
+  color: transparent;
 }
 
 .polkit-dialog-user-layout {
@@ -728,9 +728,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-boxpointer {
   -arrow-border-radius: 2px;
-  -arrow-background-color: rgba(0, 0, 0, 0);
+  -arrow-background-color: transparent;
   -arrow-border-width: 1px;
-  -arrow-border-color: rgba(0, 0, 0, 0);
+  -arrow-border-color: transparent;
   -arrow-base: 0;
   -arrow-rise: 0;
 }
@@ -854,7 +854,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .switcher-arrow {
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   color: #D3DAE3;
 }
 
@@ -955,7 +955,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel .panel-corner {
   -corner_radius: 0;
   -panel-corner-radius: 0;
-  -panel-corner-background-color: rgba(0, 0, 0, 0);
+  -panel-corner-background-color: transparent;
   -panel-corner-border-width: 0;
   -panel-corner-border-color: transparent;
 }

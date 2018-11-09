@@ -776,7 +776,7 @@ toolbar.inline-toolbar toolbutton:active, .inline-toolbar toolbutton:active, too
 }
 
 .linked:not(.vertical):not(.path-bar) > entry + entry {
-  border-left-color: rgba(0, 0, 0, 0);
+  border-left-color: transparent;
 }
 
 .linked:not(.vertical):not(.path-bar) > entry.error + entry,
@@ -854,7 +854,7 @@ toolbar.inline-toolbar toolbutton:active, .inline-toolbar toolbutton:active, too
 
 .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
 .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0);
+  box-shadow: inset 1px 0 transparent;
 }
 
 .linked:not(.vertical):not(.path-bar) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
@@ -1056,7 +1056,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):
 }
 
 .linked.vertical > entry + entry {
-  border-top-color: rgba(0, 0, 0, 0);
+  border-top-color: transparent;
 }
 
 .linked.vertical > entry.error + entry,
@@ -1134,7 +1134,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):
 
 .linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
 .linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
-  box-shadow: inset 0 1px rgba(0, 0, 0, 0);
+  box-shadow: inset 0 1px transparent;
 }
 
 .linked.vertical > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
@@ -6722,11 +6722,11 @@ stack#conversation_viewer scrolledwindow.geary-conversation-scroller > viewport.
   border: none;
 }
 
-popover.background list.geary-folder-popover-list row.activatable.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.view label, popover.background list.geary-folder-popover-list textview text.geary-folder-popover-list-row label, textview popover.background list.geary-folder-popover-list text.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list iconview.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list .nemo-window .nemo-places-sidebar .geary-folder-popover-list-row.places-treeview label, .nemo-window .nemo-places-sidebar popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.places-treeview label, .panel popover.background list.geary-folder-popover-list .sidebar .geary-folder-popover-list-row.view label, .panel popover.background .sidebar list.geary-folder-popover-list .geary-folder-popover-list-row.view label, popover.background list.geary-folder-popover-list treeview.geary-folder-popover-list-row.view.sidebar.source-list label, popover.background list.geary-folder-popover-list .budgie-popover row.geary-folder-popover-list-row label, .budgie-popover popover.background list.geary-folder-popover-list row.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list .budgie-menu button.geary-folder-popover-list-row label, .budgie-menu popover.background list.geary-folder-popover-list button.geary-folder-popover-list-row label {
+popover.background list.geary-folder-popover-list row.activatable.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.view label, popover.background list.geary-folder-popover-list textview text.geary-folder-popover-list-row label, textview popover.background list.geary-folder-popover-list text.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list iconview.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list treeview.geary-folder-popover-list-row.view label, popover.background list.geary-folder-popover-list .nemo-window .nemo-places-sidebar .geary-folder-popover-list-row.places-treeview label, .nemo-window .nemo-places-sidebar popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.places-treeview label, .panel popover.background list.geary-folder-popover-list .sidebar .geary-folder-popover-list-row.view label, .panel popover.background .sidebar list.geary-folder-popover-list .geary-folder-popover-list-row.view label, popover.background list.geary-folder-popover-list .budgie-popover row.geary-folder-popover-list-row label, .budgie-popover popover.background list.geary-folder-popover-list row.geary-folder-popover-list-row label, popover.background list.geary-folder-popover-list .budgie-menu button.geary-folder-popover-list-row label, .budgie-menu popover.background list.geary-folder-popover-list button.geary-folder-popover-list-row label {
   color: #5c616c;
 }
 
-popover.background list.geary-folder-popover-list row.activatable.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.view label:disabled, popover.background list.geary-folder-popover-list textview text.geary-folder-popover-list-row label:disabled, textview popover.background list.geary-folder-popover-list text.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list iconview.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list .nemo-window .nemo-places-sidebar .geary-folder-popover-list-row.places-treeview label:disabled, .nemo-window .nemo-places-sidebar popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.places-treeview label:disabled, .panel popover.background list.geary-folder-popover-list .sidebar .geary-folder-popover-list-row.view label:disabled, .panel popover.background .sidebar list.geary-folder-popover-list .geary-folder-popover-list-row.view label:disabled, popover.background list.geary-folder-popover-list treeview.geary-folder-popover-list-row.view.sidebar.source-list label:disabled, popover.background list.geary-folder-popover-list .budgie-popover row.geary-folder-popover-list-row label:disabled, .budgie-popover popover.background list.geary-folder-popover-list row.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list .budgie-menu button.geary-folder-popover-list-row label:disabled, .budgie-menu popover.background list.geary-folder-popover-list button.geary-folder-popover-list-row label:disabled {
+popover.background list.geary-folder-popover-list row.activatable.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.view label:disabled, popover.background list.geary-folder-popover-list textview text.geary-folder-popover-list-row label:disabled, textview popover.background list.geary-folder-popover-list text.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list iconview.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list treeview.geary-folder-popover-list-row.view label:disabled, popover.background list.geary-folder-popover-list .nemo-window .nemo-places-sidebar .geary-folder-popover-list-row.places-treeview label:disabled, .nemo-window .nemo-places-sidebar popover.background list.geary-folder-popover-list .geary-folder-popover-list-row.places-treeview label:disabled, .panel popover.background list.geary-folder-popover-list .sidebar .geary-folder-popover-list-row.view label:disabled, .panel popover.background .sidebar list.geary-folder-popover-list .geary-folder-popover-list-row.view label:disabled, popover.background list.geary-folder-popover-list .budgie-popover row.geary-folder-popover-list-row label:disabled, .budgie-popover popover.background list.geary-folder-popover-list row.geary-folder-popover-list-row label:disabled, popover.background list.geary-folder-popover-list .budgie-menu button.geary-folder-popover-list-row label:disabled, .budgie-menu popover.background list.geary-folder-popover-list button.geary-folder-popover-list-row label:disabled {
   color: rgba(92, 97, 108, 0.55);
 }
 
@@ -6749,7 +6749,7 @@ widget > box.terminal-titlebar > button.flat.popup.toggle, widget > box.terminal
   border-radius: 0;
   padding-top: 0;
   padding-bottom: 0;
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), transparent 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 0%, transparent 0%) 0 0 0/0 0 0;
 }
 
 widget > box.terminal-titlebar > button.flat.popup.toggle:dir(ltr), widget > box.terminal-titlebar > button.popup.toggle.sidebar-button:dir(ltr), widget > box.terminal-titlebar > button.popup.toggle.budgie-menu-launcher:dir(ltr), .budgie-panel widget > box.terminal-titlebar > .popup.toggle#tasklist-button:dir(ltr) {
@@ -9081,28 +9081,28 @@ filechooser actionbar entry:disabled {
   background-color: #e4edf3;
 }
 
-@define-color theme_fg_color currentColor;
+@define-color theme_fg_color #5c616c;
 @define-color theme_text_color currentColor;
 @define-color theme_bg_color #fafbfc;
 @define-color theme_base_color #ffffff;
 @define-color theme_selected_bg_color #5294e2;
 @define-color theme_selected_fg_color #ffffff;
-@define-color fg_color currentColor;
-@define-color text_color #5c616c;
+@define-color fg_color #5c616c;
+@define-color text_color currentColor;
 @define-color bg_color #fafbfc;
 @define-color base_color #ffffff;
 @define-color selected_bg_color #5294e2;
 @define-color selected_fg_color #ffffff;
 @define-color insensitive_bg_color white;
-@define-color insensitive_fg_color alpha(currentColor,0.5);
+@define-color insensitive_fg_color rgba(92, 97, 108, 0.55);
 @define-color insensitive_base_color #ffffff;
-@define-color theme_unfocused_fg_color currentColor;
+@define-color theme_unfocused_fg_color #5c616c;
 @define-color theme_unfocused_text_color currentColor;
 @define-color theme_unfocused_bg_color #fafbfc;
 @define-color theme_unfocused_base_color #ffffff;
 @define-color theme_unfocused_selected_bg_color #5294e2;
 @define-color theme_unfocused_selected_fg_color #ffffff;
-@define-color unfocused_insensitive_color alpha(currentColor,0.5);
+@define-color unfocused_insensitive_color rgba(92, 97, 108, 0.55);
 @define-color borders rgba(0, 0, 0, 0.12);
 @define-color unfocused_borders rgba(0, 0, 0, 0.12);
 @define-color warning_color #F27835;
