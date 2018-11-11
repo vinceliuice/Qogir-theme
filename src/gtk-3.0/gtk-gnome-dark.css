@@ -1573,6 +1573,7 @@ headerbar:backdrop,
 .titlebar:backdrop:not(headerbar) {
   transition: 200ms ease-out;
   color: rgba(207, 218, 231, 0.5);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
   background-color: #2b2e37;
 }
 
@@ -5111,6 +5112,21 @@ button.documents-favorite:active:hover {
   transition: opacity 0.2s ease-out;
 }
 
+window.background.csd overlay > grid.horizontal frame:dir(ltr) > border {
+  border-top-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+}
+
+frame.sidebar.chat-sidebar > border {
+  border-right: none;
+}
+
+frame.sidebar.chat-sidebar frame.chat-status-area > border {
+  border-style: none;
+  border-top-style: solid;
+}
+
 widget#PROCESSOR list row, widget#MEMORY list row {
   margin: -1px;
   border: 1px solid #494c59;
@@ -5338,6 +5354,19 @@ popover.popover-selector list row {
 popover.popover-selector list row image {
   margin-left: 3px;
   margin-right: 10px;
+}
+
+button.dzlmenubuttonitem.check label {
+  color: #D3DAE3;
+}
+
+button.dzlmenubuttonitem.check label.dim-label, button.dzlmenubuttonitem.check label.separator, button.dzlmenubuttonitem.check headerbar label.subtitle, headerbar button.dzlmenubuttonitem.check label.subtitle,
+button.dzlmenubuttonitem.check .titlebar:not(headerbar) label.subtitle, .titlebar:not(headerbar) button.dzlmenubuttonitem.check label.subtitle, button.dzlmenubuttonitem.check .budgie-notification label.notification-body, .budgie-notification button.dzlmenubuttonitem.check label.notification-body, button.dzlmenubuttonitem.check .budgie-switcher label.notification-body, .budgie-switcher button.dzlmenubuttonitem.check label.notification-body {
+  color: #D3DAE3;
+}
+
+button.dzlmenubuttonitem.check box > image {
+  opacity: 0.87;
 }
 
 entry.search.preferences-search {
@@ -6908,6 +6937,14 @@ button.flat.-panel-icon-button:active, button.-panel-icon-button.sidebar-button:
 menubar.-vala-panel-background > menuitem {
   padding: 0 4px;
   font-weight: 700;
+}
+
+window.background.csd stack stack scrolledwindow:dir(ltr).frame {
+  border: none;
+}
+
+window.background.csd stack revealer stack list:dir(ltr) {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 UnityDecoration {

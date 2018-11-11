@@ -479,6 +479,33 @@ button.documents-favorite:active:hover {
     transition: opacity 0.2s ease-out;
 }
 
+//
+// Gnome Contacts
+//
+window.background.csd {
+  overlay > grid.horizontal {
+    frame:dir(ltr) > border { // Removed ugly borders
+      border-top-width: 0;
+      border-left-width: 0;
+      border-bottom-width: 0;
+    }
+  }
+}
+
+//
+// Empathy
+//
+frame.sidebar.chat-sidebar > border {
+  border-right: none;
+}
+
+frame.sidebar.chat-sidebar {
+  frame.chat-status-area > border {
+    border-style: none;
+    border-top-style: solid;
+  }
+}
+
 // /***************
 //  * Gnome-Usage *
 //  ***************/
@@ -708,6 +735,14 @@ popover.popover-selector {
     row { padding: 5px 0; }
     row image { margin-left: 3px; margin-right: 10px; }
   }
+}
+
+button.dzlmenubuttonitem.check { // menuitem buttons
+  label {
+    color: $fg_color;
+    &.dim-label { color: $fg_color; }
+  }
+  box > image { opacity: 0.87; }
 }
 
 entry.search.preferences-search {

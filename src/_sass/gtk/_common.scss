@@ -1131,6 +1131,7 @@ headerbar,
   &:backdrop {
     transition: $backdrop_transition;
     color: transparentize($header_fg, 0.3);
+    box-shadow: inset 0 -1px $borders_color;
     background-color: opacify($header_bg_backdrop, 1);
     .csd & { background-color: $header_bg_backdrop; }
   }
@@ -1237,6 +1238,7 @@ headerbar {
     margin-top: $icon_padding;
     margin-bottom: $icon_padding;
   }
+
   separator { @extend %header_separator; }
 }
 

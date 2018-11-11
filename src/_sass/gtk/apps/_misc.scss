@@ -1161,3 +1161,27 @@ menubar.-vala-panel-background > menuitem { // override global values
   padding: 0 4px;
   font-weight: 700;
 }
+
+//
+// Pamac
+//
+window.background.csd {
+  stack {
+    stack {
+      scrolledwindow:dir(ltr).frame {
+        border: none;
+      }
+    }
+  }
+
+  stack {
+    revealer {
+      stack {
+        list:dir(ltr) {
+          border-right: 1px solid $borders_color;
+        }
+      }
+    }
+  }
+}
+
