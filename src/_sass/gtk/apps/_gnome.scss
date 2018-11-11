@@ -45,11 +45,16 @@ terminal-window,
 }
 
 %pathbar_box_button {
-  margin: 0;
-  padding: 1px 8px 3px 8px;
-  border-radius: 0;
   background: none;
   border: none;
+
+  &, &:hover, &:checked, &:active, &:disabled {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 6px 2px 6px;
+    min-height: 24px;
+    border-radius: 0;
+  }
 
   &:hover {
     color: $alt_header_fg;
@@ -73,12 +78,20 @@ terminal-window,
 
 .nautilus-window headerbar {
   .path-bar-box {
-    margin: $icon_padding 0;
+    margin-top: 6px;
+    margin-bottom: 6px;
     border-radius: 2px;
     color: $header_fg;
     background-color: transparent;
     border: 1px solid transparent;
-    button { @extend %pathbar_box_button; }
+
+    .path-bar {
+      padding: 0;
+      margin: 0;
+
+      button.flat.text-button.toggle,
+      button.flat.image-button.text-button.toggle { @extend %pathbar_box_button; }
+    }
 
     &.width-maximized {
       border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
