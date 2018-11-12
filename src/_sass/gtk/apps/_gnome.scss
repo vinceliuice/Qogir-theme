@@ -506,9 +506,9 @@ frame.sidebar.chat-sidebar {
   }
 }
 
-// /***************
-//  * Gnome-Usage *
-//  ***************/
+//
+// Gnome-Usage
+//
 
 // FIXME: why was 'adwaita.css' used for all user-themes? :/
 widget {
@@ -912,7 +912,7 @@ gf-candidate-box {
 }
 
 //
-//   Gnome-Logs
+// Gnome-Logs
 //
 
 $em-base: 16px;
@@ -1054,9 +1054,9 @@ window.background > box.vertical box.horizontal {
   }
 }
 
-// /************
-//  * Epiphany *
-//  ************/
+//
+// Epiphany
+//
 
 $question_bg_color: #FFEA00;
 
@@ -1164,9 +1164,9 @@ flowboxchild.bookmark-tag-widget {
   &-selected { color: $selected_fg_color; } // checked
 }
 
-// /*************
-//  * RhythmBox *
-//  *************/
+//
+// RhythmBox
+//
 
 // add top-border to inline-toolbar
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
