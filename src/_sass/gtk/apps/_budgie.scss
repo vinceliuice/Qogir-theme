@@ -10,12 +10,16 @@
 }
 
 %budgie_button {
-  color: $selected_fg_color;
+  color: $panel_fg;
+  background: none;
   &:hover {
     color: $selected_fg_color;
     background-color: rgba(white, 0.05);
   }
-  &:disabled { color: rgba($selected_fg_color, 0.5); }
+  &:disabled {
+    color: rgba($panel_fg, 0.5);
+    background: none;
+  }
   &:active {
     background-color: rgba(white, 0.15);
     color: $selected_fg_color;
@@ -30,12 +34,16 @@
   }
 
   &.flat {
-    color: $selected_fg_color;
+    color: $panel_fg;
+    background: none;
     &:hover {
       color: $selected_fg_color;
       background-color: rgba(white, 0.15);
     }
-    &:disabled { color: rgba($selected_fg_color, 0.5); }
+    &:disabled {
+      color: rgba($panel_fg, 0.5);
+      background: none;
+    }
     &:active {
       background-color: rgba(white, 0.3);
       color: $selected_fg_color;
@@ -369,14 +377,8 @@ popover.background.places-menu {
     min-width: 16px;
     padding: 0;
     border-radius: 0;
-    color: $panel_fg;
-    border-top-width: 0;
-    border-bottom-width: 0;
     border: none;
-
-    &:hover { background-color: rgba($panel_fg, 0.15); }
-    &:active { background-color: rgba($panel_fg, 0.1); }
-    &:checked { background-color: rgba($panel_fg, 0.12); }
+    @extend %budgie_button;
   }
 
   &.horizontal button { padding: 0 4px; }
