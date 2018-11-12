@@ -14,8 +14,8 @@
    viewBox="0 0 95.249997 52.916668"
    version="1.1"
    id="svg424"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="assets.svg">
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="assets-light.svg">
   <defs
      id="defs418" />
   <sodipodi:namedview
@@ -34,11 +34,11 @@
      showguides="false"
      inkscape:snap-global="true"
      units="px"
-     inkscape:window-width="618"
-     inkscape:window-height="464"
-     inkscape:window-x="748"
-     inkscape:window-y="224"
-     inkscape:window-maximized="0">
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
        id="grid658" />
@@ -51,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -567,7 +567,8 @@
     <g
        id="menu"
        transform="translate(-61.118747,201.3479)"
-       inkscape:label="#g1600">
+       inkscape:label="#g1600"
+       style="opacity:0.1">
       <rect
          transform="scale(1,-1)"
          ry="3.0427084"
@@ -586,7 +587,8 @@
     <g
        id="menu_unfocused"
        transform="translate(-61.118747,201.3479)"
-       inkscape:label="#g1606">
+       inkscape:label="#g1606"
+       style="opacity:0.1">
       <rect
          transform="scale(1,-1)"
          style="opacity:0;fill:#1f1f1f;fill-opacity:0.09803922;stroke:none;stroke-width:0.24341667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"

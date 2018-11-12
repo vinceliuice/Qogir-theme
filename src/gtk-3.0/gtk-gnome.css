@@ -6004,6 +6004,10 @@ stack overlay frame searchbar {
   border-radius: 0;
 }
 
+.nemo-window .sidebar scrolledwindow.frame {
+  border: none;
+}
+
 .caja-notebook {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }

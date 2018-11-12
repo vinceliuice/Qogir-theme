@@ -99,6 +99,10 @@
       &, &:hover, &:active, &:checked, &:disabled { border-radius: 0; }
     }
   }
+
+  .sidebar {
+    scrolledwindow.frame { border: none; } // Removed treeview double borders
+  }
 }
 
 //
