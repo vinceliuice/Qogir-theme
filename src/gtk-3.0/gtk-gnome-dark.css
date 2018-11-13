@@ -6589,7 +6589,7 @@ MsdOsdWindow.background.osd .trough {
 .mate-panel-menu-bar, .mate-panel-menu-bar menubar,
 panel-toplevel.background,
 panel-toplevel.background menubar {
-  background-color: #272931;
+  background-color: #21232b;
 }
 
 .mate-panel-menu-bar menubar,
@@ -6614,12 +6614,12 @@ panel-toplevel.background #tasklist-button image {
 .mate-panel-menu-bar .wnck-pager,
 panel-toplevel.background .wnck-pager {
   color: #6a6d72;
-  background-color: #101115;
+  background-color: #0b0c0e;
 }
 
 .mate-panel-menu-bar .wnck-pager:hover,
 panel-toplevel.background .wnck-pager:hover {
-  background-color: #32353f;
+  background-color: #2c2f39;
 }
 
 .mate-panel-menu-bar .wnck-pager:selected,
@@ -7026,13 +7026,13 @@ popover.background.places-menu row {
 
 .budgie-panel {
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
-  background-color: #272931;
+  background-color: #21232b;
   color: #D3DAE3;
   font-weight: 500;
 }
 
 .budgie-panel.transparent {
-  background-color: rgba(39, 41, 49, 0.85);
+  background-color: rgba(33, 35, 43, 0.85);
 }
 
 .budgie-panel button {
@@ -7935,7 +7935,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   * Vala-Panel *
   **************/
 window#ValaPanel.background {
-  background-color: #272931;
+  background-color: #21232b;
   color: #D3DAE3;
 }
 
@@ -7944,7 +7944,7 @@ window#ValaPanel.background decoration {
 }
 
 window#ValaPanel.background widget.-vala-panel-background > separator {
-  background-color: #272931;
+  background-color: #21232b;
 }
 
 button.flat.-panel-button, button.-panel-button.sidebar-button, button.-panel-button.budgie-menu-launcher, .budgie-panel .-panel-button#tasklist-button {
@@ -8053,7 +8053,7 @@ panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel .bud
 }
 
 .xfce4-panel.panel {
-  background-color: #272931;
+  background-color: #21232b;
   text-shadow: none;
   -gtk-icon-shadow: none;
   border: none;
@@ -8066,7 +8066,7 @@ panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel .bud
 }
 
 .xfce4-panel {
-  background-color: #272931;
+  background-color: #21232b;
   color: #D3DAE3;
   font-weight: 700;
   text-shadow: none;
@@ -8206,7 +8206,7 @@ window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switche
  * Elementary Desktop *
  **********************/
 .panel {
-  background-color: #272931;
+  background-color: #21232b;
   transition: all 100ms ease-in-out;
   color: #D3DAE3;
   font-weight: bold;
@@ -8217,7 +8217,7 @@ window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switche
 }
 
 .panel.translucent {
-  background-color: #272931;
+  background-color: #21232b;
 }
 
 menubar .panel,
@@ -8489,10 +8489,10 @@ scale.warmth trough {
  * LightDM *
  ***********/
 #panel_window {
-  background-color: #272931;
+  background-color: #21232b;
   color: #D3DAE3;
   font-weight: bold;
-  box-shadow: inset 0 -1px #17181d;
+  box-shadow: inset 0 -1px #111317;
 }
 
 #panel_window menubar {
@@ -9193,5 +9193,5 @@ filechooser actionbar entry:disabled {
 @define-color wm_icon_active_bg #ffffff;
 @define-color budgie_tasklist_indicator_color #5294e2;
 @define-color budgie_tasklist_indicator_color_active #5294e2;
-@define-color budgie_tasklist_indicator_color_active_window #3e6391;
+@define-color budgie_tasklist_indicator_color_active_window #3b608e;
 @define-color budgie_tasklist_indicator_color_attention #F27835;

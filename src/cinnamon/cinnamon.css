@@ -1480,8 +1480,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-list-box {
-  spacing: 6px;
-  padding-left: 10px;
+  spacing: 2px;
+  padding-left: 6px;
 }
 
 .panel-bottom .window-list-box {
@@ -1493,8 +1493,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-list-box.vertical {
-  spacing: 4px;
-  padding: 10px 0;
+  spacing: 2px;
+  padding: 6px 0;
 }
 
 .window-list-box:highlight {
@@ -1502,43 +1502,111 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-list-item-label {
-  font-weight: bold;
+  font-weight: normal;
   width: 15em;
   min-width: 5px;
 }
 
 .window-list-item-box {
-  font-weight: bold;
+  font-weight: normal;
   background-image: none;
   padding-top: 0;
   padding-left: 8px;
   padding-right: 8px;
   transition-duration: 100;
   color: rgba(255, 255, 255, 0.6);
+  border: 0 solid transparent;
+}
+
+.panel-bottom .window-list-item-box StLabel {
+  padding-left: 6px;
+}
+
+.panel-top .window-list-item-box StLabel {
+  padding-left: 6px;
+}
+
+.panel-left .window-list-item-box StLabel {
+  padding-top: 6px;
+}
+
+.panel-right .window-list-item-box StLabel {
+  padding-top: 6px;
+}
+
+.panel-top .window-list-item-box {
+  border-top-width: 2px;
+}
+
+.panel-top .window-list-item-box StIcon, .panel-top .window-list-item-box StBin {
+  padding: 0;
+}
+
+.panel-bottom .window-list-item-box {
+  border-bottom-width: 2px;
+}
+
+.panel-bottom .window-list-item-box StIcon, .panel-bottom .window-list-item-box StBin {
+  padding: 0;
+}
+
+.panel-left .window-list-item-box {
+  border-left-width: 2px;
+}
+
+.panel-left .window-list-item-box StIcon, .panel-left .window-list-item-box StBin {
+  padding: 0;
+}
+
+.panel-right .window-list-item-box {
+  border-right-width: 2px;
+}
+
+.panel-right .window-list-item-box StIcon, .panel-right .window-list-item-box StBin {
+  padding: 0;
 }
 
 .window-list-item-box:hover {
   color: white;
+  border: 0 solid rgba(82, 148, 226, 0.5);
+  background-gradient-direction: none;
+}
+
+.panel-top .window-list-item-box:hover {
+  border-top-width: 2px;
+}
+
+.panel-bottom .window-list-item-box:hover {
+  border-bottom-width: 2px;
+}
+
+.panel-left .window-list-item-box:hover {
+  border-left-width: 2px;
+}
+
+.panel-right .window-list-item-box:hover {
+  border-right-width: 2px;
 }
 
 .window-list-item-box:active, .window-list-item-box:checked, .window-list-item-box:focus {
   color: white;
-}
-
-.panel-bottom .window-list-item-box:active, .panel-bottom .window-list-item-box:checked, .panel-bottom .window-list-item-box:focus {
-  border-image: url("common-assets/panel/window-list-active-bottom.svg") 3 3 1 3;
+  border: 0 solid #5294e2;
 }
 
 .panel-top .window-list-item-box:active, .panel-top .window-list-item-box:checked, .panel-top .window-list-item-box:focus {
-  border-image: url("common-assets/panel/window-list-active-top.svg") 3 3 3 1;
+  border-top-width: 2px;
+}
+
+.panel-bottom .window-list-item-box:active, .panel-bottom .window-list-item-box:checked, .panel-bottom .window-list-item-box:focus {
+  border-bottom-width: 2px;
 }
 
 .panel-left .window-list-item-box:active, .panel-left .window-list-item-box:checked, .panel-left .window-list-item-box:focus {
-  border-image: url("common-assets/panel/window-list-active-left.svg") 3 1 3 3;
+  border-left-width: 2px;
 }
 
 .panel-right .window-list-item-box:active, .panel-right .window-list-item-box:checked, .panel-right .window-list-item-box:focus {
-  border-image: url("common-assets/panel/window-list-active-right.svg") 1 3 3 3;
+  border-right-width: 2px;
 }
 
 .window-list-item-box.right, .window-list-item-box.left {
@@ -1754,16 +1822,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .workspace-graph .workspace .windows {
-  -active-window-background: #494d5c;
+  -active-window-background: #424656;
   -active-window-border: rgba(0, 0, 0, 0.8);
-  -inactive-window-background: #494d5c;
+  -inactive-window-background: #424656;
   -inactive-window-border: rgba(0, 0, 0, 0.8);
 }
 
 .workspace-graph .workspace:active .windows {
-  -active-window-background: #54596a;
+  -active-window-background: #4d5265;
   -active-window-border: rgba(0, 0, 0, 0.8);
-  -inactive-window-background: #32353f;
+  -inactive-window-background: #2c2f39;
   -inactive-window-border: rgba(0, 0, 0, 0.8);
 }
 
@@ -1775,81 +1843,73 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 2px 0;
 }
 
-.panel-launcher,
-.launcher {
+.panel-launcher {
   padding: 2px;
   transition-duration: 200ms;
 }
 
-.panel-launcher:hover,
-.launcher:hover {
+.panel-launcher:hover {
   background-gradient-direction: none;
   border: 0px solid #5294e2;
 }
 
-.panel-bottom .panel-launcher:hover, .panel-bottom
-.launcher:hover {
+.panel-bottom .panel-launcher:hover {
   border-bottom-width: 2px;
   padding-bottom: 0;
 }
 
-.panel-top .panel-launcher:hover, .panel-top
-.launcher:hover {
+.panel-top .panel-launcher:hover {
   border-top-width: 2px;
   padding-top: 0;
 }
 
-.panel-left .panel-launcher:hover, .panel-left
-.launcher:hover {
+.panel-left .panel-launcher:hover {
   border-left-width: 2px;
   padding-left: 0;
 }
 
-.panel-right .panel-launcher:hover, .panel-right
-.launcher:hover {
+.panel-right .panel-launcher:hover {
   border-right-width: 2px;
   padding-right: 0;
 }
 
-.window-list-item-box {
-  border: 0 solid transparent;
+.launcher {
+  padding: 2px;
+  spacing: 2px;
+  transition-duration: 0.2s;
 }
 
-.panel-top .window-list-item-box {
-  border-top-width: 2px;
-}
-
-.panel-bottom .window-list-item-box {
-  border-bottom-width: 2px;
-}
-
-.panel-left .window-list-item-box {
-  border-left-width: 2px;
-}
-
-.panel-right .window-list-item-box {
-  border-right-width: 2px;
-}
-
-.window-list-item-box:hover {
-  border: 0 solid rgba(82, 148, 226, 0.5);
+.launcher:hover {
+  border: 0 solid #5294e2;
   background-gradient-direction: none;
 }
 
-.panel-top .window-list-item-box:hover {
+.panel-top .launcher:hover {
+  padding-top: 0;
   border-top-width: 2px;
 }
 
-.panel-bottom .window-list-item-box:hover {
+.panel-bottom .launcher:hover {
+  padding-bottom: 0;
   border-bottom-width: 2px;
 }
 
-.panel-left .window-list-item-box:hover {
+.panel-left .launcher:hover {
+  padding-left: 0;
   border-left-width: 2px;
 }
 
-.panel-right .window-list-item-box:hover {
+.panel-right .launcher:hover {
+  padding-right: 0;
   border-right-width: 2px;
+}
+
+.launcher .icon-box {
+  padding: 0 2px;
+}
+
+.launcher .icon-box.vertical {
+  padding: 2px 0;
 }
 
 #overview-corner {

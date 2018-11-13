@@ -935,7 +935,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
   height: 2.1em;
   min-height: 27px;
-  background-color: #272931;
+  background-color: #21232b;
   border: none;
 }
 
@@ -2349,7 +2349,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .legacy-tray {
-  background-color: #272931;
+  background-color: #21232b;
 }
 
 .legacy-tray:ltr {
