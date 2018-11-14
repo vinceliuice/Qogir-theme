@@ -172,17 +172,24 @@ window#whiskermenu-window {
 
 window.thunar {
 
-  .sidebar treeview.view {
-    @extend treeview.view;
-    background-color: $dark_sidebar_bg;
-    color: $dark_sidebar_fg;
+  .sidebar {
+    border-top: none;
+
+    treeview.view {
+      @extend treeview.view;
+      background-color: $dark_sidebar_bg;
+      color: $dark_sidebar_fg;
+    }
   }
 
   notebook {
-    // hide unneeded border
-    stack > scrolledwindow.frame.standard-view {
-      border-top-width: 0;
-      border-right-width: 0;
+    scrolledwindow.frame.standard-view {
+      border-top-width: 0; // hide unneeded border
+      border-right-width: 0; // hide unneeded border
+      background-color: $base_color;
+      @extend %file_manager_img;
+
+      .view { @extend %view; background-color: transparent; }
     }
 
     // an allocation height of label node affects to close button's
@@ -208,4 +215,3 @@ window.thunar {
     }
   }
 }
-

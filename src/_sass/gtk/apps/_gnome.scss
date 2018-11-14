@@ -24,8 +24,7 @@ terminal-window,
 //
 
 %nautilus_backimage {
-  background-image: -gtk-scaled(url("assets/backimage#{$asset_suffix}.png"),
-                                url("assets/backimage#{$asset_suffix}@2.png"));
+  background-image: -gtk-scaled(url("assets/backimage#{$asset_suffix}.png"), url("assets/backimage#{$asset_suffix}@2.png"));
   background-repeat: no-repeat;
   background-position: bottom right;
 }
@@ -185,6 +184,7 @@ terminal-window,
   }
 }
 
+%file_manager_img,
 .nautilus-window,
 .nautilus-window notebook,
 .nautilus-window notebook > stack {
@@ -1288,4 +1288,3 @@ stack {
     }
   }
 }
-

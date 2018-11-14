@@ -56,6 +56,15 @@
     &:selected { &:focus, & { @extend %selected_items; } }
   }
 
+  // Icon view container
+  .nemo-window-pane {
+    notebook {
+      scrolledwindow.view {
+        @extend %file_manager_img;
+      }
+    }
+  }
+
   .primary-toolbar {
     padding-top: 0;
     padding-bottom: 0;
@@ -574,4 +583,3 @@ window.background.csd {
     }
   }
 }
-
