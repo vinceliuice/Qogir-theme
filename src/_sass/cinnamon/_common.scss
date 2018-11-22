@@ -1253,46 +1253,80 @@ StScrollBar {
 .window-list {
 
   &-box {
-    spacing: 6px;
-    padding-left: 10px;
+    spacing: 2px;
+    padding-left: 6px;
 
     .panel-bottom & { padding-top: 1px; }
     .panel-top & { padding-bottom: 1px; }
 
     &.vertical {
-      spacing: 4px;
-      padding: 10px 0;
+      spacing: 2px;
+      padding: 6px 0;
     }
 
     &:highlight { background-color: transparentize($error_color, 0.5); }
   }
 
   &-item-label {
-    font-weight: bold;
+    font-weight: normal;
     width: 15em;
     min-width: 5px;
   }
 
   &-item-box {
-    font-weight: bold;
+    font-weight: normal;
     background-image: none;
     padding-top: 0;
     padding-left: 8px;
     padding-right: 8px;
     transition-duration: 100;
     color: transparentize($_shell_fg_color, 0.4);
+    border: 0 solid transparent;
 
-    &:hover {color: $_shell_fg_color;}
+    .panel-bottom & StLabel { padding-left: 6px; }
+    .panel-top & StLabel { padding-left: 6px; }
+    .panel-left & StLabel { padding-top: 6px; }
+    .panel-right & StLabel { padding-top: 6px; }
+
+    @each $position in (top),
+                       (bottom),
+                       (left),
+                       (right) {
+      .panel-#{$position} & {
+        border-#{$position}-width: 2px;
+        StIcon, StBin { padding: 0; }
+      }
+    }
+
+    &:hover {
+      color: $_shell_fg_color;
+      border: 0 solid rgba($selected_bg_color, 0.5);
+      background-gradient-direction: none;
+
+      @each $position in (top),
+                         (bottom),
+                         (left),
+                         (right) {
+        .panel-#{$position} & {
+          border-#{$position}-width: 2px;
+        }
+      }
+    }
 
     &:active,
     &:checked,
     &:focus {
       color: $_shell_fg_color;
+      border: 0 solid $selected_bg_color;
 
-      .panel-bottom & { border-image: url("common-assets/panel/window-list-active-bottom.svg") 3 3 1 3; }
-      .panel-top & { border-image: url("common-assets/panel/window-list-active-top.svg") 3 3 3 1; }
-      .panel-left & { border-image: url("common-assets/panel/window-list-active-left.svg") 3 1 3 3; }
-      .panel-right & { border-image: url("common-assets/panel/window-list-active-right.svg") 1 3 3 3; }
+      @each $position in (top),
+                         (bottom),
+                         (left),
+                         (right) {
+        .panel-#{$position} & {
+          border-#{$position}-width: 2px;
+        }
+      }
     }
 
     &.right, &.left {
@@ -1507,8 +1541,7 @@ StScrollBar {
   }
 }
 
-.panel-launcher,
-.launcher {
+.panel-launcher {
   padding: 2px;
   transition-duration: 200ms;
 
@@ -1523,19 +1556,13 @@ StScrollBar {
   }
 }
 
-.window-list-item-box {
-  border: 0 solid transparent;
-  @each $position in (top),
-                     (bottom),
-                     (left),
-                     (right) {
-    .panel-#{$position} & {
-      border-#{$position}-width: 2px;
-    }
-  }
-
+// 3.2.x
+.launcher {
+  padding: 2px;
+  spacing: 2px;
+  transition-duration: 0.2s;
   &:hover {
-    border: 0 solid rgba($selected_bg_color, 0.5);
+    border: 0 solid $selected_bg_color;
     background-gradient-direction: none;
 
     @each $position in (top),
@@ -1543,9 +1570,16 @@ StScrollBar {
                        (left),
                        (right) {
       .panel-#{$position} & {
+        padding-#{$position}: 0;
         border-#{$position}-width: 2px;
       }
     }
+  }
+
+  .icon-box {
+    padding: 0 2px;
+
+    &.vertical { padding: 2px 0; }
   }
 }
 

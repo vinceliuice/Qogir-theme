@@ -8,13 +8,12 @@
 	<description>Qogir Metacity Theme</description>
 </info>
 
-
 <!-- CONSTANTS -->
-<constant name="C_titlebar" value="#282A33" />
-<constant name="C_titlebar_unfocused" value="#282A33" />
-<constant name="C_title_focused" value="#D3DAE3" />
-<constant name="C_title_unfocused" value="#c0c7d0" />
-<constant name="C_highlight" value="blend/#282A33/#FFFFFF/0.1" />
+<constant name="C_titlebar" value="gtk:custom(wm_bg,gtk:bg[NORMAL])"/>
+<constant name="C_titlebar_unfocused" value="gtk:custom(wm_bg,gtk:bg[NORMAL])"/>
+<constant name="C_title_focused" value="gtk:custom(wm_title,gtk:fg[NORMAL])"/>
+<constant name="C_title_unfocused" value="gtk:custom(wm_unfocused_title,gtk:fg[INSENSITIVE])"/>
+<constant name="C_highlight" value="gtk:custom(wm_highlight,gtk:base[NORMAL])"/>
 
 <!-- GEOMETRY -->
 

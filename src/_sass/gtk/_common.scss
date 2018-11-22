@@ -1131,6 +1131,7 @@ headerbar,
   &:backdrop {
     transition: $backdrop_transition;
     color: transparentize($header_fg, 0.3);
+    box-shadow: inset 0 -1px $borders_color;
     background-color: opacify($header_bg_backdrop, 1);
     .csd & { background-color: $header_bg_backdrop; }
   }
@@ -1237,6 +1238,7 @@ headerbar {
     margin-top: $icon_padding;
     margin-bottom: $icon_padding;
   }
+
   separator { @extend %header_separator; }
 }
 
@@ -1391,7 +1393,7 @@ headerbar {
       &:focus { border-color: $selected_bg_color; }
     }
   }
- 
+
   // special case for path-bars
   .linked:not(.vertical):not(.stack-switcher).path-bar {
 
@@ -1406,7 +1408,7 @@ headerbar {
         color: $alt_header_fg;
         box-shadow: inset 0 -2px rgba($alt_selected_bg_color, 0.5);
       }
-      &:active, &:checked { 
+      &:active, &:checked {
         transition: box-shadow 0.2s;
         color: $header_fg;
         background-color: transparent;
@@ -1834,7 +1836,7 @@ menu,
   }
 
   // overflow buttons
-    
+
   > arrow {
 //    @include button(undecorated);
     min-width: $small_size;
@@ -1870,7 +1872,6 @@ popover,
 popover.background {
   $_popover_bg: if($variant=='light', $base_color, $bg_color);
   padding: 2px;
-  border-radius: 3px;
   background-clip: border-box;
   background-color: $_popover_bg;
 
@@ -2843,15 +2844,17 @@ messagedialog { // Message Dialog styling
     border-top-right-radius: $bt_radius;
   }
 
-  .dialog-action-area button {
-    padding: 6px 10px 8px 10px;
-    border-radius: 0;
-    border: none;
-    border-top: 1px solid $borders_color;
+  .dialog-action-area {
+    button {
+      padding: 6px 10px 8px 10px;
+      border-radius: 0;
+      border: none;
+      border-top: 1px solid $borders_color;
 
-    &:active, &:checked {
-      transition: background-color 0.00001s 0.3s;
-      animation: ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+      &:active, &:checked {
+        transition: background-color 0.00001s 0.3s;
+        animation: ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+      }
     }
   }
 
@@ -2906,12 +2909,22 @@ filechooserbutton:drop(active) {
 }
 
 //
-// GtkAppChooserDialog
+// dialog-vbox
 //
 
-.background.csd {
-  .vertical.dialog-vbox {
-    searchbar { box-shadow: none; }
+messagedialog.background:not(.csd) {
+  .dialog-vbox {
+    .dialog-action-box {
+      button { border-radius: 0; }
+    }
+  }
+}
+
+// GtkAppChooserDialog
+dialog.background.csd {
+  .dialog-vbox {
+    searchbar { box-shadow: inset 0 -2px $borders_color, inset 0 -1px $bg_color; }
+    entry, button { margin-bottom: 3px; }
   }
 }
 
@@ -3004,7 +3017,7 @@ placessidebar {
 
       &:not(:hover):not(:active) > image { opacity: 0.5 };
     }
-      
+
     &.sidebar-placeholder-row {
       padding: 0 8px;
       min-height: 2px;
