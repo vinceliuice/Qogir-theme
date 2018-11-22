@@ -898,6 +898,7 @@ box.vertical > stack > box.vertical {
 %budgie_dialog {
   border-radius: $bt_radius;
   background-color: $bg_color;
+
   &.background {border-radius: $bt_radius; }
   decoration { border-radius: $bt_radius; }
 }
