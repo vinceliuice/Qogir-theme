@@ -4827,7 +4827,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 }
 
 .nautilus-window paned > separator {
-  background-image: linear-gradient(to bottom, #32353f, #32353f);
+  background-image: linear-gradient(to bottom, #393c48, #393c48);
 }
 
 .nautilus-window headerbar {
@@ -8893,7 +8893,7 @@ GtkListBox .h4 {
 }
 
 filechooser paned > separator {
-  background-image: linear-gradient(to bottom, #32353f, #32353f);
+  background-image: linear-gradient(to bottom, #393c48, #393c48);
 }
 
 .nautilus-window.csd.background, .nautilus-window placessidebar list {
@@ -9067,7 +9067,7 @@ filechooser actionbar label, filechooser actionbar combobox {
 }
 
 .gedit-side-panel-paned > separator {
-  background-image: linear-gradient(to bottom, #32353f, #32353f);
+  background-image: linear-gradient(to bottom, #393c48, #393c48);
 }
 
 .gedit-bottom-panel-paned > separator {

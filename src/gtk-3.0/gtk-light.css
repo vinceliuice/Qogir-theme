@@ -111,7 +111,7 @@ flowbox flowboxchild:selected {
 }
 
 flowbox.search-bar {
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 label.separator, popover label.separator,
@@ -136,7 +136,7 @@ popover.background label.separator, headerbar .subtitle,
 
 assistant .sidebar {
   background-color: #ffffff;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 assistant.csd .sidebar {
@@ -195,7 +195,7 @@ entry {
   border-radius: 3px;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
 }
 
@@ -370,7 +370,7 @@ button {
   border-radius: 3px;
   padding: 2px 6px;
   color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
@@ -396,7 +396,7 @@ button.flat:hover:active, button.sidebar-button:hover:active, button.budgie-menu
 
 button:hover {
   color: #393c43;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
   -gtk-icon-effect: highlight;
 }
@@ -733,13 +733,13 @@ button.circular-button, .raven button.image-button, .raven .expander-button, .bu
 
 .inline-toolbar toolbutton > button {
   color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
 .inline-toolbar toolbutton > button:hover {
   color: #393c43;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
@@ -852,7 +852,7 @@ toolbar.inline-toolbar toolbutton:active, .inline-toolbar toolbutton:active, too
 
 .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
 .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action) {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15);
 }
 
 .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
@@ -920,7 +920,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning + entry
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.warning,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry.error + entry.warning,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.error {
-  border-left-color: rgba(0, 0, 0, 0.12);
+  border-left-color: rgba(0, 0, 0, 0.15);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:not(:last-child),
@@ -932,7 +932,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:l
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + entry {
-  border-left-color: rgba(0, 0, 0, 0.12);
+  border-left-color: rgba(0, 0, 0, 0.15);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + button,
@@ -951,7 +951,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry:drop(ac
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + entry {
-  border-left-color: rgba(0, 0, 0, 0.12);
+  border-left-color: rgba(0, 0, 0, 0.15);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + button,
@@ -970,7 +970,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.warning
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + entry {
-  border-left-color: rgba(0, 0, 0, 0.12);
+  border-left-color: rgba(0, 0, 0, 0.15);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + button,
@@ -989,7 +989,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.error:f
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + entry {
-  border-left-color: rgba(0, 0, 0, 0.12);
+  border-left-color: rgba(0, 0, 0, 0.15);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + button,
@@ -1003,7 +1003,7 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:active + entry,
 headerbar .linked:not(.vertical):not(.path-bar) > button:checked + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > button:active + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > button:checked + entry {
-  border-left-color: rgba(0, 0, 0, 0.12);
+  border-left-color: rgba(0, 0, 0, 0.15);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > button + button,
@@ -1132,7 +1132,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > button:not(:checked):
 
 .linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
 .linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action) {
-  box-shadow: inset 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.15);
 }
 
 .linked.vertical > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
@@ -1258,7 +1258,7 @@ modelbutton.flat {
 menuitem.button.flat:hover,
 modelbutton.flat:hover {
   background-color: #f2f3f5;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 menuitem.button.flat:active, menuitem.button.flat:selected,
@@ -1378,7 +1378,7 @@ spinbutton:not(.vertical) > button + button {
 
 spinbutton:not(.vertical) > button:hover:not(:active),
 spinbutton:not(.vertical) > button:hover + button {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15);
 }
 
 spinbutton:not(.vertical) > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
@@ -1469,7 +1469,7 @@ toolbar.vertical separator, .vertical.inline-toolbar separator {
 
 toolbar.osd, .osd.inline-toolbar {
   padding: 7px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 3px;
   background-color: #282A33;
 }
@@ -1519,13 +1519,13 @@ toolbar:not(.inline-toolbar) .linked > entry,
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-image: linear-gradient(to bottom, #dae2e9, #dae2e9) 1 0 1 0;
+  border-image: linear-gradient(to bottom, #cad5df, #cad5df) 1 0 1 0;
 }
 
 .inline-toolbar {
   background-color: #f0f3f6;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   border-width: 0 1px 1px;
   padding: 3px;
   border-radius: 0 0 3px 3px;
@@ -1534,12 +1534,12 @@ toolbar:not(.inline-toolbar) .linked > entry,
 searchbar {
   background-color: #fafbfc;
   border: none;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
   padding: 3px;
 }
 
 .titlebar searchbar {
-  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.12), inset 0 -1px #ffffff;
+  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.15), inset 0 -1px #ffffff;
 }
 
 .titlebar searchbar entry, .titlebar searchbar button {
@@ -1548,7 +1548,7 @@ searchbar {
 
 actionbar {
   padding: 6px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   background-color: #f0f3f6;
 }
 
@@ -1556,7 +1556,7 @@ headerbar,
 .titlebar:not(headerbar) {
   padding: 0 10px;
   color: rgba(82, 93, 118, 0.8);
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
   background-color: white;
   min-height: 28px;
 }
@@ -1570,7 +1570,7 @@ headerbar:backdrop,
 .titlebar:backdrop:not(headerbar) {
   transition: 200ms ease-out;
   color: rgba(82, 93, 118, 0.5);
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
@@ -1636,7 +1636,7 @@ headerbar.selection-mode .selection-menu .arrow,
 .maximized headerbar,
 .maximized .titlebar:not(headerbar) {
   background-color: white;
-  border-color: #ebebeb;
+  border-color: #e6e6e6;
 }
 
 .maximized headerbar:backdrop, .maximized .titlebar:backdrop:not(headerbar) {
@@ -1712,7 +1712,7 @@ window.csd > .titlebar:not(headerbar):backdrop {
 }
 
 .titlebar:not(headerbar) > separator {
-  background-image: linear-gradient(to bottom, #ebebeb, #ebebeb);
+  background-image: linear-gradient(to bottom, #e6e6e6, #e6e6e6);
 }
 
 .primary-toolbar:not(.libreoffice-toolbar) separator, headerbar separator.titlebutton,
@@ -1839,7 +1839,7 @@ headerbar button:disabled:active, .nemo-window .primary-toolbar button:disabled:
 }
 
 headerbar button.flat.popup.toggle.sources-button:hover, .nemo-window .primary-toolbar button.flat.popup.toggle.sources-button:hover, headerbar button.popup.toggle.sources-button.sidebar-button:hover, .nemo-window .primary-toolbar button.popup.toggle.sources-button.sidebar-button:hover, headerbar button.popup.toggle.sources-button.budgie-menu-launcher:hover, .nemo-window .primary-toolbar button.popup.toggle.sources-button.budgie-menu-launcher:hover, headerbar .budgie-panel .popup.toggle.sources-button#tasklist-button:hover, .budgie-panel headerbar .popup.toggle.sources-button#tasklist-button:hover, .nemo-window .primary-toolbar .budgie-panel .popup.toggle.sources-button#tasklist-button:hover, .budgie-panel .nemo-window .primary-toolbar .popup.toggle.sources-button#tasklist-button:hover {
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 headerbar.selection-mode button, .nemo-window .selection-mode.primary-toolbar button, headerbar.selection-mode button.flat, .nemo-window .selection-mode.primary-toolbar button.flat, headerbar.selection-mode button.sidebar-button, .nemo-window .selection-mode.primary-toolbar button.sidebar-button, headerbar.selection-mode button.budgie-menu-launcher, .nemo-window .selection-mode.primary-toolbar button.budgie-menu-launcher, headerbar.selection-mode .budgie-panel #tasklist-button, .budgie-panel headerbar.selection-mode #tasklist-button, .nemo-window .selection-mode.primary-toolbar .budgie-panel #tasklist-button, .budgie-panel .nemo-window .selection-mode.primary-toolbar #tasklist-button {
@@ -2296,7 +2296,7 @@ treeview.view.progressbar:selected, window.thunar .sidebar treeview.progressbar.
 
 treeview.view.trough, window.thunar .sidebar treeview.trough.view, treeview.view.sidebar.source-list.trough {
   color: #5c616c;
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.15);
   border-radius: 3px;
   border-width: 0;
 }
@@ -2366,7 +2366,7 @@ menubar,
   padding: 0px;
   background-color: white;
   color: rgba(82, 93, 118, 0.8);
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 menubar:backdrop,
@@ -2406,7 +2406,7 @@ menu,
   padding: 4px 0;
   border-radius: 0;
   background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .csd menu, .csd
@@ -2505,14 +2505,14 @@ menu > arrow,
 menu > arrow.top,
 .menu > arrow.top {
   margin-top: -6px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
 menu > arrow.bottom,
 .menu > arrow.bottom {
   margin-bottom: -12px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
@@ -2544,7 +2544,7 @@ popover.background.menu {
 .csd popover, popover, .csd
 popover.background,
 popover.background {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 3px;
 }
 
@@ -2598,7 +2598,7 @@ notebook {
 }
 
 notebook.frame {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 notebook > stack:not(:only-child) {
@@ -2612,7 +2612,7 @@ notebook > header {
 
 notebook > header.top {
   padding-bottom: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 notebook > header.top > tabs > tab {
@@ -2643,7 +2643,7 @@ notebook > header.top > tabs > tab:checked {
 
 notebook > header.bottom {
   padding-top: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 notebook > header.bottom > tabs > tab {
@@ -2674,7 +2674,7 @@ notebook > header.bottom > tabs > tab:checked {
 
 notebook > header.right {
   padding-left: 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 notebook > header.right > tabs > tab {
@@ -2705,7 +2705,7 @@ notebook > header.right > tabs > tab:checked {
 
 notebook > header.left {
   padding-right: 0;
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 notebook > header.left > tabs > tab {
@@ -2831,19 +2831,19 @@ scrollbar {
 }
 
 scrollbar.top {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 scrollbar.bottom {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 scrollbar.left {
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 scrollbar.right {
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 scrollbar button {
@@ -3349,7 +3349,7 @@ scale trough {
   outline-offset: 2px;
   -gtk-outline-radius: 4.5px;
   border-radius: 2.5px;
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 scale trough:disabled {
@@ -3575,7 +3575,7 @@ infobar progressbar progress {
 progressbar trough {
   border: none;
   border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 row:selected progressbar trough,
@@ -3597,7 +3597,7 @@ levelbar trough {
   border: none;
   padding: 3px;
   border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 levelbar.horizontal.discrete block {
@@ -3635,7 +3635,7 @@ levelbar block.empty {
 }
 
 printdialog paper {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   background: #ffffff;
   padding: 0;
 }
@@ -3649,7 +3649,7 @@ frame > border,
   margin: 0;
   padding: 0;
   border-radius: 0;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 frame.flat > border,
@@ -3748,7 +3748,7 @@ scrolledwindow undershoot.right {
 
 scrolledwindow junction {
   border-color: transparent;
-  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 1px, transparent 1px) 0 0 0 1/0 1px stretch;
+  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 1px, transparent 1px) 0 0 0 1/0 1px stretch;
   background-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -3757,14 +3757,14 @@ scrolledwindow junction:dir(rtl) {
 }
 
 separator {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.15);
   min-width: 1px;
   min-height: 1px;
 }
 
 list {
   background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 list row {
@@ -3861,7 +3861,7 @@ expander arrow:checked {
 
 calendar {
   color: #5c616c;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 3px;
   padding: 2px 7px;
 }
@@ -3901,7 +3901,7 @@ messagedialog .linked:not(.vertical) > button:active,
 messagedialog .linked:not(.vertical) > button:checked,
 messagedialog .linked:not(.vertical) > button:disabled {
   border-radius: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   border-right: none;
   border-bottom: none;
 }
@@ -3952,7 +3952,7 @@ messagedialog .dialog-action-area button {
   padding: 6px 10px 8px 10px;
   border-radius: 0;
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 messagedialog .dialog-action-area button:active, messagedialog .dialog-action-area button:checked {
@@ -3976,11 +3976,11 @@ messagedialog.csd.background {
 }
 
 filechooser .dialog-action-box {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   background-color: #fafbfc;
 }
 
@@ -3994,7 +3994,7 @@ messagedialog.background:not(.csd) .dialog-vbox .dialog-action-box button {
 }
 
 dialog.background.csd .dialog-vbox searchbar {
-  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.12), inset 0 -1px #fafbfc;
+  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.15), inset 0 -1px #fafbfc;
 }
 
 dialog.background.csd .dialog-vbox entry, dialog.background.csd .dialog-vbox button {
@@ -4009,13 +4009,13 @@ dialog.background.csd .dialog-vbox entry, dialog.background.csd .dialog-vbox but
 stacksidebar.sidebar:dir(ltr) list,
 stacksidebar.sidebar.left list,
 stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl) {
-  border-right: 1px solid #dae2e9;
+  border-right: 1px solid #cad5df;
   border-left-style: none;
 }
 
 stacksidebar.sidebar:dir(rtl) list,
 stacksidebar.sidebar.right list, .sidebar:dir(rtl), .sidebar.right {
-  border-left: 1px solid #dae2e9;
+  border-left: 1px solid #cad5df;
   border-right-style: none;
 }
 
@@ -4121,7 +4121,7 @@ placesview .server-list-button:checked > image {
 }
 
 placesview > actionbar {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 placesview > actionbar > revealer > box > label {
@@ -4135,7 +4135,7 @@ paned > separator {
   -gtk-icon-source: none;
   border-style: none;
   background-color: transparent;
-  background-image: linear-gradient(to bottom, #dae2e9, #dae2e9);
+  background-image: linear-gradient(to bottom, #cad5df, #cad5df);
   background-size: 1px 1px;
 }
 
@@ -4147,7 +4147,7 @@ paned > separator.wide {
   min-width: 5px;
   min-height: 5px;
   background-color: #fafbfc;
-  background-image: linear-gradient(to bottom, #dae2e9, #dae2e9), linear-gradient(to bottom, #dae2e9, #dae2e9);
+  background-image: linear-gradient(to bottom, #cad5df, #cad5df), linear-gradient(to bottom, #cad5df, #cad5df);
   background-size: 1px 1px, 1px 1px;
 }
 
@@ -4367,13 +4367,13 @@ colorswatch#add-color-button {
   border-style: solid;
   border-width: 1px;
   color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
 colorswatch#add-color-button:hover {
   color: #393c43;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
@@ -4406,7 +4406,7 @@ colorchooser .popover.osd {
 
 .scale-popup button:hover {
   color: #393c43;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
@@ -4425,7 +4425,7 @@ popover.background.touch-selection, .csd popover.background.touch-selection {
   padding: 3px 6px 4px 6px;
   color: #5c616c;
   background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 2.5px;
   box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.05);
 }
@@ -4446,12 +4446,12 @@ stackswitcher button.circular, stackswitcher button.nautilus-circular-button.ima
 decoration {
   border-radius: 0;
   border: none;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15);
   margin: 6px;
 }
 
 decoration:backdrop {
-  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.15);
   transition: 200ms ease-out;
 }
 
@@ -4463,7 +4463,7 @@ decoration:backdrop {
 
 .ssd decoration {
   border-radius: 0;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
   border: none;
 }
 
@@ -4474,7 +4474,7 @@ decoration:backdrop {
 
 .csd.popup decoration {
   border-radius: 0;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
 tooltip.csd decoration {
@@ -4664,7 +4664,7 @@ popover.emoji-picker {
 }
 
 popover.emoji-picker entry {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   box-shadow: none;
@@ -4673,7 +4673,7 @@ popover.emoji-picker entry {
 }
 
 popover.emoji-picker scrolledwindow {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 button.emoji-section {
@@ -4821,7 +4821,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 }
 
 .nautilus-window paned > separator {
-  background-image: linear-gradient(to bottom, #e4edf3, #e4edf3);
+  background-image: linear-gradient(to bottom, #d3e1eb, #d3e1eb);
 }
 
 .nautilus-window headerbar {
@@ -4873,7 +4873,7 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 }
 
 .nautilus-window actionbar {
-  border-color: #dae2e9;
+  border-color: #cad5df;
 }
 
 .nautilus-window notebook,
@@ -5008,24 +5008,24 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
 
 .gedit-document-panel row:hover:not(:selected) button:active {
   background-color: rgba(92, 97, 108, 0.15);
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 .gedit-document-panel-dragged-row {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   background-color: #dae2e9;
   color: #5c616c;
 }
 
 .gedit-side-panel-paned statusbar {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   background-color: #fafbfc;
 }
 
 .gedit-search-slider {
   background-color: white;
   padding: 6px;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   border-radius: 0 0 2px 2px;
   border-width: 0 1px 1px 1px;
   border-style: solid;
@@ -5152,7 +5152,7 @@ frame.sidebar.chat-sidebar frame.chat-status-area > border {
 
 widget#PROCESSOR list row, widget#MEMORY list row {
   margin: -1px;
-  border: 1px solid #dae2e9;
+  border: 1px solid #cad5df;
 }
 
 widget#PROCESSOR list row.max, widget#MEMORY list row.max {
@@ -5160,7 +5160,7 @@ widget#PROCESSOR list row.max, widget#MEMORY list row.max {
 }
 
 widget#PROCESSOR list separator.list, widget#MEMORY list separator.list {
-  box-shadow: inset 0 0 0 1px #dae2e9;
+  box-shadow: inset 0 0 0 1px #cad5df;
 }
 
 widget#STORAGE list {
@@ -5176,11 +5176,11 @@ widget#STORAGE list row.activatable:hover, widget#STORAGE list .view:hover, widg
 }
 
 widget#STORAGE list separator.list {
-  box-shadow: inset 0 0 0 1px #dae2e9;
+  box-shadow: inset 0 0 0 1px #cad5df;
 }
 
 widget#PERFORMANCE searchbar {
-  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.12), inset 0 -1px #fafbfc;
+  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.15), inset 0 -1px #fafbfc;
 }
 
 widget#PERFORMANCE searchbar entry, widget#PERFORMANCE searchbar button {
@@ -5223,7 +5223,7 @@ row#dynamic-workspaces,
 row#PrimaryWorkspaceTweak,
 row#workspaces-only-on-primary {
   padding: 0;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 row#Focus row:not(:last-child),
@@ -5232,7 +5232,7 @@ row#StaticWorkspaceTweak row:not(:last-child),
 row#dynamic-workspaces row:not(:last-child),
 row#PrimaryWorkspaceTweak row:not(:last-child),
 row#workspaces-only-on-primary row:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 row#Focus.tweak > list,
@@ -5257,7 +5257,7 @@ row#AutostartTitle.tweak {
 }
 
 list#AutostartListBoxTweakGroup.tweak-group-startup {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .gb-search-entry-occurrences-tag {
@@ -5284,12 +5284,12 @@ layouttab {
 }
 
 layout {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   -PnlDockBin-handle-size: 1;
 }
 
 eggsearchbar box.search-bar {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 pillbox {
@@ -5305,7 +5305,7 @@ pillbox:disabled label {
 docktabstrip {
   padding: 0 6px;
   background-color: #fafbfc;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 docktabstrip docktab {
@@ -5323,17 +5323,17 @@ docktabstrip docktab:checked label, docktabstrip docktab:hover label {
 }
 
 docktabstrip docktab:checked {
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
 }
 
 dockbin {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   -PnlDockBin-handle-size: 1;
 }
 
 dockpaned {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 dockoverlayedge {
@@ -5394,8 +5394,8 @@ button.dzlmenubuttonitem.check box > image {
 
 entry.search.preferences-search {
   border: none;
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
 }
 
@@ -5409,7 +5409,7 @@ preferences stacksidebar.sidebar list separator {
 
 devhelppanel entry:focus,
 symboltreepanel entry:focus {
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 button.run-arrow-button {
@@ -5472,7 +5472,7 @@ window.background > box.vertical > overlay > stack > widget > stack widget > box
 
 .category_page_header_filter_box {
   background-image: image(#fafbfc);
-  border-image: linear-gradient(to bottom, #dae2e9, #dae2e9) 0 0 1 0/0 0 1px 0 stretch;
+  border-image: linear-gradient(to bottom, #cad5df, #cad5df) 0 0 1 0/0 0 1px 0 stretch;
 }
 
 .category_page_header_filter_box button {
@@ -5494,7 +5494,7 @@ window.background > box.vertical > overlay > stack > widget > stack widget > box
 
 .application-details-infobar {
   background-image: image(#ffffff);
-  border-image: linear-gradient(to bottom, #dae2e9, #dae2e9) 1 1 1 1/1px 1px 1px 1px stretch;
+  border-image: linear-gradient(to bottom, #cad5df, #cad5df) 1 1 1 1/1px 1px 1px 1px stretch;
 }
 
 .maps-popover button.radio.layer-radio-button:checked {
@@ -5621,7 +5621,7 @@ window.background > box.vertical box.horizontal > box.vertical > scrolledwindow 
 }
 
 window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list > separator.compressed-rows-group-separator {
-  background-image: image(rgba(0, 0, 0, 0.12));
+  background-image: image(rgba(0, 0, 0, 0.15));
 }
 
 window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .event.view, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list textview text.event, textview window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list text.event, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list iconview.event, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list window.thunar notebook scrolledwindow.frame.standard-view .event.view, window.thunar notebook scrolledwindow.frame.standard-view window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .event.view, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list treeview.event.view, window.thunar .sidebar window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list treeview.event.view, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .nemo-window .nemo-places-sidebar .event.places-treeview, .nemo-window .nemo-places-sidebar window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .event.places-treeview, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .budgie-popover row.event, .budgie-popover window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .budgie-menu button.event, .budgie-menu window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list button.event, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .panel popover .sidebar .event.view, .panel popover .sidebar window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list .event.view {
@@ -5746,13 +5746,13 @@ popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport
   background-color: #fafbfc;
   color: rgba(92, 97, 108, 0.85);
   border-radius: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   margin: 2px;
 }
 
 popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > row.activatable:hover, popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > .view:hover, textview popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > text:hover, popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > iconview:hover, window.thunar notebook scrolledwindow.frame.standard-view popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > .view:hover, popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > treeview.view:hover, window.thunar .sidebar popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > treeview.view:hover, .nemo-window .nemo-places-sidebar popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > .places-treeview:hover, .budgie-popover popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > row:hover, .budgie-menu popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > button:hover, .panel popover .sidebar popover.background:not(.emoji-picker) > box.vertical > scrolledwindow > viewport.frame > list.background > .view:hover {
   color: #393c43;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
@@ -5762,7 +5762,7 @@ popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical {
 }
 
 popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame > list.background > row.activatable.bookmarks-row, popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame > list.background > .bookmarks-row.view, popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical textview scrolledwindow > viewport.frame > list.background > text.bookmarks-row, textview popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame > list.background > text.bookmarks-row, popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame > list.background > iconview.bookmarks-row, popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical window.thunar notebook scrolledwindow.frame.standard-view scrolledwindow > viewport.frame > list.background > .bookmarks-row.view, window.thunar notebook scrolledwindow.frame.standard-view popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame > list.background > .bookmarks-row.view, popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame > list.background > treeview.bookmarks-row.view, popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical window.thunar .sidebar scrolledwindow > viewport.frame > list.background > treeview.bookmarks-row.view, window.thunar .sidebar popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame > list.background > treeview.bookmarks-row.view, popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical .nemo-window .nemo-places-sidebar scrolledwindow > viewport.frame > list.background > .bookmarks-row.places-treeview, .nemo-window .nemo-places-sidebar popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame > list.background > .bookmarks-row.places-treeview, popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical .budgie-popover scrolledwindow > viewport.frame > list.background > row.bookmarks-row, .budgie-popover popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame > list.background > row.bookmarks-row, popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical .budgie-menu scrolledwindow > viewport.frame > list.background > button.bookmarks-row, .budgie-menu popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scrolledwindow > viewport.frame > list.background > button.bookmarks-row, .panel popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical .sidebar scrolledwindow > viewport.frame > list.background > .bookmarks-row.view {
@@ -5801,7 +5801,7 @@ flowboxchild.bookmark-tag-widget-selected {
 }
 
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
-  box-shadow: inset 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.15);
   padding: 4px;
   background-color: #f0f3f6;
 }
@@ -5810,7 +5810,7 @@ window.csd > box.vertical > box.vertical > toolbar.horizontal, window.csd > box.
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal,
 window.solid-csd > box.vertical > box.vertical > .horizontal.inline-toolbar {
   margin-top: -1px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: none;
   background-color: transparent;
 }
@@ -5873,11 +5873,11 @@ dialog.background.csd box.dialog-vbox grid.horizontal scrolledwindow.frame viewp
 }
 
 dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 dialog.background.csd headerbar.default-decoration {
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 stack overlay frame scrolledwindow.frame {
@@ -5887,7 +5887,7 @@ stack overlay frame scrolledwindow.frame {
 
 stack overlay frame searchbar {
   box-shadow: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .nemo-window .nemo-places-sidebar.frame {
@@ -5905,14 +5905,14 @@ stack overlay frame searchbar {
 .nemo-window notebook .primary-toolbar button,
 .nemo-window notebook .primary-toolbar combobox > .linked > button.combo {
   color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
 .nemo-window notebook .primary-toolbar button:hover,
 .nemo-window notebook .primary-toolbar combobox > .linked > button.combo:hover {
   color: #393c43;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
   -gtk-icon-effect: highlight;
 }
@@ -5964,7 +5964,7 @@ stack overlay frame searchbar {
   min-height: 24px;
   min-width: 24px;
   color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
 }
 
@@ -5988,7 +5988,7 @@ stack overlay frame searchbar {
   border: none;
   color: rgba(82, 93, 118, 0.8);
   background-color: white;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 .nemo-window .primary-toolbar button, .nemo-window .primary-toolbar entry {
@@ -6037,7 +6037,7 @@ stack overlay frame searchbar {
 }
 
 .caja-notebook {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .caja-side-pane .frame {
@@ -6069,7 +6069,7 @@ stack overlay frame searchbar {
 }
 
 window.background:not(.csd) > widget > separator {
-  color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.15);
 }
 
 window.background:not(.csd) > widget > scrollbar {
@@ -6078,12 +6078,12 @@ window.background:not(.csd) > widget > scrollbar {
 
 window.background:not(.csd) > widget > scrollbar,
 window.background:not(.csd) > widget > frame > border {
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 window.background:not(.csd) > widget > entry,
 window.background:not(.csd) > widget > button > button {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 2px;
 }
 
@@ -6091,7 +6091,7 @@ window.background:not(.csd) > widget > entry,
 window.background:not(.csd) > widget .entry {
   border-radius: 2px;
   background-image: image(#ffffff);
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 window.background:not(.csd) > widget > entry:focus,
@@ -6101,7 +6101,7 @@ window.background:not(.csd) > widget .entry:focus {
 
 window.background:not(.csd) > widget > spinbutton {
   background-image: image(white);
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 window.background:not(.csd) > widget > spinbutton:active {
@@ -6124,7 +6124,7 @@ window.background:not(.csd) .menu {
 }
 
 window.background:not(.csd) > menu > separator {
-  color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.15);
 }
 
 window.background:not(.csd) > menu > menuitem > label:disabled {
@@ -6259,7 +6259,7 @@ window.background.chromium > textview.view {
  ****************/
 window.background > grid.horizontal > grid.horizontal {
   background-color: #ffffff;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 window.background > grid.horizontal > grid.horizontal > button.flat.small-button, window.background > grid.horizontal > grid.horizontal > button.small-button.sidebar-button, window.background > grid.horizontal > grid.horizontal > button.small-button.budgie-menu-launcher, .budgie-panel window.background > grid.horizontal > grid.horizontal > .small-button#tasklist-button {
@@ -6350,7 +6350,7 @@ overlay.window-overlay grid.horizontal stack paned.horizontal stack scrolledwind
 }
 
 overlay.window-overlay grid.horizontal stack .sidebar {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 widget > box.terminal-titlebar {
@@ -6423,7 +6423,7 @@ window.background.csd stack stack scrolledwindow:dir(ltr).frame {
 }
 
 window.background.csd stack revealer stack list:dir(ltr) {
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 /*****************
@@ -6744,10 +6744,10 @@ panel-toplevel.background na-tray-applet {
 .budgie-popover {
   margin: 0;
   padding: 0;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   border-radius: 2px;
   background-color: #ffffff;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
 .budgie-popover .container {
@@ -6786,7 +6786,7 @@ panel-toplevel.background na-tray-applet {
 
 .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):hover, .budgie-popover:not(.budgie-menu) button.sidebar-button:not(.image-button):hover, .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:not(.image-button):hover, .budgie-popover:not(.budgie-menu) .budgie-panel #tasklist-button:not(.image-button):hover, .budgie-panel .budgie-popover:not(.budgie-menu) #tasklist-button:not(.image-button):hover {
   background-color: #f2f3f5;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active, .budgie-popover:not(.budgie-menu) button.sidebar-button:not(.image-button):active, .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:not(.image-button):active, .budgie-popover:not(.budgie-menu) .budgie-panel #tasklist-button:not(.image-button):active, .budgie-panel .budgie-popover:not(.budgie-menu) #tasklist-button:not(.image-button):active, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked, .budgie-popover:not(.budgie-menu) button.sidebar-button:not(.image-button):checked, .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:not(.image-button):checked, .budgie-popover:not(.budgie-menu) .budgie-panel #tasklist-button:not(.image-button):checked, .budgie-panel .budgie-popover:not(.budgie-menu) #tasklist-button:not(.image-button):checked {
@@ -6808,12 +6808,12 @@ panel-toplevel.background na-tray-applet {
 
 .budgie-popover.user-menu separator {
   margin: 4px 0;
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .budgie-popover.sound-popover separator {
   margin: 3px 0;
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .budgie-popover.night-light-indicator .container {
@@ -6827,7 +6827,7 @@ panel-toplevel.background na-tray-applet {
 .budgie-popover.places-menu .places-list:not(.always-expand) {
   margin-top: 4px;
   padding-top: 4px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .budgie-popover.places-menu .alternative-label {
@@ -6951,7 +6951,7 @@ window.budgie-popover:not(.csd) > frame.container > border {
 
 .budgie-menu entry.search {
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
   box-shadow: none;
   font-size: 120%;
@@ -7000,7 +7000,7 @@ popover.background.user-menu .content-box {
 
 popover.background.user-menu separator {
   margin: 4px 0;
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 popover.background.user-menu row {
@@ -7037,7 +7037,7 @@ popover.background.places-menu .places-section-header > image:dir(rtl) {
 popover.background.places-menu .places-list {
   margin-top: 4px;
   padding-top: 4px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   background-color: transparent;
 }
 
@@ -7474,7 +7474,7 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   padding: 0 6px;
   background-color: #ffffff;
   color: rgba(82, 93, 118, 0.8);
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 .raven .raven-header.top stackswitcher {
@@ -7526,7 +7526,7 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 }
 
 .raven .raven-header.bottom {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .raven viewport.frame .raven-header {
@@ -7536,7 +7536,7 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 .raven .raven-background {
   border-style: solid none;
   border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
 }
 
@@ -7668,12 +7668,12 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 
 box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list {
   border-radius: 2px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row.activatable, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > row.activatable, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > row.activatable, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row.activatable, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > row.activatable, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > row.activatable, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > row.activatable, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row.activatable, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > row.activatable, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > row.activatable, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > .view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .view, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > .view, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .view, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > .view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable textview list > text, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > text, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view textview list > text, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > text, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > text, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview textview list > text, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > text, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view textview list > text, textview window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > text, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view textview list > text, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > text, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view textview list > text, textview window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > text, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview textview list > text, textview .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > text, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row textview list > text, textview .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > text, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button textview list > text, textview .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > text, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view textview list > text, textview .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > text, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list textview list > text, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > text, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view textview list > text, textview window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > text, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > iconview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > iconview, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > iconview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > iconview, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > iconview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > iconview, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > iconview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > iconview, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > iconview, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > iconview, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > iconview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > iconview, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > iconview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable window.thunar notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view window.thunar notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text window.thunar notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview window.thunar notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > .view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view window.thunar notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview window.thunar notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .view, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row window.thunar notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > .view, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button window.thunar notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .view, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view window.thunar notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list window.thunar notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > .view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view notebook scrolledwindow.frame.standard-view list > .view, window.thunar notebook scrolledwindow.frame.standard-view .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > treeview.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > treeview.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > treeview.view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > treeview.view, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > treeview.view, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > treeview.view, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > treeview.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > treeview.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable window.thunar .sidebar list > treeview.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > treeview.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view window.thunar .sidebar list > treeview.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text window.thunar .sidebar list > treeview.view, window.thunar .sidebar textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > treeview.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview window.thunar .sidebar list > treeview.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > treeview.view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .sidebar list > treeview.view, window.thunar .sidebar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view window.thunar .sidebar list > treeview.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview window.thunar .sidebar list > treeview.view, window.thunar .sidebar .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > treeview.view, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row window.thunar .sidebar list > treeview.view, window.thunar .sidebar .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > treeview.view, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button window.thunar .sidebar list > treeview.view, window.thunar .sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > treeview.view, .panel popover window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view, window.thunar .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view, window.thunar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > treeview.view, window.thunar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > treeview.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .places-treeview, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > .places-treeview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > .places-treeview, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .places-treeview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .places-treeview, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .places-treeview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > .places-treeview, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .places-treeview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > .places-treeview, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > .places-treeview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-popover list > row, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-popover list > row, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text .budgie-popover list > row, .budgie-popover textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > row, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview .budgie-popover list > row, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > row, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-popover list > row, .budgie-popover window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .budgie-popover list > row, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > row, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .budgie-popover list > row, .budgie-popover window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > row, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-popover list > row, .budgie-popover .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > row, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .budgie-popover list > row, .budgie-popover .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-popover list > row, .budgie-popover .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list .budgie-popover list > row, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > row, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view .budgie-popover list > row, .budgie-popover window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > row, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-menu list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > button, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text .budgie-menu list > button, .budgie-menu textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview .budgie-menu list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > button, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-menu list > button, .budgie-menu window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .budgie-menu list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > button, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .budgie-menu list > button, .budgie-menu window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > button, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row .budgie-menu list > button, .budgie-menu .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-menu list > button, .budgie-menu .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list .budgie-menu list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > button, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view .budgie-menu list > button, .budgie-menu window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .panel popover .sidebar list > .view, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .panel popover .sidebar list > .view, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text .panel popover .sidebar list > .view, .panel popover .sidebar textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview .panel popover .sidebar list > .view, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > .view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .panel popover .sidebar list > .view, .panel popover .sidebar window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .panel popover .sidebar list > .view, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view, window.thunar .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view, .panel popover window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .panel popover .sidebar list > .view, .panel popover .sidebar .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .view, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row .panel popover .sidebar list > .view, .panel popover .sidebar .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > .view, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .panel popover .sidebar list > .view, .panel popover .sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .view, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view, .panel popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > .view, window.thunar .panel popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > .view, .panel popover window.thunar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > .view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > treeview.view.sidebar.source-list, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view.sidebar.source-list, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > treeview.view.sidebar.source-list, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > treeview.view.sidebar.source-list, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view.sidebar.source-list, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view.sidebar.source-list, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view.sidebar.source-list, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > treeview.view.sidebar.source-list, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > treeview.view.sidebar.source-list, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > treeview.view.sidebar.source-list, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view.sidebar.source-list, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > treeview.view.sidebar.source-list, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > treeview.view.sidebar.source-list, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable window.thunar .sidebar list > treeview.sidebar.source-list.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > treeview.sidebar.source-list.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view window.thunar .sidebar list > treeview.sidebar.source-list.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.sidebar.source-list.view, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text window.thunar .sidebar list > treeview.sidebar.source-list.view, window.thunar .sidebar textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > treeview.sidebar.source-list.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview window.thunar .sidebar list > treeview.sidebar.source-list.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > treeview.sidebar.source-list.view, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .sidebar list > treeview.sidebar.source-list.view, window.thunar .sidebar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.sidebar.source-list.view, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view window.thunar .sidebar list > treeview.sidebar.source-list.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.sidebar.source-list.view, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.sidebar.source-list.view, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview window.thunar .sidebar list > treeview.sidebar.source-list.view, window.thunar .sidebar .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > treeview.sidebar.source-list.view, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row window.thunar .sidebar list > treeview.sidebar.source-list.view, window.thunar .sidebar .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > treeview.sidebar.source-list.view, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button window.thunar .sidebar list > treeview.sidebar.source-list.view, window.thunar .sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > treeview.sidebar.source-list.view, .panel popover window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.sidebar.source-list.view, window.thunar .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.sidebar.source-list.view, window.thunar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > treeview.sidebar.source-list.view, window.thunar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > treeview.sidebar.source-list.view {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row.activatable:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > row.activatable:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > row.activatable:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row.activatable:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > row.activatable:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > row.activatable:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > row.activatable:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row.activatable:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > row.activatable:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > row.activatable:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .view:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > .view:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .view:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > .view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable textview list > text:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > text:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view textview list > text:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > text:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > text:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview textview list > text:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > text:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view textview list > text:last-child, textview window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > text:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view textview list > text:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > text:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view textview list > text:last-child, textview window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > text:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview textview list > text:last-child, textview .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > text:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row textview list > text:last-child, textview .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > text:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button textview list > text:last-child, textview .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > text:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view textview list > text:last-child, textview .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > text:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list textview list > text:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > text:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view textview list > text:last-child, textview window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > text:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > iconview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > iconview:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > iconview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > iconview:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > iconview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > iconview:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > iconview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > iconview:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > iconview:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > iconview:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > iconview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > iconview:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > iconview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable window.thunar notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view window.thunar notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text window.thunar notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview window.thunar notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view window.thunar notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview window.thunar notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .view:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row window.thunar notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > .view:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button window.thunar notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .view:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view window.thunar notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list window.thunar notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > .view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view notebook scrolledwindow.frame.standard-view list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > treeview.view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > treeview.view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > treeview.view:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > treeview.view:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > treeview.view:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > treeview.view:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > treeview.view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > treeview.view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable window.thunar .sidebar list > treeview.view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > treeview.view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view window.thunar .sidebar list > treeview.view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text window.thunar .sidebar list > treeview.view:last-child, window.thunar .sidebar textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > treeview.view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview window.thunar .sidebar list > treeview.view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > treeview.view:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .sidebar list > treeview.view:last-child, window.thunar .sidebar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view window.thunar .sidebar list > treeview.view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview window.thunar .sidebar list > treeview.view:last-child, window.thunar .sidebar .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > treeview.view:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row window.thunar .sidebar list > treeview.view:last-child, window.thunar .sidebar .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > treeview.view:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button window.thunar .sidebar list > treeview.view:last-child, window.thunar .sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > treeview.view:last-child, .panel popover window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view:last-child, window.thunar .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view:last-child, window.thunar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > treeview.view:last-child, window.thunar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > treeview.view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .places-treeview:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > .places-treeview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > .places-treeview:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .places-treeview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .places-treeview:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > .places-treeview:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .places-treeview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > .places-treeview:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > .places-treeview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-popover list > row:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-popover list > row:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text .budgie-popover list > row:last-child, .budgie-popover textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > row:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview .budgie-popover list > row:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > row:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-popover list > row:last-child, .budgie-popover window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .budgie-popover list > row:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > row:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .budgie-popover list > row:last-child, .budgie-popover window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > row:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-popover list > row:last-child, .budgie-popover .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > row:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .budgie-popover list > row:last-child, .budgie-popover .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-popover list > row:last-child, .budgie-popover .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > row:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list .budgie-popover list > row:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > row:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view .budgie-popover list > row:last-child, .budgie-popover window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > row:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-menu list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > button:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text .budgie-menu list > button:last-child, .budgie-menu textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > button:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview .budgie-menu list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > button:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-menu list > button:last-child, .budgie-menu window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > button:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .budgie-menu list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > button:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .budgie-menu list > button:last-child, .budgie-menu window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > button:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button:last-child, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row .budgie-menu list > button:last-child, .budgie-menu .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .budgie-menu list > button:last-child, .budgie-menu .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > button:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list .budgie-menu list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > button:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view .budgie-menu list > button:last-child, .budgie-menu window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > button:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .panel popover .sidebar list > .view:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .panel popover .sidebar list > .view:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text .panel popover .sidebar list > .view:last-child, .panel popover .sidebar textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview .panel popover .sidebar list > .view:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > .view:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view .panel popover .sidebar list > .view:last-child, .panel popover .sidebar window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view .panel popover .sidebar list > .view:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view:last-child, window.thunar .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view:last-child, .panel popover window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > .view:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .panel popover .sidebar list > .view:last-child, .panel popover .sidebar .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .view:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row .panel popover .sidebar list > .view:last-child, .panel popover .sidebar .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > .view:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .panel popover .sidebar list > .view:last-child, .panel popover .sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .view:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > .view:last-child, .panel popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > .view:last-child, window.thunar .panel popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > .view:last-child, .panel popover window.thunar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > .view:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > treeview.view.sidebar.source-list:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view.sidebar.source-list:last-child, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text list > treeview.view.sidebar.source-list:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview list > treeview.view.sidebar.source-list:last-child, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view.sidebar.source-list:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view.sidebar.source-list:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view list > treeview.view.sidebar.source-list:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > treeview.view.sidebar.source-list:last-child, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row list > treeview.view.sidebar.source-list:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > treeview.view.sidebar.source-list:last-child, .panel popover .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view list > treeview.view.sidebar.source-list:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view.sidebar.source-list list > treeview.view.sidebar.source-list:last-child, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.sidebar.source-list.view list > treeview.view.sidebar.source-list:last-child {
@@ -7818,7 +7818,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 .budgie-polkit-dialog .linked.horizontal > button {
   padding: 6px 16px;
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
 }
 
@@ -7842,7 +7842,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 .budgie-session-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):hover,
 .budgie-polkit-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):hover {
   background-color: alpha(#5c616c,0.06);
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -7851,7 +7851,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 .budgie-polkit-dialog .linked.horizontal > button:not(.suggested-action):not(.destructive-action):checked {
   color: #5c616c;
   background-color: alpha(#5c616c,0.1);
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 .budgie-polkit-dialog .message {
@@ -7879,7 +7879,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 }
 
 .budgie-run-dialog scrolledwindow {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .budgie-panel box.titlebar {
@@ -8228,7 +8228,7 @@ window.thunar notebook header.top tab.reorderable-page > box > label {
 window.thunar toolbar#location-toolbar, window.thunar #location-toolbar.inline-toolbar {
   background-color: #ffffff;
   color: rgba(82, 93, 118, 0.8);
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button, window.thunar #location-toolbar.inline-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button {
@@ -8299,7 +8299,7 @@ menubar .panel,
 }
 
 .panel popover button:hover {
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 .panel popover button:active, .panel popover button:checked {
@@ -8311,7 +8311,7 @@ menubar .panel,
 }
 
 .panel popover .linked > button {
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 .panel popover list {
@@ -8323,7 +8323,7 @@ menubar .panel,
 }
 
 .panel popover separator.vertical {
-  background-image: image(rgba(0, 0, 0, 0.12));
+  background-image: image(rgba(0, 0, 0, 0.15));
   margin: 0 2px;
 }
 
@@ -8481,7 +8481,7 @@ headerbar.titlebar > grid.linked.horizontal.format-bar {
 }
 
 popover radiobutton.color-button.color-light, popover radiobutton.color-button.color-dark, popover radiobutton.color-button.color-white {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .gala-notification {
@@ -8498,12 +8498,12 @@ popover radiobutton.color-button.color-light, popover radiobutton.color-button.c
 
 actionbar.inline-toolbar {
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 actionbar.inline-toolbar button {
   border-radius: 3px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 actionbar.inline-toolbar button:first-child {
@@ -8571,13 +8571,13 @@ scale.warmth trough {
 
 #content_frame button {
   color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
 #content_frame button:hover {
   color: #393c43;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
@@ -8605,7 +8605,7 @@ scale.warmth trough {
   border-bottom-right-radius: 3px;
   border: solid rgba(0, 0, 0, 0.1);
   border-width: 0 1px 1px 1px;
-  box-shadow: inset 0 1px #e4edf3;
+  box-shadow: inset 0 1px #d3e1eb;
 }
 
 #buttonbox_frame button {
@@ -8709,8 +8709,8 @@ GraniteWidgetsThinPaned {
   background-color: transparent;
   background-image: none;
   margin: 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 GraniteWidgetsPopOver .frame,
@@ -8725,7 +8725,7 @@ GraniteWidgetsStaticNotebook .frame {
 
 toolbar.secondary-toolbar, .secondary-toolbar.inline-toolbar {
   padding: 3px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 toolbar.secondary-toolbar button, .secondary-toolbar.inline-toolbar button {
@@ -8736,7 +8736,7 @@ toolbar.bottom-toolbar, .bottom-toolbar.inline-toolbar {
   padding: 5px;
   border-width: 1px 0 0 0;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: #fafbfc;
 }
 
@@ -8888,7 +8888,7 @@ GtkListBox .h4 {
 }
 
 filechooser paned > separator {
-  background-image: linear-gradient(to bottom, #e4edf3, #e4edf3);
+  background-image: linear-gradient(to bottom, #d3e1eb, #d3e1eb);
 }
 
 .nautilus-window.csd.background, .nautilus-window placessidebar list {
@@ -8957,7 +8957,7 @@ filechooser paned > separator {
 
 .nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button:hover {
   color: #393c43;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
@@ -9040,7 +9040,7 @@ filechooser paned > separator {
 }
 
 .caja-side-pane .frame {
-  border-color: #dae2e9;
+  border-color: #cad5df;
 }
 
 .caja-side-pane junction {
@@ -9050,7 +9050,7 @@ filechooser paned > separator {
 filechooser actionbar {
   color: #646972;
   background-color: #f6f9fb;
-  border-color: #dae2e9;
+  border-color: #cad5df;
 }
 
 filechooser actionbar label, filechooser actionbar combobox {
@@ -9062,11 +9062,11 @@ filechooser actionbar label, filechooser actionbar combobox {
 }
 
 .gedit-side-panel-paned > separator {
-  background-image: linear-gradient(to bottom, #e4edf3, #e4edf3);
+  background-image: linear-gradient(to bottom, #d3e1eb, #d3e1eb);
 }
 
 .gedit-bottom-panel-paned > separator {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
 }
 
 .gedit-document-panel {
@@ -9106,13 +9106,13 @@ filechooser actionbar label, filechooser actionbar combobox {
 
 filechooser actionbar button {
   color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
 .caja-side-pane > box button:hover:not(:active), filechooser actionbar button:hover {
   color: #393c43;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
 }
 
@@ -9133,7 +9133,7 @@ filechooser actionbar button:disabled label, filechooser actionbar button:disabl
 
 filechooser actionbar entry {
   color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
 }
 
@@ -9150,12 +9150,12 @@ filechooser actionbar entry:disabled {
 }
 
 .nautilus-window placessidebar.sidebar scrollbar, .nemo-window .sidebar scrollbar, .caja-side-pane scrollbar {
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 .nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .caja-side-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
   background-color: #8a8f98;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .nautilus-window placessidebar.sidebar scrollbar slider, .nemo-window .sidebar scrollbar slider, .caja-side-pane scrollbar slider {
@@ -9200,8 +9200,8 @@ filechooser actionbar entry:disabled {
 @define-color theme_unfocused_selected_bg_color #5294e2;
 @define-color theme_unfocused_selected_fg_color #ffffff;
 @define-color unfocused_insensitive_color rgba(92, 97, 108, 0.55);
-@define-color borders rgba(0, 0, 0, 0.12);
-@define-color unfocused_borders rgba(0, 0, 0, 0.12);
+@define-color borders rgba(0, 0, 0, 0.15);
+@define-color unfocused_borders rgba(0, 0, 0, 0.15);
 @define-color warning_color #F27835;
 @define-color error_color #FC4138;
 @define-color success_color #73d216;

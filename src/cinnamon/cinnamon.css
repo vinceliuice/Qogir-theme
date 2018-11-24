@@ -17,7 +17,7 @@ stage {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
@@ -55,7 +55,7 @@ stage {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
@@ -137,7 +137,7 @@ stage {
   border-radius: 3px;
   color: #5c616c;
   background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
@@ -154,7 +154,7 @@ stage {
 .popup-menu #notification StEntry:insensitive, #menu-search-entry:insensitive {
   color: rgba(92, 97, 108, 0.55);
   background-color: #fdfdfe;
-  border-color: 1px solid rgba(232, 233, 234, 0.516);
+  border-color: 1px solid rgba(227, 228, 229, 0.5325);
   box-shadow: inset 0 2px 4px rgba(253, 253, 254, 0.05);
 }
 
@@ -240,7 +240,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-slider-menu-item,
 .slider {
   -slider-height: 4px;
-  -slider-background-color: rgba(0, 0, 0, 0.12);
+  -slider-background-color: rgba(0, 0, 0, 0.15);
   -slider-border-color: rgba(0, 0, 0, 0);
   -slider-active-background-color: #5294e2;
   -slider-active-border-color: rgba(0, 0, 0, 0);
@@ -770,7 +770,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .about-scrollBox {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 2px;
   background-color: #ffffff;
   padding: 4px;
@@ -1323,7 +1323,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 10px;
   transition-duration: 300;
   background-color: #fafbfc;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .menu-favorites-button {
@@ -1768,7 +1768,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 0;
   border: none;
   -slider-height: 0.5em;
-  -slider-background-color: rgba(0, 0, 0, 0.12);
+  -slider-background-color: rgba(0, 0, 0, 0.15);
   -slider-border-color: rgba(0, 0, 0, 0);
   -slider-active-background-color: #5294e2;
   -slider-active-border-color: rgba(0, 0, 0, 0);
