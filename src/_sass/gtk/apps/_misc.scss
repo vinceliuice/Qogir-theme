@@ -565,19 +565,40 @@ list.tilix-session-sidebar {
 // Pamac
 //
 window.background.csd {
-  stack {
-    stack {
-      scrolledwindow:dir(ltr).frame {
-        border: none;
+
+  > box.vertical > stack {
+    > box.horizontal {
+      > list {
+        border-right: 1px solid $borders_color;
+      }
+
+      > box.vertical > stack {
+        > scrolledwindow.frame {
+          border: none;
+        }
+      }
+
+      > revealer > stack {
+        > list {
+          border-right: 1px solid $borders_color;
+        }
+
+        > scrolledwindow {
+          > viewport.frame {
+            > list {
+              border-right: 1px solid $borders_color;
+            }
+          }
+        }
       }
     }
-  }
 
-  stack {
-    revealer {
-      stack {
-        list:dir(ltr) {
-          border-right: 1px solid $borders_color;
+    > box.horizontal > revealer > stack {
+      > scrolledwindow {
+        > viewport.frame {
+          > list {
+            border-right: 1px solid $borders_color;
+          }
         }
       }
     }

@@ -6406,11 +6406,23 @@ list.tilix-session-sidebar button.tilix-sidebar-close-button:active, list.tilix-
   background-image: image(#ec1b22);
 }
 
-window.background.csd stack stack scrolledwindow:dir(ltr).frame {
+window.background.csd > box.vertical > stack > box.horizontal > list {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+window.background.csd > box.vertical > stack > box.horizontal > box.vertical > stack > scrolledwindow.frame {
   border: none;
 }
 
-window.background.csd stack revealer stack list:dir(ltr) {
+window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > list {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > scrolledwindow > viewport.frame > list {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > scrolledwindow > viewport.frame > list {
   border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
