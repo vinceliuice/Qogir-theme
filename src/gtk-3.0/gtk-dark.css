@@ -5140,7 +5140,7 @@ button.documents-favorite:active:hover {
   transition: opacity 0.2s ease-out;
 }
 
-window.background.csd overlay > grid.horizontal frame:dir(ltr) > border {
+window.background.csd > overlay > grid.horizontal > frame:dir(ltr) > border {
   border-top-width: 0;
   border-left-width: 0;
   border-bottom-width: 0;
@@ -6207,7 +6207,7 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text {
   background-color: transparent;
-  color: #aaaaaa;
+  color: #D3DAE3;
 }
 
 /***************

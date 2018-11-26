@@ -240,7 +240,7 @@ window.background:not(.csd) {
 
   headerbar.titlebar { // >= nightly 60.0a1(2018-02-02)
     // FIXME: no backdrop state, no maximized state, bullshit...
-	padding-left: 10px;
+	  padding-left: 10px;
     padding-right: 10px;
     &.default-decoration { @extend %csd_circle_titlebutton; }
   }
@@ -286,7 +286,7 @@ window.background:not(.csd) {
 
       text {
         background-color: transparent;
-        color: if($variant =='light', #242424, #aaaaaa);
+        color: if($variant =='light', $text_color, $text_color);
         &:selected,
         &:selected:focus,
         selection { @extend %selected_items; }

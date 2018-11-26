@@ -483,8 +483,8 @@ button.documents-favorite:active:hover {
 // Gnome Contacts
 //
 window.background.csd {
-  overlay > grid.horizontal {
-    frame:dir(ltr) > border { // Removed ugly borders
+  > overlay > grid.horizontal {
+    > frame:dir(ltr) > border { // Removed ugly borders
       border-top-width: 0;
       border-left-width: 0;
       border-bottom-width: 0;
