@@ -2234,7 +2234,9 @@ switch {
                   (':checked:disabled','-checked-insensitive') {
     .#{$w}#{$s},
     #{$w}#{$s},
+    .view #{$w}#{$s}:hover,
     treeview.#{$w}#{$s} {
+      background-color: transparent;
       -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}#{$asset_suffix}.png"),
                                     url("assets/#{$a}#{$as}#{$asset_suffix}@2.png"));
     }
@@ -2254,6 +2256,7 @@ switch {
     treeview.#{$w}#{$s}:selected,
     row:selected #{$w}#{$s},
     infobar #{$w}#{$s} {
+      background-color: transparent;
       -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}-selected.png"),
                                     url("assets/#{$a}#{$as}-selected@2.png"));
     }
