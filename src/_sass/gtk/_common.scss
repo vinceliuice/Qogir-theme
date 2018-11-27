@@ -2236,10 +2236,11 @@ switch {
     #{$w}#{$s},
     .view #{$w}#{$s}:hover,
     treeview.#{$w}#{$s} {
-      background-color: transparent;
       -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}#{$asset_suffix}.png"),
                                     url("assets/#{$a}#{$as}#{$asset_suffix}@2.png"));
     }
+
+    .view #{$w}#{$s}:hover { background-color: transparent; }
 
     .osd,
     %osd_check_radio {
@@ -2256,7 +2257,6 @@ switch {
     treeview.#{$w}#{$s}:selected,
     row:selected #{$w}#{$s},
     infobar #{$w}#{$s} {
-      background-color: transparent;
       -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}-selected.png"),
                                     url("assets/#{$a}#{$as}-selected@2.png"));
     }
@@ -2286,13 +2286,13 @@ switch {
 }
 
 checkbutton, radiobutton {
-    // this is for a nice focus on check and radios text
-    &.text-button {
-      padding: 2px 0;
-      outline-offset: 0;
-      &:hover { color: darken($fg_color, 15%); }
-      &:disabled { color: $insensitive_fg_color; }
-    }
+  // this is for a nice focus on check and radios text
+  &.text-button {
+    padding: 2px 0;
+    outline-offset: 0;
+    &:hover { color: darken($fg_color, 15%); }
+    &:disabled { color: $insensitive_fg_color; }
+  }
 
   label:not(:only-child) {
     &:first-child { margin-left: 4px; }

@@ -3023,8 +3023,11 @@ headerbar switch:checked:disabled,
 check,
 .view check:hover,
 treeview.check {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked.png"), url("assets/checkbox-unchecked@2.png"));
+}
+
+.view check:hover {
+  background-color: transparent;
 }
 
 .osd check,
@@ -3037,7 +3040,6 @@ menuitem check:hover,
 treeview.check:selected,
 row:selected check,
 infobar check {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-selected.png"), url("assets/checkbox-unchecked-selected@2.png"));
 }
 
@@ -3045,8 +3047,11 @@ infobar check {
 check:disabled,
 .view check:disabled:hover,
 treeview.check:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-insensitive.png"), url("assets/checkbox-unchecked-insensitive@2.png"));
+}
+
+.view check:disabled:hover {
+  background-color: transparent;
 }
 
 .osd check:disabled,
@@ -3059,7 +3064,6 @@ menuitem check:disabled:hover,
 treeview.check:disabled:selected,
 row:selected check:disabled,
 infobar check:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-insensitive-selected.png"), url("assets/checkbox-unchecked-insensitive-selected@2.png"));
 }
 
@@ -3067,8 +3071,11 @@ infobar check:disabled {
 check:indeterminate,
 .view check:indeterminate:hover,
 treeview.check:indeterminate {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed.png"), url("assets/checkbox-mixed@2.png"));
+}
+
+.view check:indeterminate:hover {
+  background-color: transparent;
 }
 
 .osd check:indeterminate,
@@ -3081,7 +3088,6 @@ menuitem check:indeterminate:hover,
 treeview.check:indeterminate:selected,
 row:selected check:indeterminate,
 infobar check:indeterminate {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-selected.png"), url("assets/checkbox-mixed-selected@2.png"));
 }
 
@@ -3089,8 +3095,11 @@ infobar check:indeterminate {
 check:indeterminate:disabled,
 .view check:indeterminate:disabled:hover,
 treeview.check:indeterminate:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-insensitive.png"), url("assets/checkbox-mixed-insensitive@2.png"));
+}
+
+.view check:indeterminate:disabled:hover {
+  background-color: transparent;
 }
 
 .osd check:indeterminate:disabled,
@@ -3103,7 +3112,6 @@ menuitem check:indeterminate:disabled:hover,
 treeview.check:indeterminate:disabled:selected,
 row:selected check:indeterminate:disabled,
 infobar check:indeterminate:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-insensitive-selected.png"), url("assets/checkbox-mixed-insensitive-selected@2.png"));
 }
 
@@ -3111,8 +3119,11 @@ infobar check:indeterminate:disabled {
 check:checked,
 .view check:checked:hover,
 treeview.check:checked {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked.png"), url("assets/checkbox-checked@2.png"));
+}
+
+.view check:checked:hover {
+  background-color: transparent;
 }
 
 .osd check:checked,
@@ -3125,7 +3136,6 @@ menuitem check:checked:hover,
 treeview.check:checked:selected,
 row:selected check:checked,
 infobar check:checked {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-selected.png"), url("assets/checkbox-checked-selected@2.png"));
 }
 
@@ -3133,8 +3143,11 @@ infobar check:checked {
 check:checked:disabled,
 .view check:checked:disabled:hover,
 treeview.check:checked:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive.png"), url("assets/checkbox-checked-insensitive@2.png"));
+}
+
+.view check:checked:disabled:hover {
+  background-color: transparent;
 }
 
 .osd check:checked:disabled,
@@ -3147,7 +3160,6 @@ menuitem check:checked:disabled:hover,
 treeview.check:checked:disabled:selected,
 row:selected check:checked:disabled,
 infobar check:checked:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive-selected.png"), url("assets/checkbox-checked-insensitive-selected@2.png"));
 }
 
@@ -3155,8 +3167,11 @@ infobar check:checked:disabled {
 radio,
 .view radio:hover,
 treeview.radio {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked.png"), url("assets/radio-unchecked@2.png"));
+}
+
+.view radio:hover {
+  background-color: transparent;
 }
 
 .osd radio,
@@ -3169,7 +3184,6 @@ menuitem radio:hover,
 treeview.radio:selected,
 row:selected radio,
 infobar radio {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-selected.png"), url("assets/radio-unchecked-selected@2.png"));
 }
 
@@ -3177,8 +3191,11 @@ infobar radio {
 radio:disabled,
 .view radio:disabled:hover,
 treeview.radio:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-insensitive.png"), url("assets/radio-unchecked-insensitive@2.png"));
+}
+
+.view radio:disabled:hover {
+  background-color: transparent;
 }
 
 .osd radio:disabled,
@@ -3191,7 +3208,6 @@ menuitem radio:disabled:hover,
 treeview.radio:disabled:selected,
 row:selected radio:disabled,
 infobar radio:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-insensitive-selected.png"), url("assets/radio-unchecked-insensitive-selected@2.png"));
 }
 
@@ -3199,8 +3215,11 @@ infobar radio:disabled {
 radio:indeterminate,
 .view radio:indeterminate:hover,
 treeview.radio:indeterminate {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed.png"), url("assets/radio-mixed@2.png"));
+}
+
+.view radio:indeterminate:hover {
+  background-color: transparent;
 }
 
 .osd radio:indeterminate,
@@ -3213,7 +3232,6 @@ menuitem radio:indeterminate:hover,
 treeview.radio:indeterminate:selected,
 row:selected radio:indeterminate,
 infobar radio:indeterminate {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-selected.png"), url("assets/radio-mixed-selected@2.png"));
 }
 
@@ -3221,8 +3239,11 @@ infobar radio:indeterminate {
 radio:indeterminate:disabled,
 .view radio:indeterminate:disabled:hover,
 treeview.radio:indeterminate:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive.png"), url("assets/radio-mixed-insensitive@2.png"));
+}
+
+.view radio:indeterminate:disabled:hover {
+  background-color: transparent;
 }
 
 .osd radio:indeterminate:disabled,
@@ -3235,7 +3256,6 @@ menuitem radio:indeterminate:disabled:hover,
 treeview.radio:indeterminate:disabled:selected,
 row:selected radio:indeterminate:disabled,
 infobar radio:indeterminate:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive-selected.png"), url("assets/radio-mixed-insensitive-selected@2.png"));
 }
 
@@ -3243,8 +3263,11 @@ infobar radio:indeterminate:disabled {
 radio:checked,
 .view radio:checked:hover,
 treeview.radio:checked {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked.png"), url("assets/radio-checked@2.png"));
+}
+
+.view radio:checked:hover {
+  background-color: transparent;
 }
 
 .osd radio:checked,
@@ -3257,7 +3280,6 @@ menuitem radio:checked:hover,
 treeview.radio:checked:selected,
 row:selected radio:checked,
 infobar radio:checked {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-selected.png"), url("assets/radio-checked-selected@2.png"));
 }
 
@@ -3265,8 +3287,11 @@ infobar radio:checked {
 radio:checked:disabled,
 .view radio:checked:disabled:hover,
 treeview.radio:checked:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-insensitive.png"), url("assets/radio-checked-insensitive@2.png"));
+}
+
+.view radio:checked:disabled:hover {
+  background-color: transparent;
 }
 
 .osd radio:checked:disabled,
@@ -3279,7 +3304,6 @@ menuitem radio:checked:disabled:hover,
 treeview.radio:checked:disabled:selected,
 row:selected radio:checked:disabled,
 infobar radio:checked:disabled {
-  background-color: transparent;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-insensitive-selected.png"), url("assets/radio-checked-insensitive-selected@2.png"));
 }
 
