@@ -4,7 +4,6 @@
  **********************/
 
 // Wingpanel
-
 .panel {
   background-color: $panel_bg;
   transition: all 100ms ease-in-out;
@@ -314,4 +313,3 @@ scale.warmth trough {
   background-image: linear-gradient(to right, $suggested_color, $destructive_color);
   box-shadow: inset 0 0 0 1px rgba($borders_color, 0.25);
 }
-
