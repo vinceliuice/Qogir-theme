@@ -386,30 +386,6 @@ popover.background.places-menu {
 
   separator { background-color: rgba($panel_fg, 0.12); }
 
-  // Budgie styled Gtk Menus
-  menubar,
-  .menubar {
-    box-shadow: none;
-    color: $panel_fg;
-    background-image: none;
-    background-color: transparent;
-
-    > menuitem {
-      border: none;
-      background-image: none;
-      border-radius: 0;
-
-      &:hover {
-        background-color: rgba(white, 0.1);
-        color: $selected_fg_color;
-        box-shadow: inset 0 -2px $selected_bg_color, 0 1px $selected_bg_color;
-      }
-      &:disabled {
-        color: transparentize($panel_fg, 0.6);
-      }
-    }
-  }
-
   // used to indicate unread notifications
   .alert { color: $success_color; }
 
@@ -1119,8 +1095,24 @@ button.flat.-panel-icon-button {
 }
 
 // menubar-style'ed app menu
-menubar.-vala-panel-background > menuitem { // override global values
-  padding: 0 4px;
-  font-weight: 700;
-}
+menubar.-vala-panel-background,
+menubar.-vala-panel-appmenu-private { // vala-panel-appmenu
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: $panel_fg;
 
+  > menuitem {
+    border: none;
+    font-weight: normal;
+    border-radius: 0;
+
+    &:hover {
+      background-color: rgba(white, 0.1);
+      color: $selected_fg_color;
+      box-shadow: inset 0 -2px $selected_bg_color, 0 1px $selected_bg_color;
+    }
+
+    &:disabled { color: transparentize($panel_fg, 0.6); }
+  }
+}

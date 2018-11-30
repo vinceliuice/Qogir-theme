@@ -22,7 +22,6 @@ terminal-window,
 //
 // Nautilus
 //
-
 %nautilus_backimage {
   background-image: -gtk-scaled(url("assets/backimage#{$asset_suffix}.png"), url("assets/backimage#{$asset_suffix}@2.png"));
   background-repeat: no-repeat;
