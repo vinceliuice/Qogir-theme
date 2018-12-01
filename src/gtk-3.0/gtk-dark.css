@@ -4543,7 +4543,7 @@ decoration:backdrop {
 
 tooltip.csd decoration {
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 transparent;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
 }
 
 messagedialog.csd decoration {
@@ -8455,9 +8455,6 @@ headerbar.titlebar entry.pathbar {
 }
 
 headerbar.titlebar button.flat.image-button.toggle, headerbar.titlebar button.image-button.toggle.sidebar-button, headerbar.titlebar button.image-button.toggle.budgie-menu-launcher, headerbar.titlebar .budgie-panel .image-button.toggle#tasklist-button, .budgie-panel headerbar.titlebar .image-button.toggle#tasklist-button {
-  min-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
   margin-top: 9px;
   margin-bottom: 10px;
 }
