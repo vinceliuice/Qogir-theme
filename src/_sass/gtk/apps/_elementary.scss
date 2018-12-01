@@ -41,14 +41,14 @@
 
     .menuitem {
       font-weight: normal;
-//      text-shadow: none;
-//      -gtk-icon-shadow: none;
+      // text-shadow: none;
+      // -gtk-icon-shadow: none;
     }
 
-    .window-frame.menu.csd,
-    .window-frame.popup.csd {
-//      box-shadow: none;
-    }
+    // .window-frame.menu.csd,
+    // .window-frame.popup.csd {
+    //   box-shadow: none;
+    // }
   }
 
   .menubar > .menuitem {
@@ -56,8 +56,8 @@
     &:hover { background-color: transparent; }
   }
 
-//  .window-frame.menu.csd,
-//  .window-frame.popup.csd { box-shadow: none; }
+ // .window-frame.menu.csd,
+ // .window-frame.popup.csd { box-shadow: none; }
 
   popover {
     padding: 2px 4px;
@@ -189,18 +189,18 @@ BirdieWidgetsTweetList * {
   background-color: transparent;
 }
 
-
 // Marlin / Pantheon Files
 MarlinViewWindow {
-
   *:selected, *:selected:focus {
     color: $selected_fg_color;
     background-color: $selected_bg_color;
     outline-color: transparent;
   }
+
   GtkIconView.view:selected {
     &, &:focus, &:hover, &:focus:hover { background-color: transparent; }
   }
+
   FMListView, FMColumnView { outline-color: transparent; }
 }
 
@@ -210,18 +210,12 @@ MarlinViewWindow {
   padding-right: 4px;
 
   @include entry(header-normal);
-
   &:focus { @include entry(header-focus) }
-
   &:disabled { @include entry(header-insensitive) }
-
-  &:active, &:checked {
-    color: $selected_bg_color;
-  }
+  &:active, &:checked { color: $selected_bg_color; }
 }
 
 treeview.view {
-
   &.sidebar {
     color: $dark_sidebar_fg;
     background-color: $dark_sidebar_bg;
