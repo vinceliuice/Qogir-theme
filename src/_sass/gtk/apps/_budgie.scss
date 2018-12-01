@@ -1012,88 +1012,6 @@ box.vertical > stack > box.vertical {
   }
 }
 
- /**************
-  * Vala-Panel *
-  **************/
-
-// That app does not have any position specific style-classes,
-// so embed indicators at the bottom of tasklist buttons as default.
-// Then that app looks quite weird in vertical layout at all.
-window#ValaPanel.background { // solid-mode
-  background-color: $panel_bg;
-  color: $panel_fg;
-
-  decoration { all: unset; } // unset all decorations
-
-  widget.-vala-panel-background > separator { // separator applet
-    background-color: $panel_bg;
-  }
-}
-
-button.flat.-panel-button { // generic panel buttons
-  border-radius: 0;
-  color: $panel_fg;
-  font-weight: 700;
-  border: none;
-
-  &:hover {
-    color: $selected_fg_color;
-    background-color: rgba($selected_fg_color, 0.1);
-  }
-
-  &:active { color: $selected_fg_color; }
-  &:checked {
-    background-color: transparent;
-    color: $selected_fg_color;
-    box-shadow: inset 0 -2px $selected_bg_color;
-    &:hover {
-      background-image: radial-gradient(circle farthest-corner at center,
-                          rgba($panel_fg, 0) 100%,
-                          transparent 0%),
-                          image(rgba($panel_fg, 0));
-    }
-  }
-  &:disabled { color: rgba($panel_fg, 0.5); }
-}
-
-button.flat.-panel-icon-button {
-  @extend %budgie_icon_tasklist_button;
-
-  &:hover {
-    box-shadow: inset 0 -2px rgba($panel_fg, 0.4);
-  }
-  &:active,
-  &:checked {
-    box-shadow: inset 0 -2px $selected_bg_color;
-  }
-}
-
-.unpinned button.flat.-panel-icon-button {
-  border-radius: 0;
-
-  &:hover { -gtk-icon-effect: highlight; }
-  &:hover,
-  &:active,
-  &:checked {
-    box-shadow: inset 0 -2px $selected_bg_color;
-  }
-}
-
-.pinned button.flat.-panel-icon-button.running {
-  border-radius: 0;
-
-  > image {
-    background-position: bottom center;
-  }
-
-  &:hover { -gtk-icon-effect: highlight; }
-  &:hover,
-  &:active,
-  &:checked {
-    box-shadow: inset 0 -2px $selected_bg_color;
-  }
-}
-
 // menubar-style'ed app menu
 menubar.-vala-panel-background,
 menubar.-vala-panel-appmenu-private { // vala-panel-appmenu
@@ -1104,8 +1022,8 @@ menubar.-vala-panel-appmenu-private { // vala-panel-appmenu
 
   > menuitem {
     border: none;
-    font-weight: normal;
     border-radius: 0;
+    font-weight: normal;
 
     &:hover {
       background-color: rgba(white, 0.1);
