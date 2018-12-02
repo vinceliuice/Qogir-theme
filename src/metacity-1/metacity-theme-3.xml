@@ -27,7 +27,7 @@
 	<distance name="title_vertical_pad" value="12" />
 	<aspect_ratio name="button" value="1.0" />
 	<border name="title_border" left="10" right="10" top="0" bottom="0" />
-	<border name="button_border" left="0" right="0" top="0" bottom="0" />
+	<border name="button_border" left="0" right="0" top="2" bottom="0" />
 </frame_geometry>
 
 <!-- Unfocused window -->
@@ -39,7 +39,7 @@
 	<distance name="right_titlebar_edge" value="0"/>
 	<distance name="title_vertical_pad" value="12" />
 	<border name="title_border" left="10" right="10" top="0" bottom="0" />
-	<border name="button_border" left="0" right="0" top="0" bottom="0" />
+	<border name="button_border" left="0" right="0" top="2" bottom="0" />
 </frame_geometry>
 
 <!-- Maximized window -->
@@ -81,7 +81,7 @@
 	<distance name="left_width" value="0" />
 	<distance name="right_width" value="0" />
 	<distance name="bottom_height" value="0" />
-	<distance name="title_vertical_pad" value="1" />
+	<distance name="title_vertical_pad" value="0" />
 	<border name="title_border" left="12" right="12" top="0" bottom="0" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0"/>
 </frame_geometry>
@@ -91,7 +91,7 @@
 	<distance name="left_width" value="0" />
 	<distance name="right_width" value="0" />
 	<distance name="bottom_height" value="0" />
-	<distance name="title_vertical_pad" value="8" />
+	<distance name="title_vertical_pad" value="0" />
 	<border name="title_border" left="0" right="0" top="0" bottom="0" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0" />
 </frame_geometry>
