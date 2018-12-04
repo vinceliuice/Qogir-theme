@@ -173,11 +173,33 @@ install_square() {
   echo -e "Specify theme with square titlebuttons ..."
 }
 
+restore_square() {
+  cd ${SRC_DIR}/src/_sass
+  [[ -d _variables.scss.bak ]] && rm -rf _variables.scss
+  mv _variables.scss.bak _variables.scss
+
+  cd ${SRC_DIR}/src/_sass/gtk
+  [[ -d _common.scss.bak ]] && rm -rf _common.scss
+  mv _common.scss.bak _common.scss
+
+  cd ${SRC_DIR}/src/_sass/gtk/apps
+  [[ -d _misc.scss.bak ]] && rm -rf _misc.scss
+  cp -an _misc.scss.bak _misc.scss
+  echo -e "Restore scss files ..."
+}
+
 install_img() {
   cd ${SRC_DIR}/src/_sass/gtk/apps
   cp -an _gnome.scss _gnome.scss.bak
   sed -i "s/$NBG_N/$NBG_I/g" _gnome.scss
   echo -e "Specify theme with nautilus background image ..."
+}
+
+restore_img() {
+  cd ${SRC_DIR}/src/_sass/gtk/apps
+  [[ -d _gnome.scss.bak ]] && rm -rf _gnome.scss
+  mv _gnome.scss.bak _gnome.scss
+  echo -e "Restore scss files ..."
 }
 
 while [[ $# -gt 0 ]]; do
@@ -269,15 +291,15 @@ if [[ "${square:-}" != 'true' && "${image:-}" != 'true' ]]; then
 fi
 
 if [[ "${square:-}" == 'true' && "${image:-}" != 'true' ]]; then
-  install_package && install_square && parse_sass && install_theme
+  install_package && install_square && parse_sass && install_theme && restore_square && parse_sass
 fi
 
 if [[ "${square:-}" != 'true' && "${image:-}" == 'true'  ]]; then
-  install_package && install_img && parse_sass && install_theme
+  install_package && install_img && parse_sass && install_theme && restore_img && parse_sass
 fi
 
 if [[ "${square:-}" == 'true' && "${image:-}" == 'true' ]]; then
-  install_package && install_square && install_img && parse_sass && install_theme
+  install_package && install_square && install_img && parse_sass && install_theme && restore_square && restore_img && parse_sass
 fi
 
 echo
