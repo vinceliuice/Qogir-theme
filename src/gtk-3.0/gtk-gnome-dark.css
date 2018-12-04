@@ -95,6 +95,10 @@ textview border {
   background-color: #2d2f38;
 }
 
+iconview:hover, iconview:active, iconview:selected {
+  border-radius: 2px;
+}
+
 rubberband, flowbox rubberband, treeview.view rubberband, window.thunar .sidebar treeview.view rubberband, .content-view rubberband, XfdesktopIconView.view .rubberband,
 .rubberband {
   border: 1px solid #68a2e6;
