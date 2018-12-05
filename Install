@@ -184,7 +184,7 @@ restore_square() {
 
   cd ${SRC_DIR}/src/_sass/gtk/apps
   [[ -d _misc.scss.bak ]] && rm -rf _misc.scss
-  cp -an _misc.scss.bak _misc.scss
+  mv _misc.scss.bak _misc.scss
   echo -e "Restore scss files ..."
 }
 
