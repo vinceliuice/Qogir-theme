@@ -7976,17 +7976,8 @@ window#ValaPanel.background {
   color: #D3DAE3;
 }
 
-window#ValaPanel.background decoration {
-  all: unset;
-}
-
 window#ValaPanel.background widget.-vala-panel-background > separator {
   background: none;
-}
-
-window#ValaPanel.background .csd.popup decoration {
-  border-radius: 0;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 button.flat.-panel-button, button.-panel-button.sidebar-button, button.-panel-button.budgie-menu-launcher, .budgie-panel .-panel-button#tasklist-button,
