@@ -406,7 +406,6 @@ popover.background.places-menu {
   &.vertical #tasklist-button { min-height: 32px; }
 
   // Icon Tasklist
-  @at-root %budgie_icon_tasklist_button,
   button.flat.launcher {
     padding: 0;
     @extend %underscores;
@@ -451,6 +450,7 @@ popover.background.places-menu {
     min-height: 16px;
     padding: 0;
     border-radius: 0;
+    border: none;
     background-position: center center;
 
     > image { opacity: 0.87; }
@@ -1009,6 +1009,83 @@ box.vertical > stack > box.vertical {
     }
 
     > button.image-button.titlebutton { padding: 0 3px; }
+  }
+}
+
+//
+// vala-panel
+//
+// That app does not have any position specific style-classes,
+// so embed indicators at the bottom of tasklist buttons as default.
+// Then that app looks quite weird in vertical layout at all.
+
+window#ValaPanel.background {
+  background-color: $panel_bg;
+  border: none;
+  color: $panel_fg;
+
+  decoration { all: unset; } // unset all decorations
+
+  widget.-vala-panel-background > separator { // separator applet
+    background: none;
+  }
+
+  .csd.popup decoration {
+    border-radius: 0;
+    box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
+  }
+}
+
+button.flat.-panel-button,
+button#tasklist-button.toggle.flat,
+// tasklist-arrow-button.toggle.flat.-panel-flat-button, // xfce tasklist button
+button.flat.-panel-icon-button {
+  @extend %budgie_icon_tasklist_button;
+  color: $panel_fg;
+
+  &:hover {
+    box-shadow: inset 0 -2px rgba($selected_bg_color, 0.5);
+    background: none;
+    color: if($variant == 'light', darken($panel_fg, 5%), $selected_fg_color);
+    transition: border 0, $shadow_transition, color $shorter_duration $deceleration_curve;
+  }
+  &:active,
+  &:checked {
+    box-shadow: inset 0 -2px $selected_bg_color;
+    color: if($variant == 'light', darken($panel_fg, 5%), $selected_fg_color);
+    background: none;
+  }
+}
+
+.unpinned button.flat.-panel-icon-button {
+  border-radius: 0;
+
+  &:hover {
+    -gtk-icon-effect: highlight;
+  }
+  &:hover,
+  &:active,
+  &:checked {
+    box-shadow: inset 0 -2px $selected_bg_color;
+    color: if($variant == 'light', darken($panel_fg, 5%), $selected_fg_color);
+  }
+}
+
+.pinned button.flat.-panel-icon-button.running {
+  border-radius: 0;
+
+  > image {
+    background-position: bottom center;
+  }
+
+  &:hover {
+    -gtk-icon-effect: highlight;
+  }
+  &:hover,
+  &:active,
+  &:checked {
+    box-shadow: inset 0 -2px $selected_bg_color;
+    color: if($variant == 'light', darken($panel_fg, 5%), $selected_fg_color);
   }
 }
 

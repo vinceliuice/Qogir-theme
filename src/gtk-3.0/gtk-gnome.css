@@ -7148,83 +7148,57 @@ popover.background.places-menu row {
   min-height: 32px;
 }
 
-
-button.flat.launcher,
-button.launcher.sidebar-button,
-button.launcher.budgie-menu-launcher,
-.budgie-panel .launcher#tasklist-button {
+.budgie-panel button.flat.launcher, .budgie-panel button.launcher.sidebar-button, .budgie-panel button.launcher.budgie-menu-launcher, .budgie-panel .launcher#tasklist-button {
   padding: 0;
 }
 
-
-button.flat.launcher:not(:checked),
-button.launcher.sidebar-button:not(:checked),
-button.launcher.budgie-menu-launcher:not(:checked),
-.budgie-panel .launcher#tasklist-button:not(:checked) {
+.budgie-panel button.flat.launcher:not(:checked), .budgie-panel button.launcher.sidebar-button:not(:checked), .budgie-panel button.launcher.budgie-menu-launcher:not(:checked), .budgie-panel .launcher#tasklist-button:not(:checked) {
   color: #D3DAE3;
 }
 
-
-button.flat.launcher:not(:checked):hover,
-button.launcher.sidebar-button:not(:checked):hover,
-button.launcher.budgie-menu-launcher:not(:checked):hover,
-.budgie-panel .launcher#tasklist-button:not(:checked):hover,
-button.flat.launcher:not(:checked):active,
-button.launcher.sidebar-button:not(:checked):active,
-button.launcher.budgie-menu-launcher:not(:checked):active,
-.budgie-panel .launcher#tasklist-button:not(:checked):active {
+.budgie-panel button.flat.launcher:not(:checked):hover, .budgie-panel button.launcher.sidebar-button:not(:checked):hover, .budgie-panel button.launcher.budgie-menu-launcher:not(:checked):hover, .budgie-panel .launcher#tasklist-button:not(:checked):hover, .budgie-panel button.flat.launcher:not(:checked):active, .budgie-panel button.launcher.sidebar-button:not(:checked):active, .budgie-panel button.launcher.budgie-menu-launcher:not(:checked):active, .budgie-panel .launcher#tasklist-button:not(:checked):active {
   color: rgba(211, 218, 227, 0.8);
 }
 
-
-button.flat.launcher:not(:checked):disabled,
-button.launcher.sidebar-button:not(:checked):disabled,
-button.launcher.budgie-menu-launcher:not(:checked):disabled,
-.budgie-panel .launcher#tasklist-button:not(:checked):disabled {
+.budgie-panel button.flat.launcher:not(:checked):disabled, .budgie-panel button.launcher.sidebar-button:not(:checked):disabled, .budgie-panel button.launcher.budgie-menu-launcher:not(:checked):disabled, .budgie-panel .launcher#tasklist-button:not(:checked):disabled {
   color: rgba(211, 218, 227, 0.5);
 }
 
-.top .budgie-panel #tasklist-button, .budgie-panel .top #tasklist-button,
-.top button.flat.launcher, .top button.launcher.sidebar-button, .top button.launcher.budgie-menu-launcher {
+.top .budgie-panel #tasklist-button, .budgie-panel .top #tasklist-button, .top .budgie-panel button.flat.launcher, .budgie-panel .top button.flat.launcher, .top .budgie-panel button.launcher.sidebar-button, .budgie-panel .top button.launcher.sidebar-button, .top .budgie-panel button.launcher.budgie-menu-launcher, .budgie-panel .top button.launcher.budgie-menu-launcher {
   border-image: radial-gradient(circle closest-corner at center calc(1px), #5294e2 0%, transparent 0%) 0 0 0 0/0 0 0 0;
 }
 
-.top .budgie-panel #tasklist-button:checked, .budgie-panel .top #tasklist-button:checked,
-.top button.flat.launcher:checked, .top button.launcher.sidebar-button:checked, .top button.launcher.budgie-menu-launcher:checked {
+.top .budgie-panel #tasklist-button:checked, .budgie-panel .top #tasklist-button:checked, .top .budgie-panel button.flat.launcher:checked, .budgie-panel .top button.flat.launcher:checked, .top .budgie-panel button.launcher.sidebar-button:checked, .budgie-panel .top button.launcher.sidebar-button:checked, .top .budgie-panel button.launcher.budgie-menu-launcher:checked, .budgie-panel .top button.launcher.budgie-menu-launcher:checked {
   border-image: radial-gradient(circle closest-corner at center calc(1px), #5294e2 100%, transparent 0%) 2 0 0 0/2px 0 0 0;
 }
 
-.bottom .budgie-panel #tasklist-button, .budgie-panel .bottom #tasklist-button,
-.bottom button.flat.launcher, .bottom button.launcher.sidebar-button, .bottom button.launcher.budgie-menu-launcher {
+.bottom .budgie-panel #tasklist-button, .budgie-panel .bottom #tasklist-button, .bottom .budgie-panel button.flat.launcher, .budgie-panel .bottom button.flat.launcher, .bottom .budgie-panel button.launcher.sidebar-button, .budgie-panel .bottom button.launcher.sidebar-button, .bottom .budgie-panel button.launcher.budgie-menu-launcher, .budgie-panel .bottom button.launcher.budgie-menu-launcher {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 0%, transparent 0%) 0 0 0 0/0 0 0 0;
 }
 
-.bottom .budgie-panel #tasklist-button:checked, .budgie-panel .bottom #tasklist-button:checked,
-.bottom button.flat.launcher:checked, .bottom button.launcher.sidebar-button:checked, .bottom button.launcher.budgie-menu-launcher:checked {
+.bottom .budgie-panel #tasklist-button:checked, .budgie-panel .bottom #tasklist-button:checked, .bottom .budgie-panel button.flat.launcher:checked, .budgie-panel .bottom button.flat.launcher:checked, .bottom .budgie-panel button.launcher.sidebar-button:checked, .budgie-panel .bottom button.launcher.sidebar-button:checked, .bottom .budgie-panel button.launcher.budgie-menu-launcher:checked, .budgie-panel .bottom button.launcher.budgie-menu-launcher:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 100%, transparent 0%) 0 0 2 0/0 0 2px 0;
 }
 
-.left .budgie-panel #tasklist-button, .budgie-panel .left #tasklist-button,
-.left button.flat.launcher, .left button.launcher.sidebar-button, .left button.launcher.budgie-menu-launcher {
+.left .budgie-panel #tasklist-button, .budgie-panel .left #tasklist-button, .left .budgie-panel button.flat.launcher, .budgie-panel .left button.flat.launcher, .left .budgie-panel button.launcher.sidebar-button, .budgie-panel .left button.launcher.sidebar-button, .left .budgie-panel button.launcher.budgie-menu-launcher, .budgie-panel .left button.launcher.budgie-menu-launcher {
   border-image: radial-gradient(circle closest-corner at calc(1px) center, #5294e2 0%, transparent 0%) 0 0 0 0/0 0 0 0;
 }
 
-.left .budgie-panel #tasklist-button:checked, .budgie-panel .left #tasklist-button:checked,
-.left button.flat.launcher:checked, .left button.launcher.sidebar-button:checked, .left button.launcher.budgie-menu-launcher:checked {
+.left .budgie-panel #tasklist-button:checked, .budgie-panel .left #tasklist-button:checked, .left .budgie-panel button.flat.launcher:checked, .budgie-panel .left button.flat.launcher:checked, .left .budgie-panel button.launcher.sidebar-button:checked, .budgie-panel .left button.launcher.sidebar-button:checked, .left .budgie-panel button.launcher.budgie-menu-launcher:checked, .budgie-panel .left button.launcher.budgie-menu-launcher:checked {
   border-image: radial-gradient(circle closest-corner at calc(1px) center, #5294e2 100%, transparent 0%) 0 0 0 2/0 0 0 2px;
 }
 
-.right .budgie-panel #tasklist-button, .budgie-panel .right #tasklist-button,
-.right button.flat.launcher, .right button.launcher.sidebar-button, .right button.launcher.budgie-menu-launcher {
+.right .budgie-panel #tasklist-button, .budgie-panel .right #tasklist-button, .right .budgie-panel button.flat.launcher, .budgie-panel .right button.flat.launcher, .right .budgie-panel button.launcher.sidebar-button, .budgie-panel .right button.launcher.sidebar-button, .right .budgie-panel button.launcher.budgie-menu-launcher, .budgie-panel .right button.launcher.budgie-menu-launcher {
   border-image: radial-gradient(circle closest-corner at calc(100% - 1px) center, #5294e2 0%, transparent 0%) 0 0 0 0/0 0 0 0;
 }
 
-.right .budgie-panel #tasklist-button:checked, .budgie-panel .right #tasklist-button:checked,
-.right button.flat.launcher:checked, .right button.launcher.sidebar-button:checked, .right button.launcher.budgie-menu-launcher:checked {
+.right .budgie-panel #tasklist-button:checked, .budgie-panel .right #tasklist-button:checked, .right .budgie-panel button.flat.launcher:checked, .budgie-panel .right button.flat.launcher:checked, .right .budgie-panel button.launcher.sidebar-button:checked, .budgie-panel .right button.launcher.sidebar-button:checked, .right .budgie-panel button.launcher.budgie-menu-launcher:checked, .budgie-panel .right button.launcher.budgie-menu-launcher:checked {
   border-image: radial-gradient(circle closest-corner at calc(100% - 1px) center, #5294e2 100%, transparent 0%) 0 2 0 0/0 2px 0 0;
 }
 
-
+button.flat.-panel-button, button.-panel-button.sidebar-button, button.-panel-button.budgie-menu-launcher, .budgie-panel .-panel-button#tasklist-button,
+button#tasklist-button.toggle.flat, button#tasklist-button.toggle.sidebar-button, button#tasklist-button.toggle.budgie-menu-launcher, .budgie-panel #tasklist-button.toggle,
+button.flat.-panel-icon-button, button.-panel-icon-button.sidebar-button, button.-panel-icon-button.budgie-menu-launcher, .budgie-panel .-panel-icon-button#tasklist-button,
 button.flat.launcher,
 button.launcher.sidebar-button,
 button.launcher.budgie-menu-launcher,
@@ -7233,10 +7207,11 @@ button.launcher.budgie-menu-launcher,
   min-height: 16px;
   padding: 0;
   border-radius: 0;
+  border: none;
   background-position: center center;
 }
 
-
+button.flat.-panel-button > image, button.-panel-button.sidebar-button > image, button.-panel-button.budgie-menu-launcher > image, .budgie-panel .-panel-button#tasklist-button > image, button#tasklist-button.toggle.flat > image, button#tasklist-button.toggle.sidebar-button > image, button#tasklist-button.toggle.budgie-menu-launcher > image, .budgie-panel #tasklist-button.toggle > image, button.flat.-panel-icon-button > image, button.-panel-icon-button.sidebar-button > image, button.-panel-icon-button.budgie-menu-launcher > image, .budgie-panel .-panel-icon-button#tasklist-button > image,
 button.flat.launcher > image,
 button.launcher.sidebar-button > image,
 button.launcher.budgie-menu-launcher > image,
@@ -7244,7 +7219,9 @@ button.launcher.budgie-menu-launcher > image,
   opacity: 0.87;
 }
 
-
+button.flat.-panel-button:hover, button.-panel-button.sidebar-button:hover, button.-panel-button.budgie-menu-launcher:hover, .budgie-panel .-panel-button#tasklist-button:hover,
+button#tasklist-button.toggle.flat:hover, button#tasklist-button.toggle.sidebar-button:hover, button#tasklist-button.toggle.budgie-menu-launcher:hover, .budgie-panel #tasklist-button.toggle:hover,
+button.flat.-panel-icon-button:hover, button.-panel-icon-button.sidebar-button:hover, button.-panel-icon-button.budgie-menu-launcher:hover, .budgie-panel .-panel-icon-button#tasklist-button:hover,
 button.flat.launcher:hover,
 button.launcher.sidebar-button:hover,
 button.launcher.budgie-menu-launcher:hover,
@@ -7252,7 +7229,7 @@ button.launcher.budgie-menu-launcher:hover,
   -gtk-icon-effect: highlight;
 }
 
-
+button.flat.-panel-button:hover > image, button.-panel-button.sidebar-button:hover > image, button.-panel-button.budgie-menu-launcher:hover > image, .budgie-panel .-panel-button#tasklist-button:hover > image, button#tasklist-button.toggle.flat:hover > image, button#tasklist-button.toggle.sidebar-button:hover > image, button#tasklist-button.toggle.budgie-menu-launcher:hover > image, .budgie-panel #tasklist-button.toggle:hover > image, button.flat.-panel-icon-button:hover > image, button.-panel-icon-button.sidebar-button:hover > image, button.-panel-icon-button.budgie-menu-launcher:hover > image, .budgie-panel .-panel-icon-button#tasklist-button:hover > image,
 button.flat.launcher:hover > image,
 button.launcher.sidebar-button:hover > image,
 button.launcher.budgie-menu-launcher:hover > image,
@@ -7260,7 +7237,7 @@ button.launcher.budgie-menu-launcher:hover > image,
   opacity: 1.0;
 }
 
-
+button.flat.-panel-button:active > image, button.-panel-button.sidebar-button:active > image, button.-panel-button.budgie-menu-launcher:active > image, .budgie-panel .-panel-button#tasklist-button:active > image, button#tasklist-button.toggle.flat:active > image, button#tasklist-button.toggle.sidebar-button:active > image, button#tasklist-button.toggle.budgie-menu-launcher:active > image, .budgie-panel #tasklist-button.toggle:active > image, button.flat.-panel-icon-button:active > image, button.-panel-icon-button.sidebar-button:active > image, button.-panel-icon-button.budgie-menu-launcher:active > image, .budgie-panel .-panel-icon-button#tasklist-button:active > image,
 button.flat.launcher:active > image,
 button.launcher.sidebar-button:active > image,
 button.launcher.budgie-menu-launcher:active > image,
@@ -7268,7 +7245,9 @@ button.launcher.budgie-menu-launcher:active > image,
   opacity: 1.0;
 }
 
-
+button.flat.-panel-button:checked:hover, button.-panel-button.sidebar-button:checked:hover, button.-panel-button.budgie-menu-launcher:checked:hover, .budgie-panel .-panel-button#tasklist-button:checked:hover,
+button#tasklist-button.toggle.flat:checked:hover, button#tasklist-button.toggle.sidebar-button:checked:hover, button#tasklist-button.toggle.budgie-menu-launcher:checked:hover, .budgie-panel #tasklist-button.toggle:checked:hover,
+button.flat.-panel-icon-button:checked:hover, button.-panel-icon-button.sidebar-button:checked:hover, button.-panel-icon-button.budgie-menu-launcher:checked:hover, .budgie-panel .-panel-icon-button#tasklist-button:checked:hover,
 button.flat.launcher:checked:hover,
 button.launcher.sidebar-button:checked:hover,
 button.launcher.budgie-menu-launcher:checked:hover,
@@ -7276,7 +7255,7 @@ button.launcher.budgie-menu-launcher:checked:hover,
   -gtk-icon-effect: highlight;
 }
 
-
+button.flat.-panel-button:checked > image, button.-panel-button.sidebar-button:checked > image, button.-panel-button.budgie-menu-launcher:checked > image, .budgie-panel .-panel-button#tasklist-button:checked > image, button#tasklist-button.toggle.flat:checked > image, button#tasklist-button.toggle.sidebar-button:checked > image, button#tasklist-button.toggle.budgie-menu-launcher:checked > image, .budgie-panel #tasklist-button.toggle:checked > image, button.flat.-panel-icon-button:checked > image, button.-panel-icon-button.sidebar-button:checked > image, button.-panel-icon-button.budgie-menu-launcher:checked > image, .budgie-panel .-panel-icon-button#tasklist-button:checked > image,
 button.flat.launcher:checked > image,
 button.launcher.sidebar-button:checked > image,
 button.launcher.budgie-menu-launcher:checked > image,
@@ -7984,6 +7963,104 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 
 .budgie-panel box.titlebar.horizontal > button.image-button.titlebutton {
   padding: 0 3px;
+}
+
+window#ValaPanel.background {
+  background-color: #21232b;
+  border: none;
+  color: #D3DAE3;
+}
+
+window#ValaPanel.background decoration {
+  all: unset;
+}
+
+window#ValaPanel.background widget.-vala-panel-background > separator {
+  background: none;
+}
+
+window#ValaPanel.background .csd.popup decoration {
+  border-radius: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+button.flat.-panel-button, button.-panel-button.sidebar-button, button.-panel-button.budgie-menu-launcher, .budgie-panel .-panel-button#tasklist-button,
+button#tasklist-button.toggle.flat,
+button#tasklist-button.toggle.sidebar-button,
+button#tasklist-button.toggle.budgie-menu-launcher,
+.budgie-panel #tasklist-button.toggle,
+button.flat.-panel-icon-button,
+button.-panel-icon-button.sidebar-button,
+button.-panel-icon-button.budgie-menu-launcher,
+.budgie-panel .-panel-icon-button#tasklist-button {
+  color: #D3DAE3;
+}
+
+button.flat.-panel-button:hover, button.-panel-button.sidebar-button:hover, button.-panel-button.budgie-menu-launcher:hover, .budgie-panel .-panel-button#tasklist-button:hover,
+button#tasklist-button.toggle.flat:hover,
+button#tasklist-button.toggle.sidebar-button:hover,
+button#tasklist-button.toggle.budgie-menu-launcher:hover,
+.budgie-panel #tasklist-button.toggle:hover,
+button.flat.-panel-icon-button:hover,
+button.-panel-icon-button.sidebar-button:hover,
+button.-panel-icon-button.budgie-menu-launcher:hover,
+.budgie-panel .-panel-icon-button#tasklist-button:hover {
+  box-shadow: inset 0 -2px rgba(82, 148, 226, 0.5);
+  background: none;
+  color: #c3cdd9;
+  transition: border 0, box-shadow 180ms cubic-bezier(0, 0, 0.2, 1), color 180ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+button.flat.-panel-button:active, button.-panel-button.sidebar-button:active, button.-panel-button.budgie-menu-launcher:active, .budgie-panel .-panel-button#tasklist-button:active, button.flat.-panel-button:checked, button.-panel-button.sidebar-button:checked, button.-panel-button.budgie-menu-launcher:checked, .budgie-panel .-panel-button#tasklist-button:checked,
+button#tasklist-button.toggle.flat:active,
+button#tasklist-button.toggle.sidebar-button:active,
+button#tasklist-button.toggle.budgie-menu-launcher:active,
+.budgie-panel #tasklist-button.toggle:active,
+button#tasklist-button.toggle.flat:checked,
+button#tasklist-button.toggle.sidebar-button:checked,
+button#tasklist-button.toggle.budgie-menu-launcher:checked,
+.budgie-panel #tasklist-button.toggle:checked,
+button.flat.-panel-icon-button:active,
+button.-panel-icon-button.sidebar-button:active,
+button.-panel-icon-button.budgie-menu-launcher:active,
+.budgie-panel .-panel-icon-button#tasklist-button:active,
+button.flat.-panel-icon-button:checked,
+button.-panel-icon-button.sidebar-button:checked,
+button.-panel-icon-button.budgie-menu-launcher:checked,
+.budgie-panel .-panel-icon-button#tasklist-button:checked {
+  box-shadow: inset 0 -2px #5294e2;
+  color: #c3cdd9;
+  background: none;
+}
+
+.unpinned button.flat.-panel-icon-button, .unpinned button.-panel-icon-button.sidebar-button, .unpinned button.-panel-icon-button.budgie-menu-launcher, .unpinned .budgie-panel .-panel-icon-button#tasklist-button, .budgie-panel .unpinned .-panel-icon-button#tasklist-button {
+  border-radius: 0;
+}
+
+.unpinned button.flat.-panel-icon-button:hover, .unpinned button.-panel-icon-button.sidebar-button:hover, .unpinned button.-panel-icon-button.budgie-menu-launcher:hover, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:hover, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:hover {
+  -gtk-icon-effect: highlight;
+}
+
+.unpinned button.flat.-panel-icon-button:hover, .unpinned button.-panel-icon-button.sidebar-button:hover, .unpinned button.-panel-icon-button.budgie-menu-launcher:hover, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:hover, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:hover, .unpinned button.flat.-panel-icon-button:active, .unpinned button.-panel-icon-button.sidebar-button:active, .unpinned button.-panel-icon-button.budgie-menu-launcher:active, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:active, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:active, .unpinned button.flat.-panel-icon-button:checked, .unpinned button.-panel-icon-button.sidebar-button:checked, .unpinned button.-panel-icon-button.budgie-menu-launcher:checked, .unpinned .budgie-panel .-panel-icon-button#tasklist-button:checked, .budgie-panel .unpinned .-panel-icon-button#tasklist-button:checked {
+  box-shadow: inset 0 -2px #5294e2;
+  color: #c3cdd9;
+}
+
+.pinned button.flat.-panel-icon-button.running, .pinned button.-panel-icon-button.running.sidebar-button, .pinned button.-panel-icon-button.running.budgie-menu-launcher, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button {
+  border-radius: 0;
+}
+
+.pinned button.flat.-panel-icon-button.running > image, .pinned button.-panel-icon-button.running.sidebar-button > image, .pinned button.-panel-icon-button.running.budgie-menu-launcher > image, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button > image, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button > image {
+  background-position: bottom center;
+}
+
+.pinned button.flat.-panel-icon-button.running:hover, .pinned button.-panel-icon-button.running.sidebar-button:hover, .pinned button.-panel-icon-button.running.budgie-menu-launcher:hover, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:hover, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:hover {
+  -gtk-icon-effect: highlight;
+}
+
+.pinned button.flat.-panel-icon-button.running:hover, .pinned button.-panel-icon-button.running.sidebar-button:hover, .pinned button.-panel-icon-button.running.budgie-menu-launcher:hover, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:hover, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:hover, .pinned button.flat.-panel-icon-button.running:active, .pinned button.-panel-icon-button.running.sidebar-button:active, .pinned button.-panel-icon-button.running.budgie-menu-launcher:active, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:active, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:active, .pinned button.flat.-panel-icon-button.running:checked, .pinned button.-panel-icon-button.running.sidebar-button:checked, .pinned button.-panel-icon-button.running.budgie-menu-launcher:checked, .pinned .budgie-panel .-panel-icon-button.running#tasklist-button:checked, .budgie-panel .pinned .-panel-icon-button.running#tasklist-button:checked {
+  box-shadow: inset 0 -2px #5294e2;
+  color: #c3cdd9;
 }
 
 menubar.-vala-panel-background,
