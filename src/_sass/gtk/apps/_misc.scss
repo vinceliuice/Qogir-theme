@@ -569,7 +569,7 @@ window.background.csd {
   > box.vertical > stack {
     > box.horizontal {
       > list {
-        border-right: 1px solid $borders_color;
+        border-right: 1px solid $solid_borders_color;
       }
 
       > box.vertical > stack {
@@ -580,13 +580,13 @@ window.background.csd {
 
       > revealer > stack {
         > list {
-          border-right: 1px solid $borders_color;
+          border-right: 1px solid $solid_borders_color;
         }
 
         > scrolledwindow {
           > viewport.frame {
             > list {
-              border-right: 1px solid $borders_color;
+              border-right: 1px solid $solid_borders_color;
             }
           }
         }
@@ -597,7 +597,7 @@ window.background.csd {
       > scrolledwindow {
         > viewport.frame {
           > list {
-            border-right: 1px solid $borders_color;
+            border-right: 1px solid $solid_borders_color;
           }
         }
       }

@@ -6464,7 +6464,7 @@ list.tilix-session-sidebar button.tilix-sidebar-close-button:active, list.tilix-
 }
 
 window.background.csd > box.vertical > stack > box.horizontal > list {
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-right: 1px solid #cad5df;
 }
 
 window.background.csd > box.vertical > stack > box.horizontal > box.vertical > stack > scrolledwindow.frame {
@@ -6472,15 +6472,15 @@ window.background.csd > box.vertical > stack > box.horizontal > box.vertical > s
 }
 
 window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > list {
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-right: 1px solid #cad5df;
 }
 
 window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > scrolledwindow > viewport.frame > list {
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-right: 1px solid #cad5df;
 }
 
 window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > scrolledwindow > viewport.frame > list {
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-right: 1px solid #cad5df;
 }
 
 /*****************
