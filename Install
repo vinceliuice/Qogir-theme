@@ -49,13 +49,13 @@ install() {
 
   echo "[Desktop Entry]" >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme" >> ${THEME_DIR}/index.theme
-  echo "Name=Qogir${menu}${color}" >> ${THEME_DIR}/index.theme
+  echo "Name=${name}${menu}${color}" >> ${THEME_DIR}/index.theme
   echo "Comment=An Clean Gtk+ theme based on Flat Design" >> ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8" >> ${THEME_DIR}/index.theme
   echo "" >> ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]" >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=Qogir${menu}${color}" >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=Qogir${menu}${color}" >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=${name}${menu}${color}" >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=${name}${menu}${color}" >> ${THEME_DIR}/index.theme
   echo "IconTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close" >> ${THEME_DIR}/index.theme
