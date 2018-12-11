@@ -924,7 +924,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning + entry
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.warning,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry.error + entry.warning,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.error {
-  border-left-color: rgba(0, 0, 0, 0.15);
+  border-left-color: rgba(255, 255, 255, 0.12);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:not(:last-child),
@@ -936,7 +936,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:l
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + entry {
-  border-left-color: rgba(0, 0, 0, 0.15);
+  border-left-color: rgba(255, 255, 255, 0.12);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + button,
@@ -955,7 +955,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry:drop(ac
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + entry {
-  border-left-color: rgba(0, 0, 0, 0.15);
+  border-left-color: rgba(255, 255, 255, 0.12);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + button,
@@ -974,7 +974,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.warning
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + entry {
-  border-left-color: rgba(0, 0, 0, 0.15);
+  border-left-color: rgba(255, 255, 255, 0.12);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + button,
@@ -993,7 +993,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry + entry.error:f
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + entry {
-  border-left-color: rgba(0, 0, 0, 0.15);
+  border-left-color: rgba(255, 255, 255, 0.12);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + button,
@@ -1007,7 +1007,7 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:active + entry,
 headerbar .linked:not(.vertical):not(.path-bar) > button:checked + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > button:active + entry,
 headerbar.titlebar .linked:not(.vertical):not(.path-bar) > button:checked + entry {
-  border-left-color: rgba(0, 0, 0, 0.15);
+  border-left-color: rgba(255, 255, 255, 0.12);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar) > button + button,

@@ -765,7 +765,7 @@ toolbar.inline-toolbar toolbutton {
 headerbar,
 headerbar.titlebar {
   .linked:not(.vertical):not(.path-bar) {
-    @include linking_rules($entry_rules:'false', $button_rules:'false', $b_border: transparent);
+    @include linking_rules($entry_rules:'false', $button_rules:'false', $e_border: $header_entry_border, $b_border: transparent);
   }
 }
 
