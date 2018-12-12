@@ -261,7 +261,6 @@ window.budgie-popover:not(.csd) {
 
   .categories {
     &:dir(ltr) { border-bottom-left-radius: $bt_radius; }
-
     &:dir(rtl) { border-bottom-right-radius: $bt_radius; }
   }
 
@@ -276,9 +275,7 @@ window.budgie-popover:not(.csd) {
     border: none;
 
     &:disabled { color: $insensitive_fg_color; }
-
     &:active, &:checked { @extend %selected_items; }
-
     &:checked:disabled { background-color: $selected_bg_color; } // overriding
   }
 
@@ -408,13 +405,14 @@ popover.background.places-menu {
   // Icon Tasklist
   button.flat.launcher {
     padding: 0;
+    @extend button.flat;
     @extend %underscores;
+
     // for indicator colors
     &:not(:checked) {
       color: $panel_fg;
 
       &:hover, &:active { color: rgba($panel_fg, 0.8); }
-
       &:disabled { color: rgba($panel_fg, 0.5); }
     }
   }
@@ -529,7 +527,7 @@ widget.icon-tasklist {
 
 *:drop(active):focus,
 *:drop(active) {
-    box-shadow: inset 0 0 0 1px $selected_bg_color;
+  box-shadow: inset 0 0 0 1px $selected_bg_color;
 }
 
 frame.raven-frame > border {
