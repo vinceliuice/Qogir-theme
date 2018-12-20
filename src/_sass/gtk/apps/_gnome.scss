@@ -782,10 +782,20 @@ configurationview {
   list { border-width: 0; }
 }
 
+preferencesbin {
+  spinbutton {
+    border-radius: 3px;
+    border: 1px solid $borders_color;
+    &:focus { border-color: $selected_bg_color; }
+
+    entry, button { border: none; box-shadow: none; }
+  }
+}
+
+
 //
 // Gnome-Software
 //
-
 button.round-button { // categories expander button
   // > 3.25.90, dropped from upstream CSS
   min-height: 28px;
@@ -794,7 +804,6 @@ button.round-button { // categories expander button
 }
 
 window.background > box.vertical > searchbar { box-shadow: none; }
-
 window.background > box.vertical > overlay > stack > widget > stack {
 
   // "Installed" stack

@@ -5505,6 +5505,20 @@ configurationview list {
   border-width: 0;
 }
 
+preferencesbin spinbutton {
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+preferencesbin spinbutton:focus {
+  border-color: #5294e2;
+}
+
+preferencesbin spinbutton entry, preferencesbin spinbutton button {
+  border: none;
+  box-shadow: none;
+}
+
 button.round-button {
   min-height: 28px;
   min-width: 28px;
