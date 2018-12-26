@@ -560,11 +560,14 @@ headerbar.titlebar.tweak-titlebar-left { @extend %side_headerbar; }
   }
 }
 
-box.horizontal > box.vertical {
-  > searchbar {
-    @extend %side_searchbar;
+window.background.csd {
+  > box.horizontal > box.vertical {
+    > searchbar {
+      @extend %side_searchbar;
+    }
   }
 }
+
 
 // separator of sidebar on Gnome contol center and Gnome tweaks
 window.background.csd {

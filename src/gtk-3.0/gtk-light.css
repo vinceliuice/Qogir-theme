@@ -6249,6 +6249,11 @@ window.background.csd > box.vertical > stack > box.horizontal > box.vertical > s
   border: none;
 }
 
+window.background.csd > box.vertical > stack > box.horizontal > box.vertical > searchbar {
+  border: none;
+  box-shadow: none;
+}
+
 window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > list {
   border-right: 1px solid #cad5df;
 }
@@ -8752,22 +8757,22 @@ list.gedit-document-panel row.activatable:selected.has-open-popup, list.gedit-do
   background-color: #4a85cb;
 }
 
-box.horizontal > box.vertical > searchbar, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar {
+window.background.csd > box.horizontal > box.vertical > searchbar, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar {
   background-image: image(#32343D);
   box-shadow: none;
   border: none;
 }
 
-box.horizontal > box.vertical > searchbar entry, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry {
+window.background.csd > box.horizontal > box.vertical > searchbar entry, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry {
   color: rgba(246, 246, 251, 0.8);
   background-color: rgba(246, 246, 251, 0.1);
 }
 
-box.horizontal > box.vertical > searchbar entry image, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image {
+window.background.csd > box.horizontal > box.vertical > searchbar entry image, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image {
   color: rgba(246, 246, 251, 0.8);
 }
 
-box.horizontal > box.vertical > searchbar entry:focus, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:focus {
+window.background.csd > box.horizontal > box.vertical > searchbar entry:focus, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:focus {
   background-color: rgba(246, 246, 251, 0.12);
 }
 

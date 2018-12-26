@@ -483,7 +483,6 @@ list.tilix-session-sidebar {
 // Pamac
 //
 window.background.csd {
-
   > box.vertical > stack {
     > box.horizontal {
       > list {
@@ -494,6 +493,11 @@ window.background.csd {
         > scrolledwindow.frame {
           border: none;
         }
+      }
+
+      > box.vertical > searchbar {
+        border: none;
+        box-shadow: none;
       }
 
       > revealer > stack {
