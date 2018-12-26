@@ -1120,20 +1120,18 @@ headerbar,
   padding: 0 10px;
   color: $header_fg;
   box-shadow: inset 0 -1px $borders_color;
-  background-color: opacify($header_bg, 1);
-  min-height: $medium_size;
+  background-color: $header_bg;
+  min-height: $large_size + 2px;
 
-  .csd & {  // Transparent header-bars only in csd windows
-    background-color: $header_bg;
-    min-height: $medium_size;
-  }
+  // .csd & {  // Transparent header-bars only in csd windows
+  //   background-color: $header_bg;
+  //   min-height: $large_size;
+  // }
 
   &:backdrop {
     transition: $backdrop_transition;
     color: transparentize($header_fg, 0.3);
-    box-shadow: inset 0 -1px $borders_color;
-    background-color: opacify($header_bg_backdrop, 1);
-    .csd & { background-color: $header_bg_backdrop; }
+    background-color: $header_bg_backdrop;
   }
 
   .title {
@@ -1254,7 +1252,14 @@ headerbar {
     }
   }
 
-  > separator { background-image: _solid($header_border); }
+  > separator { // separator between headers
+    background-image: if($variant == 'light', image($header_bg), image($header_border));
+    box-shadow: inset 0 -1px $borders_color;
+
+    &:backdrop {
+      background-image: if($variant == 'light', image($header_bg), image($header_border));
+    }
+  }
 
   @extend %titlebar;
 }
