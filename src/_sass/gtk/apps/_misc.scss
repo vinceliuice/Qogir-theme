@@ -417,13 +417,13 @@ window.background:not(.solid-csd) {
   &:dir(ltr) { border: none; }
   &:dir(rtl) { border: none; }
 
-  treeview.view.sidebar {
-
-    &.cell { // = row height of placessidebar
-//      padding-top: rem(4px);
-//      padding-bottom: rem(4px);
-    }
-  }
+  // treeview.view.sidebar {
+  //
+  //   &.cell { // = row height of placessidebar
+  //    padding-top: rem(4px);
+  //    padding-bottom: rem(4px);
+  //   }
+  // }
 }
 
 .geary-titlebar-left {

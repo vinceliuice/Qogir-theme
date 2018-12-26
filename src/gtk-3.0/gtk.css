@@ -81,16 +81,6 @@ window.thunar notebook scrolledwindow.frame.standard-view .view {
   background-color: #ffffff;
 }
 
-.view:selected, .view:selected:focus,
-textview text:selected,
-iconview:selected,
-window.thunar notebook scrolledwindow.frame.standard-view .view:selected,
-textview text:selected:focus,
-iconview:selected:focus,
-window.thunar notebook scrolledwindow.frame.standard-view .view:selected:focus {
-  border-radius: 2px;
-}
-
 textview border {
   background-color: #fdfdfe;
 }
@@ -4691,7 +4681,7 @@ headerbar button.titlebutton.restore:active, .titlebar button.titlebutton.restor
   background-image: -gtk-scaled(url("assets/titlebutton-restore-active-dark.png"), url("assets/titlebutton-restore-active-dark@2.png"));
 }
 
-.view:selected, .view:selected:focus, textview text:selected, iconview:selected, window.thunar notebook scrolledwindow.frame.standard-view .view:selected, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
+.view:selected, .view:selected:focus, textview text:selected, iconview:selected, window.thunar notebook scrolledwindow.frame.standard-view .view:selected, textview text:selected:focus, iconview:selected:focus, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
@@ -4700,7 +4690,7 @@ modelbutton.flat:selected arrow, treeview.view:selected, window.thunar .sidebar 
   background-color: #5294e2;
 }
 
-row:selected label, label:selected, .view:selected, .view:selected:focus, textview text:selected, iconview:selected, window.thunar notebook scrolledwindow.frame.standard-view .view:selected, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
+row:selected label, label:selected, .view:selected, .view:selected:focus, textview text:selected, iconview:selected, window.thunar notebook scrolledwindow.frame.standard-view .view:selected, textview text:selected:focus, iconview:selected:focus, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,

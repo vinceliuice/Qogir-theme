@@ -1263,7 +1263,7 @@ StScrollBar {
       padding: 10px 0;
 
       #appMenuIcon {
-        padding-top: 2px;
+        padding-top: 0;
       }
     }
 
@@ -1274,12 +1274,13 @@ StScrollBar {
     font-weight: normal;
     width: 15em;
     min-width: 5px;
+    StIcon, StBin, #appMenuIcon { padding: 0; }
   }
 
   &-item-box {
     font-weight: normal;
     background-image: none;
-    padding: 2px 10px;
+    padding: 0 10px;
     spacing: 8px;
     transition-duration: 100;
     color: rgba($panel_fg, 0.6);
@@ -1296,7 +1297,7 @@ StScrollBar {
                        (right) {
       .panel-#{$position} & {
         border-#{$position}-width: 2px;
-        StIcon, StBin, #appMenuIcon { padding: 2px; padding-#{$position}: 0; }
+        StIcon, StBin, #appMenuIcon { padding: 0; padding-#{$position}: 0; }
       }
     }
 
@@ -1442,9 +1443,7 @@ StScrollBar {
   &-item-box {
     font-weight: normal;
     background-image: none;
-    padding-top: 0;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding: 0 10px;
     transition-duration: 100;
     color: rgba($panel_fg, 0.6);
     border: 0 solid transparent;
@@ -1456,7 +1455,7 @@ StScrollBar {
 
       &.#{$position} { // Cinnamon 4.0.3
         border-#{$position}-width: 2px;
-        StIcon, StBin, #appMenuIcon { padding: 2px; padding-#{$position}: 0; }
+        StIcon, StBin, #appMenuIcon { padding: 0; padding-#{$position}: 0; }
       }
     }
 
