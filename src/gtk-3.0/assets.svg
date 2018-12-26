@@ -15,7 +15,7 @@
    height="276"
    id="svg9892"
    version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="assets.svg">
   <defs
      id="defs9894">
@@ -212,17 +212,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0085932"
-     inkscape:cx="100.31341"
-     inkscape:cy="6.3051756"
+     inkscape:zoom="2.8405797"
+     inkscape:cx="-6.1876596"
+     inkscape:cy="593.02862"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      showborder="false"
-     inkscape:window-width="1853"
-     inkscape:window-height="1023"
-     inkscape:window-x="67"
-     inkscape:window-y="27"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
      inkscape:window-maximized="1"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
@@ -2553,7 +2553,7 @@
     </g>
     <g
        id="titlebutton-close-backdrop-win"
-       inkscape:label="#g1336">
+       inkscape:label="#g1301">
       <rect
          ry="1.8187407e-05"
          y="-685.63782"
@@ -2561,12 +2561,20 @@
          height="38"
          width="38"
          id="rect5379"
-         style="opacity:0;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.51999998;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.51999998;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
       <path
          inkscape:connector-curvature="0"
          id="rect5362"
          d="m 14.35449,-672.99036 -0.70703,0.70703 4.64649,4.64649 -4.64649,4.64453 0.70703,0.70703 4.64649,-4.64453 4.64453,4.64453 0.70703,-0.70703 -4.64453,-4.64453 4.64453,-4.64649 -0.70703,-0.70703 -4.64453,4.64649 z"
          style="opacity:0.5;fill:#5c616c;fill-opacity:1;stroke:none;stroke-width:0.59087718;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49411765;paint-order:stroke fill markers" />
+      <rect
+         style="opacity:0.15;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.24657688;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect1303"
+         width="38"
+         height="1.0000026"
+         x="0"
+         y="-648.63782"
+         ry="4.7861727e-07" />
     </g>
     <g
        id="titlebutton-restore-backdrop-win"
@@ -2626,9 +2634,9 @@
     </g>
     <g
        id="titlebutton-close-win"
-       inkscape:label="#g1352">
+       inkscape:label="#g1295">
       <rect
-         style="opacity:0;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.51999998;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.51999998;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect5411"
          width="38"
          height="38"
@@ -2640,6 +2648,14 @@
          d="m 14.35449,-632.99135 -0.70703,0.70703 4.64649,4.64649 -4.64649,4.64453 0.70703,0.70703 4.64649,-4.64453 4.64453,4.64453 0.70703,-0.70703 -4.64453,-4.64453 4.64453,-4.64649 -0.70703,-0.70703 -4.64453,4.64649 z"
          id="path5413"
          inkscape:connector-curvature="0" />
+      <rect
+         ry="4.7814984e-07"
+         y="-608.63782"
+         x="0"
+         height="0.99902606"
+         width="38"
+         id="rect1305"
+         style="opacity:0.15;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.24645646;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
     </g>
     <g
        id="titlebutton-restore-win"

@@ -65,7 +65,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 }
 
 %headerbar_appmenu {
-  &.appmenu  { // appmenu button
+  &.appmenu { // appmenu button
     border: none;
     min-height: 30px;
     min-width: 30px;
@@ -167,7 +167,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 
   &:backdrop {
     background-image: -gtk-scaled(url("assets/logo-backdrop.png"),
-                                url("assets/logo-backdrop@2.png"));
+                                  url("assets/logo-backdrop@2.png"));
     background-repeat: no-repeat;
     background-position: left center;
   }
@@ -178,7 +178,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   paned > separator { background-image: _solid($dark_sidebar_border); }
 
   headerbar {
-    padding-left: if($menu == 'budgie', 4px + $header_padding, 48px);
+    padding-left: if($menu == 'budgie', 5px + $header_padding, 48px);
     @if $menu == 'gnome' { @extend %headerbar_image; } // Set nautilus headerbar mountain icon
 
     &, &:backdrop {
@@ -189,6 +189,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     @if $menu == 'budgie' {
       button.titlebutton {
         @extend %headerbar_appmenu;
+        &.appmenu { margin-left: -1px - $header_padding; }
       }
     }
   }
@@ -198,7 +199,6 @@ filechooser paned > separator { background-image: _solid($dark_sidebar_border); 
 
 // Dark transparent sidebars
 .nautilus-window {
-
   &.csd.background, placessidebar list { background-color: transparent; }
 
   placessidebar.sidebar {
@@ -212,7 +212,7 @@ filechooser paned > separator { background-image: _solid($dark_sidebar_border); 
       .sidebar-icon { color: transparentize($dark_sidebar_icon_fg, 0.15); }
 
       image.sidebar-icon {
-         padding-right: 2px;
+        padding-right: 2px;
       }
 
       label.sidebar-label {
@@ -697,15 +697,3 @@ stack#conversation_viewer {
     border: none; // unset borders
   }
 }
-
-// Popover
-// popover.background {
-//   list.geary-folder-popover-list {
-//     row.activatable.geary-folder-popover-list-row {
-//       label {
-//         color: $fg_color;
-//         &:disabled { color: $insensitive_fg_color; }
-//       }
-//     }
-//   }
-// }
