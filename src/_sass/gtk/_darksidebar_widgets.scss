@@ -465,7 +465,9 @@ list.gedit-document-panel {
 
   treeview.view { @extend %side_views; }
 
-  stack button { @extend %side_buttons; }
+  > box.vertical > stack > grid.horizontal > box.horizontal {
+    button { @extend %side_buttons; }
+  }
 
   statusbar { // Bottom statusbar of gedit
     border-top: 1px solid $solid_borders_color;

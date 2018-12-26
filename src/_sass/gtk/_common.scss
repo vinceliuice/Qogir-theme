@@ -1121,11 +1121,11 @@ headerbar,
   color: $header_fg;
   box-shadow: inset 0 -1px $borders_color;
   background-color: $header_bg;
-  min-height: $large_size + 2px;
+  min-height: $medium_size + 2px;
 
   // .csd & {  // Transparent header-bars only in csd windows
   //   background-color: $header_bg;
-  //   min-height: $large_size;
+  //   min-height: $medium_size + 2px;
   // }
 
   &:backdrop {
@@ -1873,13 +1873,14 @@ menu,
 //
 $_popover_bg: if($variant=='light', $base_color, $bg_color);
 
+popover,
 popover.background {
   padding: 2px;
   background-clip: border-box;
   background-color: $_popover_bg;
-  border-radius: 3px;
 
-  &, .csd & {
+  &, .csd &, &.menu {
+    border-radius: 3px;
     border: 1px solid $borders_color;
     box-shadow: 0 2px 8px 0 if($variant=='light', rgba(black, 0.1), rgba(black, 0.15));
   }

@@ -108,7 +108,8 @@ flowbox.search-bar {
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
-label.separator, popover.background label.separator {
+label.separator, popover label.separator,
+popover.background label.separator {
   color: #5c616c;
 }
 
@@ -121,7 +122,8 @@ label:disabled {
   color: rgba(92, 97, 108, 0.55);
 }
 
-.dim-label, label.separator, popover.background label.separator, headerbar .subtitle,
+.dim-label, label.separator, popover label.separator,
+popover.background label.separator, headerbar .subtitle,
 .titlebar:not(headerbar) .subtitle, .budgie-notification .notification-body, .budgie-switcher .notification-body {
   opacity: 0.55;
 }
@@ -148,7 +150,9 @@ textview {
   background-color: #ffffff;
 }
 
-popover.background.osd, popover.background.magnifier, .csd popover.background.osd, .csd popover.background.magnifier, .osd .scale-popup, .osd {
+popover.osd, popover.magnifier, .csd popover.osd, .csd popover.magnifier,
+popover.background.osd,
+popover.background.magnifier, .csd popover.background.osd, .csd popover.background.magnifier, .osd .scale-popup, .osd {
   color: #D3DAE3;
   border: none;
   background-color: #282A33;
@@ -1548,7 +1552,7 @@ headerbar,
   color: rgba(207, 218, 231, 0.8);
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
   background-color: #282A33;
-  min-height: 40px;
+  min-height: 30px;
 }
 
 headerbar:backdrop,
@@ -1678,8 +1682,8 @@ headerbar.default-decoration,
 }
 
 headerbar entry, headerbar button, headerbar separator {
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop,
@@ -2511,22 +2515,31 @@ menu > arrow:disabled,
   border-color: transparent;
 }
 
+popover,
 popover.background {
   padding: 2px;
   background-clip: border-box;
   background-color: #ffffff;
-  border-radius: 3px;
 }
 
-popover.background, .csd popover.background {
+popover, .csd popover, popover.menu,
+popover.background, .csd
+popover.background,
+popover.background.menu {
+  border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
+popover separator,
 popover.background separator {
   background-color: #ffffff;
 }
 
+popover > list,
+popover > .view,
+popover > toolbar,
+popover > .inline-toolbar,
 popover.background > list,
 popover.background > .view,
 popover.background > toolbar,
@@ -2535,12 +2548,15 @@ popover.background > .inline-toolbar {
   background-color: transparent;
 }
 
+popover button:not(.suggested-action):not(.destructive-action):hover,
 popover.background button:not(.suggested-action):not(.destructive-action):hover {
   background-color: rgba(0, 0, 0, 0.05);
   color: #5c616c;
 }
 
-popover.background button:not(.suggested-action):not(.destructive-action):checked, popover.background button:not(.suggested-action):not(.destructive-action):active {
+popover button:not(.suggested-action):not(.destructive-action):checked, popover button:not(.suggested-action):not(.destructive-action):active,
+popover.background button:not(.suggested-action):not(.destructive-action):checked,
+popover.background button:not(.suggested-action):not(.destructive-action):active {
   background-color: #5294e2;
   color: #ffffff;
 }
@@ -4437,7 +4453,8 @@ colorchooser .popover.osd {
   background-color: white;
 }
 
-.context-menu, popover.background.touch-selection, .csd popover.background.touch-selection {
+.context-menu, popover.touch-selection, .csd popover.touch-selection,
+popover.background.touch-selection, .csd popover.background.touch-selection {
   font: initial;
 }
 
@@ -4754,10 +4771,6 @@ terminal-window notebook scrollbar,
 .nautilus-window headerbar .path-bar-box .path-bar button.flat.image-button.text-button.toggle, .nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.sidebar-button, .nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher {
   background: none;
   border: none;
-}
-
-.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button,
-.nautilus-window headerbar .path-bar-box .path-bar button.flat.image-button.text-button.toggle, .nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.sidebar-button, .nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher, .nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:hover, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:hover, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:hover, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:hover, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button:hover, .nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:checked, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:checked, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:checked, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:checked, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button:checked, .nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:active, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:active, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:active, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:active, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button:active, .nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:disabled, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:disabled, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:disabled, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:disabled, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button:disabled {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0 6px 2px 6px;
@@ -4787,8 +4800,8 @@ terminal-window notebook scrollbar,
 }
 
 .nautilus-window headerbar .path-bar-box {
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   border-radius: 2px;
   color: rgba(207, 218, 231, 0.8);
   background-color: transparent;
@@ -4828,7 +4841,8 @@ terminal-window notebook scrollbar,
   text-shadow: none;
 }
 
-.nautilus-canvas-item.dim-label, label.nautilus-canvas-item.separator, popover.background label.nautilus-canvas-item.separator, popover.background label.separator.caja-canvas-item, label.separator.caja-canvas-item, headerbar .nautilus-canvas-item.subtitle, headerbar .subtitle.caja-canvas-item,
+.nautilus-canvas-item.dim-label, label.nautilus-canvas-item.separator,
+popover.background label.nautilus-canvas-item.separator, popover.background label.separator.caja-canvas-item, label.separator.caja-canvas-item, headerbar .nautilus-canvas-item.subtitle, headerbar .subtitle.caja-canvas-item,
 .titlebar:not(headerbar) .nautilus-canvas-item.subtitle, .titlebar:not(headerbar) .subtitle.caja-canvas-item, .dim-label.caja-canvas-item, .budgie-notification .caja-canvas-item.notification-body, .budgie-switcher .caja-canvas-item.notification-body, .budgie-notification .nautilus-canvas-item.notification-body, .budgie-switcher .nautilus-canvas-item.notification-body,
 .nautilus-list-dim-label,
 .caja-list-dim-label {
@@ -8700,25 +8714,25 @@ list.gedit-document-panel, .gedit-document-panel-dragged-row, .gedit-side-panel-
   background-color: #32343D;
 }
 
-.gedit-side-panel-paned stack button {
+.gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button {
   color: rgba(246, 246, 251, 0.8);
   background-color: rgba(246, 246, 251, 0.15);
   border-color: rgba(246, 246, 251, 0.18);
 }
 
-.gedit-side-panel-paned stack button:hover {
+.gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.25);
   border-color: rgba(246, 246, 251, 0.28);
 }
 
-.gedit-side-panel-paned stack button:active, .gedit-side-panel-paned stack button:checked {
+.gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:active, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:checked {
   color: #ffffff;
   border-color: #2679db;
   background-color: #5294e2;
 }
 
-.gedit-side-panel-paned stack button:disabled {
+.gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:disabled {
   color: rgba(246, 246, 251, 0.35);
   background-color: rgba(246, 246, 251, 0.08);
   border-color: rgba(246, 246, 251, 0.1);
