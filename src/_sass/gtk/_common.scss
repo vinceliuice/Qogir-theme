@@ -1871,18 +1871,18 @@ menu,
 //
 // Popovers
 //
-popover,
+$_popover_bg: if($variant=='light', $base_color, $bg_color);
+
 popover.background {
-  $_popover_bg: if($variant=='light', $base_color, $bg_color);
   padding: 2px;
   background-clip: border-box;
   background-color: $_popover_bg;
+  border-radius: 3px;
 
-  &, &.menu {
-    box-shadow: 0 2px $cont_padding 0 if($variant=='light', transparentize(black, 0.93), transparentize(black, 0.65));
+  &, .csd & {
+    border: 1px solid $borders_color;
+    box-shadow: 0 2px 8px 0 if($variant=='light', rgba(black, 0.1), rgba(black, 0.15));
   }
-
-  .csd &, & { border: 1px solid $borders_color; border-radius: 3px; }
 
   & separator { background-color: $_popover_bg; }
   label.separator { @extend label.separator; } // Noice

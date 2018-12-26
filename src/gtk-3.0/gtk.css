@@ -108,8 +108,7 @@ flowbox.search-bar {
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
-label.separator, popover label.separator,
-popover.background label.separator {
+label.separator, popover.background label.separator {
   color: #5c616c;
 }
 
@@ -122,8 +121,7 @@ label:disabled {
   color: rgba(92, 97, 108, 0.55);
 }
 
-.dim-label, label.separator, popover label.separator,
-popover.background label.separator, headerbar .subtitle,
+.dim-label, label.separator, popover.background label.separator, headerbar .subtitle,
 .titlebar:not(headerbar) .subtitle, .budgie-notification .notification-body, .budgie-switcher .notification-body {
   opacity: 0.55;
 }
@@ -150,9 +148,7 @@ textview {
   background-color: #ffffff;
 }
 
-popover.osd, popover.magnifier, .csd popover.osd, .csd popover.magnifier,
-popover.background.osd,
-popover.background.magnifier, .csd popover.background.osd, .csd popover.background.magnifier, .osd .scale-popup, .osd {
+popover.background.osd, popover.background.magnifier, .csd popover.background.osd, .csd popover.background.magnifier, .osd .scale-popup, .osd {
   color: #D3DAE3;
   border: none;
   background-color: #282A33;
@@ -2515,35 +2511,22 @@ menu > arrow:disabled,
   border-color: transparent;
 }
 
-popover,
 popover.background {
   padding: 2px;
   background-clip: border-box;
   background-color: #ffffff;
-}
-
-popover, popover.menu,
-popover.background,
-popover.background.menu {
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
-}
-
-.csd popover, popover, .csd
-popover.background,
-popover.background {
-  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 3px;
 }
 
-popover separator,
+popover.background, .csd popover.background {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
 popover.background separator {
   background-color: #ffffff;
 }
 
-popover > list,
-popover > .view,
-popover > toolbar,
-popover > .inline-toolbar,
 popover.background > list,
 popover.background > .view,
 popover.background > toolbar,
@@ -2552,15 +2535,12 @@ popover.background > .inline-toolbar {
   background-color: transparent;
 }
 
-popover button:not(.suggested-action):not(.destructive-action):hover,
 popover.background button:not(.suggested-action):not(.destructive-action):hover {
   background-color: rgba(0, 0, 0, 0.05);
   color: #5c616c;
 }
 
-popover button:not(.suggested-action):not(.destructive-action):checked, popover button:not(.suggested-action):not(.destructive-action):active,
-popover.background button:not(.suggested-action):not(.destructive-action):checked,
-popover.background button:not(.suggested-action):not(.destructive-action):active {
+popover.background button:not(.suggested-action):not(.destructive-action):checked, popover.background button:not(.suggested-action):not(.destructive-action):active {
   background-color: #5294e2;
   color: #ffffff;
 }
@@ -4457,8 +4437,7 @@ colorchooser .popover.osd {
   background-color: white;
 }
 
-.context-menu, popover.touch-selection, .csd popover.touch-selection,
-popover.background.touch-selection, .csd popover.background.touch-selection {
+.context-menu, popover.background.touch-selection, .csd popover.background.touch-selection {
   font: initial;
 }
 
@@ -4849,8 +4828,7 @@ terminal-window notebook scrollbar,
   text-shadow: none;
 }
 
-.nautilus-canvas-item.dim-label, label.nautilus-canvas-item.separator,
-popover.background label.nautilus-canvas-item.separator, popover.background label.separator.caja-canvas-item, label.separator.caja-canvas-item, headerbar .nautilus-canvas-item.subtitle, headerbar .subtitle.caja-canvas-item,
+.nautilus-canvas-item.dim-label, label.nautilus-canvas-item.separator, popover.background label.nautilus-canvas-item.separator, popover.background label.separator.caja-canvas-item, label.separator.caja-canvas-item, headerbar .nautilus-canvas-item.subtitle, headerbar .subtitle.caja-canvas-item,
 .titlebar:not(headerbar) .nautilus-canvas-item.subtitle, .titlebar:not(headerbar) .subtitle.caja-canvas-item, .dim-label.caja-canvas-item, .budgie-notification .caja-canvas-item.notification-body, .budgie-switcher .caja-canvas-item.notification-body, .budgie-notification .nautilus-canvas-item.notification-body, .budgie-switcher .nautilus-canvas-item.notification-body,
 .nautilus-list-dim-label,
 .caja-list-dim-label {
@@ -6000,9 +5978,10 @@ window.background:not(.csd) > widget > button > button:active, window.background
   background-image: image(#f2f2f2);
 }
 
-window.background:not(.csd) .menu {
-  border-radius: 0;
+window.background:not(.csd) > menu,
+window.background:not(.csd) > menu > menu {
   border: none;
+  border-radius: 0;
 }
 
 window.background:not(.csd) > menu > separator {
