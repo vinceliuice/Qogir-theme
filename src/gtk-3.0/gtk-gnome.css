@@ -8776,6 +8776,34 @@ window.background.csd > box.horizontal > box.vertical > searchbar entry:focus, w
   background-color: rgba(246, 246, 251, 0.12);
 }
 
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton {
+  border: none;
+  min-height: 30px;
+  min-width: 30px;
+  border-radius: 50px;
+  color: transparent;
+  background-color: transparent;
+  background-image: -gtk-scaled(url("assets/logo.png"), url("assets/logo@2.png"));
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton image, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton image {
+  opacity: 0;
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:hover, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:hover {
+  background-image: -gtk-scaled(url("assets/logo-hover.png"), url("assets/logo-hover@2.png"));
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:checked, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:active, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:active {
+  background-image: -gtk-scaled(url("assets/logo-active.png"), url("assets/logo-active@2.png"));
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.tweak-titlebar-left, window.background.csd > box.titlebar.horizontal > headerbar:first-child {
   color: rgba(246, 246, 251, 0.8);
   background-color: #32343D;
@@ -8799,34 +8827,6 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton
   color: #ffffff;
   border-color: #2679db;
   background-color: #5294e2;
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu, headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu {
-  border: none;
-  min-height: 30px;
-  min-width: 30px;
-  border-radius: 50px;
-  color: transparent;
-  background-color: transparent;
-  background-image: -gtk-scaled(url("assets/logo.png"), url("assets/logo@2.png"));
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu image, headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu image {
-  opacity: 0;
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:hover, headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:hover {
-  background-image: -gtk-scaled(url("assets/logo-hover.png"), url("assets/logo-hover@2.png"));
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:checked, headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:active, headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:active {
-  background-image: -gtk-scaled(url("assets/logo-active.png"), url("assets/logo-active@2.png"));
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 filechooser actionbar button {
@@ -8906,13 +8906,13 @@ filechooser actionbar entry:disabled {
 .nautilus-window headerbar {
   background-image: -gtk-scaled(url("assets/logo.png"), url("assets/logo@2.png"));
   background-repeat: no-repeat;
-  background-position: top left;
+  background-position: left center;
 }
 
 .nautilus-window headerbar:backdrop {
   background-image: -gtk-scaled(url("assets/logo-backdrop.png"), url("assets/logo-backdrop@2.png"));
   background-repeat: no-repeat;
-  background-position: top left;
+  background-position: left center;
 }
 
 .nautilus-window paned > separator {
