@@ -6217,7 +6217,7 @@ widget > box.terminal-titlebar > button.image-button, widget > box.terminal-titl
 }
 
 list.tilix-session-sidebar {
-  background-image: image(#f6f9fb);
+  background-image: image(#272931);
 }
 
 list.tilix-session-sidebar button.tilix-sidebar-close-button {
@@ -8038,8 +8038,8 @@ window.thunar .sidebar {
 }
 
 window.thunar .sidebar treeview.view {
-  background-color: #f6f9fb;
-  color: #646972;
+  background-color: #272931;
+  color: #C4CAD1;
 }
 
 window.thunar notebook scrolledwindow.frame.standard-view {
@@ -8280,8 +8280,8 @@ MarlinViewWindow FMListView, MarlinViewWindow FMColumnView {
 }
 
 treeview.view.sidebar, window.thunar .sidebar treeview.sidebar.view {
-  color: #646972;
-  background-color: #f6f9fb;
+  color: #C4CAD1;
+  background-color: #272931;
 }
 
 treeview.view.sidebar.source-list, window.thunar .sidebar treeview.sidebar.source-list.view {
@@ -8431,7 +8431,7 @@ scale.warmth trough {
   border-bottom-right-radius: 3px;
   border: solid rgba(0, 0, 0, 0.1);
   border-width: 0 1px 1px 1px;
-  box-shadow: inset 0 1px #d3e1eb;
+  box-shadow: inset 0 1px #101115;
 }
 
 #buttonbox_frame button {
@@ -8879,16 +8879,16 @@ filechooser actionbar entry:disabled {
 }
 
 .nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider, .caja-side-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
-  background-color: #8a8f98;
+  background-color: #eff1f3;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .nautilus-window placessidebar.sidebar scrollbar slider, .nemo-window .sidebar scrollbar slider, .caja-side-pane scrollbar slider {
-  background-color: rgba(138, 143, 152, 0.7);
+  background-color: rgba(239, 241, 243, 0.7);
 }
 
 .nautilus-window placessidebar.sidebar scrollbar slider:hover, .nemo-window .sidebar scrollbar slider:hover, .caja-side-pane scrollbar slider:hover {
-  background-color: #989ca4;
+  background-color: #fdfdfe;
 }
 
 .nautilus-window placessidebar.sidebar scrollbar slider:hover:active, .nemo-window .sidebar scrollbar slider:hover:active, .caja-side-pane scrollbar slider:hover:active {
@@ -8900,11 +8900,15 @@ filechooser actionbar entry:disabled {
 }
 
 .nautilus-window placessidebar.sidebar scrollbar trough, .nemo-window .sidebar scrollbar trough, .caja-side-pane scrollbar trough {
-  background-color: #e4edf3;
+  background-color: #1c1d23;
+}
+
+filechooser paned > separator {
+  background-image: image(#cad5df);
 }
 
 .nautilus-window paned > separator {
-  background-image: linear-gradient(to bottom, #d3e1eb, #d3e1eb);
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff);
 }
 
 .nautilus-window headerbar {
@@ -8919,22 +8923,14 @@ filechooser actionbar entry:disabled {
   margin-left: -1px;
 }
 
-filechooser paned > separator {
-  background-image: linear-gradient(to bottom, #d3e1eb, #d3e1eb);
-}
-
-.nautilus-window.csd.background, .nautilus-window placessidebar list {
-  background-color: transparent;
-}
-
 .nautilus-window placessidebar.sidebar {
   box-shadow: inset 38px 0 0 0 #32343D;
-  background-color: #f6f9fb;
+  background-color: #272931;
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row {
   transition: none;
-  color: #646972;
+  color: #C4CAD1;
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row .sidebar-icon {
@@ -8951,12 +8947,12 @@ filechooser paned > separator {
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup, .nautilus-window placessidebar.sidebar row.sidebar-row:hover {
-  background-color: rgba(100, 105, 114, 0.05);
+  background-color: rgba(196, 202, 209, 0.05);
   box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #32343D;
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row:disabled, .nautilus-window placessidebar.sidebar row.sidebar-row:disabled label, .nautilus-window placessidebar.sidebar row.sidebar-row:disabled image {
-  color: rgba(100, 105, 114, 0.4);
+  color: rgba(196, 202, 209, 0.4);
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row:active {
@@ -8972,11 +8968,11 @@ filechooser paned > separator {
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected.has-open-popup .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:selected .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover .sidebar-label {
-  color: #4c5057;
+  color: #a7b0bb;
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
-  background-color: rgba(100, 105, 114, 0.05);
+  background-color: rgba(196, 202, 209, 0.05);
   box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #5294e2;
   background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
   background-repeat: no-repeat;
@@ -8984,7 +8980,7 @@ filechooser paned > separator {
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button {
-  color: #646972;
+  color: #C4CAD1;
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button:hover {
@@ -9028,13 +9024,13 @@ filechooser paned > separator {
 }
 
 .nemo-window .sidebar {
-  color: #646972;
-  background-color: #f6f9fb;
+  color: #C4CAD1;
+  background-color: #272931;
 }
 
 .nemo-window .sidebar .view, .nemo-window .sidebar row {
   background-color: transparent;
-  color: #646972;
+  color: #C4CAD1;
 }
 
 .nemo-window .sidebar .view.cell:selected, .nemo-window .sidebar row.cell:selected {
@@ -9043,11 +9039,11 @@ filechooser paned > separator {
 }
 
 .nemo-window .sidebar .view.expander, .nemo-window .sidebar row.expander {
-  color: #adb1b7;
+  color: #767a81;
 }
 
 .nemo-window .sidebar .view.expander:hover, .nemo-window .sidebar row.expander:hover {
-  color: #646972;
+  color: #C4CAD1;
 }
 
 .nemo-window .sidebar separator {
@@ -9058,13 +9054,13 @@ filechooser paned > separator {
 .caja-side-pane > notebook > stack > widget > box,
 .caja-side-pane text,
 .caja-side-pane treeview {
-  color: #646972;
-  caret-color: #646972;
-  background-color: #f6f9fb;
+  color: #C4CAD1;
+  caret-color: #C4CAD1;
+  background-color: #272931;
 }
 
 .caja-side-pane > box button:not(:active):not(:checked) {
-  color: #646972;
+  color: #C4CAD1;
 }
 
 .caja-side-pane .frame {
@@ -9072,17 +9068,17 @@ filechooser paned > separator {
 }
 
 .caja-side-pane junction {
-  background-color: #e4edf3;
+  background-color: #1c1d23;
 }
 
 filechooser actionbar {
-  color: #646972;
-  background-color: #f6f9fb;
+  color: #C4CAD1;
+  background-color: #272931;
   border-color: #cad5df;
 }
 
 filechooser actionbar label, filechooser actionbar combobox {
-  color: #646972;
+  color: #C4CAD1;
 }
 
 window.org-gnome-gedit > paned > separator, window.org-gnome-gedit > paned > separator:backdrop,
@@ -9195,7 +9191,7 @@ list.gedit-document-panel row:hover:not(:selected) button:active, list.gedit-doc
 }
 
 .gedit-side-panel-paned > separator {
-  background-image: linear-gradient(to bottom, #d3e1eb, #d3e1eb);
+  background-image: linear-gradient(to bottom, #101115, #101115);
 }
 
 .gedit-bottom-panel-paned > separator {

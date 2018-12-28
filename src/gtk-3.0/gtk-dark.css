@@ -8909,6 +8909,10 @@ filechooser actionbar entry:disabled {
   background-color: #1c1d23;
 }
 
+filechooser paned > separator {
+  background-image: image(#494c59);
+}
+
 .nautilus-window paned > separator {
   background-image: linear-gradient(to bottom, #393c48, #393c48);
 }
@@ -8923,14 +8927,6 @@ filechooser actionbar entry:disabled {
 
 .nautilus-window headerbar button.titlebutton.appmenu {
   margin-left: -1px;
-}
-
-filechooser paned > separator {
-  background-image: linear-gradient(to bottom, #393c48, #393c48);
-}
-
-.nautilus-window.csd.background, .nautilus-window placessidebar list {
-  background-color: transparent;
 }
 
 .nautilus-window placessidebar.sidebar {

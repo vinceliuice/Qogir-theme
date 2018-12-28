@@ -173,9 +173,20 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   }
 }
 
-//.nemo-window,
+// Reset filechooser separator
+filechooser {
+  paned > separator {
+    background-image: image($solid_borders_color);
+  }
+}
+
+// Dark icon background sidebars
 .nautilus-window {
-  paned > separator { background-image: _solid($dark_sidebar_border); }
+  // &.csd.background, placessidebar list { background-color: transparent; }
+
+  paned > separator {
+    background-image: if($variant == 'light' and $titlebar == 'dark', _solid($base_color), _solid($dark_sidebar_border));
+  }
 
   headerbar {
     padding-left: if($menu == 'budgie', 5px + $header_padding, 48px);
@@ -193,13 +204,6 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
       }
     }
   }
-}
-
-filechooser paned > separator { background-image: _solid($dark_sidebar_border); }
-
-// Dark transparent sidebars
-.nautilus-window {
-  &.csd.background, placessidebar list { background-color: transparent; }
 
   placessidebar.sidebar {
     box-shadow: inset 38px 0 0 0 $dark_sidebar_icon_bg;
