@@ -5994,7 +5994,6 @@ window.background:not(.csd) > widget > button > button:active, window.background
 
 window.background:not(.csd) > menu,
 window.background:not(.csd) > menu > menu {
-  border: none;
   border-radius: 0;
 }
 
