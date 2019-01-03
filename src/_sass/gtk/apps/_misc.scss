@@ -200,7 +200,10 @@ window.background:not(.csd) {
       &:active { background-image: image(if($variant == 'light', darken($button_bg, 5%), lighten($button_bg, 5%))); }
 
       // Fixed thunderbird linked entry spinbutton border-radius.
-      .entry { border-top-right-radius: 0;  border-bottom-right-radius: 0; }
+      .entry {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
     }
 
     > button > button {
