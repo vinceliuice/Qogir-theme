@@ -11,22 +11,42 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 %side_buttons {
   color: $side_theme_fg;
   background-color: rgba($dark_sidebar_icon_fg, 0.15);
-  border-color: rgba($dark_sidebar_icon_fg, 0.18);
+  border: none;
 
   &:hover {
     color: $side_theme_alt_fg;
     background-color: rgba($dark_sidebar_icon_fg, 0.25);
-    border-color: rgba($dark_sidebar_icon_fg, 0.28);
   }
 
   &:active, &:checked {
-    @include button(active);
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
   }
 
   &:disabled {
     color: rgba($side_theme_alt_fg, 0.35);
     background-color: rgba($side_theme_alt_fg, 0.08);
-    border-color: rgba($side_theme_alt_fg, 0.1);
+  }
+
+  &.flat {
+    border: none;
+    background: none;
+    box-shadow: none;
+    color: $side_theme_fg;
+
+    &:hover {
+      color: $side_theme_alt_fg;
+      background-color: rgba($dark_sidebar_icon_fg, 0.15);
+    }
+
+    &:active, &:checked {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+
+    &:disabled {
+      color: rgba($side_theme_alt_fg, 0.35);
+    }
   }
 }
 
@@ -37,6 +57,10 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   &:hover {
     color: $side_theme_alt_fg;
     background-color: rgba($side_theme_alt_fg, 0.1);
+  }
+
+  &:disabled {
+    color: rgba($side_theme_alt_fg, 0.35);
   }
 
   &:selected {
@@ -114,7 +138,6 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     &:hover {
       color: $side_theme_alt_fg;
       background-color: rgba($side_theme_fg, 0.25);
-      border-color: rgba($side_theme_fg, 0.28);
     }
 
     &:active, &:checked {
@@ -605,67 +628,67 @@ window.background.csd {
 %folder_frame_border { border-width: 0; }
 
 %conversation_frame {
- > border { border: none; }
+  > border { border: none; }
 
- treeview.view {
-   color: $side_theme_fg;
-   background-color: darken($side_theme_bg, 3%);
+  treeview.view {
+    color: $side_theme_fg;
+    background-color: darken($side_theme_bg, 3%);
 
-   &:selected {
-     &, &:focus {
-       background-color: rgba($selected_bg_color, 0.25);
-       color: $selected_fg_color;
-       &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
-       &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
-     }
-   }
- }
+    &:selected {
+      &, &:focus {
+        background-color: rgba($selected_bg_color, 0.25);
+        color: $selected_fg_color;
+        &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
+        &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
+      }
+    }
+  }
 }
 
 %folder_frame {
- &:dir(ltr) { border: none; }
- &:dir(rtl) { border: none; }
+  &:dir(ltr) { border: none; }
+  &:dir(rtl) { border: none; }
 
- treeview.view.sidebar {
-   @extend %side_views;
+  treeview.view.sidebar {
+    @extend %side_views;
 
-   &.cell { // = row height of placessidebar
-    padding-top: rem(4px);
-    padding-bottom: rem(4px);
-   }
- }
+    &.cell { // = row height of placessidebar
+      padding-top: rem(4px);
+      padding-bottom: rem(4px);
+    }
+  }
 }
 
 window#GearyMainWindow {
- .titlebar {
-   box-shadow: inset 0 -1px $borders_color;
-   background-color: $header_bg;
+  .titlebar {
+    box-shadow: inset 0 -1px $borders_color;
+    background-color: $header_bg;
 
-   &:backdrop {
-     background-color: $header_bg_backdrop;
-   }
- }
+    &:backdrop {
+      background-color: $header_bg_backdrop;
+    }
+  }
 
- > box.vertical > paned {
-   > separator {
-     background-image: if($variant == 'light', none, image($solid_borders_color));
-   }
+  > box.vertical > paned {
+    > separator {
+      background-image: if($variant == 'light', none, image($solid_borders_color));
+    }
 
-   > box.vertical > searchbar {
-     @extend %side_searchbar;
-   }
- }
+    > box.vertical > searchbar {
+      @extend %side_searchbar;
+    }
+  }
 }
 
 .geary-titlebar-left {
- margin-right: 6px;
+  margin-right: 6px;
 
- // remove unexpected "hardcoded" vertical separator
- separator {
-   margin: 0 -10px 0 0;
-   border-right: if($variant == 'light', none, 1px solid $solid_borders_color);
-   background: none;
- }
+  // remove unexpected "hardcoded" vertical separator
+  separator {
+    margin: 0 -10px 0 0;
+    border-right: if($variant == 'light', none, 1px solid $solid_borders_color);
+    background: none;
+  }
 }
 
 // left-pane styling (legacy)
@@ -680,7 +703,6 @@ window#GearyMainWindow {
   }
 
    separator { background: none; }
-
    statusbar { @extend %side_background; }
 }
 
@@ -693,10 +715,9 @@ window#GearyMainWindow {
   .geary-folder-frame {
     > border { @extend  %folder_frame_border; }
     > scrolledwindow { @extend %folder_frame; }
- }
+  }
 
   separator { background: none; }
-
   statusbar { @extend %side_background; }
 }
 
@@ -704,5 +725,48 @@ window#GearyMainWindow {
 stack#conversation_viewer {
   scrolledwindow.geary-conversation-scroller > viewport.frame {
     border: none; // unset borders
+  }
+}
+
+//
+// Tilix
+//
+window.background.csd {
+  > box.horizontal > box.vertical {
+    > scrolledwindow > viewport.frame {
+      > list {
+        @extend %side_background;
+
+        row > box.vertical {
+          > separator.horizontal {
+            background: none;
+            min-height: 0;
+          }
+
+          > label:disabled { color: $side_theme_alt_fg; }
+        }
+
+        row.activatable {
+          @extend %side_views;
+
+          button { @extend %side_buttons.flat; }
+
+          &:selected button { @extend %selected-button; }
+        }
+      }
+    }
+
+    > separator.horizontal {
+      background: none;
+      min-height: 0;
+    }
+
+    > box.linked.horizontal {
+      @extend %side_background;
+      margin: -6px;
+      padding: 6px;
+
+      button { @extend %side_buttons; }
+    }
   }
 }
