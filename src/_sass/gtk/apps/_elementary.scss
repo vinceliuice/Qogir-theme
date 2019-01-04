@@ -9,8 +9,6 @@
   transition: all 100ms ease-in-out;
   color: $panel_fg;
   font-weight: bold;
-//  text-shadow: none;
-//  -gtk-icon-shadow: none;
 
   &.maximized {
     background-color: rgba(black, 1);
@@ -18,7 +16,6 @@
 
   &.translucent {
     background-color: $panel_bg;
-//    box-shadow: none;
   }
 
   menubar &,
@@ -37,11 +34,7 @@
   .menu {
     box-shadow: none;
 
-    .menuitem {
-      font-weight: normal;
-      // text-shadow: none;
-      // -gtk-icon-shadow: none;
-    }
+    .menuitem { font-weight: normal; }
 
     // .window-frame.menu.csd,
     // .window-frame.popup.csd {
@@ -64,8 +57,6 @@
     box-shadow: 0 2px 3px rgba(black, 0.12), 0 3px 6px rgba(black, 0.08);
 
     button {
-//      box-shadow: none;
-//      text-shadow: none;
       font-weight: normal;
       border-color: transparent;
       background-color: transparent;
@@ -127,6 +118,7 @@ button.flat.toggle.switcher {
 // Calendar Popover
 .circular { // Calendar popover date button
   label:disabled { color: $insensitive_fg_color; }
+
   &.accent { // Today button
     color: $selected_fg_color;
     background-color: $selected_bg_color;
@@ -143,8 +135,6 @@ button.flat.toggle.switcher {
 .composited-indicator {
   background-color: transparent;
   color: $panel_fg;
-//  text-shadow: none;
-//  -gtk-icon-shadow: none;
   padding: 0 6px;
 
   > revealer label,
@@ -171,8 +161,6 @@ button.flat.toggle.switcher {
 
   .menuitem:active, .menuitem:hover {
     border-style: none;
-//    background-image: none;
-//    box-shadow: none;
   }
 
   > .popup > .menu {
@@ -244,8 +232,11 @@ headerbar.titlebar {
     margin-bottom: 10px;
   }
 
+  // Hide Code header format-bar
   > grid.linked.horizontal.format-bar {
-    background-image: image($header_bg); // Hide Code header format-bar
+    background-image: image($header_bg);
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
   }
 }
 

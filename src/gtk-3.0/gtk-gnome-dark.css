@@ -8309,6 +8309,8 @@ headerbar.titlebar button.flat.image-button.toggle, headerbar.titlebar button.im
 
 headerbar.titlebar > grid.linked.horizontal.format-bar {
   background-image: image(#282A33);
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
 }
 
 popover radiobutton.color-button.color-light, popover radiobutton.color-button.color-dark, popover radiobutton.color-button.color-white {
