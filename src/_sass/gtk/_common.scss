@@ -1098,8 +1098,8 @@ searchbar {
   border: none;
 
   > revealer > box {
-    padding: 6px;
-    margin: -6px;
+    padding: $cont_padding;
+    margin: -$cont_padding;
     border-style: solid;
     border-color: $borders_color;
     background-color: $bg_color;
@@ -1802,7 +1802,7 @@ menu,
   menuitem {
     min-height: $small_size;
     min-width: $large_size;
-    padding: 4px 6px;
+    padding: 4px $cont_padding;
 
     &:hover {
       color: $selected_fg_color;

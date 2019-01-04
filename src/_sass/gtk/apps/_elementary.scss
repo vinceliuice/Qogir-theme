@@ -43,7 +43,7 @@
   }
 
   .menubar > .menuitem {
-    padding: 3px 6px;
+    padding: 3px $cont_padding;
     &:hover { background-color: transparent; }
   }
 
@@ -135,7 +135,7 @@ button.flat.toggle.switcher {
 .composited-indicator {
   background-color: transparent;
   color: $panel_fg;
-  padding: 0 6px;
+  padding: 0 $cont_padding;
 
   > revealer label,
   > revealer image,

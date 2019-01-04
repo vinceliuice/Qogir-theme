@@ -33,7 +33,7 @@ terminal-window,
   border: none;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0 6px 2px 6px;
+  padding: 0 $cont_padding 2px $cont_padding;
   min-height: 24px;
   border-radius: 0;
 
@@ -197,16 +197,16 @@ $disk_space_free: darken($bg_color, 3%);
   &.bottom.left { border-top-left-radius: 0; }
   &.bottom.right { border-top-right-radius: 0; }
 
-    button {
-        border: none;
-        border-radius: 100px;
-        min-height: 0;
-        min-width: 0;
-        padding: 0;
-        margin-right: 6px;
-        -gtk-icon-shadow: none;
-        @extend %selected-button;
-    }
+  button {
+    border: none;
+    border-radius: 100px;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    margin-right: $cont_padding;
+    -gtk-icon-shadow: none;
+    @extend %selected-button;
+  }
 }
 
 //
@@ -284,10 +284,12 @@ button.documents-favorite:active:hover {
     color: $selected_fg_color;
     background: lighten($selected_bg_color, 4%);
   }
+
   &:active {
     color: $selected_fg_color;
     background: darken($selected_bg_color, 4%);
   }
+
   &.button {
     box-shadow: none;
     border: none;
@@ -309,13 +311,13 @@ button.documents-favorite:active:hover {
 .photos-collection-icon { @extend .documents-collection-icon; }
 
 .photos-fade-in {
-    opacity: 1.0;
-    transition: opacity 0.2s ease-out;
+  opacity: 1.0;
+  transition: opacity 0.2s ease-out;
 }
 
 .photos-fade-out {
-    opacity: 0.0;
-    transition: opacity 0.2s ease-out;
+  opacity: 0.0;
+  transition: opacity 0.2s ease-out;
 }
 
 //
@@ -394,6 +396,7 @@ widget {
 graph-switcher-button.toggle {
   color: $alt_fg_color;
   font-weight: 500;
+
   &:hover { // use opaque
     color: $fg_color;
     background-image: image(if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03)));
@@ -462,7 +465,7 @@ pillbox {
 }
 
 docktabstrip {
-  padding: 0 6px;
+  padding: 0 $cont_padding;
 
   background-color: $bg_color;
   border-bottom: 1px solid $borders_color;
@@ -530,6 +533,7 @@ button.dzlmenubuttonitem.check { // menuitem buttons
     color: $fg_color;
     &.dim-label { color: $fg_color; }
   }
+
   box > image { opacity: 0.87; }
 }
 
@@ -628,6 +632,7 @@ window.background > box.vertical > overlay > stack > widget > stack {
   button {
     color: $insensitive_fg_color;
     background-image: image($bg_color);
+
     &:hover { color: mix($fg_color, rgba($fg_color, 0.5), 50%); }
     &:checked { color: $fg_color; }
     &:disabled { color: rgba($insensitive_fg_color, 0.65); }
@@ -678,8 +683,10 @@ window.background > box.vertical > overlay > stack > widget > stack {
         background-color: $selected_bg_color;
         border-color: $selected_bg_color;
       }
+
       &.empty { background-color: darken($osd_bg_color, 5%); }
     }
+
     trough { background: none; }
   }
 
@@ -738,6 +745,7 @@ headerbar > button.flat.popup.title-menu-button.toggle {
       padding: rem(1.3px) rem(13.3px) 0;
       font-size: 90%;
     }
+
     .subtitle {
       margin: rem(-2.7px) 0;
       padding: 0 rem(13.3px) rem(1.3px);
@@ -758,10 +766,11 @@ window.background > box.vertical box.horizontal {
       color: $fg_color;
       background-color: transparent;
       font-weight: 500;
+
       &:hover {
-          color: $fg_color;
-          background-color: rgba($fg_color, 0.08);
-        }
+        color: $fg_color;
+        background-color: rgba($fg_color, 0.08);
+      }
 
       &:selected {
         color: $selected_fg_color;
@@ -790,6 +799,7 @@ window.background > box.vertical box.horizontal {
     row.event.activatable {
       color: $fg_color;
       transition-duration: 0.1s;
+
       &:hover,
       &:active { color: $fg_color; }
 
@@ -810,6 +820,7 @@ window.background > box.vertical box.horizontal {
           background-image: image(mix($fg_color, $bg_color, 5%));
           color: $fg_color;
         }
+
         &:active {
           &, &:focus {
             background-image: image(mix($fg_color,
@@ -827,10 +838,12 @@ window.background > box.vertical box.horizontal {
         &-header {
           background-image: image($base_color); // stop highlighting
           color: $selected_bg_color;
+
           &:hover {
             background-image: image(mix($selected_bg_color,
                                         $base_color, 5%));
           }
+
           &:active {
             &, &:focus {
               background-image: image(mix($selected_bg_color,
@@ -1002,7 +1015,6 @@ window.solid-csd > box.vertical > box.vertical {
 // seems cover-art widget is the most biggest thing?
 
 window.background > box.vertical > toolbar.primary-toolbar {
-
   toolitem {
     .linked > button.image-button.raised { // 'shuffle/repeat'
       min-height: 36px;
