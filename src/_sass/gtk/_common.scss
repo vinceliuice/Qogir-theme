@@ -3635,14 +3635,17 @@ button.emoji-section {
 }
 
 .emoji {
-  min-width: 3em;
-  min-height: 3em;
-  padding: 0;
-  // font-size: large;
+  min-width: 16px;
+  min-height: 16px;
+  padding: 0 8px;
 
   widget {
-    transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+    transition: all 50ms cubic-bezier(0, 0, 0.2, 1);
 
-    &:hover { font-size: larger; }
+    &:hover {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+      border-radius: 3px;
+    }
   }
 }

@@ -4709,17 +4709,19 @@ button.emoji-section:last-child {
 }
 
 .emoji {
-  min-width: 3em;
-  min-height: 3em;
-  padding: 0;
+  min-width: 16px;
+  min-height: 16px;
+  padding: 0 8px;
 }
 
 .emoji widget {
-  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+  transition: all 50ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 .emoji widget:hover {
-  font-size: larger;
+  background-color: #5294e2;
+  color: #ffffff;
+  border-radius: 3px;
 }
 
 terminal-window notebook,
