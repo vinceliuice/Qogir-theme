@@ -54,7 +54,7 @@ $header_bg: black;
 @if $trans == 'true' and ($variant == 'dark' or $titlebar == 'dark') { $header_bg: rgba(#282A33, 0.97); }
 @if $trans == 'false' and ($variant == 'dark' or $titlebar == 'dark') { $header_bg: #282A33; }
 
-$header_bg_backdrop: if($titlebar == 'true' or $variant == 'dark', lighten($header_bg, 1.5%), lighten($header_bg, 3%));
+$header_bg_backdrop: if($titlebar == 'dark' or $variant == 'dark', lighten($header_bg, 1.5%), lighten($header_bg, 3%));
 
 $header_border: if($variant == 'light' and $titlebar == 'light', darken($header_bg, 10%), lighten($header_bg, 10%));
 

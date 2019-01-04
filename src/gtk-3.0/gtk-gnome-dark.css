@@ -1532,18 +1532,18 @@ toolbar:not(.inline-toolbar) .linked > entry,
 }
 
 searchbar {
-  background-color: #32343D;
+  padding: 0;
+  margin: 0;
   border: none;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
-  padding: 3px;
 }
 
-.titlebar searchbar {
-  box-shadow: inset 0 -2px rgba(255, 255, 255, 0.12), inset 0 -1px #282A33;
-}
-
-.titlebar searchbar entry, .titlebar searchbar button {
-  margin-bottom: 3px;
+searchbar > revealer > box {
+  padding: 6px;
+  margin: -6px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.12);
+  background-color: #32343D;
+  border-width: 0 0 1px;
 }
 
 actionbar {
@@ -2958,8 +2958,7 @@ infobar switch {
   background-image: -gtk-scaled(url("assets/switch-selected.png"), url("assets/switch-selected@2.png"));
 }
 
-headerbar switch,
-.primary-toolbar switch {
+headerbar switch {
   background-image: -gtk-scaled(url("assets/switch-dark.png"), url("assets/switch-dark@2.png"));
 }
 
@@ -2973,8 +2972,7 @@ infobar switch:checked {
   background-image: -gtk-scaled(url("assets/switch-active-selected.png"), url("assets/switch-active-selected@2.png"));
 }
 
-headerbar switch:checked,
-.primary-toolbar switch:checked {
+headerbar switch:checked {
   background-image: -gtk-scaled(url("assets/switch-active-dark.png"), url("assets/switch-active-dark@2.png"));
 }
 
@@ -2988,8 +2986,7 @@ infobar switch:disabled {
   background-image: -gtk-scaled(url("assets/switch-insensitive-selected.png"), url("assets/switch-insensitive-selected@2.png"));
 }
 
-headerbar switch:disabled,
-.primary-toolbar switch:disabled {
+headerbar switch:disabled {
   background-image: -gtk-scaled(url("assets/switch-insensitive-dark.png"), url("assets/switch-insensitive-dark@2.png"));
 }
 
@@ -3003,8 +3000,7 @@ infobar switch:checked:disabled {
   background-image: -gtk-scaled(url("assets/switch-active-insensitive-selected.png"), url("assets/switch-active-insensitive-selected@2.png"));
 }
 
-headerbar switch:checked:disabled,
-.primary-toolbar switch:checked:disabled {
+headerbar switch:checked:disabled {
   background-image: -gtk-scaled(url("assets/switch-active-insensitive-dark.png"), url("assets/switch-active-insensitive-dark@2.png"));
 }
 
@@ -4040,14 +4036,6 @@ filechooserbutton:drop(active) {
 
 messagedialog.background:not(.csd) .dialog-vbox .dialog-action-box button {
   border-radius: 0;
-}
-
-dialog.background.csd .dialog-vbox searchbar {
-  box-shadow: inset 0 -2px rgba(255, 255, 255, 0.12), inset 0 -1px #32343D;
-}
-
-dialog.background.csd .dialog-vbox entry, dialog.background.csd .dialog-vbox button {
-  margin-bottom: 3px;
 }
 
 .sidebar {
@@ -5094,14 +5082,6 @@ widget#STORAGE list separator.list {
   box-shadow: inset 0 0 0 1px #494c59;
 }
 
-widget#PERFORMANCE searchbar {
-  box-shadow: inset 0 -2px rgba(255, 255, 255, 0.12), inset 0 -1px #32343D;
-}
-
-widget#PERFORMANCE searchbar entry, widget#PERFORMANCE searchbar button {
-  margin-bottom: 2px;
-}
-
 graph-switcher-button.toggle {
   color: rgba(211, 218, 227, 0.75);
   font-weight: 500;
@@ -5765,11 +5745,6 @@ stack overlay frame scrolledwindow.frame {
   border-right-width: 0;
 }
 
-stack overlay frame searchbar {
-  box-shadow: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
 .nemo-window .nemo-places-sidebar.frame {
   border-width: 0;
 }
@@ -6252,11 +6227,6 @@ window.background.csd > box.vertical > stack > box.horizontal > list {
 
 window.background.csd > box.vertical > stack > box.horizontal > box.vertical > stack > scrolledwindow.frame {
   border: none;
-}
-
-window.background.csd > box.vertical > stack > box.horizontal > box.vertical > searchbar {
-  border: none;
-  box-shadow: none;
 }
 
 window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > list {
@@ -8767,6 +8737,11 @@ list.gedit-document-panel row.activatable:selected.has-open-popup, list.gedit-do
 window.background.csd > box.horizontal > box.vertical > searchbar, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar {
   background-image: image(#32343D);
   box-shadow: none;
+  border: none;
+}
+
+window.background.csd > box.horizontal > box.vertical > searchbar > revealer > box, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar > revealer > box {
+  background: none;
   border: none;
 }
 

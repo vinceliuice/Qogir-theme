@@ -52,6 +52,11 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   box-shadow: none;
   border: none;
 
+  > revealer > box {
+    background: none;
+    border: none;
+  }
+
   entry {
     color: $side_theme_fg;
     background-color: rgba($side_theme_fg, 0.1);

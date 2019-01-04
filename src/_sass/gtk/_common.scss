@@ -1093,14 +1093,17 @@ toolbar {
 }
 
 searchbar {
-  background-color: $bg_color;
+  padding: 0;
+  margin: 0;
   border: none;
-  box-shadow: inset 0 -1px $borders_color;
-  padding: 3px;
 
-  .titlebar & {
-    box-shadow: inset 0 -2px $borders_color, inset 0 -1px $base_color;  // Removed double borders under headerbar
-    entry, button { margin-bottom: 3px; }
+  > revealer > box {
+    padding: 6px;
+    margin: -6px;
+    border-style: solid;
+    border-color: $borders_color;
+    background-color: $bg_color;
+    border-width: 0 0 1px;
   }
 }
 
@@ -2235,9 +2238,11 @@ switch {
     background-image: -gtk-scaled(url("assets/switch#{$l}-selected.png"),url("assets/switch#{$l}-selected@2.png"));
   }
 
-  headerbar switch#{$k},
-  .primary-toolbar switch#{$k} {
-    background-image: -gtk-scaled(url("assets/switch#{$l}-dark.png"),url("assets/switch#{$l}-dark@2.png"));
+  @if $titlebar == 'dark' or $variant == 'dark' {
+    // .primary-toolbar switch#{$k},
+    headerbar switch#{$k} {
+      background-image: -gtk-scaled(url("assets/switch#{$l}-dark.png"),url("assets/switch#{$l}-dark@2.png"));
+    }
   }
 }
 
@@ -2936,20 +2941,11 @@ filechooserbutton:drop(active) {
 //
 // dialog-vbox
 //
-
 messagedialog.background:not(.csd) {
   .dialog-vbox {
     .dialog-action-box {
       button { border-radius: 0; }
     }
-  }
-}
-
-// GtkAppChooserDialog
-dialog.background.csd {
-  .dialog-vbox {
-    searchbar { box-shadow: inset 0 -2px $borders_color, inset 0 -1px $bg_color; }
-    entry, button { margin-bottom: 3px; }
   }
 }
 

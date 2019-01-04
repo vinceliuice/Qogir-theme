@@ -463,7 +463,7 @@ widget > box.terminal-titlebar {
 }
 
 list.tilix-session-sidebar {
-  // use -image property instead
+  // use image property instead
   background-image: image($dark_sidebar_bg);
 
   button.tilix-sidebar-close-button {
@@ -496,11 +496,6 @@ window.background.csd {
         > scrolledwindow.frame {
           border: none;
         }
-      }
-
-      > box.vertical > searchbar {
-        border: none;
-        box-shadow: none;
       }
 
       > revealer > stack {
