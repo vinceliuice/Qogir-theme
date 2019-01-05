@@ -17,13 +17,13 @@
 @keyframes ripple_effect {
   from {
     background-image: radial-gradient(circle farthest-corner at center,
-                                      rgba($fg_color, 0.1) 0%,
+                                      gtkalpha(currentColor, 0.1) 0%,
                                       transparent 0%);
   }
 
   to {
     background-image: radial-gradient(circle farthest-corner at center,
-                                      rgba($fg_color, 0.1) 100%,
+                                      gtkalpha(currentColor, 0.1) 100%,
                                       transparent 0%);
   }
 }

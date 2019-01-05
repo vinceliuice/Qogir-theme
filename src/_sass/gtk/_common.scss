@@ -35,18 +35,22 @@
 .gtkstyle-fallback {
   background-color: $bg_color;
   color: $fg_color;
+
   &:hover {
     background-color: lighten($bg_color, 10%);
     color: $fg_color;
   }
+
   &:active {
     background-color: darken($bg_color, 10%);
     color: $fg_color;
   }
+
   &:disabled {
     background-color: $insensitive_bg_color;
     color: $insensitive_fg_color;
   }
+
   &:selected {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
@@ -470,16 +474,20 @@ button {
         @include button(undecorated);
         color: $b_color;
       }
+
       &:hover {
+        @include button(suggested_destructive, lighten($b_color, 5%), $b_fg);
+      }
+
+      &:active, &:checked {
         @include button(suggested_destructive, lighten($b_color, 10%), $b_fg);
       }
-      &:active, &:checked {
-        @include button(suggested_destructive, darken($b_color, 10%), $b_fg);
-      }
+
       &.flat:disabled {
         @include button(undecorated);
         color: $insensitive_fg_color;
       }
+
       &:disabled { @include button(insensitive); }
     }
   }
@@ -863,10 +871,12 @@ modelbutton.flat {
     background-color: if($variant=='light', mix($fg_color,$bg_color,5%), mix($fg_color,$bg_color,10%));
     border: 1px solid $borders_color;
   }
+
   &:active, &:selected {
     border: 1px solid $sec_selected_bg_color;
     &, arrow { @extend %selected_items; }
   }
+
   &:checked { color: $fg_color; }
   &:disabled { color: $insensitive_fg_color; }
 
@@ -1453,15 +1463,19 @@ headerbar {
         @include button(undecorated);
         color: $b_color;
       }
+
       &:hover {
+        @include button(suggested_destructive, lighten($b_color, 5%), $b_fg);
+      }
+
+      &:active, &:checked {
         @include button(suggested_destructive, lighten($b_color, 10%), $b_fg);
       }
-      &:active, &:checked {
-        @include button(suggested_destructive, darken($b_color, 10%), $b_fg);
-      }
+
       &.flat:disabled,
       &:disabled { @include button(header-insensitive); }
     }
+
     button.#{$b_type}:backdrop,
     button.#{$b_type}:backdrop {
       opacity: 0.8;
@@ -1674,6 +1688,7 @@ treeview.view {
       background-color: $selected_fg_color;
     }
   }
+
   &.trough { // progress bar trough in treeviews
     color: $fg_color;
     background-color: $borders_color;
@@ -1718,6 +1733,7 @@ treeview.view {
         border-color: $bg_color;
         background-image: none;
       }
+
       &:last-child {
         border-right-style: none;
         border-image: none;
@@ -1767,10 +1783,10 @@ menubar,
     }
 
     &:disabled {
-      color: rgba($header_fg, 0.5);
+      color: rgba($header_fg, 0.45);
     }
 
-    label { &:disabled { color: rgba($header_fg, 0.5); }}
+    label { &:disabled { color: rgba($header_fg, 0.45); }}
   }
 }
 
@@ -2823,7 +2839,6 @@ calendar {
     color: transparentize($fg_color, 0.55);
 
     &:hover { color: $fg_color; }
-
     &:disabled { color: $insensitive_fg_color; }
   }
 
@@ -2882,8 +2897,8 @@ messagedialog { // Message Dialog styling
       border-top: 1px solid $borders_color;
 
       &:active, &:checked {
-        transition: background-color 0.00001s 0.3s;
-        animation: ripple_effect 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+        transition: background-color 0.00001s 0.2s;
+        animation: ripple_effect 0.2s cubic-bezier(0.0, 0.0, 0.2, 1);
       }
     }
   }
@@ -2902,11 +2917,11 @@ messagedialog { // Message Dialog styling
   .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
 
     &:hover {
-      background-color: gtkalpha($fg_color, 0.06);
+      background-color: rgba($fg_color, 0.06);
     }
 
     &:active, &:checked {
-      background-color: gtkalpha($fg_color, 0.1);
+      background-color: rgba($fg_color, 0.1);
       color: $fg_color;
     }
   }
@@ -3630,6 +3645,7 @@ button.emoji-section {
   outline-offset: -4px;
   box-shadow: none;
   border: none;
+
   &:first-child { border-radius: 0 0 0 2px; }
   &:last-child { border-radius: 0 0 2px 0; }
 }
