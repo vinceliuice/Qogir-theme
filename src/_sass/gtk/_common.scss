@@ -1183,6 +1183,7 @@ headerbar,
         -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
       }
     }
+
     .maximized & { background-color: opacify($selection_mode_bg, 1); }
   }
 
@@ -1211,7 +1212,7 @@ headerbar,
 
   &.default-decoration {
     min-height: $medium_size + 2px;
-    padding: 0 8px - ($header_padding * 2);
+    padding: 0 8px - $header_padding;
     margin: 0;
     background-color: opacify($header_bg, 1);
 
@@ -1222,6 +1223,7 @@ headerbar,
     button.titlebutton {
       @extend %circle_titlebutton;
       border: none;
+      margin: 0 0 - ($header_padding * 0.6);
     }
   }
 
@@ -1549,15 +1551,18 @@ headerbar {
         background-color: lighten($_slider_bg, 5%);
         border-color: $_slider_border;
       }
+
       &:active {
         background-color: $selected_bg_color;
         border-color: $selected_bg_color;
       }
+
       &:disabled {
         background-color: mix($_slider_bg, $header_bg, 70%);
         border-color: $_slider_border;
       }
     }
+
     trough {
       background-color: $_trough_bg;
 
@@ -1840,11 +1845,13 @@ menu,
         -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
         margin-left: 10px;
       }
+
       &:dir(rtl) {
         -gtk-icon-source:-gtk-icontheme('pan-end-symbolic-rtl');
         margin-right: 10px;
       }
     }
+
     @at-root menuitem {
       accelerator { color: gtkalpha(currentColor,0.55); }
 
@@ -3568,6 +3575,7 @@ headerbar,
     &:hover {
       @include button(header-hover);
     }
+
     &:active, &:checked {
       @include button(header-active);
     }

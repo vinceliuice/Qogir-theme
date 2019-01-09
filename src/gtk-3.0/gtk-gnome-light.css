@@ -1656,6 +1656,7 @@ headerbar.default-decoration,
 headerbar.default-decoration button.titlebutton,
 .default-decoration.titlebar:not(headerbar) button.titlebutton {
   border: none;
+  margin: 0 0;
 }
 
 headerbar.default-decoration,
@@ -2380,12 +2381,12 @@ menubar > menuitem:hover,
 
 menubar > menuitem:disabled,
 .menubar > menuitem:disabled {
-  color: rgba(82, 93, 118, 0.5);
+  color: rgba(82, 93, 118, 0.45);
 }
 
 menubar > menuitem label:disabled,
 .menubar > menuitem label:disabled {
-  color: rgba(82, 93, 118, 0.5);
+  color: rgba(82, 93, 118, 0.45);
 }
 
 menu,
