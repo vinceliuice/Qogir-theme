@@ -770,3 +770,17 @@ window.background.csd {
     }
   }
 }
+
+//
+// Polari
+//
+.polari-room-list {
+  .sidebar {
+    @extend %side_background;
+    // border-color: if($variant == 'light', $bg_color, $solid_borders_color); // Not use
+
+    .activatable, .inactive, .room-list-header {
+      @extend %side_views;
+    }
+  }
+}
