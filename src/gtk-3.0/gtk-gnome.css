@@ -8524,8 +8524,9 @@ treeview.view.sidebar.source-list, window.thunar .sidebar treeview.sidebar.sourc
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-headerbar.titlebar entry.pathbar {
-  min-height: 0;
+headerbar.titlebar entry.pathbar label {
+  padding-top: 6px;
+  color: rgba(207, 218, 231, 0.8);
 }
 
 headerbar.titlebar button.flat.image-button.toggle, headerbar.titlebar button.image-button.toggle.sidebar-button, headerbar.titlebar button.image-button.toggle.budgie-menu-launcher, headerbar.titlebar .budgie-panel .image-button.toggle#tasklist-button, .budgie-panel headerbar.titlebar .image-button.toggle#tasklist-button {

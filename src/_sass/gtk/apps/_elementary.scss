@@ -237,7 +237,9 @@ treeview.view {
 }
 
 headerbar.titlebar {
-  entry.pathbar { min-height: 0; }
+  entry.pathbar {
+    label { padding-top: 6px; color: $header_fg; }
+  }
 
   button.flat.image-button.toggle {
     margin-top: 9px;
