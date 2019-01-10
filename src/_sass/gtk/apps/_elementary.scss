@@ -144,7 +144,15 @@ button.flat.toggle.switcher {
     font-weight: bold;
     text-shadow: none;
     transition: all 200ms ease-in-out;
-//    -gtk-icon-shadow: none;
+  }
+
+  > revealer image,
+  > revealer spinner {
+    padding: 3px 0;
+  }
+
+  > revealer label {
+    padding: 3px 6px;
   }
 
   .keyboard {
@@ -225,7 +233,9 @@ treeview.view {
 }
 
 headerbar.titlebar {
-  entry.pathbar { min-height: 0; }
+  // entry.pathbar {
+  //   label { padding-top: 6px; color: $header_fg; }
+  // }
 
   button.flat.image-button.toggle {
     margin-top: 9px;
@@ -237,6 +247,11 @@ headerbar.titlebar {
     background-image: image($header_bg);
     border-bottom: 1px solid transparent;
     border-radius: 0;
+
+    &:backdrop {
+      transition: $backdrop_transition;
+      background-image: image($header_bg_backdrop);
+    }
   }
 }
 
