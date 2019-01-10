@@ -8249,6 +8249,15 @@ button.flat.toggle.switcher:hover image, button.toggle.switcher.sidebar-button:h
   transition: all 200ms ease-in-out;
 }
 
+.composited-indicator > revealer image,
+.composited-indicator > revealer spinner {
+  padding: 3px 0;
+}
+
+.composited-indicator > revealer label {
+  padding: 3px 6px;
+}
+
 .composited-indicator .keyboard {
   background-color: #fff;
   border-radius: 2px;
