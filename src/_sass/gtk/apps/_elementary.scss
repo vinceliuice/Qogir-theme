@@ -239,6 +239,11 @@ headerbar.titlebar {
     background-image: image($header_bg);
     border-bottom: 1px solid transparent;
     border-radius: 0;
+
+    &:backdrop {
+      transition: $backdrop_transition;
+      background-image: image($header_bg_backdrop);
+    }
   }
 }
 

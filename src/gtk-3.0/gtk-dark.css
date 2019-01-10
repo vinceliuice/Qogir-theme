@@ -8351,6 +8351,11 @@ headerbar.titlebar > grid.linked.horizontal.format-bar {
   border-radius: 0;
 }
 
+headerbar.titlebar > grid.linked.horizontal.format-bar:backdrop {
+  transition: 200ms ease-out;
+  background-image: image(#2b2e37);
+}
+
 popover radiobutton.color-button.color-light, popover radiobutton.color-button.color-dark, popover radiobutton.color-button.color-white {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
