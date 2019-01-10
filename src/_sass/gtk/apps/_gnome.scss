@@ -28,31 +28,14 @@ terminal-window,
   background-position: bottom right;
 }
 
-%headerbar_image {
-  background-image: -gtk-scaled(url("assets/logo.png"),
-                                url("assets/logo@2.png"));
-  background-repeat: no-repeat;
-  background-position: top left;
-
-  &:backdrop {
-    background-image: -gtk-scaled(url("assets/logo-backdrop.png"),
-                                url("assets/logo-backdrop@2.png"));
-    background-repeat: no-repeat;
-    background-position: top left;
-  }
-}
-
 %pathbar_box_button {
   background: none;
   border: none;
-
-  &, &:hover, &:checked, &:active, &:disabled {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0 6px 2px 6px;
-    min-height: 24px;
-    border-radius: 0;
-  }
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 $cont_padding 2px $cont_padding;
+  min-height: 24px;
+  border-radius: 0;
 
   &:hover {
     color: $alt_header_fg;
@@ -76,8 +59,8 @@ terminal-window,
 
 .nautilus-window headerbar {
   .path-bar-box {
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: $icon_padding;
+    margin-bottom: $icon_padding;
     border-radius: 2px;
     color: $header_fg;
     background-color: transparent;
@@ -88,7 +71,9 @@ terminal-window,
       margin: 0;
 
       button.flat.text-button.toggle,
-      button.flat.image-button.text-button.toggle { @extend %pathbar_box_button; }
+      button.flat.image-button.text-button.toggle {
+        @extend %pathbar_box_button;
+      }
     }
 
     &.width-maximized {
@@ -125,62 +110,6 @@ terminal-window,
   color: mix($fg_color, $bg_color, 50%);
 
   &:selected, &:selected:focus { color: mix($selected_fg_color, $selected_bg_color, 80%); }
-}
-
-//.nemo-window,
-.nautilus-window {
-  paned > separator {
-    background-image: _solid($dark_sidebar_border);
-
-//    @if $variant=='light' {
-//      &:dir(ltr) { margin-left: -1px; }
-//      &:dir(rtl) { margin-right: -1px; }
-//    }
-  }
-
-  headerbar {
-    padding-left: if($menu == 'budgie', 6px + $header_padding, 48px);
-    @if $menu == 'gnome' { @extend %headerbar_image; } // Set nautilus headerbar mountain icon
-
-    &, &:backdrop {
-      box-shadow: inset 0 -1px if($variant=='light', rgba($dark_sidebar_icon_bg, 0.15), $dark_sidebar_icon_bg),
-                  inset 38px 0 0 0 if($menu=='budgie', $dark_sidebar_icon_bg, transparent);
-    }
-
-    @if $menu == 'budgie' {
-      button.titlebutton {
-        &.appmenu  { // appmenu button
-          margin-left: -2px - $header_padding;
-          border: none;
-          min-height: 30px;
-          min-width: 30px;
-          border-radius: 50px;
-          color: transparent;
-          background-color: transparent;
-          background-image: -gtk-scaled(url("assets/logo.png"),
-                                        url("assets/logo@2.png"));
-          background-repeat: no-repeat;
-          background-position: center;
-
-          image { opacity: 0; } // Make menu button icon invisible
-
-          &:hover {
-            background-image: -gtk-scaled(url("assets/logo-hover.png"),
-                                          url("assets/logo-hover@2.png"));
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-
-          &:checked, &:active {
-            background-image: -gtk-scaled(url("assets/logo-active.png"),
-                                        url("assets/logo-active@2.png"));
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-        }
-      }
-    }
-  }
 }
 
 %file_manager_img,
@@ -268,104 +197,15 @@ $disk_space_free: darken($bg_color, 3%);
   &.bottom.left { border-top-left-radius: 0; }
   &.bottom.right { border-top-right-radius: 0; }
 
-    button {
-        border: none;
-        border-radius: 100px;
-        min-height: 0;
-        min-width: 0;
-        padding: 0;
-        margin-right: 6px;
-        -gtk-icon-shadow: none;
-        @extend %selected-button;
-    }
-}
-
-//
-// Gedit
-//
-.open-document-selector-treeview.view {
-  padding: 3px 6px 3px 6px;
-  border-color: $base_color;  // disable borders, making them transparent doesn't work for some reason
-
-  &:hover {
-    background-color: mix($fg_color, $base_color, 7%);
-
-    &:selected {
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
-    }
-  }
-}
-
-.open-document-selector-name-label {
-  color: $fg_color;
-}
-
-.open-document-selector-path-label {
-    color: mix($fg_color, $base_color, 50%);
-    font-size: smaller;
-
-    &:selected { color: transparentize($selected_fg_color, 0.1); }
-}
-
-.gedit-document-panel {
-
-  row.activatable { padding: 4px 0; }
-
-  row button {
-    min-width: 22px;
-    min-height: 22px;
-    padding: 0;
-    margin: 0 6px;
+  button {
+    border: none;
     border-radius: 100px;
-    -gtk-outline-radius: 100px;
-
-    image { color: inherit; }
-  }
-
-  row:hover:not(:selected) button {
-
-    &:active {
-      background-color: rgba($fg_color, 0.15);
-      border-color: $borders_color;
-    }
-  }
-}
-
-.gedit-document-panel-dragged-row {
-  border: 1px solid $borders_color;
-  background-color: darken($bg_color, 10%);
-  color: $fg_color;
-}
-
-.gedit-side-panel-paned statusbar {
-  border-top: 1px solid $borders_color;
-  background-color: $bg_color;
-}
-
-.gedit-search-slider {
-  background-color: lighten($bg_color, 2%);
-  padding: 6px;
-  border-color: $borders_color;
-  border-radius: 0 0 2px 2px;
-  border-width: 0 1px 1px 1px;
-  border-style: solid;
-}
-
-.gedit-search-entry-occurrences-tag {
-  color: transparentize($fg_color, 0.4);
-  border: none;
-  margin: 2px;
-  padding: 2px;
-}
-
-.gedit-map-frame {
-  border {
-    @if $variant=='light' { border-color: transparentize(black, 0.7); }
-    border-width: 0;
-
-    &:dir(ltr) { border-left-width: 1px; }
-    &:dir(rtl) { border-right-width: 1px; }
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    margin-right: $cont_padding;
+    -gtk-icon-shadow: none;
+    @extend %selected-button;
   }
 }
 
@@ -444,10 +284,12 @@ button.documents-favorite:active:hover {
     color: $selected_fg_color;
     background: lighten($selected_bg_color, 4%);
   }
+
   &:active {
     color: $selected_fg_color;
     background: darken($selected_bg_color, 4%);
   }
+
   &.button {
     box-shadow: none;
     border: none;
@@ -469,13 +311,13 @@ button.documents-favorite:active:hover {
 .photos-collection-icon { @extend .documents-collection-icon; }
 
 .photos-fade-in {
-    opacity: 1.0;
-    transition: opacity 0.2s ease-out;
+  opacity: 1.0;
+  transition: opacity 0.2s ease-out;
 }
 
 .photos-fade-out {
-    opacity: 0.0;
-    transition: opacity 0.2s ease-out;
+  opacity: 0.0;
+  transition: opacity 0.2s ease-out;
 }
 
 //
@@ -549,18 +391,12 @@ widget {
       }
     }
   }
-
-  &#PERFORMANCE {
-    searchbar {
-      box-shadow: inset 0 -2px $borders_color, inset 0 -1px $bg_color;  // Removed double borders under headerbar
-      entry, button { margin-bottom: 2px; }
-    }
-  }
 }
 
 graph-switcher-button.toggle {
   color: $alt_fg_color;
   font-weight: 500;
+
   &:hover { // use opaque
     color: $fg_color;
     background-image: image(if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03)));
@@ -587,53 +423,9 @@ box.speedometer {
 }
 
 //
-// Gnome Tweak Tool
-//
-.tweak-categories,
-.tweak-category:not(:selected):not(:hover) {
-  background-image: _solid($base_color);
-}
-
-// Workaround for 3.26
-row#Focus,
-row#ClickMethod,
-row#StaticWorkspaceTweak, // for 3.26.0
-row#dynamic-workspaces,
-row#PrimaryWorkspaceTweak, // for 3.26.0
-row#workspaces-only-on-primary {
-  padding: 0;
-  border: 1px solid $borders_color;
-
-  row:not(:last-child) { border-bottom: 1px solid $borders_color; }
-
-  &.tweak > list { margin-top: -3px; }
-}
-
-// Add more spaces between title and list
-row#Focus,
-row#ClickMethod,
-row#PrimaryWorkspaceTweak, // for 3.26.0
-row#workspaces-only-on-primary {
-  margin-top: 4px;
-}
-
-
-row#AutostartTitle.tweak {
-  padding: 3px;
-  background-color: $base_color;
-}
-
-list#AutostartListBoxTweakGroup {
-  &.tweak-group-startup {
-    border: 1px solid $borders_color;
-  }
-}
-
-//
 // Gnome Builder
 //
 // TODO: Merge this with the upstream stylesheet
-
 .gb-search-entry-occurrences-tag { background: none; }
 
 workbench.csd > stack.titlebar:not(headerbar) {
@@ -673,7 +465,7 @@ pillbox {
 }
 
 docktabstrip {
-  padding: 0 6px;
+  padding: 0 $cont_padding;
 
   background-color: $bg_color;
   border-bottom: 1px solid $borders_color;
@@ -741,6 +533,7 @@ button.dzlmenubuttonitem.check { // menuitem buttons
     color: $fg_color;
     &.dim-label { color: $fg_color; }
   }
+
   box > image { opacity: 0.87; }
 }
 
@@ -839,6 +632,7 @@ window.background > box.vertical > overlay > stack > widget > stack {
   button {
     color: $insensitive_fg_color;
     background-image: image($bg_color);
+
     &:hover { color: mix($fg_color, rgba($fg_color, 0.5), 50%); }
     &:checked { color: $fg_color; }
     &:disabled { color: rgba($insensitive_fg_color, 0.65); }
@@ -889,8 +683,10 @@ window.background > box.vertical > overlay > stack > widget > stack {
         background-color: $selected_bg_color;
         border-color: $selected_bg_color;
       }
+
       &.empty { background-color: darken($osd_bg_color, 5%); }
     }
+
     trough { background: none; }
   }
 
@@ -949,6 +745,7 @@ headerbar > button.flat.popup.title-menu-button.toggle {
       padding: rem(1.3px) rem(13.3px) 0;
       font-size: 90%;
     }
+
     .subtitle {
       margin: rem(-2.7px) 0;
       padding: 0 rem(13.3px) rem(1.3px);
@@ -969,10 +766,11 @@ window.background > box.vertical box.horizontal {
       color: $fg_color;
       background-color: transparent;
       font-weight: 500;
+
       &:hover {
-          color: $fg_color;
-          background-color: rgba($fg_color, 0.08);
-        }
+        color: $fg_color;
+        background-color: rgba($fg_color, 0.08);
+      }
 
       &:selected {
         color: $selected_fg_color;
@@ -1001,6 +799,7 @@ window.background > box.vertical box.horizontal {
     row.event.activatable {
       color: $fg_color;
       transition-duration: 0.1s;
+
       &:hover,
       &:active { color: $fg_color; }
 
@@ -1021,6 +820,7 @@ window.background > box.vertical box.horizontal {
           background-image: image(mix($fg_color, $bg_color, 5%));
           color: $fg_color;
         }
+
         &:active {
           &, &:focus {
             background-image: image(mix($fg_color,
@@ -1038,10 +838,12 @@ window.background > box.vertical box.horizontal {
         &-header {
           background-image: image($base_color); // stop highlighting
           color: $selected_bg_color;
+
           &:hover {
             background-image: image(mix($selected_bg_color,
                                         $base_color, 5%));
           }
+
           &:active {
             &, &:focus {
               background-image: image(mix($selected_bg_color,
@@ -1213,7 +1015,6 @@ window.solid-csd > box.vertical > box.vertical {
 // seems cover-art widget is the most biggest thing?
 
 window.background > box.vertical > toolbar.primary-toolbar {
-
   toolitem {
     .linked > button.image-button.raised { // 'shuffle/repeat'
       min-height: 36px;
@@ -1253,26 +1054,15 @@ dialog.background.csd {
           border: none;
         }
       }
+
       stack {
         scrolledwindow.frame { // reset border for totem setting dialog
           border: 1px solid $borders_color;
         }
       }
     }
-    scrolledwindow {
-      viewport.frame {
-//        border: 1px solid $borders_color; // Add border for RhythmBox plugin setting dialog
-      }
-    }
-    toolbar.inline-toolbar.horizontal {
-//      margin-top: -1px; // Removed space for RhythmBox plugin setting dialog
-    }
-    notebook {
-      toolbar.inline-toolbar.horizontal {
-//        margin-top: 0; // Reset for nautilus setting dialog
-      }
-    }
   }
+
   headerbar.default-decoration { // Add box-shadow as bottom border for default-decoration headerbar of dialog
     box-shadow: inset 0 -1px $borders_color;
   }
@@ -1287,11 +1077,6 @@ stack {
       scrolledwindow.frame { // removed double borders
         border-left-width: 0;
         border-right-width: 0;
-      }
-
-      searchbar {
-        box-shadow: none;
-        border-top: 1px solid $borders_color;
       }
     }
   }

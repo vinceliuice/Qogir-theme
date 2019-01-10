@@ -1496,7 +1496,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-list-box.vertical #appMenuIcon {
-  padding-top: 2px;
+  padding-top: 0;
 }
 
 .window-list-box:highlight {
@@ -1509,10 +1509,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-width: 5px;
 }
 
+.window-list-item-label StIcon, .window-list-item-label StBin, .window-list-item-label #appMenuIcon {
+  padding: 0;
+}
+
 .window-list-item-box {
   font-weight: normal;
   background-image: none;
-  padding: 2px 10px;
+  padding: 0 10px;
   spacing: 8px;
   transition-duration: 100;
   color: rgba(211, 218, 227, 0.6);
@@ -1540,7 +1544,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .panel-top .window-list-item-box StIcon, .panel-top .window-list-item-box StBin, .panel-top .window-list-item-box #appMenuIcon {
-  padding: 2px;
+  padding: 0;
   padding-top: 0;
 }
 
@@ -1549,7 +1553,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .panel-bottom .window-list-item-box StIcon, .panel-bottom .window-list-item-box StBin, .panel-bottom .window-list-item-box #appMenuIcon {
-  padding: 2px;
+  padding: 0;
   padding-bottom: 0;
 }
 
@@ -1558,7 +1562,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .panel-left .window-list-item-box StIcon, .panel-left .window-list-item-box StBin, .panel-left .window-list-item-box #appMenuIcon {
-  padding: 2px;
+  padding: 0;
   padding-left: 0;
 }
 
@@ -1567,7 +1571,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .panel-right .window-list-item-box StIcon, .panel-right .window-list-item-box StBin, .panel-right .window-list-item-box #appMenuIcon {
-  padding: 2px;
+  padding: 0;
   padding-right: 0;
 }
 
@@ -1720,9 +1724,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .grouped-window-list-item-box {
   font-weight: normal;
   background-image: none;
-  padding-top: 0;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 0 10px;
   transition-duration: 100;
   color: rgba(211, 218, 227, 0.6);
   border: 0 solid transparent;
@@ -1733,7 +1735,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .grouped-window-list-item-box.top StIcon, .grouped-window-list-item-box.top StBin, .grouped-window-list-item-box.top #appMenuIcon {
-  padding: 2px;
+  padding: 0;
   padding-top: 0;
 }
 
@@ -1742,7 +1744,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .grouped-window-list-item-box.bottom StIcon, .grouped-window-list-item-box.bottom StBin, .grouped-window-list-item-box.bottom #appMenuIcon {
-  padding: 2px;
+  padding: 0;
   padding-bottom: 0;
 }
 
@@ -1751,7 +1753,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .grouped-window-list-item-box.left StIcon, .grouped-window-list-item-box.left StBin, .grouped-window-list-item-box.left #appMenuIcon {
-  padding: 2px;
+  padding: 0;
   padding-left: 0;
 }
 
@@ -1760,7 +1762,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .grouped-window-list-item-box.right StIcon, .grouped-window-list-item-box.right StBin, .grouped-window-list-item-box.right #appMenuIcon {
-  padding: 2px;
+  padding: 0;
   padding-right: 0;
 }
 

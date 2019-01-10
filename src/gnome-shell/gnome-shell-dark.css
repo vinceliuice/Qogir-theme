@@ -153,11 +153,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .slider {
   -slider-height: 4px;
   -slider-background-color: rgba(255, 255, 255, 0.12);
-  -slider-border-color: rgba(0, 0, 0, 0);
+  -slider-border-color: transparent;
   -slider-active-background-color: #5294e2;
-  -slider-active-border-color: rgba(0, 0, 0, 0);
+  -slider-active-border-color: transparent;
   -slider-border-width: 0;
-  -slider-handle-radius: 0px;
+  -slider-handle-radius: 0;
   height: 18px;
   border: 0 solid transparent;
   border-right-width: 1px;
@@ -177,6 +177,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu-item.selected .slider {
   -slider-background-color: rgba(0, 0, 0, 0.2);
   -slider-active-background-color: #ffffff;
+  -barlevel-background-color: rgba(0, 0, 0, 0.2);
+  -barlevel-active-background-color: #ffffff;
 }
 
 .check-box StBoxLayout {
@@ -1493,11 +1495,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-icon-bin {
-  padding: 8px 0px 8px 8px;
+  padding: 8px 0 8px 8px;
 }
 
 .message-icon-bin:rtl {
-  padding: 8px 8px 8px 0px;
+  padding: 8px 8px 8px 0;
 }
 
 .message-icon-bin > StIcon {
@@ -2027,7 +2029,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .list-search-result:focus,
 .list-search-result:selected,
 .list-search-result:hover {
-  background-color: rgba(211, 218, 227, 0.4);
+  background-color: rgba(211, 218, 227, 0.3);
   transition-duration: 200ms;
 }
 
@@ -2050,9 +2052,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .grid-search-result:hover .overview-icon,
 .grid-search-result:focus .overview-icon,
 .grid-search-result:selected .overview-icon {
-  background-color: rgba(211, 218, 227, 0.4);
+  background-color: rgba(211, 218, 227, 0.3);
   transition-duration: 0ms;
-  border: 1px solid rgba(211, 218, 227, 0.6);
+  border: 1px solid rgba(211, 218, 227, 0.1);
   background-image: none;
 }
 
@@ -2088,7 +2090,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-well-app.app-folder:active > .overview-icon, .app-well-app.app-folder:checked > .overview-icon {
   color: #ffffff;
   background-color: #5294e2;
-  border: 1px solid #2679db;
+  border: 1px solid #68a2e6;
   box-shadow: none;
 }
 

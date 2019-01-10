@@ -8,6 +8,7 @@
 
   .nemo-places-sidebar {
     &.frame { border-width: 0; }
+
     .places-treeview {
       @extend row.activatable;
     }
@@ -21,16 +22,22 @@
       button,
       combobox > .linked > button.combo {
         @include button(normal);
+
         &:hover {
           @include button(hover);
+
           -gtk-icon-effect: highlight;
         }
+
         &:active, &:checked {
           @include button(active);
+
           &:not(:disabled) label:disabled { color: inherit; opacity: 0.6; }
         }
+
         &:disabled {
           @include button(insensitive);
+
           &:active, &:checked {
             @include button(insensitive-active);
           }
@@ -66,9 +73,9 @@
   }
 
   .primary-toolbar {
+    @extend %header_widgets;
     padding-top: 0;
     padding-bottom: 0;
-    @extend %header_widgets;
     border: none;
     color: $header_fg;
     background-color: opacify($header_bg, 1);
@@ -76,8 +83,8 @@
 
     button, entry {
       min-height: 16px;
-      margin-top: 6px;
-      margin-bottom: 6px;
+      margin-top: $cont_padding;
+      margin-bottom: $cont_padding;
     }
   }
 
@@ -98,13 +105,16 @@
                                       transparent 0%)
                                       0 0 2 / 0 0 2px;
       }
+
       &:active, &:checked {
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                       $selected_bg_color 100%,
                                       transparent 0%)
                                       0 0 2 / 0 0 2px;
       }
+
       &:disabled { color: rgba($header_fg, 0.5); }
+
       &, &:hover, &:active, &:checked, &:disabled { border-radius: 0; }
     }
   }
@@ -200,7 +210,10 @@ window.background:not(.csd) {
       &:active { background-image: image(if($variant == 'light', darken($button_bg, 5%), lighten($button_bg, 5%))); }
 
       // Fixed thunderbird linked entry spinbutton border-radius.
-      .entry { border-top-right-radius: 0;  border-bottom-right-radius: 0; }
+      .entry {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
     }
 
     > button > button {
@@ -211,9 +224,10 @@ window.background:not(.csd) {
     }
   }
 
-  .menu { // context-menus
+  > menu,
+  > menu > menu {
+    // border: none;
     border-radius: 0;
-    border: none;
   }
 
   > menu > separator { color: $borders_color; }
@@ -389,89 +403,6 @@ window.background:not(.solid-csd) {
   }
 }
 
- /***********
-  *  Geary  *
-  ***********/
-
-%folder_frame_border { border-width: 0; }
-
-%conversation_frame {
-  > border { border: none; }
-
-  treeview.view {
-    background-color: $base_color;
-
-    &:selected {
-      &, &:focus {
-        background-color: rgba($selected_bg_color, 0.15);
-        color: $fg_color;
-        &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
-        &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
-      }
-    }
-  }
-}
-
-%folder_frame {
-
-  &:dir(ltr) { border: none; }
-  &:dir(rtl) { border: none; }
-
-  treeview.view.sidebar {
-
-    &.cell { // = row height of placessidebar
-//      padding-top: rem(4px);
-//      padding-bottom: rem(4px);
-    }
-  }
-}
-
-.geary-titlebar-left {
-  // remove unexpected "hardcoded" vertical separator
-  separator { opacity: 0; }
-}
-
-// left-pane styling (legacy)
-.sidebar.vertical > paned.sidebar-pane-separator {
-  .conversation-frame { @extend %conversation_frame; }
-
-  .folder-frame {
-    > border { @extend %folder_frame_border; }
-
-    > scrolledwindow { @extend %folder_frame; }
-  }
-}
-
-// left-pane styling (current)
-.sidebar.vertical > paned.geary-sidebar-pane-separator {
-  .geary-conversation-frame { @extend %conversation_frame; }
-
-  .geary-folder-frame {
-    > border { @extend  %folder_frame_border; }
-
-    > scrolledwindow { @extend %folder_frame; }
-  }
-}
-
-// right-pane styling (current)
-stack#conversation_viewer {
-  scrolledwindow.geary-conversation-scroller > viewport.frame {
-    border: none; // unset borders
-  }
-}
-
-// Popover
-popover.background {
-  list.geary-folder-popover-list {
-    row.activatable.geary-folder-popover-list-row {
-      label {
-        color: $fg_color;
-        &:disabled { color: $insensitive_fg_color; }
-      }
-    }
-  }
-}
-
 //
 // gThumb
 //
@@ -499,7 +430,7 @@ overlay.window-overlay {
 
 // in-line titlebars
 widget > box.terminal-titlebar {
-  padding: 0 6px;
+  padding: 0 $cont_padding;
 
   > button.flat.popup.toggle {
     border: none;
@@ -511,8 +442,8 @@ widget > box.terminal-titlebar {
                                   transparent 0%)
                                   0 0 0 / 0 0 0;
 
-    &:dir(ltr) { padding-right: 6px; }
-    &:dir(rtl) { padding-left: 6px; }
+    &:dir(ltr) { padding-right: $cont_padding; }
+    &:dir(rtl) { padding-left: $cont_padding; }
 
     &:hover {
       box-shadow: inset 0 -2px $selected_bg_color;
@@ -542,7 +473,7 @@ widget > box.terminal-titlebar {
 }
 
 list.tilix-session-sidebar {
-  // use -image property instead
+  // use image property instead
   background-image: image($dark_sidebar_bg);
 
   button.tilix-sidebar-close-button {
@@ -565,7 +496,6 @@ list.tilix-session-sidebar {
 // Pamac
 //
 window.background.csd {
-
   > box.vertical > stack {
     > box.horizontal {
       > list {

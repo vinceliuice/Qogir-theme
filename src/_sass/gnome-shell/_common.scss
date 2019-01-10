@@ -139,11 +139,11 @@ StScrollBar {
 .slider {
   -slider-height: 4px;
   -slider-background-color: $button_border;                   //background of the trough
-  -slider-border-color: transparentize(black, 1);             //trough border color
+  -slider-border-color: transparent;                          //trough border color
   -slider-active-background-color: $selected_bg_color;        //active trough fill
-  -slider-active-border-color: transparentize(black, 1);      //active trough border
+  -slider-active-border-color: transparent;                   //active trough border
   -slider-border-width: 0;
-  -slider-handle-radius: 0px;
+  -slider-handle-radius: 0;
   height: 18px;
   border: 0 solid transparent;
   border-right-width: 1px;
@@ -162,8 +162,12 @@ StScrollBar {
   -barlevel-border-width: 0;
 
   .popup-menu-item.selected & {
-    -slider-background-color: transparentize(black, 0.8);
+    -slider-background-color: rgba(black, 0.2);
     -slider-active-background-color: $selected_fg_color;
+
+    // barlevels are for >= 3.29.90
+    -barlevel-background-color: rgba(black, 0.2);
+    -barlevel-active-background-color: $selected_fg_color;
   }
 }
 
@@ -923,7 +927,7 @@ StScrollBar {
     border-image: none;
   }
 
-  &:overview { }
+  // &:overview { }
 
   #panelLeft, #panelCenter { // spacing between activities<>app menu and such
     spacing: 8px;
@@ -1073,7 +1077,6 @@ StScrollBar {
 }
 
 // a little unstructured mess:
-
 .system-switch-user-submenu-icon {
   icon-size: 20px;
   padding: 0 2px;
@@ -1219,14 +1222,12 @@ StScrollBar {
   background-image: url("assets/misc/calendar-arrow-left.svg");
 
   &:focus, &:hover { background-image: url("assets/misc/calendar-arrow-left-hover.svg"); }
-
   &:active { background-image: url("assets/misc/calendar-arrow-left.svg"); }
 
   &:rtl {
     background-image: url("assets/misc/calendar-arrow-right.svg");
 
     &:focus, &:hover { background-image: url("assets/misc/calendar-arrow-right-hover.svg"); }
-
     &:active { background-image: url("assets/misc/calendar-arrow-right.svg"); }
   }
 }
@@ -1236,14 +1237,12 @@ StScrollBar {
   background-image: url("assets/misc/calendar-arrow-right.svg");
 
   &:focus, &:hover { background-image: url("assets/misc/calendar-arrow-right-hover.svg"); }
-
   &:active { background-image: url("assets/misc/calendar-arrow-right.svg"); }
 
   &:rtl {
     background-image: url("assets/misc/calendar-arrow-left.svg");
 
     &:focus, &:hover { background-image: url("assets/misc/calendar-arrow-left-hover.svg"); }
-
     &:active { background-image: url("assets/misc/calendar-arrow-left.svg"); }
   }
 }
@@ -1277,10 +1276,9 @@ StScrollBar {
 }
 
 .calendar-day-top { border-top-width: 0; }
-
 .calendar-day-left { border-left-width: 0; }
 
-.calendar-work-day {}
+// .calendar-work-day {}
 
 .calendar-nonwork-day {
   color: $fg_color;
@@ -1355,17 +1353,18 @@ StScrollBar {
       background-color: transparent;
       background-image: url('assets/misc/message-close.svg');
     }
+
     &:hover > StIcon {
       color: transparent;
       background-color: transparent;
       background-image: url('assets/misc/message-close-hover.svg');
     }
+
     &:active > StIcon {
       color: transparent;
       background-color: transparent;
       background-image: url('assets/misc/message-close-active.svg');
     }
-
   }
 }
 
@@ -1385,9 +1384,9 @@ StScrollBar {
   }
 
   &-icon-bin {
-    padding: 8px 0px 8px 8px;
+    padding: 8px 0 8px 8px;
 
-    &:rtl { padding: 8px 8px 8px 0px; }
+    &:rtl { padding: 8px 8px 8px 0; }
 
     > StIcon {
       //icon-size: 32px;
@@ -1534,7 +1533,6 @@ StScrollBar {
   }
 
   &-header-hbox { spacing: 10px; }
-
   &-airplane-box { spacing: 12px; }
 
   &-airplane-headline {
@@ -1544,7 +1542,6 @@ StScrollBar {
   }
 
   &-airplane-text { color: $fg_color; }
-
   &-header-icon { icon-size: 32px; }
 
   &-scroll-view {
@@ -1571,12 +1568,10 @@ StScrollBar {
   }
 
   &-icons { spacing: .5em; }
-
   &-icon { icon-size: 16px; }
 }
 
 .no-networks-label { color: $insensitive_fg_color; }
-
 .no-networks-box { spacing: 12px; }
 
 //
@@ -1635,7 +1630,6 @@ StScrollBar {
     color: $selected_fg_color;
     caret-color: $selected_fg_color;
     background-color: $selected_bg_color;
-
     selection-background-color: $selected_fg_color;
     selected-color: $selected_bg_color;
 
@@ -1674,9 +1668,7 @@ StScrollBar {
 }
 
 .list-search-result-content { spacing: 12px; padding: 12px; }
-
 .list-search-result-title { font-size: 1.5em; color: $_shell_fg_color; }
-
 .list-search-result-description { color: darken($_shell_fg_color, 20%); }
 
 .search-provider-icon { padding: 15px; }
@@ -1717,9 +1709,7 @@ StScrollBar {
 }
 
 .dash-item-container > StWidget {
-
   &, &:rtl, .right & { padding: 4px 8px; }
-
   .top &, .bottom & { padding: 6px; }
 }
 
@@ -1797,9 +1787,9 @@ StScrollBar {
     .show-apps-icon { color: $selected_fg_color; }
   }
 
-  &:active, &:checked {
-//    .show-apps-icon { background-color: $selected_bg_color; }
-  }
+  // &:active, &:checked {
+  //  .show-apps-icon { background-color: $selected_bg_color; }
+  // }
 
   .overview-icon {
     background-color: transparent;
@@ -1863,10 +1853,10 @@ StScrollBar {
 .list-search-result {
   @extend %icon_tile;
 
-  &:active, &:checked { background-color: transparentize(darken($osd_bg_color,10%),.1); }
+  &:active, &:checked { background-color: rgba(darken($osd_bg_color,10%), 0.9); }
 
   &:focus, &:selected, &:hover {
-    background-color: transparentize($osd_fg_color,.6);
+    background-color: rgba($osd_fg_color, 0.3);
     transition-duration: 200ms;
   }
 }
@@ -1881,16 +1871,16 @@ StScrollBar {
 
   &:active .overview-icon,
   &:checked .overview-icon {
-    background-color: transparentize(darken($osd_bg_color,10%),.1);
+    background-color: rgba(darken($osd_bg_color,10%), 0.9);
     box-shadow: none;
   }
 
   &:hover .overview-icon,
   &:focus .overview-icon,
   &:selected .overview-icon {
-    background-color: transparentize($osd_fg_color,.6);
+    background-color: rgba($osd_fg_color, 0.3);
     transition-duration: 0ms;
-    border: 1px solid transparentize($osd_fg_color,.4);
+    border: 1px solid rgba($osd_fg_color, 0.1);
     background-image: none;
   }
 }
@@ -1929,7 +1919,7 @@ StScrollBar {
   &:active > .overview-icon, &:checked > .overview-icon {
     color: $selected_fg_color;
     background-color: $selected_bg_color;
-    border: 1px solid darken($selected_bg_color, 10%);
+    border: 1px solid lighten($selected_bg_color, 5%);
     box-shadow: none;
   }
 

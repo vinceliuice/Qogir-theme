@@ -204,13 +204,13 @@ GraniteWidgetsXsEntry entry { padding: 4px; }
 .h3 { font-size: 11px; }
 .h4,
 .category-label {
-    color: mix($bg_color, $text_color, 30%);
-    font-weight: 600;
+  color: mix($bg_color, $text_color, 30%);
+  font-weight: 600;
 }
 
 .h4 {
-    padding-bottom: 6px;
-    padding-top: 6px;
+  padding-bottom: 6px;
+  padding-top: 6px;
 }
 
 GtkListBox .h4{

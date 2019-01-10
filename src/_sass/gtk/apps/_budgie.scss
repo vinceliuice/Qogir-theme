@@ -250,7 +250,7 @@ window.budgie-popover:not(.csd) {
   entry.search { background-color: transparent; }
 
   entry.search {
-//    margin: 6px 6px 0 6px;
+//    margin: $cont_padding $cont_padding 0 $cont_padding;
     border: none;
     border-bottom: 1px solid $borders_color;
     border-radius: 0;
@@ -599,7 +599,7 @@ button.raven-trigger {
     }
 
     &.top {
-      padding: 0 6px;
+      padding: 0 $cont_padding;
       background-color: $header_bg;
       color: $header_fg;
       box-shadow: inset 0 -1px $borders_color;
@@ -692,7 +692,7 @@ button.raven-trigger {
     min-height: 28px;
     min-width: 28px;
     margin: 0 4px;
-    padding: 6px;
+    padding: $cont_padding;
   }
 
   .option-subtitle { font-size: smaller; }
@@ -719,7 +719,7 @@ calendar.raven-calendar {
   label { min-height: 24px; }
 
   button.image-button {
-    padding: 6px;
+    padding: $cont_padding;
     border: none;
     @extend %budgie_button.flat;
   }
