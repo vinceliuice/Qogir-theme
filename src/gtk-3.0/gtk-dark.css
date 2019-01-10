@@ -2396,7 +2396,12 @@ menubar > menuitem label:disabled,
 }
 
 menu,
-.menu {
+.menu,
+.context-menu,
+popover.touch-selection,
+.csd popover.touch-selection,
+popover.background.touch-selection,
+.csd popover.background.touch-selection {
   padding: 4px 0;
   border-radius: 0;
   background-color: #32343D;
@@ -2404,7 +2409,7 @@ menu,
 }
 
 .csd menu, .csd
-.menu {
+.menu, .csd .context-menu, .csd popover.touch-selection, .csd popover.background.touch-selection {
   padding: 4px 0;
   border-radius: 0;
   border: none;
@@ -2414,7 +2419,15 @@ menu separator,
 .csd menu separator,
 .menu separator,
 .csd
-.menu separator {
+.menu separator,
+.context-menu separator,
+popover.touch-selection separator,
+.csd popover.touch-selection separator,
+popover.background.touch-selection separator,
+.csd popover.background.touch-selection separator,
+.csd .context-menu separator,
+.csd popover.touch-selection separator,
+.csd popover.background.touch-selection separator {
   margin: 4px 0;
   background-color: #32343D;
 }
@@ -2423,47 +2436,81 @@ menu .separator:not(label),
 .csd menu .separator:not(label),
 .menu .separator:not(label),
 .csd
-.menu .separator:not(label) {
+.menu .separator:not(label),
+.context-menu .separator:not(label),
+popover.touch-selection .separator:not(label),
+.csd popover.background.touch-selection .separator:not(label),
+.csd .context-menu .separator:not(label),
+.csd popover.touch-selection .separator:not(label) {
   color: #32343D;
 }
 
 menu menuitem,
-.menu menuitem {
+.menu menuitem,
+.context-menu menuitem,
+popover.touch-selection menuitem,
+.csd popover.touch-selection menuitem,
+popover.background.touch-selection menuitem,
+.csd popover.background.touch-selection menuitem {
   min-height: 17px;
   min-width: 38px;
   padding: 4px 6px;
 }
 
 menu menuitem:hover,
-.menu menuitem:hover {
+.menu menuitem:hover,
+.context-menu menuitem:hover,
+popover.touch-selection menuitem:hover,
+.csd popover.background.touch-selection menuitem:hover {
   color: #ffffff;
   background-color: #5294e2;
 }
 
 menu menuitem:disabled,
-.menu menuitem:disabled {
+.menu menuitem:disabled,
+.context-menu menuitem:disabled,
+popover.touch-selection menuitem:disabled,
+.csd popover.background.touch-selection menuitem:disabled {
   color: rgba(211, 218, 227, 0.45);
 }
 
 menu menuitem label:disabled,
-.menu menuitem label:disabled {
+.menu menuitem label:disabled,
+.context-menu menuitem label:disabled,
+popover.touch-selection menuitem label:disabled,
+.csd popover.background.touch-selection menuitem label:disabled {
   color: rgba(211, 218, 227, 0.45);
 }
 
 menu menuitem arrow,
-.menu menuitem arrow {
+.menu menuitem arrow,
+.context-menu menuitem arrow,
+popover.touch-selection menuitem arrow,
+.csd popover.touch-selection menuitem arrow,
+popover.background.touch-selection menuitem arrow,
+.csd popover.background.touch-selection menuitem arrow {
   min-height: 17px;
   min-width: 17px;
 }
 
 menu menuitem arrow:dir(ltr),
-.menu menuitem arrow:dir(ltr) {
+.menu menuitem arrow:dir(ltr),
+.context-menu menuitem arrow:dir(ltr),
+popover.touch-selection menuitem arrow:dir(ltr),
+.csd popover.touch-selection menuitem arrow:dir(ltr),
+popover.background.touch-selection menuitem arrow:dir(ltr),
+.csd popover.background.touch-selection menuitem arrow:dir(ltr) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
   margin-left: 10px;
 }
 
 menu menuitem arrow:dir(rtl),
-.menu menuitem arrow:dir(rtl) {
+.menu menuitem arrow:dir(rtl),
+.context-menu menuitem arrow:dir(rtl),
+popover.touch-selection menuitem arrow:dir(rtl),
+.csd popover.touch-selection menuitem arrow:dir(rtl),
+popover.background.touch-selection menuitem arrow:dir(rtl),
+.csd popover.background.touch-selection menuitem arrow:dir(rtl) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
   margin-right: 10px;
 }
@@ -2488,7 +2535,12 @@ menuitem check:dir(rtl), menuitem radio:dir(rtl) {
 }
 
 menu > arrow,
-.menu > arrow {
+.menu > arrow,
+.context-menu > arrow,
+popover.touch-selection > arrow,
+.csd popover.touch-selection > arrow,
+popover.background.touch-selection > arrow,
+.csd popover.background.touch-selection > arrow {
   min-width: 17px;
   min-height: 17px;
   padding: 4px;
@@ -2497,26 +2549,38 @@ menu > arrow,
 }
 
 menu > arrow.top,
-.menu > arrow.top {
+.menu > arrow.top,
+.context-menu > arrow.top,
+popover.touch-selection > arrow.top,
+.csd popover.touch-selection > arrow.top {
   margin-top: -6px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
 menu > arrow.bottom,
-.menu > arrow.bottom {
+.menu > arrow.bottom,
+.context-menu > arrow.bottom,
+popover.touch-selection > arrow.bottom,
+.csd popover.touch-selection > arrow.bottom {
   margin-bottom: -12px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
 menu > arrow:hover,
-.menu > arrow:hover {
+.menu > arrow:hover,
+.context-menu > arrow:hover,
+popover.touch-selection > arrow:hover,
+.csd popover.touch-selection > arrow:hover {
   background-color: #393c45;
 }
 
 menu > arrow:disabled,
-.menu > arrow:disabled {
+.menu > arrow:disabled,
+.context-menu > arrow:disabled,
+popover.touch-selection > arrow:disabled,
+.csd popover.touch-selection > arrow:disabled {
   color: transparent;
   background-color: transparent;
   border-color: transparent;
@@ -4448,8 +4512,12 @@ colorchooser .popover.osd {
   background-color: #3e4250;
 }
 
-.context-menu, popover.touch-selection, .csd popover.touch-selection,
-popover.background.touch-selection, .csd popover.background.touch-selection {
+
+.context-menu,
+popover.touch-selection,
+.csd popover.touch-selection,
+popover.background.touch-selection,
+.csd popover.background.touch-selection {
   font: initial;
 }
 
@@ -8270,11 +8338,6 @@ treeview.view.sidebar.source-list, window.thunar .sidebar treeview.sidebar.sourc
 
 .dynamic-notebook notebook iconview.view.cell:selected {
   background-color: rgba(255, 255, 255, 0.08);
-}
-
-headerbar.titlebar entry.pathbar label {
-  padding-top: 6px;
-  color: rgba(207, 218, 231, 0.8);
 }
 
 headerbar.titlebar button.flat.image-button.toggle, headerbar.titlebar button.image-button.toggle.sidebar-button, headerbar.titlebar button.image-button.toggle.budgie-menu-launcher, headerbar.titlebar .budgie-panel .image-button.toggle#tasklist-button, .budgie-panel headerbar.titlebar .image-button.toggle#tasklist-button {
