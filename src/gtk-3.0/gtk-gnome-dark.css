@@ -3972,7 +3972,7 @@ expander arrow:checked {
 calendar {
   color: #D3DAE3;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 3px;
+  border-radius: 0;
   padding: 2px 7px;
 }
 

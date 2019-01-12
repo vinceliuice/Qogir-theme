@@ -3966,7 +3966,7 @@ expander arrow:checked {
 calendar {
   color: #5c616c;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 3px;
+  border-radius: 0;
   padding: 2px 7px;
 }
 
