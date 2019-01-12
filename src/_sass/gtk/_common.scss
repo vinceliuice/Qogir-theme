@@ -109,7 +109,7 @@ flowbox {
     }
   }
 
-  &.search-bar { box-shadow: inset 0 -1px $borders_color; }
+  &.search-bar { border: 1px solid $borders_color; }
 }
 
 label {
@@ -1970,7 +1970,7 @@ notebook {
     padding: 0;
     background-color: $bg_color;
 
-  @each $_pos, $_bpos in (top, bottom), (bottom, top), (right, left), (left, right) {
+    @each $_pos, $_bpos in (top, bottom), (bottom, top), (right, left), (left, right) {
       // sizing and borders
       &.#{$_pos} {
         padding-#{$_bpos}: 0;

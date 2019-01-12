@@ -105,7 +105,7 @@ flowbox flowboxchild:selected {
 }
 
 flowbox.search-bar {
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 label.separator, popover label.separator,
@@ -8402,6 +8402,19 @@ actionbar.inline-toolbar button:last-child {
 scale.warmth trough {
   background-image: linear-gradient(to right, #5294e2, #F04A50);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.terminal-window headerbar.titlebar.default-decoration {
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
+}
+
+.terminal-window .search-bar {
+  background-color: #32343D;
+  border-bottom: 1px solid #494c59;
+}
+
+.terminal-window .dynamic-notebook notebook > header {
+  border-color: #494c59;
 }
 
 /***********
