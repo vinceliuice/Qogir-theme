@@ -8780,7 +8780,7 @@ GtkListBox .h4 {
 }
 
 list.gedit-document-panel, .gedit-document-panel-dragged-row, .gedit-side-panel-paned, .gedit-map-frame, .tweak-categories,
-.tweak-category:not(:selected):not(:hover), window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list, .sidebar.vertical > paned.sidebar-pane-separator, .sidebar.vertical > paned.sidebar-pane-separator statusbar, .sidebar.vertical > paned.geary-sidebar-pane-separator, .sidebar.vertical > paned.geary-sidebar-pane-separator statusbar, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal, .polari-room-list .sidebar {
+.tweak-category:not(:selected):not(:hover), window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list, .geary-titlebar-left, .sidebar.vertical > paned.sidebar-pane-separator, .sidebar.vertical > paned.sidebar-pane-separator statusbar, .sidebar.vertical > paned.geary-sidebar-pane-separator, .sidebar.vertical > paned.geary-sidebar-pane-separator statusbar, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal, .polari-room-list .sidebar {
   color: rgba(246, 246, 251, 0.8);
   background-color: #32343D;
 }
