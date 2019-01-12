@@ -1,7 +1,7 @@
 
- /**********************
- * Elementary Desktop *
- **********************/
+//
+// Elementary Desktop
+//
 
 // Wingpanel
 .panel {
@@ -35,20 +35,12 @@
     box-shadow: none;
 
     .menuitem { font-weight: normal; }
-
-    // .window-frame.menu.csd,
-    // .window-frame.popup.csd {
-    //   box-shadow: none;
-    // }
   }
 
   .menubar > .menuitem {
     padding: 3px $cont_padding;
     &:hover { background-color: transparent; }
   }
-
- // .window-frame.menu.csd,
- // .window-frame.popup.csd { box-shadow: none; }
 
   popover {
     padding: 2px 4px;
@@ -284,19 +276,14 @@ actionbar.inline-toolbar {
   border: none;
   border-top: 1px solid $borders_color;
 
-//  button + button {
-//    margin-left: -6px;
-//  }
+  // button + button { margin-left: -6px; }
 
   button { // Reset buttons
     border-radius: 3px;
     border: 1px solid $borders_color;
-    &:first-child {
-      border-right-style: solid;
-    }
-    &:last-child {
-      border-left-style: solid;
-    }
+
+    &:first-child { border-right-style: solid; }
+    &:last-child { border-left-style: solid; }
   }
 }
 

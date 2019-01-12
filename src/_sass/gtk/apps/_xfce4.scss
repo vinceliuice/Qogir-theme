@@ -1,7 +1,7 @@
 
- /*****************
- * Xfce4 Desktop *
- *****************/
+//
+// Xfce4 Desktop
+//
 
 $text_shadow: 0 0 1px rgba(0, 0, 0, 0.26),
               0 1px 2px rgba(0, 0, 0, 0.32),
@@ -136,7 +136,7 @@ window#whiskermenu-window {
 }
 
 //
-//  * Thunar *
+// Thunar
 //
 %header_pathbar_button {
   border-radius: 0;
@@ -152,6 +152,7 @@ window#whiskermenu-window {
     background: none;
     box-shadow: inset 0 -2px rgba($selected_bg_color, 0.5);
   }
+
   &:active, &:checked {
     color: $header_fg;
     background: none;
@@ -160,7 +161,9 @@ window#whiskermenu-window {
                                   transparent 0%)
                                   0 0 2 / 0 0 2px;
   }
+
   &:disabled { color: rgba($header_fg, 0.4); }
+
   &:checked:disabled {
     color: rgba($header_fg, 0.4);
     border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),

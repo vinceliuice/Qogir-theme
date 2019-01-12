@@ -1328,6 +1328,7 @@ headerbar {
         color: $e_fg_color;
         background-color: $e_color;
       }
+
       selection, selection:focus {
         background-color: $e_fg_color;
         color: $e_color;
@@ -1373,6 +1374,7 @@ headerbar {
       color: $selection_mode_fg;
       background-color: transparentize($selection_mode_fg, 1);
     }
+
     &:hover { background-color: gtkalpha($selection_mode_fg, 0.3); }
     &:active, &:checked { @extend %selected-button:active; }
 
@@ -1381,6 +1383,7 @@ headerbar {
 
       &:checked, &:active { @extend %selected-button:disabled:checked; }
     }
+
     &:backdrop { opacity: 0.7; background: none; }
   }
 
@@ -1422,7 +1425,6 @@ headerbar {
 
   // special case for path-bars
   .linked:not(.vertical):not(.stack-switcher).path-bar {
-
     > button {
       margin: 0;
       color: $header_fg;
@@ -1434,6 +1436,7 @@ headerbar {
         color: $alt_header_fg;
         box-shadow: inset 0 -2px rgba($alt_selected_bg_color, 0.5);
       }
+
       &:active, &:checked {
         transition: box-shadow 0.2s;
         color: $header_fg;
@@ -1442,9 +1445,9 @@ headerbar {
       }
 
       &:disabled { color: rgba($header_fg, 0.4); }
-//      &, &:hover, &:active, &:checked, &:disabled { @extend %linked_flat; }
+      // &, &:hover, &:active, &:checked, &:disabled { @extend %linked_flat; }
     }
-//    @include pathbar_linking_rules($sep_color:$header_button_border);
+    // @include pathbar_linking_rules($sep_color:$header_button_border);
   }
 
   // special case and stack-switchers
@@ -1456,8 +1459,9 @@ headerbar {
       &:hover { background-color: if($titlebar == 'light', darken($header_bg, 3%), lighten($header_bg, 15%)); }
       &:active, &:checked { @include button(header-active); }
       &:disabled { color: rgba($header_fg, 0.4); label { color: rgba($header_fg, 0.4); } }
-//      &, &:hover, &:active, &:checked, &:disabled { @extend %linked_flat; }
+      // &, &:hover, &:active, &:checked, &:disabled { @extend %linked_flat; }
     }
+
     @include pathbar_linking_rules();
   }
 
@@ -2128,6 +2132,7 @@ notebook {
 
   // Button on notebook header
   button { margin: 2px; }
+
   }
 }
 
@@ -2177,9 +2182,7 @@ scrollbar {
     background-color: mix($fg_color, $bg_color, 40%);
 
     &:hover { background-color: mix($fg_color, $bg_color, 30%); }
-
     &:hover:active { background-color: $selected_bg_color;}
-
     &:disabled { background-color: transparent; }
   }
 
@@ -2501,10 +2504,12 @@ scale {
         background-color: mix($selected_fg_color, $selected_bg_color, 85%);
         border-color: mix($selected_fg_color, $selected_bg_color, 85%);
       }
+
       &:active {
         background-color: mix($selected_fg_color, $selected_bg_color, 50%);
         border-color: mix($selected_fg_color, $selected_bg_color, 50%);
       }
+
       &:disabled{
         background-color: mix($selected_fg_color, $selected_bg_color, 55%);
         border-color: mix($selected_fg_color, $selected_bg_color, 55%);
@@ -2558,6 +2563,7 @@ scale {
       }
     }
   }
+
   &.horizontal {
     indicator {
       min-height: $_marks_length;
@@ -2566,6 +2572,7 @@ scale {
 
     &.fine-tune indicator { min-height: ($_marks_length - 1px); }
   }
+
   &.vertical {
     indicator {
       min-height: 1px;
@@ -2596,6 +2603,7 @@ progressbar {
       box-shadow: none;
     }
   }
+
   // Moving bit
   progress {
     background-color: $progress_color;
@@ -2606,6 +2614,7 @@ progressbar {
     row:selected &,
     infobar & { background-color: $selected_fg_color; }
   }
+
   // Trough
   trough {
     border: none;
@@ -2625,6 +2634,7 @@ levelbar {
     min-width: 32px;
     min-height: 1px;
   }
+
   &.vertical block {
     min-width: 1px;
     min-height: 32px;
@@ -2645,18 +2655,22 @@ levelbar {
     background-color: $selected_bg_color;
     border-radius: 2px;
   }
+
   block.low {
     border-color: $warning_color;
     background-color: $warning_color;
   }
+
   block.high {
     border-color: $selected_bg_color;
     background-color: $selected_bg_color;
   }
+
   block.full {
     border-color: $success_color;
     background-color: $success_color;
   }
+
   block.empty {
     background-color: if($variant=='light', transparentize($fg_color,0.8), $base_color);
     border-color: if($variant=='light', transparentize($fg_color,0.8), $base_color);
@@ -2749,11 +2763,11 @@ row {
 
     button {
       @extend %selected-button;
-//      &:active, &:checked { background-image: image($selected_fg_color); }
+      // &:active, &:checked { background-image: image($selected_fg_color); }
     }
   }
 
-//  button { &:active, &:checked { background-image: image($selected_bg_color); } }
+  // button { &:active, &:checked { background-image: image($selected_bg_color); } }
 
   &.activatable {
     &.has-open-popup,
@@ -2765,9 +2779,9 @@ row {
 
     &:active, &:checked {
       transition: all 150ms $ease-out-quad;
-//      color: $selected_fg_color;
-//      background-color: $selected_bg_color;
-//      background-image: image(if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08)));
+      // color: $selected_fg_color;
+      // background-color: $selected_bg_color;
+      // background-image: image(if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08)));
     }
 
     &:disabled {
@@ -2952,7 +2966,6 @@ messagedialog { // Message Dialog styling
 //
 // Filechooser
 //
-
 filechooser {
   .dialog-action-box { border-top: 1px solid $borders_color; }
 
@@ -3103,9 +3116,11 @@ placesview {
     transition: 200ms $ease-out-quad;
     -gtk-icon-transform: rotate(-0.5turn);
   }
+
   > actionbar {
     border-top: 1px solid $borders_color;
   }
+
   // this selects the "connect to server" label
   > actionbar > revealer > box > label {
     padding-left: 8px;
@@ -3139,11 +3154,13 @@ paned {
 
   &.horizontal > separator {
     background-repeat: repeat-y;
+
     &:dir(ltr) {
       margin: 0 -8px 0 0;
       padding: 0 8px 0 0;
       background-position: left;
     }
+
     &:dir(rtl) {
       margin: 0 0 0 -8px;
       padding: 0 0 0 8px;
@@ -3206,7 +3223,6 @@ infobar {
 // Buttons on selected backgrounds
 //
 %selected-button {
-
   @at-root %normal_selected_button, & {
     color: $selected_fg_color;
     background-color: transparentize($selected_fg_color, 1);
@@ -3222,16 +3238,19 @@ infobar {
       &, label { color: transparentize($selected_fg_color, 0.6); }
     }
   }
+
   &:hover {
     color: $selected_fg_color;
     background-color: transparentize($selected_fg_color, 0.8);
     border-color: transparentize($selected_fg_color, 0.35);
   }
+
   &:active, &:active:hover, &:checked {
     color: $selected_fg_color;
     background-color: transparentize($selected_fg_color, 0.65);
     border-color: transparentize($selected_fg_color, 0.35);
   }
+
   &:disabled {
     &, label { color: transparentize($selected_fg_color, 0.5); }
     background-color: transparentize($selected_fg_color, 1);
@@ -3291,6 +3310,7 @@ colorswatch {
       border-top-right-radius: $_colorswatch-radius;
     }
   }
+
   &.bottom {
     border-bottom-left-radius: $_colorswatch-radius + 0.5px;
     border-bottom-right-radius: $_colorswatch-radius + 0.5;
@@ -3300,6 +3320,7 @@ colorswatch {
       border-bottom-right-radius: $_colorswatch-radius;
     }
   }
+
   &.left, &:first-child:not(.top) {
     border-top-left-radius: $_colorswatch_radius + 0.5px;
     border-bottom-left-radius: $_colorswatch_radius + 0.5px;
@@ -3308,6 +3329,7 @@ colorswatch {
       border-bottom-left-radius: $_colorswatch_radius;
     }
   }
+
   &.right, &:last-child:not(.bottom) {
     border-top-right-radius: $_colorswatch_radius + 0.5px;
     border-bottom-right-radius: $_colorswatch_radius + 0.5px;
@@ -3323,6 +3345,7 @@ colorswatch {
       border-color: if($variant == 'light', transparentize(black, 0.5), $borders_color);
     }
   }
+
   &.light overlay {
     color: transparentize(black, 0.3);
     &:hover {
@@ -3429,6 +3452,7 @@ stackswitcher button {
 //
 // Window Decorations
 //
+
 $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(black, 0.8));
 
 decoration {
@@ -3450,33 +3474,40 @@ decoration {
                 0 0 0 1px $borders_color;
     transition: $backdrop_transition;
   }
+
   .fullscreen &,
   .tiled & {
     border-radius: 0;
     box-shadow: 0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.06), opacify($_wm_border, 0.03));
   }
+
   // server-side decorations as used by mutter
   .ssd & {
     border-radius: 0;
     box-shadow: 0 0 0 1px $borders_color;
     border: none;
-//    &.maximized { border-radius: 0; }
+    // &.maximized { border-radius: 0; }
   }
+
   .popup & {
     border-radius: 0;
     box-shadow: none;
   }
+
   .csd.popup & {
     border-radius: 0;
     box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
   }
+
   tooltip.csd & {
     border-radius: 2px;
     box-shadow: 0 1px 3px 0 if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.3));
   }
+
   messagedialog.csd & {
     border-radius: 3px;
   }
+
   .solid-csd & {
     border: none;
     border-radius: 0;
@@ -3489,9 +3520,7 @@ decoration {
 //
 // Titlebuttons
 //
-
-headerbar,
-.titlebar {
+headerbar, .titlebar {
   @extend %csd_circle_titlebutton;
 }
 
@@ -3633,9 +3662,9 @@ headerbar,
   }
 }
 
-/*********
- * Emoji *
- *********/
+//
+// Emoji
+//
 popover.emoji-picker {
   padding: 0;
 
@@ -3646,7 +3675,7 @@ popover.emoji-picker {
     box-shadow: none;
     border-width: 0 0 1px 0;
     padding: 4px 12px;
-//    margin: 2px 0 0 0;
+    // margin: 2px 0 0 0;
   }
 
   scrolledwindow { border-bottom: 1px solid $borders_color; }
