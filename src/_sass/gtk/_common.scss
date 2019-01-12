@@ -808,18 +808,21 @@ headerbar.titlebar {
 
 %linked_flat {
   @extend %linked_flat_middle;
+
   &:first-child {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     border-left-style: solid;
     border-right-style: none;
   }
+
   &:last-child {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     border-right-style: solid;
     border-left-style: none;
   }
+
   &:only-child {
     border-radius: 3px;
     border-style: solid;
@@ -833,15 +836,18 @@ headerbar.titlebar {
 
 %linked_vertical {
   @extend %linked_vertical_middle;
+
   &:first-child {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
   }
+
   &:last-child {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     border-bottom-style: solid;
   }
+
   &:only-child {
     border-radius: 3px;
     border-style: solid;
@@ -873,7 +879,7 @@ modelbutton.flat {
   }
 
   &:active, &:selected {
-    border: 1px solid $sec_selected_bg_color;
+    border: 1px solid if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
     &, arrow { @extend %selected_items; }
   }
 
