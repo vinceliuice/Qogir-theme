@@ -5,7 +5,8 @@
 terminal-window,
 .mate-terminal {
   notebook {
-    padding: 0 1px 1px;
+    // padding: 0 1px 1px;
+
     > header.top {
       button {
         padding: 0;
@@ -13,6 +14,7 @@ terminal-window,
         min-height: 24px;
       }
     }
+
     scrollbar {
       background: none;
     }

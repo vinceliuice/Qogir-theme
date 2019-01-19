@@ -4790,11 +4790,6 @@ button.emoji-section:last-child {
   border-radius: 3px;
 }
 
-terminal-window notebook,
-.mate-terminal notebook {
-  padding: 0 1px 1px;
-}
-
 terminal-window notebook > header.top button,
 .mate-terminal notebook > header.top button {
   padding: 0;
