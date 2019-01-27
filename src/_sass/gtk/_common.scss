@@ -1223,7 +1223,7 @@ headerbar,
     background-color: $header_bg;
 
     button.titlebutton {
-      @extend %square_titlebutton;
+      @extend %circle_titlebutton;
       border: none;
       margin: 0 0 - ($header_padding * 0.6);
     }
@@ -3520,7 +3520,7 @@ decoration {
 // Titlebuttons
 //
 headerbar, .titlebar {
-  @extend %csd_square_titlebutton;
+  @extend %csd_circle_titlebutton;
 }
 
 %csd_square_titlebutton {
