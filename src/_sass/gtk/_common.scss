@@ -2789,6 +2789,7 @@ row {
     }
 
     &:selected {
+      @extend %selected_items;
       &:active { color: $selected_fg_color; }
 
       &.has-open-popup,

@@ -221,6 +221,11 @@ treeview.view {
     iconview.view.cell {
       &:selected { background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08)); }
     }
+
+    .overlay-bar { // floating infobar of files
+      box-shadow: none;
+      text-shadow: none;
+    }
   }
 }
 
