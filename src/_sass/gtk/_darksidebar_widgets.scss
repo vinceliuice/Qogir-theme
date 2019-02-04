@@ -329,8 +329,19 @@ filechooser {
       color: $dark_sidebar_fg;
 
       &.cell:selected {
-        background-color: $selected_bg_color;
-        color: $selected_fg_color;
+        @extend %selected_items;
+
+        &.has-open-popup,
+        &:hover {
+          color: $selected_fg_color;
+          background-color: mix(black, $selected_bg_color, 10%);
+        }
+      }
+
+      &.has-open-popup,
+      &:hover {
+        color: $dark_sidebar_fg;
+        background-color: mix($dark_sidebar_fg, $dark_sidebar_bg, 10%);
       }
 
       &.expander {

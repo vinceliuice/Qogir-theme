@@ -209,7 +209,26 @@ treeview.view {
     &.source-list {
       padding-top: 3px;
       padding-bottom: 3px;
-      @extend row.activatable;
+
+      &.has-open-popup,
+      &:hover {
+        color: $dark_sidebar_fg;
+        background-color: mix($dark_sidebar_fg, $dark_sidebar_bg, 10%);
+      }
+
+      &:disabled {
+        color: rgba($dark_sidebar_fg, 0.35);
+      }
+
+      &:selected {
+        @extend %selected_items;
+
+        &.has-open-popup,
+        &:hover {
+          color: $selected_fg_color;
+          background-color: mix(black, $selected_bg_color, 10%);
+        }
+      }
 
       &.trough { @extend treeview.view.trough }
     }
@@ -230,13 +249,18 @@ treeview.view {
 }
 
 headerbar.titlebar {
-  // entry.pathbar {
-  //   label { padding-top: 6px; color: $header_fg; }
-  // }
+  > box.horizontal > entry.pathbar {
+    min-height: 0;
+    padding: 0 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    caret-color: currentColor;
+  }
 
   button.flat.image-button.toggle {
-    margin-top: 9px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   // Hide Code header format-bar
