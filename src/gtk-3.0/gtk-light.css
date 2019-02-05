@@ -6012,14 +6012,9 @@ window.background:not(.csd) > widget > frame > border {
 }
 
 window.background:not(.csd) > widget > entry,
-window.background:not(.csd) > widget > button > button {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 2px;
-}
-
-window.background:not(.csd) > widget > entry,
 window.background:not(.csd) > widget .entry {
   border-radius: 2px;
+  color: #5c616c;
   background-image: image(#ffffff);
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
@@ -6043,7 +6038,13 @@ window.background:not(.csd) > widget > spinbutton .entry {
   border-bottom-right-radius: 0;
 }
 
-window.background:not(.csd) > widget > button > button:active, window.background:not(.csd) > widget > button > button:checked {
+window.background:not(.csd) > widget > button > button, window.background:not(.csd) > widget > button.combo > button {
+  color: #5c616c;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+window.background:not(.csd) > widget > button > button:active, window.background:not(.csd) > widget > button > button:checked, window.background:not(.csd) > widget > button.combo > button:active, window.background:not(.csd) > widget > button.combo > button:checked {
   border: 1px solid #d9d9d9;
   background-image: image(#f2f2f2);
 }

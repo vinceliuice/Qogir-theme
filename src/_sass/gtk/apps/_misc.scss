@@ -213,15 +213,10 @@ window.background:not(.csd) {
     > frame > border { border-color: $borders_color; }
 
     > entry,
-    > button > button {
-      border: 1px solid $borders_color;
-      border-radius: 2px;
-    }
-
-    > entry,
     .entry { // Set for linked entrys
 //      min-height: 26px;
       border-radius: 2px;
+      color: $text_color;
       background-image: image($base_color);
       border: 1px solid $borders_color;
 
@@ -240,10 +235,18 @@ window.background:not(.csd) {
       }
     }
 
-    > button > button {
-      &:active, &:checked {
-        border: 1px solid $firefox_border;
-        background-image: image(if($variant == 'light', darken($button_bg, 5%), lighten($button_bg, 5%)));
+    > button {
+      &, &.combo {
+        > button { // enforce fallback buttons inside the HTML pages
+          color: $text_color;
+          border: 1px solid $borders_color;
+          border-radius: 2px;
+
+          &:active, &:checked {
+            border: 1px solid $firefox_border;
+            background-image: image(if($variant == 'light', darken($button_bg, 5%), lighten($button_bg, 5%)));
+          }
+        }
       }
     }
   }
