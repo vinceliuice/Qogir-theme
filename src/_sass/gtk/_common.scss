@@ -639,6 +639,7 @@ toolbar.inline-toolbar toolbutton {
         + combobox > box > button.combo { border-#{$_border}-color: $e_color; }
       }
     }
+
     > button:active + entry,
     > button:checked + entry { border-#{$_border}-color: $selected_bg_color; }
   }
@@ -754,9 +755,9 @@ toolbar.inline-toolbar toolbutton {
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
-//    &:hover {
-//      box-shadow: none;
-//    }
+    // &:hover {
+    //   box-shadow: none;
+    // }
 
     &:first-child:hover { box-shadow: none; }
     &:last-child:hover { box-shadow: none; }
@@ -791,15 +792,18 @@ headerbar.titlebar {
 
 %linked {
   @extend %linked_middle;
+
   &:first-child {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
   }
+
   &:last-child {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     border-right-style: solid;
   }
+
   &:only-child {
     border-radius: 3px;
     border-style: solid;
@@ -909,10 +913,12 @@ modelbutton.flat arrow {
     color: $link_visited_color;
     *:selected & { color: mix($selected_fg_color, $selected_bg_color, 60%); }
   }
+
   &:hover {
     color: lighten($link_color,10%);
     *:selected & { color: mix($selected_fg_color, $selected_bg_color, 90%); }
   }
+
   &:active {
     color: $link_color;
     *:selected & { color: mix($selected_fg_color, $selected_bg_color, 80%); }
@@ -1877,25 +1883,28 @@ menu,
   // overflow buttons
 
   > arrow {
-//    @include button(undecorated);
+    // @include button(undecorated);
     min-width: $small_size;
     min-height: $small_size;
     padding: 4px;
     background-color: $_menu_bg;
     border-radius: 0;
-//    border: 1px solid $borders_color;
+    // border: 1px solid $borders_color;
 
     &.top {
       margin-top: -6px;
       border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
+
     &.bottom {
       margin-bottom: -12px;
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
+
     &:hover { background-color: mix($fg_color, $base_color, 10%); }
+
     &:disabled {
       color: transparent;
       background-color: transparent;

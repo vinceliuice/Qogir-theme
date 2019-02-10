@@ -721,6 +721,34 @@ calendar.raven-calendar {
   }
 }
 
+// some specific scale styling
+box.audio-widget,
+window.sound-popover.background {
+  scale.horizontal.marks-after { // overdrive-mode scale
+    padding-top: 0; // unset default padding
+    padding-bottom: 0;
+
+    trough { // overdrive-mode trough styling
+      background-color: transparent; // unset default trough color
+      @each $_dir, $_opp_end in (ltr, right),
+                                (rtl, left) {
+        &:dir(#{$_dir}) {
+          background-image:
+            linear-gradient(to $_opp_end,
+                            rgba($success_color, 0.25) calc(66% - 3px),
+                            rgba($destructive_color, 0.25) calc(66% - 3px),
+                            rgba($destructive_color, 0.25) 100%);
+        }
+      }
+    }
+
+    mark {
+      // hide label for vertically centered troughs
+      label { font-size: 0; }
+    }
+  }
+}
+
 // MPRIS Applet
 .raven-mpris {
   background-color: rgba(black, 0.5);

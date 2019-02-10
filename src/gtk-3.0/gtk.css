@@ -4829,39 +4829,38 @@ terminal-window notebook scrollbar,
   background: none;
 }
 
-.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button,
-.nautilus-window headerbar .path-bar-box .path-bar button.flat.image-button.text-button.toggle, .nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.sidebar-button, .nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher {
+.nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.text-button.toggle, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.sidebar-button, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher, .nautilus-window headerbar.titlebar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button, .budgie-panel .nautilus-window headerbar.titlebar .path-bar-box .path-bar .text-button.toggle#tasklist-button,
+.nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.image-button.text-button.toggle, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.image-button.text-button.toggle.sidebar-button, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher {
   background: none;
   border: none;
   margin-top: 0;
   margin-bottom: 0;
   padding: 0 6px 2px 6px;
-  min-height: 24px;
   border-radius: 0;
 }
 
-.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:hover, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:hover, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:hover, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:hover, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button:hover {
+.nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.text-button.toggle:hover, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:hover, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:hover, .nautilus-window headerbar.titlebar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:hover, .budgie-panel .nautilus-window headerbar.titlebar .path-bar-box .path-bar .text-button.toggle#tasklist-button:hover {
   color: rgba(241, 244, 248, 0.8);
   background: none;
   box-shadow: inset 0 -1px rgba(82, 148, 226, 0.5), 0 1px rgba(82, 148, 226, 0.5);
 }
 
-.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:checked, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:checked, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:checked, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:checked, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button:checked, .nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:active, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:active, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:active, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:active, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button:active {
+.nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.text-button.toggle:checked, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:checked, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:checked, .nautilus-window headerbar.titlebar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:checked, .budgie-panel .nautilus-window headerbar.titlebar .path-bar-box .path-bar .text-button.toggle#tasklist-button:checked, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.text-button.toggle:active, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:active, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:active, .nautilus-window headerbar.titlebar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:active, .budgie-panel .nautilus-window headerbar.titlebar .path-bar-box .path-bar .text-button.toggle#tasklist-button:active {
   color: rgba(207, 218, 231, 0.8);
   background: none;
   box-shadow: inset 0 -1px #5294e2, 0 1px #5294e2;
 }
 
-.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:disabled, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:disabled, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:disabled, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:disabled, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button:disabled {
+.nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.text-button.toggle:disabled, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:disabled, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:disabled, .nautilus-window headerbar.titlebar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:disabled, .budgie-panel .nautilus-window headerbar.titlebar .path-bar-box .path-bar .text-button.toggle#tasklist-button:disabled {
   color: rgba(207, 218, 231, 0.4);
 }
 
-.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:checked:disabled, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:checked:disabled, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:checked:disabled, .nautilus-window headerbar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:checked:disabled, .budgie-panel .nautilus-window headerbar .path-bar-box .path-bar .text-button.toggle#tasklist-button:checked:disabled {
+.nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.text-button.toggle:checked:disabled, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.sidebar-button:checked:disabled, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:checked:disabled, .nautilus-window headerbar.titlebar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:checked:disabled, .budgie-panel .nautilus-window headerbar.titlebar .path-bar-box .path-bar .text-button.toggle#tasklist-button:checked:disabled {
   color: rgba(207, 218, 231, 0.4);
   box-shadow: inset 0 -1px rgba(82, 148, 226, 0.4), 0 1px rgba(82, 148, 226, 0.4);
 }
 
-.nautilus-window headerbar .path-bar-box {
+.nautilus-window headerbar.titlebar .path-bar-box {
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 2px;
@@ -4870,17 +4869,13 @@ terminal-window notebook scrollbar,
   border: 1px solid transparent;
 }
 
-.nautilus-window headerbar .path-bar-box .path-bar {
-  padding: 0;
-  margin: 0;
+.nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button,
+.nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.nautilus-window headerbar .path-bar-box.width-maximized {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background-color: rgba(207, 218, 231, 0.06);
-}
-
-.nautilus-window headerbar .path-bar-box.background.frame {
+.nautilus-window headerbar.titlebar .path-bar-box.background.frame {
   border: none;
   background-color: transparent;
 }
@@ -7560,6 +7555,32 @@ calendar.raven-calendar {
 calendar.raven-calendar:selected {
   border-radius: 3px;
   background-color: #5294e2;
+}
+
+box.audio-widget scale.horizontal.marks-after,
+window.sound-popover.background scale.horizontal.marks-after {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+box.audio-widget scale.horizontal.marks-after trough,
+window.sound-popover.background scale.horizontal.marks-after trough {
+  background-color: transparent;
+}
+
+box.audio-widget scale.horizontal.marks-after trough:dir(ltr),
+window.sound-popover.background scale.horizontal.marks-after trough:dir(ltr) {
+  background-image: linear-gradient(to right, rgba(115, 210, 22, 0.25) calc(66% - 3px), rgba(240, 74, 80, 0.25) calc(66% - 3px), rgba(240, 74, 80, 0.25) 100%);
+}
+
+box.audio-widget scale.horizontal.marks-after trough:dir(rtl),
+window.sound-popover.background scale.horizontal.marks-after trough:dir(rtl) {
+  background-image: linear-gradient(to left, rgba(115, 210, 22, 0.25) calc(66% - 3px), rgba(240, 74, 80, 0.25) calc(66% - 3px), rgba(240, 74, 80, 0.25) 100%);
+}
+
+box.audio-widget scale.horizontal.marks-after mark label,
+window.sound-popover.background scale.horizontal.marks-after mark label {
+  font-size: 0;
 }
 
 .raven-mpris {

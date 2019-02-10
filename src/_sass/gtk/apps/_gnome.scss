@@ -36,7 +36,6 @@ terminal-window,
   margin-top: 0;
   margin-bottom: 0;
   padding: 0 $cont_padding 2px $cont_padding;
-  min-height: 24px;
   border-radius: 0;
 
   &:hover {
@@ -59,7 +58,7 @@ terminal-window,
   }
 }
 
-.nautilus-window headerbar {
+.nautilus-window headerbar.titlebar {
   .path-bar-box {
     margin-top: $icon_padding;
     margin-bottom: $icon_padding;
@@ -68,20 +67,33 @@ terminal-window,
     background-color: transparent;
     border: 1px solid transparent;
 
-    .path-bar {
-      padding: 0;
-      margin: 0;
-
+    .path-bar { // for ≥ 3.30.1
       button.flat.text-button.toggle,
       button.flat.image-button.text-button.toggle {
         @extend %pathbar_box_button;
       }
     }
 
-    &.width-maximized {
-      border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
-      background-color: rgba($header_fg, 0.06);
+    .linked.nautilus-path-bar { // for ≥ 3.31.90
+      button.text-button,
+      button.image-button.text-button {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
+
+    // &.width-maximized {
+    //   border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
+    //   background-color: rgba($header_fg, 0.06);
+    //
+    //   .linked.nautilus-path-bar { // FIXME: not work!
+    //     button.text-button,
+    //     button.image-button.text-button {
+    //       border-top: none;
+    //       border-bottom: none;
+    //     }
+    //   }
+    // }
 
     // workaround for 3.30.1
     &.background.frame {
