@@ -573,7 +573,12 @@ button.run-arrow-button {
   min-width: 12px;
 }
 
-omnibar.linked > entry:not(:only-child) { border-style: solid; border-radius: 3px; margin-left: 1px; margin-right: 1px; }
+omnibar.linked > entry:not(:only-child) {
+  border-style: solid;
+  border-radius: 3px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
 
 gstyleslidein {
   #scale_box,
