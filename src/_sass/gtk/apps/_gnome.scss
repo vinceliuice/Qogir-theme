@@ -1013,7 +1013,8 @@ window.solid-csd > box.vertical > box.vertical {
     box-shadow: none;
     background-color: transparent;
 
-    button {
+    > toolitem > .linked > button,
+    > toolitem > box.horizontal > button {
       min-height: 36px;
       min-width: 36px;
       padding: 0;
@@ -1032,19 +1033,19 @@ window.solid-csd > box.vertical > box.vertical {
 
 // hard-coded spacing depends on non-scalable unit,
 // seems cover-art widget is the most biggest thing?
-
 window.background > box.vertical > toolbar.primary-toolbar {
-  toolitem {
-    .linked > button.image-button.raised { // 'shuffle/repeat'
+  > toolitem {
+    > .linked > button.image-button.raised { // 'shuffle/repeat'
       min-height: 36px;
       min-width: 36px;
       padding: 0;
       margin: 0;
+
       > widget > box > image { padding: 0; }
     }
 
     button.flat.scale { // 'volume'
-      min-height: 24px;
+      min-height: 20px;
       min-width: 36px;
       padding: 0;
       margin-top: 8px;
@@ -1065,17 +1066,18 @@ window.background > box.vertical > toolbar.primary-toolbar {
 // Dialogs
 //
 dialog.background.csd {
-  box.dialog-vbox {
-    grid.horizontal {
-      scrolledwindow.frame { //removed ugly boders for nautilus batch renaming dialog
+  > box.dialog-vbox {
+    > grid.horizontal {
+      > scrolledwindow.frame { //removed ugly boders for nautilus batch renaming dialog
         border: none;
-        viewport.frame {
+
+        > viewport.frame {
           border: none;
         }
       }
 
-      stack {
-        scrolledwindow.frame { // reset border for totem setting dialog
+      > stack {
+        > scrolledwindow.frame { // reset border for totem setting dialog
           border: 1px solid $borders_color;
         }
       }
@@ -1091,9 +1093,9 @@ dialog.background.csd {
 // gtk3-widgets-tool
 //
 stack {
-  overlay {
-    frame {
-      scrolledwindow.frame { // removed double borders
+  > overlay {
+    > frame {
+      > scrolledwindow.frame { // removed double borders
         border-left-width: 0;
         border-right-width: 0;
       }
