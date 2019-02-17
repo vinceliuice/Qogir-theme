@@ -7723,6 +7723,10 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   background-color: rgba(82, 148, 226, 0.65);
 }
 
+.devices-list.sound-devices > row.activatable > box.horizontal label, .devices-list.sound-devices > .view > box.horizontal label, textview .devices-list.sound-devices > text > box.horizontal label, .devices-list.sound-devices > iconview > box.horizontal label, window.thunar notebook scrolledwindow.frame.standard-view .devices-list.sound-devices > .view > box.horizontal label, .devices-list.sound-devices > treeview.view > box.horizontal label, window.thunar .sidebar .devices-list.sound-devices > treeview.view > box.horizontal label, .nemo-window .nemo-places-sidebar .devices-list.sound-devices > .places-treeview > box.horizontal label, .budgie-popover .devices-list.sound-devices > row > box.horizontal label, .budgie-menu .devices-list.sound-devices > button > box.horizontal label, .panel popover .sidebar .devices-list.sound-devices > .view > box.horizontal label {
+  padding-left: 8px;
+}
+
 .budgie-notification-window, .budgie-osd-window, .budgie-switcher-window {
   background-color: transparent;
   background-image: none;

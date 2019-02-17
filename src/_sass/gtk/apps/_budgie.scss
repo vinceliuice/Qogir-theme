@@ -849,6 +849,12 @@ box.vertical > stack > box.vertical {
   }
 }
 
+.devices-list.sound-devices {
+  > row.activatable > box.horizontal {
+    label { padding-left: 8px; }
+  }
+}
+
 // Notifications
 .budgie-notification-window {
   background-color: transparent;
