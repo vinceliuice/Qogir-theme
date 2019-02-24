@@ -693,7 +693,9 @@ window#GearyMainWindow {
 
 .geary-titlebar-left {
   margin-right: $cont_padding;
-  @extend %side_background;
+  &, &.geary-titlebar {
+    @extend %side_headerbar;
+  }
 
   // remove unexpected "hardcoded" vertical separator
   separator {

@@ -1535,7 +1535,7 @@ searchbar > revealer > box {
   padding: 6px;
   margin: -6px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: #cad5df;
   background-color: #fafbfc;
   border-width: 0 0 1px;
 }
@@ -8841,7 +8841,7 @@ GtkListBox .h4 {
 }
 
 list.gedit-document-panel, .gedit-document-panel-dragged-row, .gedit-side-panel-paned, .gedit-map-frame, .tweak-categories,
-.tweak-category:not(:selected):not(:hover), window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list, .geary-titlebar-left, .sidebar.vertical > paned.sidebar-pane-separator, .sidebar.vertical > paned.sidebar-pane-separator statusbar, .sidebar.vertical > paned.geary-sidebar-pane-separator, .sidebar.vertical > paned.geary-sidebar-pane-separator statusbar, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal, .polari-room-list .sidebar {
+.tweak-category:not(:selected):not(:hover), window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list, .sidebar.vertical > paned.sidebar-pane-separator, .sidebar.vertical > paned.sidebar-pane-separator statusbar, .sidebar.vertical > paned.geary-sidebar-pane-separator, .sidebar.vertical > paned.geary-sidebar-pane-separator statusbar, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal, .polari-room-list .sidebar {
   color: rgba(246, 246, 251, 0.8);
   background-color: #32343D;
 }
@@ -8930,7 +8930,7 @@ window.background.csd > box.horizontal > box.vertical > searchbar entry:focus, w
   background-color: rgba(246, 246, 251, 0.12);
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton, .nautilus-window headerbar button.appmenu.titlebutton {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton, .geary-titlebar-left button.appmenu.titlebutton, .nautilus-window headerbar button.appmenu.titlebutton {
   border: none;
   min-height: 30px;
   min-width: 30px;
@@ -8942,23 +8942,23 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebut
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton image, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton image, .nautilus-window headerbar button.appmenu.titlebutton image {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton image, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton image, .geary-titlebar-left button.appmenu.titlebutton image, .nautilus-window headerbar button.appmenu.titlebutton image {
   opacity: 0;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:hover, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:hover, .nautilus-window headerbar button.appmenu.titlebutton:hover {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:hover, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:hover, .geary-titlebar-left button.appmenu.titlebutton:hover, .nautilus-window headerbar button.appmenu.titlebutton:hover {
   background-image: -gtk-scaled(url("assets/logo-hover.png"), url("assets/logo-hover@2.png"));
   background-repeat: no-repeat;
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:checked, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, .nautilus-window headerbar button.appmenu.titlebutton:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:active, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:active, .nautilus-window headerbar button.appmenu.titlebutton:active {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:checked, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, .geary-titlebar-left button.appmenu.titlebutton:checked, .nautilus-window headerbar button.appmenu.titlebutton:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:active, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:active, .geary-titlebar-left button.appmenu.titlebutton:active, .nautilus-window headerbar button.appmenu.titlebutton:active {
   background-image: -gtk-scaled(url("assets/logo-active.png"), url("assets/logo-active@2.png"));
   background-repeat: no-repeat;
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.tweak-titlebar-left, window.background.csd > box.titlebar.horizontal > headerbar:first-child {
+window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.tweak-titlebar-left, window.background.csd > box.titlebar.horizontal > headerbar:first-child, .geary-titlebar-left, .geary-titlebar-left.geary-titlebar {
   color: rgba(246, 246, 251, 0.8);
   background-color: #32343D;
   background-image: image(#32343D);
@@ -8966,17 +8966,17 @@ window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.twe
   box-shadow: none;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton), headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton), window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton) {
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton), headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton), window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton), .geary-titlebar-left button:not(.titlebutton) {
   color: rgba(246, 246, 251, 0.8);
   border: none;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):hover, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):hover {
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):hover, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):hover, .geary-titlebar-left button:not(.titlebutton):hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.25);
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):active, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):active, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):checked, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):checked {
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):active, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):active, .geary-titlebar-left button:not(.titlebutton):active, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):checked, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):checked, .geary-titlebar-left button:not(.titlebutton):checked {
   color: #ffffff;
   border-color: #2679db;
   background-color: #5294e2;
