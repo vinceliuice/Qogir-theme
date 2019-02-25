@@ -680,13 +680,23 @@ window#GearyMainWindow {
     }
   }
 
-  > box.vertical > paned {
+  > box.vertical > paned { // Geary 0.12.1
     > separator {
       background-image: if($variant == 'light', none, image($solid_borders_color));
     }
 
     > box.vertical > searchbar {
       @extend %side_searchbar;
+    }
+  }
+
+  > overlay > box.vertical > paned.horizontal { // Geary 0.13.1
+    > box.sidebar.vertical {
+      @extend %side_headerbar;
+
+      > searchbar {
+        @extend %side_searchbar;
+      }
     }
   }
 }
