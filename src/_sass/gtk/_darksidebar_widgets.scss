@@ -93,7 +93,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   }
 }
 
-%headerbar_appmenu {
+%side_titlebutton {
   &.appmenu { // appmenu button
     border: none;
     min-height: 30px;
@@ -146,7 +146,26 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   }
 
   button.titlebutton {
-    @extend %headerbar_appmenu;
+    @extend %side_titlebutton;
+
+    // Load png assets for each button, Fix the Chrome window restore button bug
+    @each $k in ('close', 'maximize', 'minimize', 'restore') {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}-dark.png'),
+                                                     url('assets/titlebutton-#{$k}#{$m}-dark@2.png')); }
+      }
+    }
+  }
+
+  .fullscreen &,
+  .maximized & {
+    button.titlebutton {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}-dark.png'),
+                                                      url('assets/titlebutton-restore#{$m}-dark@2.png')); }
+      }
+    }
   }
 }
 

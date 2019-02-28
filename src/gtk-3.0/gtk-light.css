@@ -8966,6 +8966,114 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton
   background-color: #5294e2;
 }
 
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.close, headerbar.titlebar.tweak-titlebar-left button.titlebutton.close, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.close, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.close, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.close, .geary-titlebar-left button.titlebutton.close {
+  background-image: -gtk-scaled(url("assets/titlebutton-close-dark.png"), url("assets/titlebutton-close-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.close:backdrop, headerbar.titlebar.tweak-titlebar-left button.titlebutton.close:backdrop, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.close:backdrop, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.close:backdrop, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.close:backdrop, .geary-titlebar-left button.titlebutton.close:backdrop {
+  background-image: -gtk-scaled(url("assets/titlebutton-close-backdrop-dark.png"), url("assets/titlebutton-close-backdrop-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.close:hover, headerbar.titlebar.tweak-titlebar-left button.titlebutton.close:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.close:hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.close:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.close:hover, .geary-titlebar-left button.titlebutton.close:hover {
+  background-image: -gtk-scaled(url("assets/titlebutton-close-hover-dark.png"), url("assets/titlebutton-close-hover-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.close:active, headerbar.titlebar.tweak-titlebar-left button.titlebutton.close:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.close:active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.close:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.close:active, .geary-titlebar-left button.titlebutton.close:active {
+  background-image: -gtk-scaled(url("assets/titlebutton-close-active-dark.png"), url("assets/titlebutton-close-active-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize, headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize, .geary-titlebar-left button.titlebutton.maximize {
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-dark.png"), url("assets/titlebutton-maximize-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:backdrop, headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:backdrop, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:backdrop, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:backdrop, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize:backdrop, .geary-titlebar-left button.titlebutton.maximize:backdrop {
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-backdrop-dark.png"), url("assets/titlebutton-maximize-backdrop-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:hover, headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize:hover, .geary-titlebar-left button.titlebutton.maximize:hover {
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-hover-dark.png"), url("assets/titlebutton-maximize-hover-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:active, headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize:active, .geary-titlebar-left button.titlebutton.maximize:active {
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-active-dark.png"), url("assets/titlebutton-maximize-active-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.minimize, headerbar.titlebar.tweak-titlebar-left button.titlebutton.minimize, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.minimize, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.minimize, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.minimize, .geary-titlebar-left button.titlebutton.minimize {
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-dark.png"), url("assets/titlebutton-minimize-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.minimize:backdrop, headerbar.titlebar.tweak-titlebar-left button.titlebutton.minimize:backdrop, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.minimize:backdrop, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.minimize:backdrop, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.minimize:backdrop, .geary-titlebar-left button.titlebutton.minimize:backdrop {
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-backdrop-dark.png"), url("assets/titlebutton-minimize-backdrop-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.minimize:hover, headerbar.titlebar.tweak-titlebar-left button.titlebutton.minimize:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.minimize:hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.minimize:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.minimize:hover, .geary-titlebar-left button.titlebutton.minimize:hover {
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-hover-dark.png"), url("assets/titlebutton-minimize-hover-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.minimize:active, headerbar.titlebar.tweak-titlebar-left button.titlebutton.minimize:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.minimize:active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.minimize:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.minimize:active, .geary-titlebar-left button.titlebutton.minimize:active {
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-active-dark.png"), url("assets/titlebutton-minimize-active-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.restore, headerbar.titlebar.tweak-titlebar-left button.titlebutton.restore, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.restore, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.restore, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.restore, .geary-titlebar-left button.titlebutton.restore {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-dark.png"), url("assets/titlebutton-restore-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.restore:backdrop, headerbar.titlebar.tweak-titlebar-left button.titlebutton.restore:backdrop, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.restore:backdrop, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.restore:backdrop, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.restore:backdrop, .geary-titlebar-left button.titlebutton.restore:backdrop {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop-dark.png"), url("assets/titlebutton-restore-backdrop-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.restore:hover, headerbar.titlebar.tweak-titlebar-left button.titlebutton.restore:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.restore:hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.restore:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.restore:hover, .geary-titlebar-left button.titlebutton.restore:hover {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover-dark.png"), url("assets/titlebutton-restore-hover-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.restore:active, headerbar.titlebar.tweak-titlebar-left button.titlebutton.restore:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.restore:active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.restore:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.restore:active, .geary-titlebar-left button.titlebutton.restore:active {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-active-dark.png"), url("assets/titlebutton-restore-active-dark@2.png"));
+}
+
+.fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child button.titlebutton.maximize, .fullscreen headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize, .fullscreen window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize, .fullscreen window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize, .fullscreen .geary-titlebar-left button.titlebutton.maximize,
+.maximized window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize,
+window.org-gnome-gedit .maximized .titlebar > headerbar:first-child button.titlebutton.maximize,
+.maximized headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize,
+.maximized window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize,
+.maximized window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize,
+.maximized window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize,
+.maximized .geary-titlebar-left button.titlebutton.maximize {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-dark.png"), url("assets/titlebutton-restore-dark@2.png"));
+}
+
+.fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:backdrop, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child button.titlebutton.maximize:backdrop, .fullscreen headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:backdrop, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:backdrop, .fullscreen window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:backdrop, .fullscreen window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize:backdrop, .fullscreen .geary-titlebar-left button.titlebutton.maximize:backdrop,
+.maximized window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:backdrop,
+window.org-gnome-gedit .maximized .titlebar > headerbar:first-child button.titlebutton.maximize:backdrop,
+.maximized headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:backdrop,
+.maximized window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:backdrop,
+.maximized window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:backdrop,
+.maximized window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize:backdrop,
+.maximized .geary-titlebar-left button.titlebutton.maximize:backdrop {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop-dark.png"), url("assets/titlebutton-restore-backdrop-dark@2.png"));
+}
+
+.fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:hover, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child button.titlebutton.maximize:hover, .fullscreen headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:hover, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:hover, .fullscreen window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:hover, .fullscreen window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize:hover, .fullscreen .geary-titlebar-left button.titlebutton.maximize:hover,
+.maximized window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:hover,
+window.org-gnome-gedit .maximized .titlebar > headerbar:first-child button.titlebutton.maximize:hover,
+.maximized headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:hover,
+.maximized window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:hover,
+.maximized window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:hover,
+.maximized window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize:hover,
+.maximized .geary-titlebar-left button.titlebutton.maximize:hover {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover-dark.png"), url("assets/titlebutton-restore-hover-dark@2.png"));
+}
+
+.fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:active, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child button.titlebutton.maximize:active, .fullscreen headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:active, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:active, .fullscreen window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:active, .fullscreen window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize:active, .fullscreen .geary-titlebar-left button.titlebutton.maximize:active,
+.maximized window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:active,
+window.org-gnome-gedit .maximized .titlebar > headerbar:first-child button.titlebutton.maximize:active,
+.maximized headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:active,
+.maximized window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:active,
+.maximized window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:active,
+.maximized window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize:active,
+.maximized .geary-titlebar-left button.titlebutton.maximize:active {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-active-dark.png"), url("assets/titlebutton-restore-active-dark@2.png"));
+}
+
 filechooser actionbar button {
   color: #5c616c;
   border-color: rgba(0, 0, 0, 0.15);
