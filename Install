@@ -13,7 +13,6 @@ fi
 SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Qogir
-MENU_VARIANTS=('' '-gnome')
 COLOR_VARIANTS=('' '-light' '-dark')
 
 usage() {
@@ -22,7 +21,6 @@ usage() {
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-m, --menu VARIANTS..." "Specify theme appmenu button variant(s) [standard|gnome] (Default: All variants)"
   printf "  %-25s%s\n" "-i, --image VARIANTS..." "Install theme with nautilus background image"
   printf "  %-25s%s\n" "-s, --square VARIANTS..." "Install theme with square titlebutton"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
@@ -31,13 +29,12 @@ usage() {
 install() {
   local dest=${1}
   local name=${2}
-  local menu=${3}
-  local color=${4}
+  local color=${3}
 
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
-  local THEME_DIR=${dest}/${name}${menu}${color}
+  local THEME_DIR=${dest}/${name}${color}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -49,13 +46,13 @@ install() {
 
   echo "[Desktop Entry]" >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme" >> ${THEME_DIR}/index.theme
-  echo "Name=${name}${menu}${color}" >> ${THEME_DIR}/index.theme
+  echo "Name=${name}${color}" >> ${THEME_DIR}/index.theme
   echo "Comment=An Clean Gtk+ theme based on Flat Design" >> ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8" >> ${THEME_DIR}/index.theme
   echo "" >> ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]" >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=${name}${menu}${color}" >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=${name}${menu}${color}" >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=${name}${color}" >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=${name}${color}" >> ${THEME_DIR}/index.theme
   echo "IconTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close" >> ${THEME_DIR}/index.theme
@@ -68,9 +65,9 @@ install() {
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
   cp -ur ${SRC_DIR}/src/gtk-3.0/assets                                               ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${menu}${color}.css                               ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${color}.css                                      ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${menu}-dark.css                                  ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk-dark.css                                         ${THEME_DIR}/gtk-3.0/gtk-dark.css
   cp -ur ${SRC_DIR}/src/gtk-3.0/thumbnail${ELSE_DARK}.png                            ${THEME_DIR}/gtk-3.0/thumbnail.png
 
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
@@ -88,7 +85,7 @@ install() {
   cp -ur ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}/*.png                         ${THEME_DIR}/metacity-1
   cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-3.xml                              ${THEME_DIR}/metacity-1
   cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}.xml                 ${THEME_DIR}/metacity-1/metacity-theme-1.xml
-  cp -ur ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                         ${THEME_DIR}/metacity-1/thumbnail.png
+  cp -ur ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                        ${THEME_DIR}/metacity-1/thumbnail.png
   cd ${THEME_DIR}/metacity-1
   ln -s metacity-theme-1.xml metacity-theme-2.xml
 
@@ -146,11 +143,9 @@ parse_sass() {
 }
 
 install_theme() {
-for menu in "${menus[@]:-${MENU_VARIANTS[@]}}"; do
   for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${menu}" "${color}"
+    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}"
   done
-done
 }
 
 install_square() {
@@ -219,29 +214,6 @@ while [[ $# -gt 0 ]]; do
     -i|--image)
       image='true'
       shift
-      ;;
-    -m|--menu)
-      shift
-      for menu in "${@}"; do
-        case "${menu}" in
-          standard)
-            menus+=("${MENU_VARIANTS[0]}")
-            shift
-            ;;
-          gnome)
-            menus+=("${MENU_VARIANTS[1]}")
-            shift
-            ;;
-          -*|--*)
-            break
-            ;;
-          *)
-            echo "ERROR: Unrecognized thin variant '$1'."
-            echo "Try '$0 --help' for more information."
-            exit 1
-            ;;
-        esac
-      done
       ;;
     -c|--color)
       shift

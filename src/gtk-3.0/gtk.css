@@ -8930,7 +8930,7 @@ window.background.csd > box.horizontal > box.vertical > searchbar entry:focus, w
   background-color: rgba(246, 246, 251, 0.12);
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton, .geary-titlebar-left button.appmenu.titlebutton, .nautilus-window headerbar button.appmenu.titlebutton {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton, .geary-titlebar-left button.appmenu.titlebutton {
   border: none;
   min-height: 30px;
   min-width: 30px;
@@ -8942,17 +8942,17 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebut
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton image, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton image, .geary-titlebar-left button.appmenu.titlebutton image, .nautilus-window headerbar button.appmenu.titlebutton image {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton image, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton image, .geary-titlebar-left button.appmenu.titlebutton image {
   opacity: 0;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:hover, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:hover, .geary-titlebar-left button.appmenu.titlebutton:hover, .nautilus-window headerbar button.appmenu.titlebutton:hover {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:hover, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:hover, .geary-titlebar-left button.appmenu.titlebutton:hover {
   background-image: -gtk-scaled(url("assets/logo-hover.png"), url("assets/logo-hover@2.png"));
   background-repeat: no-repeat;
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:checked, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:checked, .geary-titlebar-left button.appmenu.titlebutton:checked, .nautilus-window headerbar button.appmenu.titlebutton:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:active, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:active, .geary-titlebar-left button.appmenu.titlebutton:active, .nautilus-window headerbar button.appmenu.titlebutton:active {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:checked, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:checked, .geary-titlebar-left button.appmenu.titlebutton:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:active, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:active, .geary-titlebar-left button.appmenu.titlebutton:active {
   background-image: -gtk-scaled(url("assets/logo-active.png"), url("assets/logo-active@2.png"));
   background-repeat: no-repeat;
   background-position: center;
@@ -9056,6 +9056,18 @@ filechooser actionbar entry:disabled {
   background-color: #1c1d23;
 }
 
+.nautilus-window headerbar {
+  background-image: -gtk-scaled(url("assets/logo.png"), url("assets/logo@2.png"));
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.nautilus-window headerbar:backdrop {
+  background-image: -gtk-scaled(url("assets/logo-backdrop.png"), url("assets/logo-backdrop@2.png"));
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
 filechooser paned > separator {
   background-image: image(#cad5df);
 }
@@ -9065,15 +9077,11 @@ filechooser paned > separator {
 }
 
 .nautilus-window headerbar {
-  padding-left: 5px;
+  padding-left: 48px;
 }
 
 .nautilus-window headerbar, .nautilus-window headerbar:backdrop {
-  box-shadow: inset 0 -1px rgba(50, 52, 61, 0.15), inset 38px 0 0 0 #32343D;
-}
-
-.nautilus-window headerbar button.titlebutton.appmenu {
-  margin-left: -1px;
+  box-shadow: inset 0 -1px rgba(50, 52, 61, 0.15), inset 38px 0 0 0 transparent;
 }
 
 .nautilus-window placessidebar.sidebar {
