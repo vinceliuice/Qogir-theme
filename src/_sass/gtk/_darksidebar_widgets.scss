@@ -609,6 +609,16 @@ window.background.csd {
     }
   }
 
+  > headerbar.titlebar { // gnome 3.32
+    > hdyleaflet > headerbar:first-child {
+      @extend %side_headerbar;
+    }
+
+    > hdyleaflet > separator.sidebar {
+      border-right-style: if($variant == 'light', none, solid);
+    }
+  }
+
   > box.horizontal > box.vertical {
     > scrolledwindow.view {
       > viewport.frame > stack {
@@ -630,6 +640,41 @@ window.background.csd {
       }
     }
   }
+
+  > hdyleaflet > box.vertical { // gnome 3.32
+    > scrolledwindow.view {
+      > viewport.frame > stack {
+        > list {
+          @extend %side_background;
+
+          separator { background: none; }
+
+          row.activatable:not(:hover):not(:selected) {
+            background-image: image($side_theme_bg);
+          }
+
+          row.activatable:not(:selected):hover {
+            color: $side_theme_alt_fg;
+            background-color: rgba($side_theme_fg, 0.06);
+            // transition: all 50ms $ease-out-quad;
+          }
+        }
+      }
+    }
+
+    > searchbar {
+      @extend %side_searchbar;
+    }
+  }
+
+  > hdyleaflet > separator.sidebar {
+    border-right-style: if($variant == 'light', none, solid);
+  }
+}
+
+hdyleaflet > separator.sidebar {
+  background: none;
+  min-width: 0;
 }
 
 //

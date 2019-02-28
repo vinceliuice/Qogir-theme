@@ -1699,7 +1699,7 @@ headerbar.default-decoration,
   border-radius: 0 0 0 0;
 }
 
-headerbar entry, headerbar button, headerbar separator {
+headerbar entry, headerbar button, headerbar separator:not(.sidebar) {
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -8847,7 +8847,7 @@ GtkListBox .h4 {
 }
 
 list.gedit-document-panel, .gedit-document-panel-dragged-row, .gedit-side-panel-paned, .gedit-map-frame, .tweak-categories,
-.tweak-category:not(:selected):not(:hover), window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list, .sidebar.vertical > paned.sidebar-pane-separator, .sidebar.vertical > paned.sidebar-pane-separator statusbar, .sidebar.vertical > paned.geary-sidebar-pane-separator, .sidebar.vertical > paned.geary-sidebar-pane-separator statusbar, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal, .polari-room-list .sidebar {
+.tweak-category:not(:selected):not(:hover), window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list, .sidebar.vertical > paned.sidebar-pane-separator, .sidebar.vertical > paned.sidebar-pane-separator statusbar, .sidebar.vertical > paned.geary-sidebar-pane-separator, .sidebar.vertical > paned.geary-sidebar-pane-separator statusbar, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal, .polari-room-list .sidebar {
   color: rgba(246, 246, 251, 0.8);
   background-color: #32343D;
 }
@@ -8912,31 +8912,31 @@ list.gedit-document-panel row.activatable:selected.has-open-popup, list.gedit-do
   background-color: #4a85cb;
 }
 
-window.background.csd > box.horizontal > box.vertical > searchbar, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar {
+window.background.csd > box.horizontal > box.vertical > searchbar, window.background.csd > hdyleaflet > box.vertical > searchbar, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar {
   background-image: image(#32343D);
   box-shadow: none;
   border: none;
 }
 
-window.background.csd > box.horizontal > box.vertical > searchbar > revealer > box, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar > revealer > box, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar > revealer > box {
+window.background.csd > box.horizontal > box.vertical > searchbar > revealer > box, window.background.csd > hdyleaflet > box.vertical > searchbar > revealer > box, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar > revealer > box, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar > revealer > box {
   background: none;
   border: none;
 }
 
-window.background.csd > box.horizontal > box.vertical > searchbar entry, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry {
+window.background.csd > box.horizontal > box.vertical > searchbar entry, window.background.csd > hdyleaflet > box.vertical > searchbar entry, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry {
   color: rgba(246, 246, 251, 0.8);
   background-color: rgba(246, 246, 251, 0.1);
 }
 
-window.background.csd > box.horizontal > box.vertical > searchbar entry image, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image {
+window.background.csd > box.horizontal > box.vertical > searchbar entry image, window.background.csd > hdyleaflet > box.vertical > searchbar entry image, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image {
   color: rgba(246, 246, 251, 0.8);
 }
 
-window.background.csd > box.horizontal > box.vertical > searchbar entry:focus, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:focus, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:focus {
+window.background.csd > box.horizontal > box.vertical > searchbar entry:focus, window.background.csd > hdyleaflet > box.vertical > searchbar entry:focus, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:focus, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:focus {
   background-color: rgba(246, 246, 251, 0.12);
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton, .geary-titlebar-left button.appmenu.titlebutton {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.appmenu.titlebutton, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton, .geary-titlebar-left button.appmenu.titlebutton {
   border: none;
   min-height: 30px;
   min-width: 30px;
@@ -8948,23 +8948,23 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebut
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton image, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton image, .geary-titlebar-left button.appmenu.titlebutton image {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton image, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton image, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.appmenu.titlebutton image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton image, .geary-titlebar-left button.appmenu.titlebutton image {
   opacity: 0;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:hover, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:hover, .geary-titlebar-left button.appmenu.titlebutton:hover {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:hover, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.appmenu.titlebutton:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:hover, .geary-titlebar-left button.appmenu.titlebutton:hover {
   background-image: -gtk-scaled(url("assets/logo-hover.png"), url("assets/logo-hover@2.png"));
   background-repeat: no-repeat;
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:checked, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:checked, .geary-titlebar-left button.appmenu.titlebutton:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:active, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:active, .geary-titlebar-left button.appmenu.titlebutton:active {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:checked, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.appmenu.titlebutton:checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:checked, .geary-titlebar-left button.appmenu.titlebutton:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:active, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.appmenu.titlebutton:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:active, .geary-titlebar-left button.appmenu.titlebutton:active {
   background-image: -gtk-scaled(url("assets/logo-active.png"), url("assets/logo-active@2.png"));
   background-repeat: no-repeat;
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.tweak-titlebar-left, window.background.csd > box.titlebar.horizontal > headerbar:first-child, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical, .geary-titlebar-left, .geary-titlebar-left.geary-titlebar {
+window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.tweak-titlebar-left, window.background.csd > box.titlebar.horizontal > headerbar:first-child, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical, .geary-titlebar-left, .geary-titlebar-left.geary-titlebar {
   color: rgba(246, 246, 251, 0.8);
   background-color: #32343D;
   background-image: image(#32343D);
@@ -8972,17 +8972,17 @@ window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.twe
   box-shadow: none;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton), headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton), window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton), window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton), .geary-titlebar-left button:not(.titlebutton) {
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton), headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton), window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton), window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton), window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton), .geary-titlebar-left button:not(.titlebutton) {
   color: rgba(246, 246, 251, 0.8);
   border: none;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):hover, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):hover, .geary-titlebar-left button:not(.titlebutton):hover {
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):hover, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):hover, .geary-titlebar-left button:not(.titlebutton):hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.25);
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):active, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):active, .geary-titlebar-left button:not(.titlebutton):active, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):checked, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):checked, .geary-titlebar-left button:not(.titlebutton):checked {
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):active, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):active, .geary-titlebar-left button:not(.titlebutton):active, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):checked, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):checked, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):checked, .geary-titlebar-left button:not(.titlebutton):checked {
   color: #ffffff;
   border-color: #68a2e6;
   background-color: #5294e2;
@@ -9431,6 +9431,10 @@ window.background.csd > box:not(.titlebar).horizontal > separator.vertical:backd
   background-image: image(rgba(255, 255, 255, 0.12));
 }
 
+window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar {
+  border-right-style: solid;
+}
+
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list separator {
   background: none;
 }
@@ -9442,6 +9446,28 @@ window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > vi
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list row.activatable:not(:selected):hover, window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list .view:not(:selected):hover, window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list textview text:not(:selected):hover, textview window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list text:not(:selected):hover, window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list iconview:not(:selected):hover, window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list window.thunar notebook scrolledwindow.frame.standard-view .view:not(:selected):hover, window.thunar notebook scrolledwindow.frame.standard-view window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list .view:not(:selected):hover, window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list treeview.view:not(:selected):hover, window.thunar .sidebar window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list treeview.view:not(:selected):hover, window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list .nemo-window .nemo-places-sidebar .places-treeview:not(:selected):hover, .nemo-window .nemo-places-sidebar window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list .places-treeview:not(:selected):hover, window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list .budgie-popover row:not(:selected):hover, .budgie-popover window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list row:not(:selected):hover, window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list .budgie-menu button:not(:selected):hover, .budgie-menu window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list button:not(:selected):hover, window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list .panel popover .sidebar .view:not(:selected):hover, .panel popover .sidebar window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list .view:not(:selected):hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.06);
+}
+
+window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list separator {
+  background: none;
+}
+
+window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list row.activatable:not(:hover):not(:selected), window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .view:not(:hover):not(:selected), window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list textview text:not(:hover):not(:selected), textview window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list text:not(:hover):not(:selected), window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list iconview:not(:hover):not(:selected), window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list window.thunar notebook scrolledwindow.frame.standard-view .view:not(:hover):not(:selected), window.thunar notebook scrolledwindow.frame.standard-view window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .view:not(:hover):not(:selected), window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list treeview.view:not(:hover):not(:selected), window.thunar .sidebar window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list treeview.view:not(:hover):not(:selected), window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .nemo-window .nemo-places-sidebar .places-treeview:not(:hover):not(:selected), .nemo-window .nemo-places-sidebar window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .places-treeview:not(:hover):not(:selected), window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .budgie-popover row:not(:hover):not(:selected), .budgie-popover window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list row:not(:hover):not(:selected), window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .budgie-menu button:not(:hover):not(:selected), .budgie-menu window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list button:not(:hover):not(:selected), window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .panel popover .sidebar .view:not(:hover):not(:selected), .panel popover .sidebar window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .view:not(:hover):not(:selected) {
+  background-image: image(#32343D);
+}
+
+window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list row.activatable:not(:selected):hover, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .view:not(:selected):hover, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list textview text:not(:selected):hover, textview window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list text:not(:selected):hover, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list iconview:not(:selected):hover, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list window.thunar notebook scrolledwindow.frame.standard-view .view:not(:selected):hover, window.thunar notebook scrolledwindow.frame.standard-view window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .view:not(:selected):hover, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list treeview.view:not(:selected):hover, window.thunar .sidebar window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list treeview.view:not(:selected):hover, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .nemo-window .nemo-places-sidebar .places-treeview:not(:selected):hover, .nemo-window .nemo-places-sidebar window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .places-treeview:not(:selected):hover, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .budgie-popover row:not(:selected):hover, .budgie-popover window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list row:not(:selected):hover, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .budgie-menu button:not(:selected):hover, .budgie-menu window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list button:not(:selected):hover, window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .panel popover .sidebar .view:not(:selected):hover, .panel popover .sidebar window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack > list .view:not(:selected):hover {
+  color: #F6F6FB;
+  background-color: rgba(246, 246, 251, 0.06);
+}
+
+window.background.csd > hdyleaflet > separator.sidebar {
+  border-right-style: solid;
+}
+
+hdyleaflet > separator.sidebar {
+  background: none;
+  min-width: 0;
 }
 
 .sidebar.vertical > paned.sidebar-pane-separator .folder-frame > border, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > border {

@@ -1258,7 +1258,7 @@ headerbar,
 headerbar {
   @extend %header_widgets;
 
-  entry, button, separator {
+  entry, button, separator:not(.sidebar) {
     margin-top: $icon_padding;
     margin-bottom: $icon_padding;
   }
