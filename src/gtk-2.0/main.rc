@@ -701,22 +701,21 @@ style "menu" {
 
 style "menu_framed_box" {
 
-#  engine "adwaita" { # default menu border
-#  }
-
-  engine "pixmap" {
-    image {
-      function = BOX
-      file     = "assets/frame.png"
-      border   = { 1, 1, 1, 1 }
-      stretch  = TRUE
-    }
+  engine "adwaita" { # default menu border
   }
+
+#  engine "pixmap" {
+#    image {
+#      function = BOX
+#      file     = "assets/frame.png"
+#      border   = { 1, 1, 1, 1 }
+#      stretch  = TRUE
+#    }
+#  }
 
 }
 
-style "menu_item"
-{
+style "menu_item" {
   xthickness = 2
   ythickness = 3
 
@@ -1091,8 +1090,7 @@ style "notebook_tab_label" {
 
 }
 
-style "combobox_entry"
-{
+style "combobox_entry" {
   xthickness = 3
   ythickness = 4
 
@@ -1242,8 +1240,7 @@ style "notebook_combobox_entry" {
   }
 }
 
-style "combobox_entry_button"
-{
+style "combobox_entry_button" {
   xthickness = 6
 
   fg[ACTIVE] = @text_color
@@ -2237,10 +2234,10 @@ style "xfwm-tabwin" {
   Xfwm4TabwinWidget::alpha = 1.0
   Xfwm4TabwinWidget::border-radius = 2
 
-	bg[NORMAL] = @bg_color
-	bg[SELECTED] = @bg_color
+  bg[NORMAL] = @bg_color
+  bg[SELECTED] = @bg_color
 
-	fg[NORMAL] = @fg_color
+  fg[NORMAL] = @fg_color
 
   engine "murrine" {
     contrast = 0.7
@@ -2264,6 +2261,7 @@ style "thunar_location_button" = "location_button" {
   ThunarLocationButtons::spacing = 0
 
   engine "pixmap" {
+
     image {
       function = BOX
       state    = NORMAL
@@ -2271,6 +2269,7 @@ style "thunar_location_button" = "location_button" {
       border   = { 2, 2, 2, 2 }
       stretch  = TRUE
     }
+
     image {
       function = BOX
       state    = PRELIGHT
@@ -2278,6 +2277,7 @@ style "thunar_location_button" = "location_button" {
       border   = { 2, 2, 2, 2 }
       stretch  = TRUE
     }
+
     image {
       function = BOX
       state    = ACTIVE
@@ -2285,6 +2285,7 @@ style "thunar_location_button" = "location_button" {
       border   = { 0, 0, 0, 2 }
       stretch  = TRUE
     }
+
     image {
       function = BOX
       state    = INSENSITIVE

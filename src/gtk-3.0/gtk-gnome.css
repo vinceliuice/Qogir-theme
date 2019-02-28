@@ -8906,31 +8906,31 @@ list.gedit-document-panel row.activatable:selected.has-open-popup, list.gedit-do
   background-color: #4a85cb;
 }
 
-window.background.csd > box.horizontal > box.vertical > searchbar, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar, > box.sidebar.vertical > searchbar {
+window.background.csd > box.horizontal > box.vertical > searchbar, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar {
   background-image: image(#32343D);
   box-shadow: none;
   border: none;
 }
 
-window.background.csd > box.horizontal > box.vertical > searchbar > revealer > box, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar > revealer > box, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar > revealer > box, > box.sidebar.vertical > searchbar > revealer > box {
+window.background.csd > box.horizontal > box.vertical > searchbar > revealer > box, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar > revealer > box, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar > revealer > box {
   background: none;
   border: none;
 }
 
-window.background.csd > box.horizontal > box.vertical > searchbar entry, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry, > box.sidebar.vertical > searchbar entry {
+window.background.csd > box.horizontal > box.vertical > searchbar entry, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry {
   color: rgba(246, 246, 251, 0.8);
   background-color: rgba(246, 246, 251, 0.1);
 }
 
-window.background.csd > box.horizontal > box.vertical > searchbar entry image, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image, > box.sidebar.vertical > searchbar entry image {
+window.background.csd > box.horizontal > box.vertical > searchbar entry image, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image {
   color: rgba(246, 246, 251, 0.8);
 }
 
-window.background.csd > box.horizontal > box.vertical > searchbar entry:focus, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:focus, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:focus, > box.sidebar.vertical > searchbar entry:focus {
+window.background.csd > box.horizontal > box.vertical > searchbar entry:focus, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:focus, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:focus {
   background-color: rgba(246, 246, 251, 0.12);
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton, > box.sidebar.vertical button.appmenu.titlebutton, .geary-titlebar-left button.appmenu.titlebutton {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton, .geary-titlebar-left button.appmenu.titlebutton {
   border: none;
   min-height: 30px;
   min-width: 30px;
@@ -8942,23 +8942,23 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebut
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton image, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton image, > box.sidebar.vertical button.appmenu.titlebutton image, .geary-titlebar-left button.appmenu.titlebutton image {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton image, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton image, .geary-titlebar-left button.appmenu.titlebutton image {
   opacity: 0;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:hover, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:hover, > box.sidebar.vertical button.appmenu.titlebutton:hover, .geary-titlebar-left button.appmenu.titlebutton:hover {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:hover, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:hover, .geary-titlebar-left button.appmenu.titlebutton:hover {
   background-image: -gtk-scaled(url("assets/logo-hover.png"), url("assets/logo-hover@2.png"));
   background-repeat: no-repeat;
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:checked, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:checked, > box.sidebar.vertical button.appmenu.titlebutton:checked, .geary-titlebar-left button.appmenu.titlebutton:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:active, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:active, > box.sidebar.vertical button.appmenu.titlebutton:active, .geary-titlebar-left button.appmenu.titlebutton:active {
+window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:checked, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:checked, .geary-titlebar-left button.appmenu.titlebutton:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:active, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:active, .geary-titlebar-left button.appmenu.titlebutton:active {
   background-image: -gtk-scaled(url("assets/logo-active.png"), url("assets/logo-active@2.png"));
   background-repeat: no-repeat;
   background-position: center;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.tweak-titlebar-left, window.background.csd > box.titlebar.horizontal > headerbar:first-child, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical, > box.sidebar.vertical, .geary-titlebar-left, .geary-titlebar-left.geary-titlebar {
+window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.tweak-titlebar-left, window.background.csd > box.titlebar.horizontal > headerbar:first-child, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical, .geary-titlebar-left, .geary-titlebar-left.geary-titlebar {
   color: rgba(246, 246, 251, 0.8);
   background-color: #32343D;
   background-image: image(#32343D);
@@ -8966,17 +8966,17 @@ window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.twe
   box-shadow: none;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton), headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton), window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton), window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton), > box.sidebar.vertical button:not(.titlebutton), .geary-titlebar-left button:not(.titlebutton) {
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton), headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton), window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton), window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton), .geary-titlebar-left button:not(.titlebutton) {
   color: rgba(246, 246, 251, 0.8);
   border: none;
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):hover, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):hover, > box.sidebar.vertical button:not(.titlebutton):hover, .geary-titlebar-left button:not(.titlebutton):hover {
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):hover, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):hover, .geary-titlebar-left button:not(.titlebutton):hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.25);
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):active, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):active, > box.sidebar.vertical button:not(.titlebutton):active, .geary-titlebar-left button:not(.titlebutton):active, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):checked, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):checked, > box.sidebar.vertical button:not(.titlebutton):checked, .geary-titlebar-left button:not(.titlebutton):checked {
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):active, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):active, .geary-titlebar-left button:not(.titlebutton):active, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):checked, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):checked, .geary-titlebar-left button:not(.titlebutton):checked {
   color: #ffffff;
   border-color: #2679db;
   background-color: #5294e2;
