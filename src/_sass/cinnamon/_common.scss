@@ -1310,7 +1310,7 @@ StScrollBar {
     padding: 0 10px;
     spacing: 8px;
     transition-duration: 100;
-    color: rgba($panel_fg, 0.6);
+    color: $panel_fg;
     border: 0 solid transparent;
 
     .panel-bottom & StLabel { padding-left: 6px; }
@@ -1329,7 +1329,7 @@ StScrollBar {
     }
 
     &:hover {
-      color: $panel_fg;
+      color: $selected_fg_color;
       border: 0 solid rgba($panel_fg, 0.5);
       background-gradient-direction: none;
 
@@ -1346,7 +1346,7 @@ StScrollBar {
     &:active,
     &:checked,
     &:running {
-      color: $panel_fg;
+      color: $selected_fg_color;
       border: 0 solid rgba($selected_bg_color, 0.35);
       background-gradient-direction: none;
 
@@ -1365,7 +1365,7 @@ StScrollBar {
     }
 
     &:focus {
-      color: $panel_fg;
+      color: $selected_fg_color;
       border: 0 solid $selected_bg_color;
       background-gradient-direction: none;
 
@@ -1472,7 +1472,7 @@ StScrollBar {
     background-image: none;
     padding: 0 10px;
     transition-duration: 100;
-    color: rgba($panel_fg, 0.6);
+    color: $panel_fg;
     border: 0 solid transparent;
 
     @each $position in (top),
@@ -1492,7 +1492,7 @@ StScrollBar {
     // &.right StLabel { padding-top: 6px; }
 
     &:hover {
-      color: $panel_fg;
+      color: $selected_fg_color;
       border: 0 solid rgba($panel_fg, 0.5);
       background-gradient-direction: none;
 
@@ -1509,7 +1509,7 @@ StScrollBar {
     &:active,
     &:checked,
     &:running {
-      color: $panel_fg;
+      color: $selected_fg_color;
       border: 0 solid rgba($selected_bg_color, 0.35);
       background-gradient-direction: none;
 
@@ -1528,7 +1528,7 @@ StScrollBar {
     }
 
     &:focus {
-      color: $panel_fg;
+      color: $selected_fg_color;
       border: 0 solid $selected_bg_color;
       background-gradient-direction: none;
 

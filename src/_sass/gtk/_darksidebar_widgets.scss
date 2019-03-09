@@ -292,7 +292,7 @@ filechooser {
         background-repeat: no-repeat;
         background-position: 42px center;
         .sidebar-label { color: $alt_dark_sidebar_fg; }
-//        .sidebar-icon { color: inherit; }
+        // .sidebar-icon { color: inherit; }
       }
 
       &:selected:hover, &:active:hover {
@@ -317,7 +317,7 @@ filechooser {
       &.sidebar-new-bookmark-row {
         color: $selected_bg_color;
 
-//        .sidebar-icon { color: inherit; }
+        // .sidebar-icon { color: inherit; }
       }
 
      &:backdrop { opacity: 0.75; }
@@ -629,37 +629,20 @@ window.background.csd {
   }
 
   > headerbar.titlebar { // gnome 3.32
+    > box.horizontal > headerbar:first-child,
     > hdyleaflet > headerbar:first-child {
       @extend %side_headerbar;
     }
 
+    > box.horizontal > separator.sidebar,
     > hdyleaflet > separator.sidebar {
       border-right-style: if($variant == 'light', none, solid);
+      background: none;
+      min-width: 0;
     }
   }
 
-  > box.horizontal > box.vertical {
-    > scrolledwindow.view {
-      > viewport.frame > stack {
-        > list {
-          @extend %side_background;
-
-          separator { background: none; }
-
-          row.activatable:not(:hover):not(:selected) {
-            background-image: image($side_theme_bg);
-          }
-
-          row.activatable:not(:selected):hover {
-            color: $side_theme_alt_fg;
-            background-color: rgba($side_theme_fg, 0.06);
-            // transition: all 50ms $ease-out-quad;
-          }
-        }
-      }
-    }
-  }
-
+  > box.horizontal > box.vertical,
   > hdyleaflet > box.vertical { // gnome 3.32
     > scrolledwindow.view {
       > viewport.frame > stack {
@@ -686,8 +669,11 @@ window.background.csd {
     }
   }
 
+  > box.horizontal > separator.sidebar,
   > hdyleaflet > separator.sidebar {
     border-right-style: if($variant == 'light', none, solid);
+    background: none;
+    min-width: 0;
   }
 }
 
