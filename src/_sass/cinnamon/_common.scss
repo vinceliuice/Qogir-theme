@@ -279,11 +279,11 @@ StScrollBar {
     box-shadow: none;
     border-image: url("#{$asset_path}/menu/submenu.svg") 9 9 9 9;
 
-    .popup-menu-item:ltr { padding-right: 0em; }
-    .popup-menu-item:rtl { padding-left: 0em; }
+    .popup-menu-item:ltr { padding-right: 1em; }
+    .popup-menu-item:rtl { padding-left: 1em; }
 
     StScrollBar {
-      padding: 4px;
+      padding: 8px;
       StBin#trough, StBin#vhandle { border-width: 0; }
     }
   }
@@ -445,7 +445,7 @@ StScrollBar {
     -natural-hpadding: 6px;
     -minimum-hpadding: 2px;
     font-weight: bold;
-    color: green;
+    color: white;
     transition-duration: 100;
 
     &:hover {}
@@ -1128,43 +1128,71 @@ StScrollBar {
   &-applications-outer-box { padding: 10px 10px 0 10px; }
 
   &-application-button {
-    padding: 7px;
-    border: 1px solid rgba(0,0,0,0);
+    padding: 6px;
+    border: none;
 
     // This style is used in menu application buttons for applications which were newly installed
     &:highlighted { font-weight: bold; }
 
     &-selected {
-      padding: 7px;
-      @extend %button:hover;
+      padding: 6px;
+      @extend %button:active;
+      border: none;
 
       &:highlighted { font-weight: bold; }
     }
 
-    &-label:ltr { padding-left: 5px; }
-    &-label:rtl { padding-right: 5px; }
+    &-label:ltr { padding-left: 6px; }
+    &-label:rtl { padding-right: 6px; }
+  }
+
+  StScrollView.menu-application-button { // extracted submenu container
+    padding: 0;
+    border-radius: 2px;
+    border: 1px solid $borders_color;
+    background-color: rgba($fg_color, 0.1);
+
+    .popup-menu-item {
+      padding: 0;
+      spacing: 0;
+      &:ltr { padding-left: 8px; }
+      &:rtl { padding-right: 8px; }
+
+      &:active {
+        border-image: none; // image independent
+        background-color: rgba($fg_color, 0.15);
+        color: $fg_color;
+      }
+
+      StIcon { min-width: 22px; } // indentation
+
+      StLabel {
+        &:ltr { padding: 6px 0 7px 5px; }
+        &:rtl { padding: 6px 5px 7px 0; }
+      }
+    }
   }
 
   &-category-button {
-    padding: 7px;
+    padding: 6px;
     border: 1px solid rgba(0,0,0,0);
+    border-radius: 3px;
 
-    &-selected {
-      padding: 7px;
-      @extend %button:hover;
-    }
-    &-hover {
-      background-color: red;
-      border-radius: 2px;
+    &-hover, &-selected {
+      padding: 6px;
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+      border: 1px solid if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
+      border-radius: 3px;
     }
     &-greyed {
-      padding: 7px;
+      padding: 6px;
       color: $insensitive_fg_color;
       border: 1px solid rgba(0,0,0,0);
     }
 
-    &-label:ltr { padding-left: 5px; }
-    &-label:rtl { padding-right: 5px; }
+    &-label:ltr { padding-left: 6px; }
+    &-label:rtl { padding-right: 6px; }
   }
 
   // Name and description of the currently hovered item in the menu
@@ -1204,8 +1232,7 @@ StScrollBar {
 }
 
 /* Context menu (at the moment only for favorites) */
-.menu-context-menu {
-}
+// .menu-context-menu { }
 
 //
 // OSD
@@ -1590,16 +1617,19 @@ StScrollBar {
 
 // 2.8
 .sound-player {
-  padding: 0 4px;
+  padding: 0 5px;
 
   > StBoxLayout:first-child {
-    padding: 5px 10px 12px 10px;
+    padding: 5px 10px 10px 10px;
     spacing: 0.5em;
 
     StButton:small {
-      width: 16px;
-      height: 16px;
-      padding: 1px;
+      width: 24px;
+      height: 24px;
+      border-radius: 100px;
+
+      &:hover { background-color: rgba($fg_color, 0.1); }
+      &:active { background-color: rgba($fg_color, 0.25); }
 
       StIcon { icon-size: 12px; }
     }
@@ -1794,6 +1824,11 @@ StScrollBar {
     }
 
     &:hover {
+      color: $panel_fg;
+      background-color: rgba($panel_fg, 0.15);
+    }
+
+    &:checked, &:checked:hover {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
     }
@@ -1809,7 +1844,7 @@ StScrollBar {
     font-weight: bold;
     color: $panel_fg;
 
-    &:hover, .applet-box:hover > & {
+    .applet-box:checked & {
       color: $selected_fg_color;
       text-shadow: none;
     }
@@ -1819,7 +1854,7 @@ StScrollBar {
     color: $panel_fg;
     icon-size: 22px;
 
-    &:hover, .applet-box:hover > & {
+    .applet-box:checked & {
       color: $selected_fg_color;
       text-shadow: none;
     }

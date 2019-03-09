@@ -67,7 +67,7 @@
 //
   //@extend %reset_style;
 
-  text-shadow: 0 1px transparentize($base_color, 1);
+  text-shadow: none;
 
   @if $t==normal {
   //

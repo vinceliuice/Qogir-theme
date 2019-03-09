@@ -14,7 +14,7 @@ stage {
   min-height: 20px;
   padding: 5px 32px;
   transition-duration: 0;
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #5c616c;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -27,13 +27,13 @@ stage {
 .popup-menu #notification .notification-button:focus,
 .popup-menu #notification .notification-icon-button:focus, .sound-button:focus, .menu #notification .notification-button:hover, .menu #notification .notification-icon-button:hover,
 .popup-menu #notification .notification-button:hover,
-.popup-menu #notification .notification-icon-button:hover, .menu-favorites-button:hover, .menu-application-button-selected, .menu-category-button-selected, .sound-button:hover, .menu #notification .notification-button:hover:focus, .menu #notification .notification-icon-button:hover:focus,
+.popup-menu #notification .notification-icon-button:hover, .menu-favorites-button:hover, .sound-button:hover, .menu #notification .notification-button:hover:focus, .menu #notification .notification-icon-button:hover:focus,
 .popup-menu #notification .notification-button:hover:focus,
-.popup-menu #notification .notification-icon-button:hover:focus, .menu-favorites-button:focus:hover, .menu-application-button-selected:focus, .menu-category-button-selected:focus, .sound-button:hover:focus, .menu #notification .notification-button:active, .menu #notification .notification-icon-button:active,
+.popup-menu #notification .notification-icon-button:hover:focus, .menu-favorites-button:focus:hover, .sound-button:hover:focus, .menu #notification .notification-button:active, .menu #notification .notification-icon-button:active,
 .popup-menu #notification .notification-button:active,
-.popup-menu #notification .notification-icon-button:active, .sound-button:active, .menu #notification .notification-button:active:focus, .menu #notification .notification-icon-button:active:focus,
+.popup-menu #notification .notification-icon-button:active, .menu-application-button-selected, .sound-button:active, .menu #notification .notification-button:active:focus, .menu #notification .notification-icon-button:active:focus,
 .popup-menu #notification .notification-button:active:focus,
-.popup-menu #notification .notification-icon-button:active:focus, .sound-button:active:focus, .menu #notification .notification-button:insensitive, .menu #notification .notification-icon-button:insensitive,
+.popup-menu #notification .notification-icon-button:active:focus, .menu-application-button-selected:focus, .sound-button:active:focus, .menu #notification .notification-button:insensitive, .menu #notification .notification-icon-button:insensitive,
 .popup-menu #notification .notification-button:insensitive,
 .popup-menu #notification .notification-icon-button:insensitive, .sound-button:insensitive {
   border-radius: 2px;
@@ -42,7 +42,7 @@ stage {
 .menu #notification .notification-button:focus, .menu #notification .notification-icon-button:focus,
 .popup-menu #notification .notification-button:focus,
 .popup-menu #notification .notification-icon-button:focus, .sound-button:focus {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #5c616c;
   background-color: white;
   border: 1px solid #5294e2;
@@ -51,8 +51,8 @@ stage {
 
 .menu #notification .notification-button:hover, .menu #notification .notification-icon-button:hover,
 .popup-menu #notification .notification-button:hover,
-.popup-menu #notification .notification-icon-button:hover, .menu-favorites-button:hover, .menu-application-button-selected, .menu-category-button-selected, .sound-button:hover {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+.popup-menu #notification .notification-icon-button:hover, .menu-favorites-button:hover, .sound-button:hover {
+  text-shadow: none;
   color: #5c616c;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -61,8 +61,8 @@ stage {
 
 .menu #notification .notification-button:hover:focus, .menu #notification .notification-icon-button:hover:focus,
 .popup-menu #notification .notification-button:hover:focus,
-.popup-menu #notification .notification-icon-button:hover:focus, .menu-favorites-button:focus:hover, .menu-application-button-selected:focus, .menu-category-button-selected:focus, .sound-button:hover:focus {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+.popup-menu #notification .notification-icon-button:hover:focus, .menu-favorites-button:focus:hover, .sound-button:hover:focus {
+  text-shadow: none;
   color: #5c616c;
   background-color: white;
   border: 1px solid #5294e2;
@@ -71,10 +71,10 @@ stage {
 
 .menu #notification .notification-button:active, .menu #notification .notification-icon-button:active,
 .popup-menu #notification .notification-button:active,
-.popup-menu #notification .notification-icon-button:active, .sound-button:active, .menu #notification .notification-button:active:focus, .menu #notification .notification-icon-button:active:focus,
+.popup-menu #notification .notification-icon-button:active, .menu-application-button-selected, .sound-button:active, .menu #notification .notification-button:active:focus, .menu #notification .notification-icon-button:active:focus,
 .popup-menu #notification .notification-button:active:focus,
-.popup-menu #notification .notification-icon-button:active:focus, .sound-button:active:focus {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+.popup-menu #notification .notification-icon-button:active:focus, .menu-application-button-selected:focus, .sound-button:active:focus {
+  text-shadow: none;
   color: #ffffff;
   background-color: #5294e2;
   border: 1px solid #5294e2;
@@ -84,7 +84,7 @@ stage {
 .menu #notification .notification-button:insensitive, .menu #notification .notification-icon-button:insensitive,
 .popup-menu #notification .notification-button:insensitive,
 .popup-menu #notification .notification-icon-button:insensitive, .sound-button:insensitive {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: rgba(92, 97, 108, 0.55);
   border: 1px solid rgba(0, 0, 0, 0);
   background-color: rgba(255, 255, 255, 0.55);
@@ -96,14 +96,14 @@ stage {
   padding: 5px 32px;
   transition-duration: 0;
   border-radius: 2px;
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #D3DAE3;
   border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.4);
 }
 
 .notification-button:hover, .notification-icon-button:hover, .modal-dialog-button-box .modal-dialog-button:hover {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #D3DAE3;
   border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(105, 110, 134, 0.5);
@@ -114,14 +114,14 @@ stage {
 }
 
 .notification-button:active, .notification-icon-button:active, .modal-dialog-button-box .modal-dialog-button:active {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #ffffff;
   border: 1px solid #5294e2;
   background-color: #5294e2;
 }
 
 .notification-button:insensitive, .notification-icon-button:insensitive, .modal-dialog-button-box .modal-dialog-button:insensitive {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #5b5f68;
   border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.25);
@@ -379,19 +379,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu .popup-sub-menu .popup-menu-item:ltr,
 .popup-menu .popup-sub-menu .popup-menu-item:ltr,
 .popup-combo-menu .popup-sub-menu .popup-menu-item:ltr {
-  padding-right: 0em;
+  padding-right: 1em;
 }
 
 .menu .popup-sub-menu .popup-menu-item:rtl,
 .popup-menu .popup-sub-menu .popup-menu-item:rtl,
 .popup-combo-menu .popup-sub-menu .popup-menu-item:rtl {
-  padding-left: 0em;
+  padding-left: 1em;
 }
 
 .menu .popup-sub-menu StScrollBar,
 .popup-menu .popup-sub-menu StScrollBar,
 .popup-combo-menu .popup-sub-menu StScrollBar {
-  padding: 4px;
+  padding: 8px;
 }
 
 .menu .popup-sub-menu StScrollBar StBin#trough, .menu .popup-sub-menu StScrollBar StBin#vhandle,
@@ -616,7 +616,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -natural-hpadding: 6px;
   -minimum-hpadding: 2px;
   font-weight: bold;
-  color: green;
+  color: white;
   transition-duration: 100;
 }
 
@@ -1279,28 +1279,28 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
   border-radius: 3px;
   box-shadow: none;
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #D3DAE3;
   border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.4);
 }
 
 .keyboard-key:hover {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #D3DAE3;
   border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(105, 110, 134, 0.5);
 }
 
 .keyboard-key:active, .keyboard-key:checked {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #ffffff;
   border: 1px solid #5294e2;
   background-color: #5294e2;
 }
 
 .keyboard-key:grayed {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #5b5f68;
   border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(89, 94, 114, 0.25);
@@ -1350,8 +1350,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .menu-application-button {
-  padding: 7px;
-  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 6px;
+  border: none;
 }
 
 .menu-application-button:highlighted {
@@ -1359,7 +1359,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .menu-application-button-selected {
-  padding: 7px;
+  padding: 6px;
+  border: none;
 }
 
 .menu-application-button-selected:highlighted {
@@ -1367,39 +1368,77 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .menu-application-button-label:ltr {
-  padding-left: 5px;
+  padding-left: 6px;
 }
 
 .menu-application-button-label:rtl {
-  padding-right: 5px;
+  padding-right: 6px;
+}
+
+.menu StScrollView.menu-application-button {
+  padding: 0;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: rgba(92, 97, 108, 0.1);
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item {
+  padding: 0;
+  spacing: 0;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item:ltr {
+  padding-left: 8px;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item:rtl {
+  padding-right: 8px;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item:active {
+  border-image: none;
+  background-color: rgba(92, 97, 108, 0.15);
+  color: #5c616c;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item StIcon {
+  min-width: 22px;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item StLabel:ltr {
+  padding: 6px 0 7px 5px;
+}
+
+.menu StScrollView.menu-application-button .popup-menu-item StLabel:rtl {
+  padding: 6px 5px 7px 0;
 }
 
 .menu-category-button {
-  padding: 7px;
+  padding: 6px;
   border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 3px;
 }
 
-.menu-category-button-selected {
-  padding: 7px;
-}
-
-.menu-category-button-hover {
-  background-color: red;
-  border-radius: 2px;
+.menu-category-button-hover, .menu-category-button-selected {
+  padding: 6px;
+  background-color: #5294e2;
+  color: #ffffff;
+  border: 1px solid #2679db;
+  border-radius: 3px;
 }
 
 .menu-category-button-greyed {
-  padding: 7px;
+  padding: 6px;
   color: rgba(92, 97, 108, 0.55);
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .menu-category-button-label:ltr {
-  padding-left: 5px;
+  padding-left: 6px;
 }
 
 .menu-category-button-label:rtl {
-  padding-right: 5px;
+  padding-right: 6px;
 }
 
 .menu-selected-app-box {
@@ -1919,18 +1958,26 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .sound-player {
-  padding: 0 4px;
+  padding: 0 5px;
 }
 
 .sound-player > StBoxLayout:first-child {
-  padding: 5px 10px 12px 10px;
+  padding: 5px 10px 10px 10px;
   spacing: 0.5em;
 }
 
 .sound-player > StBoxLayout:first-child StButton:small {
-  width: 16px;
-  height: 16px;
-  padding: 1px;
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+}
+
+.sound-player > StBoxLayout:first-child StButton:small:hover {
+  background-color: rgba(92, 97, 108, 0.1);
+}
+
+.sound-player > StBoxLayout:first-child StButton:small:active {
+  background-color: rgba(92, 97, 108, 0.25);
 }
 
 .sound-player > StBoxLayout:first-child StButton:small StIcon {
@@ -1966,14 +2013,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .sound-player-overlay StButton:hover {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #D3DAE3;
   border: 1px solid rgba(98, 103, 125, 0.55);
   background-color: rgba(105, 110, 134, 0.5);
 }
 
 .sound-player-overlay StButton:active {
-  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
   color: #ffffff;
   background-color: #5294e2;
   border: 1px solid #5294e2;
@@ -2163,6 +2210,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .applet-box:hover {
+  color: #D3DAE3;
+  background-color: rgba(211, 218, 227, 0.15);
+}
+
+.applet-box:checked, .applet-box:checked:hover {
   color: #ffffff;
   background-color: #5294e2;
 }
@@ -2178,7 +2230,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #D3DAE3;
 }
 
-.applet-label:hover, .applet-box:hover > .applet-label {
+.applet-box:checked .applet-label {
   color: #ffffff;
   text-shadow: none;
 }
@@ -2188,7 +2240,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 22px;
 }
 
-.applet-icon:hover, .applet-box:hover > .applet-icon {
+.applet-box:checked .applet-icon {
   color: #ffffff;
   text-shadow: none;
 }

@@ -11,12 +11,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="9.0311108mm"
-   height="9.3133335mm"
-   viewBox="0 0 31.999999 33"
+   width="36"
+   height="36"
+   viewBox="0 0 33.750001 33.749999"
    id="svg6927"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="menu-hover.svg">
   <defs
      id="defs6929">
@@ -37,6 +37,16 @@
        x2="1185"
        y2="141"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#selected_bg_color"
+       id="linearGradient818"
+       gradientUnits="userSpaceOnUse"
+       x1="1185"
+       y1="108"
+       x2="1185"
+       y2="141"
+       gradientTransform="matrix(1.3281254,0,0,1,-389.73491,0)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -45,9 +55,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.2"
-     inkscape:cx="0.595299"
-     inkscape:cy="17.160274"
+     inkscape:zoom="7.919596"
+     inkscape:cx="11.074864"
+     inkscape:cy="16.336362"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -55,16 +65,17 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1032"
+     inkscape:window-width="1366"
+     inkscape:window-height="707"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="false"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-midpoints="false"
-     inkscape:snap-bbox-edge-midpoints="true">
+     inkscape:snap-bbox-edge-midpoints="true"
+     units="px">
     <inkscape:grid
        type="xygrid"
        id="grid4140"
@@ -87,18 +98,18 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-137,-382.36221)">
+     transform="translate(-137,-381.61221)">
     <g
-       transform="matrix(0.0689655,0,0,1.0000001,71.275885,274.36218)"
+       transform="matrix(0.05273832,0,0,1.0227273,91.427884,271.15766)"
        id="g6908"
-       style="fill:url(#linearGradient4140);fill-opacity:1">
+       style="fill:url(#linearGradient4140);fill-opacity:1;stroke-width:1.13076651">
       <rect
          y="108"
-         x="1011"
+         x="952.99994"
          height="33"
-         width="348"
+         width="462.18765"
          id="rect5271"
-         style="opacity:1;fill:url(#linearGradient4140);fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0" />
+         style="opacity:1;fill:url(#linearGradient818);fill-opacity:1;stroke:none;stroke-width:1.13076651;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0" />
     </g>
   </g>
 </svg>
