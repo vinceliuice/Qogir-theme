@@ -181,6 +181,11 @@ window.thunar {
       @extend treeview.view;
       background-color: $dark_sidebar_bg;
       color: $dark_sidebar_fg;
+
+      &:hover {
+        color: $dark_sidebar_fg;
+        background-color: mix($dark_sidebar_fg, $dark_sidebar_bg, 10%);
+      }
     }
   }
 
