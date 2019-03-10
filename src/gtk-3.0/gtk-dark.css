@@ -9525,12 +9525,9 @@ list#AutostartListBoxTweakGroup.tweak-group-startup {
   background-image: image(rgba(246, 246, 251, 0.06));
 }
 
-window.background.csd > box:not(.titlebar).horizontal > separator.vertical {
+window.background.csd > box:not(.titlebar).horizontal > separator.vertical, window.background.csd > box:not(.titlebar).horizontal > separator.vertical:backdrop {
   background-image: image(rgba(255, 255, 255, 0.12));
-}
-
-window.background.csd > box:not(.titlebar).horizontal > separator.vertical:backdrop {
-  background-image: image(rgba(255, 255, 255, 0.12));
+  background-color: transparent;
 }
 
 window.background.csd > headerbar.titlebar > box.horizontal > separator.sidebar,

@@ -606,14 +606,12 @@ window.background.csd {
   }
 }
 
-
 // separator of sidebar on Gnome contol center and Gnome tweaks
 window.background.csd {
   > box:not(.titlebar).horizontal > separator.vertical {
-    background-image: if($variant == 'light', image($bg_color), image($borders_color));
-
-    &:backdrop {
+    &, &:backdrop {
       background-image: if($variant == 'light', image($bg_color), image($borders_color));
+      background-color: transparent;
     }
   }
 }

@@ -8170,7 +8170,7 @@ window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switche
 .menubar.panel popover {
   padding: 2px 4px;
   font-weight: normal;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.35);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
@@ -9520,12 +9520,9 @@ list#AutostartListBoxTweakGroup.tweak-group-startup {
   background-image: image(rgba(246, 246, 251, 0.06));
 }
 
-window.background.csd > box:not(.titlebar).horizontal > separator.vertical {
+window.background.csd > box:not(.titlebar).horizontal > separator.vertical, window.background.csd > box:not(.titlebar).horizontal > separator.vertical:backdrop {
   background-image: image(#fafbfc);
-}
-
-window.background.csd > box:not(.titlebar).horizontal > separator.vertical:backdrop {
-  background-image: image(#fafbfc);
+  background-color: transparent;
 }
 
 window.background.csd > headerbar.titlebar > box.horizontal > separator.sidebar,
