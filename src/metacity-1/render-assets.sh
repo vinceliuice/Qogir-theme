@@ -5,9 +5,10 @@ OPTIPNG="/usr/bin/optipng"
 INDEX="assets.txt"
 
 for color in '' '-light'; do
+  for win in '' '-win'; do
 
-  ASSETS_DIR="assets${color}"
-  SRC_FILE="assets${color}.svg"
+  ASSETS_DIR="assets${color}${win}"
+  SRC_FILE="assets${color}${win}.svg"
 
   for i in `cat $INDEX`
   do
@@ -22,6 +23,7 @@ for color in '' '-light'; do
       && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
   fi
 
+  done
   done
 done
 
@@ -62,6 +64,14 @@ links
 
 cd ..
 cd assets-light
+links
+
+cd ..
+cd assets-win
+links
+
+cd ..
+cd assets-light-win
 links
 
 exit 0

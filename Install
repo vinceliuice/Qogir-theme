@@ -81,12 +81,20 @@ install() {
   cp -ur ${SRC_DIR}/src/cinnamon/cinnamon${ELSE_DARK}.css                            ${THEME_DIR}/cinnamon/cinnamon.css
   cp -ur ${SRC_DIR}/src/cinnamon/thumbnail${ELSE_DARK}.png                           ${THEME_DIR}/cinnamon/thumbnail.png
 
-  mkdir -p                                                                           ${THEME_DIR}/metacity-1
-  cp -ur ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}/*.png                         ${THEME_DIR}/metacity-1
-  cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-3.xml                              ${THEME_DIR}/metacity-1
+  [[ "${square:-}" != 'true' ]] && \
+  mkdir -p                                                                           ${THEME_DIR}/metacity-1 && \
+  cp -ur ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}/*.png                         ${THEME_DIR}/metacity-1 && \
+  cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-3.xml                              ${THEME_DIR}/metacity-1 && \
   cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}.xml                 ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+
+  [[ "${square:-}" = 'true' ]] && \
+  mkdir -p                                                                           ${THEME_DIR}/metacity-1 && \
+  cp -ur ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}-win/*.png                     ${THEME_DIR}/metacity-1 && \
+  cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-3-win.xml                          ${THEME_DIR}/metacity-1 && \
+  cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}-win.xml             ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+
   cp -ur ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                        ${THEME_DIR}/metacity-1/thumbnail.png
-  cd ${THEME_DIR}/metacity-1
+  cd ${THEME_DIR}/metacity-1 && \
   ln -s metacity-theme-1.xml metacity-theme-2.xml
 
   mkdir -p                                                                           ${THEME_DIR}/xfwm4

@@ -1827,17 +1827,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.71014495"
-     inkscape:cx="207.71711"
-     inkscape:cy="649.6474"
+     inkscape:zoom="1.0042966"
+     inkscape:cx="239.19847"
+     inkscape:cy="628.85247"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      showborder="false"
      inkscape:window-width="1366"
-     inkscape:window-height="737"
+     inkscape:window-height="710"
      inkscape:window-x="0"
-     inkscape:window-y="31"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
@@ -5040,7 +5040,8 @@
     </g>
     <g
        id="titlebutton-minimize-backdrop-dark-small"
-       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)">
+       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)"
+       style="opacity:0.5">
       <rect
          style="opacity:0;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40216663;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect6838"
@@ -5050,7 +5051,7 @@
          y="81.893753"
          ry="3.7990142e-06" />
       <rect
-         style="opacity:0.5;fill:url(#linearGradient6934);fill-opacity:1;stroke:none;stroke-width:0.13147251;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49411765;paint-order:stroke fill markers"
+         style="opacity:1;fill:url(#linearGradient6934);fill-opacity:1;stroke:none;stroke-width:0.13147251;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49411765;paint-order:stroke fill markers"
          id="rect6840"
          width="2.6458333"
          height="0.26458263"
@@ -5060,7 +5061,8 @@
     </g>
     <g
        id="titlebutton-maximize-backdrop-dark-small"
-       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)">
+       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)"
+       style="opacity:0.5">
       <rect
          ry="3.7990142e-06"
          y="81.893753"
@@ -5070,7 +5072,7 @@
          id="rect6844"
          style="opacity:0;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40216663;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
       <path
-         style="opacity:0.5;fill:url(#linearGradient6936);fill-opacity:1;stroke:none;stroke-width:0.13245735;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49411765;paint-order:stroke fill markers"
+         style="opacity:1;fill:url(#linearGradient6936);fill-opacity:1;stroke:none;stroke-width:0.13245735;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49411765;paint-order:stroke fill markers"
          d="m 50.270833,84.275258 v 2.645833 h 2.645834 v -2.645833 z m 0.264584,0.264583 h 2.116666 v 2.116667 h -2.116666 z"
          id="path6846"
          inkscape:connector-curvature="0"
@@ -5078,7 +5080,8 @@
     </g>
     <g
        id="titlebutton-close-backdrop-dark-small"
-       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)">
+       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)"
+       style="opacity:0.5">
       <rect
          style="opacity:0;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40216663;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect6850"
@@ -5088,14 +5091,15 @@
          y="81.893753"
          ry="3.7990142e-06" />
       <path
-         style="opacity:0.5;fill:url(#linearGradient6938);fill-opacity:1;stroke:none;stroke-width:0.15633625;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49411765;paint-order:stroke fill markers"
+         style="opacity:1;fill:url(#linearGradient6938);fill-opacity:1;stroke:none;stroke-width:0.15633625;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49411765;paint-order:stroke fill markers"
          d="m 60.947959,84.181981 -0.187069,0.187069 1.229384,1.229384 -1.229384,1.228865 0.187069,0.187068 1.229384,-1.228865 1.228865,1.228865 0.187068,-0.187068 -1.228865,-1.228865 1.228865,-1.229384 -0.187068,-0.187069 -1.228865,1.229384 z"
          id="path6852"
          inkscape:connector-curvature="0" />
     </g>
     <g
        id="titlebutton-restore-backdrop-dark-small"
-       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)">
+       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)"
+       style="opacity:0.5">
       <rect
          ry="3.7990142e-06"
          y="81.893753"
@@ -5105,7 +5109,7 @@
          id="rect6856"
          style="opacity:0;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40216663;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
       <path
-         style="opacity:0.5;fill:url(#linearGradient6940);fill-opacity:1;stroke:none;stroke-width:0.10302238;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49411765;paint-order:stroke fill markers"
+         style="opacity:1;fill:url(#linearGradient6940);fill-opacity:1;stroke:none;stroke-width:0.10302238;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49411765;paint-order:stroke fill markers"
          d="m 71.966666,84.275258 v 0.529166 H 71.4375 v 2.116667 h 2.116666 v -0.529167 h 0.529167 v -2.116666 z m 0.264584,0.264583 h 1.5875 v 1.5875 H 73.554166 V 84.804424 H 72.23125 Z m -0.529167,0.529167 h 1.5875 v 1.5875 h -1.5875 z"
          id="path6858"
          inkscape:connector-curvature="0"
@@ -5113,7 +5117,8 @@
     </g>
     <g
        id="titlebutton-minimize-dark-small"
-       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)">
+       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)"
+       style="opacity:0.8">
       <rect
          ry="3.7990142e-06"
          y="92.477081"
@@ -5134,7 +5139,8 @@
     <g
        inkscape:label="#titlebutton-maximize-dark-small"
        id="titlebutton-maximize-dark-small"
-       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)">
+       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)"
+       style="opacity:0.8">
       <rect
          style="opacity:0;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40216663;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect6868"
@@ -5153,7 +5159,8 @@
     <g
        inkscape:label="#titlebutton-close-dark-small"
        id="titlebutton-close-dark-small"
-       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)">
+       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)"
+       style="opacity:0.8">
       <rect
          ry="3.7990142e-06"
          y="92.477081"
@@ -5170,7 +5177,8 @@
     </g>
     <g
        id="titlebutton-restore-dark-small"
-       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)">
+       transform="matrix(3.7795276,0,0,3.7795276,4.9999984,-1197.1575)"
+       style="opacity:0.8">
       <rect
          style="opacity:0;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40216663;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect6880"

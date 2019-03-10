@@ -380,6 +380,7 @@ window.background.chromium {
   // checked-tab & toolbar & button widgets
   background-color: $bg_color;
   color: $text_color;
+  @extend %circle_chrome;
 
   headerbar.titlebar {
     button.toggle { // account-button (> 64.0.3282?)

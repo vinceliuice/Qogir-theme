@@ -6150,6 +6150,13 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
   color: #5c616c;
 }
 
+window.background.chromium headerbar.titlebar button.titlebutton {
+  min-width: 23px;
+  min-height: 23px;
+  padding: 0 2px;
+  color: transparent;
+}
+
 window.background.chromium {
   background-color: #fafbfc;
   color: #5c616c;
