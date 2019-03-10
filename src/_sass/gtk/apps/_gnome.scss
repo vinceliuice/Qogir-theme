@@ -62,10 +62,10 @@ terminal-window,
   .path-bar-box {
     margin-top: $icon_padding;
     margin-bottom: $icon_padding;
-    border-radius: 2px;
+    // border-radius: 2px;
     color: $header_fg;
     background-color: transparent;
-    border: 1px solid transparent;
+    border: none;
 
     .path-bar { // for ≥ 3.30.1
       button.flat.text-button.toggle,

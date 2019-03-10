@@ -4,42 +4,32 @@
 //
 
 // Wingpanel
-.panel {
-  background-color: $panel_bg;
-  transition: all 100ms ease-in-out;
-  color: $panel_fg;
-  font-weight: bold;
+.menubar.panel {
+  .panel {
+    &.color-light {
+      background-color: $panel_bg;
+      transition: all 100ms ease-in-out;
+      color: $panel_fg;
+    }
 
-  &.maximized {
-    background-color: rgba(black, 1);
-  }
+    &.maximized {
+      background-color: darken($panel_bg, 10%);
+    }
 
-  &.translucent {
-    background-color: $panel_bg;
-  }
+    &.translucent {
+      background-color: rgba($panel_bg, 0.95);
+    }
 
-  menubar &,
-  & menubar {
-    box-shadow: none;
-    border: none;
-    background: none;
-    color: $panel_fg;
+    menubar {
+      background: none;
+      box-shadow: none;
+      border: none;
+    }
   }
 
   &-shadow {
     background-image: none;
     background-color: transparent;
-  }
-
-  .menu {
-    box-shadow: none;
-
-    .menuitem { font-weight: normal; }
-  }
-
-  .menubar > .menuitem {
-    padding: 3px $cont_padding;
-    &:hover { background-color: transparent; }
   }
 
   popover {
@@ -82,7 +72,14 @@
       .view {
         background: none;
         border-radius: 2px;
-        @extend row.activatable;
+        border: 1px solid transparent;
+        color: $text_color;
+        transition: $shorter_transition;
+
+        &:hover {
+          background-color: if($variant=='light', mix($fg_color, $bg_color, 5%), mix($fg_color, $bg_color, 10%));
+          border: 1px solid $borders_color;
+        }
 
         &:selected,
         &:active,
@@ -92,6 +89,7 @@
         &:selected:backdrop {
           color: $selected_fg_color;
           background-color: $selected_bg_color;
+          border: 1px solid if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
         }
       }
     }
@@ -133,7 +131,7 @@ button.flat.toggle.switcher {
   > revealer image,
   > revealer spinner {
     color: $panel_fg;
-    font-weight: bold;
+    font-weight: normal;
     text-shadow: none;
     transition: all 200ms ease-in-out;
   }
