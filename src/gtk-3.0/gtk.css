@@ -8124,7 +8124,7 @@ window.thunar .sidebar treeview.view {
   color: #C4CAD1;
 }
 
-window.thunar .sidebar treeview.view:hover {
+window.thunar .sidebar treeview.view:not(:selected):hover {
   color: #C4CAD1;
   background-color: #373941;
 }
