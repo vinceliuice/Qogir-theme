@@ -90,7 +90,7 @@ install() {
   [[ "${square:-}" = 'true' ]] && \
   mkdir -p                                                                           ${THEME_DIR}/metacity-1 && \
   cp -ur ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}-win/*.png                     ${THEME_DIR}/metacity-1 && \
-  cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-3-win.xml                          ${THEME_DIR}/metacity-1 && \
+  cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-3-win.xml                          ${THEME_DIR}/metacity-1/metacity-theme-3.xml && \
   cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}-win.xml             ${THEME_DIR}/metacity-1/metacity-theme-1.xml
 
   cp -ur ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                        ${THEME_DIR}/metacity-1/thumbnail.png
