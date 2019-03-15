@@ -110,6 +110,9 @@ TITLE_BUTTON_S="@extend %square_titlebutton"
 CSD_TITLE_BUTTON_C="@extend %csd_circle_titlebutton"
 CSD_TITLE_BUTTON_S="@extend %csd_square_titlebutton"
 
+SIDE_TITLE_BUTTON_C="@extend %side_circle_titlebutton"
+SIDE_TITLE_BUTTON_S="@extend %side_square_titlebutton"
+
 HEADER_PADDING_C="$header_padding:0;"
 HEADER_PADDING_S="$header_padding:5px;"
 
@@ -163,12 +166,15 @@ install_square() {
 
   cd ${SRC_DIR}/src/_sass/gtk
   cp -an _common.scss _common.scss.bak
+  cp -an _darksidebar_widgets.scss _darksidebar_widgets.scss.bak
   sed -i "s/$TITLE_BUTTON_C/$TITLE_BUTTON_S/g" _common.scss
   sed -i "s/$CSD_TITLE_BUTTON_C/$CSD_TITLE_BUTTON_S/g" _common.scss
+  sed -i "s/$SIDE_TITLE_BUTTON_C/$SIDE_TITLE_BUTTON_S/g" _darksidebar_widgets.scss
 
   cd ${SRC_DIR}/src/_sass/gtk/apps
   cp -an _misc.scss _misc.scss.bak
   sed -i "s/$CHROME_C/$CHROME_S/g" _misc.scss
+
   echo -e "Specify theme with square titlebuttons ..."
 }
 
@@ -179,7 +185,9 @@ restore_square() {
 
   cd ${SRC_DIR}/src/_sass/gtk
   [[ -d _common.scss.bak ]] && rm -rf _common.scss
+  [[ -d _darksidebar_widgets.scss.bak ]] && rm -rf _darksidebar_widgets.scss.scss
   mv _common.scss.bak _common.scss
+  mv _darksidebar_widgets.scss.bak _darksidebar_widgets.scss
 
   cd ${SRC_DIR}/src/_sass/gtk/apps
   [[ -d _misc.scss.bak ]] && rm -rf _misc.scss

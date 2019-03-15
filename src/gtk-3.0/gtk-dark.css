@@ -8937,59 +8937,6 @@ window.background.csd > box.horizontal > box.vertical > searchbar entry:focus, w
   background-color: rgba(246, 246, 251, 0.12);
 }
 
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.appmenu.titlebutton, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.appmenu.titlebutton, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton, .geary-titlebar-left button.appmenu.titlebutton {
-  border: none;
-  min-height: 30px;
-  min-width: 30px;
-  border-radius: 50px;
-  color: transparent;
-  background-color: transparent;
-  background-image: -gtk-scaled(url("assets/logo.png"), url("assets/logo@2.png"));
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton image, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton image, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.appmenu.titlebutton image, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.appmenu.titlebutton image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton image, .geary-titlebar-left button.appmenu.titlebutton image {
-  opacity: 0;
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:hover, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.appmenu.titlebutton:hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.appmenu.titlebutton:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:hover, .geary-titlebar-left button.appmenu.titlebutton:hover {
-  background-image: -gtk-scaled(url("assets/logo-hover.png"), url("assets/logo-hover@2.png"));
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:checked, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.appmenu.titlebutton:checked, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.appmenu.titlebutton:checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:checked, .geary-titlebar-left button.appmenu.titlebutton:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.appmenu.titlebutton:active, headerbar.titlebar.tweak-titlebar-left button.appmenu.titlebutton:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.appmenu.titlebutton:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.appmenu.titlebutton:active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.appmenu.titlebutton:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.appmenu.titlebutton:active, .geary-titlebar-left button.appmenu.titlebutton:active {
-  background-image: -gtk-scaled(url("assets/logo-active.png"), url("assets/logo-active@2.png"));
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.tweak-titlebar-left, window.background.csd > box.titlebar.horizontal > headerbar:first-child, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child,
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical, .geary-titlebar-left, .geary-titlebar-left.geary-titlebar {
-  color: rgba(246, 246, 251, 0.8);
-  background-color: #32343D;
-  background-image: image(#32343D);
-  border: none;
-  box-shadow: none;
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton), headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton), window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton), window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton), window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton), window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton), .geary-titlebar-left button:not(.titlebutton) {
-  color: rgba(246, 246, 251, 0.8);
-  border: none;
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):hover, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):hover, .geary-titlebar-left button:not(.titlebutton):hover {
-  color: #F6F6FB;
-  background-color: rgba(246, 246, 251, 0.25);
-}
-
-window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):active, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):active, .geary-titlebar-left button:not(.titlebutton):active, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):checked, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):checked, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):checked, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):checked, .geary-titlebar-left button:not(.titlebutton):checked {
-  color: #ffffff;
-  border-color: #68a2e6;
-  background-color: #5294e2;
-}
-
 window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.close, headerbar.titlebar.tweak-titlebar-left button.titlebutton.close, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.close, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.close, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.close, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.close, .geary-titlebar-left button.titlebutton.close {
   background-image: -gtk-scaled(url("assets/titlebutton-close-dark.png"), url("assets/titlebutton-close-dark@2.png"));
 }
@@ -9100,6 +9047,59 @@ window.org-gnome-gedit .maximized .titlebar > headerbar:first-child button.title
 .maximized window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.maximize:active,
 .maximized .geary-titlebar-left button.titlebutton.maximize:active {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-active-dark.png"), url("assets/titlebutton-restore-active-dark@2.png"));
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child, headerbar.titlebar.tweak-titlebar-left, window.background.csd > box.titlebar.horizontal > headerbar:first-child, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child,
+window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical, .geary-titlebar-left, .geary-titlebar-left.geary-titlebar {
+  color: rgba(246, 246, 251, 0.8);
+  background-color: #32343D;
+  background-image: image(#32343D);
+  border: none;
+  box-shadow: none;
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton), headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton), window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton), window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton), window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton), window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton), .geary-titlebar-left button:not(.titlebutton) {
+  color: rgba(246, 246, 251, 0.8);
+  border: none;
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):hover, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):hover, .geary-titlebar-left button:not(.titlebutton):hover {
+  color: #F6F6FB;
+  background-color: rgba(246, 246, 251, 0.25);
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):active, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):active, .geary-titlebar-left button:not(.titlebutton):active, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):checked, headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):checked, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):checked, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button:not(.titlebutton):checked, .geary-titlebar-left button:not(.titlebutton):checked {
+  color: #ffffff;
+  border-color: #68a2e6;
+  background-color: #5294e2;
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu, headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.appmenu, .geary-titlebar-left button.titlebutton.appmenu {
+  border: none;
+  min-height: 30px;
+  min-width: 30px;
+  border-radius: 50px;
+  color: transparent;
+  background-color: transparent;
+  background-image: -gtk-scaled(url("assets/logo.png"), url("assets/logo@2.png"));
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu image, headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu image, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu image, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.appmenu image, .geary-titlebar-left button.titlebutton.appmenu image {
+  opacity: 0;
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:hover, headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.appmenu:hover, .geary-titlebar-left button.titlebutton.appmenu:hover {
+  background-image: -gtk-scaled(url("assets/logo-hover.png"), url("assets/logo-hover@2.png"));
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:checked, headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:checked, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:checked, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu:checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.appmenu:checked, .geary-titlebar-left button.titlebutton.appmenu:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:active, headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.appmenu:active, .geary-titlebar-left button.titlebutton.appmenu:active {
+  background-image: -gtk-scaled(url("assets/logo-active.png"), url("assets/logo-active@2.png"));
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 filechooser actionbar button {

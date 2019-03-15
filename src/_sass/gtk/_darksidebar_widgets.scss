@@ -93,61 +93,8 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   }
 }
 
-%side_titlebutton {
-  &.appmenu { // appmenu button
-    border: none;
-    min-height: 30px;
-    min-width: 30px;
-    border-radius: 50px;
-    color: transparent;
-    background-color: transparent;
-    background-image: -gtk-scaled(url("assets/logo.png"),
-                                  url("assets/logo@2.png"));
-    background-repeat: no-repeat;
-    background-position: center;
-
-    image { opacity: 0; } // Make menu button icon invisible
-
-    &:hover {
-      background-image: -gtk-scaled(url("assets/logo-hover.png"),
-                                    url("assets/logo-hover@2.png"));
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    &:checked, &:active {
-      background-image: -gtk-scaled(url("assets/logo-active.png"),
-                                  url("assets/logo-active@2.png"));
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-  }
-}
-
-%side_headerbar {
-  color: $side_theme_fg;
-  background-color: $side_theme_bg;
-  background-image: image($side_theme_bg);
-  border: none;
-  box-shadow: none;
-
-  button:not(.titlebutton) {
-    color: $side_theme_fg;
-    border: none;
-
-    &:hover {
-      color: $side_theme_alt_fg;
-      background-color: rgba($side_theme_fg, 0.25);
-    }
-
-    &:active, &:checked {
-      @include button(active);
-    }
-  }
-
+%side_circle_titlebutton {
   button.titlebutton {
-    @extend %side_titlebutton;
-
     // Load png assets for each button, Fix the Chrome window restore button bug
     @each $k in ('close', 'maximize', 'minimize', 'restore') {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
@@ -164,6 +111,83 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
       &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}-dark.png'),
                                                       url('assets/titlebutton-restore#{$m}-dark@2.png')); }
+      }
+    }
+  }
+}
+
+%side_square_titlebutton {
+  button.titlebutton {
+    // Load png assets for each button, Fix the Chrome window restore button bug
+    @each $k in ('close', 'maximize', 'minimize', 'restore') {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}-dark-win.png'),
+                                                     url('assets/titlebutton-#{$k}#{$m}-dark-win@2.png')); }
+      }
+    }
+  }
+
+  .fullscreen &,
+  .maximized & {
+    button.titlebutton {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}-dark-win.png'),
+                                                      url('assets/titlebutton-restore#{$m}-dark-win@2.png')); }
+      }
+    }
+  }
+}
+
+%side_headerbar {
+  color: $side_theme_fg;
+  background-color: $side_theme_bg;
+  background-image: image($side_theme_bg);
+  border: none;
+  box-shadow: none;
+  @extend %side_circle_titlebutton;
+
+  button:not(.titlebutton) {
+    color: $side_theme_fg;
+    border: none;
+
+    &:hover {
+      color: $side_theme_alt_fg;
+      background-color: rgba($side_theme_fg, 0.25);
+    }
+
+    &:active, &:checked {
+      @include button(active);
+    }
+  }
+
+  button.titlebutton {
+    &.appmenu { // appmenu button
+      border: none;
+      min-height: 30px;
+      min-width: 30px;
+      border-radius: 50px;
+      color: transparent;
+      background-color: transparent;
+      background-image: -gtk-scaled(url("assets/logo.png"),
+                                    url("assets/logo@2.png"));
+      background-repeat: no-repeat;
+      background-position: center;
+
+      image { opacity: 0; } // Make menu button icon invisible
+
+      &:hover {
+        background-image: -gtk-scaled(url("assets/logo-hover.png"),
+                                      url("assets/logo-hover@2.png"));
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &:checked, &:active {
+        background-image: -gtk-scaled(url("assets/logo-active.png"),
+                                      url("assets/logo-active@2.png"));
+        background-repeat: no-repeat;
+        background-position: center;
       }
     }
   }
