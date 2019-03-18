@@ -1112,7 +1112,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: url("common-assets/misc/activities-active.svg");
 }
 
-.system-switch-user-submenu-icon {
+.system-switch-user-submenu-icon.user-icon {
   icon-size: 20px;
   padding: 0 2px;
 }
