@@ -1018,11 +1018,11 @@ StScrollBar {
     &:overview { background-color: transparent; } // for Ubuntu session
 
     .panel-corner {
-      -panel-corner-background-color: $header_bg;
+      -panel-corner-background-color: $panel_bg;
     }
 
     .panel-button {
-//      color: $fg_color;
+      color: $panel_fg;
       text-shadow: none;
 
       &:hover, &:active, &:overview, &:focus, &:checked {
@@ -1041,10 +1041,10 @@ StScrollBar {
   .screencast-indicator { color: $error_color; }
   .remote-access-indicator { color: $warning_color; } // > 3.29.4
 
-  .clock-display > * > *:last-child {
-    color: $selected_bg_color;
-    margin-left: .3em;
-  }
+  // .clock-display > * > *:last-child {
+  //   color: $selected_bg_color;
+  //   margin-left: .3em;
+  // }
 
   .popup-menu-arrow { width: 0; }
 }
@@ -1499,6 +1499,13 @@ StScrollBar {
   background-size: 26px;
   height: 26px;
   width: 26px;
+  -shell-close-overlap: 10px;
+  border-radius: 100px;
+  border: 0 none transparent;
+  background-color: transparent;
+  color: transparent;
+  box-shadow: none;
+  StIcon { icon-size: 26px; } // for safety
 
   &:hover {
     background-image: url("common-assets/misc/close-hover.svg");
@@ -1513,10 +1520,6 @@ StScrollBar {
     height: 26px;
     width: 26px;
   }
-}
-
-.window-close {
-  -shell-close-overlap: 11px;
 }
 
 //
@@ -1950,13 +1953,31 @@ StScrollBar {
   .page-indicator-icon {
     width: 18px;
     height: 18px;
+    margin: 0;
+    padding: 0;
+    color: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
     background-image: url(common-assets/misc/page-indicator-inactive.svg);
   }
 
-  &:hover .page-indicator-icon { background-image: url(common-assets/misc/page-indicator-hover.svg); }
-  &:active .page-indicator-icon { background-image: url(common-assets/misc/page-indicator-active.svg); }
+  &:hover .page-indicator-icon {
+    background-image: url(common-assets/misc/page-indicator-hover.svg);
+  }
+  &:active .page-indicator-icon {
+    margin: 0;
+    padding: 0;
+    color: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    background-image: url(common-assets/misc/page-indicator-active.svg);
+  }
   &:checked .page-indicator-icon,
-  &:checked:active { background-image: url(common-assets/misc/page-indicator-checked.svg); }
+  &:checked:active {
+    background-image: url(common-assets/misc/page-indicator-checked.svg);
+  }
 }
 
 .no-frequent-applications-label { @extend %status_text; }
