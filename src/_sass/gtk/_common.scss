@@ -1146,11 +1146,11 @@ headerbar,
   color: $header_fg;
   box-shadow: inset 0 -1px $borders_color;
   background-color: $header_bg;
-  min-height: $medium_size + 2px;
+  min-height: $large_size;
 
   // .csd & {  // Transparent header-bars only in csd windows
   //   background-color: $header_bg;
-  //   min-height: $medium_size + 2px;
+  //   min-height: $medium_size + 6px;
   // }
 
   &:backdrop {

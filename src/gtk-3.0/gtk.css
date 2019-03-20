@@ -1552,7 +1552,7 @@ headerbar,
   color: rgba(207, 218, 231, 0.8);
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
   background-color: #282A33;
-  min-height: 30px;
+  min-height: 38px;
 }
 
 headerbar:backdrop,

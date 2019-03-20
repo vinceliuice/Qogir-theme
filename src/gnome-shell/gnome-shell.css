@@ -18,7 +18,7 @@
  */
 stage {
   font-family: Futura Bk bt, Cantarell, Sans-Serif;
-  font-size: 9pt;
+  font-size: 10pt;
   color: #5c616c;
 }
 
@@ -314,7 +314,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .show-processes-dialog-subject,
 .mount-question-dialog-subject,
 .end-session-dialog-subject {
-  font-size: 11pt;
+  font-size: 12pt;
   font-weight: bold;
   color: #5c616c;
 }
@@ -397,7 +397,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .end-session-dialog-app-list-item-description {
   color: #686d7a;
-  font-size: 8pt;
+  font-size: 9pt;
 }
 
 .end-session-dialog .modal-dialog-linked-button:last-child {
@@ -453,7 +453,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .show-processes-dialog-app-list {
-  font-size: 10pt;
+  font-size: 11pt;
   max-height: 200px;
   padding-top: 24px;
   padding-left: 49px;
@@ -490,7 +490,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .show-processes-dialog-app-list-item-name {
-  font-size: 10pt;
+  font-size: 11pt;
 }
 
 .prompt-dialog {
@@ -507,7 +507,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .prompt-dialog-headline {
-  font-size: 12pt;
+  font-size: 13pt;
   font-weight: bold;
   color: #5c616c;
 }
@@ -522,18 +522,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .prompt-dialog-error-label {
-  font-size: 9pt;
+  font-size: 10pt;
   color: #FC4138;
   padding-bottom: 8px;
 }
 
 .prompt-dialog-info-label {
-  font-size: 9pt;
+  font-size: 10pt;
   padding-bottom: 8px;
 }
 
 .prompt-dialog-null-label {
-  font-size: 9pt;
+  font-size: 10pt;
   padding-bottom: 8px;
 }
 
