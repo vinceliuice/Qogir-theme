@@ -135,9 +135,18 @@ terminal-window,
 }
 
 .nautilus-window {
-//  searchbar { border-bottom: none; }
+
+  // searchbar { border-bottom: none; }
+
   .searchbar-container { margin-top: -1px; }
+
   actionbar { border-color: $solid_borders_color; }
+
+  > menubar { // For wayland
+    border: none;
+    box-shadow: none;
+    background: none;
+  }
 }
 
 .nautilus-window notebook,
@@ -441,6 +450,12 @@ box.speedometer {
 //
 // TODO: Merge this with the upstream stylesheet
 .gb-search-entry-occurrences-tag { background: none; }
+
+window.org-gnome-Builder > menubar { // For wayland
+  border: none;
+  box-shadow: none;
+  background: none;
+}
 
 workbench.csd > stack.titlebar:not(headerbar) {
   padding: 0;
@@ -991,6 +1006,17 @@ flowboxchild.bookmark-tag-widget {
   label { margin-bottom: 2px; }
 
   &-selected { color: $selected_fg_color; } // checked
+}
+
+//
+// gnome-system-monitor
+//
+window#gnome-system-monitor {
+  > menubar { // For wayland
+    border: none;
+    box-shadow: none;
+    background: none;
+  }
 }
 
 //

@@ -4914,6 +4914,12 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   border-color: #cad5df;
 }
 
+.nautilus-window > menubar {
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
 .nautilus-window notebook,
 .nautilus-window notebook > stack:not(:only-child) searchbar {
   background-color: #ffffff;
@@ -5153,6 +5159,12 @@ box.speedometer-content-area {
 }
 
 .gb-search-entry-occurrences-tag {
+  background: none;
+}
+
+window.org-gnome-Builder > menubar {
+  border: none;
+  box-shadow: none;
   background: none;
 }
 
@@ -5704,6 +5716,12 @@ flowboxchild.bookmark-tag-widget label {
 
 flowboxchild.bookmark-tag-widget-selected {
   color: #ffffff;
+}
+
+window#gnome-system-monitor > menubar {
+  border: none;
+  box-shadow: none;
+  background: none;
 }
 
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
