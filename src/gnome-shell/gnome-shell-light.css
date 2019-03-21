@@ -780,22 +780,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .osd-window .level {
-  padding: 0;
   height: 4px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
   color: #5294e2;
-  -barlevel-height: 3px;
-  -barlevel-background-color: transparent;
-  -barlevel-active-background-color: #73d216;
+  -barlevel-height: 4px;
+  -barlevel-background-color: rgba(0, 0, 0, 0.15);
+  -barlevel-active-background-color: #5294e2;
   -barlevel-overdrive-color: #F04A50;
-  -barlevel-overdrive-separator-width: 3px;
+  -barlevel-overdrive-separator-width: 2px;
   -barlevel-border-width: 0;
 }
 
 .osd-window .level-bar {
   background-color: #5294e2;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .resize-popup {
