@@ -43,7 +43,6 @@ Usage:  ./Install  [OPTIONS...]
 | -d, --dest   | destination directory (Default: $HOME/.themes) |
 | -n, --name   | name (Default: Qogir) |
 | -c, --color  | color variant(s) (standard/light/dark) |
-| -m, --menu   | appmenu button variant(s) (standard/gnome) |
 | -i, --image  | Install theme with nautilus background image |
 | -s, --square | Install theme with square titlebutton |
 | -h, --help   | Show this help |
