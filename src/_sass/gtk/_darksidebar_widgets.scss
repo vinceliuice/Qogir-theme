@@ -6,6 +6,10 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 %side_background {
   color: $side_theme_fg;
   background-color: $side_theme_bg;
+
+  &:disabled, label:disabled {
+    color: rgba($side_theme_alt_fg, 0.35);
+  }
 }
 
 %side_buttons {
@@ -59,7 +63,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     background-color: rgba($side_theme_alt_fg, 0.1);
   }
 
-  &:disabled {
+  &:disabled, label:disabled {
     color: rgba($side_theme_alt_fg, 0.35);
   }
 
@@ -89,6 +93,10 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 
     &:focus {
       background-color: rgba($side_theme_fg, 0.12);
+    }
+
+    &:disabled, label:disabled, image:disabled {
+      color: rgba($side_theme_alt_fg, 0.35);
     }
   }
 }
@@ -699,11 +707,6 @@ window.background.csd {
   }
 }
 
-hdyleaflet > separator.sidebar {
-  background: none;
-  min-width: 0;
-}
-
 //
 // Geary
 //
@@ -878,5 +881,61 @@ window.background.csd {
     .activatable, .inactive, .room-list-header {
       @extend %side_views;
     }
+  }
+}
+
+//
+// Contacts
+//
+
+// box.horizontal, // gnome 3.30
+hdyleaflet {
+  > stack > frame > grid.vertical {
+    @extend %side_background;
+
+    > scrolledwindow {
+      > viewport.frame {
+        // @extend %side_background;
+
+        > list.contacts-contact-list {
+          @extend %side_background;
+
+          row.activatable.contact-data-row {
+            @extend %side_views;
+          }
+        }
+      }
+    }
+
+    > entry.search {
+      color: $side_theme_fg;
+      background-color: rgba($side_theme_fg, 0.1);
+
+      image { color: $side_theme_fg; }
+
+      &:focus {
+        background-color: rgba($side_theme_fg, 0.12);
+      }
+
+      &:disabled {
+        label, image {
+          color: rgba($side_theme_alt_fg, 0.35);
+        }
+      }
+    }
+
+    > actionbar {
+      @extend %side_background;
+
+      button {
+        @extend %side_buttons;
+      }
+    }
+  }
+
+  > separator.sidebar {
+    border-right-style: if($variant == 'light', none, solid);
+    background: none;
+    min-width: 0;
   }
 }
