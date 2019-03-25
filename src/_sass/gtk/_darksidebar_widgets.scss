@@ -580,6 +580,14 @@ list.gedit-document-panel {
   }
 }
 
+textview.view.sourceview.gedit-view {
+  window#gtk-tooltip {
+    @extend %side_background;
+
+    treeview.view { @extend %side_views; }
+  }
+}
+
 .gedit-bottom-panel-paned { background-color: $base_color; }
 .gedit-side-panel-paned > separator { background-image: _solid($dark_sidebar_border); }
 .gedit-bottom-panel-paned > separator { background-image: _solid($borders_color); }
