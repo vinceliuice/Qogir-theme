@@ -13,6 +13,7 @@ fi
 SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Qogir
+WIN_VARIANTS=('' '-win')
 COLOR_VARIANTS=('' '-light' '-dark')
 
 usage() {
@@ -20,21 +21,22 @@ usage() {
   printf "\n%s\n" "OPTIONS:"
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
+  printf "  %-25s%s\n" "-w, --win VARIANTS..." "Specify titlebutton variant(s) [standard|square] (Default: All variants)"
   printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-i, --image VARIANTS..." "Install theme with nautilus background image"
-  printf "  %-25s%s\n" "-s, --square VARIANTS..." "Install theme with square titlebutton"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 
 install() {
   local dest=${1}
   local name=${2}
-  local color=${3}
+  local win=${3}
+  local color=${4}
 
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
-  local THEME_DIR=${dest}/${name}${color}
+  local THEME_DIR=${dest}/${name}${win}${color}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -44,18 +46,18 @@ install() {
   cp -ur ${SRC_DIR}/COPYING                                                          ${THEME_DIR}
   cp -ur ${SRC_DIR}/AUTHORS                                                          ${THEME_DIR}
 
-  echo "[Desktop Entry]" >> ${THEME_DIR}/index.theme
-  echo "Type=X-GNOME-Metatheme" >> ${THEME_DIR}/index.theme
-  echo "Name=${name}${color}" >> ${THEME_DIR}/index.theme
-  echo "Comment=An Clean Gtk+ theme based on Flat Design" >> ${THEME_DIR}/index.theme
-  echo "Encoding=UTF-8" >> ${THEME_DIR}/index.theme
-  echo "" >> ${THEME_DIR}/index.theme
-  echo "[X-GNOME-Metatheme]" >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=${name}${color}" >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=${name}${color}" >> ${THEME_DIR}/index.theme
-  echo "IconTheme=Adwaita" >> ${THEME_DIR}/index.theme
-  echo "CursorTheme=Adwaita" >> ${THEME_DIR}/index.theme
-  echo "ButtonLayout=menu:minimize,maximize,close" >> ${THEME_DIR}/index.theme
+  echo "[Desktop Entry]"                                                          >> ${THEME_DIR}/index.theme
+  echo "Type=X-GNOME-Metatheme"                                                   >> ${THEME_DIR}/index.theme
+  echo "Name=${name}${win}${color}"                                               >> ${THEME_DIR}/index.theme
+  echo "Comment=An Clean Gtk+ theme based on Flat Design"                         >> ${THEME_DIR}/index.theme
+  echo "Encoding=UTF-8"                                                           >> ${THEME_DIR}/index.theme
+  echo ""                                                                         >> ${THEME_DIR}/index.theme
+  echo "[X-GNOME-Metatheme]"                                                      >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=${name}${win}${color}"                                           >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=${name}${win}${color}"                                      >> ${THEME_DIR}/index.theme
+  echo "IconTheme=Adwaita"                                                        >> ${THEME_DIR}/index.theme
+  echo "CursorTheme=Adwaita"                                                      >> ${THEME_DIR}/index.theme
+  echo "ButtonLayout=menu:minimize,maximize,close"                                >> ${THEME_DIR}/index.theme
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-2.0
   cp -ur ${SRC_DIR}/src/gtk-2.0/{apps.rc,panel.rc,main.rc,xfce-notify.rc}            ${THEME_DIR}/gtk-2.0
@@ -65,9 +67,9 @@ install() {
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
   cp -ur ${SRC_DIR}/src/gtk-3.0/assets                                               ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${color}.css                                      ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${win}${color}.css                                ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk-dark.css                                         ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${win}-dark.css                                   ${THEME_DIR}/gtk-3.0/gtk-dark.css
   cp -ur ${SRC_DIR}/src/gtk-3.0/thumbnail${ELSE_DARK}.png                            ${THEME_DIR}/gtk-3.0/thumbnail.png
 
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
@@ -104,21 +106,6 @@ install() {
   cp -ur ${SRC_DIR}/src/plank                                                        ${THEME_DIR}
 }
 
-TITLE_BUTTON_C="@extend %circle_titlebutton"
-TITLE_BUTTON_S="@extend %square_titlebutton"
-
-CSD_TITLE_BUTTON_C="@extend %csd_circle_titlebutton"
-CSD_TITLE_BUTTON_S="@extend %csd_square_titlebutton"
-
-SIDE_TITLE_BUTTON_C="@extend %side_circle_titlebutton"
-SIDE_TITLE_BUTTON_S="@extend %side_square_titlebutton"
-
-HEADER_PADDING_C="$header_padding:0;"
-HEADER_PADDING_S="$header_padding:5px;"
-
-CHROME_C="@extend %circle_chrome"
-CHROME_S="@extend %square_chrome"
-
 NBG_N="background-image: none;" 
 NBG_I="@extend %nautilus_backimage;"
 
@@ -154,45 +141,11 @@ parse_sass() {
 }
 
 install_theme() {
-  for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}"
+  for win in "${wins[@]:-${WIN_VARIANTS[@]}}"; do
+    for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
+      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${win}" "${color}"
+    done
   done
-}
-
-install_square() {
-  cd ${SRC_DIR}/src/_sass
-  cp -an _variables.scss _variables.scss.bak
-  sed -i "s/$HEADER_PADDING_C/$HEADER_PADDING_S/g" _variables.scss
-
-  cd ${SRC_DIR}/src/_sass/gtk
-  cp -an _common.scss _common.scss.bak
-  cp -an _darksidebar_widgets.scss _darksidebar_widgets.scss.bak
-  sed -i "s/$TITLE_BUTTON_C/$TITLE_BUTTON_S/g" _common.scss
-  sed -i "s/$CSD_TITLE_BUTTON_C/$CSD_TITLE_BUTTON_S/g" _common.scss
-  sed -i "s/$SIDE_TITLE_BUTTON_C/$SIDE_TITLE_BUTTON_S/g" _darksidebar_widgets.scss
-
-  cd ${SRC_DIR}/src/_sass/gtk/apps
-  cp -an _misc.scss _misc.scss.bak
-  sed -i "s/$CHROME_C/$CHROME_S/g" _misc.scss
-
-  echo -e "Specify theme with square titlebuttons ..."
-}
-
-restore_square() {
-  cd ${SRC_DIR}/src/_sass
-  [[ -d _variables.scss.bak ]] && rm -rf _variables.scss
-  mv _variables.scss.bak _variables.scss
-
-  cd ${SRC_DIR}/src/_sass/gtk
-  [[ -d _common.scss.bak ]] && rm -rf _common.scss
-  [[ -d _darksidebar_widgets.scss.bak ]] && rm -rf _darksidebar_widgets.scss.scss
-  mv _common.scss.bak _common.scss
-  mv _darksidebar_widgets.scss.bak _darksidebar_widgets.scss
-
-  cd ${SRC_DIR}/src/_sass/gtk/apps
-  [[ -d _misc.scss.bak ]] && rm -rf _misc.scss
-  mv _misc.scss.bak _misc.scss
-  echo -e "Restore scss files ..."
 }
 
 install_img() {
@@ -223,13 +176,32 @@ while [[ $# -gt 0 ]]; do
       name="${2}"
       shift 2
       ;;
-    -s|--square)
-      square='true'
-      shift
-      ;;
     -i|--image)
       image='true'
       shift
+      ;;
+    -w|--win)
+      shift
+      for win in "${@}"; do
+        case "${win}" in
+          standard)
+            wins+=("${WIN_VARIANTS[0]}")
+            shift 1
+            ;;
+          square)
+            wins+=("${WIN_VARIANTS[1]}")
+            shift 1
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized color variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
       ;;
     -c|--color)
       shift
@@ -270,20 +242,12 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ "${square:-}" != 'true' && "${image:-}" != 'true' ]]; then
+if [[ "${image:-}" != 'true' ]]; then
   install_theme
 fi
 
-if [[ "${square:-}" == 'true' && "${image:-}" != 'true' ]]; then
-  install_package && install_square && parse_sass && install_theme && restore_square && parse_sass
-fi
-
-if [[ "${square:-}" != 'true' && "${image:-}" == 'true'  ]]; then
+if [[ "${image:-}" == 'true'  ]]; then
   install_package && install_img && parse_sass && install_theme && restore_img && parse_sass
-fi
-
-if [[ "${square:-}" == 'true' && "${image:-}" == 'true' ]]; then
-  install_package && install_square && install_img && parse_sass && install_theme && restore_square && restore_img && parse_sass
 fi
 
 echo

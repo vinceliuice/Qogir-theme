@@ -282,7 +282,9 @@ window.background:not(.csd) {
 	  padding-left: 10px;
     padding-right: 10px;
 
-    &.default-decoration { @extend %csd_circle_titlebutton; }
+    &.default-decoration {
+      @extend %csd_circle_titlebutton;
+    }
   }
 
   scrollbar {
@@ -380,7 +382,14 @@ window.background.chromium {
   // checked-tab & toolbar & button widgets
   background-color: $bg_color;
   color: $text_color;
-  @extend %circle_chrome;
+
+  @if $titlebutton == 'circle' {
+    @extend %circle_chrome;
+  }
+
+  @else {
+    @extend %square_chrome;
+  }
 
   headerbar.titlebar {
     button.toggle { // account-button (> 64.0.3282?)

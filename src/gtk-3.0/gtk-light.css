@@ -8130,7 +8130,7 @@ window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switche
   padding: 4px;
 }
 
-.menubar.panel .panel.color-light {
+.menubar.panel .panel.color-light, .menubar.panel .panel.color-dark {
   background-color: #21232b;
   transition: all 100ms ease-in-out;
   color: #D3DAE3;

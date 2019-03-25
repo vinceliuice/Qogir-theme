@@ -6,7 +6,7 @@
 // Wingpanel
 .menubar.panel {
   .panel {
-    &.color-light {
+    &.color-light, &.color-dark {
       background-color: $panel_bg;
       transition: all 100ms ease-in-out;
       color: $panel_fg;

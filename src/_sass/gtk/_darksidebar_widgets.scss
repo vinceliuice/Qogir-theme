@@ -153,7 +153,14 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   background-image: image($side_theme_bg);
   border: none;
   box-shadow: none;
-  @extend %side_circle_titlebutton;
+
+  @if $titlebutton == 'circle' {
+    @extend %side_circle_titlebutton;
+  }
+
+  @else {
+    @extend %side_square_titlebutton;
+  }
 
   button:not(.titlebutton) {
     color: $side_theme_fg;

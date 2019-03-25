@@ -1,3 +1,4 @@
+$header_padding: if($titlebutton == 'circle', 0, 5px);
 
 * {
   background-clip: padding-box;
@@ -1229,7 +1230,15 @@ headerbar,
     background-color: $header_bg;
 
     button.titlebutton {
-      @extend %circle_titlebutton;
+
+      @if $titlebutton == 'circle' {
+        @extend %circle_titlebutton;
+      }
+
+      @else {
+        @extend %square_titlebutton;
+      }
+
       border: none;
       margin: 0 0 - ($header_padding * 0.6);
     }
@@ -3530,7 +3539,14 @@ decoration {
 // Titlebuttons
 //
 headerbar, .titlebar {
-  @extend %csd_circle_titlebutton;
+
+  @if $titlebutton == 'circle' {
+    @extend %csd_circle_titlebutton;
+  }
+
+  @else {
+    @extend %csd_square_titlebutton;
+  }
 }
 
 %csd_square_titlebutton {
