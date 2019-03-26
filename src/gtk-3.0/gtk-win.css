@@ -3084,8 +3084,7 @@ treeview.check {
   background-color: transparent;
 }
 
-.osd check,
-filechooser actionbar check {
+.osd check {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-dark.png"), url("assets/checkbox-unchecked-dark@2.png"));
 }
 
@@ -3108,8 +3107,7 @@ treeview.check:disabled {
   background-color: transparent;
 }
 
-.osd check:disabled,
-filechooser actionbar check:disabled {
+.osd check:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-insensitive-dark.png"), url("assets/checkbox-unchecked-insensitive-dark@2.png"));
 }
 
@@ -3132,8 +3130,7 @@ treeview.check:indeterminate {
   background-color: transparent;
 }
 
-.osd check:indeterminate,
-filechooser actionbar check:indeterminate {
+.osd check:indeterminate {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-dark.png"), url("assets/checkbox-mixed-dark@2.png"));
 }
 
@@ -3156,8 +3153,7 @@ treeview.check:indeterminate:disabled {
   background-color: transparent;
 }
 
-.osd check:indeterminate:disabled,
-filechooser actionbar check:indeterminate:disabled {
+.osd check:indeterminate:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-insensitive-dark.png"), url("assets/checkbox-mixed-insensitive-dark@2.png"));
 }
 
@@ -3180,8 +3176,7 @@ treeview.check:checked {
   background-color: transparent;
 }
 
-.osd check:checked,
-filechooser actionbar check:checked {
+.osd check:checked {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-dark.png"), url("assets/checkbox-checked-dark@2.png"));
 }
 
@@ -3204,8 +3199,7 @@ treeview.check:checked:disabled {
   background-color: transparent;
 }
 
-.osd check:checked:disabled,
-filechooser actionbar check:checked:disabled {
+.osd check:checked:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive-dark.png"), url("assets/checkbox-checked-insensitive-dark@2.png"));
 }
 
@@ -3228,8 +3222,7 @@ treeview.radio {
   background-color: transparent;
 }
 
-.osd radio,
-filechooser actionbar radio {
+.osd radio {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-dark.png"), url("assets/radio-unchecked-dark@2.png"));
 }
 
@@ -3252,8 +3245,7 @@ treeview.radio:disabled {
   background-color: transparent;
 }
 
-.osd radio:disabled,
-filechooser actionbar radio:disabled {
+.osd radio:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-insensitive-dark.png"), url("assets/radio-unchecked-insensitive-dark@2.png"));
 }
 
@@ -3276,8 +3268,7 @@ treeview.radio:indeterminate {
   background-color: transparent;
 }
 
-.osd radio:indeterminate,
-filechooser actionbar radio:indeterminate {
+.osd radio:indeterminate {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-dark.png"), url("assets/radio-mixed-dark@2.png"));
 }
 
@@ -3300,8 +3291,7 @@ treeview.radio:indeterminate:disabled {
   background-color: transparent;
 }
 
-.osd radio:indeterminate:disabled,
-filechooser actionbar radio:indeterminate:disabled {
+.osd radio:indeterminate:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive-dark.png"), url("assets/radio-mixed-insensitive-dark@2.png"));
 }
 
@@ -3324,8 +3314,7 @@ treeview.radio:checked {
   background-color: transparent;
 }
 
-.osd radio:checked,
-filechooser actionbar radio:checked {
+.osd radio:checked {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-dark.png"), url("assets/radio-checked-dark@2.png"));
 }
 
@@ -3348,8 +3337,7 @@ treeview.radio:checked:disabled {
   background-color: transparent;
 }
 
-.osd radio:checked:disabled,
-filechooser actionbar radio:checked:disabled {
+.osd radio:checked:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-insensitive-dark.png"), url("assets/radio-checked-insensitive-dark@2.png"));
 }
 
@@ -9436,49 +9424,10 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appm
   background-position: center;
 }
 
-filechooser actionbar button {
-  color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.15);
-  background-color: white;
-}
-
-.caja-side-pane > box button:hover:not(:active), filechooser actionbar button:hover {
+.caja-side-pane > box button:hover:not(:active) {
   color: #393c43;
   border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
-}
-
-filechooser actionbar button:active, filechooser actionbar button:checked {
-  color: #ffffff;
-  border-color: #2679db;
-  background-color: #5294e2;
-}
-
-filechooser actionbar button:disabled {
-  border-color: rgba(0, 0, 0, 0.05);
-  background-color: rgba(255, 255, 255, 0.55);
-}
-
-filechooser actionbar button:disabled label, filechooser actionbar button:disabled {
-  color: rgba(92, 97, 108, 0.55);
-}
-
-filechooser actionbar entry {
-  color: #5c616c;
-  border-color: rgba(0, 0, 0, 0.15);
-  background-color: #ffffff;
-}
-
-filechooser actionbar entry:focus {
-  color: #5c616c;
-  border-color: #5294e2;
-  background-color: #ffffff;
-}
-
-filechooser actionbar entry:disabled {
-  color: rgba(92, 97, 108, 0.55);
-  border-color: rgba(0, 0, 0, 0.05);
-  background-color: rgba(255, 255, 255, 0.55);
 }
 
 .nautilus-window placessidebar.sidebar scrollbar, .nemo-window .sidebar scrollbar, .caja-side-pane scrollbar {
@@ -9689,16 +9638,6 @@ filechooser paned > separator {
 
 .caja-side-pane junction {
   background-color: #1c1d23;
-}
-
-filechooser actionbar {
-  color: #C4CAD1;
-  background-color: #272931;
-  border-color: #cad5df;
-}
-
-filechooser actionbar label, filechooser actionbar combobox {
-  color: #C4CAD1;
 }
 
 window.org-gnome-gedit > paned > separator, window.org-gnome-gedit > paned > separator:backdrop,

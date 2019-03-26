@@ -939,10 +939,9 @@ StScrollBar {
   > * { padding: 0; }
 
   &-label {
-    font-size: 0;
-    font-weight: bold;
+    font-weight: 400;
     color: $osd_fg_color;
-    padding-bottom: 0;
+    padding-bottom: 6px;
   }
 
   &-error-label { color: $error_color; }
@@ -965,10 +964,15 @@ StScrollBar {
 
     @include entry(osd);
 
-    &:focus { @include entry(osd-focus); }
+    &:focus {
+      @include entry(osd);
+      background-color: $osd_bg_color;
+      border-color: $selected_bg_color;
+    }
   }
   .modal-dialog-button-box {
     border: none;
+    border-image: none;
     box-shadow: none;
     background: none;
     background-gradient-direction: none;

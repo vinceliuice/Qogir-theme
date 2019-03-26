@@ -437,20 +437,20 @@ filechooser {
   junction { background-color: darken($dark_sidebar_bg, 5%); }
 }
 
-filechooser {
-  actionbar {
-    color: $dark_sidebar_fg;
-    background-color: $dark_sidebar_bg;
-    border-color: $solid_borders_color;
-
-    button { @extend %dark_sidebar_button; }
-    entry { @extend %dark_sidebar_entry; }
-
-    @extend %osd_check_radio;
-
-    label, combobox { color: $dark_sidebar_fg; }
-  }
-}
+// filechooser {
+//   actionbar {
+//     color: $dark_sidebar_fg;
+//     background-color: $dark_sidebar_bg;
+//     border-color: $solid_borders_color;
+//
+//     button { @extend %dark_sidebar_button; }
+//     entry { @extend %dark_sidebar_entry; }
+//
+//     @extend %osd_check_radio;
+//
+//     label, combobox { color: $dark_sidebar_fg; }
+//   }
+// }
 
 //
 // Gedit
