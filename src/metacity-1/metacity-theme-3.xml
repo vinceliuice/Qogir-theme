@@ -73,7 +73,7 @@
 </frame_geometry>
 
 <!-- No buttons -->
-<frame_geometry name="nobuttons" hide_buttons="true" parent="normal">
+<frame_geometry name="nobuttons" hide_buttons="false" parent="normal">
 </frame_geometry>
 
 <!-- Border -->
@@ -97,11 +97,18 @@
 </frame_geometry>
 
 <!-- Modal -->
-<frame_geometry name="modal" title_scale="small" hide_buttons="true" rounded_top_left="false" rounded_top_right="false" parent="small">
-	<distance name="title_vertical_pad" value="4"/>
+<frame_geometry name="modal" title_scale="small" hide_buttons="false" rounded_top_left="false" rounded_top_right="false" parent="small">
+	<distance name="left_width" value="0" />
+	<distance name="right_width" value="0" />
+	<distance name="bottom_height" value="0" />
+	<distance name="left_titlebar_edge" value="0" />
+	<distance name="right_titlebar_edge" value="0" />
+	<distance name="title_vertical_pad" value="12" />
+	<border name="title_border" left="10" right="10" top="0" bottom="0" />
+	<border name="button_border" left="0" right="0" top="2" bottom="0" />
 </frame_geometry>
 
-<frame_geometry name="attached" title_scale="medium" hide_buttons="true" rounded_top_left="false" rounded_top_right="false" parent="normal">
+<frame_geometry name="attached" title_scale="medium" hide_buttons="false" rounded_top_left="false" rounded_top_right="false" parent="normal">
 	<distance name="title_vertical_pad" value="8"/>
 	<distance name="bottom_height" value="0"/>
 	<distance name="left_width" value="0"/>

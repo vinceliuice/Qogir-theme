@@ -2384,15 +2384,16 @@ menubar > menuitem,
 .menubar > menuitem {
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
   padding: 4px 8px;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 0;
 }
 
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
-  background-color: transparent;
-  box-shadow: inset 0 -2px #5294e2;
-  color: rgba(241, 244, 248, 0.8);
+  background-color: #5294e2;
+  box-shadow: none;
+  border-color: #68a2e6;
+  color: #ffffff;
 }
 
 menubar > menuitem:disabled,
@@ -4550,19 +4551,19 @@ stackswitcher button.circular, stackswitcher button.nautilus-circular-button.ima
 decoration {
   border-radius: 0;
   border: none;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25), 0 8px 8px 0 rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08), 0 8px 8px 0 rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.1);
   margin: 6px;
 }
 
 decoration:backdrop {
-  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.23), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.1);
   transition: 200ms ease-out;
 }
 
 .fullscreen decoration,
 .tiled decoration {
   border-radius: 0;
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.06);
 }
 
 .ssd decoration {
@@ -6249,6 +6250,11 @@ stack > overlay > frame > scrolledwindow.frame {
   min-height: 16px;
   min-width: 16px;
   -gtk-icon-shadow: none;
+}
+
+dialog.background > .dialog-vbox > frame.view > stack > box.vertical > separator.horizontal {
+  background: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .caja-notebook {

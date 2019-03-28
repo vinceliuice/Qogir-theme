@@ -150,6 +150,20 @@
   }
 }
 
+// Dialogs
+dialog.background {
+  > .dialog-vbox {
+    > frame.view {
+      > stack {
+        > box.vertical > separator.horizontal {
+          background: none;
+          border-bottom: 1px solid $borders_color;
+        }
+      }
+    }
+  }
+}
+
 //
 // Caja
 //
