@@ -61,7 +61,7 @@
 
 <!-- Small window -->
 <frame_geometry name="small" title_scale="small" parent="normal" rounded_top_left="false" rounded_top_right="false">
-	<distance name="title_vertical_pad" value="3" />
+	<distance name="title_vertical_pad" value="0" />
 	<border name="title_border" left="0" right="0" top="0" bottom="6" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0"  />
 </frame_geometry>
@@ -74,6 +74,14 @@
 
 <!-- No buttons -->
 <frame_geometry name="nobuttons" hide_buttons="false" parent="normal">
+	<distance name="left_width" value="0" />
+	<distance name="right_width" value="0" />
+	<distance name="bottom_height" value="0" />
+	<distance name="left_titlebar_edge" value="0" />
+	<distance name="right_titlebar_edge" value="0" />
+	<distance name="title_vertical_pad" value="3" />
+	<border name="title_border" left="0" right="0" top="0" bottom="6" />
+	<border name="button_border" left="0" right="0" top="0" bottom="0" />
 </frame_geometry>
 
 <!-- Border -->
@@ -81,8 +89,8 @@
 	<distance name="left_width" value="0" />
 	<distance name="right_width" value="0" />
 	<distance name="bottom_height" value="0" />
-	<distance name="title_vertical_pad" value="3" />
-	<border name="title_border" left="0" right="0" top="0" bottom="6" />
+	<distance name="title_vertical_pad" value="0" />
+	<border name="title_border" left="0" right="0" top="0" bottom="0" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0"/>
 </frame_geometry>
 
@@ -91,8 +99,8 @@
 	<distance name="left_width" value="0" />
 	<distance name="right_width" value="0" />
 	<distance name="bottom_height" value="0" />
-	<distance name="title_vertical_pad" value="3" />
-	<border name="title_border" left="0" right="0" top="0" bottom="6" />
+	<distance name="title_vertical_pad" value="0" />
+	<border name="title_border" left="0" right="0" top="0" bottom="0" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0" />
 </frame_geometry>
 
@@ -427,9 +435,9 @@
 	<button function="close" state="normal" draw_ops="close_unfocused" />
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight" />
 	<button function="close" state="pressed" draw_ops="close_unfocused_pressed" />
-	<button function="maximize" state="normal" draw_ops="unmaximize_focused" />
-	<button function="maximize" state="prelight" draw_ops="unmaximize_focused_prelight" />
-	<button function="maximize" state="pressed" draw_ops="unmaximize_focused_pressed" />
+	<button function="maximize" state="normal" draw_ops="unmaximize_unfocused" />
+	<button function="maximize" state="prelight" draw_ops="unmaximize_unfocused_prelight" />
+	<button function="maximize" state="pressed" draw_ops="unmaximize_unfocused_pressed" />
 	<button function="minimize" state="normal" draw_ops="minimize_unfocused" />
 	<button function="minimize" state="prelight" draw_ops="minimize_unfocused_prelight" />
 	<button function="minimize" state="pressed" draw_ops="minimize_unfocused_pressed" />
