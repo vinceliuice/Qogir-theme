@@ -3528,7 +3528,7 @@ decoration {
   }
 
   .solid-csd & {
-    border: none;
+    border: 2px solid $dark_sidebar_icon_bg;
     border-radius: 0;
     margin: 0;
     background-color: $header_bg;

@@ -69,8 +69,10 @@ $dark_sidebar_bg: white;
 
 $dark_sidebar_fg: if($titlebar == 'light', #646972, #C4CAD1);
 $alt_dark_sidebar_fg: if($variant == 'light', darken($dark_sidebar_fg, 10%), lighten($dark_sidebar_fg, 10%));
-$dark_sidebar_icon_fg: #F6F6FB;
+
 $dark_sidebar_icon_bg: #32343D;
+$dark_sidebar_icon_fg: #F6F6FB;
+
 $dark_sidebar_border: if($variant == 'light', darken($dark_sidebar_bg, 10%), lighten($dark_sidebar_bg, 8%));
 
 $osd_fg_color: #D3DAE3;

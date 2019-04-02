@@ -4571,7 +4571,7 @@ messagedialog.csd decoration {
 }
 
 .solid-csd decoration {
-  border: none;
+  border: 2px solid #32343D;
   border-radius: 0;
   margin: 0;
   background-color: #ffffff;
