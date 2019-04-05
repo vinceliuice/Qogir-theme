@@ -1214,7 +1214,7 @@ headerbar,
 
   %square_titlebutton {
     min-height: 30px;
-    min-width: 30px;
+    min-width: 38px;
   }
 
   %circle_titlebutton {
@@ -1228,6 +1228,7 @@ headerbar,
     padding: 0 8px - $header_padding;
     margin: 0;
     background-color: $header_bg;
+    @extend %small_titlebutton;
 
     button.titlebutton {
 
@@ -3541,12 +3542,74 @@ decoration {
 //
 headerbar, .titlebar {
 
-  @if $titlebutton == 'circle' {
-    @extend %csd_circle_titlebutton;
+  &, .csd &, .solid-csd & {
+
+    @if $titlebutton == 'circle' {
+      @extend %csd_circle_titlebutton;
+    }
+
+    @else {
+      @extend %csd_square_titlebutton;
+    }
+  }
+}
+
+headerbar, .titlebar {
+  &.default-decoration {  // needed under wayland, since all gtk3 windows are csd windows
+
+    @if $titlebutton == 'square' {
+      @extend %small_titlebutton;
+    }
+  }
+}
+
+%small_titlebutton {
+  > box.horizontal {
+    &.left {
+      @each $class, $_left, $_right in ('.close', -3px, 0),
+                                       ('.maximize', -3px, 0),
+                                       ('.minimize', -3px, 0) {
+        > button.titlebutton#{$class} {
+          margin-left: #{$_left};
+        }
+      }
+    }
+
+    &.right {
+      @each $class, $_left, $_right in ('.close', 0, -3px),
+                                       ('.maximize', 0, -3px),
+                                       ('.minimize', 0, -3px) {
+        > button.titlebutton#{$class} {
+          margin-right: #{$_right};
+        }
+      }
+    }
   }
 
-  @else {
-    @extend %csd_square_titlebutton;
+  button.titlebutton {
+    &.close, &.maximize, &.minimize, &.restore {
+      min-width: 38px;
+      min-height: 30px;
+    }
+
+    // Load png assets for each button, Fix the Chrome window restore button bug
+    @each $k in ('close', 'maximize', 'minimize', 'restore') {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small.png'),
+                                                     url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small@2.png')); }
+      }
+    }
+  }
+
+  .fullscreen &,
+  .maximized & {
+    button.titlebutton {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small.png'),
+                                                      url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small@2.png')); }
+      }
+    }
   }
 }
 
@@ -3625,53 +3688,7 @@ headerbar, .titlebar {
   }
 
   &.default-decoration {
-    > box.horizontal {
-      &.left {
-        @each $class, $_left, $_right in ('.close', -3px, 0),
-                                         ('.maximize', -3px, 0),
-                                         ('.minimize', -3px, 0) {
-          > button.titlebutton#{$class} {
-            margin-left: #{$_left};
-          }
-        }
-      }
-
-      &.right {
-        @each $class, $_left, $_right in ('.close', 0, -3px),
-                                         ('.maximize', 0, -3px),
-                                         ('.minimize', 0, -3px) {
-          > button.titlebutton#{$class} {
-            margin-right: #{$_right};
-          }
-        }
-      }
-    }
-
-    button.titlebutton {
-      &.close, &.maximize, &.minimize, &.restore {
-        min-width: 30px;
-        min-height: 30px;
-      }
-
-      // Load png assets for each button, Fix the Chrome window restore button bug
-      @each $k in ('close', 'maximize', 'minimize', 'restore') {
-        @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-
-          &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small.png'),
-                                                          url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small@2.png')); }
-        }
-      }
-    }
-
-    .fullscreen &,
-    .maximized & {
-      button.titlebutton {
-        @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-        &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small.png'),
-                                                        url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small@2.png')); }
-        }
-      }
-    }
+    @extend %small_titlebutton;
   }
 }
 
