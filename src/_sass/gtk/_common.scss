@@ -1228,20 +1228,12 @@ headerbar,
     padding: 0 8px - $header_padding;
     margin: 0;
     background-color: $header_bg;
-    @extend %small_titlebutton;
 
     button.titlebutton {
-
-      @if $titlebutton == 'circle' {
-        @extend %circle_titlebutton;
-      }
-
-      @else {
-        @extend %square_titlebutton;
-      }
-
       border: none;
       margin: 0 0 - ($header_padding * 0.6);
+      @if $titlebutton == 'circle' { @extend %circle_titlebutton; }
+      @else { @extend %square_titlebutton; }
     }
   }
 
@@ -3541,25 +3533,9 @@ decoration {
 // Titlebuttons
 //
 headerbar, .titlebar {
-
   &, .csd &, .solid-csd & {
-
-    @if $titlebutton == 'circle' {
-      @extend %csd_circle_titlebutton;
-    }
-
-    @else {
-      @extend %csd_square_titlebutton;
-    }
-  }
-}
-
-headerbar, .titlebar {
-  &.default-decoration {  // needed under wayland, since all gtk3 windows are csd windows
-
-    @if $titlebutton == 'square' {
-      @extend %small_titlebutton;
-    }
+    @if $titlebutton == 'circle' { @extend %csd_circle_titlebutton; }
+    @else { @extend %csd_square_titlebutton; }
   }
 }
 
