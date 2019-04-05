@@ -1627,27 +1627,29 @@ headerbar.selection-mode .selection-menu .arrow,
   background-color: white;
 }
 
-headerbar:not(.csd).default-decoration button.titlebutton,
-headerbar .titlebar:not(.csd).default-decoration:not(headerbar) button.titlebutton, .titlebar:not(.csd).default-decoration:not(headerbar) headerbar button.titlebutton,
-.titlebar:not(headerbar) headerbar:not(.csd).default-decoration button.titlebutton,
-headerbar:not(.csd).default-decoration .titlebar:not(headerbar) button.titlebutton,
-.titlebar:not(.csd).default-decoration:not(headerbar) button.titlebutton {
-  min-height: 30px;
+headerbar:not(.csd).default-decoration > button.titlebutton,
+headerbar .titlebar:not(.csd).default-decoration:not(headerbar) > button.titlebutton,
+.titlebar:not(headerbar) headerbar:not(.csd).default-decoration > button.titlebutton,
+.titlebar:not(.csd).default-decoration:not(headerbar) > button.titlebutton {
   min-width: 38px;
+  min-height: 30px;
+  margin: 0 -3px;
 }
 
 headerbar:not(.csd).default-decoration,
 .titlebar:not(.csd).default-decoration:not(headerbar) {
   min-height: 30px;
   padding: 0 3px;
-  margin: 0;
   background-color: #ffffff;
 }
 
-headerbar:not(.csd).default-decoration button.titlebutton,
-.titlebar:not(.csd).default-decoration:not(headerbar) button.titlebutton {
+headerbar:not(.csd).default-decoration > button.titlebutton,
+.titlebar:not(.csd).default-decoration:not(headerbar) > button.titlebutton {
   border: none;
-  margin: 0 -3px;
+}
+
+.solid-csd headerbar.default-decoration, .solid-csd .default-decoration.titlebar:not(headerbar) {
+  padding: 0 0;
 }
 
 headerbar.default-decoration,

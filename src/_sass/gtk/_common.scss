@@ -1213,8 +1213,9 @@ headerbar,
   }
 
   %square_titlebutton {
-    min-height: 30px;
     min-width: 38px;
+    min-height: 30px;
+    margin: 0 -3px;
   }
 
   %circle_titlebutton {
@@ -1225,16 +1226,18 @@ headerbar,
 
   &:not(.csd).default-decoration {
     min-height: 30px;
-    padding: 0 8px - $header_padding;
-    margin: 0;
+    padding: 0 if($titlebutton == 'circle', 8px, 3px);
     background-color: $header_bg;
 
-    button.titlebutton {
+    > button.titlebutton {
       border: none;
-      margin: 0 0 - ($header_padding * 0.6);
       @if $titlebutton == 'circle' { @extend %circle_titlebutton; }
       @else { @extend %square_titlebutton; }
     }
+  }
+
+  .solid-csd &.default-decoration {
+    padding: 0 0;
   }
 
   &.default-decoration,

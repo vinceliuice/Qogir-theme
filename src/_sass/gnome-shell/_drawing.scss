@@ -134,8 +134,8 @@
   // normal osd button
   //
     color: $osd_fg_color;
-    border: 1px solid $borders_color;
-    background-color: $osd_button_bg;
+    border: 1px solid darken($osd_bg_color, 3%);
+    background-color: rgba($osd_bg_color, 0.5);
     box-shadow: inset 0 1px transparentize(black, 0.95);
   }
 
@@ -144,8 +144,8 @@
   // active osd button
   //
     color: $osd_fg_color;
-    border: 1px solid $borders_color;
-    background-color: opacify(lighten($osd_button_bg, 7%), 0.1);
+    border: 1px solid darken($osd_bg_color, 5%);
+    background-color: rgba(lighten($osd_bg_color, 7%), 0.65);
     box-shadow: inset 0 1px transparentize(black, 0.95);
   }
 
@@ -154,7 +154,7 @@
   // active osd button
   //
     color: $selected_fg_color;
-    border: 1px solid $borders_color;
+    border: 1px solid rgba(black, 0.35);
     background-color: $selected_bg_color;
     box-shadow: inset 0 1px transparentize($selected_bg_color, 0.95);
   }
@@ -164,8 +164,8 @@
   // insensitive osd button
   //
     color: rgba($header_fg, 0.5);
-    border: 1px solid $borders_color;
-    background-color: transparentize($header_button_bg, 0.15);
+    border: 1px solid rgba(black, 0.15);
+    background-color: rgba(lighten($osd_bg_color, 10%), 0.35);
     box-shadow: inset 0 1px transparentize(black, 0.95);
   }
 }
