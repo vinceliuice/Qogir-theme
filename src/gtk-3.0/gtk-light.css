@@ -4530,15 +4530,16 @@ stackswitcher button.circular, stackswitcher button.nautilus-circular-button.ima
 decoration {
   border-radius: 0;
   border: none;
+  transition: 200ms ease-out;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15), 0 8px 8px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1);
-  margin: 6px;
+  margin: 4px;
 }
 
 decoration:backdrop {
   box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
-  transition: 200ms ease-out;
 }
 
+.maximized decoration,
 .fullscreen decoration,
 .tiled decoration {
   border-radius: 0;
@@ -4548,7 +4549,6 @@ decoration:backdrop {
 .ssd decoration {
   border-radius: 0;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
-  border: none;
 }
 
 .popup decoration {

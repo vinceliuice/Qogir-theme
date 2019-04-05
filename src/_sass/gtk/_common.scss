@@ -1801,7 +1801,7 @@ menubar,
     &:hover { //Seems like it :hover even with keyboard focus
       background-color: $selected_bg_color;
       box-shadow: none;
-      border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
+      border-color: if($titlebar == 'light', $sec_selected_bg_color, $alt_selected_bg_color);
       color: $selected_fg_color;
     }
 
@@ -3470,13 +3470,14 @@ $_wm_border: if($variant=='light', rgba(black, 0.1), rgba(black, 0.2));
 decoration {
   border-radius: 0;
   border: none;
+  transition: $backdrop_transition;
 
   box-shadow: 0 3px 5px 0 if($variant == 'light', rgba($_wm_border, 0.15), rgba($_wm_border, 0.08)),
               0 8px 8px 0 if($variant == 'light', rgba($_wm_border, 0.15), rgba($_wm_border, 0.08)),
               0 0 0 1px rgba($_wm_border, 0.1);
 
   // this is used for the resize cursor area
-  margin: $cont_padding;
+  margin: 4px;
 
   &:backdrop {
     // the transparent shadow here is to enforce that the shadow extents don't
@@ -3484,9 +3485,9 @@ decoration {
     box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent,
                 0 3px 3px 0 if($variant == 'light', rgba($_wm_border, 0.1), rgba($_wm_border, 0.06)),
                 0 0 0 1px rgba($_wm_border, 0.1);
-    transition: $backdrop_transition;
   }
 
+  .maximized &,
   .fullscreen &,
   .tiled & {
     border-radius: 0;
@@ -3497,7 +3498,7 @@ decoration {
   .ssd & {
     border-radius: 0;
     box-shadow: 0 0 0 1px $borders_color;
-    border: none;
+    // border: none;
     // &.maximized { border-radius: 0; }
   }
 
@@ -3572,8 +3573,8 @@ headerbar, .titlebar {
     @each $k in ('close', 'maximize', 'minimize', 'restore') {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
 
-        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small.png'),
-                                                     url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small@2.png')); }
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-smaller.png'),
+                                                     url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-smaller@2.png')); }
       }
     }
   }
@@ -3582,8 +3583,8 @@ headerbar, .titlebar {
   .maximized & {
     button.titlebutton {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small.png'),
-                                                      url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small@2.png')); }
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-smaller.png'),
+                                                      url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-smaller@2.png')); }
       }
     }
   }

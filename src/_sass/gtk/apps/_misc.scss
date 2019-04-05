@@ -378,7 +378,8 @@ $chrome_borders_color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
 
         &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small.png'),
-                                                        url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small@2.png')); }
+                                                     url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small@2.png'));
+        }
       }
     }
   }
@@ -386,8 +387,9 @@ $chrome_borders_color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.
   // for unmaximize(restore) titlebutton
   &.maximized headerbar.titlebar button.titlebutton.maximize {
     @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-    &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small.png'),
-                                                    url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small@2.png')); }
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small.png'),
+                                                      url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small@2.png'));
+      }
     }
   }
 }
@@ -397,13 +399,8 @@ window.background.chromium {
   background-color: $bg_color;
   color: $text_color;
 
-  @if $titlebutton == 'circle' {
-    @extend %circle_chrome;
-  }
-
-  @else {
-    @extend %square_chrome;
-  }
+  @if $titlebutton == 'circle' { @extend %circle_chrome; }
+  @else { @extend %square_chrome; }
 
   headerbar.titlebar {
     button.toggle { // account-button (> 64.0.3282?)
