@@ -1832,10 +1832,11 @@ menubar,
   }
 }
 
+$_menu_bg: if($variant=='light', $base_color, $bg_color);
+
 menu,
 .menu,
 .context-menu {
-  $_menu_bg: if($variant=='light', $base_color, $bg_color);
   padding: 4px 0;
   border-radius: 0;
   background-color: $_menu_bg;

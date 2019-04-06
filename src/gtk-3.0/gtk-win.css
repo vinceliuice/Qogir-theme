@@ -6406,16 +6406,54 @@ window.background.chromium headerbar.titlebar button.toggle:checked, window.back
 window.background.chromium button {
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: #e6e6e6;
 }
 
 window.background.chromium entry.chromium {
   border-image: none;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid #e6e6e6;
+}
+
+window.background.chromium entry.chromium:focus {
+  border-color: #5294e2;
 }
 
 window.background.chromium > textview.view {
+  background-color: #fafbfc;
+  color: #5c616c;
+}
+
+window.background.chromium > menubar {
+  background-color: #282A33;
+}
+
+window.background.chromium > menu {
+  color: #5c616c;
   background-color: #ffffff;
+  border: 1px solid #cad5df;
+}
+
+window.background.chromium > menu > separator, window.background.chromium > menu .separator {
+  background-color: #cad5df;
+  color: #cad5df;
+  border: none;
+}
+
+window.background.chromium > menu > menuitem {
+  color: #5c616c;
+}
+
+window.background.chromium > menu > menuitem:hover {
+  color: #ffffff;
+  background-color: #5294e2;
+}
+
+window.background.chromium > menu > menuitem:disabled {
+  color: rgba(92, 97, 108, 0.45);
+}
+
+window.background.chromium > menu > menuitem label:disabled {
+  color: rgba(92, 97, 108, 0.45);
 }
 
 window.background > grid.horizontal > grid.horizontal {
@@ -6525,6 +6563,10 @@ list.tilix-session-sidebar button.tilix-sidebar-close-button:hover {
 
 list.tilix-session-sidebar button.tilix-sidebar-close-button:active, list.tilix-session-sidebar button.tilix-sidebar-close-button:checked {
   background-image: image(#ec1b22);
+}
+
+.geary-accounts-editor-pane > scrolledwindow.frame {
+  border: none;
 }
 
 window.background.csd > box.vertical > stack > box.horizontal > list {

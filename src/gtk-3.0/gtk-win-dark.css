@@ -6386,8 +6386,8 @@ window.maximized.background.chromium headerbar.titlebar button.titlebutton.maxim
 }
 
 window.background.chromium {
-  background-color: #32343D;
-  color: #D3DAE3;
+  background-color: #fafbfc;
+  color: #5c616c;
 }
 
 window.background.chromium headerbar.titlebar button.toggle {
@@ -6412,16 +6412,54 @@ window.background.chromium headerbar.titlebar button.toggle:checked, window.back
 window.background.chromium button {
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: #e6e6e6;
 }
 
 window.background.chromium entry.chromium {
   border-image: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #e6e6e6;
+}
+
+window.background.chromium entry.chromium:focus {
+  border-color: #5294e2;
 }
 
 window.background.chromium > textview.view {
+  background-color: #fafbfc;
+  color: #5c616c;
+}
+
+window.background.chromium > menubar {
   background-color: #282A33;
+}
+
+window.background.chromium > menu {
+  color: #D3DAE3;
+  background-color: #282A33;
+  border: 1px solid #494c59;
+}
+
+window.background.chromium > menu > separator, window.background.chromium > menu .separator {
+  background-color: #494c59;
+  color: #494c59;
+  border: none;
+}
+
+window.background.chromium > menu > menuitem {
+  color: #D3DAE3;
+}
+
+window.background.chromium > menu > menuitem:hover {
+  color: #ffffff;
+  background-color: #5294e2;
+}
+
+window.background.chromium > menu > menuitem:disabled {
+  color: rgba(211, 218, 227, 0.45);
+}
+
+window.background.chromium > menu > menuitem label:disabled {
+  color: rgba(211, 218, 227, 0.45);
 }
 
 window.background > grid.horizontal > grid.horizontal {
@@ -6531,6 +6569,10 @@ list.tilix-session-sidebar button.tilix-sidebar-close-button:hover {
 
 list.tilix-session-sidebar button.tilix-sidebar-close-button:active, list.tilix-session-sidebar button.tilix-sidebar-close-button:checked {
   background-image: image(#ec1b22);
+}
+
+.geary-accounts-editor-pane > scrolledwindow.frame {
+  border: none;
 }
 
 window.background.csd > box.vertical > stack > box.horizontal > list {
