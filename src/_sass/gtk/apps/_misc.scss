@@ -92,30 +92,9 @@
   .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar,
   .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) {
     button {
-      color: $header_fg;
-      background-color: transparent;
-      border: none;
       margin-top: 4px;
       margin-bottom: 4px;
-
-      &:hover {
-        color: $alt_header_fg;
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      rgba($selected_bg_color, 0.5) 100%,
-                                      transparent 0%)
-                                      0 0 2 / 0 0 2px;
-      }
-
-      &:active, &:checked {
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $selected_bg_color 100%,
-                                      transparent 0%)
-                                      0 0 2 / 0 0 2px;
-      }
-
-      &:disabled { color: rgba($header_fg, 0.5); }
-
-      &, &:hover, &:active, &:checked, &:disabled { border-radius: 0; }
+      @extend %headerbar_pathbar_button;
     }
   }
 
@@ -293,11 +272,16 @@ window.background:not(.csd) {
 
   headerbar.titlebar { // >= nightly 60.0a1(2018-02-02)
     // FIXME: no backdrop state, no maximized state, bullshit...
-	  padding-left: 10px;
-    padding-right: 10px;
 
-    &.default-decoration {
-      @extend %csd_circle_titlebutton;
+    @if $titlebutton == 'circle' {
+	    padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    @if $titlebutton == 'square' {
+      &.default-decoration {
+        @extend %small_titlebutton;
+      }
     }
   }
 

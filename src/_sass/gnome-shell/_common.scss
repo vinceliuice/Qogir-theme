@@ -227,7 +227,7 @@ StScrollBar {
 
 .modal-dialog {
   color: $fg_color;
-  background-color: transparent;
+  background-color: transparentize($bg_color, 1);
 	border-radius: 0;
   border: none;
   border-image: url("assets/misc/modal.svg") 9 9 9 67;

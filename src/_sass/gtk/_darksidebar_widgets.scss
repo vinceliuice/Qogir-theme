@@ -101,47 +101,23 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   }
 }
 
-%side_circle_titlebutton {
+%side_titlebutton {
   button.titlebutton {
-    // Load png assets for each button, Fix the Chrome window restore button bug
     @each $k in ('close', 'maximize', 'minimize', 'restore') {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-
-        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}-dark.png'),
-                                                     url('assets/titlebutton-#{$k}#{$m}-dark@2.png')); }
-      }
-    }
-  }
-
-  .fullscreen &,
-  .maximized & {
-    button.titlebutton {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}-dark.png'),
-                                                      url('assets/titlebutton-restore#{$m}-dark@2.png')); }
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}-dark#{$asset_suffix_win}.png'),
+                                                     url('assets/titlebutton-#{$k}#{$m}-dark#{$asset_suffix_win}@2.png'));
+        }
       }
     }
   }
 }
 
-%side_square_titlebutton {
+%side_max_titlebutton {
   button.titlebutton {
-    // Load png assets for each button, Fix the Chrome window restore button bug
-    @each $k in ('close', 'maximize', 'minimize', 'restore') {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-
-        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}-dark-win.png'),
-                                                     url('assets/titlebutton-#{$k}#{$m}-dark-win@2.png')); }
-      }
-    }
-  }
-
-  .fullscreen &,
-  .maximized & {
-    button.titlebutton {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}-dark-win.png'),
-                                                      url('assets/titlebutton-restore#{$m}-dark-win@2.png')); }
+    @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}-dark#{$asset_suffix_win}.png'),
+                                                      url('assets/titlebutton-restore#{$m}-dark#{$asset_suffix_win}@2.png'));
       }
     }
   }
@@ -154,12 +130,13 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   border: none;
   box-shadow: none;
 
-  @if $titlebutton == 'circle' {
-    @extend %side_circle_titlebutton;
-  }
+  @extend %side_titlebutton;
 
-  @else {
-    @extend %side_square_titlebutton;
+  .fullscreen &,
+  .maximized & {
+    > box.left.horizontal {
+      @extend %side_max_titlebutton;
+    }
   }
 
   button:not(.titlebutton) {
@@ -466,6 +443,15 @@ window.org-gnome-gedit {
   }
 }
 
+window.fullscreen.org-gnome-gedit,
+window.maximized.org-gnome-gedit {
+  > .titlebar > headerbar:first-child {
+    > box.left.horizontal {
+      @extend %side_max_titlebutton;
+    }
+  }
+}
+
 .open-document-selector-treeview.view { // Popover menu view
   padding: 3px $cont_padding 3px $cont_padding;
   border-color: $borders_color;  // disable borders, making them transparent doesn't work for some reason
@@ -627,7 +613,16 @@ list#AutostartListBoxTweakGroup {
 }
 
 // Themed left side headerbar
-headerbar.titlebar.tweak-titlebar-left { @extend %side_headerbar; }
+.titlebar > headerbar.titlebar.tweak-titlebar-left {
+  @extend %side_headerbar;
+
+  .fullscreen &,
+  .maximized & {
+    > box.left.horizontal {
+      @extend %side_max_titlebutton;
+    }
+  }
+}
 
 // Themed left sidebar
 .tweak-categories,
@@ -684,6 +679,26 @@ window.background.csd {
       border-right-style: if($variant == 'light', none, solid);
       background: none;
       min-width: 0;
+    }
+  }
+
+  &.fullscreen,
+  &.maximized {
+    > box.titlebar.horizontal {
+      > headerbar:first-child {
+        > box.left.horizontal {
+          @extend %side_max_titlebutton;
+        }
+      }
+    }
+
+    > headerbar.titlebar { // gnome 3.32
+      > box.horizontal > headerbar:first-child,
+      > hdyleaflet > headerbar:first-child {
+        > box.left.horizontal {
+          @extend %side_max_titlebutton;
+        }
+      }
     }
   }
 
@@ -802,6 +817,17 @@ window#GearyMainWindow {
     margin: 0 -10px 0 0;
     border-right: if($variant == 'light', none, 1px solid $solid_borders_color);
     background: none;
+  }
+}
+
+window#GearyMainWindow.fullscreen,
+window#GearyMainWindow.maximized {
+  .geary-titlebar-left {
+    &, &.geary-titlebar {
+      > box.left.horizontal {
+        @extend %side_max_titlebutton;
+      }
+    }
   }
 }
 
@@ -952,5 +978,66 @@ hdyleaflet {
     border-right-style: if($variant == 'light', none, solid);
     background: none;
     min-width: 0;
+  }
+
+  // selection-mode
+  .selection-mode & headerbar {
+    color: $selection_mode_fg;
+    background-color: $selection_mode_bg;
+    border-color: darken($selection_mode_bg, 4%);
+    box-shadow: none;
+
+    &:backdrop {
+      background-color: $selection_mode_bg;
+      color: transparentize($selection_mode_fg, 0.4);
+    }
+
+    .subtitle:link { @extend *:link:selected;  }
+
+    .selection-menu {
+      box-shadow: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      GtkArrow { -GtkArrow-arrow-scaling: 1; }
+
+      .arrow {
+        -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+      }
+    }
+
+    .maximized & { background-color: opacify($selection_mode_bg, 1); }
+
+    button:not(.titlebutton) {
+      &, &.flat {
+        @include button(undecorated);
+        color: $selection_mode_fg;
+        background-color: transparentize($selection_mode_fg, 1);
+      }
+
+      &:hover { background-color: gtkalpha($selection_mode_fg, 0.3); }
+      &:active, &:checked { @extend %selected-button:active; }
+
+      &:disabled {
+        @extend %selected-button.flat:disabled;
+
+        &:checked, &:active { @extend %selected-button:disabled:checked; }
+      }
+
+      &:backdrop { opacity: 0.7; background: none; }
+    }
+
+    button.titlebutton {
+      &.close, &.maximize, &.minimize {
+        color: transparent;
+        background-color: transparent;
+      }
+    }
+
+    @extend %side_titlebutton;
+
+    .fullscreen &,
+    .maximized & {
+      @extend %side_max_titlebutton;
+    }
   }
 }

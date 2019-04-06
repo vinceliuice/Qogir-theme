@@ -244,7 +244,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .modal-dialog {
   color: #5c616c;
-  background-color: transparent;
+  background-color: rgba(250, 251, 252, 0);
   border-radius: 0;
   border: none;
   border-image: url("assets/misc/modal.svg") 9 9 9 67;

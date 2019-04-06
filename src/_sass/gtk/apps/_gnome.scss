@@ -62,7 +62,6 @@ terminal-window,
   .path-bar-box {
     margin-top: $icon_padding;
     margin-bottom: $icon_padding;
-    // border-radius: 2px;
     color: $header_fg;
     background-color: transparent;
     border: none;
@@ -79,6 +78,14 @@ terminal-window,
       button.image-button.text-button {
         margin-top: 0;
         margin-bottom: 0;
+        @extend %headerbar_pathbar_button;
+
+        &:not(:only-child):last-child {
+          border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                        $selected_bg_color 100%,
+                                        transparent 0%)
+                                        0 0 2 / 0 0 2px;
+        }
       }
     }
 
@@ -619,6 +626,16 @@ preferencesbin {
   }
 }
 
+//
+//  Gnome Contol Center
+//
+window.background.csd {
+  > box.horizontal > stack.background > widget {
+    > scrolledwindow.frame {
+      border: none; // Remove ubuntu-dock setting page border
+    }
+  }
+}
 
 //
 // Gnome-Software
