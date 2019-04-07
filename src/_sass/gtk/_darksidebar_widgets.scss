@@ -1,0 +1,1043 @@
+// Dark sidebar theme apps
+$side_theme_bg: $dark_sidebar_icon_bg;
+$side_theme_fg: rgba($dark_sidebar_icon_fg, 0.8);
+$side_theme_alt_fg: $dark_sidebar_icon_fg;
+
+%side_background {
+  color: $side_theme_fg;
+  background-color: $side_theme_bg;
+
+  &:disabled, label:disabled {
+    color: rgba($side_theme_alt_fg, 0.35);
+  }
+}
+
+%side_buttons {
+  color: $side_theme_fg;
+  background-color: rgba($dark_sidebar_icon_fg, 0.15);
+  border: none;
+
+  &:hover {
+    color: $side_theme_alt_fg;
+    background-color: rgba($dark_sidebar_icon_fg, 0.25);
+  }
+
+  &:active, &:checked {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+  }
+
+  &:disabled {
+    color: rgba($side_theme_alt_fg, 0.35);
+    background-color: rgba($side_theme_alt_fg, 0.08);
+  }
+
+  &.flat {
+    border: none;
+    background: none;
+    box-shadow: none;
+    color: $side_theme_fg;
+
+    &:hover {
+      color: $side_theme_alt_fg;
+      background-color: rgba($dark_sidebar_icon_fg, 0.15);
+    }
+
+    &:active, &:checked {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+
+    &:disabled {
+      color: rgba($side_theme_alt_fg, 0.35);
+    }
+  }
+}
+
+%side_views {
+  color: $side_theme_fg;
+  background-color: $side_theme_bg;
+
+  &:hover {
+    color: $side_theme_alt_fg;
+    background-color: rgba($side_theme_alt_fg, 0.1);
+  }
+
+  &:disabled, label:disabled {
+    color: rgba($side_theme_alt_fg, 0.35);
+  }
+
+  &:selected {
+    @extend %selected_items;
+
+    &.has-open-popup,
+    &:hover { background-color: mix(black, $selected_bg_color, 10%); }
+  }
+}
+
+%side_searchbar {
+  background-image: image($side_theme_bg);
+  box-shadow: none;
+  border: none;
+
+  > revealer > box {
+    background: none;
+    border: none;
+  }
+
+  entry {
+    color: $side_theme_fg;
+    background-color: rgba($side_theme_fg, 0.1);
+
+    image { color: $side_theme_fg; }
+
+    &:focus {
+      background-color: rgba($side_theme_fg, 0.12);
+    }
+
+    &:disabled, label:disabled, image:disabled {
+      color: rgba($side_theme_alt_fg, 0.35);
+    }
+  }
+}
+
+%side_titlebutton {
+  button.titlebutton {
+    @each $k in ('close', 'maximize', 'minimize', 'restore') {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}-dark#{$asset_suffix_win}.png'),
+                                                     url('assets/titlebutton-#{$k}#{$m}-dark#{$asset_suffix_win}@2.png'));
+        }
+      }
+    }
+  }
+}
+
+%side_max_titlebutton {
+  button.titlebutton {
+    @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}-dark#{$asset_suffix_win}.png'),
+                                                      url('assets/titlebutton-restore#{$m}-dark#{$asset_suffix_win}@2.png'));
+      }
+    }
+  }
+}
+
+%side_headerbar {
+  color: $side_theme_fg;
+  background-color: $side_theme_bg;
+  background-image: image($side_theme_bg);
+  border: none;
+  box-shadow: none;
+
+  @extend %side_titlebutton;
+
+  .fullscreen &,
+  .maximized & {
+    > box.left.horizontal {
+      @extend %side_max_titlebutton;
+    }
+  }
+
+  button:not(.titlebutton) {
+    color: $side_theme_fg;
+    border: none;
+
+    &:hover {
+      color: $side_theme_alt_fg;
+      background-color: rgba($side_theme_fg, 0.25);
+    }
+
+    &:active, &:checked {
+      @include button(active);
+    }
+  }
+
+  button.titlebutton {
+    &.appmenu { // appmenu button
+      border: none;
+      min-height: 30px;
+      min-width: 30px;
+      border-radius: 50px;
+      color: transparent;
+      background-color: transparent;
+      background-image: -gtk-scaled(url("assets/logo.png"),
+                                    url("assets/logo@2.png"));
+      background-repeat: no-repeat;
+      background-position: center;
+
+      image { opacity: 0; } // Make menu button icon invisible
+
+      &:hover {
+        background-image: -gtk-scaled(url("assets/logo-hover.png"),
+                                      url("assets/logo-hover@2.png"));
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &:checked, &:active {
+        background-image: -gtk-scaled(url("assets/logo-active.png"),
+                                      url("assets/logo-active@2.png"));
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
+
+//
+// Nautilus
+//
+%dark_sidebar_button {
+  @include button(normal);
+
+  &:hover { @include button(hover); }
+  &:active, &:checked { @include button(active); }
+  &:disabled { @include button(insensitive); }
+}
+
+%dark_sidebar_entry {
+  @include entry(normal);
+
+  &:focus { @include entry(focus); }
+  &:disabled { @include entry(insensitive); }
+}
+
+%dark_sidebar_scrollbar {
+  border-color: $borders_color;
+
+  &.overlay-indicator:not(.dragging):not(.hovering) slider {
+    background-color: lighten($dark_sidebar_fg, 15%);
+    border: 1px solid $borders_color;
+  }
+
+  slider {
+    background-color: transparentize(lighten($dark_sidebar_fg, 15%), 0.3);
+
+    &:hover { background-color: lighten($dark_sidebar_fg, 20%); }
+    &:hover:active { background-color: $selected_bg_color; }
+    &:disabled { background-color: transparent; }
+  }
+
+  trough { background-color: darken($dark_sidebar_bg, 5%); }
+}
+
+%headerbar_image {
+  background-image: -gtk-scaled(url("assets/logo.png"),
+                                url("assets/logo@2.png"));
+  background-repeat: no-repeat;
+  background-position: left center;
+
+  &:backdrop {
+    background-image: -gtk-scaled(url("assets/logo-backdrop.png"),
+                                  url("assets/logo-backdrop@2.png"));
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+}
+
+// Reset filechooser separator
+filechooser {
+  paned > separator {
+    background-image: image($solid_borders_color);
+  }
+}
+
+// Dark icon background sidebars
+.nautilus-window {
+  // &.csd.background, placessidebar list { background-color: transparent; }
+
+  paned > separator {
+    background-image: if($variant == 'light' and $titlebar == 'dark', _solid($base_color), _solid($dark_sidebar_border));
+  }
+
+  headerbar {
+    padding-left: if($menu == 'budgie', 5px + $header_padding, 48px);
+    @if $menu == 'gnome' { @extend %headerbar_image; } // Set nautilus headerbar mountain icon
+
+    &, &:backdrop {
+      box-shadow: inset 0 -1px if($variant=='light', rgba($dark_sidebar_icon_bg, 0.15), $dark_sidebar_icon_bg),
+                  inset 38px 0 0 0 if($menu=='budgie', $dark_sidebar_icon_bg, transparent);
+    }
+
+    @if $menu == 'budgie' {
+      button.titlebutton {
+        @extend %headerbar_appmenu;
+        &.appmenu { margin-left: -1px - $header_padding; }
+      }
+    }
+  }
+
+  placessidebar.sidebar {
+    box-shadow: inset 38px 0 0 0 $dark_sidebar_icon_bg;
+    background-color: $dark_sidebar_bg;
+
+    row.sidebar-row {
+      transition: none;
+      color: $dark_sidebar_fg;
+
+      .sidebar-icon { color: transparentize($dark_sidebar_icon_fg, 0.15); }
+
+      image.sidebar-icon {
+        padding-right: 2px;
+      }
+
+      label.sidebar-label {
+        padding-right: 2px; padding-left: $small_size + 4px;
+      }
+
+      &.has-open-popup,
+      &:hover {
+        background-color: transparentize($dark_sidebar_fg, 0.95);
+        box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
+                    inset 38px 0 0 0 $dark_sidebar_icon_bg;
+      }
+
+      &:disabled {
+        &, label, image { color: transparentize($dark_sidebar_fg, 0.6); }
+      }
+
+      &:active { transition: box-shadow 0.2s; }
+
+      &:selected.has-open-popup,
+      &:selected, &:selected:hover, &:active:hover {
+        box-shadow: inset 38px 0 0 0 $selected_bg_color;
+        background-color: rgba($selected_bg_color, 0.0);
+        background-image: -gtk-scaled(url("assets/selected-dot.png"),
+                                      url("assets/selected-dot@2.png"));
+        background-repeat: no-repeat;
+        background-position: 42px center;
+        .sidebar-label { color: $alt_dark_sidebar_fg; }
+        // .sidebar-icon { color: inherit; }
+      }
+
+      &:selected:hover, &:active:hover {
+        background-color: transparentize($dark_sidebar_fg, 0.95);
+        box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
+                    inset 38px 0 0 0 $selected_bg_color;
+        background-image: -gtk-scaled(url("assets/selected-dot.png"),
+                                      url("assets/selected-dot@2.png"));
+        background-repeat: no-repeat;
+        background-position: 42px center;
+      }
+
+      button.sidebar-button {
+        color: $dark_sidebar_fg;
+
+        &:hover { @include button(hover); }
+        &:active { @include button(active); }
+
+        &:not(:hover):not(:active) > image { opacity: 0.5 };
+      }
+
+      &.sidebar-new-bookmark-row {
+        color: $selected_bg_color;
+
+        // .sidebar-icon { color: inherit; }
+      }
+
+     &:backdrop { opacity: 0.75; }
+
+      &:drop(active):not(:disabled) {
+        &, label, .sidebar-icon { color: $drop_target_color; }
+
+        &:selected {
+          &, label, .sidebar-icon { color: $selected_fg_color; }
+          background-color: $drop_target_color;
+        }
+      }
+    }
+
+    separator { background-color: transparent; }
+
+    scrollbar { @extend %dark_sidebar_scrollbar }
+  }
+}
+
+.nemo-window {
+  .sidebar {
+    color: $dark_sidebar_fg;
+    background-color: $dark_sidebar_bg;
+
+    .view, row {
+      background-color: transparent;
+      color: $dark_sidebar_fg;
+
+      &.cell:selected {
+        @extend %selected_items;
+
+        &.has-open-popup,
+        &:hover {
+          color: $selected_fg_color;
+          background-color: mix(black, $selected_bg_color, 10%);
+        }
+      }
+
+      &.has-open-popup,
+      &:hover {
+        color: $dark_sidebar_fg;
+        background-color: mix($dark_sidebar_fg, $dark_sidebar_bg, 10%);
+      }
+
+      &.expander {
+        color: mix($dark_sidebar_fg, $dark_sidebar_bg, 50%);
+
+        &:hover { color: $dark_sidebar_fg; }
+      }
+    }
+
+    separator { background-color: transparent; }
+
+    scrollbar { @extend %dark_sidebar_scrollbar }
+  }
+}
+
+.caja-side-pane {
+
+  &,
+  > notebook > stack > widget > box,
+  text,
+  treeview {
+    color: $dark_sidebar_fg;
+    caret-color: $dark_sidebar_fg;
+    background-color: opacify($dark_sidebar_bg, 1);
+  }
+
+  > box button {
+    &:not(:active):not(:checked) { color: $dark_sidebar_fg; }
+    &:hover:not(:active) { @extend %dark_sidebar_button:hover; }
+  }
+
+  .frame { border-color: $solid_borders_color; }
+
+  scrollbar { @extend %dark_sidebar_scrollbar; }
+  junction { background-color: darken($dark_sidebar_bg, 5%); }
+}
+
+// filechooser {
+//   actionbar {
+//     color: $dark_sidebar_fg;
+//     background-color: $dark_sidebar_bg;
+//     border-color: $solid_borders_color;
+//
+//     button { @extend %dark_sidebar_button; }
+//     entry { @extend %dark_sidebar_entry; }
+//
+//     @extend %osd_check_radio;
+//
+//     label, combobox { color: $dark_sidebar_fg; }
+//   }
+// }
+
+//
+// Gedit
+//
+window.org-gnome-gedit {
+  .titlebar > headerbar:first-child { @extend %side_headerbar; }
+
+  > paned > separator,
+  > overlay > box.vertical > paned > separator {
+    &, &:backdrop {
+      background-image: if($variant == 'light', image($side_theme_bg), image($solid_borders_color));
+    }
+  }
+}
+
+window.fullscreen.org-gnome-gedit,
+window.maximized.org-gnome-gedit {
+  > .titlebar > headerbar:first-child {
+    > box.left.horizontal {
+      @extend %side_max_titlebutton;
+    }
+  }
+}
+
+.open-document-selector-treeview.view { // Popover menu view
+  padding: 3px $cont_padding 3px $cont_padding;
+  border-color: $borders_color;  // disable borders, making them transparent doesn't work for some reason
+
+  &:hover {
+    background-color: mix($fg_color, $base_color, 7%);
+
+    &:selected {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+  }
+}
+
+.open-document-selector-name-label {
+  color: $fg_color;
+}
+
+.open-document-selector-path-label {
+  color: mix($fg_color, $base_color, 50%);
+  font-size: smaller;
+
+  &:selected { color: transparentize($selected_fg_color, 0.1); }
+}
+
+// Document sidebar
+list.gedit-document-panel {
+  @extend %side_background;
+
+  row.activatable {
+    padding: 4px 0;
+    @extend %side_views;
+  }
+
+  row button {
+    min-width: 22px;
+    min-height: 22px;
+    padding: 0;
+    margin: 0 $cont_padding;
+    border-radius: 100px;
+    -gtk-outline-radius: 100px;
+    border: none;
+    background: none;
+
+    &:hover {
+      color: $selected_fg_color;
+      background-color: rgba($side_theme_fg, 0.15);
+    }
+
+    &:active, &:checked {
+      color: $selected_fg_color;
+      background-color: rgba($side_theme_fg, 0.25);
+    }
+
+    image { color: inherit; }
+  }
+
+  row:hover:not(:selected) button {
+    &:active, &:checked {
+      color: $selected_fg_color;
+      background-color: rgba($side_theme_fg, 0.25);
+    }
+  }
+}
+
+.gedit-document-panel-dragged-row {
+  border: none;
+  @extend %side_background;
+}
+
+// Files browser sidebar
+.gedit-side-panel-paned {
+  @extend %side_background;
+
+  treeview.view { @extend %side_views; }
+
+  > box.vertical > stack > grid.horizontal > box.horizontal {
+    button { @extend %side_buttons; }
+  }
+
+  statusbar { // Bottom statusbar of gedit
+    border-top: 1px solid $solid_borders_color;
+    background-color: $bg_color;
+  }
+}
+
+.gedit-search-slider {
+  background-color: lighten($bg_color, 2%);
+  padding: $cont_padding;
+  border-color: $borders_color;
+  border-radius: 0 0 2px 2px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+}
+
+.gedit-search-entry-occurrences-tag {
+  color: transparentize($fg_color, 0.4);
+  border: none;
+  margin: 2px;
+  padding: 2px;
+}
+
+.gedit-map-frame {
+  @extend %side_background;
+
+  border {
+    @if $variant=='light' { border-color: transparentize(black, 0.7); }
+    border-width: 0;
+
+    &:dir(ltr) { border-left-width: 1px; }
+    &:dir(rtl) { border-right-width: 1px; }
+  }
+}
+
+textview.view.sourceview.gedit-view {
+  window#gtk-tooltip {
+    @extend %side_background;
+
+    treeview.view { @extend %side_views; }
+  }
+}
+
+.gedit-bottom-panel-paned { background-color: $base_color; }
+.gedit-side-panel-paned > separator { background-image: _solid($dark_sidebar_border); }
+.gedit-bottom-panel-paned > separator { background-image: _solid($borders_color); }
+
+//
+// Gnome Tweak Tool (Gnome tweaks)
+//
+row#Focus,
+row#ClickMethod,
+row#StaticWorkspaceTweak, // for 3.26.0
+row#dynamic-workspaces,
+row#PrimaryWorkspaceTweak, // for 3.26.0
+row#workspaces-only-on-primary {
+  padding: 0;
+  border: 1px solid $borders_color;
+
+  row:not(:last-child) { border-bottom: 1px solid $borders_color; }
+
+  &.tweak > list { margin-top: -3px; }
+}
+
+// Add more spaces between title and list
+row#Focus,
+row#ClickMethod,
+row#PrimaryWorkspaceTweak, // for 3.26.0
+row#workspaces-only-on-primary { margin-top: 4px; }
+
+row#AutostartTitle.tweak {
+  padding: 3px;
+  background-color: $base_color;
+}
+
+list#AutostartListBoxTweakGroup {
+  &.tweak-group-startup {
+    border: 1px solid $borders_color;
+  }
+}
+
+// Themed left side headerbar
+.titlebar > headerbar.titlebar.tweak-titlebar-left {
+  @extend %side_headerbar;
+
+  .fullscreen &,
+  .maximized & {
+    > box.left.horizontal {
+      @extend %side_max_titlebutton;
+    }
+  }
+}
+
+// Themed left sidebar
+.tweak-categories,
+.tweak-category:not(:selected):not(:hover) {
+  @extend %side_background;
+
+  separator { background: none; }
+}
+
+.tweak-category:not(:selected) {
+  &:hover {
+    color: $side_theme_alt_fg;
+    background-image: image(rgba($side_theme_fg, 0.06));
+    // transition: all 50ms $ease-out-quad;
+  }
+}
+
+window.background.csd {
+  > box.horizontal > box.vertical {
+    > searchbar {
+      @extend %side_searchbar;
+    }
+  }
+}
+
+// separator of sidebar on Gnome contol center and Gnome tweaks
+window.background.csd {
+  > box:not(.titlebar).horizontal > separator.vertical {
+    &, &:backdrop {
+      background-image: if($variant == 'light', image($bg_color), image($borders_color));
+      background-color: transparent;
+    }
+  }
+}
+
+//
+//  Gnome Control Center
+//
+window.background.csd {
+  > box.titlebar.horizontal {
+    > headerbar:first-child {
+      @extend %side_headerbar;
+    }
+  }
+
+  > headerbar.titlebar { // gnome 3.32
+    > box.horizontal > headerbar:first-child,
+    > hdyleaflet > headerbar:first-child {
+      @extend %side_headerbar;
+    }
+
+    > box.horizontal > separator.sidebar,
+    > hdyleaflet > separator.sidebar {
+      border-right-style: if($variant == 'light', none, solid);
+      background: none;
+      min-width: 0;
+    }
+  }
+
+  &.fullscreen,
+  &.maximized {
+    > box.titlebar.horizontal {
+      > headerbar:first-child {
+        > box.left.horizontal {
+          @extend %side_max_titlebutton;
+        }
+      }
+    }
+
+    > headerbar.titlebar { // gnome 3.32
+      > box.horizontal > headerbar:first-child,
+      > hdyleaflet > headerbar:first-child {
+        > box.left.horizontal {
+          @extend %side_max_titlebutton;
+        }
+      }
+    }
+  }
+
+  > box.horizontal > box.vertical,
+  > hdyleaflet > box.vertical { // gnome 3.32
+    > scrolledwindow.view {
+      > viewport.frame > stack {
+        > list {
+          @extend %side_background;
+
+          separator { background: none; }
+
+          row.activatable:not(:hover):not(:selected) {
+            background-image: image($side_theme_bg);
+          }
+
+          row.activatable:not(:selected):hover {
+            color: $side_theme_alt_fg;
+            background-color: rgba($side_theme_fg, 0.06);
+            // transition: all 50ms $ease-out-quad;
+          }
+        }
+      }
+    }
+
+    > searchbar {
+      @extend %side_searchbar;
+    }
+  }
+
+  > box.horizontal > separator.sidebar,
+  > hdyleaflet > separator.sidebar {
+    border-right-style: if($variant == 'light', none, solid);
+    background: none;
+    min-width: 0;
+  }
+}
+
+//
+// Geary
+//
+
+%folder_frame_border { border-width: 0; }
+
+%conversation_frame {
+  > border { border: none; }
+
+  treeview.view {
+    color: $side_theme_fg;
+    background-color: darken($side_theme_bg, 3%);
+
+    &:selected {
+      &, &:focus {
+        background-color: rgba($selected_bg_color, 0.25);
+        color: $selected_fg_color;
+        &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
+        &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
+      }
+    }
+  }
+}
+
+%folder_frame {
+  &:dir(ltr) { border: none; }
+  &:dir(rtl) { border: none; }
+
+  treeview.view.sidebar {
+    @extend %side_views;
+
+    &.cell { // = row height of placessidebar
+      padding-top: rem(4px);
+      padding-bottom: rem(4px);
+    }
+  }
+}
+
+window#GearyMainWindow {
+  .titlebar {
+    box-shadow: inset 0 -1px $borders_color;
+    background-color: $header_bg;
+
+    &:backdrop {
+      background-color: $header_bg_backdrop;
+    }
+  }
+
+  > box.vertical > paned { // Geary 0.12.1
+    > separator {
+      background-image: if($variant == 'light', none, image($solid_borders_color));
+    }
+
+    > box.vertical > searchbar {
+      @extend %side_searchbar;
+    }
+  }
+
+  > overlay > box.vertical > paned.horizontal { // Geary 0.13.1
+    > box.sidebar.vertical {
+      @extend %side_headerbar;
+
+      > searchbar {
+        @extend %side_searchbar;
+      }
+    }
+  }
+}
+
+.geary-titlebar-left {
+  margin-right: $cont_padding;
+  &, &.geary-titlebar {
+    @extend %side_headerbar;
+  }
+
+  // remove unexpected "hardcoded" vertical separator
+  separator {
+    margin: 0 -10px 0 0;
+    border-right: if($variant == 'light', none, 1px solid $solid_borders_color);
+    background: none;
+  }
+}
+
+window#GearyMainWindow.fullscreen,
+window#GearyMainWindow.maximized {
+  .geary-titlebar-left {
+    &, &.geary-titlebar {
+      > box.left.horizontal {
+        @extend %side_max_titlebutton;
+      }
+    }
+  }
+}
+
+// left-pane styling (legacy)
+.sidebar.vertical > paned.sidebar-pane-separator {
+  @extend %side_background;
+
+  .conversation-frame { @extend %conversation_frame; }
+
+  .folder-frame {
+    > border { @extend %folder_frame_border; }
+    > scrolledwindow { @extend %folder_frame; }
+  }
+
+   separator { background: none; }
+   statusbar { @extend %side_background; }
+}
+
+// left-pane styling (current)
+.sidebar.vertical > paned.geary-sidebar-pane-separator {
+  @extend %side_background;
+
+  .geary-conversation-frame { @extend %conversation_frame; }
+
+  .geary-folder-frame {
+    > border { @extend  %folder_frame_border; }
+    > scrolledwindow { @extend %folder_frame; }
+  }
+
+  separator { background: none; }
+  statusbar { @extend %side_background; }
+}
+
+// right-pane styling (current)
+stack#conversation_viewer {
+  scrolledwindow.geary-conversation-scroller > viewport.frame {
+    border: none; // unset borders
+  }
+}
+
+//
+// Tilix
+//
+window.background.csd {
+  > box.horizontal > box.vertical {
+    > scrolledwindow > viewport.frame {
+      > list {
+        @extend %side_background;
+
+        row > box.vertical {
+          > separator.horizontal {
+            background: none;
+            min-height: 0;
+          }
+
+          > label:disabled { color: $side_theme_alt_fg; }
+        }
+
+        row.activatable {
+          @extend %side_views;
+
+          button { @extend %side_buttons.flat; }
+
+          &:selected button { @extend %selected-button; }
+        }
+      }
+    }
+
+    > separator.horizontal {
+      background: none;
+      min-height: 0;
+    }
+
+    > box.linked.horizontal {
+      @extend %side_background;
+      margin: -$cont_padding;
+      padding: $cont_padding;
+
+      button { @extend %side_buttons; }
+    }
+  }
+}
+
+//
+// Polari
+//
+.polari-room-list {
+  .sidebar {
+    @extend %side_background;
+    // border-color: if($variant == 'light', $bg_color, $solid_borders_color); // Not use
+
+    .activatable, .inactive, .room-list-header {
+      @extend %side_views;
+    }
+  }
+}
+
+//
+// Contacts
+//
+
+// box.horizontal, // gnome 3.30
+hdyleaflet {
+  > stack > frame > grid.vertical {
+    @extend %side_background;
+
+    > scrolledwindow {
+      > viewport.frame {
+        // @extend %side_background;
+
+        > list.contacts-contact-list {
+          @extend %side_background;
+
+          row.activatable.contact-data-row {
+            @extend %side_views;
+          }
+        }
+      }
+    }
+
+    > entry.search {
+      color: $side_theme_fg;
+      background-color: rgba($side_theme_fg, 0.1);
+
+      image { color: $side_theme_fg; }
+
+      &:focus {
+        background-color: rgba($side_theme_fg, 0.12);
+      }
+
+      &:disabled {
+        label, image {
+          color: rgba($side_theme_alt_fg, 0.35);
+        }
+      }
+    }
+
+    > actionbar {
+      @extend %side_background;
+
+      button {
+        @extend %side_buttons;
+      }
+    }
+  }
+
+  > separator.sidebar {
+    border-right-style: if($variant == 'light', none, solid);
+    background: none;
+    min-width: 0;
+  }
+
+  // selection-mode
+  .selection-mode & headerbar {
+    color: $selection_mode_fg;
+    background-color: $selection_mode_bg;
+    border-color: darken($selection_mode_bg, 4%);
+    box-shadow: none;
+
+    &:backdrop {
+      background-color: $selection_mode_bg;
+      color: transparentize($selection_mode_fg, 0.4);
+    }
+
+    .subtitle:link { @extend *:link:selected;  }
+
+    .selection-menu {
+      box-shadow: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      GtkArrow { -GtkArrow-arrow-scaling: 1; }
+
+      .arrow {
+        -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+      }
+    }
+
+    .maximized & { background-color: opacify($selection_mode_bg, 1); }
+
+    button:not(.titlebutton) {
+      &, &.flat {
+        @include button(undecorated);
+        color: $selection_mode_fg;
+        background-color: transparentize($selection_mode_fg, 1);
+      }
+
+      &:hover { background-color: gtkalpha($selection_mode_fg, 0.3); }
+      &:active, &:checked { @extend %selected-button:active; }
+
+      &:disabled {
+        @extend %selected-button.flat:disabled;
+
+        &:checked, &:active { @extend %selected-button:disabled:checked; }
+      }
+
+      &:backdrop { opacity: 0.7; background: none; }
+    }
+
+    button.titlebutton {
+      &.close, &.maximize, &.minimize {
+        color: transparent;
+        background-color: transparent;
+      }
+    }
+
+    @extend %side_titlebutton;
+
+    .fullscreen &,
+    .maximized & {
+      @extend %side_max_titlebutton;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+
+ /****************
+ * Mate Desktop *
+ ****************/
+
+//
+// Atril (MATE pdf viewer)
+//
+.atril-window .primary-toolbar toolbar {
+  background: none;
+}
+
+//
+// Mate OSD Window
+//
+MsdOsdWindow.background.osd {
+  border-radius: 2px;
+  border: 1px solid darken($osd_bg_color, 8%);
+
+  .progressbar {
+    background-color: $selected_bg_color;
+    border: none;
+    border-color: red;
+    border-radius: 5px;
+  }
+  .trough {
+    background-color: darken($osd_bg_color, 5%);
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+//
+// Mate/Gnome Flashback Panel
+//
+.mate-panel-menu-bar,
+panel-toplevel.background {
+
+  &, menubar { background-color: opacify($panel_bg, 1); }
+
+  menubar,
+  #PanelApplet label,
+  #PanelApplet image { color: $panel_fg; }
+
+  // Panel buttons
+  button:not(#tasklist-button) {
+    @extend %panelbutton;
+  }
+
+  button,
+  #tasklist-button {
+    label, image { color: inherit; }
+  }
+
+  .wnck-pager {
+    color: mix($panel_fg, black, 50%);
+    background-color: darken($panel_bg, 10%);
+
+    &:hover {
+      background-color: lighten($panel_bg, 5%);
+    }
+
+    &:selected {
+      color: lighten($selected_bg_color, 20%);
+      background-color: $selected_bg_color;
+    }
+  }
+
+  na-tray-applet {
+    -NaTrayApplet-icon-padding: 0;
+    -NaTrayApplet-icon-size: 16px;
+  }
+}

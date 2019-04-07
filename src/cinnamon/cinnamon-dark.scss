@@ -1,0 +1,9 @@
+$variant: 'dark';
+$trans: 'true';
+$titlebar: 'dark';
+$titlebutton: '';
+
+@import '../_sass/colors'; //use gtk colors
+@import '../_sass/variables';
+@import '../_sass/cinnamon/drawing';
+@import '../_sass/cinnamon/common';

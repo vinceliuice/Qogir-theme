@@ -1,0 +1,25 @@
+gtk-color-scheme = "base_color: #282A33"
+gtk-color-scheme = "text_color: #d3dae3"
+gtk-color-scheme = "bg_color: #32343D"
+gtk-color-scheme = "fg_color: #d3dae3"
+gtk-color-scheme = "tooltip_bg_color: #21232b"
+gtk-color-scheme = "tooltip_fg_color: #D3DAE3"
+gtk-color-scheme = "selected_bg_color: #5294e2"
+gtk-color-scheme = "selected_fg_color: #ffffff"
+gtk-color-scheme = "insensitive_bg_color: #333641"
+gtk-color-scheme = "insensitive_fg_color: #7c818c"
+gtk-color-scheme = "notebook_bg: #282A33"
+gtk-color-scheme = "dark_sidebar_bg: #272931"
+gtk-color-scheme = "link_color: #5294e2"
+gtk-color-scheme = "menu_bg: #383c4a"
+gtk-color-scheme = "menu_fg: #e3e4e7"
+
+gtk-icon-sizes = "gtk-button=16,16" # This makes button icons smaller.
+gtk-auto-mnemonics = 1
+gtk-primary-button-warps-slider = 1
+
+include "main.rc"
+include "apps.rc"
+include "panel.rc"
+include "xfce-notify.rc"
+include "menubar-toolbar.rc"

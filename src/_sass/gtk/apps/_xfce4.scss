@@ -1,0 +1,189 @@
+
+//
+// Xfce4 Desktop
+//
+
+$text_shadow: 0 0 1px rgba(0, 0, 0, 0.26),
+              0 1px 2px rgba(0, 0, 0, 0.32),
+              0 2px 3px rgba(0, 0, 0, 0.12);
+
+%panelbutton {
+  color: $panel_fg;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+
+  &:hover:not(:active):not(:checked) {
+    color: $selected_fg_color;
+    box-shadow: inset 0 -2px rgba($selected_bg_color, 0.5);
+  }
+
+  &:checked {
+    color: $selected_fg_color;
+    box-shadow: inset 0 -2px $selected_bg_color;
+    label, image { color: inherit; }
+  }
+
+  &:active {
+    background-color: rgba($selected_fg_color, 0.12);
+    color: $selected_fg_color;
+    box-shadow: inset 0 -2px $selected_bg_color;
+  }
+}
+
+.xfce4-panel.panel {
+  background-color: $panel_bg;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  border: none;
+}
+
+.XfceHeading {
+  border: 0 none transparent;
+  background-color: $bg_color;
+  color: $fg_color;
+}
+
+.xfce4-panel {
+  background-color: $panel_bg;
+  color: $panel_fg;
+  font-weight: 700;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+
+  &, // unset borders
+  frame > border { border: none; }
+
+  &#XfcePanelWindow { // main panel container >= 4.13.3?
+    // FIXME: unneeded 1px borders are reserved by its code itself
+    border: none;
+
+    &, &.marching-ants { transition: none; } // unset transitions
+  }
+
+  button.flat { @extend %panelbutton; }
+
+  button {
+    font-weight: 700;
+    @extend %panelbutton;
+
+    &#launcher-arrow { // launcher applet
+      // FIXME: quite weird pseudo-classe transitions, especially :hover
+      // state can't be cleared properly ( -> an upstream issue)
+      &, + button.toggle {
+        &:hover { box-shadow: none; } // hide indicators
+      }
+
+      + button.toggle:checked { // 'arrow' toggle button
+        color: $selected_bg_color;
+        box-shadow: none;
+      }
+    }
+
+    &#xfce4-notification-plugin {
+      padding: 0 1px; // for 4.12.2
+    }
+  }
+
+  menu {
+    font-weight: 400; // for enforcing regular weight
+    text-shadow: none;
+    -gtk-icon-effect: none;
+  }
+
+  widget.tasklist > button.toggle { font-weight: 400; }
+}
+
+XfdesktopIconView.view {
+  border-radius: 2px;
+  background: transparent;
+  color: $selected_fg_color;
+  text-shadow: $text_shadow;
+
+  &:active, &:checked {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+    text-shadow: none;
+  }
+
+  .rubberband { @extend rubberband; }
+}
+
+window#whiskermenu-window {
+  background-color: $base_color;
+
+  // no CSD class even if the sw compositor was enabled.
+  > frame > border {
+    border-radius: 0;
+  }
+
+  scrolledwindow {
+    > viewport button.radio {
+      &:hover { background-color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.12)); }
+      &:checked, &:active {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+      }
+    }
+
+    treeview.view {
+      &:selected:hover {
+        background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
+        color: $fg_color;
+      }
+    }
+  }
+}
+
+//
+// Thunar
+//
+
+window.thunar {
+  .sidebar {
+    border-top: none;
+
+    treeview.view {
+      @extend treeview.view;
+      background-color: $dark_sidebar_bg;
+      color: $dark_sidebar_fg;
+
+      &:not(:selected):hover {
+        color: $dark_sidebar_fg;
+        background-color: mix($dark_sidebar_fg, $dark_sidebar_bg, 10%);
+      }
+    }
+  }
+
+  notebook {
+    scrolledwindow.frame.standard-view {
+      border-top-width: 0; // hide unneeded border
+      border-right-width: 0; // hide unneeded border
+      background-color: $base_color;
+      @extend %file_manager_img;
+
+      .view { @extend %view; background-color: transparent; }
+    }
+
+    // an allocation height of label node affects to close button's
+    // image height (it's quite weird).
+    header.top tab.reorderable-page > box > label { min-height: 0; }
+  }
+
+  toolbar#location-toolbar {
+    background-color: $header_bg;
+    color: $header_fg;
+    box-shadow: inset 0 -1px $borders_color;
+
+    button { @extend %header_button; }
+    entry { @extend %header_entry; }
+
+    .linked:not(.vertical):not(.stack-switcher).path-bar {
+      button {
+        margin: 0;
+        padding: 4px;
+        @extend %headerbar_pathbar_button;
+      }
+    }
+  }
+}
