@@ -4058,6 +4058,11 @@ messagedialog .linked:not(.vertical) > button:disabled:only-child {
   border-bottom: none;
 }
 
+messagedialog.background {
+  background-color: #282A33;
+  color: rgba(207, 218, 231, 0.8);
+}
+
 messagedialog .titlebar {
   min-height: 20px;
   background-color: #282A33;
@@ -4067,11 +4072,17 @@ messagedialog .titlebar {
   box-shadow: none;
 }
 
+messagedialog .titlebar:backdrop {
+  background-color: #282A33;
+}
+
 messagedialog .dialog-action-area button {
   padding: 6px 10px 8px 10px;
   border-radius: 0;
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: #282A33;
+  color: rgba(207, 218, 231, 0.8);
 }
 
 messagedialog .dialog-action-area button:active, messagedialog .dialog-action-area button:checked {
@@ -4080,12 +4091,12 @@ messagedialog .dialog-action-area button:active, messagedialog .dialog-action-ar
 }
 
 messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):hover {
-  background-color: rgba(92, 97, 108, 0.06);
+  background-color: rgba(207, 218, 231, 0.06);
 }
 
 messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):active, messagedialog .dialog-action-area button:not(.suggested-action):not(.destructive-action):checked {
-  background-color: rgba(92, 97, 108, 0.1);
-  color: #5c616c;
+  background-color: rgba(207, 218, 231, 0.1);
+  color: rgba(207, 218, 231, 0.8);
 }
 
 messagedialog.csd.background {
@@ -5827,6 +5838,10 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal > stack > scrolledwind
 
 dialog.background.csd headerbar.default-decoration {
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
+}
+
+window.background.csd > paned.horizontal > scrolledwindow.frame.sidebar {
+  border-top: none;
 }
 
 stack > overlay > frame > scrolledwindow.frame {

@@ -2941,6 +2941,11 @@ calendar {
 
 messagedialog { // Message Dialog styling
 
+  &.background {
+    background-color: $header_bg;
+    color: $header_fg;
+  }
+
   .titlebar {
     min-height: 20px;
     background-color: $header_bg;
@@ -2948,6 +2953,10 @@ messagedialog { // Message Dialog styling
     border-top-left-radius: $bt_radius;
     border-top-right-radius: $bt_radius;
     box-shadow: none;
+
+    &:backdrop {
+      background-color: $header_bg;
+    }
   }
 
   .dialog-action-area {
@@ -2956,6 +2965,8 @@ messagedialog { // Message Dialog styling
       border-radius: 0;
       border: none;
       border-top: 1px solid $borders_color;
+      background-color: $header_bg;
+      color: $header_fg;
 
       &:active, &:checked {
         transition: background-color 0.00001s 0.2s;
@@ -2978,12 +2989,12 @@ messagedialog { // Message Dialog styling
   .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
 
     &:hover {
-      background-color: rgba($fg_color, 0.06);
+      background-color: rgba($header_fg, 0.06);
     }
 
     &:active, &:checked {
-      background-color: rgba($fg_color, 0.1);
-      color: $fg_color;
+      background-color: rgba($header_fg, 0.1);
+      color: $header_fg;
     }
   }
 

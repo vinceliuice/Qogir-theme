@@ -1133,6 +1133,17 @@ dialog.background.csd {
 }
 
 //
+// seahorse
+//
+window.background.csd {
+  > paned.horizontal {
+    > scrolledwindow.frame.sidebar {
+      border-top: none;
+    }
+  }
+}
+
+//
 // gtk3-widgets-tool
 //
 stack {
