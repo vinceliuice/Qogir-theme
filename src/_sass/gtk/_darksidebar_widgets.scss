@@ -705,6 +705,8 @@ window.background.csd {
   > box.horizontal > box.vertical,
   > hdyleaflet > box.vertical { // gnome 3.32
     > scrolledwindow.view {
+      @extend %side_background;
+
       > viewport.frame > stack {
         > list {
           @extend %side_background;
@@ -722,6 +724,8 @@ window.background.csd {
           }
         }
       }
+
+      // > scrollbar { @extend %dark_sidebar_scrollbar; }
     }
 
     > searchbar {
