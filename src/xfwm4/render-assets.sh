@@ -3,15 +3,15 @@
 INKSCAPE="/usr/bin/inkscape"
 OPTIPNG="/usr/bin/optipng"
 
-SRC_FILE="assets.svg"
-ASSETS_DIR="assets"
-LIGHT_SRC_FILE="assets-light.svg"
-LIGHT_ASSETS_DIR="assets-light"
-
 INDEX="assets.txt"
 
-for i in `cat $INDEX`
-do 
+for wmbutton in '' '-win'; do
+for variant in '' '-light'; do
+for i in `cat $INDEX`; do 
+
+ASSETS_DIR="assets${wmbutton}${variant}"
+SRC_FILE="assets${wmbutton}${variant}.svg"
+
 if [ -f $ASSETS_DIR/$i.png ]; then
     echo $ASSETS_DIR/$i.png exists.
 else
@@ -22,15 +22,9 @@ else
               --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
     && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png 
 fi
-if [ -f $LIGHT_ASSETS_DIR/$i.png ]; then
-    echo $LIGHT_ASSETS_DIR/$i.png exists.
-else
-    echo
-    echo Rendering $LIGHT_ASSETS_DIR/$i.png
-    $INKSCAPE --export-id=$i \
-              --export-id-only \
-              --export-png=$LIGHT_ASSETS_DIR/$i.png $LIGHT_SRC_FILE >/dev/null \
-    && $OPTIPNG -o7 --quiet $LIGHT_ASSETS_DIR/$i.png 
-fi
+
 done
+done
+done
+
 exit 0

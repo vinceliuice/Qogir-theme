@@ -900,6 +900,104 @@ toolbar.inline-toolbar toolbutton:active, .inline-toolbar toolbutton:active, too
   box-shadow: none;
 }
 
+.osd .linked:not(.vertical) > entry + entry {
+  border-left-color: rgba(13, 14, 17, 0);
+}
+
+.osd .linked:not(.vertical) > entry.error + entry,
+.osd .linked:not(.vertical) > entry + entry.error {
+  border-left-color: #FC4138;
+}
+
+.osd .linked:not(.vertical) > entry.warning + entry,
+.osd .linked:not(.vertical) > entry + entry.warning {
+  border-left-color: #F27835;
+}
+
+.osd .linked:not(.vertical) > entry.error + entry.warning,
+.osd .linked:not(.vertical) > entry.warning + entry.error {
+  border-left-color: #f75d37;
+}
+
+.osd .linked:not(.vertical) > entry + entry:focus:not(:last-child),
+.osd .linked:not(.vertical) > entry + entry:focus:last-child {
+  border-left-color: #5294e2;
+}
+
+.osd .linked:not(.vertical) > entry:focus:not(:only-child) + entry,
+.osd .linked:not(.vertical) > entry:focus:not(:only-child) + button,
+.osd .linked:not(.vertical) > entry:focus:not(:only-child) + combobox > box > button.combo {
+  border-left-color: #5294e2;
+}
+
+.osd .linked:not(.vertical) > entry + entry:drop(active):not(:last-child),
+.osd .linked:not(.vertical) > entry + entry:drop(active):last-child {
+  border-left-color: #F08437;
+}
+
+.osd .linked:not(.vertical) > entry:drop(active):not(:only-child) + entry,
+.osd .linked:not(.vertical) > entry:drop(active):not(:only-child) + button,
+.osd .linked:not(.vertical) > entry:drop(active):not(:only-child) + combobox > box > button.combo {
+  border-left-color: #F08437;
+}
+
+.osd .linked:not(.vertical) > entry + entry.warning:focus:not(:last-child),
+.osd .linked:not(.vertical) > entry + entry.warning:focus:last-child {
+  border-left-color: #F27835;
+}
+
+.osd .linked:not(.vertical) > entry.warning:focus:not(:only-child) + entry,
+.osd .linked:not(.vertical) > entry.warning:focus:not(:only-child) + button,
+.osd .linked:not(.vertical) > entry.warning:focus:not(:only-child) + combobox > box > button.combo {
+  border-left-color: #F27835;
+}
+
+.osd .linked:not(.vertical) > entry + entry.error:focus:not(:last-child),
+.osd .linked:not(.vertical) > entry + entry.error:focus:last-child {
+  border-left-color: #FC4138;
+}
+
+.osd .linked:not(.vertical) > entry.error:focus:not(:only-child) + entry,
+.osd .linked:not(.vertical) > entry.error:focus:not(:only-child) + button,
+.osd .linked:not(.vertical) > entry.error:focus:not(:only-child) + combobox > box > button.combo {
+  border-left-color: #FC4138;
+}
+
+.osd .linked:not(.vertical) > button:active + entry,
+.osd .linked:not(.vertical) > button:checked + entry {
+  border-left-color: #5294e2;
+}
+
+.osd .linked:not(.vertical) > button + button {
+  border-left-style: none;
+}
+
+.osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
+.osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action) {
+  box-shadow: inset 1px 0 rgba(98, 103, 125, 0.55);
+}
+
+.osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
+.osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
+  box-shadow: inset 1px 0 rgba(98, 103, 125, 0.05);
+}
+
+.osd .linked:not(.vertical) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.osd .linked:not(.vertical) > button:checked + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.osd .linked:not(.vertical) > button.suggested-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.osd .linked:not(.vertical) > button.destructive-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.osd .linked:not(.vertical) > entry + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
+.osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:disabled,
+.osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+.osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:hover,
+.osd .linked:not(.vertical) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+.osd .linked:not(.vertical) > button:checked + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+.osd .linked:not(.vertical) > button.suggested-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+.osd .linked:not(.vertical) > button.destructive-action + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled,
+.osd .linked:not(.vertical) > entry + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child) {
+  box-shadow: none;
+}
+
 headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.stack-switcher) > entry + entry,
 headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.stack-switcher) > entry.error + entry,
 headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.stack-switcher) > entry + entry.error,
@@ -6429,12 +6527,12 @@ window.background.chromium > menubar {
 window.background.chromium > menu {
   color: #5c616c;
   background-color: #ffffff;
-  border: 1px solid #cad5df;
+  border: 1px solid #e6e6e6;
 }
 
 window.background.chromium > menu > separator, window.background.chromium > menu .separator {
-  background-color: #cad5df;
-  color: #cad5df;
+  background-color: #ffffff;
+  color: #ffffff;
   border: none;
 }
 
@@ -6653,6 +6751,14 @@ menubar.-vala-panel-appmenu-private > menuitem:hover {
 menubar.-vala-panel-background > menuitem:disabled,
 menubar.-vala-panel-appmenu-private > menuitem:disabled {
   color: rgba(211, 218, 227, 0.4);
+}
+
+window#meldapp notebook.frame.meld-notebook {
+  border: none;
+}
+
+window#meldapp notebook.frame.meld-notebook paned.meld-vc-console-pane {
+  border: none;
 }
 
 /*****************

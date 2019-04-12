@@ -769,6 +769,7 @@ toolbar.inline-toolbar toolbutton {
 .linked:not(.vertical) {
   &:not(.path-bar):not(.nautilus-path-bar) { @include linking_rules(); }
   &.path-bar, &.stack-switcher { @include pathbar_linking_rules(); }
+  .osd & { @include linking_rules($e_border:$osd_entry_border, $b_border:$osd_button_border); }
 }
 
 headerbar,

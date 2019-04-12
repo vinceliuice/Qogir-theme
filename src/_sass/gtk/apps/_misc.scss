@@ -341,8 +341,8 @@ window.background:not(.csd) {
 $chrome_borders_color: darken(white, 10%);
 $chrome_bg_color: #fafbfc;
 $chrome_fg_color: #5c616c;
-$chrome_menu_bg_color: $base_color;
-$chrome_menu_fg_color: $fg_color;
+$chrome_menu_bg_color: #ffffff;
+$chrome_menu_fg_color: #5c616c;
 
 %circle_chrome {
   headerbar.titlebar button.titlebutton {
@@ -427,11 +427,11 @@ window.background.chromium {
   > menu {
     color: $chrome_menu_fg_color;
     background-color: $chrome_menu_bg_color;
-    border: 1px solid $solid_borders_color;
+    border: 1px solid $chrome_borders_color;
 
     > separator, .separator {
-      background-color: $solid_borders_color;
-      color: $solid_borders_color;
+      background-color: $chrome_menu_bg_color;
+      color: $chrome_menu_bg_color;
       border: none;
     }
 
@@ -720,5 +720,18 @@ menubar.-vala-panel-appmenu-private { // vala-panel-appmenu
     }
 
     &:disabled { color: transparentize($panel_fg, 0.6); }
+  }
+}
+
+//
+// Meld
+//
+window#meldapp {
+  notebook.frame.meld-notebook {
+    border: none;
+
+    paned.meld-vc-console-pane {
+      border: none;
+    }
   }
 }

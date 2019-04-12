@@ -14,25 +14,10 @@
    viewBox="0 0 32 84"
    id="svg5386"
    version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="modal.svg">
   <defs
-     id="defs5388">
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath4154">
-      <rect
-         transform="scale(1,-1)"
-         ry="1.5"
-         rx="1.5"
-         y="-992.36218"
-         x="-5.5"
-         height="24.500061"
-         width="43"
-         id="rect4156"
-         style="opacity:1;fill:#5294e2;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    </clipPath>
-  </defs>
+     id="defs5388" />
   <sodipodi:namedview
      id="base"
      pagecolor="#c7c7c7"
@@ -40,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9999996"
-     inkscape:cx="-9.2891371"
-     inkscape:cy="51.435312"
+     inkscape:zoom="3.9999998"
+     inkscape:cx="-9.9362246"
+     inkscape:cy="44.987233"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -51,11 +36,12 @@
      inkscape:bbox-paths="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-edge-midpoints="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1012"
+     inkscape:window-width="1366"
+     inkscape:window-height="711"
      inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1">
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:snap-nodes="false">
     <inkscape:grid
        type="xygrid"
        id="grid5954" />
@@ -87,15 +73,14 @@
        rx="2.0000005"
        ry="1.9999999" />
     <rect
-       style="display:inline;opacity:1;fill:#f5f6f7;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="display:inline;opacity:1;fill:#f5f6f7;fill-opacity:1;stroke:none;stroke-width:1.3377353;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4164"
        width="22"
-       height="20.999971"
+       height="73.000015"
        x="5"
-       y="973.36285"
-       rx="1.4"
-       ry="0.78232586"
-       clip-path="url(#clipPath4154)"
-       transform="matrix(1,0,0,1.7895356,0,-768.50527)" />
+       y="973.36218"
+       rx="1.5093746"
+       ry="1.4695435"
+       clip-path="none" />
   </g>
 </svg>
