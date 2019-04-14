@@ -246,11 +246,12 @@ window.background:not(.csd) {
 
   > menu,
   > menu > menu {
-    // border: none;
+    border: none;
     border-radius: 0;
+
+    > separator, .separator { color: $_menu_bg; }
   }
 
-  > menu > separator { color: $borders_color; }
   > menu > menuitem > label:disabled { color: $insensitive_fg_color; }
 }
 
@@ -310,7 +311,7 @@ window.background:not(.csd) {
     > separator {
       padding: 0;
       border: none;
-      background-color: $firefox_border;
+      background-color: $_menu_bg;
     }
   }
 
@@ -447,7 +448,9 @@ window.background.chromium {
         color: rgba($chrome_menu_fg_color, 0.45);
       }
 
-      label { &:disabled { color: rgba($chrome_menu_fg_color, 0.45); } }
+      // label { &:disabled { color: rgba($chrome_menu_fg_color, 0.45); } }
+
+      accelerator { color: rgba($chrome_menu_fg_color, 0.45); }
     }
   }
 }

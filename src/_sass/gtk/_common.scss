@@ -504,16 +504,19 @@ button {
       padding-left: $cont_padding;  // label padding
       padding-right: $cont_padding; //
     }
+
     > image {
       padding-left: $cont_padding;
       padding-right: $cont_padding;
       padding-top: 3px;
       padding-bottom: 3px;
     }
+
     &.text-button {
       padding-left: 10px;
       padding-right: 10px;
     }
+
     &.image-button {
       padding-left: 2px;
       padding-right: 2px;
@@ -1023,8 +1026,8 @@ combobox {
 
   arrow {
     -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
-    min-height: $small_size;
-    min-width: $small_size;
+    min-height: 16px;
+    min-width: 16px;
   }
 
   &:drop(active) button.combo { @extend button:drop(active); }
@@ -1838,16 +1841,14 @@ $_menu_bg: if($variant=='light', $base_color, $bg_color);
 menu,
 .menu,
 .context-menu {
+  margin: 4px 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
   padding: 4px 0;
   border-radius: 0;
+  transition: none;
   background-color: $_menu_bg;
-  border: 1px solid $borders_color;
+  border: 1px solid $borders_color; // adds borders in a non composited env
 
-  .csd & {
-    padding: 4px 0;
-    border-radius: 0;
-    border: none;
-  }
+  .csd & { border: none; }
 
   separator,
   .csd & separator {
@@ -1855,49 +1856,47 @@ menu,
     background-color: $_menu_bg;
   }
 
-  // Firefox workaround
-  .separator:not(label),
-  .csd & .separator:not(label) { color: $_menu_bg; }
-  // Firefox workaround end
-
   menuitem {
-    min-height: $small_size;
-    min-width: $large_size;
+    min-height: 16px;
+    min-width: 38px;
     padding: 4px $cont_padding;
+    text-shadow: none;
+    transition: background-color 20ms ease-out;
 
     &:hover {
+      transition: none;
       color: $selected_fg_color;
       background-color: $selected_bg_color;
     }
 
-    &:disabled {
-      color: $insensitive_fg_color;
-    }
+    &:disabled { color: $insensitive_fg_color; }
 
-    label { &:disabled { color: $insensitive_fg_color; }}
+    // avoids labels color being overridden, see
+    // https://bugzilla.gnome.org/show_bug.cgi?id=767058
+    label { &:dir(rtl), &:dir(ltr) { color: inherit; }}
 
     //submenu indicators
     arrow {
-      min-height: $small_size;
-      min-width: $small_size;
+      min-height: 16px;
+      min-width: 16px;
 
       &:dir(ltr) {
         -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
-        margin-left: 10px;
+        margin-left: 8px;
       }
 
       &:dir(rtl) {
         -gtk-icon-source:-gtk-icontheme('pan-end-symbolic-rtl');
-        margin-right: 10px;
+        margin-right: 8px;
       }
     }
 
     @at-root menuitem {
-      accelerator { color: gtkalpha(currentColor,0.55); }
+      accelerator { color: gtkalpha(currentColor, 0.55); }
 
       check, radio {
-        min-height: $small_size;
-        min-width: $small_size;
+        min-height: 16px;
+        min-width: 16px;
         &:dir(ltr) { margin-right: $cont_padding; margin-left: 2px; }
         &:dir(rtl) { margin-left: $cont_padding; margin-right: 2px; }
       }
@@ -1905,24 +1904,25 @@ menu,
   }
 
   // overflow buttons
-
   > arrow {
     // @include button(undecorated);
-    min-width: $small_size;
-    min-height: $small_size;
+    min-width: 16px;
+    min-height: 16px;
     padding: 4px;
     background-color: $_menu_bg;
     border-radius: 0;
+    transition: none;
     // border: 1px solid $borders_color;
 
     &.top {
-      margin-top: -6px;
+      margin-top: -4px;
       border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
 
     &.bottom {
-      margin-bottom: -12px;
+      margin-top: 4px * 2;
+      margin-bottom: -4px * 3;
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
@@ -2142,8 +2142,8 @@ notebook {
       // close button
       button.flat {
         border-radius: 100%;
-        min-height: $small_size;
-        min-width: $small_size;
+        min-height: 16px;
+        min-width: 16px;
         padding: 0;
         margin: 4px 0;
         color: mix($bg_color, $fg_color, 35%);
@@ -2394,8 +2394,8 @@ checkbutton, radiobutton {
 
 check,
 radio {
-  min-width: $small_size;
-  min-height: $small_size;
+  min-width: 16px;
+  min-height: 16px;
   margin: 0 2px;
 
   &:only-child,
@@ -2865,8 +2865,8 @@ row {
 //
 expander {
   arrow {
-    min-width: $small_size;
-    min-height: $small_size;
+    min-width: 16px;
+    min-height: 16px;
     -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
 
     &:dir(rtl) { -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl'); }
@@ -3469,7 +3469,7 @@ button.circular-button {
 }
 
 .keycap {
-  min-width: $small_size;
+  min-width: 16px;
   min-height: 20px;
 
   padding: 3px $cont_padding 4px $cont_padding;
