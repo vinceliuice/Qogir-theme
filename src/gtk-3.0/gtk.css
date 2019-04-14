@@ -4934,6 +4934,10 @@ terminal-window notebook scrollbar,
   background: none;
 }
 
+window.background > box.vertical > box.horizontal > frame > border {
+  border-width: 0 1px 0 0;
+}
+
 .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.text-button.toggle, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.sidebar-button, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher, .nautilus-window headerbar.titlebar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:not(.flat), .budgie-panel .nautilus-window headerbar.titlebar .path-bar-box .path-bar .text-button.toggle#tasklist-button:not(.flat),
 .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.image-button.text-button.toggle, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.image-button.text-button.toggle.sidebar-button, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher {
   background: none;
@@ -6177,7 +6181,6 @@ window.background:not(.csd) > widget > button > button:active, window.background
 
 window.background:not(.csd) > menu,
 window.background:not(.csd) > menu > menu {
-  border: none;
   border-radius: 0;
 }
 
@@ -6237,12 +6240,13 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
   color: #5c616c;
 }
 
-#MozillaGtkWidget.background > window.background > menu {
-  border: unset;
+#MozillaGtkWidget.background > window.background > menu,
+#MozillaGtkWidget.background > window.background > menu > menu {
   background-color: #ffffff;
 }
 
-#MozillaGtkWidget.background > window.background > menu > separator {
+#MozillaGtkWidget.background > window.background > menu > separator,
+#MozillaGtkWidget.background > window.background > menu > menu > separator {
   padding: 0;
   border: none;
   background-color: #ffffff;

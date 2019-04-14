@@ -246,7 +246,6 @@ window.background:not(.csd) {
 
   > menu,
   > menu > menu {
-    border: none;
     border-radius: 0;
 
     > separator, .separator { color: $_menu_bg; }
@@ -303,8 +302,9 @@ window.background:not(.csd) {
     &, button { color: $fg_color; } // enforce opaque foregrounds
   }
 
-  > window.background > menu { // context-menus
-    border: unset; // hide ugly double borders
+  > window.background > menu,
+  > window.background > menu > menu {
+    // border: none; // hide ugly double borders
     background-color: $base_color;
 
     // revert to standard separators

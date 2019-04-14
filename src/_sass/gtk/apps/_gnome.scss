@@ -21,6 +21,14 @@ terminal-window,
   }
 }
 
+window.background { // gnome-terminal 3.32
+  > box.vertical > box.horizontal > frame {
+    > border {
+      border-width: 0 1px 0 0;
+    }
+  }
+}
+
 //
 // Nautilus
 //
