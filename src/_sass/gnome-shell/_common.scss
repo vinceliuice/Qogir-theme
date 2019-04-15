@@ -2063,13 +2063,11 @@ StScrollBar {
   font-size: 1em;
   width: 34em;
   margin: 5px;
-  padding: 0;
-	border-radius: 2px;
+  padding: 10px;
   color: $fg_color;
-  background-color: if($variant=='light', $base_color, $bg_color);
-  border: none;
-  border-image: none;
-	box-shadow: 0 3px 5px rgba(black, 0.15), 0 2px 3px rgba(black, 0.25);
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-image: url("assets/menu/menu.svg") 9 9 9 9;
 
   .notification-icon { padding: 5px; }
 
@@ -2083,6 +2081,7 @@ StScrollBar {
     spacing: 3px;
     border-color: $borders_color;
   }
+
   .notification-button {
     padding: 2px 4px;
     @extend %button;

@@ -1841,7 +1841,7 @@ $_menu_bg: if($variant=='light', $base_color, $bg_color);
 menu,
 .menu,
 .context-menu {
-  margin: 4px 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
+  // margin: 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
   padding: 4px 0;
   border-radius: 0;
   transition: none;

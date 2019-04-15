@@ -2526,7 +2526,6 @@ popover.touch-selection,
 .csd popover.touch-selection,
 popover.background.touch-selection,
 .csd popover.background.touch-selection {
-  margin: 4px 0;
   padding: 4px 0;
   border-radius: 0;
   transition: none;
@@ -8497,7 +8496,7 @@ window.thunar toolbar#location-toolbar .linked:not(.vertical):not(.stack-switche
   padding: 4px;
 }
 
-.menubar.panel .panel.color-light, .menubar.panel .panel.color-dark {
+.menubar.panel .panel, .menubar.panel .panel.color-light, .menubar.panel .panel.color-dark {
   background-color: #21232b;
   transition: all 100ms ease-in-out;
   color: #D3DAE3;
@@ -8739,16 +8738,15 @@ treeview.view.sidebar.source-list:selected.has-open-popup, treeview.view.sidebar
 }
 
 headerbar.titlebar > box.horizontal > entry.pathbar {
-  min-height: 0;
-  padding: 0 8px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 2px 12px;
   caret-color: currentColor;
 }
 
 headerbar.titlebar button.flat.image-button.toggle, headerbar.titlebar button.image-button.toggle.sidebar-button, headerbar.titlebar button.image-button.toggle.budgie-menu-launcher, headerbar.titlebar .budgie-panel .image-button.toggle#tasklist-button:not(.flat), .budgie-panel headerbar.titlebar .image-button.toggle#tasklist-button:not(.flat) {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 headerbar.titlebar > grid.linked.horizontal.format-bar {

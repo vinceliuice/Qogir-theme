@@ -6,7 +6,7 @@
 // Wingpanel
 .menubar.panel {
   .panel {
-    &.color-light, &.color-dark {
+    &, &.color-light, &.color-dark {
       background-color: $panel_bg;
       transition: all 100ms ease-in-out;
       color: $panel_fg;
@@ -248,17 +248,17 @@ treeview.view {
 
 headerbar.titlebar {
   > box.horizontal > entry.pathbar {
-    min-height: 0;
-    padding: 0 8px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    // min-height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 2px 12px;
 
     caret-color: currentColor;
   }
 
   button.flat.image-button.toggle {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 
   // Hide Code header format-bar

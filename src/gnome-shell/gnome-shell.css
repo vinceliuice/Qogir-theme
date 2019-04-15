@@ -43,7 +43,7 @@ stage {
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #5c616c;
   background-color: white;
-  border: 1px solid #5294e2;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
 }
 
@@ -2229,13 +2229,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 1em;
   width: 34em;
   margin: 5px;
-  padding: 0;
-  border-radius: 2px;
+  padding: 10px;
   color: #5c616c;
-  background-color: #ffffff;
-  border: none;
-  border-image: none;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.25);
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-image: url("assets/menu/menu.svg") 9 9 9 9;
 }
 
 .notification-banner .notification-icon,
