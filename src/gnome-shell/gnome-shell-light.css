@@ -666,6 +666,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-width: 15em;
   color: #5c616c;
   border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  box-shadow: none;
 }
 
 .popup-menu .popup-sub-menu {
@@ -779,6 +780,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 5px;
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  box-shadow: none;
 }
 
 .osd-window .osd-monitor-label {
@@ -809,6 +811,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 5px;
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  box-shadow: none;
   padding: 12px;
 }
 
@@ -823,6 +826,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
   border-radius: 3px;
   padding: 20px;
+  box-shadow: none;
 }
 
 .switcher-list-item-container {
@@ -1756,6 +1760,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #overview .app-view-control {
   padding: 4px 32px;
+  margin: 0;
   text-shadow: 0 1px rgba(255, 255, 255, 0);
   color: #D3DAE3;
   border: 1px solid #21232a;
@@ -1779,11 +1784,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #overview .app-view-control:first-child:ltr, #overview .app-view-control:last-child:rtl {
   border-radius: 2px 0 0 2px;
   border-right-width: 0;
+  margin: 0;
 }
 
 #overview .app-view-control:last-child:ltr, #overview .app-view-control:first-child:rtl {
   border-radius: 0 2px 2px 0;
   border-left-width: 1px;
+  margin: 0;
 }
 
 .app-view-control:first-child:ltr, .app-view-control:last-child:rtl {
@@ -1998,22 +2005,27 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background: none;
   width: 28px;
   height: 4px;
+  box-shadow: none;
 }
 
 #dashtodockContainer .running1 .app-well-app-running-dot {
   background-image: url("common-assets/dash/running1.svg");
+  box-shadow: none;
 }
 
 #dashtodockContainer .running2 .app-well-app-running-dot {
   background-image: url("common-assets/dash/running2.svg");
+  box-shadow: none;
 }
 
 #dashtodockContainer .running3 .app-well-app-running-dot {
   background-image: url("common-assets/dash/running3.svg");
+  box-shadow: none;
 }
 
 #dashtodockContainer .running4 .app-well-app-running-dot {
   background-image: url("common-assets/dash/running4.svg");
+  box-shadow: none;
 }
 
 .show-apps .show-apps-icon {
@@ -2087,6 +2099,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   height: 2px;
   margin-bottom: 4px;
   background-color: #5294e2;
+  box-shadow: none;
 }
 
 .search-provider-icon,
@@ -2234,6 +2247,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: transparent;
   border: 1px solid transparent;
   border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  box-shadow: none;
 }
 
 .notification-banner .notification-icon,

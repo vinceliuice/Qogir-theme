@@ -630,6 +630,7 @@ StScrollBar {
   min-width: 15em;
   color: $fg_color;
   border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  box-shadow: none;
 
   .popup-menu-arrow { } //defined globally in the TOP BAR
   .popup-sub-menu {
@@ -742,6 +743,7 @@ StScrollBar {
   border: none;
   border-radius: 5px;
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  box-shadow: none;
 
   .osd-monitor-label { font-size: 3em; }
 
@@ -774,6 +776,7 @@ StScrollBar {
   border: none;
   border-radius: 5px;
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  box-shadow: none;
   padding: 12px;
 }
 
@@ -791,6 +794,7 @@ StScrollBar {
   border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
   border-radius: 3px;
   padding: 20px;
+  box-shadow: none;
 
   &-item-container { spacing: 8px; }
 
@@ -1611,6 +1615,7 @@ StScrollBar {
   //favorties | all toggle button
   .app-view-control {
     padding: 4px 32px;
+    margin: 0;
 
     @include button(osd);
 
@@ -1621,10 +1626,18 @@ StScrollBar {
     }
 
     &:first-child:ltr,
-    &:last-child:rtl { border-radius: 2px 0 0 2px; border-right-width: 0; }
+    &:last-child:rtl {
+      border-radius: 2px 0 0 2px;
+      border-right-width: 0;
+      margin: 0;
+    }
 
     &:last-child:ltr,
-    &:first-child:rtl { border-radius: 0 2px 2px 0; border-left-width: 1px;}
+    &:first-child:rtl {
+      border-radius: 0 2px 2px 0;
+      border-left-width: 1px;
+      margin: 0;
+    }
   }
 }
 
@@ -1825,17 +1838,18 @@ StScrollBar {
     background: none;
     width: 28px;
     height: 4px;
+    box-shadow: none;
   }
 
   @each $var in 1, 2, 3, 4 {
     .running#{$var} .app-well-app-running-dot {
       background-image: url("common-assets/dash/running#{$var}.svg");
+      box-shadow: none;
     }
   }
 }
 
 .show-apps {
-
   .show-apps-icon {
     color: $selected_fg_color;
   }
@@ -1912,6 +1926,7 @@ StScrollBar {
   height: 2px;
   margin-bottom: 4px;
   background-color: $selected_bg_color;
+  box-shadow: none;
 }
 
 %icon_tile {
@@ -2068,6 +2083,7 @@ StScrollBar {
   background-color: transparent;
   border: 1px solid transparent;
   border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  box-shadow: none;
 
   .notification-icon { padding: 5px; }
 
