@@ -1543,6 +1543,19 @@ combobox arrow {
   min-width: 16px;
 }
 
+combobox decoration,
+combobox button.combo:checked {
+  transition: none;
+}
+
+combobox #gtk-combobox-popup-menu {
+  transition: none;
+}
+
+combobox #gtk-combobox-popup-menu menuitem {
+  transition: none;
+}
+
 toolbar, .inline-toolbar {
   -GtkWidget-window-dragging: true;
   padding: 4px;
