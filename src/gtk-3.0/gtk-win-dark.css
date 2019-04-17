@@ -1548,14 +1548,6 @@ combobox button.combo:checked {
   transition: none;
 }
 
-combobox #gtk-combobox-popup-menu {
-  transition: none;
-}
-
-combobox #gtk-combobox-popup-menu menuitem {
-  transition: none;
-}
-
 toolbar, .inline-toolbar {
   -GtkWidget-window-dragging: true;
   padding: 4px;
@@ -2577,7 +2569,7 @@ popover.background.touch-selection menuitem,
 .csd popover.background.touch-selection menuitem {
   min-height: 16px;
   min-width: 38px;
-  padding: 4px 6px;
+  padding: 4px 8px;
   text-shadow: none;
   transition: background-color 20ms ease-out;
 }

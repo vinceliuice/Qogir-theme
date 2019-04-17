@@ -1035,13 +1035,16 @@ combobox {
   decoration,
   button.combo:checked { transition: none; } // workaround for menuitem selection
 
-  #gtk-combobox-popup-menu {
-    transition: none;
-
-    menuitem {
-      transition: none;
-    }
-  }
+  // #gtk-combobox-popup-menu {
+  //   padding: 4px 0;
+  //
+  //   menuitem {
+  //     min-height: 16px;
+  //     min-width: 38px;
+  //     padding: 4px $cont_padding;
+  //     transition: none;
+  //   }
+  // }
 
   .linked:not(.vertical) > & > box > button.combo {
     // the combobox is a composite widget so the way we do button linking doesn't
@@ -1870,7 +1873,7 @@ menu,
   menuitem {
     min-height: 16px;
     min-width: 38px;
-    padding: 4px $cont_padding;
+    padding: 4px 8px;
     text-shadow: none;
     transition: background-color 20ms ease-out;
 
@@ -1932,8 +1935,8 @@ menu,
     }
 
     &.bottom {
-      margin-top: 4px * 2;
-      margin-bottom: -4px * 3;
+      margin-top: 8px;
+      margin-bottom: -12px;
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
