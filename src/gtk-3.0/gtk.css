@@ -6257,7 +6257,7 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 }
 
 #MozillaGtkWidget.background > widget border {
-  border-color: #d9d9d9;
+  border-color: #cad5df;
 }
 
 #MozillaGtkWidget.background > widget separator {

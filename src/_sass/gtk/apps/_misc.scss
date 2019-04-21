@@ -316,7 +316,7 @@ window.background:not(.csd) {
   }
 
   > widget {
-    border { border-color: $firefox_border; }
+    border { border-color: if($variant == 'light', darken($bg_color, 15%), lighten($bg_color, 20%)); }
 
     separator { background-color: $firefox_border; }
 
