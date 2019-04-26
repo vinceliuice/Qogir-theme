@@ -91,6 +91,9 @@ $osd_borders_color: $osd_button_border;
 $panel_bg: #21232b;
 $panel_fg: $osd_fg_color;
 
+$dash_bg: $dark_sidebar_icon_bg;
+$dash_fg: $osd_fg_color;
+
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));
 $entry_border: $borders_color;
 

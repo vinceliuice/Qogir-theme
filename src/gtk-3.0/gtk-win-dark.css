@@ -6537,18 +6537,22 @@ window.background.chromium button {
   border-width: 1px;
   border-style: solid;
   border-color: #e6e6e6;
+  background-color: #fafbfc;
+  color: #5c616c;
 }
 
 window.background.chromium entry.chromium {
   border-image: none;
   border: 1px solid #e6e6e6;
+  background-color: #fafbfc;
+  color: #5c616c;
 }
 
 window.background.chromium entry.chromium:focus {
   border-color: #5294e2;
 }
 
-window.background.chromium > textview.view {
+window.background.chromium > textview.view, window.background.chromium textview {
   background-color: #fafbfc;
   color: #5c616c;
 }

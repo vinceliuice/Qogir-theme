@@ -1,0 +1,298 @@
+// /*************************
+//  * VolumeMixer Extension *
+//  *************************/
+
+.masterslider.smaller {
+  .masterlabel,
+  .slider {
+    min-width: 0.6em;
+  }
+}
+
+// /*************************
+//  * OpenWeather Extension *
+//  *************************/
+
+.openweather {
+  // &-button,
+  // &-menu-button-container,
+  // &-button-box { }
+
+  &-provider {
+    // generic text buttons are allocated with y-expand-ed
+    padding: 0 12px;
+    font-weight: 500;
+
+    &:hover { @include button(hover); }
+    &:focus { @include button(focus); }
+    &:active { @include button(active); }
+    // &:insensitive { @include button(disabled); }
+  }
+
+  // &-current {
+  //   &-icon,
+  //   &-summary,
+  //   &-summarybox {
+  //     background: none;
+  //     color: $fg_color;
+  //   }
+  //
+  //   &-databox-values {
+  //     background: none;
+  //     color: $alt_fg_color;
+  //   }
+  //
+  //   &-databox-captions {
+  //     background: none;
+  //     color: $alt_fg_color;
+  //   }
+  // }
+  //
+  // &-forecast {
+  //   &-icon,
+  //   &-summary {
+  //     background: none;
+  //     color: $sec_fg_color;
+  //   }
+  //
+  //   &-day,
+  //   &-temperature {
+  //     background: none;
+  //     color: $alt_fg_color;
+  //   }
+  // }
+  //
+  // &-sunrise-icon,
+  // &-sunset-icon,
+  // &-build-icon { color: $sec_fg_color; }
+}
+
+// /**************************
+//  * Dash to Dock Extension *
+//  **************************/
+
+$hard_coded_alpha: 0.2;
+$alpha_override: 0.35;
+$icon_padding: 8px;
+$empty_shadow: 0 0 0 transparent;
+
+#dashtodockContainer {
+  background: transparent;
+
+  #dash,
+  &:overview #dash,
+  &.extended #dash,
+  &.extended:overview #dash {
+    padding: 0;
+    border-color: rgba(0,0,0,0.4);
+    transition-duration: $longer_duration;
+  }
+
+  @each $_dock, $_radius in (top, 0 0 3px 3px),
+                            (bottom, 3px 3px 0 0),
+                            (left, 0 3px 3px 0),
+                            (right, 3px 0 0 3px) {
+    &.#{$_dock} #dash,
+    &.#{$_dock}:overview #dash { border-radius: #{$_radius}; }
+
+    &.#{$_dock}.extended #dash,
+    &.#{$_dock}.extended:overview #dash { border-radius: 0; }
+  }
+
+  #dash { // default-mode
+    background-color: $dash_bg;
+    box-shadow: $empty_shadow;
+  }
+
+  &.opaque #dash { // solid-mode
+    background-color: $dash_bg;
+    // FIXME: enforce opaque background
+    box-shadow: inset 0 0 0 9999px $dash_bg;
+  }
+
+  &.transparent #dash { // translucent-mode
+    background-color: rgba($dash_bg, 0.75); // does not work
+    // FIXME: add lacked alpha via box-shadow property
+    box-shadow: inset 0 0 0 9999px rgba($dash_bg, 0.75);
+  }
+
+  &:overview #dash { // overview-mode #1
+    background-color: $dash_bg;
+    box-shadow: $empty_shadow;
+  }
+
+  &.opaque:overview,
+  &.transparent:overview { // overview-mode #2
+    #dash {
+      background-color: $dash_bg;
+      box-shadow: none !important;
+    }
+  }
+
+  &.extended:overview, // overview-mode #3
+  &.opaque.extended:overview,
+  &.transparent.extended:overview {
+    #dash {
+      background-color: $dash_bg;
+      box-shadow: $empty_shadow;
+    }
+  }
+
+  .app-well-app,
+  .show-apps {
+    .overview-icon {
+      padding: $icon_padding;
+      background-size: contain;
+    }
+  }
+
+  .dash-item-container { // actual parent container
+    background: transparent;
+
+    > StWidget { background-size: contain; }
+
+    .app-well-app-running-dot {
+      width: 6px;
+      height: 2px;
+      box-shadow: none;
+      margin: 2px;
+      border-radius: 0;
+      background-color: $selected_bg_color;
+    }
+
+    // @each $var in 1, 2, 3, 4 {
+    //   .running#{$var} .app-well-app-running-dot {
+    //     background-image: url("common-assets/dash/running#{$var}.svg");
+    //     box-shadow: none;
+    //   }
+    // }
+
+    > StWidget.focused .app-well-app-running-dot {
+      width: 18px;
+      height: 2px;
+      background-color: $selected_bg_color;
+    }
+  }
+
+  .number-overlay,
+  .notification-badge {
+    min-width: 1.4em;
+    min-height: 1.4em;
+    margin: 0; // unset margin/padding
+    padding: 0;
+    border-radius: 3px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .number-overlay {
+    background-color: $osd_bg_color;
+    color: $osd_fg_color;
+  }
+
+  .notification-badge {
+    background-color: $osd_bg_color;
+    color: $osd_fg_color;
+  }
+}
+
+@each $_dock in top, bottom, left, right {
+  #dashtodockContainer.#{$_dock},
+  #dashtodockContainer.extended.#{$_dock} {
+    // fill whole focused backgrounds
+    .dash-item-container > .app-well-app.focused {
+      .overview-icon {
+        background-color: rgba($selected_bg_color, 0.35);
+        border: 1px solid rgba($selected_bg_color, 0.5);
+      }
+
+      &:hover .overview-icon {
+        background-color: rgba($selected_bg_color, 0.5);
+        border: 1px solid $selected_bg_color;
+      }
+    }
+  }
+}
+
+// /***************************
+//  * Dash To Panel Extension *
+//  ***************************/
+
+@each $_position, $_line in (Top, 0 2px),
+                            (Bottom, 0 -2px) {
+  #panel.dashtopanelMainPanel.dashtopanel#{$_position} {
+    // FIXME: prevent weird double density
+    background-gradient-start: $panel_bg;
+    background-gradient-end: $panel_fg;
+
+    #panelLeft,
+    #panelCenter,
+    .panel-corner,
+    .panel-button {
+      &:hover { box-shadow: inset #{$_line} rgba($selected_bg_color, 0.5); }
+      &:active,
+      &:focus,
+      &:checked,
+      &:overview { box-shadow: inset #{$_line} $selected_bg_color; }
+    }
+
+    .app-well-app,
+    .show-apps {
+      &:focus,
+      &:hover,
+      &:active,
+      &:checked {
+        .overview-icon { // unset styling
+          border-radius: 0;
+          background-color: rgba($panel_fg, 0.1);
+          box-shadow: $empty_shadow;
+        }
+      }
+    }
+
+    #dashtopanelScrollview {
+      padding: 0;
+
+      .app-well-app { // stylesheet.css gets in our way
+        &:focus .dtp-container,
+        &:hover .dtp-container {
+          background-color: rgba($panel_fg, 0.1);
+          // box-shadow: inset 0 0 0 999px rgba($panel_fg, 0.1);
+        }
+
+        &:active .dtp-container {
+          background-color: rgba($panel_fg, 0.15);
+          // box-shadow: inset 0 0 0 999px rgba($panel_fg, 0.15);
+        }
+
+        // unfocused dot(s)
+        .app-well-app-running-dot { background-color: $alt_selected_bg_color; }
+        // focused dot(s)
+        &.focused .app-well-app-running-dot { background-color: $alt_selected_bg_color; }
+      }
+    }
+
+    StButton.show-apps {
+      &:focus,
+      &:hover {
+        background-color: rgba($panel_fg, 0.1);
+        box-shadow: $empty_shadow;
+      }
+
+      &:active {
+        background-color: rgba($panel_fg, 0.15);
+        box-shadow: inset #{$_line} $selected_bg_color;
+      }
+
+      &:checked {
+        background-color: rgba($panel_fg, 0.15);
+        box-shadow: inset #{$_line} $selected_bg_color;
+        &:hover { background-color: rgba($panel_fg, 0.2); }
+      }
+
+      &, &:focus, &:hover, &:active, &:checked {
+        .overview-icon { background-color: transparent; }
+      }
+    }
+  }
+}

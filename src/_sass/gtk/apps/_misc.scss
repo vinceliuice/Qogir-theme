@@ -405,12 +405,16 @@ window.background.chromium {
     border-width: 1px;
     border-style: solid;
     border-color: $chrome_borders_color;
+    background-color: $chrome_bg_color;
+    color: $chrome_fg_color;
   }
 
   entry.chromium {
     // overrides standard borders
     border-image: none;
     border: 1px solid $chrome_borders_color;
+    background-color: $chrome_bg_color;
+    color: $chrome_fg_color;
 
     &:focus {
       border-color: $selected_bg_color;
@@ -418,7 +422,7 @@ window.background.chromium {
   }
 
   // internal region of toolbar's entry widget
-  > textview.view {
+  > textview.view, textview {
     background-color: $chrome_bg_color;
     color: $chrome_fg_color;
   }

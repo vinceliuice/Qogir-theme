@@ -1923,7 +1923,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #dash {
   font-size: 1em;
-  color: #F6F6FB;
+  color: #D3DAE3;
   background-color: #32343D;
   border-color: rgba(0, 0, 0, 0.4);
   padding: 4px 0;
@@ -1992,11 +1992,25 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: 1px solid #2679db;
 }
 
+#dash .app-well-app:checked .overview-icon,
+.right #dash .app-well-app:checked .overview-icon,
+.bottom #dash .app-well-app:checked .overview-icon,
+.top #dash .app-well-app:checked .overview-icon {
+  box-shadow: none;
+  background-color: rgba(82, 148, 226, 0.5);
+  border: 1px solid rgba(82, 148, 226, 0.5);
+}
+
+#dash .app-well-app:checked:hover .overview-icon,
+.right #dash .app-well-app:checked:hover .overview-icon,
+.bottom #dash .app-well-app:checked:hover .overview-icon,
+.top #dash .app-well-app:checked:hover .overview-icon,
 #dash .app-well-app:active:hover .overview-icon,
 .right #dash .app-well-app:active:hover .overview-icon,
 .bottom #dash .app-well-app:active:hover .overview-icon,
 .top #dash .app-well-app:active:hover .overview-icon {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(82, 148, 226, 0.75);
+  border: 1px solid #5294e2;
 }
 
 #dash .app-well-app-running-dot {
@@ -2004,33 +2018,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   height: 2px;
   margin-bottom: 2px;
   background-color: #5294e2;
-}
-
-#dashtodockContainer .app-well-app-running-dot {
-  background: none;
-  width: 28px;
-  height: 4px;
-  box-shadow: none;
-}
-
-#dashtodockContainer .running1 .app-well-app-running-dot {
-  background-image: url("common-assets/dash/running1.svg");
-  box-shadow: none;
-}
-
-#dashtodockContainer .running2 .app-well-app-running-dot {
-  background-image: url("common-assets/dash/running2.svg");
-  box-shadow: none;
-}
-
-#dashtodockContainer .running3 .app-well-app-running-dot {
-  background-image: url("common-assets/dash/running3.svg");
-  box-shadow: none;
-}
-
-#dashtodockContainer .running4 .app-well-app-running-dot {
-  background-image: url("common-assets/dash/running4.svg");
-  box-shadow: none;
 }
 
 .show-apps .show-apps-icon {
@@ -2044,7 +2031,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .show-apps .overview-icon {
   background-color: transparent;
   border-radius: 2px;
-  border: 0px solid;
   color: rgba(207, 218, 231, 0.8);
 }
 
@@ -2097,14 +2083,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   transition-duration: 0ms;
   border: 1px solid rgba(211, 218, 227, 0.1);
   background-image: none;
-}
-
-.app-well-app-running-dot {
-  width: 20px;
-  height: 2px;
-  margin-bottom: 4px;
-  background-color: #5294e2;
-  box-shadow: none;
 }
 
 .search-provider-icon,
@@ -3019,4 +2997,383 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: 1px solid grey;
   border-radius: 2px;
   padding: 6px;
+}
+
+.masterslider.smaller .masterlabel,
+.masterslider.smaller .slider {
+  min-width: 0.6em;
+}
+
+.openweather-provider {
+  padding: 0 12px;
+  font-weight: 500;
+}
+
+.openweather-provider:hover {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #5c616c;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.openweather-provider:focus {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #5c616c;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.openweather-provider:active {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #ffffff;
+  background-color: #5294e2;
+  border: 1px solid #2679db;
+  box-shadow: inset 0 1px rgba(82, 148, 226, 0.05);
+}
+
+#dashtodockContainer {
+  background: transparent;
+}
+
+#dashtodockContainer #dash,
+#dashtodockContainer:overview #dash,
+#dashtodockContainer.extended #dash,
+#dashtodockContainer.extended:overview #dash {
+  padding: 0;
+  border-color: rgba(0, 0, 0, 0.4);
+  transition-duration: 270ms;
+}
+
+#dashtodockContainer.top #dash,
+#dashtodockContainer.top:overview #dash {
+  border-radius: 0 0 3px 3px;
+}
+
+#dashtodockContainer.top.extended #dash,
+#dashtodockContainer.top.extended:overview #dash {
+  border-radius: 0;
+}
+
+#dashtodockContainer.bottom #dash,
+#dashtodockContainer.bottom:overview #dash {
+  border-radius: 3px 3px 0 0;
+}
+
+#dashtodockContainer.bottom.extended #dash,
+#dashtodockContainer.bottom.extended:overview #dash {
+  border-radius: 0;
+}
+
+#dashtodockContainer.left #dash,
+#dashtodockContainer.left:overview #dash {
+  border-radius: 0 3px 3px 0;
+}
+
+#dashtodockContainer.left.extended #dash,
+#dashtodockContainer.left.extended:overview #dash {
+  border-radius: 0;
+}
+
+#dashtodockContainer.right #dash,
+#dashtodockContainer.right:overview #dash {
+  border-radius: 3px 0 0 3px;
+}
+
+#dashtodockContainer.right.extended #dash,
+#dashtodockContainer.right.extended:overview #dash {
+  border-radius: 0;
+}
+
+#dashtodockContainer #dash {
+  background-color: #32343D;
+  box-shadow: 0 0 0 transparent;
+}
+
+#dashtodockContainer.opaque #dash {
+  background-color: #32343D;
+  box-shadow: inset 0 0 0 9999px #32343D;
+}
+
+#dashtodockContainer.transparent #dash {
+  background-color: rgba(50, 52, 61, 0.75);
+  box-shadow: inset 0 0 0 9999px rgba(50, 52, 61, 0.75);
+}
+
+#dashtodockContainer:overview #dash {
+  background-color: #32343D;
+  box-shadow: 0 0 0 transparent;
+}
+
+#dashtodockContainer.opaque:overview #dash, #dashtodockContainer.transparent:overview #dash {
+  background-color: #32343D;
+  box-shadow: none !important;
+}
+
+#dashtodockContainer.extended:overview #dash, #dashtodockContainer.opaque.extended:overview #dash, #dashtodockContainer.transparent.extended:overview #dash {
+  background-color: #32343D;
+  box-shadow: 0 0 0 transparent;
+}
+
+#dashtodockContainer .app-well-app .overview-icon,
+#dashtodockContainer .show-apps .overview-icon {
+  padding: 8px;
+  background-size: contain;
+}
+
+#dashtodockContainer .dash-item-container {
+  background: transparent;
+}
+
+#dashtodockContainer .dash-item-container > StWidget {
+  background-size: contain;
+}
+
+#dashtodockContainer .dash-item-container .app-well-app-running-dot {
+  width: 6px;
+  height: 2px;
+  box-shadow: none;
+  margin: 2px;
+  border-radius: 0;
+  background-color: #5294e2;
+}
+
+#dashtodockContainer .dash-item-container > StWidget.focused .app-well-app-running-dot {
+  width: 18px;
+  height: 2px;
+  background-color: #5294e2;
+}
+
+#dashtodockContainer .number-overlay,
+#dashtodockContainer .notification-badge {
+  min-width: 1.4em;
+  min-height: 1.4em;
+  margin: 0;
+  padding: 0;
+  border-radius: 3px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#dashtodockContainer .number-overlay {
+  background-color: #282A33;
+  color: #D3DAE3;
+}
+
+#dashtodockContainer .notification-badge {
+  background-color: #282A33;
+  color: #D3DAE3;
+}
+
+#dashtodockContainer.top .dash-item-container > .app-well-app.focused .overview-icon,
+#dashtodockContainer.extended.top .dash-item-container > .app-well-app.focused .overview-icon {
+  background-color: rgba(82, 148, 226, 0.35);
+  border: 1px solid rgba(82, 148, 226, 0.5);
+}
+
+#dashtodockContainer.top .dash-item-container > .app-well-app.focused:hover .overview-icon,
+#dashtodockContainer.extended.top .dash-item-container > .app-well-app.focused:hover .overview-icon {
+  background-color: rgba(82, 148, 226, 0.5);
+  border: 1px solid #5294e2;
+}
+
+#dashtodockContainer.bottom .dash-item-container > .app-well-app.focused .overview-icon,
+#dashtodockContainer.extended.bottom .dash-item-container > .app-well-app.focused .overview-icon {
+  background-color: rgba(82, 148, 226, 0.35);
+  border: 1px solid rgba(82, 148, 226, 0.5);
+}
+
+#dashtodockContainer.bottom .dash-item-container > .app-well-app.focused:hover .overview-icon,
+#dashtodockContainer.extended.bottom .dash-item-container > .app-well-app.focused:hover .overview-icon {
+  background-color: rgba(82, 148, 226, 0.5);
+  border: 1px solid #5294e2;
+}
+
+#dashtodockContainer.left .dash-item-container > .app-well-app.focused .overview-icon,
+#dashtodockContainer.extended.left .dash-item-container > .app-well-app.focused .overview-icon {
+  background-color: rgba(82, 148, 226, 0.35);
+  border: 1px solid rgba(82, 148, 226, 0.5);
+}
+
+#dashtodockContainer.left .dash-item-container > .app-well-app.focused:hover .overview-icon,
+#dashtodockContainer.extended.left .dash-item-container > .app-well-app.focused:hover .overview-icon {
+  background-color: rgba(82, 148, 226, 0.5);
+  border: 1px solid #5294e2;
+}
+
+#dashtodockContainer.right .dash-item-container > .app-well-app.focused .overview-icon,
+#dashtodockContainer.extended.right .dash-item-container > .app-well-app.focused .overview-icon {
+  background-color: rgba(82, 148, 226, 0.35);
+  border: 1px solid rgba(82, 148, 226, 0.5);
+}
+
+#dashtodockContainer.right .dash-item-container > .app-well-app.focused:hover .overview-icon,
+#dashtodockContainer.extended.right .dash-item-container > .app-well-app.focused:hover .overview-icon {
+  background-color: rgba(82, 148, 226, 0.5);
+  border: 1px solid #5294e2;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop {
+  background-gradient-start: #21232b;
+  background-gradient-end: #D3DAE3;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop #panelLeft:hover,
+#panel.dashtopanelMainPanel.dashtopanelTop #panelCenter:hover,
+#panel.dashtopanelMainPanel.dashtopanelTop .panel-corner:hover,
+#panel.dashtopanelMainPanel.dashtopanelTop .panel-button:hover {
+  box-shadow: inset 0 2px rgba(82, 148, 226, 0.5);
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop #panelLeft:active, #panel.dashtopanelMainPanel.dashtopanelTop #panelLeft:focus, #panel.dashtopanelMainPanel.dashtopanelTop #panelLeft:checked, #panel.dashtopanelMainPanel.dashtopanelTop #panelLeft:overview,
+#panel.dashtopanelMainPanel.dashtopanelTop #panelCenter:active,
+#panel.dashtopanelMainPanel.dashtopanelTop #panelCenter:focus,
+#panel.dashtopanelMainPanel.dashtopanelTop #panelCenter:checked,
+#panel.dashtopanelMainPanel.dashtopanelTop #panelCenter:overview,
+#panel.dashtopanelMainPanel.dashtopanelTop .panel-corner:active,
+#panel.dashtopanelMainPanel.dashtopanelTop .panel-corner:focus,
+#panel.dashtopanelMainPanel.dashtopanelTop .panel-corner:checked,
+#panel.dashtopanelMainPanel.dashtopanelTop .panel-corner:overview,
+#panel.dashtopanelMainPanel.dashtopanelTop .panel-button:active,
+#panel.dashtopanelMainPanel.dashtopanelTop .panel-button:focus,
+#panel.dashtopanelMainPanel.dashtopanelTop .panel-button:checked,
+#panel.dashtopanelMainPanel.dashtopanelTop .panel-button:overview {
+  box-shadow: inset 0 2px #5294e2;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop .app-well-app:focus .overview-icon, #panel.dashtopanelMainPanel.dashtopanelTop .app-well-app:hover .overview-icon, #panel.dashtopanelMainPanel.dashtopanelTop .app-well-app:active .overview-icon, #panel.dashtopanelMainPanel.dashtopanelTop .app-well-app:checked .overview-icon,
+#panel.dashtopanelMainPanel.dashtopanelTop .show-apps:focus .overview-icon,
+#panel.dashtopanelMainPanel.dashtopanelTop .show-apps:hover .overview-icon,
+#panel.dashtopanelMainPanel.dashtopanelTop .show-apps:active .overview-icon,
+#panel.dashtopanelMainPanel.dashtopanelTop .show-apps:checked .overview-icon {
+  border-radius: 0;
+  background-color: rgba(211, 218, 227, 0.1);
+  box-shadow: 0 0 0 transparent;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop #dashtopanelScrollview {
+  padding: 0;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop #dashtopanelScrollview .app-well-app:focus .dtp-container,
+#panel.dashtopanelMainPanel.dashtopanelTop #dashtopanelScrollview .app-well-app:hover .dtp-container {
+  background-color: rgba(211, 218, 227, 0.1);
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop #dashtopanelScrollview .app-well-app:active .dtp-container {
+  background-color: rgba(211, 218, 227, 0.15);
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop #dashtopanelScrollview .app-well-app .app-well-app-running-dot {
+  background-color: #68a2e6;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop #dashtopanelScrollview .app-well-app.focused .app-well-app-running-dot {
+  background-color: #68a2e6;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop StButton.show-apps:focus, #panel.dashtopanelMainPanel.dashtopanelTop StButton.show-apps:hover {
+  background-color: rgba(211, 218, 227, 0.1);
+  box-shadow: 0 0 0 transparent;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop StButton.show-apps:active {
+  background-color: rgba(211, 218, 227, 0.15);
+  box-shadow: inset 0 2px #5294e2;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop StButton.show-apps:checked {
+  background-color: rgba(211, 218, 227, 0.15);
+  box-shadow: inset 0 2px #5294e2;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop StButton.show-apps:checked:hover {
+  background-color: rgba(211, 218, 227, 0.2);
+}
+
+#panel.dashtopanelMainPanel.dashtopanelTop StButton.show-apps .overview-icon, #panel.dashtopanelMainPanel.dashtopanelTop StButton.show-apps:focus .overview-icon, #panel.dashtopanelMainPanel.dashtopanelTop StButton.show-apps:hover .overview-icon, #panel.dashtopanelMainPanel.dashtopanelTop StButton.show-apps:active .overview-icon, #panel.dashtopanelMainPanel.dashtopanelTop StButton.show-apps:checked .overview-icon {
+  background-color: transparent;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom {
+  background-gradient-start: #21232b;
+  background-gradient-end: #D3DAE3;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom #panelLeft:hover,
+#panel.dashtopanelMainPanel.dashtopanelBottom #panelCenter:hover,
+#panel.dashtopanelMainPanel.dashtopanelBottom .panel-corner:hover,
+#panel.dashtopanelMainPanel.dashtopanelBottom .panel-button:hover {
+  box-shadow: inset 0 -2px rgba(82, 148, 226, 0.5);
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom #panelLeft:active, #panel.dashtopanelMainPanel.dashtopanelBottom #panelLeft:focus, #panel.dashtopanelMainPanel.dashtopanelBottom #panelLeft:checked, #panel.dashtopanelMainPanel.dashtopanelBottom #panelLeft:overview,
+#panel.dashtopanelMainPanel.dashtopanelBottom #panelCenter:active,
+#panel.dashtopanelMainPanel.dashtopanelBottom #panelCenter:focus,
+#panel.dashtopanelMainPanel.dashtopanelBottom #panelCenter:checked,
+#panel.dashtopanelMainPanel.dashtopanelBottom #panelCenter:overview,
+#panel.dashtopanelMainPanel.dashtopanelBottom .panel-corner:active,
+#panel.dashtopanelMainPanel.dashtopanelBottom .panel-corner:focus,
+#panel.dashtopanelMainPanel.dashtopanelBottom .panel-corner:checked,
+#panel.dashtopanelMainPanel.dashtopanelBottom .panel-corner:overview,
+#panel.dashtopanelMainPanel.dashtopanelBottom .panel-button:active,
+#panel.dashtopanelMainPanel.dashtopanelBottom .panel-button:focus,
+#panel.dashtopanelMainPanel.dashtopanelBottom .panel-button:checked,
+#panel.dashtopanelMainPanel.dashtopanelBottom .panel-button:overview {
+  box-shadow: inset 0 -2px #5294e2;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom .app-well-app:focus .overview-icon, #panel.dashtopanelMainPanel.dashtopanelBottom .app-well-app:hover .overview-icon, #panel.dashtopanelMainPanel.dashtopanelBottom .app-well-app:active .overview-icon, #panel.dashtopanelMainPanel.dashtopanelBottom .app-well-app:checked .overview-icon,
+#panel.dashtopanelMainPanel.dashtopanelBottom .show-apps:focus .overview-icon,
+#panel.dashtopanelMainPanel.dashtopanelBottom .show-apps:hover .overview-icon,
+#panel.dashtopanelMainPanel.dashtopanelBottom .show-apps:active .overview-icon,
+#panel.dashtopanelMainPanel.dashtopanelBottom .show-apps:checked .overview-icon {
+  border-radius: 0;
+  background-color: rgba(211, 218, 227, 0.1);
+  box-shadow: 0 0 0 transparent;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom #dashtopanelScrollview {
+  padding: 0;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom #dashtopanelScrollview .app-well-app:focus .dtp-container,
+#panel.dashtopanelMainPanel.dashtopanelBottom #dashtopanelScrollview .app-well-app:hover .dtp-container {
+  background-color: rgba(211, 218, 227, 0.1);
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom #dashtopanelScrollview .app-well-app:active .dtp-container {
+  background-color: rgba(211, 218, 227, 0.15);
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom #dashtopanelScrollview .app-well-app .app-well-app-running-dot {
+  background-color: #68a2e6;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom #dashtopanelScrollview .app-well-app.focused .app-well-app-running-dot {
+  background-color: #68a2e6;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom StButton.show-apps:focus, #panel.dashtopanelMainPanel.dashtopanelBottom StButton.show-apps:hover {
+  background-color: rgba(211, 218, 227, 0.1);
+  box-shadow: 0 0 0 transparent;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom StButton.show-apps:active {
+  background-color: rgba(211, 218, 227, 0.15);
+  box-shadow: inset 0 -2px #5294e2;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom StButton.show-apps:checked {
+  background-color: rgba(211, 218, 227, 0.15);
+  box-shadow: inset 0 -2px #5294e2;
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom StButton.show-apps:checked:hover {
+  background-color: rgba(211, 218, 227, 0.2);
+}
+
+#panel.dashtopanelMainPanel.dashtopanelBottom StButton.show-apps .overview-icon, #panel.dashtopanelMainPanel.dashtopanelBottom StButton.show-apps:focus .overview-icon, #panel.dashtopanelMainPanel.dashtopanelBottom StButton.show-apps:hover .overview-icon, #panel.dashtopanelMainPanel.dashtopanelBottom StButton.show-apps:active .overview-icon, #panel.dashtopanelMainPanel.dashtopanelBottom StButton.show-apps:checked .overview-icon {
+  background-color: transparent;
 }
