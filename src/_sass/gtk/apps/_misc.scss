@@ -252,6 +252,12 @@ window.background:not(.csd) {
   }
 
   > menu > menuitem > label:disabled { color: $insensitive_fg_color; }
+
+  > window > menu {
+    menuitem {
+      transition: none; // Fixed plank menu background issue
+    }
+  }
 }
 
 //
@@ -311,7 +317,7 @@ window.background:not(.csd) {
     > separator {
       padding: 0;
       border: none;
-      background-color: $_menu_bg;
+      background-color: $borders_color;
     }
   }
 

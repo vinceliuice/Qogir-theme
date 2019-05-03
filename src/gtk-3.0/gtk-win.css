@@ -6347,6 +6347,10 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
   color: rgba(92, 97, 108, 0.55);
 }
 
+window.background:not(.csd) > window > menu menuitem {
+  transition: none;
+}
+
 #MozillaGtkWidget.background {
   background-color: #fafbfc;
 }
@@ -6397,7 +6401,7 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
 #MozillaGtkWidget.background > window.background > menu > menu > separator {
   padding: 0;
   border: none;
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 #MozillaGtkWidget.background > widget border {
@@ -7448,6 +7452,14 @@ popover.background.places-menu row {
 .budgie-panel menubar {
   border: none;
   box-shadow: none;
+}
+
+.budgie-panel menubar > menuitem.budgie-menubar {
+  border: none;
+}
+
+.budgie-panel menubar > menuitem.budgie-menubar:hover {
+  background-color: rgba(211, 218, 227, 0.1);
 }
 
 .budgie-panel .alert {

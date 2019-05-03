@@ -26,7 +26,7 @@
 	<distance name="right_titlebar_edge" value="0" />
 	<distance name="title_vertical_pad" value="3" />
 	<aspect_ratio name="button" value="1.0" />
-	<border name="title_border" left="0" right="0" top="0" bottom="6" />
+	<border name="title_border" left="0" right="0" top="6" bottom="6" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0" />
 </frame_geometry>
 
@@ -38,7 +38,7 @@
 	<distance name="left_titlebar_edge" value="0"/>
 	<distance name="right_titlebar_edge" value="0"/>
 	<distance name="title_vertical_pad" value="3" />
-	<border name="title_border" left="0" right="0" top="0" bottom="6" />
+	<border name="title_border" left="0" right="0" top="6" bottom="6" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0" />
 </frame_geometry>
 
@@ -62,7 +62,7 @@
 <!-- Small window -->
 <frame_geometry name="small" title_scale="small" parent="normal" rounded_top_left="false" rounded_top_right="false">
 	<distance name="title_vertical_pad" value="0" />
-	<border name="title_border" left="0" right="0" top="0" bottom="6" />
+	<border name="title_border" left="0" right="0" top="6" bottom="6" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0"  />
 </frame_geometry>
 
@@ -80,7 +80,7 @@
 	<distance name="left_titlebar_edge" value="0" />
 	<distance name="right_titlebar_edge" value="0" />
 	<distance name="title_vertical_pad" value="3" />
-	<border name="title_border" left="0" right="0" top="0" bottom="6" />
+	<border name="title_border" left="0" right="0" top="6" bottom="6" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0" />
 </frame_geometry>
 
@@ -90,7 +90,7 @@
 	<distance name="right_width" value="0" />
 	<distance name="bottom_height" value="0" />
 	<distance name="title_vertical_pad" value="0" />
-	<border name="title_border" left="0" right="0" top="0" bottom="0" />
+	<border name="title_border" left="0" right="0" top="6" bottom="6" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0"/>
 </frame_geometry>
 
@@ -100,7 +100,7 @@
 	<distance name="right_width" value="0" />
 	<distance name="bottom_height" value="0" />
 	<distance name="title_vertical_pad" value="0" />
-	<border name="title_border" left="0" right="0" top="0" bottom="0" />
+	<border name="title_border" left="0" right="0" top="6" bottom="6" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0" />
 </frame_geometry>
 
@@ -112,7 +112,7 @@
 	<distance name="left_titlebar_edge" value="0" />
 	<distance name="right_titlebar_edge" value="0" />
 	<distance name="title_vertical_pad" value="3" />
-	<border name="title_border" left="0" right="0" top="0" bottom="6" />
+	<border name="title_border" left="0" right="0" top="6" bottom="6" />
 	<border name="button_border" left="0" right="0" top="0" bottom="0" />
 </frame_geometry>
 

@@ -134,14 +134,13 @@
     separator { margin: 4px 0; background-color: $borders_color; }
 
     // top-row (user-name and avatar)
-//    > frame.container > box.vertical row.activatable:first-child {
-//
-//      .indicator-item {
-//        border: 1px solid $sec_selected_bg_color;
-//        background-color: $selected_bg_color;
-//        &, arrow { @extend %selected_items; }
-//      }
-//    }
+    // > frame.container > box.vertical row.activatable:first-child {
+    //   .indicator-item {
+    //     border: 1px solid $sec_selected_bg_color;
+    //     background-color: $selected_bg_color;
+    //     &, arrow { @extend %selected_items; }
+    //   }
+    // }
   }
 
   &.sound-popover {
@@ -400,6 +399,14 @@ popover.background.places-menu {
   menubar { // remove underline of menubar on panel
     border: none;
     box-shadow: none;
+
+    > menuitem {
+      &.budgie-menubar {
+        border: none;
+
+        &:hover { background-color: rgba($panel_fg, 0.10); }
+      }
+    }
   }
 
   // used to indicate unread notifications
