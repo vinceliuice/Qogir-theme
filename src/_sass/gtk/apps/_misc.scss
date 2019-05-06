@@ -310,7 +310,7 @@ window.background:not(.csd) {
 
   > window.background > menu,
   > window.background > menu > menu {
-    // border: none; // hide ugly double borders
+    border: none; // hide ugly double borders
     background-color: $base_color;
 
     // revert to standard separators

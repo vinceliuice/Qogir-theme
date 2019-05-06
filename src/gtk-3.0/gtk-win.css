@@ -6394,6 +6394,7 @@ window.background:not(.csd) > window > menu menuitem {
 
 #MozillaGtkWidget.background > window.background > menu,
 #MozillaGtkWidget.background > window.background > menu > menu {
+  border: none;
   background-color: #ffffff;
 }
 
