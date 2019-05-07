@@ -230,7 +230,7 @@ StScrollBar {
   background-color: transparentize($bg_color, 1);
 	border-radius: 0;
   border: none;
-  border-image: url("assets/misc/modal.svg") 9 9 9 67;
+  border-image: url("assets/misc/modal.svg") 18 18 18 67;
   padding: 0 5px 6px 5px;
 	box-shadow: none;
 
@@ -629,14 +629,14 @@ StScrollBar {
 .popup-menu {
   min-width: 15em;
   color: $fg_color;
-  border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  border-image: url("assets/menu/menu.svg") 18 18 18 18;
   box-shadow: none;
 
   .popup-menu-arrow { } //defined globally in the TOP BAR
   .popup-sub-menu {
     background: none;
     box-shadow: none;
-    border-image: url("assets/menu/submenu.svg") 9 9 9 9;
+    border-image: url("assets/menu/submenu.svg") 18 18 2 2;
   }
 
   .popup-menu-content { padding: 1em 0em 1em 0em; }
@@ -650,13 +650,13 @@ StScrollBar {
       font-weight: normal;
       background: none;
       box-shadow: none;
-      border-image: url("assets/menu/submenu-open.svg") 9 9 9 9;
+      border-image: url("assets/menu/submenu-open.svg") 18 18 2 2;
     }
 
     &:active, &.selected {
       color: $selected_fg_color;
       background-color: transparent;
-      border-image: url("common-assets/menu/menu-hover.svg") 9 9 1 1;
+      border-image: url("common-assets/menu/menu-hover.svg") 18 18 2 2;
     }
 
     &:insensitive {
@@ -670,6 +670,7 @@ StScrollBar {
 
     &:insensitive { color: $insensitive_fg_color; }
   }
+
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
   &.panel-menu {
     -boxpointer-gap: 0px;
@@ -742,7 +743,7 @@ StScrollBar {
   background: none;
   border: none;
   border-radius: 5px;
-  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  border-image: url("common-assets/misc/osd.svg") 18 18 18 18;
   box-shadow: none;
 
   .osd-monitor-label { font-size: 3em; }
@@ -775,7 +776,7 @@ StScrollBar {
   background: none;
   border: none;
   border-radius: 5px;
-  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  border-image: url("common-assets/misc/osd.svg") 18 18 18 18;
   box-shadow: none;
   padding: 12px;
 }
@@ -791,7 +792,7 @@ StScrollBar {
 .switcher-list {
   background: none;
   border: none;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+  border-image: url("common-assets/misc/bg.svg") 18 18 18 18;
   border-radius: 3px;
   padding: 20px;
   box-shadow: none;
@@ -865,7 +866,7 @@ StScrollBar {
   &-group { padding: 12px; }
 
   &-container {
-    border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+    border-image: url("common-assets/misc/bg.svg") 18 18 18 18;
     border-radius: 3px;
     padding: 20px;
     padding-bottom: 24px;
@@ -1391,16 +1392,16 @@ StScrollBar {
 .message {
   padding: 4px;
   color: $fg_color;
-  border-image: url("assets/misc/message.svg") 9 9 9 9;
+  border-image: url("assets/misc/message.svg") 18 18 18 18;
 
   &:hover, &:focus {
     color: $fg_color;
-    border-image: url("assets/misc/message-hover.svg") 9 9 9 9;
+    border-image: url("assets/misc/message-hover.svg") 18 18 18 18;
   }
 
   &:active {
     color: $selected_fg_color;
-    border-image: url("assets/misc/message-active.svg") 9 9 9 9;
+    border-image: url("assets/misc/message-active.svg") 18 18 18 18;
   }
 
   &-icon-bin {
@@ -2032,13 +2033,13 @@ StScrollBar {
 .workspace-thumbnails,
 .workspace-thumbnails-left:rtl {
   padding-right: 7px;
-  border-image: url("common-assets/dash/dash-right.svg") 9 9 9 9;
+  border-image: url("common-assets/dash/dash-right.svg") 18 18 18 18;
 }
 
 .workspace-thumbnails:rtl,
 .workspace-thumbnails-left {
   padding-left: 7px;
-  border-image: url("common-assets/dash/dash-left.svg") 9 9 9 9;
+  border-image: url("common-assets/dash/dash-left.svg") 18 18 18 18;
 }
 
 .workspace-thumbnail-indicator {
@@ -2077,7 +2078,7 @@ StScrollBar {
   color: $fg_color;
   background-color: transparent;
   border: 1px solid transparent;
-  border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  border-image: url("assets/menu/menu.svg") 18 18 18 18;
   box-shadow: none;
 
   .notification-icon { padding: 5px; }
@@ -2511,7 +2512,7 @@ $legacy_icon_size: 24px;
   padding: 8px 8px 10px 8px;
   background-color: transparentize(black, 0.3);
   border: 1px solid black;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+  border-image: url("common-assets/misc/bg.svg") 18 18 18 18;
   border-radius: 2px;
   color: white;
 

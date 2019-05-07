@@ -247,7 +247,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(250, 251, 252, 0);
   border-radius: 0;
   border: none;
-  border-image: url("assets/misc/modal.svg") 9 9 9 67;
+  border-image: url("assets/misc/modal.svg") 18 18 18 67;
   padding: 0 5px 6px 5px;
   box-shadow: none;
 }
@@ -665,14 +665,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu {
   min-width: 15em;
   color: #5c616c;
-  border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  border-image: url("assets/menu/menu.svg") 18 18 18 18;
   box-shadow: none;
 }
 
 .popup-menu .popup-sub-menu {
   background: none;
   box-shadow: none;
-  border-image: url("assets/menu/submenu.svg") 9 9 9 9;
+  border-image: url("assets/menu/submenu.svg") 18 18 2 2;
 }
 
 .popup-menu .popup-menu-content {
@@ -695,13 +695,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: normal;
   background: none;
   box-shadow: none;
-  border-image: url("assets/menu/submenu-open.svg") 9 9 9 9;
+  border-image: url("assets/menu/submenu-open.svg") 18 18 2 2;
 }
 
 .popup-menu .popup-menu-item:active, .popup-menu .popup-menu-item.selected {
   color: #ffffff;
   background-color: transparent;
-  border-image: url("common-assets/menu/menu-hover.svg") 9 9 1 1;
+  border-image: url("common-assets/menu/menu-hover.svg") 18 18 2 2;
 }
 
 .popup-menu .popup-menu-item:insensitive {
@@ -779,7 +779,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background: none;
   border: none;
   border-radius: 5px;
-  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  border-image: url("common-assets/misc/osd.svg") 18 18 18 18;
   box-shadow: none;
 }
 
@@ -810,7 +810,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background: none;
   border: none;
   border-radius: 5px;
-  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  border-image: url("common-assets/misc/osd.svg") 18 18 18 18;
   box-shadow: none;
   padding: 12px;
 }
@@ -823,7 +823,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .switcher-list {
   background: none;
   border: none;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+  border-image: url("common-assets/misc/bg.svg") 18 18 18 18;
   border-radius: 3px;
   padding: 20px;
   box-shadow: none;
@@ -896,7 +896,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .workspace-switcher-container {
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+  border-image: url("common-assets/misc/bg.svg") 18 18 18 18;
   border-radius: 3px;
   padding: 20px;
   padding-bottom: 24px;
@@ -1498,17 +1498,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message {
   padding: 4px;
   color: #5c616c;
-  border-image: url("assets/misc/message.svg") 9 9 9 9;
+  border-image: url("assets/misc/message.svg") 18 18 18 18;
 }
 
 .message:hover, .message:focus {
   color: #5c616c;
-  border-image: url("assets/misc/message-hover.svg") 9 9 9 9;
+  border-image: url("assets/misc/message-hover.svg") 18 18 18 18;
 }
 
 .message:active {
   color: #ffffff;
-  border-image: url("assets/misc/message-active.svg") 9 9 9 9;
+  border-image: url("assets/misc/message-active.svg") 18 18 18 18;
 }
 
 .message-icon-bin {
@@ -2188,13 +2188,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .workspace-thumbnails,
 .workspace-thumbnails-left:rtl {
   padding-right: 7px;
-  border-image: url("common-assets/dash/dash-right.svg") 9 9 9 9;
+  border-image: url("common-assets/dash/dash-right.svg") 18 18 18 18;
 }
 
 .workspace-thumbnails:rtl,
 .workspace-thumbnails-left {
   padding-left: 7px;
-  border-image: url("common-assets/dash/dash-left.svg") 9 9 9 9;
+  border-image: url("common-assets/dash/dash-left.svg") 18 18 18 18;
 }
 
 .workspace-thumbnail-indicator {
@@ -2229,7 +2229,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #5c616c;
   background-color: transparent;
   border: 1px solid transparent;
-  border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  border-image: url("assets/menu/menu.svg") 18 18 18 18;
   box-shadow: none;
 }
 
@@ -2876,7 +2876,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 8px 8px 10px 8px;
   background-color: rgba(0, 0, 0, 0.7);
   border: 1px solid black;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+  border-image: url("common-assets/misc/bg.svg") 18 18 18 18;
   border-radius: 2px;
   color: white;
 }
