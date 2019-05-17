@@ -6114,6 +6114,11 @@ stack > overlay > frame > scrolledwindow.frame {
   border-width: 0;
 }
 
+.nemo-window .nemo-places-sidebar .places-treeview {
+  -NemoPlacesTreeView-disk-full-bg-color: #494c59;
+  -NemoPlacesTreeView-disk-full-fg-color: #3c86de;
+}
+
 .nemo-window notebook {
   background-color: #282A33;
 }

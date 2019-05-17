@@ -3094,6 +3094,7 @@ stacksidebar {
       padding-left: $cont_padding;
       padding-right: $cont_padding;
     }
+
     &.needs-attention > label {
       @extend %needs_attention;
       background-size: $cont_padding $cont_padding, 0 0;

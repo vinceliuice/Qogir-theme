@@ -10,6 +10,9 @@
 
     .places-treeview {
       @extend row.activatable;
+
+      -NemoPlacesTreeView-disk-full-bg-color: $solid_borders_color;
+      -NemoPlacesTreeView-disk-full-fg-color: darken($progress_color, 5%);
     }
   }
 
