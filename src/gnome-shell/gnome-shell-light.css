@@ -889,6 +889,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0px;
   padding: 0px;
   spacing: 8px;
+  background: none;
+  box-shadow: none;
 }
 
 .workspace-switcher-group {
@@ -900,6 +902,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 3px;
   padding: 20px;
   padding-bottom: 24px;
+  background: none;
+  box-shadow: none;
 }
 
 .ws-switcher-active-up, .ws-switcher-active-down {
@@ -1499,6 +1503,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 4px;
   color: #5c616c;
   border-image: url("assets/misc/message.svg") 18 18 18 18;
+  background: none;
+  box-shadow: none;
 }
 
 .message:hover, .message:focus {
@@ -2189,12 +2195,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .workspace-thumbnails-left:rtl {
   padding-right: 7px;
   border-image: url("common-assets/dash/dash-right.svg") 18 18 18 18;
+  background: none;
+  box-shadow: none;
 }
 
 .workspace-thumbnails:rtl,
 .workspace-thumbnails-left {
   padding-left: 7px;
   border-image: url("common-assets/dash/dash-left.svg") 18 18 18 18;
+  background: none;
+  box-shadow: none;
 }
 
 .workspace-thumbnail-indicator {
