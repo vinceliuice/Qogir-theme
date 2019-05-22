@@ -34,6 +34,22 @@ ArchLinux:
 Other:
 Search for the engines in your distributions repository or install the engines from source.
 
+## Firefox issues
+
+### Fix entries issues of dark version on Firefox
+
+Use "light theme" for webs on Firefox.
+
+1. Go to `about:config`,
+
+2. create a pref called `widget.content.gtk-theme-override` of type String,
+
+3. and give it a value of `Qogir-light` (or `Qogir-win-light` ). This will fix it.
+
+### Fix win titlebutton issues on firfox
+
+add the `src/other/firefox/userChrome.css` into `~/.mozilla/firefox/{your_profile}/chrome/`
+
 ## Install
 
 Usage:  ./Install  [OPTIONS...]

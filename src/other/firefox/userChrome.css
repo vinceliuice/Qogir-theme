@@ -1,0 +1,16 @@
+#TabsToolbar {
+  max-height: 30px !important;
+  min-height: 30px !important;
+}
+
+.tabbrowser-tab {
+  min-height: 30px;
+  max-height: 30px;
+  vertical-align: top !important;
+  -moz-box-sizing: border-box !important;
+  border: none !important;
+}
+
+.titlebar-buttonbox-container {
+  margin-right: -3px !important;
+}
