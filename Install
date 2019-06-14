@@ -111,19 +111,24 @@ install_package() {
      echo sassc needs to be installed to generate the css.
      if has_command zypper; then
 
-      sudo zypper in sassc
+      echo "Please run: sudo zypper in sassc"
+      exit 1
         elif has_command apt-get; then
 
-      sudo apt-get install sassc
+      echo "Please run: sudo apt-get install sassc"
+      exit 1
         elif has_command dnf; then
 
-      sudo dnf install sassc
+      echo "Please run: sudo dnf install sassc"
+      exit 1
         elif has_command yum; then
 
-      sudo yum install sassc
+      echo "Please run: sudo yum install sassc"
+      exit 1
         elif has_command pacman; then
 
-      sudo pacman -S --noconfirm sassc
+      echo "Please run: sudo pacman -S --noconfirm sassc"
+      exit 1
       fi
   fi
 }
