@@ -3647,7 +3647,7 @@ scale slider:active {
 }
 
 scale slider:disabled {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: rgba(0, 0, 0, 0.15);
 }
 
@@ -6317,14 +6317,14 @@ window.background.chromium headerbar.titlebar button.toggle:checked, window.back
 window.background.chromium button {
   border-width: 1px;
   border-style: solid;
-  border-color: #e6e6e6;
+  border-color: #e6e5e5;
   background-color: #fafbfc;
   color: #5c616c;
 }
 
 window.background.chromium entry.chromium {
   border-image: none;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #e6e5e5;
   background-color: #fafbfc;
   color: #5c616c;
 }
@@ -6345,7 +6345,7 @@ window.background.chromium > menubar {
 window.background.chromium > menu {
   color: #5c616c;
   background-color: #ffffff;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #e6e5e5;
 }
 
 window.background.chromium > menu > separator, window.background.chromium > menu .separator {
@@ -9884,68 +9884,53 @@ hdyleaflet > separator.sidebar {
 @define-color budgie_tasklist_indicator_color_active #5294e2;
 @define-color budgie_tasklist_indicator_color_active_window #3b608e;
 @define-color budgie_tasklist_indicator_color_attention #F27835;
-
-/* 
- * Color Palette Definitions for compatibility with Granite.
- */
-/* Strawberry */
 @define-color STRAWBERRY_100 #FF9262;
 @define-color STRAWBERRY_300 #FF793E;
 @define-color STRAWBERRY_500 #F15D22;
 @define-color STRAWBERRY_700 #CF3B00;
 @define-color STRAWBERRY_900 #AC1800;
-/* Orange */
 @define-color ORANGE_100 #FFDB91;
 @define-color ORANGE_300 #FFCA40;
 @define-color ORANGE_500 #FAA41A;
 @define-color ORANGE_700 #DE8800;
 @define-color ORANGE_900 #C26C00;
-/* Banana */
 @define-color BANANA_100 #FFFFA8;
 @define-color BANANA_300 #FFFA7D;
 @define-color BANANA_500 #FFCE51;
 @define-color BANANA_700 #D1A023;
 @define-color BANANA_900 #A27100;
-/* Lime */
 @define-color LIME_100 #A2F3BE;
 @define-color LIME_300 #8ADBA6;
 @define-color LIME_500 #73C48F;
 @define-color LIME_700 #479863;
 @define-color LIME_900 #1C6D38;
-/* Blueberry */
 @define-color BLUEBERRY_100 #94A6FF;
 @define-color BLUEBERRY_300 #6A7CE0;
 @define-color BLUEBERRY_500 #3F51B5;
 @define-color BLUEBERRY_700 #213397;
 @define-color BLUEBERRY_900 #031579;
-/* Grape */
 @define-color GRAPE_100 #D25DE6;
 @define-color GRAPE_300 #B84ACB;
 @define-color GRAPE_500 #9C27B0;
 @define-color GRAPE_700 #830E97;
 @define-color GRAPE_900 #6A007E;
-/* Cocoa */
 @define-color COCOA_100 #9F9792;
 @define-color COCOA_300 #7B736E;
 @define-color COCOA_500 #574F4A;
 @define-color COCOA_700 #463E39;
 @define-color COCOA_900 #342C27;
-/* Silver */
 @define-color SILVER_100 #EEE;
 @define-color SILVER_300 #CCC;
 @define-color SILVER_500 #AAA;
 @define-color SILVER_700 #888;
 @define-color SILVER_900 #666;
-/* Slate */
 @define-color SLATE_100 #888;
 @define-color SLATE_300 #666;
 @define-color SLATE_500 #444;
 @define-color SLATE_700 #222;
 @define-color SLATE_900 #111;
-/* Black */
 @define-color BLACK_100 #474341;
 @define-color BLACK_300 #403C3A;
 @define-color BLACK_500 #393634;
 @define-color BLACK_700 #33302F;
 @define-color BLACK_900 #2B2928;
-

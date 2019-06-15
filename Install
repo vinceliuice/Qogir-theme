@@ -98,7 +98,7 @@ install() {
   cp -ur ${SRC_DIR}/src/plank                                                        ${THEME_DIR}
 }
 
-NBG_N="background-image: none;" 
+NBG_N="background-image: none;"
 NBG_I="@extend %nautilus_backimage;"
 
 # check command avalibility
@@ -108,23 +108,64 @@ function has_command() {
 
 install_package() {
   if [ ! "$(which sassc 2> /dev/null)" ]; then
-     echo sassc needs to be installed to generate the css.
-     if has_command zypper; then
+    echo "\n sassc needs to be installed to generate the css."
 
-      sudo zypper in sassc
-        elif has_command apt-get; then
+    if has_command zypper; then
 
-      sudo apt-get install sassc
-        elif has_command dnf; then
+      read -p "[ trusted ] specify the root password : " -t 20 -s
+      [[ -n "$REPLY" ]] && {
+        echo "\n running: sudo zypper in sassc "
+        sudo -S <<< $REPLY zypper in sassc
+      }|| {
+        echo  "\n Operation canceled  Bye"
+        exit 1
+      }
 
-      sudo dnf install sassc
-        elif has_command yum; then
+      elif has_command apt; then
 
-      sudo yum install sassc
-        elif has_command pacman; then
+      read -p "[ trusted ] specify the root password : " -t 20 -s
+      [[ -n "$REPLY" ]] && {
+        echo "\n running: sudo apt install sassc "
+        sudo -S <<< $REPLY apt install sassc
+      }|| {
+        echo  "\n Operation canceled  Bye"
+        exit 1
+      }
 
-      sudo pacman -S --noconfirm sassc
-      fi
+      elif has_command dnf; then
+
+      read -p "[ trusted ] specify the root password : " -t 20 -s
+      [[ -n "$REPLY" ]] && {
+        echo "\n running: sudo dnf install sassc "
+        sudo -S <<< $REPLY dnf install sassc
+      }|| {
+        echo  "\n Operation canceled  Bye"
+        exit 1
+      }
+
+      elif has_command yum; then
+
+      read -p "[ trusted ] specify the root password : " -t 20 -s
+      [[ -n "$REPLY" ]] && {
+        echo "\n running: sudo yum install sassc "
+        sudo -S <<< $REPLY yum install sassc
+      }|| {
+        echo  "\n Operation canceled  Bye"
+        exit 1
+      }
+
+      elif has_command pacman; then
+
+      read -p "[ trusted ] specify the root password : " -t 20 -s
+      [[ -n "$REPLY" ]] && {
+        echo "\n running: sudo pacman -S --noconfirm sassc "
+        sudo -S <<< $REPLY pacman -S --noconfirm sassc
+      }|| {
+        echo  "\n Operation canceled  Bye"
+        exit 1
+      }
+
+    fi
   fi
 }
 
