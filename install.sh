@@ -96,6 +96,7 @@ install() {
   cp -ur ${SRC_DIR}/src/xfwm4/assets${win}${ELSE_LIGHT}/*.png                        ${THEME_DIR}/xfwm4
 
   cp -ur ${SRC_DIR}/src/plank                                                        ${THEME_DIR}
+  cp -ur ${SRC_DIR}/src/unity                                                        ${THEME_DIR}
 }
 
 NBG_N="background-image: none;"

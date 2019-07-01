@@ -1,0 +1,13 @@
+<svg width="24" height="24" enable-background="new" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="s" x1="-21.5" x2="-21.5" y1="-678.64" y2="-687.64" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#5c616c" offset="0"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-.5 -1027.9)">
+  <g id="titlebutton-maximize-backdrop" transform="translate(33.5,1723.5)" opacity=".5">
+   <rect x="-33" y="-694.64" width="23" height="23" ry="11.5" opacity="0" stroke-width=".92" style="paint-order:stroke fill markers"/>
+   <path d="m-26-687.64v9h9v-9zm1 1h7v7h-7z" fill="url(#s)" opacity="1" style="paint-order:stroke fill markers"/>
+  </g>
+ </g>
+</svg>

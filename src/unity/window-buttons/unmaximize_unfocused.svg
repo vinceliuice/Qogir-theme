@@ -1,0 +1,11 @@
+<svg width="24" height="24" enable-background="new" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" x1="59.5" x2="59.5" y1="-678.64" y2="-687.64" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#5c616c" offset="0"/>
+  </linearGradient>
+ </defs>
+ <g id="titlebutton-restore-backdrop" transform="translate(-48 695.64)" opacity=".5">
+  <rect x="48" y="-694.64" width="23" height="23" ry="11.5" opacity="0" stroke-width=".92" style="paint-order:stroke fill markers"/>
+  <path d="m57-687.64v2h-2l1e-6 7 7 1e-5v-2h2l1e-6 -7zm1 1h5v5h-1v-4h-4zm-2 2h5v5h-5z" fill="url(#a)" opacity="1" style="paint-order:stroke fill markers"/>
+ </g>
+</svg>

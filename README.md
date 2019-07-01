@@ -52,7 +52,7 @@ add the `src/other/firefox/userChrome.css` into `~/.mozilla/firefox/{your_profil
 
 ## Install
 
-Usage:  ./Install  [OPTIONS...]
+Usage:  ./install.sh  [OPTIONS...]
 
 |  OPTIONS:    | |
 |:-------------|:-------------|
@@ -65,11 +65,11 @@ Usage:  ./Install  [OPTIONS...]
 
 **FOR EXAMPLE:**
 ```sh
-./Install
+./install.sh
 ```
 (Install all themes)
 ```sh
-./Install -i
+./install.sh -i
 ```
 (Install themes with nautilus background imge)
 
