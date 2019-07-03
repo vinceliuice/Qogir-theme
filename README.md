@@ -65,13 +65,12 @@ Usage:  ./install.sh  [OPTIONS...]
 
 **FOR EXAMPLE:**
 ```sh
-./install.sh
+./install.sh  (Install all themes)
 ```
-(Install all themes)
+
 ```sh
-./install.sh -i
+./install.sh -i  (Install themes with nautilus background image)
 ```
-(Install themes with nautilus background imge)
 
 ## Screenshots
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot01.png?raw=true)
