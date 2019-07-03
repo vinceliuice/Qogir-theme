@@ -4167,21 +4167,21 @@ messagedialog .linked:not(.vertical) > button:disabled:only-child {
 }
 
 messagedialog.background {
-  background-color: #282A33;
+  background-color: #32343D;
   color: rgba(207, 218, 231, 0.8);
 }
 
 messagedialog .titlebar {
   min-height: 20px;
-  background-color: #282A33;
+  background-color: #32343D;
   border-bottom: none;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
-  box-shadow: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 messagedialog .titlebar:backdrop {
-  background-color: #282A33;
+  background-color: #32343D;
 }
 
 messagedialog .dialog-action-area button {
@@ -4189,7 +4189,7 @@ messagedialog .dialog-action-area button {
   border-radius: 0;
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
-  background-color: #282A33;
+  background-color: #32343D;
   color: rgba(207, 218, 231, 0.8);
 }
 
@@ -4681,12 +4681,12 @@ decoration {
   border-radius: 0;
   border: none;
   transition: 200ms ease-out;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08), 0 8px 8px 0 rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08), 0 8px 8px 0 rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.25);
   margin: 4px;
 }
 
 decoration:backdrop {
-  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
 
 .maximized decoration,
@@ -4708,7 +4708,7 @@ decoration:backdrop {
 
 .csd.popup decoration {
   border-radius: 0;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 tooltip.csd decoration {
@@ -6520,8 +6520,8 @@ window.maximized.background.chromium headerbar.titlebar button.titlebutton.maxim
 }
 
 window.background.chromium {
-  background-color: #fafbfc;
-  color: #5c616c;
+  background-color: #32343D;
+  color: #D3DAE3;
 }
 
 window.background.chromium headerbar.titlebar button.toggle {
@@ -6546,16 +6546,16 @@ window.background.chromium headerbar.titlebar button.toggle:checked, window.back
 window.background.chromium button {
   border-width: 1px;
   border-style: solid;
-  border-color: #e6e5e5;
-  background-color: #fafbfc;
-  color: #5c616c;
+  border-color: #494c59;
+  background-color: #32343D;
+  color: #D3DAE3;
 }
 
 window.background.chromium entry.chromium {
   border-image: none;
-  border: 1px solid #e6e5e5;
-  background-color: #fafbfc;
-  color: #5c616c;
+  border: 1px solid #494c59;
+  background-color: #32343D;
+  color: #D3DAE3;
 }
 
 window.background.chromium entry.chromium:focus {
@@ -6563,8 +6563,8 @@ window.background.chromium entry.chromium:focus {
 }
 
 window.background.chromium > textview.view, window.background.chromium textview {
-  background-color: #fafbfc;
-  color: #5c616c;
+  background-color: #32343D;
+  color: #D3DAE3;
 }
 
 window.background.chromium > menubar {
@@ -6572,19 +6572,19 @@ window.background.chromium > menubar {
 }
 
 window.background.chromium > menu {
-  color: #5c616c;
-  background-color: #ffffff;
-  border: 1px solid #e6e5e5;
+  color: #D3DAE3;
+  background-color: #32343D;
+  border: 1px solid #494c59;
 }
 
 window.background.chromium > menu > separator, window.background.chromium > menu .separator {
-  background-color: #ffffff;
-  color: #ffffff;
+  background-color: #32343D;
+  color: #32343D;
   border: none;
 }
 
 window.background.chromium > menu > menuitem {
-  color: #5c616c;
+  color: #D3DAE3;
 }
 
 window.background.chromium > menu > menuitem:hover {
@@ -6593,11 +6593,11 @@ window.background.chromium > menu > menuitem:hover {
 }
 
 window.background.chromium > menu > menuitem:disabled {
-  color: rgba(92, 97, 108, 0.45);
+  color: rgba(211, 218, 227, 0.45);
 }
 
 window.background.chromium > menu > menuitem accelerator {
-  color: rgba(92, 97, 108, 0.45);
+  color: rgba(211, 218, 227, 0.45);
 }
 
 window.background > grid.horizontal > grid.horizontal {
@@ -7126,7 +7126,7 @@ panel-toplevel.background na-tray-applet {
   border-color: rgba(255, 255, 255, 0.12);
   border-radius: 2px;
   background-color: #32343D;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .budgie-popover .container {
@@ -8186,7 +8186,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   margin: 5px 9px;
   padding: 8px;
   border-radius: 2px;
-  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.35);
   background-color: #282A33;
   color: rgba(207, 218, 231, 0.8);
 }

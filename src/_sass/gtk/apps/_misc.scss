@@ -348,11 +348,11 @@ window.background:not(.csd) {
  //
  // Chrome(ium)
  //
-$chrome_borders_color: darken(white, 10%);
-$chrome_bg_color: #fafbfc;
-$chrome_fg_color: #5c616c;
-$chrome_menu_bg_color: #ffffff;
-$chrome_menu_fg_color: #5c616c;
+$chrome_borders_color: $solid_borders_color;
+$chrome_bg_color: $bg_color;
+$chrome_fg_color: $fg_color;
+$chrome_menu_bg_color: $_menu_bg;
+$chrome_menu_fg_color: $fg_color;
 
 %circle_chrome {
   headerbar.titlebar button.titlebutton {

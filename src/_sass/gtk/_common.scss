@@ -2954,23 +2954,26 @@ calendar {
   border-bottom: none;
 }
 
+$dialog_bg: if($variant == 'light' and $titlebar == 'dark', $header_bg, $_menu_bg);
+$dialog_fg: $header_fg;
+
 messagedialog { // Message Dialog styling
 
   &.background {
-    background-color: $header_bg;
-    color: $header_fg;
+    background-color: $dialog_bg;
+    color: $dialog_fg;
   }
 
   .titlebar {
     min-height: 20px;
-    background-color: $header_bg;
+    background-color: $dialog_bg;
     border-bottom: none;
     border-top-left-radius: $bt_radius;
     border-top-right-radius: $bt_radius;
-    box-shadow: none;
+    box-shadow: inset 0 1px $highlight;
 
     &:backdrop {
-      background-color: $header_bg;
+      background-color: $dialog_bg;
     }
   }
 
@@ -2980,8 +2983,8 @@ messagedialog { // Message Dialog styling
       border-radius: 0;
       border: none;
       border-top: 1px solid $borders_color;
-      background-color: $header_bg;
-      color: $header_fg;
+      background-color: $dialog_bg;
+      color: $dialog_fg;
 
       &:active, &:checked {
         transition: background-color 0.00001s 0.2s;
@@ -3004,12 +3007,12 @@ messagedialog { // Message Dialog styling
   .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
 
     &:hover {
-      background-color: rgba($header_fg, 0.06);
+      background-color: rgba($dialog_fg, 0.06);
     }
 
     &:active, &:checked {
-      background-color: rgba($header_fg, 0.1);
-      color: $header_fg;
+      background-color: rgba($dialog_fg, 0.1);
+      color: $dialog_fg;
     }
   }
 
@@ -3513,16 +3516,16 @@ stackswitcher button {
 // Window Decorations
 //
 
-$_wm_border: if($variant=='light', rgba(black, 0.1), rgba(black, 0.2));
+$_wm_border: if($variant=='light', rgba(black, 0.12), rgba(black, 0.25));
 
 decoration {
   border-radius: 0;
   border: none;
   transition: $backdrop_transition;
 
-  box-shadow: 0 3px 5px 0 if($variant == 'light', rgba($_wm_border, 0.15), rgba($_wm_border, 0.08)),
-              0 8px 8px 0 if($variant == 'light', rgba($_wm_border, 0.15), rgba($_wm_border, 0.08)),
-              0 0 0 1px rgba($_wm_border, 0.1);
+  box-shadow: 0 3px 5px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.08)),
+              0 8px 8px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.08)),
+              0 0 0 1px $_wm_border;
 
   // this is used for the resize cursor area
   margin: 4px;
@@ -3531,15 +3534,15 @@ decoration {
     // the transparent shadow here is to enforce that the shadow extents don't
     // change when we go to backdrop, to prevent jumping windows
     box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent,
-                0 3px 3px 0 if($variant == 'light', rgba($_wm_border, 0.1), rgba($_wm_border, 0.06)),
-                0 0 0 1px rgba($_wm_border, 0.1);
+                0 3px 3px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.06)),
+                0 0 0 1px $_wm_border;
   }
 
   .maximized &,
   .fullscreen &,
   .tiled & {
     border-radius: 0;
-    box-shadow: 0 3px 3px 0 if($variant == 'light', rgba($_wm_border, 0.1), rgba($_wm_border, 0.06));
+    box-shadow: 0 3px 3px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.06));
   }
 
   // server-side decorations as used by mutter
