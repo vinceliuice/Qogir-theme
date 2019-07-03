@@ -690,7 +690,7 @@ StScrollBar {
   -arrow-background-color: rgba(0,0,0,0.0);
   -arrow-border-width: 1px;
   -arrow-border-color: rgba(0,0,0,0.0);
-  -arrow-base: 0;
+  -arrow-base: 48px;
   -arrow-rise: 0;
 
   StEntry {
@@ -705,8 +705,8 @@ StScrollBar {
   -arrow-background-color: $osd_bg_color;
   -arrow-border-width: 1px;
   -arrow-border-color: transparentize(black, 0.6);
-  -arrow-base: 5;
-  -arrow-rise: 5;
+  -arrow-base: 48px;
+  -arrow-rise: 0;
 }
 
 .popup-separator-menu-item {
