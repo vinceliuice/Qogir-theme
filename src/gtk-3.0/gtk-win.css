@@ -10092,6 +10092,7 @@ hdyleaflet > separator.sidebar {
 @define-color wm_bg_unfocused #2b2e37;
 @define-color wm_highlight #2f313c;
 @define-color wm_shadow alpha(black, 0.35);
+@define-color wm_border #a6a6a6;
 @define-color wm_button_close_bg #cc575d;
 @define-color wm_button_close_hover_bg #d7787d;
 @define-color wm_button_close_active_bg #be3841;

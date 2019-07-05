@@ -108,6 +108,8 @@ $header_button_border: if($titlebar == 'dark' or $variant == 'dark', rgba(darken
 
 //WM Buttons
 
+$wm_borders: if($variant == 'light', darken($base_color, 35%), darken($base_color, 10%));
+
 // Close
 $wm_button_close_bg: if($variant == 'light' and $titlebar == 'light', #f46067, #cc575d);
 $wm_button_close_hover_bg: if($variant == 'light' and $titlebar == 'light', #f68086, #d7787d);
