@@ -27,6 +27,12 @@ window.background { // gnome-terminal 3.32
       border-width: 0 1px 0 0;
     }
   }
+
+  > box.vertical > box.horizontal > stack {
+    > widget > notebook.frame {
+      border-width: 0 0 0 1px;
+    }
+  }
 }
 
 //

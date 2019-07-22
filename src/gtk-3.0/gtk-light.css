@@ -4926,6 +4926,10 @@ window.background > box.vertical > box.horizontal > frame > border {
   border-width: 0 1px 0 0;
 }
 
+window.background > box.vertical > box.horizontal > stack > widget > notebook.frame {
+  border-width: 0 0 0 1px;
+}
+
 .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.text-button.toggle, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.sidebar-button, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher, .nautilus-window headerbar.titlebar .path-bar-box .path-bar .budgie-panel .text-button.toggle#tasklist-button:not(.flat), .budgie-panel .nautilus-window headerbar.titlebar .path-bar-box .path-bar .text-button.toggle#tasklist-button:not(.flat),
 .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.flat.image-button.text-button.toggle, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.image-button.text-button.toggle.sidebar-button, .nautilus-window headerbar.titlebar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher {
   background: none;
