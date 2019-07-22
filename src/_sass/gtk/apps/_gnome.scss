@@ -254,14 +254,6 @@ $disk_space_free: darken($bg_color, 3%);
 }
 
 //
-// Epiphany
-//
-
-//EphyWindow .floating-bar { // Epiphany overrides the floating-bar style, so reset it
-//  color: $fg_color;
-//}
-
-//
 // gnome-sound-recorder
 //
 stack {
@@ -940,6 +932,10 @@ $question_bg_color: #FFEA00;
 // most of widget styling are hard-coded by ephy's stylesheet,
 // but we should force using dark foregrounds at least...
 
+//EphyWindow .floating-bar { // Epiphany overrides the floating-bar style, so reset it
+//  color: $fg_color;
+//}
+
 headerbar.titlebar.incognito-mode {
   entry {
     @include entry(header-normal);
@@ -1024,6 +1020,25 @@ popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical {
         margin: 0 6px;
         border-radius: 100px;
         -gtk-outline-radius: 100px;
+      }
+    }
+  }
+}
+
+popover.background {
+  > scrolledwindow > viewport.frame {
+    > list > row.activatable {
+      border-radius: 2px;
+
+      button.page-row-close-button {
+        @extend %circle_button;
+        margin: 3px 6px;
+      }
+
+      &:selected {
+        button.page-row-close-button {
+          @extend %selected-button;
+        }
       }
     }
   }
