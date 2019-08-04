@@ -787,6 +787,12 @@ window#GearyMainWindow {
     &:backdrop {
       background-color: $header_bg_backdrop;
     }
+
+    headerbar.geary-titlebar {
+      > separator {
+        margin: 0 -10px 0 0;
+      }
+    }
   }
 
   > box.vertical > paned { // Geary 0.12.1
@@ -869,6 +875,12 @@ window#GearyMainWindow.maximized {
 stack#conversation_viewer {
   scrolledwindow.geary-conversation-scroller > viewport.frame {
     border: none; // unset borders
+  }
+}
+
+.geary-accounts-editor-pane {
+  > scrolledwindow.frame {
+    border: none;
   }
 }
 

@@ -5299,14 +5299,6 @@ popover.background label.nautilus-canvas-item.separator, popover.background labe
   -gtk-icon-shadow: none;
 }
 
-popover.background > scrolledwindow > viewport.frame > list > row.activatable, popover.background > scrolledwindow > viewport.frame > list > .view, textview popover.background > scrolledwindow > viewport.frame > list > text, popover.background > scrolledwindow > viewport.frame > list > iconview, window.thunar notebook scrolledwindow.frame.standard-view popover.background > scrolledwindow > viewport.frame > list > .view, popover.background > scrolledwindow > viewport.frame > list > treeview.view, window.thunar .sidebar popover.background > scrolledwindow > viewport.frame > list > treeview.view, .nemo-window .nemo-places-sidebar popover.background > scrolledwindow > viewport.frame > list > .places-treeview, .budgie-popover popover.background > scrolledwindow > viewport.frame > list > row, .budgie-popover popover.background > scrolledwindow > viewport.frame > list > row.activatable, .budgie-menu popover.background > scrolledwindow > viewport.frame > list > button {
-  border-radius: 2px;
-}
-
-popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button, popover.background > scrolledwindow > viewport.frame > list > .view button.page-row-close-button, textview popover.background > scrolledwindow > viewport.frame > list > text button.page-row-close-button, popover.background > scrolledwindow > viewport.frame > list > iconview button.page-row-close-button, window.thunar notebook scrolledwindow.frame.standard-view popover.background > scrolledwindow > viewport.frame > list > .view button.page-row-close-button, popover.background > scrolledwindow > viewport.frame > list > treeview.view button.page-row-close-button, window.thunar .sidebar popover.background > scrolledwindow > viewport.frame > list > treeview.view button.page-row-close-button, .nemo-window .nemo-places-sidebar popover.background > scrolledwindow > viewport.frame > list > .places-treeview button.page-row-close-button, .budgie-popover popover.background > scrolledwindow > viewport.frame > list > row button.page-row-close-button, .budgie-menu popover.background > scrolledwindow > viewport.frame > list > button button.page-row-close-button {
-  margin: 3px 6px;
-}
-
 stack grid.vertical scrolledwindow.frame,
 stack grid.vertical scrolledwindow.frame.emptyGrid {
   border: none;
@@ -6008,6 +6000,14 @@ popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scro
   margin: 0 6px;
   border-radius: 100px;
   -gtk-outline-radius: 100px;
+}
+
+popover.background > scrolledwindow > viewport.frame > list > row.activatable, popover.background > scrolledwindow > viewport.frame > list > .view, textview popover.background > scrolledwindow > viewport.frame > list > text, popover.background > scrolledwindow > viewport.frame > list > iconview, window.thunar notebook scrolledwindow.frame.standard-view popover.background > scrolledwindow > viewport.frame > list > .view, popover.background > scrolledwindow > viewport.frame > list > treeview.view, window.thunar .sidebar popover.background > scrolledwindow > viewport.frame > list > treeview.view, .nemo-window .nemo-places-sidebar popover.background > scrolledwindow > viewport.frame > list > .places-treeview, .budgie-popover popover.background > scrolledwindow > viewport.frame > list > row, .budgie-popover popover.background > scrolledwindow > viewport.frame > list > row.activatable, .budgie-menu popover.background > scrolledwindow > viewport.frame > list > button {
+  border-radius: 2px;
+}
+
+popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button, popover.background > scrolledwindow > viewport.frame > list > .view button.page-row-close-button, textview popover.background > scrolledwindow > viewport.frame > list > text button.page-row-close-button, popover.background > scrolledwindow > viewport.frame > list > iconview button.page-row-close-button, window.thunar notebook scrolledwindow.frame.standard-view popover.background > scrolledwindow > viewport.frame > list > .view button.page-row-close-button, popover.background > scrolledwindow > viewport.frame > list > treeview.view button.page-row-close-button, window.thunar .sidebar popover.background > scrolledwindow > viewport.frame > list > treeview.view button.page-row-close-button, .nemo-window .nemo-places-sidebar popover.background > scrolledwindow > viewport.frame > list > .places-treeview button.page-row-close-button, .budgie-popover popover.background > scrolledwindow > viewport.frame > list > row button.page-row-close-button, .budgie-menu popover.background > scrolledwindow > viewport.frame > list > button button.page-row-close-button {
+  margin: 3px 6px;
 }
 
 flowboxchild.bookmark-tag-widget {
@@ -6719,10 +6719,6 @@ list.tilix-session-sidebar button.tilix-sidebar-close-button:hover {
 
 list.tilix-session-sidebar button.tilix-sidebar-close-button:active, list.tilix-session-sidebar button.tilix-sidebar-close-button:checked {
   background-image: image(#ec1b22);
-}
-
-.geary-accounts-editor-pane > scrolledwindow.frame {
-  border: none;
 }
 
 window.background.csd > box.vertical > stack > box.horizontal > list {
@@ -9952,6 +9948,10 @@ window#GearyMainWindow .titlebar:backdrop {
   background-color: #2b2e37;
 }
 
+window#GearyMainWindow .titlebar headerbar.geary-titlebar > separator {
+  margin: 0 -10px 0 0;
+}
+
 window#GearyMainWindow > box.vertical > paned > separator {
   background-image: image(#494c59);
 }
@@ -9975,6 +9975,10 @@ window#GearyMainWindow > box.vertical > paned > separator {
 }
 
 stack#conversation_viewer scrolledwindow.geary-conversation-scroller > viewport.frame {
+  border: none;
+}
+
+.geary-accounts-editor-pane > scrolledwindow.frame {
   border: none;
 }
 
