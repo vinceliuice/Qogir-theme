@@ -46,7 +46,7 @@ Use "light theme" for webs on Firefox.
 
 3. and give it a value of `Qogir-light` (or `Qogir-win-light` ). This will fix it.
 
-### Fix win titlebutton issues on firfox
+### Fix win titlebutton issues on Firefox
 
 add the `src/other/firefox/userChrome.css` into `~/.mozilla/firefox/{your_profile}/chrome/`
 
