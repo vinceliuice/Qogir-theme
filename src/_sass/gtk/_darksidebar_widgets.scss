@@ -708,7 +708,7 @@ window.background.csd {
       @extend %side_background;
 
       > viewport.frame > stack {
-        > list {
+         list {
           @extend %side_background;
 
           separator { background: none; }
@@ -721,6 +721,21 @@ window.background.csd {
             color: $side_theme_alt_fg;
             background-color: rgba($side_theme_fg, 0.06);
             // transition: all 50ms $ease-out-quad;
+          }
+        }
+
+        entry.search {
+          color: $side_theme_fg;
+          background-color: rgba($side_theme_fg, 0.1);
+
+          image { color: $side_theme_fg; }
+
+          &:focus {
+            background-color: rgba($side_theme_fg, 0.12);
+          }
+
+          &:disabled, label:disabled, image:disabled {
+            color: rgba($side_theme_alt_fg, 0.35);
           }
         }
       }
