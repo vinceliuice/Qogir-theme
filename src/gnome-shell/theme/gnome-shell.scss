@@ -1,0 +1,11 @@
+$variant: 'light';
+$trans: 'true';
+$titlebar: 'dark';
+$theme: 'default';
+$titlebutton: '';
+
+@import '../../_sass/colors'; //use gtk colors
+@import '../../_sass/variables';
+@import '../../_sass/gnome-shell/drawing';
+@import '../../_sass/gnome-shell/common';
+@import '../../_sass/gnome-shell/extensions';

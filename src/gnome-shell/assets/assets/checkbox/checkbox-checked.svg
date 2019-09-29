@@ -1,0 +1,13 @@
+<svg width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" x1="25" x2="25" y1="31.362" y2="45.362" gradientTransform="translate(-33.837 991.99)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#5294e2" offset="0"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(0 -1036.4)">
+  <g id="checkbox-checked-dark" transform="translate(16.837 14.01)">
+   <rect x="-15.837" y="1023.4" width="14" height="14" rx="2" ry="2" color="#000000" fill="url(#a)"/>
+   <path d="m-5.5597 1026.8-4.2422 4.2422-1.6504-1.6504c-0.26116-0.2612-0.68025-0.2612-0.94141 0l-0.47266 0.4707c-0.26116 0.2611-0.26116 0.6822 0 0.9433l1.6504 1.6504 0.94336 0.9434 0.4707 0.4707 0.4668-0.4668 0.47656-0.4766 4.7129-4.7128z" fill="#fff"/>
+  </g>
+ </g>
+</svg>

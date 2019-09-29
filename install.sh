@@ -13,6 +13,7 @@ fi
 SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Qogir
+THEME_VARIANTS=('' '-manjaro' '-ubuntu')
 WIN_VARIANTS=('' '-win')
 COLOR_VARIANTS=('' '-light' '-dark')
 
@@ -30,13 +31,14 @@ usage() {
 install() {
   local dest=${1}
   local name=${2}
-  local win=${3}
-  local color=${4}
+  local theme=${3}
+  local win=${4}
+  local color=${5}
 
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
-  local THEME_DIR=${dest}/${name}${win}${color}
+  local THEME_DIR=${dest}/${name}${theme}${win}${color}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -48,40 +50,41 @@ install() {
 
   echo "[Desktop Entry]"                                                          >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme"                                                   >> ${THEME_DIR}/index.theme
-  echo "Name=${name}${win}${color}"                                               >> ${THEME_DIR}/index.theme
+  echo "Name=${name}${theme}${win}${color}"                                       >> ${THEME_DIR}/index.theme
   echo "Comment=An Clean Gtk+ theme based on Flat Design"                         >> ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8"                                                           >> ${THEME_DIR}/index.theme
   echo ""                                                                         >> ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]"                                                      >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=${name}${win}${color}"                                           >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=${name}${win}${color}"                                      >> ${THEME_DIR}/index.theme
-  echo "IconTheme=Adwaita"                                                        >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=${name}${theme}${win}${color}"                                   >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=${name}${theme}${win}${color}"                              >> ${THEME_DIR}/index.theme
+  echo "IconTheme=${name}${theme}${ELSE_DARK}"                                    >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita"                                                      >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close"                                >> ${THEME_DIR}/index.theme
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-2.0
   cp -ur ${SRC_DIR}/src/gtk-2.0/{apps.rc,panel.rc,main.rc,xfce-notify.rc}            ${THEME_DIR}/gtk-2.0
-  cp -ur ${SRC_DIR}/src/gtk-2.0/assets${ELSE_DARK}                                   ${THEME_DIR}/gtk-2.0/assets
-  cp -ur ${SRC_DIR}/src/gtk-2.0/gtkrc${color}                                        ${THEME_DIR}/gtk-2.0/gtkrc
+  cp -ur ${SRC_DIR}/src/gtk-2.0/assets/assets${theme}${ELSE_DARK}                    ${THEME_DIR}/gtk-2.0/assets
+  cp -ur ${SRC_DIR}/src/gtk-2.0/theme${theme}/gtkrc${color}                          ${THEME_DIR}/gtk-2.0/gtkrc
   cp -ur ${SRC_DIR}/src/gtk-2.0/menubar-toolbar${color}.rc                           ${THEME_DIR}/gtk-2.0/menubar-toolbar.rc
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/src/gtk-3.0/assets                                               ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${win}${color}.css                                ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/assets/assets${theme}                                ${THEME_DIR}/gtk-3.0/assets
+  cp -ur ${SRC_DIR}/src/gtk-3.0/assets/assets-common/*.png                           ${THEME_DIR}/gtk-3.0/assets
+  cp -ur ${SRC_DIR}/src/gtk-3.0/theme${theme}/gtk${win}${color}.css                  ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk-3.0/gtk${win}-dark.css                                   ${THEME_DIR}/gtk-3.0/gtk-dark.css
-  cp -ur ${SRC_DIR}/src/gtk-3.0/thumbnail${ELSE_DARK}.png                            ${THEME_DIR}/gtk-3.0/thumbnail.png
+  cp -ur ${SRC_DIR}/src/gtk-3.0/theme${theme}/gtk${win}-dark.css                     ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -ur ${SRC_DIR}/src/gtk-3.0/assets/thumbnail${theme}${ELSE_DARK}.png             ${THEME_DIR}/gtk-3.0/thumbnail.png
 
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
-  cp -ur ${SRC_DIR}/src/gnome-shell/common-assets                                    ${THEME_DIR}/gnome-shell
-  cp -ur ${SRC_DIR}/src/gnome-shell/assets${ELSE_DARK}                               ${THEME_DIR}/gnome-shell/assets
-  cp -ur ${SRC_DIR}/src/gnome-shell/gnome-shell${color}.css                          ${THEME_DIR}/gnome-shell/gnome-shell.css
+  cp -ur ${SRC_DIR}/src/gnome-shell/assets${theme}/common-assets                     ${THEME_DIR}/gnome-shell
+  cp -ur ${SRC_DIR}/src/gnome-shell/assets${theme}/assets${ELSE_DARK}                ${THEME_DIR}/gnome-shell/assets
+  cp -ur ${SRC_DIR}/src/gnome-shell/theme${theme}/gnome-shell${color}.css            ${THEME_DIR}/gnome-shell/gnome-shell.css
 
   mkdir -p                                                                           ${THEME_DIR}/cinnamon
-  cp -ur ${SRC_DIR}/src/cinnamon/common-assets                                       ${THEME_DIR}/cinnamon
-  cp -ur ${SRC_DIR}/src/cinnamon/assets${ELSE_DARK}                                  ${THEME_DIR}/cinnamon/assets
-  cp -ur ${SRC_DIR}/src/cinnamon/cinnamon${ELSE_DARK}.css                            ${THEME_DIR}/cinnamon/cinnamon.css
-  cp -ur ${SRC_DIR}/src/cinnamon/thumbnail${ELSE_DARK}.png                           ${THEME_DIR}/cinnamon/thumbnail.png
+  cp -ur ${SRC_DIR}/src/cinnamon/assets${theme}/common-assets                        ${THEME_DIR}/cinnamon
+  cp -ur ${SRC_DIR}/src/cinnamon/assets${theme}/assets${ELSE_DARK}                   ${THEME_DIR}/cinnamon/assets
+  cp -ur ${SRC_DIR}/src/cinnamon/theme${theme}/cinnamon${ELSE_DARK}.css              ${THEME_DIR}/cinnamon/cinnamon.css
+  cp -ur ${SRC_DIR}/src/cinnamon/thumbnail${theme}${ELSE_DARK}.png                   ${THEME_DIR}/cinnamon/thumbnail.png
 
   mkdir -p                                                                           ${THEME_DIR}/metacity-1
   cp -ur ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}${win}/*.png                   ${THEME_DIR}/metacity-1
@@ -175,9 +178,11 @@ parse_sass() {
 }
 
 install_theme() {
-  for win in "${wins[@]:-${WIN_VARIANTS[@]}}"; do
-    for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${win}" "${color}"
+  for theme in "${themes[@]:-${THEME_VARIANTS[@]}}"; do
+    for win in "${wins[@]:-${WIN_VARIANTS[@]}}"; do
+      for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
+        install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${win}" "${color}"
+      done
     done
   done
 }
