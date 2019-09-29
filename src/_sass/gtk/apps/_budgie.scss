@@ -875,6 +875,7 @@ box.vertical > stack > box.vertical {
 }
 
 // Notifications
+%budgie_notification_window,
 .budgie-notification-window {
   background-color: transparent;
   background-image: none;
@@ -893,6 +894,7 @@ box.vertical > stack > box.vertical {
   }
 }
 
+%budgie_notification,
 .budgie-notification {
   .notification-title { font-size: 120%; }
 

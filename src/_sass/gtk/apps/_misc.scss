@@ -147,50 +147,6 @@ dialog.background {
 }
 
 //
-// Caja
-//
-.caja-desktop { @extend .nautilus-desktop.nautilus-canvas-item; }
-
-.caja-notebook { border-top: 1px solid $borders_color; }
-.caja-side-pane .frame { border-width: 1px 0 0; }
-.caja-notebook .frame { border-width: 0 0 1px; }
-
-.caja {
-  &-canvas-item { @extend .nautilus-canvas-item; }
-
-  &-list-dim-label { @extend .nautilus-list-dim-label; }
-}
-
-.caja-desktop { // desktop icon-grid styling
-  &.caja-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
-
-  > widget.entry { // = EelEditableLabel.entry
-    &, &:focus {
-      transition: none;
-
-      &:selected { // FIXME: selection node doesn't work?
-        @extend %selected_items;
-      }
-    }
-  }
-}
-
-//
-// Pluma
-//
-.pluma-window statusbar frame > border { border: none; }
-.pluma-window notebook > stack scrolledwindow { border-width: 0 0 1px 0; }
-
-#pluma-status-combo-button {
-  min-height: 0;
-  padding: 0;
-
-  border-top: none;
-  border-bottom: none;
-  border-radius: 0;
-}
-
-//
 // Firefox and Thunderbird
 //
 
@@ -708,6 +664,7 @@ window#ValaPanel.background {
 }
 
 // menubar-style'ed app menu
+%panel_menubar,
 menubar.-vala-panel-background,
 menubar.-vala-panel-appmenu-private { // vala-panel-appmenu
   background: none;

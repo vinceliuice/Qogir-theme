@@ -1,5 +1,5 @@
 
- /****************
+/****************
  * Mate Desktop *
  ****************/
 
@@ -9,6 +9,7 @@
 .atril-window .primary-toolbar toolbar {
   background: none;
 }
+
 
 //
 // Mate OSD Window
@@ -38,17 +39,14 @@ panel-toplevel.background {
 
   &, menubar { background-color: opacify($panel_bg, 1); }
 
-  menubar,
-  #PanelApplet label,
-  #PanelApplet image { color: $panel_fg; }
+  // menubar,
+  // #PanelApplet label,
+  // #PanelApplet image { color: $panel_fg; }
 
   // Panel buttons
-  button:not(#tasklist-button) {
-    @extend %panelbutton;
-  }
-
   button,
-  #tasklist-button {
+  button#tasklist-button {
+    @extend %panelbutton;
     label, image { color: inherit; }
   }
 
@@ -70,4 +68,448 @@ panel-toplevel.background {
     -NaTrayApplet-icon-padding: 0;
     -NaTrayApplet-icon-size: 16px;
   }
+}
+
+//
+//  * Mate-Panel *
+//
+
+// Most parts are themed in Gnome-panel section
+PanelToplevel.background {
+  color: $panel_fg;
+  background-color: opacify($panel_bg, 1);
+}
+
+#PanelWidget,
+#PanelPlug,
+#PanelApplet {
+  color: $panel_fg;
+  background-color: $panel_bg; // >= 1.18.6
+}
+
+PanelSeparator {
+  border-width: 0;
+  background: none;
+  background-image: none;
+  color: rgba(white, 10%);
+}
+
+@each $layout, $size, $dir in (horizontal, 7px 14px, right),
+                              (vertical, 14px 7px, bottom) {
+  // a grip
+  PanelToplevel.#{$layout} MatePanelAppletFrameDBus {
+    background-image: linear-gradient(to #{$dir},
+                        transparent 2px,
+                        rgba(white, 0.1) 2px,
+                        rgba(white, 0.1) 3px,
+                        transparent 3px,
+                        transparent 4px,
+                        rgba(white, 0.1) 4px,
+                        rgba(white, 0.1) 5px,
+                        transparent 5px,
+                        transparent 7px);
+    background-repeat: no-repeat;
+    background-size: #{$size};
+
+    @if $layout == horizontal {
+      &:dir(ltr) { background-position: left center; }
+      &:dir(rtl) { background-position: right center; }
+    }
+    @else if $layout == vertical { background-position: center top; }
+  }
+}
+
+// 'hide' arrow buttons
+PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
+  @extend button.flat;
+  min-height: 4px;
+  min-width: 4px;
+  padding: 0;
+  border-radius: 0;
+  border-style: solid;
+  border-color: rgba(white, 0.1);
+  -gtk-outline-radius: 0;
+  background-color: transparent;
+  color: $panel_fg;
+  &:hover {
+    background-color: transparent;
+    color: $selected_fg_color;
+  }
+  &:active {
+    background-color: transparent;
+    color: $selected_fg_color;
+  }
+  &:disabled {
+    color: rgba($panel_fg, 0.45);
+  }
+  &:checked {
+    background-color: transparent;
+    color: $selected_fg_color;
+  }
+
+  > image {
+    padding: 0 4px;
+  }
+
+  &:first-child {
+    &:dir(ltr) { border-width: 0 1px 0 0; }
+    &:dir(rtl) { border-width: 0 0 0 1px; }
+  }
+  &:not(:first-child) {
+    &:dir(ltr) { border-width: 0 0 0 1px; }
+    &:dir(rtl) { border-width: 0 1px 0 0; }
+  }
+}
+
+.mate-panel-menu-bar {
+  menubar,
+  #PanelApplet-window-menu-applet-button {
+    @extend %panel_menubar;
+  }
+
+  #clock-applet-button label {
+    // embed padding into label node directly (x 1.5)
+    padding: 0 6px;
+  }
+}
+
+.mate-panel-menu-bar.vertical { // vertical layout
+  menubar,
+  #PanelApplet-window-menu-applet-button {
+    > menuitem {
+      padding: 4px 0;
+      &:hover { box-shadow: inset 2px 0 $selected_bg_color; }
+    }
+  }
+
+  #tasklist-button,
+  #clock-applet-button,
+  #showdesktop-button {
+    &:hover { box-shadow: inset 2px 0 rgba(white, 0.1); }
+    &:checked,
+    &:hover:checked { box-shadow: inset 2px 0 $selected_bg_color; }
+  }
+
+  #clock-applet-button label { padding: 6px 0; }
+}
+
+// Brisk-Menu applet
+.mate-panel-menu-bar button.flat.toggle {
+  &.brisk-button {
+    padding: 0 4px;
+    border-radius: 0;
+    -gtk-outline-radius: 0;
+    background-image: none;
+    background-color: transparent;
+    color: $panel_fg;
+    font-weight: 700;
+    &:hover {
+      background-image: none;
+      color: $selected_fg_color;
+      box-shadow: inset 0 -2px rgba(white, 0.1);
+    }
+    &:active { animation: none; }
+    &:checked {
+      background-image: none;
+      color: $selected_fg_color;
+      box-shadow: inset 0 -2px $selected_bg_color;
+    }
+  }
+
+  // vertical panel mode?
+  &.brisk-button-vertical {
+    padding: 0;
+    &:hover { box-shadow: inset 2px 0 rgba(white, 0.1); }
+    &:checked { box-shadow: inset 2px 0 $selected_bg_color; }
+  }
+}
+
+.brisk-menu {
+  // border-top: 1px solid $highlight_color;
+
+  entry { margin: rem(4px); } // search-entry
+
+  box.horizontal scrolledwindow { // right-pane
+    &:dir(ltr) { margin: rem(4px) rem(4px) rem(4px) 0; }
+    &:dir(rtl) { margin: rem(4px) 0 rem(4px) rem(4px); }
+  }
+
+  .categories-list { // left-pane
+    &:dir(ltr) { margin: rem(4px) 0 rem(4px) rem(4px); }
+    &:dir(rtl) { margin: rem(4px) rem(4px) rem(4px) 0; }
+
+    button.flat {
+      padding-top: unset;
+      padding-bottom: unset;
+      border-radius: 2px;
+      -gtk-outline-radius: 0;
+      font-weight: 500;
+      transition-duration: 0.1s; // shorter duration
+      // almost covers :hover pseudo-class
+      &:checked {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+      }
+
+      image { padding: rem(8px) 0; }
+      // for finer base-lines
+      label { padding-bottom: rem(0.7px); }
+    }
+  }
+
+  // hide separator above session-buttons
+  box.vertical > box.horizontal > box.vertical > separator.horizontal {
+    min-height: 0;
+    background-color: transparent;
+  }
+
+  list.content-view.view { // right-pane
+    background-color: $base_color;
+
+    row.activatable {
+      padding: 0;
+      background-image: none;
+      transition-duration: 0s;
+
+      > button.flat {
+        padding-top: unset;
+        padding-bottom: unset;
+        border-radius: 0; // remove roundness
+        -gtk-outline-radius: 0;
+        font-weight: 400;
+        transition-duration: 0s; // needs quicker response
+        border: none;
+
+        &:hover {
+          background-color: rgba($fg_color, 0.06);
+        }
+
+        &:active {
+          background-color: rgba($fg_color, 0.1);
+          color: $fg_color;
+        }
+
+        // set vertical padding with icon's padding
+        > box.horizontal > image { padding: rem(5.3px) 0; }
+      }
+    }
+  }
+}
+
+.mate-panel-applet-slider {
+  background-color: transparent;
+
+  frame { // draw actual widget
+    border-width: 1px;
+    border-style: solid;
+    border-color: $borders_color;
+    border-radius: 2px;
+    background-color: $bg_color;
+
+    // unset borders
+    *,
+    > border { border: unset; }
+  }
+}
+
+
+//
+//  * Mate-Terminal *
+//
+
+// .mate-terminal {
+//   notebook > header.top { }
+// }
+
+//
+// Caja
+//
+.caja-desktop { @extend .nautilus-desktop.nautilus-canvas-item; }
+.caja-notebook { border-top: 1px solid $borders_color; }
+.caja-side-pane .frame { border-width: 1px 0 0; }
+.caja-notebook .frame { border-width: 0 0 1px; }
+
+.caja {
+  &-canvas-item { @extend .nautilus-canvas-item; }
+
+  &-list-dim-label { @extend .nautilus-list-dim-label; }
+}
+
+.caja-desktop { // desktop icon-grid styling
+  &.caja-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+
+  > widget.entry { // = EelEditableLabel.entry
+    &, &:focus {
+      transition: none;
+
+      &:selected { // FIXME: selection node doesn't work?
+        @extend %selected_items;
+      }
+    }
+  }
+}
+
+.caja-navigation-window {
+  toolbar#Toolbar.primary-toolbar {
+    background-color: $header_bg;
+    color: $header_fg;
+    @extend %header_widgets;
+
+    // button { }
+  }
+}
+
+//
+//  * Mate-Control-Center *
+//
+
+// almost out of control, and looks ugly
+window#MyControlCenter > frame > box.horizontal {
+  > widget > scrolledwindow.frame {
+    border: none;
+    // draw pane-separator with borders
+    // FIXME: rendering quality is quite poor
+    &:dir(ltr) { border-left: 1px solid $solid_borders_color; }
+    &:dir(rtl) { border-right: 1px solid $solid_borders_color; }
+
+    > widget.view { // content-view
+      all: unset;
+      background-color: $bg_color; // does not work
+    }
+  }
+}
+
+
+//
+//  * Mate-Tweak *
+//
+
+.background:not(.csd) > box.horizontal {
+  > notebook { // right-pane
+    // remove unwanted frames/borders
+    &.frame {
+      border: none;
+
+      > stack {
+        border-width: 1px;
+        border-style: solid;
+        border-color: $bg_color;
+        box-shadow: none;
+        &:dir(ltr) { border-left-color: $solid_borders_color; }
+        &:dir(rtl) { border-right-color: $solid_borders_color; }
+      }
+    }
+  }
+}
+
+//
+//  * Eom *
+//
+
+.eom-window {
+  statusbar { // always use dark-variant
+    margin: 0 -10px; // hide weird lateral gaps
+    padding: 0 rem(6.7px);
+    background-color: $osd_bg_color;
+    color: $osd_fg_color;
+  }
+}
+
+//
+// Pluma
+//
+.pluma-window statusbar frame > border { border: none; }
+.pluma-window notebook > stack scrolledwindow { border-width: 0 0 1px 0; }
+
+#pluma-status-combo-button {
+  min-height: 0;
+  padding: 0;
+
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+//
+//  * Atril/Xreader *
+//
+
+.atril-window,
+.xreader-window {
+  scrolledwindow.frame {
+    border-style: solid none none;
+
+    > .view { // = evview?
+      transition: none;
+      &:selected,
+      &:active { @extend %selected_items; }
+    }
+  }
+
+  toolbar > toolbutton button.flat.image-button { // back to square buttons
+    border-radius: 2px;
+    -gtk-outline-radius: 2px;
+  }
+
+  // 'presentation' mode fullscreen?
+  &.fullscreen.background > box.vertical {
+    background-color: black; // turn to pitch-black
+    transition-duration: 0s; // unset transitions
+
+    // use opaque borders
+    > toolbar:not(.primary-toolbar).horizontal {
+      border-bottom-color: $solid_borders_color;
+    }
+
+    // revert to standard backgrounds
+    > paned.horizontal { background-color: $bg_color; }
+  }
+}
+
+//
+//  * Mate-MediaControl-OSD *
+///
+
+// OSDs are much blurred?
+MsdOsdWindow {
+  &.background.osd {
+    border-radius: 2px;
+    border: 1px solid $osd_borders_color;
+    background-color: $osd_bg_color;
+    box-shadow: none;
+
+    // FIXME: seems images have inverted fore/back colours?
+    image { color: $osd_fg_color; }
+
+    .trough {
+      border-radius: 0;
+      border: none;
+      background-color: rgba($osd_fg_color, 0.2);
+    }
+
+    .progressbar {
+      border-radius: 0;
+      border: none;
+      background-color: $success_color;
+    }
+  }
+}
+
+//
+//  * Mate-Notification-Slate *
+//
+
+// use budgie-style OSDs
+.slate-notification {
+  &-window {
+    @extend %budgie_notification_window;
+
+    .drop-shadow {
+      margin: 4px 6px 10px; // enlarge the shadow area
+      border-radius: 2px;
+    }
+  }
+
+  @extend %budgie_notification;
+  border-radius: 2px;
 }

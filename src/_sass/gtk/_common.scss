@@ -2479,7 +2479,7 @@ scale {
     }
 
     // Troughs in selected list-rows and infobars
-    menuitem:hover &,
+    // menuitem:hover &,
     row:selected &,
     infobar & {
       background-color: transparentize(black, 0.8);
@@ -2539,7 +2539,7 @@ scale {
     }
 
     // Selected list-row and infobar sliders
-    menuitem:hover &,
+    // menuitem:hover &,
     row:selected &,
     infobar & {
       background-clip: border-box;
