@@ -17,6 +17,13 @@ THEME_VARIANTS=('' '-manjaro' '-ubuntu')
 WIN_VARIANTS=('' '-win')
 COLOR_VARIANTS=('' '-light' '-dark')
 
+XML_HEADER='<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/shell/theme">'
+XML_FOOT='  </gresource>
+</gresources>'
+
+
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
@@ -79,6 +86,20 @@ install() {
   cp -ur ${SRC_DIR}/src/gnome-shell/assets${theme}/common-assets                     ${THEME_DIR}/gnome-shell
   cp -ur ${SRC_DIR}/src/gnome-shell/assets${theme}/assets${ELSE_DARK}                ${THEME_DIR}/gnome-shell/assets
   cp -ur ${SRC_DIR}/src/gnome-shell/theme${theme}/gnome-shell${color}.css            ${THEME_DIR}/gnome-shell/gnome-shell.css
+
+  # Generate and compile gresource for gnome-shell
+  current_dir=$(pwd)
+  cd "${THEME_DIR}/gnome-shell/"
+  echo -e "${XML_HEADER}" > gnome-shell-theme.gresource.xml
+  find . -type f | sed -e 's/\.\//    <file>/' -e 's/$/<\/file>/' >> gnome-shell-theme.gresource.xml
+  echo -e "${XML_FOOT}" >> gnome-shell-theme.gresource.xml
+  # compile
+  if [ -x $(which glib-compile-resources) ]; then
+    glib-compile-resources gnome-shell-theme.gresource.xml
+  else
+    echo "glib-compile-resources is not installed. Not compiling gnome-shell-theme.gresource.xml"
+  fi
+  cd "${current_dir}"
 
   mkdir -p                                                                           ${THEME_DIR}/cinnamon
   cp -ur ${SRC_DIR}/src/cinnamon/assets${theme}/common-assets                        ${THEME_DIR}/cinnamon
