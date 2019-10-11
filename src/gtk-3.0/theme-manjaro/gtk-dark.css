@@ -3666,7 +3666,7 @@ scale slider:active {
 }
 
 scale slider:disabled {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: rgba(242, 242, 242, 0.1);
 }
 
