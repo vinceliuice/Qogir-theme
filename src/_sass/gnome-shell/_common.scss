@@ -24,7 +24,7 @@ $corner_radius: 0px;
 //
 // Globals
 //
-$font-size: 9;
+$font-size: 10;
 $font-family: Futura Bk bt, Cantarell, Sans-Serif;
 $_bubble_bg_color: opacify($osd_bg_color,0.25);
 $_bubble_fg_color: $osd_fg_color;
@@ -218,6 +218,22 @@ StScrollBar {
   &:hover { color: lighten($link_color,10%); }
 }
 
+%bubble-entry {
+  color: $fg_color;
+  background-color: darken($bg_color, 2%);
+  border-color: $borders_color;
+  box-shadow: none;
+  &:focus { border: 1px solid $selected_bg_color; }
+}
+
+%bubble-dialog {
+  color: $fg_color;
+  background-color: $bg_color;
+  border: none;
+
+  // StEntry { @extend %bubble-entry; }
+}
+
 //
 // Modal Dialogs
 //
@@ -294,6 +310,7 @@ StScrollBar {
 // End Session Dialog
 //
 .end-session-dialog {
+  @extend %bubble-dialog;
   spacing: 42px;
   //border: 3px solid $_bubble_borders_color;
 
@@ -388,6 +405,7 @@ StScrollBar {
 
 .show-processes-dialog,
 .mount-question-dialog {
+  @extend %bubble-dialog;
   spacing: 24px;
 }
 
@@ -450,9 +468,14 @@ StScrollBar {
 // Password or Authentication Dialog
 //
 .prompt-dialog {
+  @extend %bubble-dialog;
   //this is the width of the entire modal popup
-  width: 500px;
+  width: 34em;
   //border: 3px solid $_bubble_borders_color;
+
+  .message-dialog-main-layout { spacing: 24px; padding: 10px; }
+  .message-dialog-content { spacing: 16px; }
+  .message-dialog-title { color: $alt_fg_color; }
 
   &-main-layout {
     spacing: 24px;
@@ -493,6 +516,23 @@ StScrollBar {
     @include fontsize($font-size);
     padding-bottom: 8px;
   }
+
+  &-pim-box {
+    spacing: 1em;
+  }
+
+  &-grid {
+    spacing-rows: 15px;
+    spacing-columns: 1em;
+  }
+
+  &-keyfiles-box {
+    spacing: 1em;
+  }
+
+  &-button.button {
+    padding: 8px;
+  }
 }
 
 .hidden {
@@ -518,7 +558,7 @@ StScrollBar {
   }
 
   &-user-icon {
-    border-radius: 2px;
+    border-radius: 100px;
     background-size: contain;
     width: 48px;
     height: 48px;
@@ -528,7 +568,10 @@ StScrollBar {
 //
 // Audio selection dialog
 //
-.audio-device-selection-dialog { spacing: 30px; }
+.audio-device-selection-dialog {
+  @extend %bubble-dialog;
+  spacing: 30px;
+}
 
 .audio-selection {
 
@@ -566,6 +609,7 @@ StScrollBar {
 // Access Dialog
 //
 .access-dialog {
+  @extend %bubble-dialog;
   spacing: 30px;
 
   &-main-layout {
@@ -597,6 +641,7 @@ StScrollBar {
 // Geolocation Dialog
 //
 .geolocation-dialog {
+  @extend %bubble-dialog;
   spacing: 30px;
 
   &-main-layout { spacing: 12px; }
@@ -608,6 +653,19 @@ StScrollBar {
     color: $fg_color;
     font-weight: bold;
   }
+}
+
+/* Extension Dialog */
+.extension-dialog {
+  @extend %bubble-dialog;
+  .message-dialog-main-layout { spacing: 24px; padding: 10px; }
+  .message-dialog-title { font-weight: normal; color: $fg_color; }
+}
+
+/* Inhibit-Shortcuts Dialog */
+.inhibit-shortcuts-dialog {
+  @extend %bubble-dialog;
+  spacing: 30px;
 }
 
 //
@@ -719,6 +777,15 @@ StScrollBar {
   border-width: 0;
 }
 
+
+// Rename popup
+.rename-folder-popup {
+  .rename-folder-popup-item {
+    spacing: 6px;
+    &:ltr, &:rtl { padding: 0, 12px; }
+  }
+}
+
 // Background menu
 .background-menu { -boxpointer-gap: 4px; -arrow-rise: 0px; }
 
@@ -726,6 +793,19 @@ StScrollBar {
 //- odd thing for styling App menu when apparently not running under shell. Light Adwaita styled
 //  app menu inside the main app window itself rather than the top bar
 //
+
+//
+//  App Icons
+//
+/* Outline for low res icons */
+.lowres-icon {
+    icon-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Drapshadow for large icons */
+.icon-dropshadow {
+  icon-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
 
 //
 // OSD
@@ -928,6 +1008,7 @@ StScrollBar {
   min-height: 27px;
   background-color: $panel_bg;
   border: none;
+  font-feature-settings: "tnum";
 
   // Fix dynamic top bar extension
   &.dynamic-top-bar-white-btn { border-image: none; }
@@ -1160,6 +1241,7 @@ StScrollBar {
 
 .datemenu-calendar-column { spacing: 0.5em; border: none; }
 .datemenu-displays-section { padding-bottom: 3em; }
+.datemenu-displays-box { spacing: 1em; }
 
 .datemenu-today-button,
 .world-clocks-button,
@@ -1195,6 +1277,7 @@ StScrollBar {
 
 .datemenu-today-button .date-label {
   font-size: 1.5em;
+  font-weight: 300;
 }
 
 .world-clocks-header,
@@ -1210,12 +1293,40 @@ StScrollBar {
   color: $selected_fg_color;
 }
 
-.world-clocks-grid {
+.world-clocks-grid,
+.weather-grid {
   spacing-rows: 0.4em;
+  spacing-columns: 0.8em;
 }
 
 .weather-box {
   spacing: 0.4em;
+}
+
+.world-clocks-city {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.world-clocks-time {
+  color: $alt_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 1.2em;
+}
+
+.world-clocks-timezone {
+  color: $fg_color;
+  font-feature-settings: "tnum";
+  font-size: 0.9em;
+}
+
+.weather-forecast-icon {
+  icon-size: 2.18em;
+}
+
+.weather-forecast-time {
+  color: $sec_fg_color;
+  font-size: 0.8em;
 }
 
 .calendar-month-label {
@@ -1265,12 +1376,12 @@ StScrollBar {
 }
 
 .calendar-day-base {
-  font-size: 80%;
+  font-size: 90%;
   text-align: center;
-  width: 25px; height: 25px;
+  width: 2.4em; height: 2.4em;
   padding: 0.1em;
   margin: 2px;
-  border-radius: 12.5px;
+  border-radius: 100px;
   font-feature-settings: "tnum";
 
   &:hover, &:focus { background-color: $alt_bg_color; }
@@ -1552,6 +1663,7 @@ StScrollBar {
 // Network Dialogs
 //
 .nm-dialog {
+  @extend %bubble-dialog;
   max-height: 500px;
   min-height: 450px;
   min-width: 470px;
@@ -1799,8 +1911,9 @@ StScrollBar {
   border-radius: 3px;
   padding: 4px 12px;
   color: $_shell_fg_color;
-  background-color: transparentize(black, 0.3);
+  background-color: transparentize($osd_bg_color, 0.3);
   text-align: center;
+  border: none;
   -x-offset: 3px;
 
   .bottom &, .top & {
