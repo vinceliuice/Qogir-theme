@@ -1728,7 +1728,7 @@ headerbar.selection-mode .selection-menu .arrow,
 .maximized headerbar,
 .maximized .titlebar:not(headerbar) {
   background-color: white;
-  border-color: #e6e6e6;
+  border-color: #e6e5e5;
 }
 
 .maximized headerbar:backdrop, .maximized .titlebar:backdrop:not(headerbar) {
@@ -2254,7 +2254,7 @@ headerbar switch:backdrop, .nemo-window .primary-toolbar switch:backdrop, .caja-
 }
 
 headerbar progressbar trough, .nemo-window .primary-toolbar progressbar trough, .caja-navigation-window toolbar#Toolbar.primary-toolbar progressbar trough, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar progressbar trough {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
 }
 
 headerbar progressbar:backdrop, .nemo-window .primary-toolbar progressbar:backdrop, .caja-navigation-window toolbar#Toolbar.primary-toolbar progressbar:backdrop, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar progressbar:backdrop {
@@ -2286,11 +2286,11 @@ headerbar scale slider:disabled, .nemo-window .primary-toolbar scale slider:disa
 }
 
 headerbar scale trough, .nemo-window .primary-toolbar scale trough, .caja-navigation-window toolbar#Toolbar.primary-toolbar scale trough, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar scale trough {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
 }
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar scale trough:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar scale trough:disabled {
-  background-color: rgba(230, 230, 230, 0.95);
+  background-color: rgba(230, 229, 229, 0.95);
 }
 
 .path-bar button:hover {
@@ -3638,7 +3638,7 @@ scale slider:active {
 }
 
 scale slider:disabled {
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: rgba(0, 0, 0, 0.15);
 }
 

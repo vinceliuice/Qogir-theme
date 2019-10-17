@@ -23,8 +23,11 @@ usage() {
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-w, --win VARIANTS..." "Specify titlebutton variant(s) [standard|square] (Default: All variants)"
+  printf "  %-25s%s\n" "-t, --theme VARIANTS..." "Specify theme primary color variant(s) [standard|manjaro|ubuntu] (Default: All variants)"
   printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-i, --image VARIANTS..." "Install theme with nautilus background image"
+  printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
+  printf "  %-25s%s\n" "-r, --revert" "revert GDM theme, this option need root user authority! please run this with sudo"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 
@@ -78,6 +81,7 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
   cp -ur ${SRC_DIR}/src/gnome-shell/assets${theme}/common-assets                     ${THEME_DIR}/gnome-shell
   cp -ur ${SRC_DIR}/src/gnome-shell/assets${theme}/assets${ELSE_DARK}                ${THEME_DIR}/gnome-shell/assets
+  cp -ur ${SRC_DIR}/src/gnome-shell/background${ELSE_DARK}.jpeg                      ${THEME_DIR}/gnome-shell/background.jpeg
   cp -ur ${SRC_DIR}/src/gnome-shell/theme${theme}/gnome-shell${color}.css            ${THEME_DIR}/gnome-shell/gnome-shell.css
 
   mkdir -p                                                                           ${THEME_DIR}/cinnamon
@@ -100,6 +104,68 @@ install() {
 
   cp -ur ${SRC_DIR}/src/plank                                                        ${THEME_DIR}
   cp -ur ${SRC_DIR}/src/unity                                                        ${THEME_DIR}
+}
+
+# Backup and install files related to GDM theme
+
+GS_THEME_FILE="/usr/share/gnome-shell/gnome-shell-theme.gresource"
+SHELL_THEME_FOLDER="/usr/share/gnome-shell/theme"
+ETC_THEME_FOLDER="/etc/alternatives"
+ETC_THEME_FILE="/etc/alternatives/gdm3.css"
+UBUNTU_THEME_FILE="/usr/share/gnome-shell/theme/ubuntu.css"
+UBUNTU_NEW_THEME_FILE="/usr/share/gnome-shell/theme/gnome-shell.css"
+
+install_gdm() {
+  local GDM_THEME_DIR="${1}/${2}${3}${4}${5}"
+
+  if [[ -f "$GS_THEME_FILE" ]] && command -v glib-compile-resources >/dev/null ; then
+    echo "Installing '$GS_THEME_FILE'..."
+    cp -an "$GS_THEME_FILE" "$GS_THEME_FILE.bak"
+    glib-compile-resources \
+      --sourcedir="$GDM_THEME_DIR/gnome-shell" \
+      --target="$GS_THEME_FILE" \
+      "${SRC_DIR}/src/gnome-shell/gnome-shell-theme.gresource.xml"
+  fi
+
+  if [[ -f "$UBUNTU_THEME_FILE" && -f "$GS_THEME_FILE.bak" ]]; then
+    echo "Installing '$UBUNTU_THEME_FILE'..."
+    cp -an "$UBUNTU_THEME_FILE" "$UBUNTU_THEME_FILE.bak"
+    rm -rf "$GS_THEME_FILE"
+    mv "$GS_THEME_FILE.bak" "$GS_THEME_FILE"
+    cp -af "$GDM_THEME_DIR/gnome-shell/gnome-shell.css" "$UBUNTU_THEME_FILE"
+  fi
+
+  if [[ -f "$ETC_THEME_FILE" && -f "$GS_THEME_FILE.bak" ]]; then
+    echo "Installing Ubuntu gnome-shell theme..."
+    cp -an "$ETC_THEME_FILE" "$ETC_THEME_FILE.bak"
+    rm -rf "$ETC_THEME_FILE" "$GS_THEME_FILE"
+    mv "$GS_THEME_FILE.bak" "$GS_THEME_FILE"
+    [[ -d $SHELL_THEME_FOLDER/$THEME_NAME ]] && rm -rf $SHELL_THEME_FOLDER/$THEME_NAME
+    cp -ur "$GDM_THEME_DIR/gnome-shell" "$SHELL_THEME_FOLDER/$THEME_NAME"
+    cd "$ETC_THEME_FOLDER"
+    ln -s "$SHELL_THEME_FOLDER/$THEME_NAME/gnome-shell.css" gdm3.css
+  fi
+}
+
+revert_gdm() {
+  if [[ -f "$GS_THEME_FILE.bak" ]]; then
+    echo "reverting '$GS_THEME_FILE'..."
+    rm -rf "$GS_THEME_FILE"
+    mv "$GS_THEME_FILE.bak" "$GS_THEME_FILE"
+  fi
+
+  if [[ -f "$UBUNTU_THEME_FILE.bak" ]]; then
+    echo "reverting '$UBUNTU_THEME_FILE'..."
+    rm -rf "$UBUNTU_THEME_FILE"
+    mv "$UBUNTU_THEME_FILE.bak" "$UBUNTU_THEME_FILE"
+  fi
+
+  if [[ -f "$ETC_THEME_FILE.bak" ]]; then
+    echo "reverting Ubuntu gnome-shell theme..."
+    rm -rf "$ETC_THEME_FILE"
+    mv "$ETC_THEME_FILE.bak" "$ETC_THEME_FILE"
+    [[ -d $SHELL_THEME_FOLDER/$THEME_NAME ]] && rm -rf $SHELL_THEME_FOLDER/$THEME_NAME
+  fi
 }
 
 NBG_N="background-image: none;"
@@ -178,9 +244,9 @@ parse_sass() {
 }
 
 install_theme() {
-  for theme in "${themes[@]:-${THEME_VARIANTS[@]}}"; do
-    for win in "${wins[@]:-${WIN_VARIANTS[@]}}"; do
-      for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
+  for theme in "${themes[@]-${THEME_VARIANTS[@]}}"; do
+    for win in "${wins[@]-${WIN_VARIANTS[@]}}"; do
+      for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
         install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${win}" "${color}"
       done
     done
@@ -215,6 +281,14 @@ while [[ $# -gt 0 ]]; do
       name="${2}"
       shift 2
       ;;
+    -g|--gdm)
+      gdm='true'
+      shift 1
+      ;;
+    -r|--revert)
+      revert='true'
+      shift 1
+      ;;
     -i|--image)
       image='true'
       shift
@@ -229,6 +303,33 @@ while [[ $# -gt 0 ]]; do
             ;;
           square)
             wins+=("${WIN_VARIANTS[1]}")
+            shift 1
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized color variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
+      ;;
+    -t|--theme)
+      shift
+      for theme in "${@}"; do
+        case "${theme}" in
+          standard)
+            themes+=("${THEME_VARIANTS[0]}")
+            shift 1
+            ;;
+          manjaro)
+            themes+=("${THEME_VARIANTS[1]}")
+            shift 1
+            ;;
+          ubuntu)
+            themes+=("${THEME_VARIANTS[2]}")
             shift 1
             ;;
           -*|--*)
@@ -281,12 +382,24 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ "${image:-}" != 'true' ]]; then
+if [[ "${gdm:-}" != 'true' && "${revert:-}" != 'true' && "${image:-}" != 'true' ]]; then
   install_theme
 fi
 
-if [[ "${image:-}" == 'true'  ]]; then
+if [[ "${gdm:-}" == 'true' && "${revert:-}" != 'true' && "${image:-}" != 'true' && "$UID" -eq "$ROOT_UID" ]]; then
+  install_theme && install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}"
+fi
+
+if [[ "${gdm:-}" != 'true' && "${revert:-}" == 'true' && "$UID" -eq "$ROOT_UID" ]]; then
+  revert_gdm
+fi
+
+if [[ "${gdm:-}" != 'true' && "${image:-}" == 'true'  ]]; then
   install_package && install_img && parse_sass && install_theme && restore_img && parse_sass
+fi
+
+if [[ "${gdm:-}" == 'true' && "${revert:-}" != 'true' && "${image:-}" == 'true' && "$UID" -eq "$ROOT_UID" ]]; then
+  install_package && install_img && parse_sass && install_theme && restore_img && parse_sass && install_gdm
 fi
 
 echo

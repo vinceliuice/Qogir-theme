@@ -2614,8 +2614,9 @@ $legacy_icon_size: 24px;
 }
 
 #lockDialogGroup {
-  background: $osd_bg_color url(misc/noise-texture.png);
-  background-repeat: repeat;
+  background: url("background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #screenShieldNotifications {

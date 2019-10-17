@@ -2971,8 +2971,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #lockDialogGroup {
-  background: #282A33 url(misc/noise-texture.png);
-  background-repeat: repeat;
+  background: url("background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #screenShieldNotifications StButton#vhandle, #screenShieldNotifications StButton#hhandle {
