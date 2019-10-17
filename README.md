@@ -58,9 +58,12 @@ Usage:  ./install.sh  [OPTIONS...]
 |:-------------|:-------------|
 | -d, --dest   | destination directory (Default: $HOME/.themes) |
 | -n, --name   | name (Default: Qogir) |
+| -t, --theme  | theme primary color variant(s) (standard/manjaro/ubuntu) |
 | -c, --color  | color variant(s) (standard/light/dark) |
 | -i, --image  | Install theme with nautilus background image |
 | -w, --win    | titlebutton variant(s) (standard/square) |
+| -g, --gdm    | Install GDM theme, you should run this with sudo!|
+| -r, --revert | revert GDM theme, you should run this with sudo!|
 | -h, --help   | Show this help |
 
 **FOR EXAMPLE:**
@@ -70,6 +73,10 @@ Usage:  ./install.sh  [OPTIONS...]
 
 ```sh
 ./install.sh -i  (Install themes with nautilus background image)
+```
+
+```sh
+sudo ./install.sh -g -c dark -t standard  (Install standard dark gdm theme)
 ```
 
 ## Screenshots
