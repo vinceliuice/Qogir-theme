@@ -1833,9 +1833,11 @@ StScrollBar {
 //
 // Search Results
 //
-#searchResultsBin { max-width: 1000px; }
+
+// #searchResultsBin { max-width: 1000px; }
 
 #searchResultsContent {
+  max-width: 1000px;
   padding-left: 20px;
   padding-right: 20px;
   spacing: 16px;
@@ -2606,7 +2608,7 @@ $legacy_icon_size: 24px;
 
 .screen-shield-notification-count-text { padding: 0px 0px 0px 12px; }
 
-#panel.lock-screen { background-color: transparentize($_bubble_bg_color, 0.5); }
+#panel .lock-screen { background-color: rgba($panel_bg, 0.5); }
 
 .screen-shield-background { //just the shadow, really
   background: black;

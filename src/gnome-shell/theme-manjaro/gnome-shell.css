@@ -1980,11 +1980,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #ffffff;
 }
 
-#searchResultsBin {
-  max-width: 1000px;
-}
-
 #searchResultsContent {
+  max-width: 1000px;
   padding-left: 20px;
   padding-right: 20px;
   spacing: 16px;
@@ -2961,8 +2958,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 0px 0px 0px 12px;
 }
 
-#panel.lock-screen {
-  background-color: rgba(40, 42, 51, 0.5);
+#panel .lock-screen {
+  background-color: rgba(33, 35, 43, 0.5);
 }
 
 .screen-shield-background {
