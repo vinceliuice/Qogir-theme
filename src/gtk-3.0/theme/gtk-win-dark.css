@@ -10416,10 +10416,6 @@ window#GearyMainWindow > box.vertical > paned > separator {
   background-image: image(#494c59);
 }
 
-.geary-titlebar-left {
-  margin-right: 6px;
-}
-
 .geary-titlebar-left separator {
   margin: 0 -10px 0 0;
   border-right: 1px solid #494c59;

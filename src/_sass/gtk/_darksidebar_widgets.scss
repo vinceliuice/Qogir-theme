@@ -810,7 +810,8 @@ window#GearyMainWindow {
 }
 
 .geary-titlebar-left {
-  margin-right: $cont_padding;
+  // margin-right: $cont_padding;
+
   &, &.geary-titlebar {
     @extend %side_headerbar;
   }
