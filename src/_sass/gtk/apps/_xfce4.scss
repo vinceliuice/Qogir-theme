@@ -145,12 +145,12 @@ window.thunar {
 
     treeview.view {
       @extend treeview.view;
-      background-color: $dark_sidebar_bg;
-      color: $dark_sidebar_fg;
+      background-color: $bg_color;
+      color: $alt_fg_color;
 
       &:not(:selected):hover {
-        color: $dark_sidebar_fg;
-        background-color: mix($dark_sidebar_fg, $dark_sidebar_bg, 10%);
+        color: $fg_color;
+        background-color: mix($fg_color, $bg_color, 10%);
       }
     }
   }

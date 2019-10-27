@@ -8737,13 +8737,13 @@ window.thunar .sidebar {
 }
 
 window.thunar .sidebar treeview.view {
-  background-color: #272931;
-  color: #C4CAD1;
+  background-color: #32343D;
+  color: rgba(211, 218, 227, 0.75);
 }
 
 window.thunar .sidebar treeview.view:not(:selected):hover {
-  color: #C4CAD1;
-  background-color: #373941;
+  color: #D3DAE3;
+  background-color: #42454e;
 }
 
 window.thunar notebook scrolledwindow.frame.standard-view {

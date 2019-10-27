@@ -8932,13 +8932,13 @@ window.thunar .sidebar {
 }
 
 window.thunar .sidebar treeview.view {
-  background-color: #f6f9fb;
-  color: #646972;
+  background-color: #fafbfc;
+  color: rgba(92, 97, 108, 0.75);
 }
 
 window.thunar .sidebar treeview.view:not(:selected):hover {
-  color: #646972;
-  background-color: #e7ebed;
+  color: #5c616c;
+  background-color: #eaecee;
 }
 
 window.thunar notebook scrolledwindow.frame.standard-view {
