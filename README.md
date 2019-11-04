@@ -79,6 +79,15 @@ Usage:  ./install.sh  [OPTIONS...]
 sudo ./install.sh -g -c dark -t standard  (Install standard dark gdm theme)
 ```
 
+### Flatpak
+
+All variants are available via Flathub:
+
+```
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.gtk.Gtk3theme.Qogir{,-dark,-light,-win,-manjaro, ...}
+```
+
 ## Screenshots
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot01.png?raw=true)
 ![2](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot02.png?raw=true)
