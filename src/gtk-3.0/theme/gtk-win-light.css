@@ -7716,11 +7716,12 @@ window.budgie-popover:not(.csd) > frame.container > border {
 }
 
 .budgie-menu entry.search {
+  padding: 5px 10px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
   box-shadow: none;
-  font-size: 120%;
+  font-size: 110%;
 }
 
 .budgie-menu .categories:dir(ltr) {

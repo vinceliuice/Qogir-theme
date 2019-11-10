@@ -258,11 +258,12 @@ window.budgie-popover:not(.csd) {
 
   entry.search {
     // margin: $cont_padding $cont_padding 0 $cont_padding;
+    padding: 5px 10px;
     border: none;
     border-bottom: 1px solid $borders_color;
     border-radius: 0;
     box-shadow: none;
-    font-size: 120%;
+    font-size: 110%;
     // &:focus { @include entry(focus); }
   }
 
