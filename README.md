@@ -34,22 +34,6 @@ ArchLinux:
 Other:
 Search for the engines in your distributions repository or install the engines from source.
 
-## Firefox issues
-
-### Fix entries issues of dark version on Firefox
-
-Use "light theme" for webs on Firefox.
-
-1. Go to `about:config`,
-
-2. create a pref called `widget.content.gtk-theme-override` of type String,
-
-3. and give it a value of `Qogir-light` (or `Qogir-win-light` ). This will fix it.
-
-### Fix win titlebutton issues on Firefox
-
-add the `src/other/firefox/userChrome.css` into `~/.mozilla/firefox/{your_profile}/chrome/`
-
 ## Install
 
 Usage:  ./install.sh  [OPTIONS...]
@@ -79,6 +63,22 @@ Usage:  ./install.sh  [OPTIONS...]
 sudo ./install.sh -g -c dark -t standard  (Install standard dark gdm theme)
 ```
 
+## Firefox issues
+
+### Fix entries issues of dark version on Firefox
+
+Use "light theme" for webs on Firefox.
+
+1. Go to `about:config`,
+
+2. create a pref called `widget.content.gtk-theme-override` of type String,
+
+3. and give it a value of `Qogir-light` (or `Qogir-win-light` ). This will fix it.
+
+### Fix win titlebutton issues on Firefox
+
+add the `src/other/firefox/userChrome.css` into `~/.mozilla/firefox/{your_profile}/chrome/`
+
 ### Flatpak
 
 All variants are available via Flathub:
@@ -87,6 +87,12 @@ All variants are available via Flathub:
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gtk.Gtk3theme.Qogir{,-dark,-light,-win,-manjaro, ...}
 ```
+
+### Kde theme
+[Qogir-kde](https://github.com/vinceliuice/Qogir-kde)
+
+### Icon theme
+[Qogir](https://github.com/vinceliuice/Qogir-icon-theme)
 
 ## Screenshots
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot01.png?raw=true)
