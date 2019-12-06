@@ -1839,12 +1839,17 @@ StScrollBar {
 
   //favorties | all toggle button
   .app-view-control {
-    padding: 4px 32px;
+    padding: 6px 48px;
     margin: 0;
 
     @include button(osd);
+    border-color: rgba(black, 0.65);
 
-    &:hover { @include button(osd-hover); }
+    &:hover {
+      @include button(osd-hover);
+      border-color: rgba(black, 0.65);
+    }
+
     &:checked {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
@@ -1853,14 +1858,14 @@ StScrollBar {
     &:first-child:ltr,
     &:last-child:rtl {
       border-radius: 2px 0 0 2px;
-      border-right-width: 0;
+      border-right: none;
       margin: 0;
     }
 
     &:last-child:ltr,
     &:first-child:rtl {
       border-radius: 0 2px 2px 0;
-      border-left-width: 1px;
+      border-left: none;
       margin: 0;
     }
   }
