@@ -1608,7 +1608,7 @@ headerbar {
 
       &:active {
         background-color: $selected_bg_color;
-        border-color: $selected_bg_color;
+        border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
       }
 
       &:disabled {
@@ -2524,13 +2524,13 @@ scale {
     &:hover {
       background-clip: border-box;
       background-color: lighten($selected_bg_color, 3%);
-      border-color: lighten($selected_bg_color, 3%);
+      border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
     }
 
     &:active {
       background-clip: border-box;
       background-color: darken($selected_bg_color, 3%);
-      border-color: darken($selected_bg_color, 3%);
+      border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
     }
 
     &:disabled {

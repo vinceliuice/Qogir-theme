@@ -2277,7 +2277,7 @@ headerbar scale slider:hover, .nemo-window .primary-toolbar scale slider:hover, 
 
 headerbar scale slider:active, .nemo-window .primary-toolbar scale slider:active, .caja-navigation-window toolbar#Toolbar.primary-toolbar scale slider:active, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar scale slider:active {
   background-color: #5294e2;
-  border-color: #5294e2;
+  border-color: #2679db;
 }
 
 headerbar scale slider:disabled, .nemo-window .primary-toolbar scale slider:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar scale slider:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar scale slider:disabled {
@@ -3644,13 +3644,13 @@ scale slider {
 scale slider:hover {
   background-clip: border-box;
   background-color: #5f9ce4;
-  border-color: #5f9ce4;
+  border-color: #2679db;
 }
 
 scale slider:active {
   background-clip: border-box;
   background-color: #458ce0;
-  border-color: #458ce0;
+  border-color: #2679db;
 }
 
 scale slider:disabled {
