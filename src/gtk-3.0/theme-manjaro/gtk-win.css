@@ -3003,10 +3003,6 @@ notebook > header > tabs > tab button.flat:active, notebook > header > tabs > ta
   background-color: #e1e7ed;
 }
 
-notebook > header button {
-  margin: 2px;
-}
-
 scrollbar {
   background-color: rgba(0, 0, 0, 0.05);
   transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
