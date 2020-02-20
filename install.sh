@@ -16,12 +16,15 @@ THEME_NAME=Qogir
 THEME_VARIANTS=('' '-manjaro' '-ubuntu')
 WIN_VARIANTS=('' '-win')
 COLOR_VARIANTS=('' '-light' '-dark')
+LOGO_VARIANTS=('' '-arch' '-budgie' '-debian' '-fedora' '-gnome' '-manjaro' '-ubuntu')
+LOGO_NAME=''
 
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
+  printf "  %-25s%s\n" "-l, --logo VARIANTS" "Specify nautilus logo [arch|budgie|debian|fedora|gnome|manjaro|ubuntu] (Default: qogir icon)"
   printf "  %-25s%s\n" "-w, --win VARIANTS..." "Specify titlebutton variant(s) [standard|square] (Default: All variants)"
   printf "  %-25s%s\n" "-t, --theme VARIANTS..." "Specify theme primary color variant(s) [standard|manjaro|ubuntu] (Default: All variants)"
   printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
@@ -37,6 +40,7 @@ install() {
   local theme=${3}
   local win=${4}
   local color=${5}
+  local logo=${6}
 
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
@@ -48,8 +52,8 @@ install() {
   echo "Installing '${THEME_DIR}'..."
 
   mkdir -p                                                                           ${THEME_DIR}
-  cp -ur ${SRC_DIR}/COPYING                                                          ${THEME_DIR}
-  cp -ur ${SRC_DIR}/AUTHORS                                                          ${THEME_DIR}
+  cp -r ${SRC_DIR}/COPYING                                                           ${THEME_DIR}
+  cp -r ${SRC_DIR}/AUTHORS                                                           ${THEME_DIR}
 
   echo "[Desktop Entry]"                                                          >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme"                                                   >> ${THEME_DIR}/index.theme
@@ -65,45 +69,53 @@ install() {
   echo "ButtonLayout=menu:minimize,maximize,close"                                >> ${THEME_DIR}/index.theme
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-2.0
-  cp -ur ${SRC_DIR}/src/gtk-2.0/{apps.rc,panel.rc,main.rc,xfce-notify.rc}            ${THEME_DIR}/gtk-2.0
-  cp -ur ${SRC_DIR}/src/gtk-2.0/assets/assets${theme}${ELSE_DARK}                    ${THEME_DIR}/gtk-2.0/assets
-  cp -ur ${SRC_DIR}/src/gtk-2.0/theme${theme}/gtkrc${color}                          ${THEME_DIR}/gtk-2.0/gtkrc
-  cp -ur ${SRC_DIR}/src/gtk-2.0/menubar-toolbar${color}.rc                           ${THEME_DIR}/gtk-2.0/menubar-toolbar.rc
+  cp -r ${SRC_DIR}/src/gtk-2.0/{apps.rc,panel.rc,main.rc,xfce-notify.rc}             ${THEME_DIR}/gtk-2.0
+  cp -r ${SRC_DIR}/src/gtk-2.0/assets/assets${theme}${ELSE_DARK}                     ${THEME_DIR}/gtk-2.0/assets
+  cp -r ${SRC_DIR}/src/gtk-2.0/theme${theme}/gtkrc${color}                           ${THEME_DIR}/gtk-2.0/gtkrc
+  cp -r ${SRC_DIR}/src/gtk-2.0/menubar-toolbar${color}.rc                            ${THEME_DIR}/gtk-2.0/menubar-toolbar.rc
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/src/gtk-3.0/assets/assets${theme}                                ${THEME_DIR}/gtk-3.0/assets
-  cp -ur ${SRC_DIR}/src/gtk-3.0/assets/assets-common/*.png                           ${THEME_DIR}/gtk-3.0/assets
-  cp -ur ${SRC_DIR}/src/gtk-3.0/theme${theme}/gtk${win}${color}.css                  ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -r ${SRC_DIR}/src/gtk-3.0/assets/assets${theme}                                 ${THEME_DIR}/gtk-3.0/assets
+
+  if [[ -f ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${logo}.svg ]] ; then
+    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${logo}.svg                         ${THEME_DIR}/gtk-3.0/assets/logo.svg
+  else
+    echo "${logo} icon not supported default icon will install..."
+    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${LOGO_NAME}.svg                    ${THEME_DIR}/gtk-3.0/assets/logo.svg
+  fi
+
+  cp -r ${SRC_DIR}/src/gtk-3.0/assets/assets-common/*                                ${THEME_DIR}/gtk-3.0/assets
+  cp -r ${SRC_DIR}/src/gtk-3.0/theme${theme}/gtk${win}${color}.css                   ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk-3.0/theme${theme}/gtk${win}-dark.css                     ${THEME_DIR}/gtk-3.0/gtk-dark.css
-  cp -ur ${SRC_DIR}/src/gtk-3.0/assets/thumbnail${theme}${ELSE_DARK}.png             ${THEME_DIR}/gtk-3.0/thumbnail.png
+  cp -r ${SRC_DIR}/src/gtk-3.0/theme${theme}/gtk${win}-dark.css                      ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -r ${SRC_DIR}/src/gtk-3.0/assets/thumbnail${theme}${ELSE_DARK}.png              ${THEME_DIR}/gtk-3.0/thumbnail.png
 
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
-  cp -ur ${SRC_DIR}/src/gnome-shell/assets${theme}/common-assets                     ${THEME_DIR}/gnome-shell
-  cp -ur ${SRC_DIR}/src/gnome-shell/assets${theme}/assets${ELSE_DARK}                ${THEME_DIR}/gnome-shell/assets
-  cp -ur ${SRC_DIR}/src/gnome-shell/background${ELSE_DARK}.jpeg                      ${THEME_DIR}/gnome-shell/background.jpeg
-  cp -ur ${SRC_DIR}/src/gnome-shell/theme${theme}/gnome-shell${color}.css            ${THEME_DIR}/gnome-shell/gnome-shell.css
+  cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/common-assets                      ${THEME_DIR}/gnome-shell
+  cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/assets${ELSE_DARK}                 ${THEME_DIR}/gnome-shell/assets
+  cp -r ${SRC_DIR}/src/gnome-shell/background${ELSE_DARK}.jpeg                       ${THEME_DIR}/gnome-shell/background.jpeg
+  cp -r ${SRC_DIR}/src/gnome-shell/theme${theme}/gnome-shell${color}.css             ${THEME_DIR}/gnome-shell/gnome-shell.css
 
   mkdir -p                                                                           ${THEME_DIR}/cinnamon
-  cp -ur ${SRC_DIR}/src/cinnamon/assets${theme}/common-assets                        ${THEME_DIR}/cinnamon
-  cp -ur ${SRC_DIR}/src/cinnamon/assets${theme}/assets${ELSE_DARK}                   ${THEME_DIR}/cinnamon/assets
-  cp -ur ${SRC_DIR}/src/cinnamon/theme${theme}/cinnamon${ELSE_DARK}.css              ${THEME_DIR}/cinnamon/cinnamon.css
-  cp -ur ${SRC_DIR}/src/cinnamon/thumbnail${theme}${ELSE_DARK}.png                   ${THEME_DIR}/cinnamon/thumbnail.png
+  cp -r ${SRC_DIR}/src/cinnamon/assets${theme}/common-assets                         ${THEME_DIR}/cinnamon
+  cp -r ${SRC_DIR}/src/cinnamon/assets${theme}/assets${ELSE_DARK}                    ${THEME_DIR}/cinnamon/assets
+  cp -r ${SRC_DIR}/src/cinnamon/theme${theme}/cinnamon${ELSE_DARK}.css               ${THEME_DIR}/cinnamon/cinnamon.css
+  cp -r ${SRC_DIR}/src/cinnamon/thumbnail${theme}${ELSE_DARK}.png                    ${THEME_DIR}/cinnamon/thumbnail.png
 
   mkdir -p                                                                           ${THEME_DIR}/metacity-1
-  cp -ur ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}${win}/*.png                   ${THEME_DIR}/metacity-1
-  cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-3${win}.xml                        ${THEME_DIR}/metacity-1/metacity-theme-3.xml
-  cp -ur ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}${win}.xml           ${THEME_DIR}/metacity-1/metacity-theme-1.xml
-  cp -ur ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                        ${THEME_DIR}/metacity-1/thumbnail.png
+  cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}${win}/*.png                    ${THEME_DIR}/metacity-1
+  cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3${win}.xml                         ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+  cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}${win}.xml            ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+  cp -r ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                         ${THEME_DIR}/metacity-1/thumbnail.png
   cd ${THEME_DIR}/metacity-1
   ln -s metacity-theme-1.xml metacity-theme-2.xml
 
   mkdir -p                                                                           ${THEME_DIR}/xfwm4
-  cp -ur ${SRC_DIR}/src/xfwm4/themerc${win}${ELSE_LIGHT}                             ${THEME_DIR}/xfwm4/themerc
-  cp -ur ${SRC_DIR}/src/xfwm4/assets${win}${ELSE_LIGHT}/*.png                        ${THEME_DIR}/xfwm4
+  cp -r ${SRC_DIR}/src/xfwm4/themerc${win}${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
+  cp -r ${SRC_DIR}/src/xfwm4/assets${win}${ELSE_LIGHT}/*.png                         ${THEME_DIR}/xfwm4
 
-  cp -ur ${SRC_DIR}/src/plank                                                        ${THEME_DIR}
-  cp -ur ${SRC_DIR}/src/unity                                                        ${THEME_DIR}
+  cp -r ${SRC_DIR}/src/plank                                                         ${THEME_DIR}
+  cp -r ${SRC_DIR}/src/unity                                                         ${THEME_DIR}
 }
 
 # Backup and install files related to GDM theme
@@ -141,7 +153,7 @@ install_gdm() {
     rm -rf "$ETC_THEME_FILE" "$GS_THEME_FILE"
     mv "$GS_THEME_FILE.bak" "$GS_THEME_FILE"
     [[ -d $SHELL_THEME_FOLDER/$THEME_NAME ]] && rm -rf $SHELL_THEME_FOLDER/$THEME_NAME
-    cp -ur "$GDM_THEME_DIR/gnome-shell" "$SHELL_THEME_FOLDER/$THEME_NAME"
+    cp -r "$GDM_THEME_DIR/gnome-shell" "$SHELL_THEME_FOLDER/$THEME_NAME"
     cd "$ETC_THEME_FOLDER"
     ln -s "$SHELL_THEME_FOLDER/$THEME_NAME/gnome-shell.css" gdm3.css
   fi
@@ -247,7 +259,7 @@ install_theme() {
   for theme in "${themes[@]-${THEME_VARIANTS[@]}}"; do
     for win in "${wins[@]-${WIN_VARIANTS[@]}}"; do
       for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
-        install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${win}" "${color}"
+          install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${win}" "${color}" "${logo:-${LOGO_NAME}}"
       done
     done
   done
@@ -279,6 +291,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     -n|--name)
       name="${2}"
+      shift 2
+      ;;
+    -l|--logo)
+      logo="${2}"
       shift 2
       ;;
     -g|--gdm)

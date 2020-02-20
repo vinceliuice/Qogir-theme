@@ -158,28 +158,21 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
       border: none;
       min-height: 30px;
       min-width: 30px;
-      border-radius: 50px;
+      border-radius: 1000px;
       color: transparent;
       background-color: transparent;
-      background-image: -gtk-scaled(url("assets/logo.png"),
-                                    url("assets/logo@2.png"));
+      background-image: -gtk-scaled(url("assets/logo.svg"));
       background-repeat: no-repeat;
       background-position: center;
 
       image { opacity: 0; } // Make menu button icon invisible
 
       &:hover {
-        background-image: -gtk-scaled(url("assets/logo-hover.png"),
-                                      url("assets/logo-hover@2.png"));
-        background-repeat: no-repeat;
-        background-position: center;
+        background-color: rgba($side_theme_fg, 0.15);
       }
 
       &:checked, &:active {
-        background-image: -gtk-scaled(url("assets/logo-active.png"),
-                                      url("assets/logo-active@2.png"));
-        background-repeat: no-repeat;
-        background-position: center;
+        background-color: rgba($side_theme_fg, 0.25);
       }
     }
   }
@@ -223,17 +216,10 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 }
 
 %headerbar_image {
-  background-image: -gtk-scaled(url("assets/logo.png"),
-                                url("assets/logo@2.png"));
+  background-image: url("assets/logo.svg"), image($dark_sidebar_icon_bg);
   background-repeat: no-repeat;
+  background-size: 38px 42px;
   background-position: left center;
-
-  &:backdrop {
-    background-image: -gtk-scaled(url("assets/logo-backdrop.png"),
-                                  url("assets/logo-backdrop@2.png"));
-    background-repeat: no-repeat;
-    background-position: left center;
-  }
 }
 
 // Reset filechooser separator

@@ -9653,10 +9653,10 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appm
   border: none;
   min-height: 30px;
   min-width: 30px;
-  border-radius: 50px;
+  border-radius: 1000px;
   color: transparent;
   background-color: transparent;
-  background-image: -gtk-scaled(url("assets/logo.png"), url("assets/logo@2.png"));
+  background-image: -gtk-scaled(url("assets/logo.svg"));
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -9666,15 +9666,11 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appm
 }
 
 window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:hover, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:hover, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu:hover, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.appmenu:hover, .geary-titlebar-left button.titlebutton.appmenu:hover {
-  background-image: -gtk-scaled(url("assets/logo-hover.png"), url("assets/logo-hover@2.png"));
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: rgba(246, 246, 251, 0.15);
 }
 
 window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:checked, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:checked, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:checked, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu:checked, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.appmenu:checked, .geary-titlebar-left button.titlebutton.appmenu:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:active, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:active, window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu:active, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical button.titlebutton.appmenu:active, .geary-titlebar-left button.titlebutton.appmenu:active {
-  background-image: -gtk-scaled(url("assets/logo-active.png"), url("assets/logo-active@2.png"));
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: rgba(246, 246, 251, 0.25);
 }
 
 .nautilus-window placessidebar.sidebar scrollbar, .nemo-window .sidebar scrollbar {
@@ -9707,14 +9703,9 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appm
 }
 
 .nautilus-window headerbar {
-  background-image: -gtk-scaled(url("assets/logo.png"), url("assets/logo@2.png"));
+  background-image: url("assets/logo.svg"), image(#32343D);
   background-repeat: no-repeat;
-  background-position: left center;
-}
-
-.nautilus-window headerbar:backdrop {
-  background-image: -gtk-scaled(url("assets/logo-backdrop.png"), url("assets/logo-backdrop@2.png"));
-  background-repeat: no-repeat;
+  background-size: 38px 42px;
   background-position: left center;
 }
 

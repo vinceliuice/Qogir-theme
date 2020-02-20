@@ -43,6 +43,7 @@ Usage:  ./install.sh  [OPTIONS...]
 | -d, --dest   | destination directory (Default: $HOME/.themes) |
 | -n, --name   | name (Default: Qogir) |
 | -t, --theme  | theme primary color variant(s) (standard/manjaro/ubuntu) |
+| -l, --logo   | theme nautilius logo variant(s) (default/arch/budgie/debian/fedora/gnome/manjaro/ubuntu) |
 | -c, --color  | color variant(s) (standard/light/dark) |
 | -i, --image  | Install theme with nautilus background image |
 | -w, --win    | titlebutton variant(s) (standard/square) |
@@ -62,6 +63,13 @@ Usage:  ./install.sh  [OPTIONS...]
 ```sh
 sudo ./install.sh -g -c dark -t standard  (Install standard dark gdm theme)
 ```
+
+## Nautilus logos
+```sh
+./install.sh -l [LOGO NAME...] (Install themes with selected nautilus logo)
+```
+
+![logo](https://github.com/vinceliuice/Qogir-theme/blob/images/logos.png?raw=true)
 
 ## Firefox issues
 
