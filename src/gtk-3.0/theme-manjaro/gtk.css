@@ -9705,7 +9705,7 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appm
 .nautilus-window headerbar {
   background-image: url("assets/logo.svg"), image(#32343D);
   background-repeat: no-repeat;
-  background-size: 38px 42px;
+  background-size: 38px auto;
   background-position: left center;
 }
 

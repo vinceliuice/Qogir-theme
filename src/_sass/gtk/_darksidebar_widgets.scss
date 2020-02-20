@@ -218,7 +218,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 %headerbar_image {
   background-image: url("assets/logo.svg"), image($dark_sidebar_icon_bg);
   background-repeat: no-repeat;
-  background-size: 38px 42px;
+  background-size: 38px auto;
   background-position: left center;
 }
 
