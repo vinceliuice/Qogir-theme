@@ -5125,6 +5125,7 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
 
 .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button,
 .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button {
+  padding: 3px 6px;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -5132,6 +5133,33 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
 .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button:not(:only-child):last-child,
 .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button:not(:only-child):last-child {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #fb8441 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+.nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button.image-button {
+  padding: 3px 12px;
+}
+
+.nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button.image-button label {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button.image-button image {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button label {
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+.nautilus-window headerbar.titlebar .path-bar-box.width-maximized {
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+  background-color: rgba(82, 93, 118, 0.06);
+  border-radius: 3px;
+  padding: 0 6px;
 }
 
 .nautilus-window headerbar.titlebar .path-bar-box.background.frame {
