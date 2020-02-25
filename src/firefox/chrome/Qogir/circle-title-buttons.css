@@ -1,0 +1,46 @@
+/* Square title buttons old style */
+
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Window buttons box */
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container,
+:root[tabsintitlebar] #titlebar-buttonbox-container,
+:root[tabsintitlebar][inFullscreen] #window-controls {
+	-moz-appearance: none !important;
+	padding: 0 0;
+	position: absolute !important;
+	right: 6px;
+	top: 1px;
+	display: block !important;
+}
+
+
+/* Left window buttons */
+@media (-moz-gtk-csd-reversed-placement) {
+	/* Window buttons box */
+	:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container {
+		left: 6px;
+		right: auto;
+	}
+}
+
+/* Window buttons style */
+:root[tabsintitlebar] #titlebar .titlebar-button,
+:root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
+	-moz-appearance: none !important;
+	border: none !important;
+	border-radius: 100px !important;
+	padding: 0 0 !important;
+}
+
+:root[tabsintitlebar] #titlebar .titlebar-button {
+	height: 24px !important;
+	margin: 6px 6px !important;
+	width: 24px;
+}
+
+:root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
+	height: 24px;
+	margin: 0 0 !important;
+	width: 24px;
+}

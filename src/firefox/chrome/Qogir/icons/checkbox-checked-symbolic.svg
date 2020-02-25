@@ -1,0 +1,12 @@
+<svg width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" x1="10.5" x2="10.5" y1="1033.4" y2="1035.4" gradientTransform="matrix(.18709 .18709 -.18709 .18709 233.54 -66.78)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#5294e2" offset="0"/>
+  </linearGradient>
+ </defs>
+ <g id="checkbox-checked" transform="matrix(3.7795 0 0 3.7795 -153 -476.52)">
+  <rect x="40.481" y="126.08" width="4.2333" height="4.2333" ry="1.6885e-6" fill="none" stroke-width=".14111" style="paint-order:stroke fill markers"/>
+  <path d="m41.275 126.34c-0.29316 0-0.52917 0.23601-0.52917 0.52917v2.9104c0 0.29316 0.23601 0.52916 0.52917 0.52916h2.9104c0.29316 0 0.52917-0.236 0.52917-0.52916v-2.9104c0-0.29316-0.23601-0.52917-0.52917-0.52917zm0 0.26459h2.9104c0.14658 0 0.26458 0.118 0.26458 0.26458v2.9104c0 0.14658-0.118 0.26458-0.26458 0.26458h-2.9104c-0.14658 0-0.26458-0.118-0.26458-0.26458v-2.9104c0-0.14658 0.118-0.26458 0.26458-0.26458z" color="#000000" fill="#9d9d9d" stroke-width="0"/>
+  <path d="m43.759 127.49-1.3095 1.3095-0.74827-0.74827-0.18707 0.18707 0.93536 0.93535 1.4965-1.4965z" fill="url(#a)" stroke-width=".26458"/>
+ </g>
+</svg>

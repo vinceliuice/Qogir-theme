@@ -1,0 +1,122 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Variables that start with --gnome- are added by me and are assigned
+ * to elements somewhere in this code. The rest of the variables are
+ * built-in in Firefox, so you need to add an !important if you wanna
+ * override them. */
+
+:root {
+	--gnome-selected-color: #ffffff;
+	--gnome-selected-background: #5294e2;
+
+	/* Browser area before a page starts loading */
+	--gnome-browser-before-load-background: #fafbfc;
+
+	/* Toolbars */
+	--gnome-toolbar-background: #ffffff;
+	--gnome-toolbar-color: #5c616c;
+	--gnome-toolbar-border-color: #D9D9D9;
+	--gnome-inactive-toolbar-background: #ffffff;
+	--gnome-inactive-toolbar-border-color: #dddddd;
+
+	/* Sidebar */
+	--gnome-sidebar-background: #fbfafa;
+	--gnome-inactive-sidebar-background: #fbfafa;
+
+	/* Popups */
+	--gnome-menu-background: #ffffff;
+	--gnome-menu-border-color: #D9D9D9;
+	--gnome-popover-background: #ffffff;
+	--gnome-popover-border-color: #dddddd;
+	--gnome-popover-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+	--gnome-popover-separator-color: rgba(0, 0, 0, 0.1);
+
+	/* Header bar */
+	--gnome-headerbar-background: #ffffff;
+	--gnome-headerbar-border-color: #D9D9D9;
+	--gnome-headerbar-box-shadow: 0 1px #fff inset;
+	--gnome-inactive-headerbar-background: #ffffff;
+	--gnome-inactive-headerbar-border-color: #dddddd;
+	--gnome-inactive-headerbar-box-shadow: 0 1px #fff inset;
+
+	/* Buttons */
+	--gnome-button-background: #ffffff;
+	--gnome-button-border-color: #D9D9D9;
+	--gnome-button-border-accent-color: #D9D9D9;
+	--gnome-button-box-shadow: inset 0 1px white;
+	--gnome-button-hover-background: #f6f5f4;
+	--gnome-button-active-background: #5294e2;
+	--gnome-button-active-border-color: #2679DB;
+	--gnome-button-active-border-accent-color: #2679DB;
+	--gnome-button-active-box-shadow: 0 1px rgba(255, 255, 255, 0) inset;
+	--gnome-button-disabled-background: #faf9f8;
+	--gnome-button-disabled-border-color: #cdc7c2;
+	--gnome-button-disabled-box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+	--gnome-inactive-button-background: #ffffff;
+	--gnome-inactive-button-border-color: #dddddd;
+	--gnome-inactive-button-box-shadow: 0 1px rgba(255, 255, 255, 0) inset;
+	--gnome-flat-button-hover-background: #f6f5f4;
+	--gnome-flat-button-active-background: #e6e5e4;
+	--gnome-button-suggested-action-background: linear-gradient(to top, #2379e2 2px, #3584e4);
+	--gnome-button-suggested-action-border-color: #1b6acb;
+	--gnome-button-suggested-action-border-accent-color: #15539e;
+	--gnome-button-suggested-action-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
+	--gnome-button-suggested-action-hover-background: linear-gradient(to top, #3584e4, #3987e5 1px);
+	--gnome-button-suggested-action-active-background: #1961b9;
+	--gnome-button-suggested-action-active-border-color: #1b6acb;
+	--gnome-button-suggested-action-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+	--gnome-button-destructive-action-background: linear-gradient(to top, #ce1921 2px, #e01b24);
+	--gnome-button-destructive-action-border-color: #b2161d;
+	--gnome-button-destructive-action-border-accent-color: #851015;
+	--gnome-button-destructive-action-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
+	--gnome-button-destructive-action-hover-background: linear-gradient(to top, #e01b24, #e41c26 1px);
+	--gnome-button-destructive-action-active-background: #a0131a;
+	--gnome-button-destructive-action-active-border-color: #b2161d;
+	--gnome-button-destructive-action-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+
+	/* TitleButtons */
+	--gnome-titlebutton-min-hover-background: rgba(31, 31, 31, 0.1);
+	--gnome-titlebutton-max-hover-background: rgba(31, 31, 31, 0.1);
+	--gnome-titlebutton-close-hover-background: #ff5555;
+	--gnome-titlebutton-min-active-background: rgba(25, 25, 25, 0.2);
+	--gnome-titlebutton-max-active-background: rgba(25, 25, 25, 0.2);
+	--gnome-titlebutton-close-active-background: #c83737;
+
+	/* Entries */
+	--gnome-entry-background: #ffffff;
+	--gnome-entry-border-color: #D9D9D9;
+	--gnome-entry-box-shadow: none;
+	--gnome-entry-color: #222222;
+	--gnome-inactive-entry-background: #fdfdfd;
+	--gnome-inactive-entry-border-color: #dddddd;
+	--gnome-inactive-entry-box-shadow: none;
+	--gnome-inactive-entry-color: #565656;
+	--gnome-focused-urlbar-border-color: #5294e2;
+	--gnome-private-urlbar-background: #e6c2ff;
+
+	/* Switch */
+	--gnome-switch-background: #e1dedb;
+	--gnome-switch-border-color: #cdc7c2;
+	--gnome-switch-slider-background: linear-gradient(to bottom, white 10%, white 90%);
+	--gnome-switch-slider-border-color: #bfb8b1;
+	--gnome-switch-slider-box-shadow: inset 0 1px white, 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
+	--gnome-switch-active-background: #3584e4;
+	--gnome-switch-active-border-color: #185fb4;
+	--gnome-switch-active-slider-border-color: #185fb4;
+
+	/* Tabs */
+	--gnome-tabbar-tab-color: #5c616c;
+	--gnome-tabbar-tab-hover-background: transparent;
+	--gnome-tabbar-tab-hover-border-bottom-color: #a8c9f0;
+	--gnome-tabbar-tab-hover-color: rgb(93, 98, 99);
+	--gnome-tabbar-tab-active-background: transparent;
+	--gnome-tabbar-tab-active-background-contrast: transparent;
+	--gnome-tabbar-tab-active-border-bottom-color: #5294e2;
+	--gnome-tabbar-tab-active-border-bottom-color-contrast: #5294e2;
+	--gnome-tabbar-tab-active-color: rgb(46, 52, 54);
+	--gnome-tabbar-tab-active-hover-background: transparent;
+	--gnome-inactive-tabbar-tab-color: #8b8e8f;
+	--gnome-inactive-tabbar-tab-active-background: transparent;
+	--gnome-inactive-tabbar-tab-active-border-bottom-color: var(--gnome-tabbar-tab-active-border-bottom-color);
+	--gnome-inactive-tabbar-tab-active-color: var(--gnome-inactive-tabbar-tab-color);
+}

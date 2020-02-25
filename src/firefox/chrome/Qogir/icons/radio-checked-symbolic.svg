@@ -1,0 +1,12 @@
+<svg width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" x1="-82.5" x2="-82.5" y1="-162.64" y2="-167.64" gradientTransform="matrix(.26458 0 0 .26458 80.433 172.02)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#5294e2" offset="0"/>
+  </linearGradient>
+ </defs>
+ <g id="radio-checked" transform="matrix(3.7795 0 0 3.7795 -213 -476.52)">
+  <rect x="56.356" y="126.08" width="4.2333" height="4.2333" ry="1.6885e-6" fill="none" stroke-width=".14111" style="paint-order:stroke fill markers"/>
+  <rect x="57.944" y="127.67" width="1.3229" height="1.3229" rx=".66109" ry=".66146" color="#000000" fill="url(#a)" stroke-width=".26458"/>
+  <path d="m58.605 126.34a1.9844 1.9844 0 0 0-1.9844 1.9844 1.9844 1.9844 0 0 0 1.9844 1.9844 1.9844 1.9844 0 0 0 1.9844-1.9844 1.9844 1.9844 0 0 0-1.9844-1.9844zm0 0.26459a1.7198 1.7198 0 0 1 1.7198 1.7198 1.7198 1.7198 0 0 1-1.7198 1.7198 1.7198 1.7198 0 0 1-1.7198-1.7198 1.7198 1.7198 0 0 1 1.7198-1.7198z" fill="#9d9d9d" stroke-width=".26458" style="paint-order:stroke fill markers"/>
+ </g>
+</svg>
