@@ -40,6 +40,24 @@ findbar:-moz-window-inactive description,
 	opacity: 0.7 !important;
 }
 
+toolbarbutton.bookmark-item:not(.subviewbutton):hover {
+	fill: var(--gnome-toolbar-color) !important;
+	color: var(--gnome-toolbar-color) !important;
+	background: var(--gnome-flat-button-hover-background) !important;
+}
+
+toolbarbutton.bookmark-item:not(.subviewbutton):active,
+toolbarbutton.bookmark-item:not(.subviewbutton)[open="true"] {
+	fill: var(--gnome-toolbar-color) !important;
+	color: var(--gnome-toolbar-color) !important;
+	background: var(--gnome-flat-button-active-background) !important;
+}
+
+toolbarbutton.bookmark-item:not(.subviewbutton):active .toolbarbutton-icon,
+toolbarbutton.bookmark-item:not(.subviewbutton)[open="true"] .toolbarbutton-icon {
+	filter: invert(0%) brightness(100%) !important;
+}
+
 #toolbar-menubar:not([inactive=true]) {
 	margin-bottom: 0 !important;
 }
