@@ -231,7 +231,6 @@ toolbarbutton:not([disabled]):active .toolbarbutton-icon,
 }
 
 .close-icon:not(.tab-close-button):not(:active):hover,
-#TabsToolbar .toolbarbutton-1:not(:active):not([open]):hover,
 #protections-popup-show-report-button:not(:active):hover {
 	border-color: var(--gnome-button-border-color) !important;
 	background: var(--gnome-button-hover-background) !important;

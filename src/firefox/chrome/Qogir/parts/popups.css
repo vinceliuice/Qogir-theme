@@ -122,8 +122,6 @@ panelview {
 
 .subviewbutton:not([disabled]):active, .protections-popup-category:not([disabled]):active,
 .identity-popup-content-blocking-category:not([disabled]):active {
-	fill: var(--gnome-selected-color) !important;
-	color: var(--gnome-selected-color) !important;
 	background: var(--gnome-button-active-background) !important;
 	border-color: var(--gnome-button-active-border-color) !important;
 }

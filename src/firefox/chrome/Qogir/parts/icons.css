@@ -103,7 +103,7 @@ treechildren::-moz-tree-twisty {
 	height: 16px !important;
 }
 treechildren::-moz-tree-twisty(open) {
-	list-style-image: url("../icons/pan-end-symbolic.svg") !important;
+	list-style-image: url("../icons/pan-end-symbolic-light.svg") !important;
 }
 treechildren::-moz-tree-twisty(selected, focus) {
 	list-style-image: url("../icons/pan-down-symbolic-light.svg") !important;
@@ -373,11 +373,20 @@ menuitem[type="radio"]:not([disabled="true"]):hover .menu-iconic-icon {
 	#paste-button .toolbarbutton-icon,
 	#appMenu-paste-button .toolbarbutton-icon,
 	#nav-bar-overflow-button .toolbarbutton-icon {
-		filter: invert(50%) brightness(120%);
+		filter: invert(50%) brightness(150%);
+	}
+
+	#reload-button:active .toolbarbutton-icon,
+	.subviewbutton:not(.subviewbutton-back):active .toolbarbutton-icon {
+		filter: invert(50%) brightness(200%) !important;
 	}
 
 	.bookmark-item[container] {
 		list-style-image: url("../icons/folder-symbolic-light.svg") !important;
+	}
+
+	#reload-button .toolbarbutton-icon {
+		list-style-image: url("../icons/view-refresh-symbolic-light.svg") !important;
 	}
 
 	/* Tree views */
