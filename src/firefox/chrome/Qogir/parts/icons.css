@@ -103,7 +103,7 @@ treechildren::-moz-tree-twisty {
 	height: 16px !important;
 }
 treechildren::-moz-tree-twisty(open) {
-	list-style-image: url("../icons/pan-end-symbolic-light.svg") !important;
+	list-style-image: url("../icons/pan-end-symbolic.svg") !important;
 }
 treechildren::-moz-tree-twisty(selected, focus) {
 	list-style-image: url("../icons/pan-down-symbolic-light.svg") !important;

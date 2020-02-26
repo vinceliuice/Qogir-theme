@@ -283,6 +283,7 @@ button.popup-notification-primary-button.popup-notification-button:hover,
 #editBookmarkPanelDoneButton:hover,
 #tracking-action-block:hover {
 	background: var(--gnome-button-suggested-action-hover-background) !important;
+	border-color: var(--gnome-button-suggested-action-border-color) !important;
 }
 
 #appMenu-popup .panel-banner-item[notificationid="update-restart"]:active,
