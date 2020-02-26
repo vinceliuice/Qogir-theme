@@ -183,15 +183,6 @@ menulist[open] .menulist-label-box,
 	color: var(--gnome-selected-color) !important;
 }
 
-.findbar-find-next[open] .toolbarbutton-icon,
-.findbar-find-previous[open] .toolbarbutton-icon,
-.findbar-find-next:active .toolbarbutton-icon,
-.findbar-find-previous:active .toolbarbutton-icon,
-toolbarbutton:not([disabled]):active .toolbarbutton-icon,
-.toolbarbutton-1:not([disabled])[open] .toolbarbutton-icon {
-	filter: invert(100%) brightness(200%) !important;
-}
-
 /* Disabled buttons */
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton[disabled],
 #context-navigation menuitem[disabled] {
