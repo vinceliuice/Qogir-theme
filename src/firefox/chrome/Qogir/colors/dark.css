@@ -106,16 +106,16 @@
 		--gnome-switch-active-slider-border-color: #030c17;
 
 		/* Tabs */
-		--gnome-tabbar-tab-color: #D3DAE3;
-		--gnome-tabbar-tab-hover-background: transparent;
+		--gnome-tabbar-tab-color: #5e646b;
+		--gnome-tabbar-tab-hover-background: rgba(255, 255, 255, 0.01);
 		--gnome-tabbar-tab-hover-border-bottom-color: #3d5f8a;
 		--gnome-tabbar-tab-hover-color: #D3DAE3;
-		--gnome-tabbar-tab-active-background: transparent;
+		--gnome-tabbar-tab-active-background: rgba(255, 255, 255, 0.06);
 		--gnome-tabbar-tab-active-background-contrast: transparent;
 		--gnome-tabbar-tab-active-border-bottom-color: #5294e2;
 		--gnome-tabbar-tab-active-border-bottom-color-contrast: #5294e2;
 		--gnome-tabbar-tab-active-color: #dae1ea;
-		--gnome-tabbar-tab-active-hover-background: transparent;
+		--gnome-tabbar-tab-active-hover-background: rgba(255, 255, 255, 0.08);
 		--gnome-inactive-tabbar-tab-color: #808690;
 		--gnome-inactive-tabbar-tab-active-background: transparent;
 		--gnome-inactive-tabbar-tab-active-border-bottom-color: var(--gnome-tabbar-tab-active-border-bottom-color);
