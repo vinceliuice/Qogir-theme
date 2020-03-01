@@ -40,6 +40,11 @@ findbar:-moz-window-inactive description,
 	opacity: 0.7 !important;
 }
 
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+	fill: var(--gnome-toolbar-color) !important;
+	color: var(--gnome-toolbar-color) !important;
+}
+
 toolbarbutton.bookmark-item:not(.subviewbutton):hover {
 	fill: var(--gnome-toolbar-color) !important;
 	color: var(--gnome-toolbar-color) !important;
