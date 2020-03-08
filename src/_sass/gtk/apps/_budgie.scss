@@ -116,11 +116,13 @@
       background-color: if($variant=='light', mix($fg_color,$bg_color,5%), mix($fg_color,$bg_color,10%));
       border: 1px solid $borders_color;
     }
+
     &:active, &:checked {
-      border: 1px solid $sec_selected_bg_color;
+      border: 1px solid if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
       background-color: $selected_bg_color;
       &, arrow { @extend %selected_items; }
     }
+
     &:disabled { color: $insensitive_fg_color; }
   }
 
@@ -283,7 +285,12 @@ window.budgie-popover:not(.csd) {
     border: none;
 
     &:disabled { color: $insensitive_fg_color; }
-    &:active, &:checked { @extend %selected_items; }
+
+    &:active, &:checked {
+      @extend %selected_items;
+      border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
+    }
+
     &:checked:disabled { background-color: $selected_bg_color; } // overriding
   }
 
@@ -605,6 +612,11 @@ button.raven-trigger {
 
   button.image-button {
     @extend %circle_button;
+
+    &:active, &:checked {
+      background-clip: border-box;
+      border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
+    }
   }
 
   .raven-header {
@@ -624,6 +636,13 @@ button.raven-trigger {
         &.image-button {
           border-radius: 100px;
           -gtk-outline-radius: 100px;
+        }
+
+        &.flat {
+          &:active, &:checked {
+            background-clip: border-box;
+            border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
+          }
         }
       }
     }
@@ -652,12 +671,14 @@ button.raven-trigger {
                                         transparent 0%)
                                         0 0 2 / 0 0 2px;
         }
+
         &:active, &:checked {
           border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                         $selected_bg_color 100%,
                                         transparent 0%)
                                         0 0 2 / 0 0 2px;
         }
+
         &:disabled { color: rgba($header_fg, 0.5); label { color: rgba($header_fg, 0.5); }}
       }
 
@@ -808,7 +829,14 @@ box.vertical > stack > box.vertical {
         image { padding: 0; }
 
         &:hover { @include button(header-hover); }
-        &:active, &:checked { @include button(header-active); image { color: white; } }
+
+        &:active, &:checked {
+          @include button(header-active);
+          border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
+          background-clip: border-box;
+
+          image { color: white; }
+        }
       }
 
       // sub-list rows grouping

@@ -7546,6 +7546,10 @@ window.budgie-popover:not(.csd) > frame.container > border {
   color: rgba(92, 97, 108, 0.55);
 }
 
+.budgie-menu button:active, .budgie-menu button:checked {
+  border-color: #fa640f;
+}
+
 .budgie-menu button:checked:disabled {
   background-color: #fb8441;
 }
@@ -8026,6 +8030,11 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   padding: 0 8px 12px 8px;
 }
 
+.raven button.image-button:active, .raven button.image-button:checked {
+  background-clip: border-box;
+  border-color: #fa640f;
+}
+
 .raven .raven-header {
   min-height: 36px;
   padding: 3px;
@@ -8045,6 +8054,11 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 .raven .raven-header:not(.top) button.image-button {
   border-radius: 100px;
   -gtk-outline-radius: 100px;
+}
+
+.raven .raven-header:not(.top) button.flat:active, .raven .raven-header:not(.top) button.sidebar-button:active, .raven .raven-header:not(.top) PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:active, .raven .raven-header:not(.top) button.budgie-menu-launcher:active, .raven .raven-header:not(.top) .budgie-panel #tasklist-button:active:not(.flat), .budgie-panel .raven .raven-header:not(.top) #tasklist-button:active:not(.flat), .raven .raven-header:not(.top) button.flat:checked, .raven .raven-header:not(.top) button.sidebar-button:checked, .raven .raven-header:not(.top) PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:checked, .raven .raven-header:not(.top) button.budgie-menu-launcher:checked, .raven .raven-header:not(.top) .budgie-panel #tasklist-button:checked:not(.flat), .budgie-panel .raven .raven-header:not(.top) #tasklist-button:checked:not(.flat) {
+  background-clip: border-box;
+  border-color: #fa640f;
 }
 
 .raven .raven-header.top {
@@ -8262,6 +8276,8 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   color: #ffffff;
   border-color: #fa640f;
   background-color: #fb8441;
+  border-color: #fa640f;
+  background-clip: border-box;
 }
 
 box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button:active image, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view button.image-button:active image, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text button.image-button:active image, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview button.image-button:active image, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view button.image-button:active image, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view button.image-button:active image, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view button.image-button:active image, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button:active image, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row button.image-button:active image, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:active image, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button:checked image, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view button.image-button:checked image, textview box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > text button.image-button:checked image, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > iconview button.image-button:checked image, window.thunar notebook scrolledwindow.frame.standard-view box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .view button.image-button:checked image, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view button.image-button:checked image, window.thunar .sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > treeview.view button.image-button:checked image, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button:checked image, .budgie-popover box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row button.image-button:checked image, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:checked image {
