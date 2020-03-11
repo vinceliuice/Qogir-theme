@@ -84,10 +84,16 @@
     background-color: opacify($header_bg, 1);
     box-shadow: inset 0 -1px $borders_color;
 
-    button, entry {
-      min-height: 16px;
-      margin-top: $cont_padding;
-      margin-bottom: $cont_padding;
+    button {
+      min-height: 20px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+
+    entry {
+      min-height: 22px;
+      margin-top: 4px;
+      margin-bottom: 4px;
     }
   }
 

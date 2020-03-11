@@ -97,6 +97,10 @@ StEntry:focus, StEntry:hover {
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
+StEntry:focus StLabel.hint-text, StEntry:hover StLabel.hint-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 StEntry:insensitive {
   color: rgba(92, 97, 108, 0.55);
   background-color: #fdfdfe;
@@ -108,6 +112,16 @@ StEntry StIcon.capslock-warning {
   icon-size: 16px;
   warning-color: #F27835;
   padding: 0 4px;
+}
+
+StEntry StIcon.peek-password {
+  icon-size: 16px;
+  padding: 0 4px;
+}
+
+StEntry StLabel.hint-text {
+  margin-left: 2px;
+  color: rgba(92, 97, 108, 0.7);
 }
 
 StScrollView.vfade {
@@ -903,12 +917,23 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-separator-menu-item {
-  height: 1px;
+  height: 0;
   margin: 0;
   background-color: transparent;
   border: none;
   border-color: transparent;
   border-width: 0;
+}
+
+.popup-separator-menu-item .popup-separator-menu-item-separator {
+  height: 0;
+  margin: 0 0;
+  background: none;
+}
+
+.popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
+  margin: 0 0;
+  background: none;
 }
 
 .rename-folder-popup .rename-folder-popup-item {
@@ -959,7 +984,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .aggregate-menu .popup-menu-icon {
-  padding: 0 4px;
+  padding: 0 0;
+  margin: 0 4px;
   -st-icon-style: symbolic;
 }
 
@@ -1382,6 +1408,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar {
   margin-bottom: 1em;
+  box-shadow: none;
+  background: none;
+  border: none;
 }
 
 .calendar,
@@ -1586,6 +1615,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 2px;
   border-radius: 100px;
   font-feature-settings: "tnum";
+  color: rgba(92, 97, 108, 0.75);
 }
 
 .calendar-day-base:hover, .calendar-day-base:focus {
@@ -2077,27 +2107,41 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 2px;
   padding: 4px 12px;
   -shell-caption-spacing: 12px;
+  border: none;
+  font-weight: normal;
+  font-size: 10pt;
 }
 
-.search-entry {
+.search-entry, .app-folder-dialog .folder-name-container .folder-name-entry {
   width: 320px;
   padding: 7px 9px;
-  border-radius: 20px;
+  border-radius: 100px;
   border: 1px solid rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.9);
+  color: #5c616c;
+  caret-color: #5c616c;
 }
 
-.search-entry:focus {
+.search-entry StLabel.hint-text, .app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text {
+  margin-left: 2px;
+  color: rgba(92, 97, 108, 0.7);
+}
+
+.search-entry:focus, .app-folder-dialog .folder-name-container .folder-name-entry:focus {
   padding: 7px 9px;
 }
 
-.search-entry .search-entry-icon {
+.search-entry:focus StLabel.hint-text, .app-folder-dialog .folder-name-container .folder-name-entry:focus StLabel.hint-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-entry .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon {
   icon-size: 16px;
   padding: 0 4px;
   color: #5c616c;
 }
 
-.search-entry:hover, .search-entry:focus {
+.search-entry:hover, .app-folder-dialog .folder-name-container .folder-name-entry:hover, .search-entry:focus, .app-folder-dialog .folder-name-container .folder-name-entry:focus {
   color: #ffffff;
   caret-color: #ffffff;
   background-color: #5294e2;
@@ -2105,8 +2149,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   selected-color: #5294e2;
 }
 
-.search-entry:hover .search-entry-icon, .search-entry:focus .search-entry-icon {
+.search-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .search-entry:focus .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon {
   color: #ffffff;
+}
+
+.search-entry:insensitive, .app-folder-dialog .folder-name-container .folder-name-entry:insensitive {
+  color: rgba(92, 97, 108, 0.55);
+  background-color: rgba(255, 255, 255, 0.45);
 }
 
 #searchResultsContent {
@@ -2423,6 +2472,80 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .grid-search-result .overview-icon.overview-icon-with-label {
   padding: 10px 8px 5px 8px;
   spacing: 4px;
+}
+
+.app-folder-dialog {
+  border-radius: 5px;
+  border: none;
+  spacing: 12px;
+  background-color: rgba(18, 18, 22, 0.9);
+}
+
+.app-folder-dialog .folder-name-container {
+  padding: 24px 36px 0;
+  spacing: 12px;
+  /* FIXME: this is to keep the label in sync with the entry */
+}
+
+.app-folder-dialog .folder-name-container .folder-name-label,
+.app-folder-dialog .folder-name-container .folder-name-entry {
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.app-folder-dialog .folder-name-container .folder-name-label {
+  padding: 5px 7px;
+  color: #ffffff;
+}
+
+.app-folder-dialog .folder-name-container .edit-folder-button {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #D3DAE3;
+  border: 1px solid #21232a;
+  background-color: rgba(40, 42, 51, 0.5);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+}
+
+.app-folder-dialog .folder-name-container .edit-folder-button > StIcon {
+  icon-size: 16px;
+}
+
+.app-folder-dialog .folder-name-container .edit-folder-button:hover {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #D3DAE3;
+  border: 1px solid #1d1e25;
+  background-color: rgba(56, 58, 71, 0.65);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.app-folder-dialog .folder-name-container .edit-folder-button:active, .app-folder-dialog .folder-name-container .edit-folder-button:checked {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  background-color: #5294e2;
+  box-shadow: inset 0 1px rgba(82, 148, 226, 0.05);
+}
+
+.app-folder-dialog StButton#vhandle,
+.app-folder-dialog StButton#vhandle:hover,
+.app-folder-dialog StButton#vhandle:active {
+  background-color: transparent;
+}
+
+.app-folder-dialog-container {
+  padding: 12px;
+  width: 800px;
+  height: 600px;
+}
+
+.app-folder-icon {
+  padding: 6px;
+  spacing-rows: 6px;
+  spacing-columns: 6px;
 }
 
 .workspace-thumbnails, .workspace-thumbnails:rtl,

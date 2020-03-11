@@ -84,13 +84,30 @@ StEntry {
 
   @include entry(normal);
 
-  &:focus, &:hover { @include entry(focus); }
+  &:focus, &:hover {
+    @include entry(focus);
+
+    StLabel.hint-text {
+      color: transparentize($selected_fg_color, 0.3);
+    }
+  }
+
   &:insensitive { @include entry(insensitive); }
 
   StIcon.capslock-warning {
     icon-size: 16px;
     warning-color: $warning_color;
     padding: 0 4px;
+  }
+
+  StIcon.peek-password {
+    icon-size: 16px;
+    padding: 0 4px;
+  }
+
+  StLabel.hint-text {
+    margin-left: 2px;
+    color: transparentize($fg_color, 0.3);
   }
 }
 
@@ -846,12 +863,23 @@ StScrollBar {
 
 .popup-separator-menu-item {
   //-margin-horizontal: 24px;
-  height: 1px; //not really the whole box
+  height: 0; //not really the whole box
   margin: 0;
   background-color: transparent;
   border: none;
   border-color: transparent;
   border-width: 0;
+
+  .popup-separator-menu-item-separator {
+    height: 0; //not really the whole box
+    margin: 0 0;
+    background: none;
+
+    .popup-sub-menu & { //submenu separators
+      margin: 0 0;
+      background: none;
+    }
+  }
 }
 
 
@@ -899,7 +927,8 @@ StScrollBar {
   min-width: 23.5em;
 
   .popup-menu-icon {
-    padding: 0 4px;
+    padding: 0 0;
+    margin: 0 4px;
     -st-icon-style: symbolic;
   }
 
@@ -1324,6 +1353,9 @@ StScrollBar {
 
 .calendar {
   margin-bottom: 1em;
+  box-shadow: none;
+  background: none;
+  border: none;
 }
 
 .calendar,
@@ -1477,6 +1509,7 @@ StScrollBar {
   margin: 2px;
   border-radius: 100px;
   font-feature-settings: "tnum";
+  color: $alt_fg_color;
 
   &:hover, &:focus { background-color: $alt_bg_color; }
 
@@ -1905,6 +1938,9 @@ StScrollBar {
   border-radius: 2px;
   padding: 4px 12px;
   -shell-caption-spacing: 12px;
+  border: none;
+  font-weight: normal;
+  @include fontsize($font-size);
 }
 
 //
@@ -1913,12 +1949,23 @@ StScrollBar {
 .search-entry {
   width: 320px;
   padding: 7px 9px;
-  border-radius: 20px;
+  border-radius: 100px;
   border: 1px solid transparentize(black, 0.75);
   background-color: transparentize($entry_bg, 0.1);
+  color: $fg_color;
+  caret-color: $fg_color;
+
+  StLabel.hint-text {
+    margin-left: 2px;
+    color: transparentize($fg_color, 0.3);
+  }
 
   &:focus {
     padding: 7px 9px;
+
+    StLabel.hint-text {
+      color: transparentize($selected_fg_color, 0.3);
+    }
   }
 
   .search-entry-icon {
@@ -1935,6 +1982,11 @@ StScrollBar {
     selected-color: $selected_bg_color;
 
     .search-entry-icon { color: $selected_fg_color; }
+  }
+
+  &:insensitive {
+    color: $insensitive_fg_color;
+    background-color: transparentize($entry_bg, 0.55);
   }
 }
 
@@ -2134,7 +2186,6 @@ StScrollBar {
 .app-well-app,
 .app-well-app.app-folder,
 .grid-search-result {
-
   .overview-icon {
     @extend %icon_tile;
   }
@@ -2246,6 +2297,60 @@ StScrollBar {
 .grid-search-result .overview-icon.overview-icon-with-label {
   padding: 10px 8px 5px 8px;
   spacing: 4px;
+}
+
+// expanded folder
+.app-folder-dialog {
+  border-radius: 5px;
+  border: none;
+  spacing: 12px;
+  background-color: rgba(darken($osd_bg_color,10%), 0.9);
+
+  & .folder-name-container {
+    padding: 24px 36px 0;
+    spacing: 12px;
+
+    & .folder-name-label,
+    & .folder-name-entry {
+      font-size: 18pt;
+      font-weight: bold;
+    }
+
+    & .folder-name-entry {
+      @extend .search-entry;
+    }
+
+    /* FIXME: this is to keep the label in sync with the entry */
+    & .folder-name-label { padding: 5px 7px; color: $selected_fg_color; }
+
+    & .edit-folder-button {
+      @include button(osd);
+      padding: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 5px;
+
+      & > StIcon { icon-size: 16px }
+
+      &:hover { @include button(osd-hover); }
+      &:active, &:checked { @include button(osd-active); }
+    }
+  }
+
+  & StButton#vhandle,
+  & StButton#vhandle:hover,
+  & StButton#vhandle:active { background-color: transparent; }
+}
+.app-folder-dialog-container {
+  padding: 12px;
+  width: 800px;
+  height: 600px;
+}
+
+.app-folder-icon {
+  padding: 6px;
+  spacing-rows: 6px;
+  spacing-columns: 6px;
 }
 
 //
