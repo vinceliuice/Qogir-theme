@@ -3,8 +3,8 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 #urlbar {
-	--urlbar-height: 34.00px;
-	--urlbar-toolbar-height: 34.00px !important;
+	--urlbar-height: 30.00px;
+	--urlbar-toolbar-height: 30.00px !important;
 }
 
 /* Megabar reset  */
@@ -26,7 +26,7 @@
 	width: 100% !important;
 }
 #urlbar.megabar[breakout][breakout-extend]:not([open]) {
-	height: 34px !important;
+	height: 30px !important;
 }
 
 /* Megabar breakout styles  */
@@ -84,7 +84,7 @@ toolbarspring {
 	right: var(--item-padding-end) !important;
 	top: 40px !important;
 	z-index: 10 !important;
-	max-width: 100% !important;	
+	max-width: 100% !important;
 	background: var(--gnome-popover-background) !important;
 	border: 1px solid !important;
 	border-color: var(--gnome-popover-border-color) !important;
@@ -95,7 +95,7 @@ toolbarspring {
 }
 
 #urlbar .urlbarView-body-outer {
-	max-height: 35vh !important;
+	max-height: 30vh !important;
 	overflow-x: auto;
 }
 	
@@ -157,15 +157,15 @@ toolbarspring {
 	border-left-width: 0 !important;
 	border-bottom-color: var(--gnome-button-border-accent-color) !important;
 	padding: 0 2px !important;
-	min-height: 34px !important;
-	min-width: 34px !important;
+	min-height: 30px !important;
+	min-width: 30px !important;
 	margin: 0 !important;
 }
 #urlbar .searchbar-engine-one-off-item:hover, .searchbar-engine-one-off-item[selected] {
 	background: var(--gnome-button-hover-background) !important;
 	color: unset !important;
 }
-#urlbar .searchbar-engine-one-off-item:first-child {	
+#urlbar .searchbar-engine-one-off-item:first-child {
 	border-radius: 5px 0 0 5px;
 	border-left-width: 1px !important;
 }
@@ -176,6 +176,6 @@ toolbarspring {
 #urlbar  #urlbar-anon-search-settings-compact {
 	border-left-width: 1px !important;
 	border-bottom: 1px solid var(--gnome-button-border-accent-color) !important;
-	border-radius: 5px;	
+	border-radius: 5px;
 	margin-left: 6px !important;
 }
