@@ -862,22 +862,22 @@ StScrollBar {
 }
 
 .popup-separator-menu-item {
-  //-margin-horizontal: 24px;
   height: 0; //not really the whole box
   margin: 0;
-  background-color: transparent;
+  padding: 0;
+  background: none;
   border: none;
-  border-color: transparent;
-  border-width: 0;
 
   .popup-separator-menu-item-separator {
     height: 0; //not really the whole box
     margin: 0 0;
     background: none;
+    padding: 0;
 
     .popup-sub-menu & { //submenu separators
       margin: 0 0;
       background: none;
+      padding: 0;
     }
   }
 }
@@ -1393,6 +1393,7 @@ StScrollBar {
 .events-section-title {
   padding: 7px 10px 7px 10px;
   border: 1px solid transparentize($base_color, 1);
+  background: none;
 
   &:hover, &:focus { @include button(hover); }
   &:active { @include button(active); }
@@ -1410,23 +1411,14 @@ StScrollBar {
 .weather-header,
 .message-list-section-title,
 .events-section-title {
-  color: transparentize($fg_color, 0.6);
+  color: transparentize($fg_color, 0.35);
   font-weight: bold;
-}
-
-.world-clocks-button:active .world-clocks-header,
-.weather-button:active .weather-header {
-  color: $selected_fg_color;
 }
 
 .world-clocks-grid,
 .weather-grid {
   spacing-rows: 0.4em;
   spacing-columns: 0.8em;
-}
-
-.weather-box {
-  spacing: 0.4em;
 }
 
 .world-clocks-city {
@@ -1446,13 +1438,38 @@ StScrollBar {
   font-size: 0.9em;
 }
 
+.weather-box {
+  spacing: 0.4em;
+}
+
+.weather-header.location {
+  font-weight: normal;
+  color: transparentize($fg_color, 0.45);
+}
+
 .weather-forecast-icon {
   icon-size: 2.18em;
+  color: transparentize($fg_color, 0.35);
 }
 
 .weather-forecast-time {
   color: $sec_fg_color;
   font-size: 0.8em;
+  font-feature-settings: "tnum";
+  font-weight: normal;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+}
+
+.weather-forecast-temp {
+  font-weight: bold;
+  color: transparentize($fg_color, 0.35);
+  text-shadow: none;
+}
+
+.world-clocks-button:active .world-clocks-header,
+.weather-button:active * {
+  color: $selected_fg_color;
 }
 
 .calendar-month-label {

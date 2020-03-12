@@ -919,21 +919,22 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-separator-menu-item {
   height: 0;
   margin: 0;
-  background-color: transparent;
+  padding: 0;
+  background: none;
   border: none;
-  border-color: transparent;
-  border-width: 0;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
   height: 0;
   margin: 0 0;
   background: none;
+  padding: 0;
 }
 
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   margin: 0 0;
   background: none;
+  padding: 0;
 }
 
 .rename-folder-popup .rename-folder-popup-item {
@@ -1457,6 +1458,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .events-section-title {
   padding: 7px 10px 7px 10px;
   border: 1px solid rgba(255, 255, 255, 0);
+  background: none;
 }
 
 .datemenu-today-button:hover, .datemenu-today-button:focus,
@@ -1496,23 +1498,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .weather-header,
 .message-list-section-title,
 .events-section-title {
-  color: rgba(92, 97, 108, 0.4);
+  color: rgba(92, 97, 108, 0.65);
   font-weight: bold;
-}
-
-.world-clocks-button:active .world-clocks-header,
-.weather-button:active .weather-header {
-  color: #ffffff;
 }
 
 .world-clocks-grid,
 .weather-grid {
   spacing-rows: 0.4em;
   spacing-columns: 0.8em;
-}
-
-.weather-box {
-  spacing: 0.4em;
 }
 
 .world-clocks-city {
@@ -1532,13 +1525,38 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 0.9em;
 }
 
+.weather-box {
+  spacing: 0.4em;
+}
+
+.weather-header.location {
+  font-weight: normal;
+  color: rgba(92, 97, 108, 0.55);
+}
+
 .weather-forecast-icon {
   icon-size: 2.18em;
+  color: rgba(92, 97, 108, 0.65);
 }
 
 .weather-forecast-time {
   color: rgba(92, 97, 108, 0.6);
   font-size: 0.8em;
+  font-feature-settings: "tnum";
+  font-weight: normal;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+}
+
+.weather-forecast-temp {
+  font-weight: bold;
+  color: rgba(92, 97, 108, 0.65);
+  text-shadow: none;
+}
+
+.world-clocks-button:active .world-clocks-header,
+.weather-button:active * {
+  color: #ffffff;
 }
 
 .calendar-month-label {
