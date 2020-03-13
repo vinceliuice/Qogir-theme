@@ -31,10 +31,10 @@
 
 /* Megabar breakout styles  */
 #urlbar.megabar[breakout][breakout-extend][open] {
-	border-radius: 5px 5px 9px 9px !important;
+	border-radius: 15px 15px 19px 19px !important;
 }
 #urlbar.megabar[breakout][breakout-extend][open] #urlbar-input-container {
-	border-radius: 5px 5px 0 0 !important;
+	border-radius: 15px 15px 0 0 !important;
 	border-color: var(--gnome-focused-urlbar-border-color) !important;
 	border-bottom-color: transparent !important;
 	border-width: 2px !important;
@@ -43,7 +43,7 @@
 	padding-inline-start: 5px !important;
 }
 #urlbar.megabar[breakout][breakout-extend][open] .urlbarView {
-	border-radius: 0 0 5px 5px !important;
+	border-radius: 0 0 15px 15px !important;
 	border-color: var(--gnome-focused-urlbar-border-color) !important;
 	border-width: 2px !important;
 }
@@ -88,7 +88,7 @@ toolbarspring {
 	background: var(--gnome-popover-background) !important;
 	border: 1px solid !important;
 	border-color: var(--gnome-popover-border-color) !important;
-	border-radius: 9px;
+	border-radius: 19px;
 	box-shadow: var(--gnome-popover-shadow) !important;
 	color: var(--gnome-toolbar-color) !important;
 	padding: 8px;
@@ -134,7 +134,7 @@ toolbarspring {
 }
 #urlbar.megabar .urlbarView-row {
 	padding: 6px !important;
-	border-radius: 5px !important;
+	border-radius: 15px !important;
 }
 #urlbar.megabar .search-one-offs {
 	margin-top: 6px !important;
@@ -166,16 +166,16 @@ toolbarspring {
 	color: unset !important;
 }
 #urlbar .searchbar-engine-one-off-item:first-child {
-	border-radius: 5px 0 0 5px;
+	border-radius: 15px 0 0 15px;
 	border-left-width: 1px !important;
 }
 #urlbar .searchbar-engine-one-off-item.last-engine, .searchbar-engine-one-off-item:last-child {	
-	border-radius: 0 5px 5px 0;
+	border-radius: 0 15px 15px 0;
 }
 
 #urlbar  #urlbar-anon-search-settings-compact {
 	border-left-width: 1px !important;
 	border-bottom: 1px solid var(--gnome-button-border-accent-color) !important;
-	border-radius: 5px;
+	border-radius: 15px;
 	margin-left: 6px !important;
 }

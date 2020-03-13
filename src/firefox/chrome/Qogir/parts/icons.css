@@ -309,6 +309,7 @@ menuitem[type="radio"]:not([disabled="true"]):hover .menu-iconic-icon {
 .findbar-find-next:active .toolbarbutton-icon,
 .findbar-find-previous:active .toolbarbutton-icon,
 toolbarbutton:not([disabled]):active .toolbarbutton-icon,
+toolbarbutton:not([disabled])[checked="true"] .toolbarbutton-icon,
 .toolbarbutton-1:not([disabled])[open] .toolbarbutton-icon {
 	filter: invert(50%) brightness(200%) !important;
 }
