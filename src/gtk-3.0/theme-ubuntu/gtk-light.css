@@ -9690,7 +9690,7 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appm
   border-radius: 1000px;
   color: transparent;
   background-color: transparent;
-  background-image: -gtk-scaled(url("assets/logo.svg"));
+  background-image: -gtk-scaled(url("assets/logo.svg"), url("assets/logo@2.svg"));
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -9737,7 +9737,7 @@ window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appm
 }
 
 .nautilus-window headerbar {
-  background-image: url("assets/logo.svg"), image(#32343D);
+  background-image: -gtk-scaled(url("assets/logo.svg"), url("assets/logo@2.svg")), image(#32343D);
   background-repeat: no-repeat;
   background-size: 38px auto;
   background-position: left center;

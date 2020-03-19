@@ -78,10 +78,14 @@ install() {
   cp -r ${SRC_DIR}/src/gtk-3.0/assets/assets${theme}                                 ${THEME_DIR}/gtk-3.0/assets
 
   if [[ -f ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${logo}.svg ]] ; then
-    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${logo}.svg                         ${THEME_DIR}/gtk-3.0/assets/logo.svg
+    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${logo}.svg                       ${THEME_DIR}/gtk-3.0/assets/logo.svg
+    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@1.5-${logo}.svg                   ${THEME_DIR}/gtk-3.0/assets/logo@1.5.svg
+    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@2-${logo}.svg                     ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
   else
     echo "${logo} icon not supported default icon will install..."
-    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${LOGO_NAME}.svg                    ${THEME_DIR}/gtk-3.0/assets/logo.svg
+    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-.svg                              ${THEME_DIR}/gtk-3.0/assets/logo.svg
+    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@1.5-.svg                          ${THEME_DIR}/gtk-3.0/assets/logo@1.5.svg
+    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@2-.svg                            ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
   fi
 
   cp -r ${SRC_DIR}/src/gtk-3.0/assets/assets-common/*                                ${THEME_DIR}/gtk-3.0/assets

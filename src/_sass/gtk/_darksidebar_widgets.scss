@@ -161,7 +161,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
       border-radius: 1000px;
       color: transparent;
       background-color: transparent;
-      background-image: -gtk-scaled(url("assets/logo.svg"));
+      background-image: -gtk-scaled(url("assets/logo.svg"),url("assets/logo@2.svg"));
       background-repeat: no-repeat;
       background-position: center;
 
@@ -216,7 +216,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 }
 
 %headerbar_image {
-  background-image: url("assets/logo.svg"), image($dark_sidebar_icon_bg);
+  background-image: -gtk-scaled(url("assets/logo.svg"),url("assets/logo@2.svg")), image($dark_sidebar_icon_bg);
   background-repeat: no-repeat;
   background-size: 38px auto;
   background-position: left center;
