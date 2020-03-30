@@ -794,6 +794,7 @@ StScrollBar {
   .popup-menu-content { padding: 1em 0em; }
   .popup-menu-item {
     spacing: 12px;
+    padding: 6px;
 
     &:ltr { padding: .4em 3em .4em 0em; }
     &:rtl { padding: .4em 0em .4em 3em; }
@@ -1255,6 +1256,15 @@ StScrollBar {
       & > .system-status-icon { icon-shadow: none; }
     }
 
+    &.clock-display {
+      &:active, &:overview, &:focus, &:checked {
+        .clock { //reset
+          background-color: transparent;
+          box-shadow: none
+        }
+      }
+    }
+
     .system-status-icon { icon-size: 16px; padding: 0 4px; }
     .unlock-screen &,
     .login-screen &,
@@ -1394,12 +1404,11 @@ StScrollBar {
   padding: 7px 10px 7px 10px;
   border: 1px solid transparentize($base_color, 1);
   background: none;
+  color: transparentize($fg_color, 0.35);
+  text-shadow: none;
 
   &:hover, &:focus { @include button(hover); }
   &:active { @include button(active); }
-}
-
-.datemenu-today-button .day-label {
 }
 
 .datemenu-today-button .date-label {
@@ -1476,7 +1485,7 @@ StScrollBar {
   color: $fg_color;
   font-weight: bold;
   padding: 8px 0;
-  &:focus {}
+  // &:focus {}
 }
 
 .pager-button {
@@ -2024,7 +2033,12 @@ StScrollBar {
 .search-section { spacing: 16px; }
 
 // This is the space between the provider icon and the results container
-.search-section-content { spacing: 32px; }
+.search-section-content {
+  spacing: 32px;
+  background: none;
+  box-shadow: none;
+  border: none;
+}
 
 // "no results"
 .search-statustext {
@@ -2034,15 +2048,25 @@ StScrollBar {
 .list-search-results { spacing: 3px; }
 
 .search-section-separator {
-  background-color: $borders_color;
+  background-color: rgba(white, 0.12);
   -margin-horizontal: 1.5em;
   height: 1px;
 }
 
-.list-search-result-content { spacing: 12px; padding: 12px; }
-.list-search-result-title { font-size: 1.5em; color: $_shell_fg_color; }
+.list-search-result-content {
+  spacing: 12px;
+  padding: 12px;
+}
+.list-search-result-title {
+  font-size: 1.5em;
+  color: $_shell_fg_color;
+}
 .list-search-result-description { color: darken($_shell_fg_color, 20%); }
-.list-search-provider-details { width: 150px; color: darken($_shell_fg_color, 5%); margin-top: 0.24em; }
+.list-search-provider-details {
+  width: 150px;
+  color: darken($_shell_fg_color, 5%);
+  margin-top: 0.24em;
+}
 .list-search-provider-content { spacing: 20px; }
 
 .search-provider-icon { padding: 15px; }

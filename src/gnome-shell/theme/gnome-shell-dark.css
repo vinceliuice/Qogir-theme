@@ -844,6 +844,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-menu-item {
   spacing: 12px;
+  padding: 6px;
 }
 
 .popup-menu .popup-menu-item:ltr {
@@ -1302,6 +1303,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-shadow: none;
 }
 
+#panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
+  background-color: transparent;
+  box-shadow: none;
+}
+
 #panel .panel-button .system-status-icon {
   icon-size: 16px;
   padding: 0 4px;
@@ -1451,6 +1457,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 7px 10px 7px 10px;
   border: 1px solid rgba(40, 42, 51, 0);
   background: none;
+  color: rgba(211, 218, 227, 0.65);
+  text-shadow: none;
 }
 
 .datemenu-today-button:hover, .datemenu-today-button:focus,
@@ -2177,6 +2185,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .search-section-content {
   spacing: 32px;
+  background: none;
+  box-shadow: none;
+  border: none;
 }
 
 .list-search-results {
