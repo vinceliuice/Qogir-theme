@@ -64,7 +64,7 @@ button.gtkstyle-fallback { // For Cinnamon system setting
 
 .view,
 %view {
-  @extend row.activatable;
+  @extend %row_activatable;
   color: $text_color;
   background-color: $base_color;
 
@@ -130,7 +130,7 @@ label {
 
   &:disabled {
     color: $insensitive_fg_color;
-    selection { @extend %selected_items:disabled; }
+    selection { color: mix($selected_fg_color, $selected_bg_color, 50%); }
   }
 }
 
@@ -339,7 +339,7 @@ button {
 
   separator { margin: 4px 1px; }
 
-  &.flat {
+  @at-root %flat_button, &.flat {
     @include button(undecorated);
     // to avoid adiacent buttons borders clashing when transitioning, the transition on the normal state is set
     // to none, while it's added back in the hover state, so the button decoration will fade in on hover, but
@@ -604,9 +604,22 @@ button {
 // More inline toolbar buttons
 toolbar.inline-toolbar toolbutton {
   & > button.flat { @extend %linked_flat_middle; }
-  &:first-child > button.flat { @extend %linked_flat:first-child; }
-  &:last-child > button.flat { @extend %linked_flat:last-child; }
-  &:only-child > button.flat { @extend %linked_flat:only-child; }
+  &:first-child > button.flat {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-left-style: solid;
+    border-right-style: none;
+  }
+  &:last-child > button.flat {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-right-style: solid;
+    border-left-style: none;
+  }
+  &:only-child > button.flat {
+    border-radius: 3px;
+    border-style: solid;
+  }
   &:hover { background-color: if($variant=='light', rgba($fg_color, 0.03), rgba($fg_color, 0.08)); }
   &:active, &:checked { @include button(active); }
 }
@@ -911,7 +924,7 @@ modelbutton.flat arrow {
 //
 // Links
 //
-*:link {
+*:link, %links {
   color: $link_color;
 
   &:visited {
@@ -936,7 +949,7 @@ modelbutton.flat arrow {
 
 button:link, button:visited {
   @extend %undecorated_button;
-  @extend *:link;
+  @extend %links;
 
   &:hover, &:active, &:checked {
     @extend %undecorated_button;
@@ -1030,7 +1043,11 @@ combobox {
     min-width: 16px;
   }
 
-  &:drop(active) button.combo { @extend button:drop(active); }
+  &:drop(active) button.combo {
+    color: $drop_target_color;
+    border-color: $drop_target_color;
+    box-shadow: none;
+  }
 
   decoration,
   button.combo:checked { transition: none; } // workaround for menuitem selection
@@ -1053,14 +1070,34 @@ combobox {
     &:dir(rtl) { @extend %linked_middle; } // specificity bump
   }
 
-  .linked:not(.vertical) > &:first-child > box > button.combo { @extend %linked:first-child; }
-  .linked:not(.vertical) > &:last-child > box > button.combo { @extend %linked:last-child; }
-  .linked:not(.vertical) > &:only-child > box > button.combo { @extend %linked:only-child; }
+  .linked:not(.vertical) > &:first-child > box > button.combo {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  .linked:not(.vertical) > &:last-child > box > button.combo {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-right-style: solid;
+  }
+  .linked:not(.vertical) > &:only-child > box > button.combo {
+    border-radius: 3px;
+    border-style: solid;
+  }
 
   .linked.vertical > & > box > button.combo { @extend %linked_vertical_middle; }
-  .linked.vertical > &:first-child > box > button.combo { @extend %linked_vertical:first-child; }
-  .linked.vertical > &:last-child > box > button.combo { @extend %linked_vertical:last-child; }
-  .linked.vertical > &:only-child > box > button.combo { @extend %linked_vertical:only-child; }
+  .linked.vertical > &:first-child > box > button.combo {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  .linked.vertical > &:last-child > box > button.combo {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+  }
+  .linked.vertical > &:only-child > box > button.combo {
+    border-radius: 3px;
+    border-style: solid;
+  }
 }
 
 //
@@ -1120,8 +1157,6 @@ toolbar {
 
   separator { @extend %header_separator; }
 }
-
-//.primary-toolbar { @extend %header_widgets; }
 
 .inline-toolbar {
   @extend toolbar;
@@ -1203,7 +1238,7 @@ headerbar,
       color: transparentize($selection_mode_fg, 0.4);
     }
 
-    .subtitle:link { @extend *:link:selected;  }
+    .subtitle:link { @extend %link_selected;  }
 
     .selection-menu {
       box-shadow: none;
@@ -1306,7 +1341,7 @@ headerbar {
     }
   }
 
-  @extend %titlebar;
+  // @extend %titlebar;
 }
 
 %header_separator {
@@ -1439,12 +1474,22 @@ headerbar {
     }
 
     &:hover { background-color: gtkalpha($selection_mode_fg, 0.3); }
-    &:active, &:checked { @extend %selected-button:active; }
+    &:active, &:checked {
+      color: $selected_fg_color;
+      background-color: transparentize($selected_fg_color, 0.65);
+      border-color: transparentize($selected_fg_color, 0.35);
+    }
 
     &:disabled {
-      @extend %selected-button.flat:disabled;
+      &, label { color: transparentize($selected_fg_color, 0.5); }
+      background-color: transparentize($selected_fg_color, 1);
+      border-color: transparentize($selected_fg_color, 0.6);
 
-      &:checked, &:active { @extend %selected-button:disabled:checked; }
+      &:active, &:checked {
+        color: transparentize($selected_fg_color, 0.25);
+        background-color: transparentize($selected_fg_color, 0.8);
+        border-color: transparentize($selected_fg_color, 0.6);
+      }
     }
 
     &:backdrop { opacity: 0.7; background: none; }
@@ -1678,7 +1723,7 @@ treeview.view {
     -GtkTreeView-expander-size: 16;
   }
 
-  @extend row.activatable;
+  @extend %row_activatable;
 
   border-left-color: transparentize($fg_color, 0.85);   // this is actually the tree lines color,
   border-top-color: transparentize(black, 0.9);         // while this is the grid lines color, better then nothing
@@ -1969,7 +2014,11 @@ popover.background {
   }
 
   & separator { background-color: $_popover_bg; }
-  label.separator { @extend label.separator; } // Noice
+  label.separator {
+    @extend .dim-label;
+
+    color: $fg_color;
+  }
 
   > list,
   > .view,
@@ -1980,7 +2029,7 @@ popover.background {
 
   &, .csd & {
     &.osd, &.magnifier { @extend %osd; }
-    &.touch-selection { @extend .context-menu }
+    &.touch-selection { @extend .context-menu; }
 
     &.osd { @extend %osd; }
   }
@@ -2814,7 +2863,7 @@ row {
 
   // button { &:active, &:checked { background-image: image($selected_bg_color); } }
 
-  &.activatable {
+  @at-root %row_activatable, &.activatable {
     &.has-open-popup,
     &:hover {
       transition: none;
@@ -2824,9 +2873,6 @@ row {
 
     &:active, &:checked {
       transition: all 150ms $ease-out-quad;
-      // color: $selected_fg_color;
-      // background-color: $selected_bg_color;
-      // background-image: image(if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08)));
     }
 
     &:disabled {
@@ -3136,7 +3182,7 @@ placessidebar {
       margin-top: 2px;
       margin-bottom: 2px;
       padding: 0;
-      @extend button.flat;
+      @extend %flat_button;
       border-radius: 100%;
       -gtk-outline-radius: 100%;
 
@@ -3725,12 +3771,13 @@ headerbar, .titlebar {
 // catch all extend
 %selected_items {
   background-color: $selected_bg_color;
+  @extend %nobg_selected_items;
+}
 
-  @at-root %nobg_selected_items, & {
-    color: $selected_fg_color;
+%nobg_selected_items {
+  color: $selected_fg_color;
 
-    &:disabled { color: mix($selected_fg_color, $selected_bg_color, 50%); }
-  }
+  &:disabled { color: mix($selected_fg_color, $selected_bg_color, 50%); }
 }
 
 //

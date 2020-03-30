@@ -121,7 +121,7 @@ PanelSeparator {
 
 // 'hide' arrow buttons
 PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
-  @extend button.flat;
+  @extend %flat_button;
   min-height: 4px;
   min-width: 4px;
   padding: 0;
@@ -324,19 +324,19 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
 //
 // Caja
 //
-.caja-desktop { @extend .nautilus-desktop.nautilus-canvas-item; }
+.caja-desktop { @extend %nautilus-desktop-canvas-item; }
 .caja-notebook { border-top: 1px solid $borders_color; }
 .caja-side-pane .frame { border-width: 1px 0 0; }
 .caja-notebook .frame { border-width: 0 0 1px; }
 
 .caja {
-  &-canvas-item { @extend .nautilus-canvas-item; }
+  &-canvas-item { border-radius: 2px; }
 
   &-list-dim-label { @extend .nautilus-list-dim-label; }
 }
 
 .caja-desktop { // desktop icon-grid styling
-  &.caja-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+  &.caja-canvas-item { @extend %nautilus-desktop-canvas-item; }
 
   > widget.entry { // = EelEditableLabel.entry
     &, &:focus {

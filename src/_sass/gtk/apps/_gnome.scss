@@ -143,6 +143,7 @@ window.background { // gnome-terminal 3.32
   border-radius: 2px;
 }
 
+%nautilus-desktop-canvas-item,
 .nautilus-desktop.nautilus-canvas-item {
   color: $selected_fg_color;
   text-shadow: 1px 1px transparentize(black, 0.4);
@@ -191,7 +192,7 @@ window.background { // gnome-terminal 3.32
 }
 
 button.nautilus-circular-button.image-button {
-  @extend button.circular;
+  @extend %circle_button;
 }
 
 $disk_space_unknown: transparentize($fg_color, 0.5);

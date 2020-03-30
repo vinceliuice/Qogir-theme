@@ -2,14 +2,14 @@
 //
 // Nemo
 //
-.nemo-desktop.nemo-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+.nemo-desktop.nemo-canvas-item { @extend %nautilus-desktop-canvas-item; }
 
 .nemo-window {
   .nemo-places-sidebar {
     &.frame { border-width: 0; }
 
     .places-treeview {
-      @extend row.activatable;
+      @extend %row_activatable;
 
       -NemoPlacesTreeView-disk-full-bg-color: $solid_borders_color;
       -NemoPlacesTreeView-disk-full-fg-color: darken($progress_color, 5%);

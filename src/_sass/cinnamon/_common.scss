@@ -1112,7 +1112,7 @@ StScrollBar {
     padding: 10px;
     border: 1px solid rgba(0,0,0,0);
 
-    &:hover { @extend %button:hover; }
+    &:hover { @include button(hover); }
   }
 
   &-places {
@@ -1140,8 +1140,8 @@ StScrollBar {
 
     &-selected {
       padding: 6px;
-      @extend %button:active;
       border: none;
+      @include button(active);
 
       &:highlighted { font-weight: bold; }
     }

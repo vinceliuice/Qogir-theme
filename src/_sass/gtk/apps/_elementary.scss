@@ -228,7 +228,19 @@ treeview.view {
         }
       }
 
-      &.trough { @extend treeview.view.trough }
+      &.trough {
+        color: $fg_color;
+        background-color: $borders_color;
+        border-radius: 3px;
+        border-width: 0;
+
+        &:selected, &:selected:focus {
+          color: $selected_fg_color;
+          background-color: rgba(black, 0.2);
+          border-radius: 3px;
+          border-width: 0;
+        }
+      }
     }
   }
 }

@@ -144,7 +144,7 @@ window.thunar {
     border-top: none;
 
     treeview.view {
-      @extend treeview.view;
+      @extend %row_activatable;
       background-color: $bg_color;
       color: $alt_fg_color;
 

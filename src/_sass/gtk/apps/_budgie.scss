@@ -38,7 +38,7 @@
     color: rgba($selected_fg_color, 0.65);
   }
 
-  &.flat {
+  @at-root %budgie_button_flat, &.flat {
     color: $panel_fg;
     background: none;
 
@@ -99,7 +99,7 @@
     background-color: transparent;
 
     &:hover { box-shadow: none; }
-    @extend row.activatable;
+    @extend %row_activatable;
   }
 
   switch { margin-left: 56px; }
@@ -275,7 +275,7 @@ window.budgie-popover:not(.csd) {
   }
 
   button {
-    @extend row.activatable;
+    @extend %row_activatable;
 
     min-height: 32px;
     padding: 0 8px;
@@ -304,7 +304,7 @@ window.budgie-popover:not(.csd) {
 // Menu Button
 button.budgie-menu-launcher {
   // padding: 0 2px;
-  @extend button.flat;
+  @extend %flat_button;
 }
 
 // User Menu
@@ -429,7 +429,7 @@ popover.background.places-menu {
   #tasklist-button:not(.flat) {
     padding: 0 4px;
     @extend %underscores;
-    @extend button.flat;
+    @extend %flat_button;
     @extend %budgie_button;
     box-shadow: none;
   }
@@ -439,7 +439,7 @@ popover.background.places-menu {
   // Icon Tasklist
   button.flat.launcher {
     padding: 0;
-    @extend button.flat;
+    @extend %flat_button;
     @extend %underscores;
 
     // for indicator colors
@@ -722,7 +722,15 @@ button.raven-trigger {
     grid > label:first-child { min-height: 26px; } // workaround to fix vertical-align
 
     // for <10.4
-    spinbutton:not(.vertical) { @extend entry.flat; }
+    spinbutton:not(.vertical) {
+      &, &:focus {
+        min-height: 0;
+        padding: 2px;
+        background-image: none;
+        border-color: transparent;
+        border-radius: 0;
+      }
+    }
 
     // for <10.4
     button.combo { }
@@ -800,7 +808,7 @@ window.sound-popover.background {
   button.image-button {
     padding: $cont_padding;
     border: none;
-    @extend %budgie_button.flat;
+    @extend %budgie_button_flat;
   }
 }
 
