@@ -913,12 +913,23 @@ window.background.csd {
 .polari-room-list {
   .sidebar {
     @extend %side_background;
-    // border-color: if($variant == 'light', $bg_color, $solid_borders_color); // Not use
+    margin-top: -1px;
+    border-color: if($variant == 'light', $bg_color, $solid_borders_color); // Not use
 
     .activatable, .inactive, .room-list-header {
       @extend %side_views;
     }
   }
+}
+
+.polari-entry-area {
+  @extend %side_searchbar;
+
+  button { @extend %side_buttons; }
+}
+
+overlay > infobar.info.top {
+  margin-bottom: 0;
 }
 
 //
