@@ -4433,6 +4433,8 @@ paned.vertical > separator.wide {
 
 infobar {
   border-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 infobar.info {
@@ -4908,14 +4910,15 @@ popover.emoji-picker {
 
 popover.emoji-picker entry {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 0;
   box-shadow: none;
   border-width: 0 0 1px 0;
   padding: 4px 12px;
+  background: none;
 }
 
 popover.emoji-picker scrolledwindow {
+  background-color: #282A33;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -4939,7 +4942,8 @@ button.emoji-section:last-child {
 .emoji {
   min-width: 16px;
   min-height: 16px;
-  padding: 0 8px;
+  padding: 2px 6px;
+  margin: 2px;
 }
 
 .emoji widget {
@@ -9430,45 +9434,45 @@ window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view label:di
   color: rgba(246, 246, 251, 0.35);
 }
 
-hdyleaflet > stack > frame > grid.vertical > actionbar button, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button {
+hdyleaflet > stack > frame > grid.vertical > actionbar button, .polari-entry-area button, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button {
   color: rgba(246, 246, 251, 0.8);
   background-color: rgba(246, 246, 251, 0.15);
   border: none;
 }
 
-hdyleaflet > stack > frame > grid.vertical > actionbar button:hover, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button:hover, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:hover {
+hdyleaflet > stack > frame > grid.vertical > actionbar button:hover, .polari-entry-area button:hover, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button:hover, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.25);
 }
 
-hdyleaflet > stack > frame > grid.vertical > actionbar button:active, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button:active, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:active, hdyleaflet > stack > frame > grid.vertical > actionbar button:checked, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button:checked, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:checked {
+hdyleaflet > stack > frame > grid.vertical > actionbar button:active, .polari-entry-area button:active, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button:active, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:active, hdyleaflet > stack > frame > grid.vertical > actionbar button:checked, .polari-entry-area button:checked, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button:checked, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:checked {
   color: #ffffff;
   background-color: #5294e2;
 }
 
-hdyleaflet > stack > frame > grid.vertical > actionbar button:disabled, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button:disabled, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:disabled {
+hdyleaflet > stack > frame > grid.vertical > actionbar button:disabled, .polari-entry-area button:disabled, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button:disabled, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button:disabled {
   color: rgba(246, 246, 251, 0.35);
   background-color: rgba(246, 246, 251, 0.08);
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable button, hdyleaflet > stack > frame > grid.vertical > actionbar button.flat, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button.flat, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button.flat {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable button, hdyleaflet > stack > frame > grid.vertical > actionbar button.flat, .polari-entry-area button.flat, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button.flat, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button.flat {
   border: none;
   background: none;
   box-shadow: none;
   color: rgba(246, 246, 251, 0.8);
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable button:hover, hdyleaflet > stack > frame > grid.vertical > actionbar button.flat:hover, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button.flat:hover, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button.flat:hover {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable button:hover, hdyleaflet > stack > frame > grid.vertical > actionbar button.flat:hover, .polari-entry-area button.flat:hover, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button.flat:hover, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button.flat:hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.15);
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable button:active, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable button:checked, hdyleaflet > stack > frame > grid.vertical > actionbar button.flat:active, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button.flat:active, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button.flat:active, hdyleaflet > stack > frame > grid.vertical > actionbar button.flat:checked, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button.flat:checked, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button.flat:checked {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable button:active, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable button:checked, hdyleaflet > stack > frame > grid.vertical > actionbar button.flat:active, .polari-entry-area button.flat:active, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button.flat:active, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button.flat:active, hdyleaflet > stack > frame > grid.vertical > actionbar button.flat:checked, .polari-entry-area button.flat:checked, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button.flat:checked, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button.flat:checked {
   color: #ffffff;
   background-color: #5294e2;
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable button:disabled, hdyleaflet > stack > frame > grid.vertical > actionbar button.flat:disabled, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button.flat:disabled, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button.flat:disabled {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable button:disabled, hdyleaflet > stack > frame > grid.vertical > actionbar button.flat:disabled, .polari-entry-area button.flat:disabled, window.background.csd > box.horizontal > box.vertical > box.linked.horizontal button.flat:disabled, .gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal button.flat:disabled {
   color: rgba(246, 246, 251, 0.35);
 }
 
@@ -9490,38 +9494,38 @@ hdyleaflet > stack > frame > grid.vertical > scrolledwindow > viewport.frame > l
   background-color: #4a85cb;
 }
 
-window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar,
+.polari-entry-area, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar,
 window.background.csd > hdyleaflet > box.vertical > searchbar, window.background.csd > box.horizontal > box.vertical > searchbar {
   background-image: image(#32343D);
   box-shadow: none;
   border: none;
 }
 
-window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar > revealer > box, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar > revealer > box,
+.polari-entry-area > revealer > box, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar > revealer > box, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar > revealer > box,
 window.background.csd > hdyleaflet > box.vertical > searchbar > revealer > box, window.background.csd > box.horizontal > box.vertical > searchbar > revealer > box {
   background: none;
   border: none;
 }
 
-window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry,
+.polari-entry-area entry, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry,
 window.background.csd > hdyleaflet > box.vertical > searchbar entry, window.background.csd > box.horizontal > box.vertical > searchbar entry {
   color: rgba(246, 246, 251, 0.8);
   background-color: rgba(246, 246, 251, 0.1);
 }
 
-window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image,
+.polari-entry-area entry image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image,
 window.background.csd > hdyleaflet > box.vertical > searchbar entry image, window.background.csd > box.horizontal > box.vertical > searchbar entry image {
   color: rgba(246, 246, 251, 0.8);
 }
 
-window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:focus, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:focus,
+.polari-entry-area entry:focus, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:focus, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:focus,
 window.background.csd > hdyleaflet > box.vertical > searchbar entry:focus, window.background.csd > box.horizontal > box.vertical > searchbar entry:focus {
   background-color: rgba(246, 246, 251, 0.12);
 }
 
-window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:disabled, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:disabled,
-window.background.csd > hdyleaflet > box.vertical > searchbar entry:disabled, window.background.csd > box.horizontal > box.vertical > searchbar entry:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry label:disabled, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry label:disabled,
-window.background.csd > hdyleaflet > box.vertical > searchbar entry label:disabled, window.background.csd > box.horizontal > box.vertical > searchbar entry label:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image:disabled, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image:disabled,
+.polari-entry-area entry:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:disabled, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:disabled,
+window.background.csd > hdyleaflet > box.vertical > searchbar entry:disabled, window.background.csd > box.horizontal > box.vertical > searchbar entry:disabled, .polari-entry-area entry label:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry label:disabled, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry label:disabled,
+window.background.csd > hdyleaflet > box.vertical > searchbar entry label:disabled, window.background.csd > box.horizontal > box.vertical > searchbar entry label:disabled, .polari-entry-area entry image:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image:disabled, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image:disabled,
 window.background.csd > hdyleaflet > box.vertical > searchbar entry image:disabled, window.background.csd > box.horizontal > box.vertical > searchbar entry image:disabled {
   color: rgba(246, 246, 251, 0.35);
 }
@@ -10211,6 +10215,15 @@ window.background.csd > box.horizontal > box.vertical > separator.horizontal {
 window.background.csd > box.horizontal > box.vertical > box.linked.horizontal {
   margin: -6px;
   padding: 6px;
+}
+
+.polari-room-list .sidebar {
+  margin-top: -1px;
+  border-color: #494c59;
+}
+
+overlay > infobar.info.top {
+  margin-bottom: 0;
 }
 
 hdyleaflet > stack > frame > grid.vertical > entry.search {
