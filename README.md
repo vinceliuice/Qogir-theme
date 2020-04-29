@@ -21,7 +21,7 @@ Gnome ≥ 3.22:
 
 Fedora/RedHat distros:
 
-    yum install gtk-murrine-engine gtk2-engines
+    dnf install gtk-murrine-engine gtk2-engines
 
 Ubuntu/Mint/Debian distros:
 
