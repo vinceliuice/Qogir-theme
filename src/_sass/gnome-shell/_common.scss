@@ -25,14 +25,14 @@ $corner_radius: 0px;
 // Globals
 //
 $font-size: 10;
-$font-family: Futura Bk bt, Cantarell, Sans-Serif;
+$font-family: Cantarell, Sans-Serif;
 $_bubble_bg_color: opacify($osd_bg_color,0.25);
 $_bubble_fg_color: $osd_fg_color;
 $_bubble_borders_color: transparentize($osd_fg_color,0.8);
 $_shell_fg_color: white;
 
 stage {
-  font-family: $font-family;
+  // font-family: $font-family;
   @include fontsize($font-size);
   color: $fg_color;
 }
