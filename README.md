@@ -64,6 +64,16 @@ Usage:  ./install.sh  [OPTIONS...]
 sudo ./install.sh -g -c dark -t standard  (Install standard dark gdm theme)
 ```
 
+### Install on OpenBSD/FreeBSD
+
+Let me show you how to install this theme on OpenBSD
+
+    sudo pkg_add bash (sudo pkg install bash #FreeBSD run this)
+    sudo ln -s /usr/local/bin/bash /bin/bash
+    git clone https://github.com/vinceliuice/Qogir-theme
+    cd Qogir-theme
+    bash install.sh
+
 ## Nautilus logos
 ```sh
 ./install.sh -l [LOGO NAME...] (Install themes with selected nautilus logo)

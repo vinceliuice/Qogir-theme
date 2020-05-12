@@ -6149,6 +6149,11 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal > stack > scrolledwind
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+dialog.background.csd > box.dialog-vbox > filechooser > actionbar > revealer > box.horizontal > box.horizontal > box.horizontal > combobox > .linked > button.combo {
+  margin: 24px 6px 24px 120px;
+  background-position: right bottom;
+}
+
 dialog.background.csd headerbar.default-decoration {
   box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
 }

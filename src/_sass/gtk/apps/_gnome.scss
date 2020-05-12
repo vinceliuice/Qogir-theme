@@ -1170,6 +1170,15 @@ dialog.background.csd {
         }
       }
     }
+
+    > filechooser > actionbar {
+      > revealer > box.horizontal > box.horizontal > box.horizontal {
+        > combobox > .linked > button.combo {
+          margin: 24px 6px 24px 120px;
+          background-position: right bottom;
+        }
+      }
+    }
   }
 
   headerbar.default-decoration { // Add box-shadow as bottom border for default-decoration headerbar of dialog
