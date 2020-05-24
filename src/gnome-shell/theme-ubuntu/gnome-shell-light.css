@@ -935,20 +935,22 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-content {
-  padding: 1em 0em;
+  padding: 1em 0;
 }
 
 .popup-menu .popup-menu-item {
   spacing: 12px;
-  padding: 6px;
+  padding: 6px 0;
 }
 
 .popup-menu .popup-menu-item:ltr {
-  padding: .4em 3em .4em 0em;
+  padding-right: 2em;
+  padding-left: 0;
 }
 
 .popup-menu .popup-menu-item:rtl {
-  padding: .4em 0em .4em 3em;
+  padding-right: 0;
+  padding-left: 2em;
 }
 
 .popup-menu .popup-menu-item:checked {
@@ -974,7 +976,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-inactive-menu-item:insensitive {
-  color: transparent;
+  color: rgba(92, 97, 108, 0.55);
 }
 
 .popup-menu.panel-menu {
@@ -1014,24 +1016,22 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-separator-menu-item {
-  height: 0;
-  margin: 0;
-  padding: 0;
+  margin: 0 0;
+  padding: 0 0;
   background: none;
   border: none;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
-  height: 0;
   margin: 0 0;
+  padding: 0 0;
   background: none;
-  padding: 0;
 }
 
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   margin: 0 0;
+  padding: 0 0;
   background: none;
-  padding: 0;
 }
 
 .rename-folder-popup .rename-folder-popup-item {
@@ -1078,25 +1078,25 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .aggregate-menu {
-  min-width: 23.5em;
+  min-width: 21em;
 }
 
 .aggregate-menu .popup-menu-icon {
   padding: 0 0;
-  margin: 0 4px;
+  margin: 0 0;
   -st-icon-style: symbolic;
 }
 
 .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:ltr {
   /* 12px spacing + 2*4px padding */
   padding-left: 24px;
-  margin-left: 1.75em;
+  margin-left: 1.09em;
 }
 
 .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:rtl {
   /* 12px spacing + 2*4px padding */
   padding-right: 24px;
-  margin-right: 1.75em;
+  margin-right: 1.09em;
 }
 
 
@@ -1594,7 +1594,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .weather-header,
 .message-list-section-title,
 .events-section-title {
-  color: rgba(92, 97, 108, 0.65);
+  color: rgba(92, 97, 108, 0.75);
   font-weight: bold;
 }
 
@@ -1605,18 +1605,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .world-clocks-city {
+  color: rgba(92, 97, 108, 0.6);
   font-weight: bold;
   font-size: 0.9em;
 }
 
 .world-clocks-time {
-  color: rgba(92, 97, 108, 0.75);
+  color: rgba(92, 97, 108, 0.6);
   font-feature-settings: "tnum";
   font-size: 1.2em;
 }
 
 .world-clocks-timezone {
-  color: #5c616c;
+  color: rgba(92, 97, 108, 0.75);
   font-feature-settings: "tnum";
   font-size: 0.9em;
 }
@@ -1650,7 +1651,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: none;
 }
 
-.world-clocks-button:active .world-clocks-header,
+.world-clocks-button:active *,
 .weather-button:active * {
   color: #ffffff;
 }
@@ -1730,6 +1731,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 100px;
   font-feature-settings: "tnum";
   color: rgba(92, 97, 108, 0.75);
+  background-color: transparent;
 }
 
 .calendar-day-base:hover, .calendar-day-base:focus {
@@ -1751,6 +1753,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .calendar-day {
   border-width: 0;
   color: rgba(92, 97, 108, 0.8);
+  background-color: transparent;
 }
 
 .calendar-day:active, .calendar-day:checked, .calendar-day:selected {
@@ -3586,9 +3589,92 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-width: 0.6em;
 }
 
-.openweather-button-action {
-  border-color: transparent;
+.openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
+  border: 1px solid transparent;
   background: none;
+}
+
+.openweather-button:hover, .openweather-button-action:hover, .openweather-menu-button-container:hover, .openweather-button-box:hover {
+  border: 1px solid #fb8441;
+}
+
+.openweather-provider {
+  padding: 0 16px;
+  font-weight: 500;
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #5c616c;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.openweather-provider:hover {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #5c616c;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.openweather-provider:focus {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #5c616c;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.openweather-provider:active {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: #ffffff;
+  background-color: #fb8441;
+  border: 1px solid #fa640f;
+  box-shadow: inset 0 1px rgba(251, 132, 65, 0.05);
+}
+
+.openweather-provider:insensitive {
+  text-shadow: 0 1px rgba(255, 255, 255, 0);
+  color: rgba(92, 97, 108, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.55);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.openweather-current-icon, .openweather-current-summary, .openweather-current-summarybox {
+  background: none;
+  color: #5c616c;
+  -st-icon-style: symbolic;
+}
+
+.openweather-current-databox-values {
+  background: none;
+  color: rgba(92, 97, 108, 0.6);
+}
+
+.openweather-current-databox-captions {
+  background: none;
+  color: rgba(92, 97, 108, 0.6);
+}
+
+.openweather-forecast-icon, .openweather-forecast-summary {
+  background: none;
+  color: rgba(92, 97, 108, 0.75);
+  -st-icon-style: symbolic;
+}
+
+.openweather-forecast-day {
+  background: none;
+  color: #5c616c;
+}
+
+.openweather-forecast-temperature {
+  background: none;
+  color: rgba(92, 97, 108, 0.75);
+}
+
+.openweather-sunrise-icon, .openweather-sunset-icon, .openweather-build-icon {
+  color: rgba(92, 97, 108, 0.75);
+  -st-icon-style: symbolic;
 }
 
 #dashtodockContainer {
