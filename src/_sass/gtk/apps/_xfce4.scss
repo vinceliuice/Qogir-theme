@@ -163,6 +163,8 @@ window.thunar {
       @extend %file_manager_img;
 
       .view { @extend %view; background-color: transparent; }
+
+      widget.view { border-radius: 2px; }
     }
 
     // an allocation height of label node affects to close button's

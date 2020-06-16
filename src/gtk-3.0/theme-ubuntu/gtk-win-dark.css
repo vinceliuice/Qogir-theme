@@ -8915,6 +8915,10 @@ window.thunar notebook scrolledwindow.frame.standard-view .view {
   background-color: transparent;
 }
 
+window.thunar notebook scrolledwindow.frame.standard-view widget.view {
+  border-radius: 2px;
+}
+
 window.thunar notebook header.top tab.reorderable-page > box > label {
   min-height: 0;
 }
@@ -8932,6 +8936,7 @@ window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stac
 
 .menubar.panel .panel, .menubar.panel .panel.color-light, .menubar.panel .panel.color-dark {
   background-color: #21232b;
+  background-image: image(#21232b);
   transition: all 100ms ease-in-out;
   color: #D3DAE3;
 }
@@ -9019,6 +9024,10 @@ window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stac
   color: #ffffff;
   background-color: #fb8441;
   border: 1px solid #fc945a;
+}
+
+button.flat.toggle.switcher {
+  -gtk-outline-radius: 100px;
 }
 
 button.flat.toggle.switcher:hover image, button.flat.toggle.switcher:active image, button.flat.toggle.switcher:checked image, button.flat.toggle.switcher:selected image {
