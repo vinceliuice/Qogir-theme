@@ -2907,6 +2907,21 @@ $legacy_icon_size: 24px;
       &:active { @include button(active); }
       &:insensitive { @include button(insensitive); }
     }
+    &.button.cancel-button {
+      padding-left: 0;
+      padding-right: 0;
+      max-height: 2em;
+      height: 2em;
+      width: 2em;
+      StIcon {
+        icon-size: 1.5em;
+      }
+    }
+  }
+  StPasswordEntry {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-height: 2em;
   }
 }
 
@@ -2963,7 +2978,6 @@ $legacy_icon_size: 24px;
   font-size: 120%;
   font-weight: bold;
   text-align: left;
-  padding-left: 15px;
 }
 
 .user-widget.horizontal .user-widget-label {
