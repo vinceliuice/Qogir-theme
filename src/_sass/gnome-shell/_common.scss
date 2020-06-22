@@ -3031,11 +3031,13 @@ $legacy_icon_size: 24px;
   padding-bottom: 1.5em;
 }
 
+.unlock-dialog-clock-time,
 .screen-shield-clock-time {
   font-size: 72pt;
   text-shadow: 0px 2px 2px rgba(0,0,0,0.4);
 }
 
+.unlock-dialog-clock-date,
 .screen-shield-clock-date { font-size: 28pt; }
 
 .screen-shield-notifications-container {
