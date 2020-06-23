@@ -82,7 +82,7 @@ Let me show you how to install this theme on OpenBSD
 ![logo](https://github.com/vinceliuice/Qogir-theme/blob/images/logos.png?raw=true)
 
 ## Firefox theme
-[Intall Firefox theme](src/firefox)
+[Install Firefox theme](src/firefox)
 
 ![firefox-theme](src/firefox/preview.png?raw=true)
 
