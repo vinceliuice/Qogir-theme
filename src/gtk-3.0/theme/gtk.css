@@ -7345,7 +7345,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-popover .container {
-  padding: 2px;
+  padding: 0;
   border: none;
 }
 
@@ -7364,6 +7364,25 @@ MsdOsdWindow.background.osd .progressbar {
 
 .budgie-popover row:hover, .budgie-popover row.activatable:hover {
   box-shadow: none;
+}
+
+.budgie-popover treeview.view.sidebar {
+  min-height: 36px;
+  background: none;
+  border-right: none;
+}
+
+.budgie-popover treeview.view.sidebar:hover {
+  background-color: rgba(92, 97, 108, 0.05);
+}
+
+.budgie-popover treeview.view.sidebar:selected, .budgie-popover treeview.view.sidebar:selected:hover {
+  color: #ffffff;
+  background-color: #5294e2;
+}
+
+.budgie-popover > frame.container > grid.horizontal > grid.horizontal > widget > grid.horizontal > stack {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .budgie-popover switch {
@@ -8125,21 +8144,6 @@ box.audio-widget scale.horizontal.marks-after,
 window.sound-popover.background scale.horizontal.marks-after {
   padding-top: 0;
   padding-bottom: 0;
-}
-
-box.audio-widget scale.horizontal.marks-after trough,
-window.sound-popover.background scale.horizontal.marks-after trough {
-  background-color: transparent;
-}
-
-box.audio-widget scale.horizontal.marks-after trough:dir(ltr),
-window.sound-popover.background scale.horizontal.marks-after trough:dir(ltr) {
-  background-image: linear-gradient(to right, rgba(115, 210, 22, 0.25) calc(66% - 3px), rgba(240, 74, 80, 0.25) calc(66% - 3px), rgba(240, 74, 80, 0.25) 100%);
-}
-
-box.audio-widget scale.horizontal.marks-after trough:dir(rtl),
-window.sound-popover.background scale.horizontal.marks-after trough:dir(rtl) {
-  background-image: linear-gradient(to left, rgba(115, 210, 22, 0.25) calc(66% - 3px), rgba(240, 74, 80, 0.25) calc(66% - 3px), rgba(240, 74, 80, 0.25) 100%);
 }
 
 box.audio-widget scale.horizontal.marks-after mark label,

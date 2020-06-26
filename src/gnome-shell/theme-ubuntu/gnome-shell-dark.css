@@ -789,7 +789,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #F27835;
 }
 
-.polkit-dialog-user-user-icon {
+.polkit-dialog-user-icon {
   border-radius: 100px;
   background-size: contain;
   margin: 6px;
@@ -3216,6 +3216,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 1px rgba(44, 47, 57, 0.05);
 }
 
+.login-dialog .modal-dialog-button.button.cancel-button {
+  padding-left: 0;
+  padding-right: 0;
+  max-height: 2em;
+  height: 2em;
+  width: 2em;
+}
+
+.login-dialog .modal-dialog-button.button.cancel-button StIcon {
+  icon-size: 1.5em;
+}
+
+.login-dialog StPasswordEntry {
+  padding-top: 0;
+  padding-bottom: 0;
+  max-height: 2em;
+}
+
 .login-dialog-logo-bin {
   padding: 24px 0px;
 }
@@ -3310,7 +3328,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 120%;
   font-weight: bold;
   text-align: left;
-  padding-left: 15px;
 }
 
 .user-widget.horizontal .user-widget-label {
@@ -3386,11 +3403,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding-bottom: 1.5em;
 }
 
+.unlock-dialog-clock-time,
 .screen-shield-clock-time {
   font-size: 72pt;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
+.unlock-dialog-clock-date,
 .screen-shield-clock-date {
   font-size: 28pt;
 }
