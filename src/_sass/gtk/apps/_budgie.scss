@@ -99,9 +99,12 @@
 
   row.activatable {
     padding: 0;
-    background-color: transparent;
+    background: none;
     @extend %row_activatable;
-    transition: none;
+
+    &:selected {
+      @extend %selected_items;
+    }
 
     // &:hover { box-shadow: none; }
   }
@@ -110,6 +113,7 @@
     min-height: 36px;
     background: none;
     border-right: none;
+    color: $fg_color;
 
     &:hover { background-color: rgba($fg_color, 0.05); }
 

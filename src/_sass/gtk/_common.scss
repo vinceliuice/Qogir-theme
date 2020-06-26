@@ -2881,8 +2881,7 @@ row {
     }
 
     &:selected {
-      &, &.has-open-popup,
-      &:hover, &:active {
+      &, &.has-open-popup, &:hover {
         @extend %selected_items;
       }
     }
