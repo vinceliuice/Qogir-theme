@@ -3970,10 +3970,10 @@ list row {
   padding: 2px;
 }
 
-window.thunar .sidebar treeview.has-open-popup.view, .budgie-menu button.has-open-popup, .budgie-popover row.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, .has-open-popup.view,
+window.thunar .sidebar treeview.has-open-popup.view, .budgie-menu button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, .has-open-popup.view,
 window.thunar notebook scrolledwindow.frame.standard-view .has-open-popup.view,
 textview text.has-open-popup,
-iconview.has-open-popup, window.thunar .sidebar treeview.view:hover, .budgie-menu button:hover, .budgie-popover row:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, .view:hover,
+iconview.has-open-popup, window.thunar .sidebar treeview.view:hover, .budgie-menu button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, .view:hover,
 window.thunar notebook scrolledwindow.frame.standard-view .view:hover,
 textview text:hover,
 iconview:hover, row.activatable.has-open-popup, row.activatable:hover {
@@ -3982,45 +3982,28 @@ iconview:hover, row.activatable.has-open-popup, row.activatable:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-window.thunar .sidebar treeview.view:active, .budgie-menu button:active, .budgie-popover row:active, .nemo-window .nemo-places-sidebar .places-treeview:active, .view:active,
+window.thunar .sidebar treeview.view:active, .budgie-menu button:active, .nemo-window .nemo-places-sidebar .places-treeview:active, .view:active,
 window.thunar notebook scrolledwindow.frame.standard-view .view:active,
 textview text:active,
-iconview:active, window.thunar .sidebar treeview.view:checked, .budgie-menu button:checked, .budgie-popover row:checked, .nemo-window .nemo-places-sidebar .places-treeview:checked, .view:checked,
+iconview:active, window.thunar .sidebar treeview.view:checked, .budgie-menu button:checked, .nemo-window .nemo-places-sidebar .places-treeview:checked, .view:checked,
 window.thunar notebook scrolledwindow.frame.standard-view .view:checked,
 textview text:checked,
 iconview:checked, row.activatable:active, row.activatable:checked {
   transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-window.thunar .sidebar treeview.view:disabled, .budgie-menu button:disabled, .budgie-popover row:disabled, .nemo-window .nemo-places-sidebar .places-treeview:disabled, .view:disabled,
+window.thunar .sidebar treeview.view:disabled, .budgie-menu button:disabled, .nemo-window .nemo-places-sidebar .places-treeview:disabled, .view:disabled,
 window.thunar notebook scrolledwindow.frame.standard-view .view:disabled,
 textview text:disabled,
 iconview:disabled, row.activatable:disabled {
   color: rgba(92, 97, 108, 0.55);
 }
 
-window.thunar .sidebar treeview.view:disabled image, .budgie-menu button:disabled image, .budgie-popover row:disabled image, .nemo-window .nemo-places-sidebar .places-treeview:disabled image, .view:disabled image,
+window.thunar .sidebar treeview.view:disabled image, .budgie-menu button:disabled image, .nemo-window .nemo-places-sidebar .places-treeview:disabled image, .view:disabled image,
 window.thunar notebook scrolledwindow.frame.standard-view .view:disabled image,
 textview text:disabled image,
 iconview:disabled image, row.activatable:disabled image {
   color: inherit;
-}
-
-window.thunar .sidebar treeview.view:selected:active, .budgie-menu button:selected:active, .budgie-popover row:selected:active, .nemo-window .nemo-places-sidebar .places-treeview:selected:active, .view:selected:active,
-window.thunar notebook scrolledwindow.frame.standard-view .view:selected:active,
-textview text:selected:active,
-iconview:selected:active, row.activatable:selected:active {
-  color: #ffffff;
-}
-
-window.thunar .sidebar treeview.view.has-open-popup:selected, .budgie-menu button.has-open-popup:selected, .budgie-popover row.has-open-popup:selected, .nemo-window .nemo-places-sidebar .places-treeview.has-open-popup:selected, .view.has-open-popup:selected,
-window.thunar notebook scrolledwindow.frame.standard-view .view.has-open-popup:selected,
-textview text.has-open-popup:selected,
-iconview.has-open-popup:selected, window.thunar .sidebar treeview.view:selected:hover, .budgie-menu button:selected:hover, .budgie-popover row:selected:hover, .nemo-window .nemo-places-sidebar .places-treeview:selected:hover, .view:selected:hover,
-window.thunar notebook scrolledwindow.frame.standard-view .view:selected:hover,
-textview text:selected:hover,
-iconview:selected:hover, row.activatable.has-open-popup:selected, row.activatable:selected:hover {
-  background-color: #4a85cb;
 }
 
 .app-notification {
@@ -4973,7 +4956,7 @@ iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar .sidebar treeview.view:selected, .budgie-menu button:selected, .budgie-popover row:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, row.activatable:selected, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar .sidebar treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button.has-open-popup:selected, .budgie-menu button:selected:hover, .budgie-menu button:selected:active, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, row.activatable:selected:active, calendar:selected {
   background-color: #5294e2;
 }
 
@@ -4989,7 +4972,7 @@ iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar .sidebar treeview.view:selected, .budgie-menu button:selected, .budgie-popover row:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, row.activatable:selected, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar .sidebar treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button.has-open-popup:selected, .budgie-menu button:selected:hover, .budgie-menu button:selected:active, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, row.activatable:selected:active, calendar:selected {
   color: #ffffff;
 }
 
@@ -7548,13 +7531,9 @@ MsdOsdWindow.background.osd .progressbar {
   background-color: transparent;
 }
 
-.budgie-popover row, .budgie-popover row.activatable {
+.budgie-popover row.activatable {
   padding: 0;
   background-color: transparent;
-}
-
-.budgie-popover row:hover, .budgie-popover row.activatable:hover {
-  box-shadow: none;
 }
 
 .budgie-popover treeview.view.sidebar {

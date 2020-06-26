@@ -2881,11 +2881,10 @@ row {
     }
 
     &:selected {
-      @extend %selected_items;
-      &:active { color: $selected_fg_color; }
-
-      &.has-open-popup,
-      &:hover { background-color: mix(black, $selected_bg_color, 10%); }
+      &, &.has-open-popup,
+      &:hover, &:active {
+        @extend %selected_items;
+      }
     }
   }
 }

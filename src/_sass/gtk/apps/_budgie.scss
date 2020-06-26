@@ -97,12 +97,13 @@
 
   list { background-color: transparent; }
 
-  row, row.activatable {
+  row.activatable {
     padding: 0;
     background-color: transparent;
-
-    &:hover { box-shadow: none; }
     @extend %row_activatable;
+    transition: none;
+
+    // &:hover { box-shadow: none; }
   }
 
   treeview.view.sidebar {
