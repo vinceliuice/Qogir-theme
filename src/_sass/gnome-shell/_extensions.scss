@@ -229,6 +229,13 @@ $empty_shadow: 0 0 0 transparent;
   }
 }
 
+.popup-menu.app-well-menu {
+  .popup-menu-item.dashtodock-app-well-preview-menu-item {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
 // /***************************
 //  * Dash To Panel Extension *
 //  ***************************/
