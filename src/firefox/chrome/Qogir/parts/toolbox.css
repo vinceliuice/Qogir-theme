@@ -41,6 +41,9 @@ findbar:-moz-window-inactive description,
 }
 
 toolbarbutton.bookmark-item:not(.subviewbutton) {
+	padding: 2px 8px !important;
+	margin: 0 0 !important;
+	border-radius: 2px !important;
 	fill: var(--gnome-toolbar-color) !important;
 	color: var(--gnome-toolbar-color) !important;
 }
