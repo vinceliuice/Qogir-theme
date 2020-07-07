@@ -1063,7 +1063,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #appMenu {
-  spinner-image: url("common-assets/misc/process-working.svg");
+  spinner-image: url("process-working.svg");
   spacing: 4px;
   padding: 0 8px;
 }
