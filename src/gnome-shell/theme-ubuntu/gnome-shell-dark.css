@@ -3865,6 +3865,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: 1px solid #fb8441;
 }
 
+.popup-menu.app-well-menu .popup-menu-item.dashtodock-app-well-preview-menu-item {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 #panel.dashtopanelMainPanel.dashtopanelTop {
   background-gradient-start: #21232b;
   background-gradient-end: #D3DAE3;
