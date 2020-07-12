@@ -1474,7 +1474,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel #panelActivities.panel-button > * {
   background-image: url("common-assets/misc/activities.svg");
-  background-position: center top;
   width: 24px;
   height: 24px;
   background-color: transparent !important;
