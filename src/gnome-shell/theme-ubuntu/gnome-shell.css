@@ -1063,7 +1063,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #appMenu {
-  spinner-image: url("common-assets/misc/process-working.svg");
+  spinner-image: url("process-working.svg");
   spacing: 4px;
   padding: 0 8px;
 }
@@ -1474,7 +1474,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel #panelActivities.panel-button > * {
   background-image: url("common-assets/misc/activities.svg");
-  background-position: center top;
   width: 24px;
   height: 24px;
   background-color: transparent !important;
@@ -3740,32 +3739,26 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #dashtodockContainer #dash {
   background-color: #32343D;
-  box-shadow: 0 0 0 transparent;
 }
 
 #dashtodockContainer.opaque #dash {
   background-color: #32343D;
-  box-shadow: inset 0 0 0 9999px #32343D;
 }
 
 #dashtodockContainer.transparent #dash {
   background-color: rgba(50, 52, 61, 0.75);
-  box-shadow: inset 0 0 0 9999px rgba(50, 52, 61, 0.75);
 }
 
 #dashtodockContainer:overview #dash {
   background-color: #32343D;
-  box-shadow: 0 0 0 transparent;
 }
 
 #dashtodockContainer.opaque:overview #dash, #dashtodockContainer.transparent:overview #dash {
   background-color: #32343D;
-  box-shadow: none !important;
 }
 
 #dashtodockContainer.extended:overview #dash, #dashtodockContainer.opaque.extended:overview #dash, #dashtodockContainer.transparent.extended:overview #dash {
   background-color: #32343D;
-  box-shadow: 0 0 0 transparent;
 }
 
 #dashtodockContainer .app-well-app .overview-icon,
@@ -3864,6 +3857,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #dashtodockContainer.extended.right .dash-item-container > .app-well-app.focused:hover .overview-icon {
   background-color: rgba(251, 132, 65, 0.5);
   border: 1px solid #fb8441;
+}
+
+.popup-menu.app-well-menu .popup-menu-item.dashtodock-app-well-preview-menu-item {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 #panel.dashtopanelMainPanel.dashtopanelTop {

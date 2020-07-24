@@ -998,7 +998,7 @@ StScrollBar {
 }
 
 #appMenu {
-  spinner-image: url("common-assets/misc/process-working.svg");
+  spinner-image: url("process-working.svg");
   spacing: 4px;
   padding: 0 8px;
 
@@ -1421,7 +1421,6 @@ StScrollBar {
 
   > * {
     background-image: url("common-assets/misc/activities.svg");
-    background-position: center top;
     width: 24px;
     height: 24px;
     background-color: transparent !important;

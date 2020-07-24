@@ -116,31 +116,24 @@ $empty_shadow: 0 0 0 transparent;
 
   #dash { // default-mode
     background-color: $dash_bg;
-    box-shadow: $empty_shadow;
   }
 
   &.opaque #dash { // solid-mode
     background-color: $dash_bg;
-    // FIXME: enforce opaque background
-    box-shadow: inset 0 0 0 9999px $dash_bg;
   }
 
   &.transparent #dash { // translucent-mode
     background-color: rgba($dash_bg, 0.75); // does not work
-    // FIXME: add lacked alpha via box-shadow property
-    box-shadow: inset 0 0 0 9999px rgba($dash_bg, 0.75);
   }
 
   &:overview #dash { // overview-mode #1
     background-color: $dash_bg;
-    box-shadow: $empty_shadow;
   }
 
   &.opaque:overview,
   &.transparent:overview { // overview-mode #2
     #dash {
       background-color: $dash_bg;
-      box-shadow: none !important;
     }
   }
 
@@ -149,7 +142,6 @@ $empty_shadow: 0 0 0 transparent;
   &.transparent.extended:overview {
     #dash {
       background-color: $dash_bg;
-      box-shadow: $empty_shadow;
     }
   }
 
@@ -226,6 +218,13 @@ $empty_shadow: 0 0 0 transparent;
         border: 1px solid $selected_bg_color;
       }
     }
+  }
+}
+
+.popup-menu.app-well-menu {
+  .popup-menu-item.dashtodock-app-well-preview-menu-item {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
 
