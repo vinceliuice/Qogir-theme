@@ -278,7 +278,7 @@ install_img() {
 
 restore_img() {
   cd ${SRC_DIR}/src/_sass/gtk/apps
-  [[ -d _gnome.scss.bak ]] && rm -rf _gnome.scss
+  [[ -f _gnome.scss.bak ]] && rm -rf _gnome.scss
   mv _gnome.scss.bak _gnome.scss
   echo -e "Restore scss files ..."
 }
