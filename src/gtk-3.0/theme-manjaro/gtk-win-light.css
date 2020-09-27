@@ -10548,6 +10548,10 @@ hdyleaflet > separator.sidebar {
 @define-color wm_icon_unfocused_bg #B6B8C0;
 @define-color wm_icon_hover_bg #7A7F8B;
 @define-color wm_icon_active_bg #ffffff;
+/* content view background such as thumbnails view in Photos or Boxes */
+@define-color content_view_bg #ffffff;
+/* Very contrasty background for text views (@theme_text_color foreground) */
+@define-color text_view_bg #ffffff;
 @define-color budgie_tasklist_indicator_color #2eb398;
 @define-color budgie_tasklist_indicator_color_active #2eb398;
 @define-color budgie_tasklist_indicator_color_active_window #287166;
