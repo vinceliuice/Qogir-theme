@@ -64,6 +64,34 @@ Usage:  ./install.sh  [OPTIONS...]
 sudo ./install.sh -g -c dark -t standard  (Install standard dark gdm theme)
 ```
 
+### On Snapcraft
+
+<a href="https://snapcraft.io/qogir-themes">
+<img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
+</a>
+
+The snap contains all flavours of the GTK and icon themes. To connect the theme to other snap packages, please run:
+
+```
+sudo snap connect [other snap]:gtk-3-themes qogir-themes:gtk-3-themes
+```
+
+```
+sudo snap connect [other snap]:icon-themes qogir-themes:icon-themes
+```
+
+To connect the theme to an app run:
+```
+sudo snap connect [other snap]:gtk-3-themes qogir-themes:gtk-3-themes
+```
+To connect the theme to all apps which have available plugs to gtk-common-themes you can run:
+```
+for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i orchis-themes:gtk-3-themes; done
+```
+```
+for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i qogir-themes:icon-themes; done
+```
+
 ### Install on OpenBSD/FreeBSD
 
 Let me show you how to install this theme on OpenBSD
