@@ -16,7 +16,7 @@ THEME_NAME=Qogir
 THEME_VARIANTS=('' '-manjaro' '-ubuntu')
 WIN_VARIANTS=('' '-win')
 COLOR_VARIANTS=('' '-light' '-dark')
-LOGO_VARIANTS=('' '-arch' '-budgie' '-debian' '-fedora' '-gnome' '-manjaro' '-ubuntu')
+LOGO_VARIANTS=('' '-arch' '-budgie' '-debian' '-fedora' '-gnome' '-manjaro' '-ubuntu' '-qogir')
 LOGO_NAME=''
 
 usage() {
@@ -82,7 +82,7 @@ install() {
     cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@1.5-${logo}.svg                   ${THEME_DIR}/gtk-3.0/assets/logo@1.5.svg
     cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@2-${logo}.svg                     ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
   else
-    echo "${logo} icon not supported default icon will install..."
+    echo "${logo} icon not supported, default icon will install..."
     cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-.svg                              ${THEME_DIR}/gtk-3.0/assets/logo.svg
     cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@1.5-.svg                          ${THEME_DIR}/gtk-3.0/assets/logo@1.5.svg
     cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@2-.svg                            ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
@@ -97,6 +97,14 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
   cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/common-assets                      ${THEME_DIR}/gnome-shell
   cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/assets${ELSE_DARK}                 ${THEME_DIR}/gnome-shell/assets
+
+  if [[ -f ${SRC_DIR}/src/gnome-shell/assets/logos/logo-${logo}.svg ]] ; then
+    cp -r ${SRC_DIR}/src/gnome-shell/assets/logos/logo-${logo}.svg                   ${THEME_DIR}/gnome-shell/common-assets/misc/activities.svg
+  else
+    echo "${logo} icon not supported, Qogir icon will install..."
+    cp -r ${SRC_DIR}/src/gnome-shell/assets/logos/logo-qogir.svg                     ${THEME_DIR}/gnome-shell/common-assets/misc/activities.svg
+  fi
+
   cp -r ${SRC_DIR}/src/gnome-shell/background${ELSE_DARK}.jpeg                       ${THEME_DIR}/gnome-shell/background.jpeg
   cp -r ${SRC_DIR}/src/gnome-shell/theme${theme}/gnome-shell${color}.css             ${THEME_DIR}/gnome-shell/gnome-shell.css
 

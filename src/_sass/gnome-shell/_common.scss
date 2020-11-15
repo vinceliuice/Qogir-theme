@@ -1363,7 +1363,7 @@ StScrollBar {
     }
   }
 
-  #panelActivities.panel-button { -natural-hpadding: 12px; }
+  // #panelActivities.panel-button { -natural-hpadding: 12px; }
 
   .panel-status-indicators-box,
   .panel-status-menu-box {
@@ -1417,28 +1417,27 @@ StScrollBar {
 }
 
 // Activities button
-#panel #panelActivities.panel-button {
+Gjs_ui_panel_ActivitiesButton.panel-button {
+  background-image: url("common-assets/misc/activities.svg");
+  width: 24px;
+  height: 24px;
+  -natural-hpadding: 0 !important;
+  -minimum-hpadding: 0 !important;
+  background-color: transparent !important;
+  background-gradient-direction: none !important;
+  border: 0 solid transparent !important;
+  text-shadow: 0 0 transparent !important;
+  transition-duration: 0ms !important;
+  box-shadow: none !important;
+  color: transparent !important;
+  font-size: 12px !important;
 
-  > * {
-    background-image: url("common-assets/misc/activities.svg");
-    width: 24px;
-    height: 24px;
-    background-color: transparent !important;
-    background-gradient-direction: none !important;
-    border: 0 solid transparent !important;
-    text-shadow: 0 0 transparent !important;
-    transition-duration: 0ms !important;
-    box-shadow: none !important;
-    color: transparent;
+  &:hover {
+    background-color: rgba($panel_fg, 0.05) !important;
   }
 
-  &:active, &:overview, &:focus, &:checked {
-    background-color: transparent;
-    box-shadow: none;
-    border-bottom-width: 1px;
-    border-color: transparent;
-
-    > * { background-image: url("common-assets/misc/activities-active.svg"); }
+  &:active, &:focus {
+    background-color: rgba($panel_fg, 0.1) !important;
   }
 }
 
