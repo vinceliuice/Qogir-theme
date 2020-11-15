@@ -16,7 +16,7 @@ THEME_NAME=Qogir
 THEME_VARIANTS=('' '-manjaro' '-ubuntu')
 WIN_VARIANTS=('' '-win')
 COLOR_VARIANTS=('' '-light' '-dark')
-LOGO_VARIANTS=('' '-arch' '-budgie' '-debian' '-fedora' '-gnome' '-manjaro' '-ubuntu' '-qogir')
+LOGO_VARIANTS=('' '-arch' '-budgie' '-debian' '-fedora' '-gnome' '-gentoo' '-manjaro' '-ubuntu' '-qogir')
 LOGO_NAME=''
 
 usage() {
@@ -24,7 +24,7 @@ usage() {
   printf "\n%s\n" "OPTIONS:"
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
-  printf "  %-25s%s\n" "-l, --logo VARIANTS" "Specify nautilus logo [arch|budgie|debian|fedora|gnome|manjaro|ubuntu] (Default: qogir icon)"
+  printf "  %-25s%s\n" "-l, --logo VARIANTS" "Specify nautilus logo [arch|budgie|debian|fedora|gnome|gentoo|manjaro|ubuntu] (Default: qogir icon)"
   printf "  %-25s%s\n" "-w, --win VARIANTS..." "Specify titlebutton variant(s) [standard|square] (Default: All variants)"
   printf "  %-25s%s\n" "-t, --theme VARIANTS..." "Specify theme primary color variant(s) [standard|manjaro|ubuntu] (Default: All variants)"
   printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
@@ -79,12 +79,10 @@ install() {
 
   if [[ -f ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${logo}.svg ]] ; then
     cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${logo}.svg                       ${THEME_DIR}/gtk-3.0/assets/logo.svg
-    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@1.5-${logo}.svg                   ${THEME_DIR}/gtk-3.0/assets/logo@1.5.svg
     cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@2-${logo}.svg                     ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
   else
     echo "${logo} icon not supported, default icon will install..."
     cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-.svg                              ${THEME_DIR}/gtk-3.0/assets/logo.svg
-    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@1.5-.svg                          ${THEME_DIR}/gtk-3.0/assets/logo@1.5.svg
     cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@2-.svg                            ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
   fi
 
