@@ -1454,6 +1454,7 @@ StScrollBar {
   box-shadow: none;
   background: none;
   border: none;
+  text-shadow: none;
 }
 
 .calendar,
@@ -1467,15 +1468,6 @@ StScrollBar {
 .datemenu-displays-section { padding-bottom: 3em; }
 .datemenu-displays-box { spacing: 1em; }
 
-.datemenu-today-button,
-.world-clocks-button,
-.weather-button,
-.message-list-section-title,
-.events-section-title {
-  border-radius: 3px;
-  padding: .4em;
-}
-
 .message-list-section-list:ltr {
   padding-left: .4em;
 }
@@ -1487,9 +1479,11 @@ StScrollBar {
 .datemenu-today-button,
 .world-clocks-button,
 .weather-button,
+.events-button,
 .message-list-section-title,
 .events-section-title {
-  padding: 7px 10px 7px 10px;
+  border-radius: 3px;
+  padding: 7px 10px;
   border: 1px solid transparentize($base_color, 1);
   background: none;
   color: transparentize($fg_color, 0.35);
@@ -1570,10 +1564,35 @@ StScrollBar {
   color: $selected_fg_color;
 }
 
+// Events
+.events-button {
+  .events-box {
+    spacing: 6px;
+  }
+
+  .events-list {
+    spacing: 12px;
+    text-shadow: none;
+  }
+
+  .events-title {
+    color: $alt_fg_color;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-shadow: none;
+  }
+
+  .event-time {
+    color: $alt_fg_color;
+    font-feature-settings: "tnum";
+  }
+}
+
 .calendar-month-label {
   color: $fg_color;
   font-weight: bold;
   padding: 8px 0;
+  text-shadow: none;
   // &:focus {}
 }
 
@@ -1690,12 +1709,12 @@ StScrollBar {
 .calendar-week-number {
   font-size: 70%;
   font-weight: bold;
-  width: 2.3em; height: 1.8em;
+  width: 2.3em; height: 2.3em;
   border-radius: 2px;
-  padding: 0.5em 0 0;
+  padding: 0 0;
   margin: 6px;
-  background-color: transparentize($fg_color,0.7);
-  color: $bg_color;
+  background-color: rgba($fg_color, 0.15);
+  color: $alt_fg_color;
 }
 
 //
@@ -1736,7 +1755,7 @@ StScrollBar {
   &-section-close {
 
     > StIcon {
-      icon-size: 18px;
+      icon-size: 16px;
       border-radius: 0px;
       color: transparent;
       background-color: transparent;
@@ -1846,9 +1865,9 @@ StScrollBar {
   // close button
   .message-close-button {
     color: $alt_fg_color;
-    padding: 2px;
-    height: 16px;
-    width: 16px;
+    padding: 0;
+    height: 24px;
+    width: 24px;
     border-radius: 100px;
 
     &:hover, &:active { color: $fg_color; }
@@ -2270,46 +2289,34 @@ StScrollBar {
   }
 }
 
-// Dash Buttons
-#dash .app-well-app {
-
-  &:hover .overview-icon,
-  .right &:hover .overview-icon,
-  .bottom &:hover .overview-icon,
-  .top &:hover .overview-icon {
+%overview-icon {
+  &:hover .overview-icon {
     background-color: rgba($selected_bg_color, 0.5);
     border: 1px solid $selected_bg_color;
   }
 
-  &:active .overview-icon,
-  .right &:active .overview-icon,
-  .bottom &:active .overview-icon,
-  .top &:active .overview-icon {
+  &:active .overview-icon {
     box-shadow: none;
     background-color: $selected_bg_color;
     border: 1px solid darken($selected_bg_color, 10%);
   }
 
-  &:checked .overview-icon,
-  .right &:checked .overview-icon,
-  .bottom &:checked .overview-icon,
-  .top &:checked .overview-icon {
+  &:checked .overview-icon {
     box-shadow: none;
     background-color: rgba($selected_bg_color, 0.5);
     border: 1px solid rgba($selected_bg_color, 0.5);
   }
 
   &:checked:hover .overview-icon,
-  .right &:checked:hover .overview-icon,
-  .bottom &:checked:hover .overview-icon,
-  .top &:checked:hover .overview-icon,
-  &:active:hover .overview-icon,
-  .right &:active:hover .overview-icon,
-  .bottom &:active:hover .overview-icon,
-  .top &:active:hover .overview-icon {
+  &:active:hover .overview-icon {
     background-color: rgba($selected_bg_color, 0.75);
     border: 1px solid $selected_bg_color;
   }
+}
+
+// Dash Buttons
+#dash .app-well-app {
+  @extend %overview-icon;
 
   &-running-dot {
     width: 11px;
@@ -2317,6 +2324,17 @@ StScrollBar {
     margin-bottom: 2px;
     background-color: $selected_bg_color;
   }
+}
+
+.app-well-app-running-dot { //running apps indicator
+  width: 5px; height: 5px;
+  border-radius: 3px;
+  background-color: $sec_selected_fg_color;
+  margin-bottom: 0;
+}
+
+StWidget.focused .app-well-app-running-dot {
+  background-color: $selected_bg_color;
 }
 
 .show-apps {
@@ -2374,20 +2392,7 @@ StScrollBar {
     @extend %icon_tile;
   }
 
-  &:active .overview-icon,
-  &:checked .overview-icon {
-    background-color: rgba(darken($osd_bg_color,10%), 0.9);
-    box-shadow: none;
-  }
-
-  &:hover .overview-icon,
-  &:focus .overview-icon,
-  &:selected .overview-icon {
-    background-color: rgba($osd_fg_color, 0.3);
-    transition-duration: 0ms;
-    border: 1px solid rgba($osd_fg_color, 0.1);
-    background-image: none;
-  }
+  @extend %overview-icon;
 }
 
 %icon_tile {
@@ -2403,27 +2408,8 @@ StScrollBar {
 // Collections
 //
 .app-well-app.app-folder {
-
-  > .overview-icon {
-    background-color: rgba($dark_sidebar_icon_bg, 0.75);
-    border: $borders_color;
-  }
-
-  &:hover > .overview-icon {
-    background-color: rgba(lighten($dark_sidebar_icon_bg, 3%), 0.65);
-    border: 1px solid rgba($dark_sidebar_icon_bg, 0.95);
-  }
-
-  &:active > .overview-icon, &:checked > .overview-icon {
-    color: $selected_fg_color;
-    background-color: $selected_bg_color;
-    border: 1px solid lighten($selected_bg_color, 5%);
-    box-shadow: none;
-  }
-
-  &:focus > .overview-icon {
-    background-color: $selected_bg_color;
-  }
+  background-color: rgba($dark_sidebar_icon_bg, 0.75);
+  border-radius: 3px;
 }
 
 .app-folder-popup { //expanded collection
@@ -2486,9 +2472,9 @@ StScrollBar {
 // expanded folder
 .app-folder-dialog {
   border-radius: 5px;
-  border: none;
+  border: 1px solid $selected_bg_color;
   spacing: 12px;
-  background-color: rgba(darken($osd_bg_color,10%), 0.9);
+  background-color: rgba(darken($osd_bg_color, 15%), 0.9);
 
   & .folder-name-container {
     padding: 24px 36px 0;
@@ -2525,10 +2511,11 @@ StScrollBar {
   & StButton#vhandle:hover,
   & StButton#vhandle:active { background-color: transparent; }
 }
+
 .app-folder-dialog-container {
   padding: 12px;
-  width: 800px;
-  height: 600px;
+  width: 620px;
+  height: 620px;
 }
 
 .app-folder-icon {

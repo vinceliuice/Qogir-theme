@@ -634,12 +634,14 @@ window.background.csd {
 
   > headerbar.titlebar { // gnome 3.32 or later
     > box.horizontal > headerbar:first-child,
-    > hdyleaflet > headerbar:first-child {
+    > hdyleaflet > headerbar:first-child,
+    > leaflet > headerbar:first-child {
       @extend %side_headerbar;
     }
 
     > box.horizontal > separator.sidebar,
-    > hdyleaflet > separator.sidebar {
+    > hdyleaflet > separator.sidebar,
+    > leaflet > separator.sidebar {
       border-right-style: if($variant == 'light', none, solid);
       background: none;
       min-width: 0;
@@ -658,7 +660,8 @@ window.background.csd {
 
     > headerbar.titlebar { // gnome 3.32
       > box.horizontal > headerbar:first-child,
-      > hdyleaflet > headerbar:first-child {
+      > hdyleaflet > headerbar:first-child,
+      > leaflet > headerbar:first-child {
         > box.left.horizontal {
           @extend %side_max_titlebutton;
         }
@@ -667,7 +670,8 @@ window.background.csd {
   }
 
   > box.horizontal > box.vertical,
-  > hdyleaflet > box.vertical { // gnome 3.32
+  > hdyleaflet > box.vertical, // gnome 3.32
+  > leaflet > box.vertical { // gnome 3.38
     > scrolledwindow.view {
       @extend %side_background;
 
@@ -713,7 +717,8 @@ window.background.csd {
   }
 
   > box.horizontal > separator.sidebar,
-  > hdyleaflet > separator.sidebar {
+  > hdyleaflet > separator.sidebar,
+  > leaflet > separator.sidebar {
     border-right-style: if($variant == 'light', none, solid);
     background: none;
     min-width: 0;
@@ -758,7 +763,8 @@ window.background.csd {
   }
 }
 
-window#GearyMainWindow, window.geary-main-window {
+window#GearyMainWindow,
+window.geary-main-window {
   .titlebar {
     box-shadow: inset 0 -1px $borders_color;
     background-color: $header_bg;
@@ -853,8 +859,10 @@ window#GearyMainWindow.maximized {
 
 // right-pane styling (current)
 stack#conversation_viewer {
-  scrolledwindow.geary-conversation-scroller > viewport.frame {
+  > grid.vertical > scrolledwindow.geary-conversation-scroller > viewport.frame {
     border: none; // unset borders
+
+    > list.background.conversation-listbox { background-color: $base_color; }
   }
 }
 
@@ -937,7 +945,8 @@ overlay > infobar.info.top {
 //
 
 // box.horizontal, // gnome 3.30
-hdyleaflet {
+hdyleaflet, // > 3.32
+leaflet.unfolded {  // > 3.38
   > stack > frame > grid.vertical {
     @extend %side_background;
 
@@ -1055,6 +1064,43 @@ hdyleaflet {
     .fullscreen &,
     .maximized & {
       @extend %side_max_titlebutton;
+    }
+  }
+}
+
+//
+// Fractal
+//
+hdyleaflet {
+  > headerbar:first-child {
+    @extend %side_headerbar;
+  }
+
+  > box.vertical {
+    > searchbar {
+      @extend %side_searchbar;
+    }
+
+    > scrolledwindow > viewport {
+      .sidebar {
+        @extend %side_background;
+
+        list > row.activatable {
+          @extend %side_views;
+        }
+
+        .room-title {
+          &, image { color: $side_theme_fg; }
+
+          &:hover, &:active { color: $side_theme_alt_fg; }
+        }
+
+        label {
+          color: $side_theme_fg;
+
+          &:disabled { color: rgba($side_theme_alt_fg, 0.35); }
+        }
+      }
     }
   }
 }

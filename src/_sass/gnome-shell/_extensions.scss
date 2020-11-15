@@ -217,6 +217,11 @@ $empty_shadow: 0 0 0 transparent;
         background-color: rgba($selected_bg_color, 0.5);
         border: 1px solid $selected_bg_color;
       }
+
+      &:checked .overview-icon {
+        background-color: rgba($selected_bg_color, 0.5);
+        border: 1px solid $selected_bg_color;
+      }
     }
   }
 }
@@ -258,7 +263,7 @@ $empty_shadow: 0 0 0 transparent;
       &:checked {
         .overview-icon { // unset styling
           border-radius: 0;
-          background-color: rgba($panel_fg, 0.1);
+          background-color: rgba($selected_bg_color, 0.5);
           box-shadow: $empty_shadow;
         }
       }
@@ -270,12 +275,12 @@ $empty_shadow: 0 0 0 transparent;
       .app-well-app { // stylesheet.css gets in our way
         &:focus .dtp-container,
         &:hover .dtp-container {
-          background-color: rgba($panel_fg, 0.1);
+          background-color: rgba($selected_bg_color, 0.5);
           // box-shadow: inset 0 0 0 999px rgba($panel_fg, 0.1);
         }
 
         &:active .dtp-container {
-          background-color: rgba($panel_fg, 0.15);
+          background-color: rgba($selected_bg_color, 0.35);
           // box-shadow: inset 0 0 0 999px rgba($panel_fg, 0.15);
         }
 

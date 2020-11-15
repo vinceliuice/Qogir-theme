@@ -176,6 +176,10 @@
     separator { margin: 3px 0; background-color: $borders_color; }
   }
 
+  &.caffeine-popover {
+    .container { padding: 8px; }
+  }
+
   &.night-light-indicator {
     .container { padding: 8px; }
   }
