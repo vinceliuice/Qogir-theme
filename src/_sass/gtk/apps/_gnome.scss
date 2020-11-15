@@ -164,8 +164,6 @@ window.background { // gnome-terminal 3.32
 }
 
 %file_manager_img,
-.nautilus-window,
-.nautilus-window notebook,
 .nautilus-window notebook > stack {
   background-image: none;
   // @extend %nautilus_backimage;
@@ -189,6 +187,12 @@ window.background { // gnome-terminal 3.32
 .nautilus-window notebook,
 .nautilus-window notebook > stack:not(:only-child) searchbar {
   background-color: $base_color;
+}
+
+.nautilus-list-view {
+  treeview.view:not(:selected):not(:hover):not(:focus) {
+    background: none;
+  }
 }
 
 button.nautilus-circular-button.image-button {

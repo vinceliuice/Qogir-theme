@@ -5084,8 +5084,6 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
 }
 
 window.thunar notebook scrolledwindow.frame.standard-view, .nemo-window .nemo-window-pane notebook scrolledwindow.view,
-.nautilus-window,
-.nautilus-window notebook,
 .nautilus-window notebook > stack {
   background-image: none;
 }
@@ -5107,6 +5105,10 @@ window.thunar notebook scrolledwindow.frame.standard-view, .nemo-window .nemo-wi
 .nautilus-window notebook,
 .nautilus-window notebook > stack:not(:only-child) searchbar {
   background-color: #282A33;
+}
+
+.nautilus-list-view treeview.view:not(:selected):not(:hover):not(:focus) {
+  background: none;
 }
 
 .disk-space-display {
