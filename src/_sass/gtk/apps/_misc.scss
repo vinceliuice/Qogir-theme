@@ -266,13 +266,6 @@ window.background:not(.csd) {
     }
   }
 
-  *:not(menuitem):hover, // exclude menuitem node
-  *:focus,
-  *:active,
-  *:checked {
-    &, button { color: $fg_color; } // enforce opaque foregrounds
-  }
-
   > window.background > menu,
   > window.background > menu > menu {
     border: none; // hide ugly double borders
