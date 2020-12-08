@@ -37,6 +37,15 @@ stage {
   color: $fg_color;
 }
 
+// Pointer location
+.ripple-pointer-location {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px; // radius equals the size of the box to give us the curve
+  background-color: lighten(transparentize($selected_bg_color, 0.7), 30%);
+  box-shadow: 0 0 2px 2px lighten($selected_bg_color, 20%);
+}
+
 %reset_style {
   background-color: transparent !important;
   background-gradient-direction: none !important;
@@ -47,7 +56,8 @@ stage {
 //
 // Buttons
 //
-.button, %button {
+%button,
+.button {
   min-height: 20px;
   padding: 5px 32px;
   transition-duration: 0;
@@ -57,16 +67,16 @@ stage {
   &:focus { @include button(focus); }
   &:hover { @include button(hover); }
   &:hover:focus { @include button(focus-hover); }
-  &:active, &:active:focus { @include button(active); }
+  &:active, &:active:focus, &:checked { @include button(active); }
   &:insensitive { @include button(insensitive); }
 }
 
 %osd_button {
   @include button(osd);
 
-  &:hover { @include button(osd-hover); }
-  &:focus { color: $selected_bg_color; }
-  &:active { @include button(osd-active); }
+  &:hover, &:hover:focus { @include button(osd-hover); }
+  &:focus { @include button(osd-focus); }
+  &:active, &:checked { @include button(osd-active); }
   &:insensitive { @include button(osd-insensitive); }
 }
 
@@ -1059,17 +1069,14 @@ StScrollBar {
 //  app menu inside the main app window itself rather than the top bar
 //
 
-//
-//  App Icons
-//
-/* Outline for low res icons */
+// Outline for low res icons
 .lowres-icon {
-    icon-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  icon-shadow: 0 1px 2px rgba(black, 0.3);
 }
 
-/* Drapshadow for large icons */
+// Dropshadow for large icons
 .icon-dropshadow {
-  icon-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  icon-shadow: 0 1px 2px rgba(black, 0.4);
 }
 
 //
@@ -1596,26 +1603,24 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 }
 
 .pager-button {
-  color: transparent;
+  width: 28px;
+  height: 28px;
+  margin: 2px;
+  border-radius: 100px;
   background-color: transparent;
-  width: 32px;
-  border-radius: 2px;
+  color: $fg_color;
 
-  &:focus, &:hover, &:active { background-color: transparent; }
+  &:hover, &:focus { background-color: rgba($fg_color, 0.1); }
+
+  &:active { background-color: rgba($fg_color, 0.15); }
 }
 
 //arrow back
 .calendar-change-month-back {
   background-image: url("assets/misc/calendar-arrow-left.svg");
 
-  &:focus, &:hover { background-image: url("assets/misc/calendar-arrow-left-hover.svg"); }
-  &:active { background-image: url("assets/misc/calendar-arrow-left.svg"); }
-
   &:rtl {
     background-image: url("assets/misc/calendar-arrow-right.svg");
-
-    &:focus, &:hover { background-image: url("assets/misc/calendar-arrow-right-hover.svg"); }
-    &:active { background-image: url("assets/misc/calendar-arrow-right.svg"); }
   }
 }
 
@@ -1623,15 +1628,17 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 .calendar-change-month-forward {
   background-image: url("assets/misc/calendar-arrow-right.svg");
 
-  &:focus, &:hover { background-image: url("assets/misc/calendar-arrow-right-hover.svg"); }
-  &:active { background-image: url("assets/misc/calendar-arrow-right.svg"); }
-
   &:rtl {
     background-image: url("assets/misc/calendar-arrow-left.svg");
-
-    &:focus, &:hover { background-image: url("assets/misc/calendar-arrow-left-hover.svg"); }
-    &:active { background-image: url("assets/misc/calendar-arrow-left.svg"); }
   }
+}
+
+.calendar-change-month-back,
+.calendar-change-month-forward {
+  color: transparent;
+  padding: 0 1px;
+
+  StIcon { icon-size: 16px; }
 }
 
 .calendar-day-base {
@@ -1886,7 +1893,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 }
 
 .message-media-control {
-  margin: 16px 4px;
+  margin: 18px 4px;
   padding: 8px;
   border-radius: 100px;
   color: $fg_color;
@@ -1911,14 +1918,12 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 
 .media-message-cover-icon {
   icon-size: 32px !important;
-  margin: 8px 0px 8px 4px !important;
-  &:rtl { margin: 8px 4px 8px 0px !important; }
 
   &.fallback {
     color: $insensitive_fg_color;
     background-color: $bg_color;
     border-radius: 2px;
-    icon-size: 16px;
+    icon-size: 32px;
     padding: 8px;
     border: 1px solid $borders_color;
   }
@@ -2049,6 +2054,11 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
     spacing: 30px;
     -shell-grid-horizontal-item-size: 136px;
     -shell-grid-vertical-item-size: 136px;
+
+    row-spacing: $cont_padding * 6;
+    column-spacing: $cont_padding * 6;
+    max-row-spacing: $cont_padding * 12;
+    max-column-spacing: $cont_padding * 12;
 
     .overview-icon { icon-size: 96px; }
   }
@@ -2277,15 +2287,11 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   border-radius: 3px;
   padding: 4px 12px;
   color: $_shell_fg_color;
-  background-color: transparentize($osd_bg_color, 0.3);
+  background-color: rgba(black, 0.5);
   text-align: center;
-  border: none;
-  -x-offset: 3px;
-
-  .bottom &, .top & {
-    -y-offset: 3px;
-    -x-offset: 0;
-  }
+  border: 1px solid rgba(black, 0.75);
+  box-shadow: none;
+  -x-offset: 8px;
 }
 
 %overview-icon {
@@ -2385,7 +2391,6 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .app-well-app,
-.app-well-app.app-folder,
 .grid-search-result {
   .overview-icon {
     @extend %icon_tile;
@@ -2407,8 +2412,26 @@ StWidget.focused .app-well-app-running-dot {
 // Collections
 //
 .app-well-app.app-folder {
-  background-color: rgba($dark_sidebar_icon_bg, 0.75);
+  background-color: rgba(darken($dark_sidebar_icon_bg, 8%), 0.5);
+  border: 1px solid darken($dark_sidebar_icon_bg, 8%);
   border-radius: 3px;
+
+  &:hover {
+    background-color: rgba(darken($dark_sidebar_icon_bg, 12%), 0.5);
+    border-color: darken($dark_sidebar_icon_bg, 12%);
+  }
+
+  &:active {
+    background-color: rgba($selected_bg_color, 0.5);
+    border: 1px solid $selected_bg_color;
+  }
+
+  &, &:hover, &:active {
+    .overview-icon {
+      background: none;
+      border: none;
+    }
+  }
 }
 
 .app-folder-popup { //expanded collection
@@ -2435,6 +2458,7 @@ StWidget.focused .app-well-app-running-dot {
     height: 18px;
     margin: 0;
     padding: 0;
+    border-radius: 10px; // the same as height&width
     color: transparent;
     background-color: transparent;
     border: none;
@@ -2445,6 +2469,7 @@ StWidget.focused .app-well-app-running-dot {
   &:hover .page-indicator-icon {
     background-image: url(common-assets/misc/page-indicator-hover.svg);
   }
+
   &:active .page-indicator-icon {
     margin: 0;
     padding: 0;
@@ -2454,18 +2479,30 @@ StWidget.focused .app-well-app-running-dot {
     box-shadow: none;
     background-image: url(common-assets/misc/page-indicator-active.svg);
   }
+
   &:checked .page-indicator-icon,
   &:checked:active {
     background-image: url(common-assets/misc/page-indicator-checked.svg);
   }
 }
 
+// shutdown and other actions in the grid
+.system-action-icon {
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  border-radius: 99px;
+  icon-size: 48px;
+}
+
 .no-frequent-applications-label { @extend %status_text; }
 
-.app-well-app > .overview-icon.overview-icon-with-label,
+.app-well-app .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
   padding: 10px 8px 5px 8px;
-  spacing: 4px;
+
+  > StBoxLayout {
+    spacing: $cont_padding;
+  }
 }
 
 // expanded folder
@@ -2503,6 +2540,19 @@ StWidget.focused .app-well-app-running-dot {
 
       &:hover { @include button(osd-hover); }
       &:active, &:checked { @include button(osd-active); }
+    }
+  }
+
+  & .icon-grid {
+    row-spacing: $cont_padding * 2;
+    column-spacing: $cont_padding * 5;
+  }
+
+  & .page-indicators {
+    margin-bottom: 18px;
+
+    .page-indicator {
+      padding: 15px 12px;
     }
   }
 
@@ -2742,18 +2792,28 @@ $legacy_icon_size: 24px;
 // On-Screen Keyboard
 //
 
-/* On-screen Keyboard */
+$default_key_bg_color: darken($osd_bg_color, 8%);
+
 .word-suggestions {
-    font-size: 14pt;
-    spacing: 12px;
-    min-height: 20pt;
+  font-size: 14pt;
+  spacing: 12px;
+  min-height: 20pt;
 }
 
 #keyboard {
-  background-color: $osd_bg_color;
-  border-width: 0;
-  border-top-width: 1px;
-  border-color: transparentize(black, 0.8);
+  background-color: rgba(black, 0.65);
+  border: none;
+  border-top-width: 0;
+  box-shadow: none;
+
+  .page-indicator {
+    padding: $cont_padding;
+
+    .page-indicator-icon {
+      width: 8px;
+      height: 8px;
+    }
+  }
 }
 
 .keyboard-layout {
@@ -2771,31 +2831,68 @@ $legacy_icon_size: 24px;
 }
 
 .keyboard-key {
-  min-height: 2em;
-  min-width: 2em;
+  min-height: 1.2em;
+  min-width: 1.2em;
   font-size: 14pt;
   font-weight: bold;
   border-radius: 3px;
-  box-shadow: none;
 
-  @include button(osd);
+  @extend %osd_button;
 
-  &:hover { @include button(osd-hover); }
-  &:active, &:checked { @include button(osd-active); }
+  &:grayed { //FIXMEy
+    background-color: darken($osd_bg_color, 3%);
+    color: $osd_fg_color;
+    border-color: lighten($osd_bg_color, 3%);
+  }
 
-  &:grayed { @include button(osd-insensitive); }
+  // non-character keys
+  &.default-key {
+    background-color: $default_key_bg_color;
+    border-color: lighten($default_key_bg_color, 5%);
+
+    &:hover, &:checked {
+      background-color: lighten($default_key_bg_color, 5%);
+      border-color: lighten($default_key_bg_color, 10%);
+    }
+
+    &:active {
+      background-color: darken($default_key_bg_color, 2%);
+      border-color: darken($default_key_bg_color, 2%);
+    }
+  }
+
+  // enter key is suggested-action
+  &.enter-key {
+    background-color: $selected_bg_color;
+    border-color: $selected_bg_color;
+
+    &:hover, &:checked {
+      color: white;
+      background-color: lighten($selected_bg_color, 8%);
+      border-color: lighten($selected_bg_color, 12%);
+    }
+
+    &:active {
+      background-color: darken($selected_bg_color, 2%);
+      border-color: darken($selected_bg_color, 2%);
+    }
+  }
+
+  &.shift-key-uppercase { color: $selected_bg_color }
+
+  StIcon { icon-size: 1.125em; }
 }
 
 .keyboard-subkeys { //long press on a key popup
   color: $osd_fg_color;
   padding: 5px;
-  -arrow-border-radius: 2px;
-  -arrow-background-color: $osd_bg_color;
-  -arrow-border-width: 1px;
-  -arrow-border-color: transparentize(black, 0.6);;
+  -arrow-border-radius: 3px;
+  -arrow-background-color: rgba(black, 0.75);
+  -arrow-border-width: 0;
+  -arrow-border-color: rgba(black, 0.0);
   -arrow-base: 20px;
   -arrow-rise: 10px;
-  -boxpointer-gap: 5px;
+  -boxpointer-gap: 6px;
 }
 
 .emoji-page {
@@ -2822,37 +2919,37 @@ $legacy_icon_size: 24px;
   font-size: 1.15em;
 }
 
-  .candidate-index {
-    padding: 0 0.5em 0 0;
-    color: lighten($osd_fg_color, 10%);
-  }
+.candidate-index {
+  padding: 0 0.5em 0 0;
+  color: lighten($osd_fg_color, 10%);
+}
 
-  .candidate-box {
-    padding: 0.3em 0.5em 0.3em 0.5em;
-    border-radius: 2px;
-    color: $osd_fg_color;
-    &:selected,&:hover { background-color: $selected_bg_color; color: $selected_fg_color; }
-  }
+.candidate-box {
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  border-radius: 2px;
+  color: $osd_fg_color;
+  &:selected,&:hover { background-color: $selected_bg_color; color: $selected_fg_color; }
+}
 
-  .candidate-page-button-box {
-    height: 2em;
-    .vertical & { padding-top: 0.5em; }
-    .horizontal & { padding-left: 0.5em; }
-  }
+.candidate-page-button-box {
+  height: 2em;
+  .vertical & { padding-top: 0.5em; }
+  .horizontal & { padding-left: 0.5em; }
+}
 
-  .candidate-page-button {
-    padding: 4px;
-    border: none;
-    @include button(osd);
+.candidate-page-button {
+  padding: 4px;
+  border: none;
+  @include button(osd);
 
-    &:hover { @include button(osd-hover); }
-    &:active, &:checked { @include button(osd-active); }
-    &:insensitive { background-color: transparent; box-shadow: none; }
-  }
+  &:hover { @include button(osd-hover); }
+  &:active, &:checked { @include button(osd-active); }
+  &:insensitive { background-color: transparent; box-shadow: none; }
+}
 
-  .candidate-page-button-previous { border-radius: 2px 0px 0px 2px; }
-  .candidate-page-button-next { border-radius: 0px 2px 2px 0px; }
-  .candidate-page-button-icon { icon-size: 1em; }
+.candidate-page-button-previous { border-radius: 2px 0px 0px 2px; }
+.candidate-page-button-next { border-radius: 0px 2px 2px 0px; }
+.candidate-page-button-icon { icon-size: 1em; }
 
 //
 // Auth Dialogs & Screen Shield

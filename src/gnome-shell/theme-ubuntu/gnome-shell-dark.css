@@ -21,9 +21,18 @@ stage {
   color: #D3DAE3;
 }
 
-.button, .hotplug-notification-item, .notification-banner .notification-button,
+.ripple-pointer-location {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: rgba(254, 229, 215, 0.3);
+  box-shadow: 0 0 2px 2px #fdc5a5;
+}
+
+.hotplug-notification-item, .notification-banner .notification-button,
 .notification-banner:hover .notification-button,
-.notification-banner:focus .notification-button {
+.notification-banner:focus .notification-button,
+.button {
   min-height: 20px;
   padding: 5px 32px;
   transition-duration: 0;
@@ -35,7 +44,8 @@ stage {
   box-shadow: none;
 }
 
-.button:focus, .hotplug-notification-item:focus, .notification-banner .notification-button:focus {
+.hotplug-notification-item:focus, .notification-banner .notification-button:focus,
+.button:focus {
   text-shadow: none;
   color: #D3DAE3;
   background-color: #2c2f39;
@@ -43,7 +53,8 @@ stage {
   box-shadow: none;
 }
 
-.button:hover, .hotplug-notification-item:hover, .notification-banner .notification-button:hover {
+.hotplug-notification-item:hover, .notification-banner .notification-button:hover,
+.button:hover {
   text-shadow: none;
   color: #D3DAE3;
   background-color: rgba(255, 255, 255, 0.06);
@@ -51,7 +62,8 @@ stage {
   box-shadow: none;
 }
 
-.button:hover:focus, .hotplug-notification-item:hover:focus, .notification-banner .notification-button:hover:focus {
+.hotplug-notification-item:hover:focus, .notification-banner .notification-button:hover:focus,
+.button:hover:focus {
   text-shadow: none;
   color: #D3DAE3;
   background-color: rgba(255, 255, 255, 0.06);
@@ -59,7 +71,10 @@ stage {
   box-shadow: none;
 }
 
-.button:active, .button:active:focus, .hotplug-notification-item:active, .notification-banner .notification-button:active {
+.hotplug-notification-item:active, .notification-banner .notification-button:active, .hotplug-notification-item:checked, .notification-banner .notification-button:checked,
+.button:active,
+.button:active:focus,
+.button:checked {
   text-shadow: none;
   color: #ffffff;
   background-color: #fb8441;
@@ -67,11 +82,52 @@ stage {
   box-shadow: none;
 }
 
-.button:insensitive, .hotplug-notification-item:insensitive, .notification-banner .notification-button:insensitive {
+.hotplug-notification-item:insensitive, .notification-banner .notification-button:insensitive,
+.button:insensitive {
   text-shadow: none;
   color: rgba(211, 218, 227, 0.45);
   border: 1px solid rgba(255, 255, 255, 0);
   background-color: rgba(44, 47, 57, 0.55);
+  box-shadow: none;
+}
+
+.keyboard-key {
+  text-shadow: none;
+  color: #D3DAE3;
+  border: 1px solid #333641;
+  background-color: #282A33;
+  box-shadow: none;
+}
+
+.keyboard-key:hover {
+  text-shadow: none;
+  color: #D3DAE3;
+  border-color: #3e4250;
+  background-color: #333641;
+  box-shadow: none;
+}
+
+.keyboard-key:focus {
+  text-shadow: none;
+  color: #D3DAE3;
+  border-color: #eb5805;
+  background-color: #282A33;
+  box-shadow: none;
+}
+
+.keyboard-key:active, .keyboard-key:checked {
+  text-shadow: none;
+  color: #ffffff;
+  border-color: #fb8441;
+  background-color: #fb8441;
+  box-shadow: none;
+}
+
+.keyboard-key:insensitive {
+  text-shadow: none;
+  color: rgba(211, 218, 227, 0.35);
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(62, 66, 80, 0.35);
   box-shadow: none;
 }
 
@@ -1131,12 +1187,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 16px;
 }
 
-/* Outline for low res icons */
 .lowres-icon {
   icon-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Drapshadow for large icons */
 .icon-dropshadow {
   icon-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
@@ -1677,25 +1731,23 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 }
 
 .pager-button {
-  color: transparent;
+  width: 28px;
+  height: 28px;
+  margin: 2px;
+  border-radius: 100px;
   background-color: transparent;
-  width: 32px;
-  border-radius: 2px;
+  color: #D3DAE3;
 }
 
-.pager-button:focus, .pager-button:hover, .pager-button:active {
-  background-color: transparent;
+.pager-button:hover, .pager-button:focus {
+  background-color: rgba(211, 218, 227, 0.1);
+}
+
+.pager-button:active {
+  background-color: rgba(211, 218, 227, 0.15);
 }
 
 .calendar-change-month-back {
-  background-image: url("assets/misc/calendar-arrow-left.svg");
-}
-
-.calendar-change-month-back:focus, .calendar-change-month-back:hover {
-  background-image: url("assets/misc/calendar-arrow-left-hover.svg");
-}
-
-.calendar-change-month-back:active {
   background-image: url("assets/misc/calendar-arrow-left.svg");
 }
 
@@ -1703,23 +1755,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   background-image: url("assets/misc/calendar-arrow-right.svg");
 }
 
-.calendar-change-month-back:rtl:focus, .calendar-change-month-back:rtl:hover {
-  background-image: url("assets/misc/calendar-arrow-right-hover.svg");
-}
-
-.calendar-change-month-back:rtl:active {
-  background-image: url("assets/misc/calendar-arrow-right.svg");
-}
-
 .calendar-change-month-forward {
-  background-image: url("assets/misc/calendar-arrow-right.svg");
-}
-
-.calendar-change-month-forward:focus, .calendar-change-month-forward:hover {
-  background-image: url("assets/misc/calendar-arrow-right-hover.svg");
-}
-
-.calendar-change-month-forward:active {
   background-image: url("assets/misc/calendar-arrow-right.svg");
 }
 
@@ -1727,12 +1763,15 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   background-image: url("assets/misc/calendar-arrow-left.svg");
 }
 
-.calendar-change-month-forward:rtl:focus, .calendar-change-month-forward:rtl:hover {
-  background-image: url("assets/misc/calendar-arrow-left-hover.svg");
+.calendar-change-month-back,
+.calendar-change-month-forward {
+  color: transparent;
+  padding: 0 1px;
 }
 
-.calendar-change-month-forward:rtl:active {
-  background-image: url("assets/misc/calendar-arrow-left.svg");
+.calendar-change-month-back StIcon,
+.calendar-change-month-forward StIcon {
+  icon-size: 16px;
 }
 
 .calendar-day-base {
@@ -2016,7 +2055,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 }
 
 .message-media-control {
-  margin: 16px 4px;
+  margin: 18px 4px;
   padding: 8px;
   border-radius: 100px;
   color: #D3DAE3;
@@ -2056,18 +2095,13 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 
 .media-message-cover-icon {
   icon-size: 32px !important;
-  margin: 8px 0px 8px 4px !important;
-}
-
-.media-message-cover-icon:rtl {
-  margin: 8px 4px 8px 0px !important;
 }
 
 .media-message-cover-icon.fallback {
   color: rgba(211, 218, 227, 0.45);
   background-color: #32343D;
   border-radius: 2px;
-  icon-size: 16px;
+  icon-size: 32px;
   padding: 8px;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -2211,6 +2245,10 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   spacing: 30px;
   -shell-grid-horizontal-item-size: 136px;
   -shell-grid-vertical-item-size: 136px;
+  row-spacing: 36px;
+  column-spacing: 36px;
+  max-row-spacing: 72px;
+  max-column-spacing: 72px;
 }
 
 #overview .icon-grid .overview-icon {
@@ -2226,8 +2264,8 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   margin: 0;
   text-shadow: none;
   color: #D3DAE3;
-  border: 1px solid #21232a;
-  background-color: rgba(40, 42, 51, 0.5);
+  border: 1px solid #333641;
+  background-color: #282A33;
   box-shadow: none;
   border-color: rgba(0, 0, 0, 0.65);
 }
@@ -2235,8 +2273,8 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 #overview .app-view-control:hover {
   text-shadow: none;
   color: #D3DAE3;
-  border: rgba(56, 58, 71, 0.65);
-  background-color: rgba(56, 58, 71, 0.65);
+  border-color: #3e4250;
+  background-color: #333641;
   box-shadow: none;
   border-color: rgba(0, 0, 0, 0.65);
 }
@@ -2454,15 +2492,11 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   border-radius: 3px;
   padding: 4px 12px;
   color: white;
-  background-color: rgba(40, 42, 51, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
-  border: none;
-  -x-offset: 3px;
-}
-
-.bottom .dash-label, .top .dash-label {
-  -y-offset: 3px;
-  -x-offset: 0;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  box-shadow: none;
+  -x-offset: 8px;
 }
 
 .app-well-app:hover .overview-icon,
@@ -2552,7 +2586,6 @@ StWidget.focused .app-well-app-running-dot {
 
 .search-provider-icon,
 .list-search-result, .app-well-app .overview-icon,
-.app-well-app.app-folder .overview-icon,
 .grid-search-result .overview-icon {
   color: white;
   border-radius: 2px;
@@ -2563,8 +2596,24 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .app-well-app.app-folder {
-  background-color: rgba(50, 52, 61, 0.75);
+  background-color: rgba(32, 33, 39, 0.5);
+  border: 1px solid #202127;
   border-radius: 3px;
+}
+
+.app-well-app.app-folder:hover {
+  background-color: rgba(22, 23, 27, 0.5);
+  border-color: #16171b;
+}
+
+.app-well-app.app-folder:active {
+  background-color: rgba(251, 132, 65, 0.5);
+  border: 1px solid #fb8441;
+}
+
+.app-well-app.app-folder .overview-icon, .app-well-app.app-folder:hover .overview-icon, .app-well-app.app-folder:active .overview-icon {
+  background: none;
+  border: none;
 }
 
 .app-folder-popup {
@@ -2595,6 +2644,7 @@ StWidget.focused .app-well-app-running-dot {
   height: 18px;
   margin: 0;
   padding: 0;
+  border-radius: 10px;
   color: transparent;
   background-color: transparent;
   border: none;
@@ -2620,10 +2670,21 @@ StWidget.focused .app-well-app-running-dot {
   background-image: url(common-assets/misc/page-indicator-checked.svg);
 }
 
-.app-well-app > .overview-icon.overview-icon-with-label,
+.system-action-icon {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 99px;
+  icon-size: 48px;
+}
+
+.app-well-app .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
   padding: 10px 8px 5px 8px;
-  spacing: 4px;
+}
+
+.app-well-app .overview-icon.overview-icon-with-label > StBoxLayout,
+.grid-search-result .overview-icon.overview-icon-with-label > StBoxLayout {
+  spacing: 6px;
 }
 
 .app-folder-dialog {
@@ -2652,8 +2713,8 @@ StWidget.focused .app-well-app-running-dot {
 .app-folder-dialog .folder-name-container .edit-folder-button {
   text-shadow: none;
   color: #D3DAE3;
-  border: 1px solid #21232a;
-  background-color: rgba(40, 42, 51, 0.5);
+  border: 1px solid #333641;
+  background-color: #282A33;
   box-shadow: none;
   padding: 0;
   width: 36px;
@@ -2668,17 +2729,30 @@ StWidget.focused .app-well-app-running-dot {
 .app-folder-dialog .folder-name-container .edit-folder-button:hover {
   text-shadow: none;
   color: #D3DAE3;
-  border: rgba(56, 58, 71, 0.65);
-  background-color: rgba(56, 58, 71, 0.65);
+  border-color: #3e4250;
+  background-color: #333641;
   box-shadow: none;
 }
 
 .app-folder-dialog .folder-name-container .edit-folder-button:active, .app-folder-dialog .folder-name-container .edit-folder-button:checked {
   text-shadow: none;
   color: #ffffff;
-  border: 1px solid #fb8441;
+  border-color: #fb8441;
   background-color: #fb8441;
   box-shadow: none;
+}
+
+.app-folder-dialog .icon-grid {
+  row-spacing: 12px;
+  column-spacing: 30px;
+}
+
+.app-folder-dialog .page-indicators {
+  margin-bottom: 18px;
+}
+
+.app-folder-dialog .page-indicators .page-indicator {
+  padding: 15px 12px;
 }
 
 .app-folder-dialog StButton#vhandle, .app-folder-dialog StButton#vhandle:hover, .app-folder-dialog StButton#vhandle:active {
@@ -2979,7 +3053,6 @@ StWidget.focused .app-well-app-running-dot {
   border-width: 0;
 }
 
-/* On-screen Keyboard */
 .word-suggestions {
   font-size: 14pt;
   spacing: 12px;
@@ -2987,10 +3060,19 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #keyboard {
-  background-color: #282A33;
-  border-width: 0;
-  border-top-width: 1px;
-  border-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.65);
+  border: none;
+  border-top-width: 0;
+  box-shadow: none;
+}
+
+#keyboard .page-indicator {
+  padding: 6px;
+}
+
+#keyboard .page-indicator .page-indicator-icon {
+  width: 8px;
+  height: 8px;
 }
 
 .keyboard-layout {
@@ -3008,53 +3090,68 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .keyboard-key {
-  min-height: 2em;
-  min-width: 2em;
+  min-height: 1.2em;
+  min-width: 1.2em;
   font-size: 14pt;
   font-weight: bold;
   border-radius: 3px;
-  box-shadow: none;
-  text-shadow: none;
-  color: #D3DAE3;
-  border: 1px solid #21232a;
-  background-color: rgba(40, 42, 51, 0.5);
-  box-shadow: none;
-}
-
-.keyboard-key:hover {
-  text-shadow: none;
-  color: #D3DAE3;
-  border: rgba(56, 58, 71, 0.65);
-  background-color: rgba(56, 58, 71, 0.65);
-  box-shadow: none;
-}
-
-.keyboard-key:active, .keyboard-key:checked {
-  text-shadow: none;
-  color: #ffffff;
-  border: 1px solid #fb8441;
-  background-color: #fb8441;
-  box-shadow: none;
 }
 
 .keyboard-key:grayed {
-  text-shadow: none;
-  color: rgba(207, 218, 231, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: rgba(62, 66, 80, 0.35);
-  box-shadow: none;
+  background-color: #21232a;
+  color: #D3DAE3;
+  border-color: #2f313c;
+}
+
+.keyboard-key.default-key {
+  background-color: #16171c;
+  border-color: #21232a;
+}
+
+.keyboard-key.default-key:hover, .keyboard-key.default-key:checked {
+  background-color: #21232a;
+  border-color: #2c2f39;
+}
+
+.keyboard-key.default-key:active {
+  background-color: #121216;
+  border-color: #121216;
+}
+
+.keyboard-key.enter-key {
+  background-color: #fb8441;
+  border-color: #fb8441;
+}
+
+.keyboard-key.enter-key:hover, .keyboard-key.enter-key:checked {
+  color: white;
+  background-color: #fc9e69;
+  border-color: #fcab7d;
+}
+
+.keyboard-key.enter-key:active {
+  background-color: #fb7e37;
+  border-color: #fb7e37;
+}
+
+.keyboard-key.shift-key-uppercase {
+  color: #fb8441;
+}
+
+.keyboard-key StIcon {
+  icon-size: 1.125em;
 }
 
 .keyboard-subkeys {
   color: #D3DAE3;
   padding: 5px;
-  -arrow-border-radius: 2px;
-  -arrow-background-color: #282A33;
-  -arrow-border-width: 1px;
-  -arrow-border-color: rgba(0, 0, 0, 0.4);
+  -arrow-border-radius: 3px;
+  -arrow-background-color: rgba(0, 0, 0, 0.75);
+  -arrow-border-width: 0;
+  -arrow-border-color: rgba(0, 0, 0, 0);
   -arrow-base: 20px;
   -arrow-rise: 10px;
-  -boxpointer-gap: 5px;
+  -boxpointer-gap: 6px;
 }
 
 .emoji-page .keyboard-key {
@@ -3107,23 +3204,23 @@ StWidget.focused .app-well-app-running-dot {
   border: none;
   text-shadow: none;
   color: #D3DAE3;
-  border: 1px solid #21232a;
-  background-color: rgba(40, 42, 51, 0.5);
+  border: 1px solid #333641;
+  background-color: #282A33;
   box-shadow: none;
 }
 
 .candidate-page-button:hover {
   text-shadow: none;
   color: #D3DAE3;
-  border: rgba(56, 58, 71, 0.65);
-  background-color: rgba(56, 58, 71, 0.65);
+  border-color: #3e4250;
+  background-color: #333641;
   box-shadow: none;
 }
 
 .candidate-page-button:active, .candidate-page-button:checked {
   text-shadow: none;
   color: #ffffff;
-  border: 1px solid #fb8441;
+  border-color: #fb8441;
   background-color: #fb8441;
   box-shadow: none;
 }

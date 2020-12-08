@@ -1447,7 +1447,7 @@ modelbutton.flat arrow.right {
   color: #d5f0ea;
 }
 
-.selection-mode hdyleaflet headerbar .subtitle:link, .selection-mode leaflet.unfolded headerbar .subtitle:link, infobar.info *:link, infobar.question *:link, infobar.warning *:link, infobar.error *:link, headerbar.selection-mode .subtitle:link, *:link:selected, *:selected *:link, button:selected:link, button:selected:visited, *:selected button:link, *:selected button:visited {
+.selection-mode hdyleaflet headerbar .subtitle:link, .selection-mode leaflet.unfolded headerbar .subtitle:link, infobar.info > revealer > box *:link, infobar.question > revealer > box *:link, infobar.warning > revealer > box *:link, infobar.error > revealer > box *:link, headerbar.selection-mode .subtitle:link, *:link:selected, *:selected *:link, button:selected:link, button:selected:visited, *:selected button:link, *:selected button:visited {
   color: #d5f0ea;
 }
 
@@ -1704,7 +1704,7 @@ searchbar > revealer > box {
   border-width: 0 0 1px;
 }
 
-actionbar {
+actionbar > revealer > box {
   padding: 6px;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   background-color: #f0f3f6;
@@ -4392,39 +4392,39 @@ infobar {
   padding: 0;
 }
 
-infobar.info {
+infobar.info > revealer > box {
   background-color: #73d216;
 }
 
-infobar.question {
+infobar.question > revealer > box {
   background-color: #2eb398;
 }
 
-infobar.warning {
+infobar.warning > revealer > box {
   background-color: #F27835;
 }
 
-infobar.error {
+infobar.error > revealer > box {
   background-color: #FC4138;
 }
 
-infobar.info, infobar.question, infobar.warning, infobar.error {
+infobar.info > revealer > box, infobar.question > revealer > box, infobar.warning > revealer > box, infobar.error > revealer > box {
   color: #ffffff;
   caret-color: currentColor;
 }
 
-infobar.info selection, infobar.question selection, infobar.warning selection, infobar.error selection {
+infobar.info > revealer > box selection, infobar.question > revealer > box selection, infobar.warning > revealer > box selection, infobar.error > revealer > box selection {
   color: #2eb398;
   background-color: #ffffff;
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button, .nemo-window .floating-bar button, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button, .nautilus-window .floating-bar button, row:selected button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button, .nemo-window .floating-bar button, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button, .nautilus-window .floating-bar button, row:selected button, infobar.info > revealer > box button, infobar.question > revealer > box button, infobar.warning > revealer > box button, infobar.error > revealer > box button {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button.flat, .nemo-window .floating-bar button.flat, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.flat.page-row-close-button, .nautilus-window .floating-bar button.flat, row:selected button.flat, infobar.info button.flat, infobar.question button.flat, infobar.warning button.flat, infobar.error button.flat {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button.flat, .nemo-window .floating-bar button.flat, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.flat.page-row-close-button, .nautilus-window .floating-bar button.flat, row:selected button.flat, infobar.info > revealer > box button.flat, infobar.question > revealer > box button.flat, infobar.warning > revealer > box button.flat, infobar.error > revealer > box button.flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -4432,32 +4432,32 @@ window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewpor
   background-color: rgba(255, 255, 255, 0);
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button.flat:disabled, .nemo-window .floating-bar button.flat:disabled, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.flat.page-row-close-button:disabled, .nautilus-window .floating-bar button.flat:disabled, row:selected button.flat:disabled, infobar.info button.flat:disabled, infobar.question button.flat:disabled, infobar.warning button.flat:disabled, infobar.error button.flat:disabled, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button.flat:disabled label, .nemo-window .floating-bar button.flat:disabled label, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.flat.page-row-close-button:disabled label, .nautilus-window .floating-bar button.flat:disabled label, row:selected button.flat:disabled label, infobar.info button.flat:disabled label, infobar.question button.flat:disabled label, infobar.warning button.flat:disabled label, infobar.error button.flat:disabled label {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button.flat:disabled, .nemo-window .floating-bar button.flat:disabled, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.flat.page-row-close-button:disabled, .nautilus-window .floating-bar button.flat:disabled, row:selected button.flat:disabled, infobar.info > revealer > box button.flat:disabled, infobar.question > revealer > box button.flat:disabled, infobar.warning > revealer > box button.flat:disabled, infobar.error > revealer > box button.flat:disabled, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button.flat:disabled label, .nemo-window .floating-bar button.flat:disabled label, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.flat.page-row-close-button:disabled label, .nautilus-window .floating-bar button.flat:disabled label, row:selected button.flat:disabled label, infobar.info > revealer > box button.flat:disabled label, infobar.question > revealer > box button.flat:disabled label, infobar.warning > revealer > box button.flat:disabled label, infobar.error > revealer > box button.flat:disabled label {
   color: rgba(255, 255, 255, 0.4);
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:hover, .nemo-window .floating-bar button:hover, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:hover, .nautilus-window .floating-bar button:hover, row:selected button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:hover, .nemo-window .floating-bar button:hover, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:hover, .nautilus-window .floating-bar button:hover, row:selected button:hover, infobar.info > revealer > box button:hover, infobar.question > revealer > box button:hover, infobar.warning > revealer > box button:hover, infobar.error > revealer > box button:hover {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.65);
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:active, .nemo-window .floating-bar button:active, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:active, .nautilus-window .floating-bar button:active, row:selected button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:checked, .nemo-window .floating-bar button:checked, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:checked, .nautilus-window .floating-bar button:checked, row:selected button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:active, .nemo-window .floating-bar button:active, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:active, .nautilus-window .floating-bar button:active, row:selected button:active, infobar.info > revealer > box button:active, infobar.question > revealer > box button:active, infobar.warning > revealer > box button:active, infobar.error > revealer > box button:active, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:checked, .nemo-window .floating-bar button:checked, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:checked, .nautilus-window .floating-bar button:checked, row:selected button:checked, infobar.info > revealer > box button:checked, infobar.question > revealer > box button:checked, infobar.warning > revealer > box button:checked, infobar.error > revealer > box button:checked {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.35);
   border-color: rgba(255, 255, 255, 0.65);
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:disabled, .nemo-window .floating-bar button:disabled, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:disabled, .nautilus-window .floating-bar button:disabled, row:selected button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:disabled, .nemo-window .floating-bar button:disabled, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:disabled, .nautilus-window .floating-bar button:disabled, row:selected button:disabled, infobar.info > revealer > box button:disabled, infobar.question > revealer > box button:disabled, infobar.warning > revealer > box button:disabled, infobar.error > revealer > box button:disabled {
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:disabled, .nemo-window .floating-bar button:disabled, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:disabled, .nautilus-window .floating-bar button:disabled, row:selected button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:disabled label, .nemo-window .floating-bar button:disabled label, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:disabled label, .nautilus-window .floating-bar button:disabled label, row:selected button:disabled label, infobar.info button:disabled label, infobar.question button:disabled label, infobar.warning button:disabled label, infobar.error button:disabled label {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:disabled, .nemo-window .floating-bar button:disabled, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:disabled, .nautilus-window .floating-bar button:disabled, row:selected button:disabled, infobar.info > revealer > box button:disabled, infobar.question > revealer > box button:disabled, infobar.warning > revealer > box button:disabled, infobar.error > revealer > box button:disabled, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:disabled label, .nemo-window .floating-bar button:disabled label, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:disabled label, .nautilus-window .floating-bar button:disabled label, row:selected button:disabled label, infobar.info > revealer > box button:disabled label, infobar.question > revealer > box button:disabled label, infobar.warning > revealer > box button:disabled label, infobar.error > revealer > box button:disabled label {
   color: rgba(255, 255, 255, 0.5);
 }
 
-window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:disabled:active, .nemo-window .floating-bar button:disabled:active, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:disabled:active, .nautilus-window .floating-bar button:disabled:active, row:selected button:disabled:active, infobar.info button:disabled:active, infobar.question button:disabled:active, infobar.warning button:disabled:active, infobar.error button:disabled:active, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:disabled:checked, .nemo-window .floating-bar button:disabled:checked, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:disabled:checked, .nautilus-window .floating-bar button:disabled:checked, row:selected button:disabled:checked, infobar.info button:disabled:checked, infobar.question button:disabled:checked, infobar.warning button:disabled:checked, infobar.error button:disabled:checked {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:disabled:active, .nemo-window .floating-bar button:disabled:active, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:disabled:active, .nautilus-window .floating-bar button:disabled:active, row:selected button:disabled:active, infobar.info > revealer > box button:disabled:active, infobar.question > revealer > box button:disabled:active, infobar.warning > revealer > box button:disabled:active, infobar.error > revealer > box button:disabled:active, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected button:disabled:checked, .nemo-window .floating-bar button:disabled:checked, popover.background > scrolledwindow > viewport.frame > list > row.activatable:selected button.page-row-close-button:disabled:checked, .nautilus-window .floating-bar button:disabled:checked, row:selected button:disabled:checked, infobar.info > revealer > box button:disabled:checked, infobar.question > revealer > box button:disabled:checked, infobar.warning > revealer > box button:disabled:checked, infobar.error > revealer > box button:disabled:checked {
   color: rgba(255, 255, 255, 0.75);
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.4);
