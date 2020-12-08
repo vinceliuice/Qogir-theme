@@ -1183,10 +1183,15 @@ searchbar {
   }
 }
 
-actionbar > revealer > box {
-  padding: $cont_padding;
-  border-top: 1px solid $borders_color;
-  background-color: darken($bg_color, 3%);
+actionbar {
+  border: none;
+  background: none;
+
+  > revealer > box {
+    padding: $cont_padding;
+    border-top: 1px solid $borders_color;
+    background-color: darken($bg_color, 3%);
+  }
 }
 
 //
@@ -3221,10 +3226,6 @@ placesview {
   .server-list-button:checked > image {
     transition: 200ms $ease-out-quad;
     -gtk-icon-transform: rotate(-0.5turn);
-  }
-
-  > actionbar {
-    border-top: 1px solid $borders_color;
   }
 
   // this selects the "connect to server" label

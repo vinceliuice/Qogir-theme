@@ -1704,6 +1704,11 @@ searchbar > revealer > box {
   border-width: 0 0 1px;
 }
 
+actionbar {
+  border: none;
+  background: none;
+}
+
 actionbar > revealer > box {
   padding: 6px;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
@@ -4318,10 +4323,6 @@ placesview .server-list-button:checked > image {
   -gtk-icon-transform: rotate(-0.5turn);
 }
 
-placesview > actionbar {
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-}
-
 placesview > actionbar > revealer > box > label {
   padding-left: 8px;
   padding-right: 8px;
@@ -5062,10 +5063,6 @@ window.thunar notebook scrolledwindow.frame.standard-view, .nemo-window .nemo-wi
 
 .nautilus-window .searchbar-container {
   margin-top: -1px;
-}
-
-.nautilus-window actionbar {
-  border-color: #cad5df;
 }
 
 .nautilus-window > menubar {

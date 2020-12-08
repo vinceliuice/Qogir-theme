@@ -171,11 +171,7 @@ window.background { // gnome-terminal 3.32
 
 .nautilus-window {
 
-  // searchbar { border-bottom: none; }
-
   .searchbar-container { margin-top: -1px; }
-
-  actionbar { border-color: $solid_borders_color; }
 
   > menubar { // For wayland
     border: none;
