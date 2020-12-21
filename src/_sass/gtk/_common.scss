@@ -3317,7 +3317,7 @@ infobar {
     color: $selected_fg_color;
     caret-color: currentColor;
 
-    button { @extend %selected-button }
+    button { @extend %selected-button; }
 
     selection {
       color: $selected_bg_color;

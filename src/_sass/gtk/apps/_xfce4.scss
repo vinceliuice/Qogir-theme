@@ -147,6 +147,7 @@ window.thunar {
       @extend %row_activatable;
       background-color: $bg_color;
       color: $alt_fg_color;
+      -gtk-icon-style: symbolic; // not use?
 
       &:not(:selected):hover {
         color: $fg_color;

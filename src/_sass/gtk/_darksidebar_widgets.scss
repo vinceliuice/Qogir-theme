@@ -76,12 +76,12 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 }
 
 %side_searchbar {
-  background-image: image($side_theme_bg);
+  background: none;
   box-shadow: none;
   border: none;
 
   > revealer > box {
-    background: none;
+    background-color: $side_theme_bg;
     border: none;
   }
 
@@ -336,10 +336,13 @@ filechooser {
 
     separator { background-color: transparent; }
 
-    scrollbar { @extend %dark_sidebar_scrollbar }
+    scrollbar { @extend %dark_sidebar_scrollbar; }
   }
 }
 
+//
+// nemo
+//
 .nemo-window {
   .sidebar {
     color: $dark_sidebar_fg;
@@ -374,24 +377,13 @@ filechooser {
 
     separator { background-color: transparent; }
 
-    scrollbar { @extend %dark_sidebar_scrollbar }
+    scrollbar { @extend %dark_sidebar_scrollbar; }
   }
 }
 
-// filechooser {
-//   actionbar {
-//     color: $dark_sidebar_fg;
-//     background-color: $dark_sidebar_bg;
-//     border-color: $solid_borders_color;
-//
-//     button { @extend %dark_sidebar_button; }
-//     entry { @extend %dark_sidebar_entry; }
-//
-//     @extend %osd_check_radio;
-//
-//     label, combobox { color: $dark_sidebar_fg; }
-//   }
-// }
+.NemoSidebar {
+  &, & * { -gtk-icon-style: symbolic; }
+}
 
 //
 // Gedit
@@ -792,7 +784,7 @@ window.geary-main-window {
 
   > overlay > box.vertical > paned.horizontal { // Geary 0.13.1
     > box.sidebar.vertical {
-      @extend %side_headerbar;
+      @extend %side_background;
 
       > searchbar {
         @extend %side_searchbar;
@@ -1101,6 +1093,24 @@ hdyleaflet {
           &:disabled { color: rgba($side_theme_alt_fg, 0.35); }
         }
       }
+    }
+  }
+}
+
+//
+// Password and Keys
+//
+
+leaflet {
+  > scrolledwindow > viewport.frame > list {
+    @extend %side_background;
+
+    > row.activatable {
+      @extend %side_views;
+
+      .seahorse-sidebar-item { -gtk-icon-style: symbolic; }
+
+      button { @extend %selected-button; }
     }
   }
 }
