@@ -95,25 +95,28 @@
 
   border { border: none; }
 
-  list { background-color: transparent; }
+  list {
+    background-color: transparent;
 
-  row.activatable {
-    padding: 0;
-    background: none;
-    @extend %row_activatable;
-
-    &:selected {
-      @extend %selected_items;
+    &.content-box {
+      row.activatable {
+        padding: 0;
+        background: 0;
+        border: none;
+        box-shadow: none;
+      }
     }
-
-    // &:hover { box-shadow: none; }
   }
 
-  treeview.view.sidebar {
-    min-height: 36px;
+  treeview.view.sidebar,
+  scrolledwindow.sidebar { //AppMenu (Elementary)
+    // min-height: 36px;
     background: none;
     border-right: none;
     color: $fg_color;
+    padding: 0 0;
+
+    label { padding: 3px 8px; }
 
     &:hover { background-color: rgba($fg_color, 0.05); }
 
@@ -181,7 +184,7 @@
   }
 
   &.night-light-indicator {
-    .container { padding: 8px; }
+    .container { padding: 6px; }
   }
 
   &.places-menu {
@@ -1020,7 +1023,7 @@ box.vertical > stack > box.vertical {
   // label:not(:last-child),
   // .dialog-title { font-size: 90%; }
 
-  .linked.horizontal > button {
+  buttonbox.linked.horizontal > button {
     padding: 6px 16px;
     border: none;
     border-top: 1px solid $borders_color;
@@ -1035,7 +1038,7 @@ box.vertical > stack > box.vertical {
     &:last-child { border-bottom-right-radius: $bt_radius; }
   }
 
-  .linked.horizontal > button:not(.suggested-action):not(.destructive-action) {
+  buttonbox.linked.horizontal > button:not(.suggested-action):not(.destructive-action) {
     &:hover {
       background-color: gtkalpha($fg_color, 0.06);
       border-color: $borders_color;
