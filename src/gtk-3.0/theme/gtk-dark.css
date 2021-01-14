@@ -3857,8 +3857,8 @@ levelbar block.high {
 }
 
 levelbar block.full {
-  border-color: #73d216;
-  background-color: #73d216;
+  border-color: #6dcfa7;
+  background-color: #6dcfa7;
 }
 
 levelbar block.empty {
@@ -4422,11 +4422,11 @@ infobar {
 }
 
 infobar.info > revealer > box {
-  background-color: #73d216;
+  background-color: #5294e2;
 }
 
 infobar.question > revealer > box {
-  background-color: #5294e2;
+  background-color: #6dcfa7;
 }
 
 infobar.warning > revealer > box {
@@ -7246,7 +7246,7 @@ MsdOsdWindow.background.osd .trough {
 MsdOsdWindow.background.osd .progressbar {
   border-radius: 0;
   border: none;
-  background-color: #73d216;
+  background-color: #6dcfa7;
 }
 
 .slate-notification {
@@ -7715,7 +7715,7 @@ popover.background.places-menu row {
 }
 
 .budgie-panel .alert {
-  color: #73d216;
+  color: #6dcfa7;
 }
 
 .budgie-panel #tasklist-button:not(.flat) {
@@ -10511,7 +10511,7 @@ leaflet > scrolledwindow > viewport.frame > list > row.activatable .seahorse-sid
 @define-color unfocused_borders rgba(255, 255, 255, 0.12);
 @define-color warning_color #F27835;
 @define-color error_color #FC4138;
-@define-color success_color #73d216;
+@define-color success_color #6dcfa7;
 @define-color placeholder_text_color #A8A8A8;
 @define-color link_color #a9caf1;
 @define-color content_view_bg #282A33;

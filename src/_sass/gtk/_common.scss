@@ -3305,8 +3305,8 @@ infobar {
   margin: 0;
   padding: 0;
 
-  &.info > revealer > box { background-color: $success_color; }
-  &.question > revealer > box { background-color: $suggested_color; }
+  &.info > revealer > box { background-color: $suggested_color; }
+  &.question > revealer > box { background-color: $success_color; }
   &.warning > revealer > box { background-color: $warning_color; }
   &.error > revealer > box { background-color: $error_color; }
 
