@@ -2311,7 +2311,7 @@ StScrollBar {
   border-radius: 3px;
   padding: 4px 12px;
   color: $_shell_fg_color;
-  background-color: rgba(black, 0.5);
+  background-color: rgba(darken($osd_bg_color, 8%), 0.95);
   text-align: center;
   border: 1px solid rgba(black, 0.75);
   box-shadow: none;
