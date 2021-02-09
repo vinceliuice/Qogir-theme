@@ -1,26 +1,5 @@
 //This is the RIGHT PLACE to edit the stylesheet
 
-$corner_radius: 0px;
-
-/* Copyright 2009, 2015 Red Hat, Inc.
- *
- * Portions adapted from Mx's data/style/default.css
- *   Copyright 2009 Intel Corporation
- *
- * This program is free software; you can redistribute it and/or modify it
- * under the terms and conditions of the GNU Lesser General Public License,
- * version 2.1, as published by the Free Software Foundation.
- *
- * This program is distributed in the hope it will be useful, but WITHOUT ANY
- * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
- * more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with this program; if not, write to the Free Software Foundation,
- * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
- */
-
 //
 // Globals
 //
@@ -282,8 +261,9 @@ StScrollBar {
     box-shadow: inset 0 0 black;
     color: $osd_fg_color;
     background-color: $osd_bg_color;
+    border-width: 0;
     border-top-width: if($variant=='light', 0px, 1px);
-    border-bottom-width: 0;
+    border-color: rgba(black, 0.75);
 
     &:hover { background-color: lighten($osd_bg_color, 5%); }
     &:focus { color: $selected_bg_color; }
@@ -296,14 +276,13 @@ StScrollBar {
       background-color: darken($osd_bg_color, 2%);
     }
     &:first-child {
+      border-right-width: if($variant=='light', 0px, 1px);
       border-radius: 0px 0px 0px 2px;
     }
     &:last-child {
-      border-right-width: 0px;
       border-radius: 0px 0px 2px 0px;
     }
     &:first-child:last-child {
-      border-right-width: 0px;
       border-radius: 0px 0px 2px 2px;
     }
   }
@@ -881,6 +860,7 @@ StScrollBar {
   box-shadow: none;
 
   .popup-menu-arrow { } //defined globally in the TOP BAR
+
   .popup-sub-menu {
     background: none;
     box-shadow: none;
@@ -951,15 +931,6 @@ StScrollBar {
   }
 }
 
-.candidate-popup-boxpointer {
-  -arrow-border-radius: 2px;
-  -arrow-background-color: $osd_bg_color;
-  -arrow-border-width: 1px;
-  -arrow-border-color: transparentize(black, 0.6);
-  -arrow-base: 48px;
-  -arrow-rise: 0;
-}
-
 .popup-separator-menu-item {
   margin: 0 0;
   padding: 0 0;
@@ -978,7 +949,6 @@ StScrollBar {
     }
   }
 }
-
 
 // Rename popup
 .rename-folder-popup {
@@ -1216,7 +1186,7 @@ StScrollBar {
   background: none;
   box-shadow: none;
 
-  &-group { padding: 12px; }
+  &-group { padding: 8px; }
 
   &-container {
     border-image: url("common-assets/misc/bg.svg") 18 18 18 18;
@@ -1383,8 +1353,7 @@ StScrollBar {
   }
 
   &.solid {
-//    background-color: $header_bg;
-    /* transition from transparent to solid */
+    // background-color: $header_bg;
     transition-duration: 250ms;
     background-gradient-direction: none; // for Ubuntu session
     text-shadow: none; // for Ubuntu session
@@ -1400,7 +1369,7 @@ StScrollBar {
       text-shadow: none;
 
       &:hover, &:active, &:overview, &:focus, &:checked {
-//        color: $fg_color;
+        // color: $fg_color;
         text-shadow: none;
       }
     }
@@ -1424,12 +1393,10 @@ StScrollBar {
 }
 
 // Activities button
-Gjs_ui_panel_ActivitiesButton.panel-button {
+#panel #panelActivities.panel-button {
   background-image: url("common-assets/misc/activities.svg");
   width: 24px;
   height: 24px;
-  -natural-hpadding: 0 !important;
-  -minimum-hpadding: 0 !important;
   background-color: transparent !important;
   background-gradient-direction: none !important;
   border: 0 solid transparent !important;
@@ -1437,7 +1404,6 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   transition-duration: 0ms !important;
   box-shadow: none !important;
   color: transparent !important;
-  font-size: 12px !important;
 
   &:hover {
     background-color: rgba($panel_fg, 0.05) !important;
@@ -1451,45 +1417,48 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 //
 // Calendar popover
 //
+.clock-display-box {
+  spacing: 4px;
+
+  .clock {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
 #calendarArea {
-  padding: 0.75em 1.0em;
+  padding: 8px 0;
 }
 
 .calendar {
-  margin-bottom: 1em;
+  margin-bottom: 6px;
   box-shadow: none;
   background: none;
   border: none;
   text-shadow: none;
 }
 
-.calendar,
-.datemenu-today-button,
 .datemenu-displays-box,
 .message-list-sections {
-  margin: 0 0.4em;
+  margin: 4px 8px;
 }
 
-.datemenu-calendar-column { spacing: 0.5em; border: none; }
-.datemenu-displays-section { padding-bottom: 3em; }
-.datemenu-displays-box { spacing: 1em; }
+.datemenu-calendar-column {
+  spacing: 8px;
+  border: none;
+  // padding: 0 12px;
 
-.message-list-section-list:ltr {
-  padding-left: .4em;
+  // &:ltr { margin-right: 12px; border-left-width: 0; }
+  // &:rtl { margin-left: 12px; border-right-width: 0; }
+
+  .datemenu-displays-section { padding-bottom: 0; }
+  .datemenu-displays-box { spacing: 8px; }
 }
 
-.message-list-section-list:rtl {
-  padding-right: .4em;
-}
-
-.datemenu-today-button,
-.world-clocks-button,
-.weather-button,
-.events-button,
-.message-list-section-title,
-.events-section-title {
+.datemenu-today-button {
   border-radius: 3px;
-  padding: 7px 10px;
+  padding: 4px 8px;
+  margin: 0;
   border: 1px solid transparentize($base_color, 1);
   background: none;
   color: transparentize($fg_color, 0.35);
@@ -1497,100 +1466,17 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 
   &:hover, &:focus { @include button(hover); }
   &:active { @include button(active); }
-}
 
-.datemenu-today-button .date-label {
-  font-size: 1.5em;
-  font-weight: 300;
-}
-
-.world-clocks-header,
-.weather-header,
-.message-list-section-title,
-.events-section-title {
-  color: $alt_fg_color;
-  font-weight: bold;
-}
-
-.world-clocks-grid,
-.weather-grid {
-  spacing-rows: 0.4em;
-  spacing-columns: 0.8em;
-}
-
-.world-clocks-city {
-  color: $sec_fg_color;
-  font-weight: bold;
-  font-size: 0.9em;
-}
-
-.world-clocks-time {
-  color: $sec_fg_color;
-  font-feature-settings: "tnum";
-  font-size: 1.2em;
-}
-
-.world-clocks-timezone {
-  color: $alt_fg_color;
-  font-feature-settings: "tnum";
-  font-size: 0.9em;
-}
-
-.weather-box {
-  spacing: 0.4em;
-}
-
-.weather-header.location {
-  font-weight: normal;
-  color: transparentize($fg_color, 0.45);
-}
-
-.weather-forecast-icon {
-  icon-size: 2.18em;
-  color: transparentize($fg_color, 0.35);
-}
-
-.weather-forecast-time {
-  color: $sec_fg_color;
-  font-size: 0.8em;
-  font-feature-settings: "tnum";
-  font-weight: normal;
-  padding-top: 0.2em;
-  padding-bottom: 0.4em;
-}
-
-.weather-forecast-temp {
-  font-weight: bold;
-  color: transparentize($fg_color, 0.35);
-  text-shadow: none;
-}
-
-.world-clocks-button:active *,
-.weather-button:active * {
-  color: $selected_fg_color;
-}
-
-// Events
-.events-button {
-  .events-box {
-    spacing: 6px;
-  }
-
-  .events-list {
-    spacing: 12px;
-    text-shadow: none;
-  }
-
-  .events-title {
-    color: $alt_fg_color;
+  // weekday label
+  .day-label {
+    font-size: 2em;
     font-weight: bold;
-    margin-bottom: 4px;
-    text-shadow: none;
   }
 
-  .event-time {
-    color: $alt_fg_color;
-    font-feature-settings: "tnum";
+  // date label
+  .date-label {
+    font-size: 1.5em;
+    font-weight: 300;
   }
 }
 
@@ -1636,7 +1522,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 .calendar-change-month-back,
 .calendar-change-month-forward {
   color: transparent;
-  padding: 0 1px;
+  padding: 0 2px;
 
   StIcon { icon-size: 16px; }
 }
@@ -1697,7 +1583,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   font-weight: bold;
   color: $selected_fg_color;
   background-color: $selected_bg_color;
-  border-width: 0;
+  border: none;
 }
 
 .calendar-day-with-events {
@@ -1723,6 +1609,116 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   color: $alt_fg_color;
 }
 
+// buttons under calendar
+.world-clocks-button,
+.weather-button,
+.events-button {
+  border-radius: 3px;
+  padding: 8px 10px;
+  margin: 0;
+  text-shadow: none;
+  @include button(hover);
+
+  &:hover, &:focus {
+    background-color: if($variant=='light', rgba(black, 0.06), rgba(white, 0.1));
+    border: 1px solid if($variant=='light', darken($button_border, 8%), lighten($button_border, 8%));
+  }
+
+  &:active { @include button(active); }
+}
+
+.world-clocks-header,
+.weather-header,
+.message-list-section-title,
+.events-section-title {
+  color: $alt_fg_color;
+  font-weight: bold;
+}
+
+.world-clocks-grid,
+.weather-grid {
+  spacing-rows: 0.4em;
+  spacing-columns: 0.8em;
+}
+
+// World Clock
+.world-clocks-city {
+  color: $sec_fg_color;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.world-clocks-time {
+  color: $sec_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 1.2em;
+}
+
+.world-clocks-timezone {
+  color: $alt_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 0.9em;
+}
+
+// Weather button
+.weather-box {
+  spacing: 0.4em;
+}
+
+.weather-header.location {
+  font-weight: normal;
+  color: transparentize($fg_color, 0.45);
+}
+
+.weather-forecast-icon {
+  icon-size: 2.18em;
+  color: transparentize($fg_color, 0.35);
+}
+
+.weather-forecast-time {
+  color: $sec_fg_color;
+  font-size: 0.8em;
+  font-feature-settings: "tnum";
+  font-weight: normal;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+}
+
+.weather-forecast-temp {
+  font-weight: bold;
+  color: transparentize($fg_color, 0.35);
+  text-shadow: none;
+}
+
+.world-clocks-button:active *,
+.weather-button:active * {
+  color: $selected_fg_color;
+}
+
+// Events button
+.events-button {
+  .events-box {
+    spacing: 6px;
+  }
+
+  .events-list {
+    spacing: 12px;
+    text-shadow: none;
+  }
+
+  .events-title {
+    color: $alt_fg_color;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-shadow: none;
+  }
+
+  .event-time {
+    color: $alt_fg_color;
+    font-feature-settings: "tnum";
+  }
+}
+
 //
 // Message list
 //
@@ -1730,23 +1726,23 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   width: 31.5em;
   padding: 0 12px;
 
-  &-sections { spacing: 1.5em; }
+  &-sections { spacing: 8px; }
 
   &-section,
-  &-section-list { spacing: 0.7em; }
+  &-section-list { spacing: 8px; }
 
-  &-section-list-title-box { spacing: 0.4em; }
+  // &-section-list-title-box { spacing: 0.4em; }
 
   &-placeholder {
     spacing: 12px;
-    StIcon { width: 0; height: 0; }
-    StLabel { color: $insensitive_fg_color; }
+    // StIcon { width: 0; height: 0; }
+    // StLabel { color: $insensitive_fg_color; }
   }
 
   &-clear-button.button {
-    margin: 1.5em 1.5em 0;
+    margin: 0 0;
     padding: 4px 12px;
-    &:hover,&:focus { background-color: $alt_bg_color; }
+    &:hover, &:focus { background-color: $alt_bg_color; }
     &:active { background-color: $selected_bg_color; }
   }
 
@@ -1759,7 +1755,6 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   }
 
   &-section-close {
-
     > StIcon {
       icon-size: 16px;
       border-radius: 0px;
@@ -2195,8 +2190,8 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 
 #searchResultsContent {
   max-width: 1000px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
   spacing: 16px;
 }
 
@@ -2216,20 +2211,48 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   @extend %status_text;
 }
 
+// search result provider
+.search-provider-icon {
+  // content
+  .list-search-provider-content {
+    spacing: 12px;
+
+    // provider labels
+    .list-search-provider-details {
+      width: 120px;
+      margin-top: 0;
+    }
+  }
+}
+
+.search-provider-icon,
+.list-search-result {
+  @extend %icon_tile;
+
+  &:focus, &:hover, &:selected {
+    background-color: rgba($selected_bg_color, 0.5);
+    border: 1px solid $selected_bg_color;
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: $selected_bg_color;
+    border: 1px solid darken($selected_bg_color, 10%);
+  }
+}
+
 .list-search-results { spacing: 3px; }
 
 .search-section-separator {
   background-color: rgba(white, 0.12);
-  -margin-horizontal: 1.5em;
   height: 1px;
 }
 
 .list-search-result-content {
-  spacing: 12px;
-  padding: 12px;
+  spacing: 30px;
 }
 .list-search-result-title {
-  font-size: 1.5em;
+  font-size: 1em;
   color: $_shell_fg_color;
 }
 .list-search-result-description { color: darken($_shell_fg_color, 20%); }
@@ -2240,7 +2263,8 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 }
 .list-search-provider-content { spacing: 20px; }
 
-.search-provider-icon { padding: 15px; }
+.search-provider-icon { padding: 16px; }
+
 .search-provider-icon-more {
   width: 16px;
   height: 16px;
@@ -2295,6 +2319,10 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 }
 
 %overview-icon {
+  .overview-icon {
+    @extend %icon_tile;
+  }
+
   &:hover .overview-icon {
     background-color: rgba($selected_bg_color, 0.5);
     border: 1px solid $selected_bg_color;
@@ -2322,23 +2350,17 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 // Dash Buttons
 #dash .app-well-app {
   @extend %overview-icon;
-
-  &-running-dot {
-    width: 11px;
-    height: 2px;
-    margin-bottom: 2px;
-    background-color: $selected_bg_color;
-  }
 }
 
 .app-well-app-running-dot { //running apps indicator
-  width: 5px; height: 5px;
-  border-radius: 3px;
+  width: 12px; height: 2px;
+  border-radius: 0;
   background-color: $sec_selected_fg_color;
-  margin-bottom: 0;
+  margin-bottom: 2px;
 }
 
 StWidget.focused .app-well-app-running-dot {
+  width: 28px; height: 2px;
   background-color: $selected_bg_color;
 }
 
@@ -2378,24 +2400,8 @@ StWidget.focused .app-well-app-running-dot {
 //
 // Icon Tile
 //
-.search-provider-icon,
-.list-search-result {
-  @extend %icon_tile;
-
-  &:active, &:checked { background-color: rgba(darken($osd_bg_color,10%), 0.9); }
-
-  &:focus, &:selected, &:hover {
-    background-color: rgba($osd_fg_color, 0.3);
-    transition-duration: 200ms;
-  }
-}
-
 .app-well-app,
 .grid-search-result {
-  .overview-icon {
-    @extend %icon_tile;
-  }
-
   @extend %overview-icon;
 }
 
@@ -2496,9 +2502,10 @@ StWidget.focused .app-well-app-running-dot {
 
 .no-frequent-applications-label { @extend %status_text; }
 
-.app-well-app .overview-icon.overview-icon-with-label,
+.overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
   padding: 10px 8px 5px 8px;
+  spacing: $cont_padding;
 
   > StBoxLayout {
     spacing: $cont_padding;
@@ -2509,21 +2516,23 @@ StWidget.focused .app-well-app-running-dot {
 .app-folder-dialog {
   border-radius: 5px;
   border: 1px solid $selected_bg_color;
-  spacing: 12px;
+  padding: 6px;
+  space: 6px;
   background-color: rgba(darken($osd_bg_color, 15%), 0.9);
 
   & .folder-name-container {
-    padding: 24px 36px 0;
+    padding: 12px 36px 0;
     spacing: 12px;
 
     & .folder-name-label,
     & .folder-name-entry {
-      font-size: 18pt;
+      font-size: 16pt;
       font-weight: bold;
     }
 
     & .folder-name-entry {
       @extend .search-entry;
+      width: 300px;
     }
 
     /* FIXME: this is to keep the label in sync with the entry */
@@ -2562,9 +2571,9 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .app-folder-dialog-container {
-  padding: 12px;
-  width: 620px;
-  height: 620px;
+  padding: 6px;
+  width: 600px;
+  height: 600px;
 }
 
 .app-folder-icon {
@@ -2912,29 +2921,44 @@ $default_key_bg_color: darken($osd_bg_color, 8%);
 //
 // IBus Candidate Popup
 //
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 2px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 0;
+}
+
 .candidate-popup-content {
-  padding: 0.5em;
+  margin-top: 16px;
+  padding: 6px;
   spacing: 0.3em;
+  background-color: $osd_bg_color;
+  border: 1px solid rgba(black, 0.6);
+  box-shadow: 3px 5px 12px -3px rgba(black, 0.35);
+  border-radius: 3px;
   color: $osd_fg_color;
-  font-size: 1.15em;
 }
 
 .candidate-index {
-  padding: 0 0.5em 0 0;
+  margin: 2px;
+  padding: 0 0;
   color: lighten($osd_fg_color, 10%);
 }
 
 .candidate-box {
   padding: 0.3em 0.5em 0.3em 0.5em;
   border-radius: 2px;
+  margin: 2px;
   color: $osd_fg_color;
   &:selected,&:hover { background-color: $selected_bg_color; color: $selected_fg_color; }
 }
 
 .candidate-page-button-box {
   height: 2em;
-  .vertical & { padding-top: 0.5em; }
-  .horizontal & { padding-left: 0.5em; }
+  .vertical & { padding-top: 1em; }
+  .horizontal & { padding-left: 1em; }
 }
 
 .candidate-page-button {
