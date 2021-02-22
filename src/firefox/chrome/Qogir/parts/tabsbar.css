@@ -1,4 +1,4 @@
-/* Tabs bar  */
+/* Tabs bar */
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
@@ -265,8 +265,8 @@ tab[selected]:-moz-window-inactive {
 }
 
 .tabbrowser-tab[class*="identity-color-"][pinned] .tab-content::before,
-.tabbrowser-tab[class*="identity-color-"][image] .tab-content::before, 
-.tabbrowser-tab[class*="identity-color-"][busy] .tab-content::before, 
+.tabbrowser-tab[class*="identity-color-"][image] .tab-content::before,
+.tabbrowser-tab[class*="identity-color-"][busy] .tab-content::before,
 .tabbrowser-tab[class*="identity-color-"][progress] .tab-content::before {
 	right: -10px;
 	top: -8px;
