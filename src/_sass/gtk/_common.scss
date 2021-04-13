@@ -28,7 +28,7 @@ $header_padding: if($titlebutton == 'circle', 0, 5px);
 //
 .background {
   color: $fg_color;
-  background-color: if($trans == 'true', transparentize($bg_color, 0.001), $bg_color); // without this headerbar transparency doesn't seem to work
+  background-color: if($trans == 'true', rgba($bg_color, 1), $bg_color); // without this headerbar transparency doesn't seem to work
 }
 
 *:disabled { -gtk-icon-effect: dim; }
@@ -1322,6 +1322,60 @@ headerbar {
     margin-bottom: $icon_padding;
   }
 
+  &.windowhandle {
+    viewswitcher button {
+      border-radius: 0;
+      margin-top: -1px;
+      margin-bottom: -1px;
+      padding: 0 10px;
+      min-height: 0;
+      border: none;
+      outline: none;
+      background-clip: padding-box;
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $selected_bg_color 0%,
+                                    transparent 0%)
+                                    0 0 0 / 0 0 0;
+
+      &:hover {
+        color: $alt_header_fg;
+        background-color: rgba($header_fg, 0.06);
+      }
+
+      &:active {
+        color: $header_fg;
+        background-color: rgba($header_fg, 0.15);
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $selected_bg_color 100%,
+                                      transparent 0%)
+                                      0 0 3 / 0 0 3px;
+      }
+
+      &:checked {
+        color: $header_fg;
+        background-color: rgba($header_fg, 0.1);
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $selected_bg_color 100%,
+                                      transparent 0%)
+                                      0 0 3 / 0 0 3px;
+      }
+
+      &:disabled {
+        color: rgba($header_fg, 0.35);
+        background-color: transparent;
+      }
+
+      &:checked:disabled {
+        color: rgba($header_fg, 0.35);
+        background-color: transparent;
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      rgba($selected_bg_color, 0.35) 100%,
+                                      transparent 0%)
+                                      0 0 3 / 0 0 3px;
+      }
+    }
+  }
+
   separator { @extend %header_separator; }
 }
 
@@ -1457,7 +1511,6 @@ headerbar {
 }
 
 %header_widgets {
-
   // Headerbar Entries
   entry { @extend %header_entry; }
 
@@ -1471,7 +1524,6 @@ headerbar {
   }
 
   &.selection-mode button {
-
     &, &.flat {
       @include button(undecorated);
       color: $selection_mode_fg;
@@ -2803,13 +2855,12 @@ frame > border,
 frame.flat > border,
 frame > border.flat,
 .frame.flat {
-  border-style: none;
+  border: none;
 }
 
 scrolledwindow {
-
   viewport.frame { // avoid double borders when viewport inside scrolled window
-    border-style: none;
+    border: none;
   }
 
   // This is used by GtkScrolledWindow, when content is touch-dragged past boundaries.
@@ -3154,7 +3205,6 @@ stacksidebar {
 }
 
 placessidebar {
-
   > viewport.frame { border-style: none; }
 
   row {

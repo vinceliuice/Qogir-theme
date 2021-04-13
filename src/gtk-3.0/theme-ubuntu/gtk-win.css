@@ -1819,6 +1819,46 @@ headerbar entry, headerbar button, headerbar separator:not(.sidebar) {
   margin-bottom: 5px;
 }
 
+headerbar.windowhandle viewswitcher button {
+  border-radius: 0;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  padding: 0 10px;
+  min-height: 0;
+  border: none;
+  outline: none;
+  background-clip: padding-box;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #fb8441 0%, transparent 0%) 0 0 0/0 0 0;
+}
+
+headerbar.windowhandle viewswitcher button:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(228, 235, 241, 0.06);
+}
+
+headerbar.windowhandle viewswitcher button:active {
+  color: rgba(228, 235, 241, 0.8);
+  background-color: rgba(228, 235, 241, 0.15);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #fb8441 100%, transparent 0%) 0 0 3/0 0 3px;
+}
+
+headerbar.windowhandle viewswitcher button:checked {
+  color: rgba(228, 235, 241, 0.8);
+  background-color: rgba(228, 235, 241, 0.1);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #fb8441 100%, transparent 0%) 0 0 3/0 0 3px;
+}
+
+headerbar.windowhandle viewswitcher button:disabled {
+  color: rgba(228, 235, 241, 0.35);
+  background-color: transparent;
+}
+
+headerbar.windowhandle viewswitcher button:checked:disabled {
+  color: rgba(228, 235, 241, 0.35);
+  background-color: transparent;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), rgba(251, 132, 65, 0.35) 100%, transparent 0%) 0 0 3/0 0 3px;
+}
+
 window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, window.csd > .titlebar:not(headerbar), window.csd > .titlebar:not(headerbar):backdrop {
   padding: 0;
   background: none;
@@ -3875,11 +3915,11 @@ frame > border,
 frame.flat > border,
 frame > border.flat,
 .frame.flat {
-  border-style: none;
+  border: none;
 }
 
 scrolledwindow viewport.frame {
-  border-style: none;
+  border: none;
 }
 
 scrolledwindow overshoot.top {
