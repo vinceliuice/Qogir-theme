@@ -1,0 +1,63 @@
+
+
+// /**************************
+//  * Dash to Dock Extension *
+//  **************************/
+
+$hard_coded_alpha: 0.2;
+$alpha_override: 0.35;
+$icon_padding: 8px;
+$empty_shadow: 0 0 0 transparent;
+
+#dashtodockContainer {
+  background: transparent;
+
+  .dash-item-container { // actual parent container
+    background: transparent;
+
+    > StWidget { background-size: contain; }
+
+    .app-well-app-running-dot {
+      width: 6px;
+      height: 2px;
+      box-shadow: none;
+      margin: 2px;
+      border-radius: 0;
+      background-color: $selected_bg_color;
+    }
+
+    > StWidget.focused .app-well-app-running-dot {
+      width: 18px;
+      height: 2px;
+      background-color: $selected_bg_color;
+    }
+  }
+
+  .number-overlay,
+  .notification-badge {
+    min-width: 1.4em;
+    min-height: 1.4em;
+    margin: 0; // unset margin/padding
+    padding: 0;
+    border-radius: 3px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .number-overlay {
+    background-color: $osd_bg_color;
+    color: $osd_fg_color;
+  }
+
+  .notification-badge {
+    background-color: $osd_bg_color;
+    color: $osd_fg_color;
+  }
+}
+
+.popup-menu.app-well-menu {
+  .popup-menu-item.dashtodock-app-well-preview-menu-item {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}

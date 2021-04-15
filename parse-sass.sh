@@ -32,11 +32,13 @@ done
 done
 
 for theme in "${_THEME_VARIANTS[@]}"; do
-for color in "${_COLOR_VARIANTS[@]}"; do
-  sassc $SASSC_OPT src/gnome-shell/theme${theme}/gnome-shell${color}.{scss,css}
-  echo "==> Generating the gnome-shell${theme}${color}.css..."
+  for color in "${_COLOR_VARIANTS[@]}"; do
+  sassc $SASSC_OPT src/gnome-shell/theme${theme}-3-32/gnome-shell${color}.{scss,css}
+  echo "==> Generating the gnome-shell${theme}-3-32${color}.css..."
+  sassc $SASSC_OPT src/gnome-shell/theme${theme}-40-0/gnome-shell${color}.{scss,css}
+  echo "==> Generating the gnome-shell${theme}-40-0${color}.css..."
   sassc $SASSC_OPT src/cinnamon/theme${theme}/cinnamon${color}.{scss,css}
   echo "==> Generating the cinnamon${theme}${color}.css..."
-done
+  done
 done
 

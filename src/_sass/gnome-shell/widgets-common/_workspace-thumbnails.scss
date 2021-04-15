@@ -1,0 +1,8 @@
+
+// selected indicator
+.workspace-thumbnail-indicator {
+  border: 3px solid $selected_bg_color;
+  border-radius: 3px;
+  padding: 0px;
+  // background-color: transparentize($selected_bg_color, 0.9);
+}

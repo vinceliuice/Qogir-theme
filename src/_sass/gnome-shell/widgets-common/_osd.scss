@@ -1,0 +1,45 @@
+/* OSD */
+
+$osd_levelbar_height: 4px;
+
+.osd-window {
+  @extend %osd_panel;
+  text-align: center;
+  font-weight: bold;
+  spacing: 12px; // 12px
+  margin: 32px; // 32px
+  min-width: 64px;
+  min-height: 64px;
+
+  StIcon {
+    icon-size: 96px;
+  }
+
+  .osd-monitor-label { font-size: 3em; }
+
+  .level {
+    height: $osd_levelbar_height;
+    -barlevel-height: $osd_levelbar_height;
+    -barlevel-background-color: transparentize($selected_fg_color, 0.85);
+    -barlevel-active-background-color: $selected_bg_color;
+    -barlevel-overdrive-color: $destructive_color;
+    -barlevel-overdrive-separator-width: 3px;
+  }
+}
+
+/* Pad OSD */
+.pad-osd-window {
+  padding: 32px;
+  background-color: transparentize(#000, 0.2);
+
+  .pad-osd-title-box { spacing: 12px; }
+  .pad-osd-title-menu-box { spacing: 6px; }
+}
+
+.combo-box-label {
+  width: 15em;
+}
+
+.resize-popup {
+  @extend %osd_panel;
+}

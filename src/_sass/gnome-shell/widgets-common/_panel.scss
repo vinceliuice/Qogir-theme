@@ -1,0 +1,169 @@
+/* Top Bar */
+
+#panel {
+  font-weight: bold;
+  height: 2.1em;
+  min-height: 27px;
+  background-color: $panel_bg;
+  border: none;
+  font-feature-settings: "tnum";
+  ransition-duration: 250ms;
+
+  // Fix dynamic top bar extension
+  &.dynamic-top-bar-white-btn { border-image: none; }
+
+  // transparent panel on lock & login screens
+  &.unlock-screen,
+  &.login-screen {
+    background-color: transparent;
+
+    .panel-corner {
+      -panel-corner-radius: 0;
+      -panel-corner-background-color: transparent;
+      -panel-corner-border-color: transparent;
+    }
+  }
+
+  // spacing between activities, app menu and such
+  #panelLeft, #panelCenter {
+    spacing: 6px;
+  }
+
+  // the rounded outset corners
+  .panel-corner {
+    -panel-corner-radius: 0;
+    -panel-corner-background-color: $panel_bg;
+    -panel-corner-border-width: 0;
+    -panel-corner-border-color: transparent;
+
+    &:active, &:overview, &:focus {
+      -panel-corner-border-color: lighten($selected_bg_color, 5%);
+    }
+  }
+
+  // panel menus
+  .panel-button {
+    -natural-hpadding: 10px;
+    -minimum-hpadding: 6px;
+    font-weight: bold;
+    color: $panel_fg;
+    transition-duration: 150ms;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+
+    &:hover {
+      color: $panel_fg;
+      background-color: rgba($panel_fg, 0.05);
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    &:active, &:overview, &:focus, &:checked {
+      color: $panel_fg;
+      background-color: rgba($panel_fg, 0.1);
+      box-shadow: inset 0 -2px 0 $selected_bg_color;
+      border-radius: 0;
+
+      & > .system-status-icon { icon-shadow: none; }
+    }
+
+    &.clock-display {
+      .clock {
+        transition-duration: 0;
+        border: none;
+        border-radius: 0;
+      }
+
+      &, &:active, &:overview, &:focus, &:checked {
+        .clock { //reset
+          background-color: transparent;
+          box-shadow: none
+        }
+      }
+    }
+
+    // status area icons
+    .system-status-icon {
+      icon-size: 16px;
+      padding: 0 4px;
+    }
+
+    // app menu icon
+    .app-menu-icon {
+      width: 0;
+      height: 0;
+      margin-left: 0px;
+      margin-right: 0px;
+      -st-icon-style: symbolic;
+      // dimensions of the icon are hardcoded
+    }
+  }
+
+  // lock & login screen styles
+  &.unlock-screen,
+  &.login-screen,
+  &.lock-screen,
+  &:overview {
+    background: none;
+    color: lighten($panel_fg, 10%);
+
+    .panel-button {
+      &:hover, &:active, &:overview, &:focus, &:checked {
+        &.clock-display {
+          .clock {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+
+  .panel-status-indicators-box,
+  .panel-status-menu-box {
+    spacing: 2px;
+  }
+
+  // spacing between power icon and (optional) percentage label
+  .power-status.panel-status-indicators-box {
+    spacing: 0;
+  }
+
+  // indicator for active
+  .screencast-indicator,
+  .remote-access-indicator { color: $warning_color; }
+
+  .popup-menu-arrow {
+    width: 0;
+    height: 0;
+  }
+}
+
+// App Menu
+#appMenu {
+  spacing: 6px;
+  .label-shadow { color: transparent; }
+}
+
+// Activities button
+#panel #panelActivities.panel-button {
+  background-image: url("assets/activities.svg");
+  width: 24px;
+  height: 24px;
+  background-color: transparent !important;
+  background-gradient-direction: none !important;
+  border: 0 solid transparent !important;
+  text-shadow: 0 0 transparent !important;
+  transition-duration: 0ms !important;
+  box-shadow: none !important;
+  color: transparent !important;
+
+  &:hover {
+    background-color: rgba($panel_fg, 0.05) !important;
+  }
+
+  &:active, &:focus {
+    background-color: rgba($panel_fg, 0.1) !important;
+  }
+}

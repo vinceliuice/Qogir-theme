@@ -1,0 +1,65 @@
+/* App Switcher */
+
+.switcher-popup {
+  padding: 8px;
+  spacing: 24px;
+}
+
+// switcher onscreen panel
+.switcher-list {
+  @extend %osd_panel;
+
+  .item-box {
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+
+    &:outlined {
+      background-color: transparentize($osd_fg_color, 0.7);
+    }
+
+    &:selected {
+      background-color: transparentize($osd_fg_color, 0.7);
+      color: $osd_fg_color;
+    }
+  }
+
+  // window thumbnails
+  .thumbnail-box {
+    padding: 2px;
+    spacing: 6px;
+  }
+
+  .thumbnail {
+    width: 256px;
+  }
+
+  .separator {
+    width: 1px;
+    background: $borders_color;
+  }
+
+  .switcher-list-item-container {
+    spacing: 8px;
+  }
+}
+
+.switcher-arrow {
+  border-color: rgba(0,0,0,0);
+  color: transparentize($fg_color,0.2);
+  &:highlighted {
+    color: $fg_color;
+  }
+}
+
+// Input Source Switcher
+.input-source-switcher-symbol {
+  font-size: 34pt;
+  width: 96px;
+  height: 96px;
+}
+
+// Window cycler highlight
+.cycler-highlight {
+  border: 5px solid $selected_bg_color;
+}

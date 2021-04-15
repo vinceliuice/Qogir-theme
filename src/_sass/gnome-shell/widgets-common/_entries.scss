@@ -1,0 +1,47 @@
+/* Entries */
+
+StEntry {
+  padding: 7px;
+  caret-size: 1px;
+  caret-color: $fg_color;
+  selection-background-color: $selected_bg_color;
+  selected-color: $selected_fg_color;
+  transition-duration: 300ms;
+  border-radius: 3px;
+
+  @include entry(normal);
+
+  &:hover {
+    @include entry(hover);
+
+    StLabel.hint-text {
+      color: transparentize($selected_fg_color, 0.3);
+    }
+  }
+
+  &:focus {
+    @include entry(focus);
+
+    StLabel.hint-text {
+      color: transparentize($selected_fg_color, 0.3);
+    }
+  }
+
+  &:insensitive { @include entry(insensitive); }
+
+  StIcon.capslock-warning {
+    icon-size: 16px;
+    warning-color: $warning_color;
+    padding: 0 4px;
+  }
+
+  StIcon.peek-password {
+    icon-size: 16px;
+    padding: 0 4px;
+  }
+
+  StLabel.hint-text {
+    margin-left: 2px;
+    color: transparentize($fg_color, 0.3);
+  }
+}

@@ -1,0 +1,25 @@
+/* Buttons */
+
+%button,
+.button {
+  min-height: 20px;
+  padding: 5px 32px;
+  transition-duration: 0;
+  border-radius: 2px;
+  @include button(normal);
+
+  &:focus { @include button(focus); }
+  &:hover { @include button(hover); }
+  &:hover:focus { @include button(focus-hover); }
+  &:active, &:active:focus, &:checked { @include button(active); }
+  &:insensitive { @include button(insensitive); }
+}
+
+%osd_button {
+  @include button(osd);
+
+  &:hover, &:hover:focus { @include button(osd-hover); }
+  &:focus { @include button(osd-focus); }
+  &:active, &:checked { @include button(osd-active); }
+  &:insensitive { @include button(osd-insensitive); }
+}

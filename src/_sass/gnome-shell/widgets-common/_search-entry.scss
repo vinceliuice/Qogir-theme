@@ -1,0 +1,59 @@
+// Search entry
+
+$search_entry_width: 320px;
+$search_entry_height: 36px;
+
+%search_entry,
+.search-entry {
+  width: $search_entry_width;
+  padding: 7px 9px;
+  border-radius: 1000px; // half the height
+  color: transparentize($fg_color, 0.3);
+  background-color: lighten($bg_color, 6%);
+  border: none;
+  caret-color: $fg_color;
+
+  &:hover {
+    padding: 7px 9px;
+    color: $fg_color;
+    background-color: lighten($bg_color, 10%);
+    border: none;
+
+    StLabel.hint-text {
+      color: transparentize($fg_color, 0.1);
+    }
+
+    .search-entry-icon { color: $fg_color; }
+  }
+
+  &:focus {
+    padding: 7px 9px;
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    caret-color: $selected_fg_color;
+    selection-background-color: rgba(white, 0.25);
+    selected-color: $selected_fg_color;
+    border: none;
+
+    StLabel.hint-text {
+      color: transparentize($selected_fg_color, 0.5);
+    }
+
+    .search-entry-icon { color: $selected_fg_color; }
+  }
+
+  &:insensitive {
+    color: $insensitive_fg_color;
+    background-color: transparentize($entry_bg, 0.55);
+  }
+
+  StLabel.hint-text {
+    color: transparentize($fg_color, 0.3);
+  }
+
+  .search-entry-icon {
+    icon-size: 16px;
+    padding: 0 4px;
+    color: inherit;
+  }
+}

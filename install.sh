@@ -19,6 +19,18 @@ COLOR_VARIANTS=('' '-light' '-dark')
 LOGO_VARIANTS=('' '-arch' '-budgie' '-debian' '-fedora' '-gnome' '-gentoo' '-manjaro' '-ubuntu' '-qogir')
 LOGO_NAME=''
 
+if [[ "$(command -v gnome-shell)" ]]; then
+  SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -2)"
+  if [[ "${SHELL_VERSION:-}" == '40.0' ]]; then
+    GS_VERSION="new"
+  else
+    GS_VERSION="old"
+  fi
+  else
+    echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+    GS_VERSION="new"
+fi
+
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
@@ -93,18 +105,31 @@ install() {
   cp -r ${SRC_DIR}/src/gtk-3.0/assets/thumbnail${theme}${ELSE_DARK}.png              ${THEME_DIR}/gtk-3.0/thumbnail.png
 
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
-  cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/common-assets                      ${THEME_DIR}/gnome-shell
-  cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/assets${ELSE_DARK}                 ${THEME_DIR}/gnome-shell/assets
+  cp -r ${SRC_DIR}/src/gnome-shell/common-assets                                     ${THEME_DIR}/gnome-shell/assets
+  cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/*.svg                              ${THEME_DIR}/gnome-shell/assets
+  cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/assets${ELSE_DARK}/*.svg           ${THEME_DIR}/gnome-shell/assets
+  cp -r ${SRC_DIR}/src/gnome-shell/background.jpeg                                   ${THEME_DIR}/gnome-shell/background.jpeg
 
-  if [[ -f ${SRC_DIR}/src/gnome-shell/assets/logos/logo-${logo}.svg ]] ; then
-    cp -r ${SRC_DIR}/src/gnome-shell/assets/logos/logo-${logo}.svg                   ${THEME_DIR}/gnome-shell/common-assets/misc/activities.svg
+  if [[ -f ${SRC_DIR}/src/gnome-shell/logos/logo-${logo}.svg ]] ; then
+    cp -r ${SRC_DIR}/src/gnome-shell/logos/logo-${logo}.svg                          ${THEME_DIR}/gnome-shell/assets/activities.svg
   else
     echo "${logo} icon not supported, Qogir icon will install..."
-    cp -r ${SRC_DIR}/src/gnome-shell/assets/logos/logo-qogir.svg                     ${THEME_DIR}/gnome-shell/common-assets/misc/activities.svg
+    cp -r ${SRC_DIR}/src/gnome-shell/logos/logo-qogir.svg                            ${THEME_DIR}/gnome-shell/assets/activities.svg
   fi
 
-  cp -r ${SRC_DIR}/src/gnome-shell/background${ELSE_DARK}.jpeg                       ${THEME_DIR}/gnome-shell/background.jpeg
-  cp -r ${SRC_DIR}/src/gnome-shell/theme${theme}/gnome-shell${color}.css             ${THEME_DIR}/gnome-shell/gnome-shell.css
+  cp -r ${SRC_DIR}/src/gnome-shell/icons                                             ${THEME_DIR}/gnome-shell
+  cp -r ${SRC_DIR}/src/gnome-shell/pad-osd.css                                       ${THEME_DIR}/gnome-shell
+
+  if [[ "${GS_VERSION:-}" == 'new' ]]; then
+    cp -r ${SRC_DIR}/src/gnome-shell/theme${theme}-40-0/gnome-shell${color}.css      ${THEME_DIR}/gnome-shell/gnome-shell.css
+  else
+    cp -r ${SRC_DIR}/src/gnome-shell/theme${theme}-3-32/gnome-shell${color}.css      ${THEME_DIR}/gnome-shell/gnome-shell.css
+  fi
+
+  cd ${THEME_DIR}/gnome-shell
+  ln -sf assets/no-events.svg no-events.svg
+  ln -sf assets/process-working.svg process-working.svg
+  ln -sf assets/no-notifications.svg no-notifications.svg
 
   mkdir -p                                                                           ${THEME_DIR}/cinnamon
   cp -r ${SRC_DIR}/src/cinnamon/assets${theme}/common-assets                         ${THEME_DIR}/cinnamon

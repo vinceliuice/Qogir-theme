@@ -23,6 +23,13 @@
     box-shadow: inset 0 2px 4px transparentize($entry_bg, 0.95);
   }
 
+  @if $t==hover {
+    color: $fg_color;
+    background-color: $entry_bg;
+    border: 1px solid $entry_border;
+    box-shadow: inset 0 2px 4px transparentize($entry_bg, 0.95);
+  }
+
   @if $t==focus {
     color: $fg_color;
     background-color: $entry_bg;
@@ -104,7 +111,7 @@
   // hovered button
   //
     color: $tc;
-    background-color: if($variant=='light', rgba(black, 0.03), rgba(white, 0.06));
+    background-color: mix($fg_color, $c, 6%);
     border: 1px solid if($variant=='light', darken($button_border, 5%), lighten($button_border, 5%));
     box-shadow: none;
   }

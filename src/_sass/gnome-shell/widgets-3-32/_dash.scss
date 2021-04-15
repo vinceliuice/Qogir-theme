@@ -1,0 +1,31 @@
+#dash {
+  font-size: 1em;
+  color: $dash_fg;
+  background-color: $dash_bg;
+  border-color: rgba(0,0,0,0.4);
+  padding: 4px 0;
+  border-radius: 0 3px 3px 0;
+
+  &:rtl { border-radius: 3px 0 0 3px; }
+
+  .right &,
+  &:rtl { padding: 4px 0; }
+
+  .top &, .bottom & { padding: 0; }
+
+  .placeholder {
+    background-image: url("assets/dash-placeholder.svg");
+    background-size: contain;
+    height: 24px;
+  }
+
+  .empty-dash-drop-target {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.dash-item-container > StWidget {
+  &, &:rtl, .right & { padding: 4px 8px; }
+  .top &, .bottom & { padding: 6px; }
+}

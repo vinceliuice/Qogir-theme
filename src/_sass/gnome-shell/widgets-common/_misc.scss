@@ -1,0 +1,63 @@
+// Rubberband for select-area screenshots
+.select-area-rubberband {
+  background-color: transparentize($selected_bg_color,0.7);
+  border: 1px solid $selected_bg_color;
+}
+
+// User icon
+.user-icon {
+  background-size: contain;
+  color: $osd_fg_color;
+  border-radius: 99px;
+  border: 2px $osd_fg_color;
+  &:hover {
+    color: lighten($osd_fg_color,30%);
+  }
+
+  & StIcon {
+    background-color: transparentize($osd_fg_color,0.95);
+    border-radius: 99px;
+    padding: 12px; // 12px
+    width: 40px; height: 40px; // 40px;
+  }
+}
+
+.user-widget.vertical .user-icon {
+  icon-size: 128px; // 128px
+
+  & StIcon {
+    padding: 20px; // 20px
+    padding-top: 18px; // 18 px
+    padding-bottom: 22px; // 22px
+    width: 88px; height: 88px; // 88px;
+  }
+}
+
+.user-widget.horizontal .user-icon {
+  icon-size: 64px; // 64px
+
+  & StIcon {
+    padding: 12px; // 12px
+    width: 40px; height: 40px; // 40px;
+  }
+}
+
+.lightbox { background-color: black; }
+.flashspot { background-color: white; }
+
+
+// Hidden
+.hidden { color: rgba(0,0,0,0);}
+
+// Caps-lock warning
+.caps-lock-warning-label {
+  text-align: center;
+  padding-bottom: 8px;
+  @include fontsize($font-size - 1);
+  color: $warning_color;
+}
+
+/* Workspace animation */
+.workspace-animation {
+  background-color: $osd_bg_color;
+}
