@@ -41,19 +41,27 @@
     color: $fg_color;
   }
 
-  &:active {
-    background-color: $selected_bg_color;
-    color: $selected_fg_color;
-
-    .message-content,
-    .message-title,
-    .message-secondary-bin > .event-time,
-    .message-close-button {
-      color: $selected_fg_color;
-    }
+  &:hover {
+    background-color: darken($bg_color, 5%);
+    color: $fg_color;
   }
 
-  .popup-menu & { box-shadow: none; }
+  .popup-menu & {
+    box-shadow: none;
+
+    &:active {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+
+      .message-content,
+      .message-title,
+      .message-body,
+      .message-secondary-bin > .event-time,
+      .message-close-button {
+        color: $selected_fg_color;
+      }
+    }
+  }
 
   // icon container
   .message-icon-bin {

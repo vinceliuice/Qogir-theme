@@ -52,7 +52,7 @@
 
   &:checked {
     background-color: darken($base_color, 3%);
-    box-shadow: inset 0 1px if($variant == 'light', $borders_color, gba(black, 0.35));
+    box-shadow: inset 0 1px if($variant == 'light', $borders_color, rgba(black, 0.5));
   }
 
   &.selected {
@@ -83,7 +83,7 @@
 .popup-sub-menu {
   background-color: darken($base_color, 3%);
   border: none;
-  box-shadow: inset 0 -1px if($variant == 'light', $borders_color, gba(black, 0.35));
+  box-shadow: inset 0 -1px if($variant == 'light', $borders_color, rgba(black, 0.5));
 }
 
 // container for radio and check boxes

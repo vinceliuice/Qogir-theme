@@ -810,20 +810,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #464853;
 }
 
-.message:active {
+.popup-menu .message {
+  box-shadow: none;
+}
+
+.popup-menu .message:active {
   background-color: #fb8441;
   color: #ffffff;
 }
 
-.message:active .message-content,
-.message:active .message-title,
-.message:active .message-secondary-bin > .event-time,
-.message:active .message-close-button {
+.popup-menu .message:active .message-content,
+.popup-menu .message:active .message-title,
+.popup-menu .message:active .message-secondary-bin > .event-time,
+.popup-menu .message:active .message-close-button {
   color: #ffffff;
-}
-
-.popup-menu .message {
-  box-shadow: none;
 }
 
 .message .message-icon-bin {
@@ -2962,12 +2962,13 @@ StWidget.focused .app-well-app-running-dot {
 #overview .app-view-control {
   padding: 6px 48px;
   margin: 0;
+  background-clip: padding-box;
   text-shadow: none;
   color: #D3DAE3;
   border: 1px solid #333641;
   background-color: #282A33;
   box-shadow: none;
-  border-color: rgba(0, 0, 0, 0.65);
+  border-color: rgba(0, 0, 0, 0.75);
 }
 
 #overview .app-view-control:hover {
@@ -2976,12 +2977,13 @@ StWidget.focused .app-well-app-running-dot {
   border-color: #3e4250;
   background-color: #333641;
   box-shadow: none;
-  border-color: rgba(0, 0, 0, 0.65);
+  border-color: rgba(0, 0, 0, 0.75);
 }
 
 #overview .app-view-control:checked {
   color: #ffffff;
   background-color: #fb8441;
+  border-color: rgba(0, 0, 0, 0.75);
 }
 
 #overview .app-view-control:first-child:ltr, #overview .app-view-control:last-child:rtl {

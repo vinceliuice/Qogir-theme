@@ -8,18 +8,20 @@
   .app-view-control {
     padding: 6px 48px;
     margin: 0;
+    background-clip: padding-box;
 
     @include button(osd);
-    border-color: rgba(black, 0.65);
+    border-color: rgba(black, 0.75);
 
     &:hover {
       @include button(osd-hover);
-      border-color: rgba(black, 0.65);
+      border-color: rgba(black, 0.75);
     }
 
     &:checked {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
+      border-color: rgba(black, 0.75);
     }
 
     &:first-child:ltr,

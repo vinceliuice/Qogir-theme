@@ -810,20 +810,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #464853;
 }
 
-.message:active {
+.popup-menu .message {
+  box-shadow: none;
+}
+
+.popup-menu .message:active {
   background-color: #2eb398;
   color: #ffffff;
 }
 
-.message:active .message-content,
-.message:active .message-title,
-.message:active .message-secondary-bin > .event-time,
-.message:active .message-close-button {
+.popup-menu .message:active .message-content,
+.popup-menu .message:active .message-title,
+.popup-menu .message:active .message-secondary-bin > .event-time,
+.popup-menu .message:active .message-close-button {
   color: #ffffff;
-}
-
-.popup-menu .message {
-  box-shadow: none;
 }
 
 .message .message-icon-bin {

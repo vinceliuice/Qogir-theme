@@ -87,22 +87,40 @@ install() {
   cp -r ${SRC_DIR}/src/gtk-2.0/menubar-toolbar${color}.rc                            ${THEME_DIR}/gtk-2.0/menubar-toolbar.rc
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
-  cp -r ${SRC_DIR}/src/gtk-3.0/assets/assets${theme}                                 ${THEME_DIR}/gtk-3.0/assets
+  cp -r ${SRC_DIR}/src/gtk/assets/assets${theme}                                     ${THEME_DIR}/gtk-3.0/assets
 
-  if [[ -f ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${logo}.svg ]] ; then
-    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-${logo}.svg                       ${THEME_DIR}/gtk-3.0/assets/logo.svg
-    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@2-${logo}.svg                     ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
+  if [[ -f ${SRC_DIR}/src/gtk/assets/logos/logo-${logo}.svg ]] ; then
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo-${logo}.svg                           ${THEME_DIR}/gtk-3.0/assets/logo.svg
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo@2-${logo}.svg                         ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
   else
     echo "${logo} icon not supported, default icon will install..."
-    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo-.svg                              ${THEME_DIR}/gtk-3.0/assets/logo.svg
-    cp -r ${SRC_DIR}/src/gtk-3.0/assets/logos/logo@2-.svg                            ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo-.svg                                  ${THEME_DIR}/gtk-3.0/assets/logo.svg
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo@2-.svg                                ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
   fi
 
-  cp -r ${SRC_DIR}/src/gtk-3.0/assets/assets-common/*                                ${THEME_DIR}/gtk-3.0/assets
-  cp -r ${SRC_DIR}/src/gtk-3.0/theme${theme}/gtk${win}${color}.css                   ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -r ${SRC_DIR}/src/gtk/assets/assets-common/*                                    ${THEME_DIR}/gtk-3.0/assets
+  cp -r ${SRC_DIR}/src/gtk/theme${theme}-3.0/gtk${win}${color}.css                   ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -r ${SRC_DIR}/src/gtk-3.0/theme${theme}/gtk${win}-dark.css                      ${THEME_DIR}/gtk-3.0/gtk-dark.css
-  cp -r ${SRC_DIR}/src/gtk-3.0/assets/thumbnail${theme}${ELSE_DARK}.png              ${THEME_DIR}/gtk-3.0/thumbnail.png
+  cp -r ${SRC_DIR}/src/gtk/theme${theme}-3.0/gtk${win}-dark.css                      ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -r ${SRC_DIR}/src/gtk/assets/thumbnail${theme}${ELSE_DARK}.png                  ${THEME_DIR}/gtk-3.0/thumbnail.png
+
+  mkdir -p                                                                           ${THEME_DIR}/gtk-4.0
+  cp -r ${SRC_DIR}/src/gtk/assets/assets${theme}                                     ${THEME_DIR}/gtk-4.0/assets
+
+  if [[ -f ${SRC_DIR}/src/gtk/assets/logos/logo-${logo}.svg ]] ; then
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo-${logo}.svg                           ${THEME_DIR}/gtk-4.0/assets/logo.svg
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo@2-${logo}.svg                         ${THEME_DIR}/gtk-4.0/assets/logo@2.svg
+  else
+    echo "${logo} icon not supported, default icon will install..."
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo-.svg                                  ${THEME_DIR}/gtk-4.0/assets/logo.svg
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo@2-.svg                                ${THEME_DIR}/gtk-4.0/assets/logo@2.svg
+  fi
+
+  cp -r ${SRC_DIR}/src/gtk/assets/assets-common/*                                    ${THEME_DIR}/gtk-4.0/assets
+  cp -r ${SRC_DIR}/src/gtk/theme${theme}-4.0/gtk${win}${color}.css                   ${THEME_DIR}/gtk-4.0/gtk.css
+  [[ ${color} != '-dark' ]] && \
+  cp -r ${SRC_DIR}/src/gtk/theme${theme}-4.0/gtk${win}-dark.css                      ${THEME_DIR}/gtk-4.0/gtk-dark.css
+  cp -r ${SRC_DIR}/src/gtk/assets/thumbnail${theme}${ELSE_DARK}.png                  ${THEME_DIR}/gtk-4.0/thumbnail.png
 
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
   cp -r ${SRC_DIR}/src/gnome-shell/common-assets                                     ${THEME_DIR}/gnome-shell/assets
