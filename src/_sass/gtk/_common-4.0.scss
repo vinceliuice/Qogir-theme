@@ -359,7 +359,6 @@ entry, %entry {
   }
 
   progress > trough > progress {
-    margin: 0 -6px;
     border-radius: 0;
     border-width: 0 0 2px;
     border-color: $progress_color;
@@ -442,7 +441,7 @@ button {
 
   &:hover {
     @include button(hover);
-    -gtk-icon-effect: highlight;
+    // -gtk-icon-effect: highlight;
   }
 
   &:active, &:checked {
@@ -618,7 +617,6 @@ button {
     min-width: 24px;
     padding: 2px;
     border-radius: 100px;
-    outline-radius: 100px;
 
     @if $variant=='dark' {
       &:checked, &:active { border-color: $borders_color; }
@@ -1327,7 +1325,7 @@ headerbar,
       box-shadow: none;
       padding-left: 10px;
       padding-right: 10px;
-      GtkArrow { -GtkArrow-arrow-scaling: 1; }
+
       .arrow {
         -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
       }
@@ -2675,22 +2673,7 @@ scale {
   min-width: 15px;
   padding: 3px;
 
-  &.horizontal {
-    > trough { padding: 0 4px; }
-    > trough > fill,
-    > trough > highlight { margin: 0 -4px; }
-  }
-
-  &.vertical {
-    > trough { padding: 4px 0; }
-    > trough > fill,
-    > trough > highlight { margin: -4px 0; }
-  }
-
   > trough {
-    > fill,
-    > highlight { margin: -1px; }
-
     > slider {
       min-height: 15px;
       min-width: 15px;
@@ -2707,7 +2690,6 @@ scale {
     > trough > highlight,
     > trough {
       border-radius: 5px;
-      outline-radius: 7px;
     }
   }
 
@@ -2716,8 +2698,6 @@ scale {
     $_scale_trough_bg: $borders_color;
 
     outline-offset: 2px;
-    outline-radius: 4.5px;
-
     border-radius: 2.5px;
     background-color: $_scale_trough_bg;
 
@@ -2907,9 +2887,6 @@ progressbar {
       &, > progress { min-width: 6px; }
     }
   }
-
-  &.horizontal > trough > progress { margin: 0 -1px; } // the progress node is positioned after the trough border
-  &.vertical > trough > progress { margin: -1px 0; }   // this moves it over it.
 
   &.osd {
     min-width: 3px;
@@ -3409,11 +3386,6 @@ window.dialog.message { // Message Dialog styling
       border-top: 1px solid $borders_color;
       background-color: $dialog_bg;
       color: $dialog_fg;
-
-      &:active, &:checked {
-        transition: background-color 0.00001s 0.2s;
-        animation: ripple_effect 0.2s cubic-bezier(0.0, 0.0, 0.2, 1);
-      }
     }
   }
 
@@ -3621,7 +3593,6 @@ placessidebar {
       padding: 0;
       @extend %flat_button;
       border-radius: 100%;
-      outline-radius: 100%;
 
       &:not(:hover):not(:active) > image { opacity: 0.5 };
     }
@@ -3962,7 +3933,7 @@ colorchooser .popover.osd { border-radius: 3px; }
 .content-view {
   background-color: $base_color;
 
-  &:hover { -gtk-icon-effect: highlight; }
+  // &:hover { -gtk-icon-effect: highlight; }
 
   .tile {
     margin: 2px;

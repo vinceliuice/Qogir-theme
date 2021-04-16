@@ -448,7 +448,6 @@ list.gedit-document-panel {
     padding: 0;
     margin: 0 $cont_padding;
     border-radius: 100px;
-    -gtk-outline-radius: 100px;
     border: none;
     background: none;
 
@@ -977,6 +976,8 @@ overlay > infobar.info.top {
 // box.horizontal, // gnome 3.30
 hdyleaflet, // > 3.32
 leaflet.unfolded {  // > 3.38
+  > headerbar:first-child { @extend %side_headerbar; }
+
   > stack > frame > grid.vertical {
     @extend %side_background;
 
@@ -1044,7 +1045,6 @@ leaflet.unfolded {  // > 3.38
       box-shadow: none;
       padding-left: 10px;
       padding-right: 10px;
-      GtkArrow { -GtkArrow-arrow-scaling: 1; }
 
       .arrow {
         -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');

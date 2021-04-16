@@ -413,7 +413,6 @@ entry > progress, spinbutton.vertical > text > progress, spinbutton:not(.vertica
 }
 
 entry progress > trough > progress, spinbutton.vertical > text progress > trough > progress, spinbutton:not(.vertical) > text progress > trough > progress {
-  margin: 0 -6px;
   border-radius: 0;
   border-width: 0 0 2px;
   border-color: #5294e2;
@@ -509,7 +508,6 @@ button:hover {
   color: #23242a;
   border-color: rgba(0, 0, 0, 0.15);
   background-color: white;
-  -gtk-icon-effect: highlight;
 }
 
 
@@ -828,7 +826,6 @@ button.close {
   min-width: 24px;
   padding: 2px;
   border-radius: 100px;
-  outline-radius: 100px;
 }
 
 popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button label, button.nautilus-circular-button.image-button label, button.circular label,
@@ -1913,10 +1910,6 @@ headerbar.selection-mode .selection-menu {
   box-shadow: none;
   padding-left: 10px;
   padding-right: 10px;
-}
-
-headerbar.selection-mode .selection-menu GtkArrow {
-  -GtkArrow-arrow-scaling: 1;
 }
 
 headerbar.selection-mode .selection-menu .arrow {
@@ -3606,29 +3599,6 @@ scale {
   padding: 3px;
 }
 
-scale.horizontal > trough {
-  padding: 0 4px;
-}
-
-scale.horizontal > trough > fill,
-scale.horizontal > trough > highlight {
-  margin: 0 -4px;
-}
-
-scale.vertical > trough {
-  padding: 4px 0;
-}
-
-scale.vertical > trough > fill,
-scale.vertical > trough > highlight {
-  margin: -4px 0;
-}
-
-scale > trough > fill,
-scale > trough > highlight {
-  margin: -1px;
-}
-
 scale > trough > slider {
   min-height: 15px;
   min-width: 15px;
@@ -3643,12 +3613,10 @@ scale.fine-tune > trough > fill,
 scale.fine-tune > trough > highlight,
 scale.fine-tune > trough {
   border-radius: 5px;
-  outline-radius: 7px;
 }
 
 scale > trough {
   outline-offset: 2px;
-  outline-radius: 4.5px;
   border-radius: 2.5px;
   background-color: rgba(0, 0, 0, 0.15);
 }
@@ -3850,14 +3818,6 @@ progressbar.vertical > trough, progressbar.vertical > trough > progress {
   min-width: 6px;
 }
 
-progressbar.horizontal > trough > progress {
-  margin: 0 -1px;
-}
-
-progressbar.vertical > trough > progress {
-  margin: -1px 0;
-}
-
 progressbar.osd {
   min-width: 3px;
   min-height: 3px;
@@ -4014,40 +3974,40 @@ frame > label {
 }
 
 scrolledwindow overshoot.top {
-  background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(rgba(82, 148, 226, 0.2)), to(rgba(82, 148, 226, 0)));
-  background-size: 100% 60%;
+  background-image: radial-gradient(farthest-side at top, rgba(0, 0, 0, 0.15) 85%, rgba(0, 0, 0, 0)), radial-gradient(farthest-side at top, rgba(70, 72, 83, 0.07), rgba(70, 72, 83, 0));
+  background-size: 100% 3%, 100% 50%;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: top;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
 scrolledwindow overshoot.bottom {
-  background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(rgba(82, 148, 226, 0.2)), to(rgba(82, 148, 226, 0)));
-  background-size: 100% 60%;
+  background-image: radial-gradient(farthest-side at bottom, rgba(0, 0, 0, 0.15) 85%, rgba(0, 0, 0, 0)), radial-gradient(farthest-side at bottom, rgba(70, 72, 83, 0.07), rgba(70, 72, 83, 0));
+  background-size: 100% 3%, 100% 50%;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: bottom;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
 scrolledwindow overshoot.left {
-  background-image: -gtk-gradient(radial, left center, 0, left center, 0.6, from(rgba(82, 148, 226, 0.2)), to(rgba(82, 148, 226, 0)));
-  background-size: 60% 100%;
+  background-image: radial-gradient(farthest-side at left, rgba(0, 0, 0, 0.15) 85%, rgba(0, 0, 0, 0)), radial-gradient(farthest-side at left, rgba(70, 72, 83, 0.07), rgba(70, 72, 83, 0));
+  background-size: 3% 100%, 50% 100%;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
 scrolledwindow overshoot.right {
-  background-image: -gtk-gradient(radial, right center, 0, right center, 0.6, from(rgba(82, 148, 226, 0.2)), to(rgba(82, 148, 226, 0)));
-  background-size: 60% 100%;
+  background-image: radial-gradient(farthest-side at right, rgba(0, 0, 0, 0.15) 85%, rgba(0, 0, 0, 0)), radial-gradient(farthest-side at right, rgba(70, 72, 83, 0.07), rgba(70, 72, 83, 0));
+  background-size: 3% 100%, 50% 100%;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: right;
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -4413,11 +4373,6 @@ window.dialog.message .dialog-action-area button {
   color: rgba(62, 67, 91, 0.8);
 }
 
-window.dialog.message .dialog-action-area button:active, window.dialog.message .dialog-action-area button:checked {
-  transition: background-color 0.00001s 0.2s;
-  animation: ripple_effect 0.2s cubic-bezier(0, 0, 0.2, 1);
-}
-
 window.dialog.message .dialog-action-area button:not(.suggested-action):not(.destructive-action):hover {
   background-color: rgba(62, 67, 91, 0.06);
 }
@@ -4594,7 +4549,6 @@ button.sidebar-button {
   margin-bottom: 2px;
   padding: 0;
   border-radius: 100%;
-  outline-radius: 100%;
 }
 
 button.sidebar-button:not(:hover):not(:active) > image {
@@ -4932,10 +4886,6 @@ colorchooser .popover.osd {
 
 .content-view {
   background-color: #ffffff;
-}
-
-.content-view:hover {
-  -gtk-icon-effect: highlight;
 }
 
 .content-view .tile {
@@ -5622,7 +5572,6 @@ eog-thumb-nav scrolledwindow, eog-thumb-nav scrolledwindow.frame,
 
 eog-thumb-nav button,
 #eog-thumb-nav button {
-  -gtk-outline-radius: 2px;
   border-radius: 2px;
   border-top: none;
 }
@@ -5792,7 +5741,6 @@ layouttab {
 
 layout {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  -PnlDockBin-handle-size: 1;
 }
 
 eggsearchbar box.search-bar {
@@ -5836,7 +5784,6 @@ docktabstrip docktab:checked {
 
 dockbin {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  -PnlDockBin-handle-size: 1;
 }
 
 dockpaned {
@@ -6093,7 +6040,6 @@ gf-candidate-box:hover, gf-candidate-box:selected {
 
 headerbar > button.flat.popup.title-menu-button.toggle {
   border-radius: 2px;
-  -gtk-outline-radius: 2px;
 }
 
 headerbar > button.flat.popup.title-menu-button.toggle > grid .title {
@@ -6307,7 +6253,6 @@ popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical scro
   padding: 4px;
   margin: 0 6px;
   border-radius: 100px;
-  -gtk-outline-radius: 100px;
 }
 
 popover.background > scrolledwindow > viewport.frame > list > row.activatable {
@@ -6676,97 +6621,113 @@ window.background.csd > leaflet > box.vertical > searchbar entry image:disabled,
   color: rgba(246, 246, 251, 0.35);
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.close, .selection-mode leaflet.unfolded headerbar button.titlebutton.close, hdyleaflet > headerbar:first-child button.titlebutton.close, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.close, .geary-titlebar-left button.titlebutton.close, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.close,
+.selection-mode hdyleaflet headerbar button.titlebutton.close, .selection-mode leaflet.unfolded headerbar button.titlebutton.close, hdyleaflet > headerbar:first-child button.titlebutton.close,
+leaflet.unfolded > headerbar:first-child button.titlebutton.close, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.close, .geary-titlebar-left button.titlebutton.close, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.close,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.close,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.close, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.close, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.close, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.close {
   background-image: -gtk-scaled(url("assets/titlebutton-close-dark-win.png"), url("assets/titlebutton-close-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.close:backdrop, .selection-mode leaflet.unfolded headerbar button.titlebutton.close:backdrop, hdyleaflet > headerbar:first-child button.titlebutton.close:backdrop, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.close:backdrop, .geary-titlebar-left button.titlebutton.close:backdrop, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.close:backdrop,
+.selection-mode hdyleaflet headerbar button.titlebutton.close:backdrop, .selection-mode leaflet.unfolded headerbar button.titlebutton.close:backdrop, hdyleaflet > headerbar:first-child button.titlebutton.close:backdrop,
+leaflet.unfolded > headerbar:first-child button.titlebutton.close:backdrop, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.close:backdrop, .geary-titlebar-left button.titlebutton.close:backdrop, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.close:backdrop,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.close:backdrop,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.close:backdrop, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.close:backdrop, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.close:backdrop, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.close:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-close-backdrop-dark-win.png"), url("assets/titlebutton-close-backdrop-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.close:hover, .selection-mode leaflet.unfolded headerbar button.titlebutton.close:hover, hdyleaflet > headerbar:first-child button.titlebutton.close:hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.close:hover, .geary-titlebar-left button.titlebutton.close:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.close:hover,
+.selection-mode hdyleaflet headerbar button.titlebutton.close:hover, .selection-mode leaflet.unfolded headerbar button.titlebutton.close:hover, hdyleaflet > headerbar:first-child button.titlebutton.close:hover,
+leaflet.unfolded > headerbar:first-child button.titlebutton.close:hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.close:hover, .geary-titlebar-left button.titlebutton.close:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.close:hover,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.close:hover,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.close:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.close:hover, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.close:hover, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.close:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-close-hover-dark-win.png"), url("assets/titlebutton-close-hover-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.close:active, .selection-mode leaflet.unfolded headerbar button.titlebutton.close:active, hdyleaflet > headerbar:first-child button.titlebutton.close:active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.close:active, .geary-titlebar-left button.titlebutton.close:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.close:active,
+.selection-mode hdyleaflet headerbar button.titlebutton.close:active, .selection-mode leaflet.unfolded headerbar button.titlebutton.close:active, hdyleaflet > headerbar:first-child button.titlebutton.close:active,
+leaflet.unfolded > headerbar:first-child button.titlebutton.close:active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.close:active, .geary-titlebar-left button.titlebutton.close:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.close:active,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.close:active,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.close:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.close:active, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.close:active, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.close:active {
   background-image: -gtk-scaled(url("assets/titlebutton-close-active-dark-win.png"), url("assets/titlebutton-close-active-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.maximize, .selection-mode leaflet.unfolded headerbar button.titlebutton.maximize, hdyleaflet > headerbar:first-child button.titlebutton.maximize, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.maximize, .geary-titlebar-left button.titlebutton.maximize, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.maximize,
+.selection-mode hdyleaflet headerbar button.titlebutton.maximize, .selection-mode leaflet.unfolded headerbar button.titlebutton.maximize, hdyleaflet > headerbar:first-child button.titlebutton.maximize,
+leaflet.unfolded > headerbar:first-child button.titlebutton.maximize, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.maximize, .geary-titlebar-left button.titlebutton.maximize, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.maximize,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.maximize, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-dark-win.png"), url("assets/titlebutton-maximize-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.maximize:backdrop, .selection-mode leaflet.unfolded headerbar button.titlebutton.maximize:backdrop, hdyleaflet > headerbar:first-child button.titlebutton.maximize:backdrop, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.maximize:backdrop, .geary-titlebar-left button.titlebutton.maximize:backdrop, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.maximize:backdrop,
+.selection-mode hdyleaflet headerbar button.titlebutton.maximize:backdrop, .selection-mode leaflet.unfolded headerbar button.titlebutton.maximize:backdrop, hdyleaflet > headerbar:first-child button.titlebutton.maximize:backdrop,
+leaflet.unfolded > headerbar:first-child button.titlebutton.maximize:backdrop, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.maximize:backdrop, .geary-titlebar-left button.titlebutton.maximize:backdrop, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.maximize:backdrop,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:backdrop,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.maximize:backdrop, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:backdrop, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:backdrop, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-backdrop-dark-win.png"), url("assets/titlebutton-maximize-backdrop-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.maximize:hover, .selection-mode leaflet.unfolded headerbar button.titlebutton.maximize:hover, hdyleaflet > headerbar:first-child button.titlebutton.maximize:hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.maximize:hover, .geary-titlebar-left button.titlebutton.maximize:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.maximize:hover,
+.selection-mode hdyleaflet headerbar button.titlebutton.maximize:hover, .selection-mode leaflet.unfolded headerbar button.titlebutton.maximize:hover, hdyleaflet > headerbar:first-child button.titlebutton.maximize:hover,
+leaflet.unfolded > headerbar:first-child button.titlebutton.maximize:hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.maximize:hover, .geary-titlebar-left button.titlebutton.maximize:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.maximize:hover,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:hover,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.maximize:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:hover, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:hover, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-hover-dark-win.png"), url("assets/titlebutton-maximize-hover-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.maximize:active, .selection-mode leaflet.unfolded headerbar button.titlebutton.maximize:active, hdyleaflet > headerbar:first-child button.titlebutton.maximize:active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.maximize:active, .geary-titlebar-left button.titlebutton.maximize:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.maximize:active,
+.selection-mode hdyleaflet headerbar button.titlebutton.maximize:active, .selection-mode leaflet.unfolded headerbar button.titlebutton.maximize:active, hdyleaflet > headerbar:first-child button.titlebutton.maximize:active,
+leaflet.unfolded > headerbar:first-child button.titlebutton.maximize:active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.maximize:active, .geary-titlebar-left button.titlebutton.maximize:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.maximize:active,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.maximize:active,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.maximize:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.maximize:active, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.maximize:active, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.maximize:active {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-active-dark-win.png"), url("assets/titlebutton-maximize-active-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.minimize, .selection-mode leaflet.unfolded headerbar button.titlebutton.minimize, hdyleaflet > headerbar:first-child button.titlebutton.minimize, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.minimize, .geary-titlebar-left button.titlebutton.minimize, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.minimize,
+.selection-mode hdyleaflet headerbar button.titlebutton.minimize, .selection-mode leaflet.unfolded headerbar button.titlebutton.minimize, hdyleaflet > headerbar:first-child button.titlebutton.minimize,
+leaflet.unfolded > headerbar:first-child button.titlebutton.minimize, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.minimize, .geary-titlebar-left button.titlebutton.minimize, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.minimize,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.minimize,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.minimize, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.minimize, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.minimize, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.minimize {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-dark-win.png"), url("assets/titlebutton-minimize-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.minimize:backdrop, .selection-mode leaflet.unfolded headerbar button.titlebutton.minimize:backdrop, hdyleaflet > headerbar:first-child button.titlebutton.minimize:backdrop, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.minimize:backdrop, .geary-titlebar-left button.titlebutton.minimize:backdrop, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.minimize:backdrop,
+.selection-mode hdyleaflet headerbar button.titlebutton.minimize:backdrop, .selection-mode leaflet.unfolded headerbar button.titlebutton.minimize:backdrop, hdyleaflet > headerbar:first-child button.titlebutton.minimize:backdrop,
+leaflet.unfolded > headerbar:first-child button.titlebutton.minimize:backdrop, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.minimize:backdrop, .geary-titlebar-left button.titlebutton.minimize:backdrop, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.minimize:backdrop,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.minimize:backdrop,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.minimize:backdrop, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.minimize:backdrop, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.minimize:backdrop, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.minimize:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-backdrop-dark-win.png"), url("assets/titlebutton-minimize-backdrop-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.minimize:hover, .selection-mode leaflet.unfolded headerbar button.titlebutton.minimize:hover, hdyleaflet > headerbar:first-child button.titlebutton.minimize:hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.minimize:hover, .geary-titlebar-left button.titlebutton.minimize:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.minimize:hover,
+.selection-mode hdyleaflet headerbar button.titlebutton.minimize:hover, .selection-mode leaflet.unfolded headerbar button.titlebutton.minimize:hover, hdyleaflet > headerbar:first-child button.titlebutton.minimize:hover,
+leaflet.unfolded > headerbar:first-child button.titlebutton.minimize:hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.minimize:hover, .geary-titlebar-left button.titlebutton.minimize:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.minimize:hover,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.minimize:hover,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.minimize:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.minimize:hover, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.minimize:hover, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.minimize:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-hover-dark-win.png"), url("assets/titlebutton-minimize-hover-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.minimize:active, .selection-mode leaflet.unfolded headerbar button.titlebutton.minimize:active, hdyleaflet > headerbar:first-child button.titlebutton.minimize:active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.minimize:active, .geary-titlebar-left button.titlebutton.minimize:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.minimize:active,
+.selection-mode hdyleaflet headerbar button.titlebutton.minimize:active, .selection-mode leaflet.unfolded headerbar button.titlebutton.minimize:active, hdyleaflet > headerbar:first-child button.titlebutton.minimize:active,
+leaflet.unfolded > headerbar:first-child button.titlebutton.minimize:active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.minimize:active, .geary-titlebar-left button.titlebutton.minimize:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.minimize:active,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.minimize:active,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.minimize:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.minimize:active, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.minimize:active, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.minimize:active {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-active-dark-win.png"), url("assets/titlebutton-minimize-active-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.restore, .selection-mode leaflet.unfolded headerbar button.titlebutton.restore, hdyleaflet > headerbar:first-child button.titlebutton.restore, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.restore, .geary-titlebar-left button.titlebutton.restore, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.restore,
+.selection-mode hdyleaflet headerbar button.titlebutton.restore, .selection-mode leaflet.unfolded headerbar button.titlebutton.restore, hdyleaflet > headerbar:first-child button.titlebutton.restore,
+leaflet.unfolded > headerbar:first-child button.titlebutton.restore, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.restore, .geary-titlebar-left button.titlebutton.restore, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.restore,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.restore,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.restore, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.restore, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.restore, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.restore {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-dark-win.png"), url("assets/titlebutton-restore-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.restore:backdrop, .selection-mode leaflet.unfolded headerbar button.titlebutton.restore:backdrop, hdyleaflet > headerbar:first-child button.titlebutton.restore:backdrop, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.restore:backdrop, .geary-titlebar-left button.titlebutton.restore:backdrop, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.restore:backdrop,
+.selection-mode hdyleaflet headerbar button.titlebutton.restore:backdrop, .selection-mode leaflet.unfolded headerbar button.titlebutton.restore:backdrop, hdyleaflet > headerbar:first-child button.titlebutton.restore:backdrop,
+leaflet.unfolded > headerbar:first-child button.titlebutton.restore:backdrop, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.restore:backdrop, .geary-titlebar-left button.titlebutton.restore:backdrop, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.restore:backdrop,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.restore:backdrop,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.restore:backdrop, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.restore:backdrop, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.restore:backdrop, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.restore:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop-dark-win.png"), url("assets/titlebutton-restore-backdrop-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.restore:hover, .selection-mode leaflet.unfolded headerbar button.titlebutton.restore:hover, hdyleaflet > headerbar:first-child button.titlebutton.restore:hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.restore:hover, .geary-titlebar-left button.titlebutton.restore:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.restore:hover,
+.selection-mode hdyleaflet headerbar button.titlebutton.restore:hover, .selection-mode leaflet.unfolded headerbar button.titlebutton.restore:hover, hdyleaflet > headerbar:first-child button.titlebutton.restore:hover,
+leaflet.unfolded > headerbar:first-child button.titlebutton.restore:hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.restore:hover, .geary-titlebar-left button.titlebutton.restore:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.restore:hover,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.restore:hover,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.restore:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.restore:hover, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.restore:hover, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.restore:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-hover-dark-win.png"), url("assets/titlebutton-restore-hover-dark-win@2.png"));
 }
 
-.selection-mode hdyleaflet headerbar button.titlebutton.restore:active, .selection-mode leaflet.unfolded headerbar button.titlebutton.restore:active, hdyleaflet > headerbar:first-child button.titlebutton.restore:active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.restore:active, .geary-titlebar-left button.titlebutton.restore:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.restore:active,
+.selection-mode hdyleaflet headerbar button.titlebutton.restore:active, .selection-mode leaflet.unfolded headerbar button.titlebutton.restore:active, hdyleaflet > headerbar:first-child button.titlebutton.restore:active,
+leaflet.unfolded > headerbar:first-child button.titlebutton.restore:active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.restore:active, .geary-titlebar-left button.titlebutton.restore:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.restore:active,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.restore:active,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.restore:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.restore:active, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.restore:active, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.restore:active {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-active-dark-win.png"), url("assets/titlebutton-restore-active-dark-win@2.png"));
@@ -6778,8 +6739,10 @@ window.background.csd.fullscreen > headerbar.titlebar > hdyleaflet > headerbar:f
 window.background.csd.fullscreen > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, window.background.csd.maximized > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize,
 window.background.csd.maximized > headerbar.titlebar > hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize,
 window.background.csd.maximized > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, window.background.csd.fullscreen > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, window.background.csd.maximized > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, window.fullscreen.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize,
-window.maximized.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .fullscreen hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .fullscreen .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize, .fullscreen .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize, .fullscreen window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize,
-.fullscreen window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .fullscreen .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize, .fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .maximized hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .maximized .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize, .maximized .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize, .maximized window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize,
+window.maximized.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .fullscreen hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize,
+.fullscreen leaflet.unfolded > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .fullscreen .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize, .fullscreen .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize, .fullscreen window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize,
+.fullscreen window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .fullscreen .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize, .fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .maximized hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize,
+.maximized leaflet.unfolded > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .maximized .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize, .maximized .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize, .maximized window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize,
 .maximized window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .maximized window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, .maximized .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize, .maximized window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize, window.org-gnome-gedit .maximized .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-dark-win.png"), url("assets/titlebutton-restore-dark-win@2.png"));
 }
@@ -6790,8 +6753,10 @@ window.background.csd.fullscreen > headerbar.titlebar > hdyleaflet > headerbar:f
 window.background.csd.fullscreen > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, window.background.csd.maximized > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop,
 window.background.csd.maximized > headerbar.titlebar > hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop,
 window.background.csd.maximized > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, window.background.csd.fullscreen > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, window.background.csd.maximized > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, window.fullscreen.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop,
-window.maximized.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop,
-.fullscreen window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop,
+window.maximized.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop,
+.fullscreen leaflet.unfolded > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop,
+.fullscreen window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize:backdrop, .fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop,
+.maximized leaflet.unfolded > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop,
 .maximized window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize:backdrop, .maximized window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop, window.org-gnome-gedit .maximized .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop-dark-win.png"), url("assets/titlebutton-restore-backdrop-dark-win@2.png"));
 }
@@ -6802,8 +6767,10 @@ window.background.csd.fullscreen > headerbar.titlebar > hdyleaflet > headerbar:f
 window.background.csd.fullscreen > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, window.background.csd.maximized > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover,
 window.background.csd.maximized > headerbar.titlebar > hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover,
 window.background.csd.maximized > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, window.background.csd.fullscreen > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, window.background.csd.maximized > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, window.fullscreen.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover,
-window.maximized.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover,
-.fullscreen window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .maximized hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .maximized .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:hover, .maximized .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:hover, .maximized window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover,
+window.maximized.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover,
+.fullscreen leaflet.unfolded > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover,
+.fullscreen window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize:hover, .fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .maximized hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover,
+.maximized leaflet.unfolded > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .maximized .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:hover, .maximized .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:hover, .maximized window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover,
 .maximized window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .maximized window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, .maximized .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize:hover, .maximized window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover, window.org-gnome-gedit .maximized .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-hover-dark-win.png"), url("assets/titlebutton-restore-hover-dark-win@2.png"));
 }
@@ -6814,13 +6781,16 @@ window.background.csd.fullscreen > headerbar.titlebar > hdyleaflet > headerbar:f
 window.background.csd.fullscreen > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, window.background.csd.maximized > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active,
 window.background.csd.maximized > headerbar.titlebar > hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active,
 window.background.csd.maximized > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, window.background.csd.fullscreen > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, window.background.csd.maximized > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, window.fullscreen.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active,
-window.maximized.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .fullscreen hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .fullscreen .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:active, .fullscreen .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:active, .fullscreen window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active,
-.fullscreen window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .fullscreen .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize:active, .fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .maximized hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .maximized .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:active, .maximized .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:active, .maximized window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active,
+window.maximized.org-gnome-gedit > .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .fullscreen hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active,
+.fullscreen leaflet.unfolded > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .fullscreen .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:active, .fullscreen .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:active, .fullscreen window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active,
+.fullscreen window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .fullscreen window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .fullscreen .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize:active, .fullscreen window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, window.org-gnome-gedit .fullscreen .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .maximized hdyleaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active,
+.maximized leaflet.unfolded > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .maximized .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) > box.left.horizontal button.titlebutton.maximize:active, .maximized .geary-titlebar-left > box.left.horizontal button.titlebutton.maximize:active, .maximized window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active,
 .maximized window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .maximized window.background.csd > box.titlebar.horizontal > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, .maximized .titlebar > headerbar.titlebar.tweak-titlebar-left > box.left.horizontal button.titlebutton.maximize:active, .maximized window.org-gnome-gedit .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active, window.org-gnome-gedit .maximized .titlebar > headerbar:first-child > box.left.horizontal button.titlebutton.maximize:active {
   background-image: -gtk-scaled(url("assets/titlebutton-restore-active-dark-win.png"), url("assets/titlebutton-restore-active-dark-win@2.png"));
 }
 
-hdyleaflet > headerbar:first-child, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child), .geary-titlebar-left, .geary-titlebar-left.geary-titlebar, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child,
+hdyleaflet > headerbar:first-child,
+leaflet.unfolded > headerbar:first-child, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child), .geary-titlebar-left, .geary-titlebar-left.geary-titlebar, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child, window.background.csd > box.titlebar.horizontal > headerbar:first-child, .titlebar > headerbar.titlebar.tweak-titlebar-left, window.org-gnome-gedit .titlebar > headerbar:first-child {
   color: rgba(246, 246, 251, 0.8);
@@ -6830,23 +6800,27 @@ window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child, wi
   box-shadow: none;
 }
 
-hdyleaflet > headerbar:first-child button:not(.titlebutton), .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button:not(.titlebutton), .geary-titlebar-left button:not(.titlebutton), window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton),
+hdyleaflet > headerbar:first-child button:not(.titlebutton),
+leaflet.unfolded > headerbar:first-child button:not(.titlebutton), .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button:not(.titlebutton), .geary-titlebar-left button:not(.titlebutton), window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton),
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton),
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button:not(.titlebutton), window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton), .titlebar > headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton), window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton) {
   color: rgba(246, 246, 251, 0.8);
   border: none;
 }
 
-hdyleaflet > headerbar:first-child button:not(.titlebutton):hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button:not(.titlebutton):hover, .geary-titlebar-left button:not(.titlebutton):hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):hover,
+hdyleaflet > headerbar:first-child button:not(.titlebutton):hover,
+leaflet.unfolded > headerbar:first-child button:not(.titlebutton):hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button:not(.titlebutton):hover, .geary-titlebar-left button:not(.titlebutton):hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):hover,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):hover,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button:not(.titlebutton):hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):hover, .titlebar > headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):hover, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.25);
 }
 
-hdyleaflet > headerbar:first-child button:not(.titlebutton):active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button:not(.titlebutton):active, .geary-titlebar-left button:not(.titlebutton):active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):active,
+hdyleaflet > headerbar:first-child button:not(.titlebutton):active,
+leaflet.unfolded > headerbar:first-child button:not(.titlebutton):active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button:not(.titlebutton):active, .geary-titlebar-left button:not(.titlebutton):active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):active,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):active,
-window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button:not(.titlebutton):active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):active, .titlebar > headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):active, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):active, hdyleaflet > headerbar:first-child button:not(.titlebutton):checked, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button:not(.titlebutton):checked, .geary-titlebar-left button:not(.titlebutton):checked, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):checked,
+window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button:not(.titlebutton):active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):active, .titlebar > headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):active, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):active, hdyleaflet > headerbar:first-child button:not(.titlebutton):checked,
+leaflet.unfolded > headerbar:first-child button:not(.titlebutton):checked, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button:not(.titlebutton):checked, .geary-titlebar-left button:not(.titlebutton):checked, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button:not(.titlebutton):checked,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button:not(.titlebutton):checked,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button:not(.titlebutton):checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button:not(.titlebutton):checked, .titlebar > headerbar.titlebar.tweak-titlebar-left button:not(.titlebutton):checked, window.org-gnome-gedit .titlebar > headerbar:first-child button:not(.titlebutton):checked {
   color: #ffffff;
@@ -6854,7 +6828,8 @@ window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child but
   background-color: #5294e2;
 }
 
-hdyleaflet > headerbar:first-child button.titlebutton.appmenu, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.appmenu, .geary-titlebar-left button.titlebutton.appmenu, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu,
+hdyleaflet > headerbar:first-child button.titlebutton.appmenu,
+leaflet.unfolded > headerbar:first-child button.titlebutton.appmenu, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.appmenu, .geary-titlebar-left button.titlebutton.appmenu, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.appmenu, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu {
   border: none;
@@ -6868,21 +6843,25 @@ window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child but
   background-position: center;
 }
 
-hdyleaflet > headerbar:first-child button.titlebutton.appmenu image, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.appmenu image, .geary-titlebar-left button.titlebutton.appmenu image, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu image,
+hdyleaflet > headerbar:first-child button.titlebutton.appmenu image,
+leaflet.unfolded > headerbar:first-child button.titlebutton.appmenu image, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.appmenu image, .geary-titlebar-left button.titlebutton.appmenu image, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu image,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu image,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.appmenu image, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu image, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu image, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu image {
   opacity: 0;
 }
 
-hdyleaflet > headerbar:first-child button.titlebutton.appmenu:hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.appmenu:hover, .geary-titlebar-left button.titlebutton.appmenu:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:hover,
+hdyleaflet > headerbar:first-child button.titlebutton.appmenu:hover,
+leaflet.unfolded > headerbar:first-child button.titlebutton.appmenu:hover, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.appmenu:hover, .geary-titlebar-left button.titlebutton.appmenu:hover, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:hover,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu:hover,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.appmenu:hover, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:hover, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:hover, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:hover {
   background-color: rgba(246, 246, 251, 0.15);
 }
 
-hdyleaflet > headerbar:first-child button.titlebutton.appmenu:checked, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.appmenu:checked, .geary-titlebar-left button.titlebutton.appmenu:checked, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:checked,
+hdyleaflet > headerbar:first-child button.titlebutton.appmenu:checked,
+leaflet.unfolded > headerbar:first-child button.titlebutton.appmenu:checked, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.appmenu:checked, .geary-titlebar-left button.titlebutton.appmenu:checked, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:checked,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu:checked,
-window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.appmenu:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:checked, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:checked, hdyleaflet > headerbar:first-child button.titlebutton.appmenu:active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.appmenu:active, .geary-titlebar-left button.titlebutton.appmenu:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:active,
+window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.appmenu:checked, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:checked, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:checked, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:checked, hdyleaflet > headerbar:first-child button.titlebutton.appmenu:active,
+leaflet.unfolded > headerbar:first-child button.titlebutton.appmenu:active, .geary-main-window > headerbar > leaflet > leaflet > headerbar:not(:last-child) button.titlebutton.appmenu:active, .geary-titlebar-left button.titlebutton.appmenu:active, window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child button.titlebutton.appmenu:active,
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child button.titlebutton.appmenu:active,
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child button.titlebutton.appmenu:active, window.background.csd > box.titlebar.horizontal > headerbar:first-child button.titlebutton.appmenu:active, .titlebar > headerbar.titlebar.tweak-titlebar-left button.titlebutton.appmenu:active, window.org-gnome-gedit .titlebar > headerbar:first-child button.titlebutton.appmenu:active {
   background-color: rgba(246, 246, 251, 0.25);
@@ -7119,7 +7098,6 @@ list.gedit-document-panel row button {
   padding: 0;
   margin: 0 6px;
   border-radius: 100px;
-  -gtk-outline-radius: 100px;
   border: none;
   background: none;
 }
@@ -7496,10 +7474,6 @@ leaflet.unfolded > separator.sidebar {
   box-shadow: none;
   padding-left: 10px;
   padding-right: 10px;
-}
-
-.selection-mode hdyleaflet headerbar .selection-menu GtkArrow, .selection-mode leaflet.unfolded headerbar .selection-menu GtkArrow {
-  -GtkArrow-arrow-scaling: 1;
 }
 
 .selection-mode hdyleaflet headerbar .selection-menu .arrow, .selection-mode leaflet.unfolded headerbar .selection-menu .arrow {
