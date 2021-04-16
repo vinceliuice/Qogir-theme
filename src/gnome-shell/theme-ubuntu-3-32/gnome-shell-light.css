@@ -810,6 +810,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #464853;
 }
 
+.message:hover {
+  background-color: #eaeef2;
+  color: #464853;
+}
+
 .popup-menu .message {
   box-shadow: none;
 }
@@ -821,6 +826,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .message:active .message-content,
 .popup-menu .message:active .message-title,
+.popup-menu .message:active .message-body,
 .popup-menu .message:active .message-secondary-bin > .event-time,
 .popup-menu .message:active .message-close-button {
   color: #ffffff;
