@@ -620,7 +620,9 @@ button {
     border-radius: 100px;
     outline-radius: 100px;
 
-    @if $variant=='dark' { &:checked, &:active { border-color: $borders_color; }}
+    @if $variant=='dark' {
+      &:checked, &:active { border-color: $borders_color; }
+    }
 
     label { padding: 0; }
   }
@@ -828,7 +830,7 @@ headerbar.titlebar {
 
 %linked_middle {
   border-radius: 0;
-  border-right: none;
+  border-right-style: none;
 }
 
 %linked {
@@ -842,15 +844,14 @@ headerbar.titlebar {
   &:last-child {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    border-right: 1px solid $borders_color;
+    border-right-style: solid;
   }
 
   &:only-child {
     border-radius: 3px;
-    border: 1px solid $borders_color;
+    border-style: solid;
   }
 }
-
 %linked_vertical_middle {
   border-radius: 0;
   border-bottom-style: none;
@@ -1023,7 +1024,7 @@ spinbutton {
       min-width: $medium_size;
     }
 
-    > button, > text { @extend %linked; min-height: 16px; }
+    > button, > text { @extend %linked; min-height: 24px; }
 
     &:dir(ltr) > text,
     &:dir(rtl) > button.up { border-radius: 3px 0 0 3px; }
@@ -1561,6 +1562,8 @@ headerbar {
 
 %header_button {
   @include button(header-normal);
+  background-clip: if($variant=='light', border-box, padding-box);
+  background-origin: if($variant=='light', border-box, padding-box);
 
   &:backdrop { opacity: 0.7; }
 
@@ -1569,6 +1572,7 @@ headerbar {
     transition: 200ms $ease-out-quad;
     @include button(header-active);
     background-clip: if($variant=='light', border-box, padding-box);
+    background-origin: if($variant=='light', border-box, padding-box);
   }
 
   &:disabled { @include button(header-insensitive); }
@@ -1692,21 +1696,19 @@ headerbar {
   // special case and stack-switchers
   stackswitcher.linked:not(.vertical) {
     > button {
-      border-right: none;
-      border-left: none;
+      border-right-width: 0;
+      border-left-width: 0;
       background-color: lighten($header_bg, 10%);
       color: $header_fg;
+      border-color: if($titlebar == 'light', $borders_color, lighten($header_bg, 20%));
 
-      &:first-child { border-left: 1px solid $borders_color; }
-      &:last-child { border-right: 1px solid $borders_color; }
+      &:first-child { border-left-width: 1px; }
+      &:last-child { border-right-width: 1px; }
 
-      border-color: if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
       &:hover { background-color: if($titlebar == 'light', darken($header_bg, 3%), lighten($header_bg, 15%)); }
       &:active, &:checked { @include button(header-active); }
       &:disabled { color: rgba($header_fg, 0.4); label { color: rgba($header_fg, 0.4); } }
     }
-
-    @include pathbar_linking_rules();
   }
 
   // Headerbar Suggested and Destructive Action buttons
@@ -3237,7 +3239,7 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
       &:disabled { @extend %undecorated_button; }
     }
     &:hover { @include button(osd-hover); }
-    &:active, &:checked { @include button(osd-active); background-clip: padding-box; }
+    &:active, &:checked { @include button(osd-active); }
     &:disabled { @include button(osd-insensitive); }
   }
 }
@@ -4269,7 +4271,15 @@ button.emoji-section {
   outline-offset: -4px;
   border: none;
 
-  &:focus { background-color: transparent; box-shadow: none; }
+  &:hover {
+    color: $fg_color;
+    background-color: rgba($fg_color, 0.1);
+  }
+
+  &:active {
+    color: $fg_color;
+    background-color: rgba($fg_color, 0.2);
+  }
 }
 
 popover.emoji-picker emoji {
@@ -4279,7 +4289,7 @@ popover.emoji-picker emoji {
 
   &:focus,
   &:hover {
-    background: $selected_bg_color;
+    background-color: $selected_bg_color;
   }
 }
 
@@ -4290,13 +4300,15 @@ emoji-completion-row > box {
 
 emoji-completion-row:focus,
 emoji-completion-row:hover {
-  background-color: $selected_bg_color;
-  color: $selected_fg_color;
+  background: none;
+  color: $fg_color;
+  box-shadow: none;
 }
 
-emoji-completion-row emoji:focus,
-emoji-completion-row emoji:hover {
-  background-color: $borders_color;
+emoji-completion-row emoji {
+  &:focus, &:hover {
+    background-color: $borders_color;
+  }
 }
 
 popover.entry-completion > contents {

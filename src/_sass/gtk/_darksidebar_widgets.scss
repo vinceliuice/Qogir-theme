@@ -60,7 +60,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 
   &:hover {
     color: $side_theme_alt_fg;
-    background-color: rgba($side_theme_alt_fg, 0.1);
+    background-color: mix($side_theme_alt_fg, $side_theme_bg, 10%);
   }
 
   &:disabled, label:disabled {
@@ -732,7 +732,7 @@ window.background.csd {
 
     &:selected {
       &, &:focus {
-        background-color: rgba($selected_bg_color, 0.25);
+        background-color: mix($selected_bg_color, darken($side_theme_bg, 3%), 25%);
         color: $selected_fg_color;
         &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
         &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
@@ -808,6 +808,12 @@ window.geary-main-window {
   }
 }
 
+.geary-main-window { // 40.0
+  > headerbar > leaflet > leaflet > headerbar:not(:last-child) {
+    @extend %side_headerbar;
+  }
+}
+
 window#GearyMainWindow.fullscreen,
 window#GearyMainWindow.maximized {
   .geary-titlebar-left {
@@ -846,9 +852,41 @@ window#GearyMainWindow.maximized {
   }
 
   separator { background: none; }
-  statusbar { @extend %side_background; }
+
+  statusbar {
+    @extend %side_background;
+  }
 }
 
+.geary-main-layout > leaflet > leaflet > box { // 40.0
+  @extend %side_background;
+
+  .geary-conversation-frame {
+    treeview.view {
+      &:hover { background-color: mix($fg_color, $base_color, 15%); }
+
+      &:selected {
+        &, &:focus {
+          background-color: mix($selected_bg_color, $base_color, 25%);
+          color: $fg_color;
+          &:dir(ltr) { box-shadow: inset -2px 0 $selected_bg_color; }
+          &:dir(rtl) { box-shadow: inset 2px 0 $selected_bg_color; }
+        }
+      }
+    }
+  }
+
+  .geary-folder-frame {
+    > border { @extend  %folder_frame_border; }
+    > scrolledwindow { @extend %folder_frame; }
+  }
+
+  separator { background: none; }
+
+  statusbar {
+    @extend %side_background;
+  }
+}
 // right-pane styling (current)
 stack#conversation_viewer {
   > grid.vertical > scrolledwindow.geary-conversation-scroller > viewport.frame {
