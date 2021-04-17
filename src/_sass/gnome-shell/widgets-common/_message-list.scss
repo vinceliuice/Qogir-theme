@@ -57,8 +57,11 @@
       .message-title,
       .message-body,
       .message-secondary-bin > .event-time,
-      .message-close-button {
+      .message-close-button,
+      .message-media-control {
         color: $selected_fg_color;
+
+        &:insensitive { color: rgba($selected_fg_color, 0.45); }
       }
     }
   }
@@ -147,9 +150,9 @@
 /* Media Controls */
 .message-media-control {
   margin: 18px 4px;
-  padding: 6px * 2 6px * 4;
+  padding: 10px;
   color: $alt_fg_color;
-  border-radius: 100px;
+  border-radius: 1000px;
 
   &:last-child:ltr { margin-right: 16px; padding-right: 8px; }
   &:last-child:rtl { margin-left: 16px; padding-left: 8px; }
@@ -157,12 +160,12 @@
   // uses $hover_bg_color since the media controls are in a notification_bubble
   &:hover {
     color: $fg_color;
-    background-color: $alt_bg_color;
+    background-color: rgba($fg_color, 0.15);
   }
 
   &:active {
-    background-color: $sec_bg_color;
     color: $fg_color;
+    background-color: rgba($fg_color, 0.25);
   }
 
   &:insensitive { color: $insensitive_fg_color; }

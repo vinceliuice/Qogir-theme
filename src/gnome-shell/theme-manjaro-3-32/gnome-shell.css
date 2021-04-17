@@ -828,8 +828,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu .message:active .message-title,
 .popup-menu .message:active .message-body,
 .popup-menu .message:active .message-secondary-bin > .event-time,
-.popup-menu .message:active .message-close-button {
+.popup-menu .message:active .message-close-button,
+.popup-menu .message:active .message-media-control {
   color: #ffffff;
+}
+
+.popup-menu .message:active .message-content:insensitive,
+.popup-menu .message:active .message-title:insensitive,
+.popup-menu .message:active .message-body:insensitive,
+.popup-menu .message:active .message-secondary-bin > .event-time:insensitive,
+.popup-menu .message:active .message-close-button:insensitive,
+.popup-menu .message:active .message-media-control:insensitive {
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .message .message-icon-bin {
@@ -910,9 +920,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Media Controls */
 .message-media-control {
   margin: 18px 4px;
-  padding: 12px 24px;
+  padding: 10px;
   color: rgba(70, 72, 83, 0.75);
-  border-radius: 100px;
+  border-radius: 1000px;
 }
 
 .message-media-control:last-child:ltr {
@@ -927,12 +937,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message-media-control:hover {
   color: #464853;
-  background-color: #eaeef2;
+  background-color: rgba(70, 72, 83, 0.15);
 }
 
 .message-media-control:active {
-  background-color: dif(true, #dae2e9, white);
   color: #464853;
+  background-color: rgba(70, 72, 83, 0.25);
 }
 
 .message-media-control:insensitive {
