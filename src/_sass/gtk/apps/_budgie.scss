@@ -108,17 +108,26 @@
     }
   }
 
-  treeview.view.sidebar,
-  scrolledwindow.sidebar { //AppMenu (Elementary)
-    // min-height: 36px;
+  treeview.view.sidebar { //AppMenu (budgie)
     background: none;
     border-right: none;
     color: $fg_color;
-    padding: 0 0;
 
     label { padding: 3px 8px; }
 
     &:hover { background-color: rgba($fg_color, 0.05); }
+  }
+
+  scrolledwindow.sidebar:not(.categories) { //AppMenu (Elementary)
+    background: none;
+    border-right: none;
+    color: $fg_color;
+
+    label { padding: 4px 6px; }
+
+    &:hover { background-color: rgba($fg_color, 0.05); }
+
+    &:active { background-color: rgba($fg_color, 0.1); }
 
     &:selected, &:selected:hover {
       color: $selected_fg_color;
@@ -129,6 +138,13 @@
   > frame.container > grid.horizontal > grid.horizontal {
     > widget > grid.horizontal > stack {
       border-top: 1px solid $borders_color;
+    }
+  }
+
+  &.bottom > frame.container > grid.horizontal > grid.horizontal {
+    > widget > grid.horizontal > stack {
+      border-top: none;
+      border-bottom: 1px solid $borders_color;
     }
   }
 
@@ -164,26 +180,25 @@
     .container { padding: 8px; }
 
     separator { margin: 4px 0; background-color: $borders_color; }
-
-    // top-row (user-name and avatar)
-    // > frame.container > box.vertical row.activatable:first-child {
-    //   .indicator-item {
-    //     border: 1px solid $sec_selected_bg_color;
-    //     background-color: $selected_bg_color;
-    //     &, arrow { @extend %selected_items; }
-    //   }
-    // }
   }
 
   &.sound-popover {
     separator { margin: 3px 0; background-color: $borders_color; }
+
+    buttonbox.linked > button {
+      border-color: $borders_color;
+    }
   }
 
   &.caffeine-popover {
-    .container { padding: 8px; }
+    .container { padding: 6px; }
   }
 
   &.night-light-indicator {
+    .container { padding: 6px; }
+  }
+
+  &.icon-popover {
     .container { padding: 6px; }
   }
 
@@ -454,11 +469,6 @@ popover.background.places-menu {
   // used to indicate unread notifications
   .alert { color: $success_color; }
 
-  // End Section needs to be fancy
-  // .end-region {
-  //   background-color: rgba(0,0,0,0.2);
-  // }
-
   // Tasklist
   #tasklist-button:not(.flat) {
     padding: 0 4px;
@@ -474,7 +484,6 @@ popover.background.places-menu {
   button.flat.launcher {
     padding: 0;
     @extend %flat_button;
-    @extend %underscores;
 
     // for indicator colors
     &:not(:checked) {
@@ -549,28 +558,6 @@ popover.background.places-menu {
 
     &:checked {
       > image { background-image: none; }
-    }
-  }
-}
-
-// draw underscores and dots
-@each $position, $_dot in (top, 4px 4px),
-                          (bottom, 4px 4px),
-                          (left, 4px 4px),
-                          (right, 4px 4px) {
-  .#{$position} .budgie-panel {
-
-    .unpinned button.flat.launcher,
-    .pinned button.flat.launcher.running,
-    .pinned button.launcher.running.sidebar-button {
-      > image {
-        background-size: #{$_dot};
-        background-position: #{$position} center;
-        background-image: -gtk-scaled(url("assets/selected-dot.png"),
-                                      url("assets/selected-dot@2.png"));
-      }
-
-      &:checked { > image { background-image: none; } }
     }
   }
 }

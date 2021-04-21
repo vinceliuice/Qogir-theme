@@ -7668,33 +7668,50 @@ MsdOsdWindow.background.osd .progressbar {
   box-shadow: none;
 }
 
-.budgie-popover treeview.view.sidebar,
-.budgie-popover scrolledwindow.sidebar {
+.budgie-popover treeview.view.sidebar {
   background: none;
   border-right: none;
   color: #e6ebef;
-  padding: 0 0;
 }
 
-.budgie-popover treeview.view.sidebar label,
-.budgie-popover scrolledwindow.sidebar label {
+.budgie-popover treeview.view.sidebar label {
   padding: 3px 8px;
 }
 
-.budgie-popover treeview.view.sidebar:hover,
-.budgie-popover scrolledwindow.sidebar:hover {
+.budgie-popover treeview.view.sidebar:hover {
   background-color: rgba(230, 235, 239, 0.05);
 }
 
-.budgie-popover treeview.view.sidebar:selected, .budgie-popover treeview.view.sidebar:selected:hover,
-.budgie-popover scrolledwindow.sidebar:selected,
-.budgie-popover scrolledwindow.sidebar:selected:hover {
+.budgie-popover scrolledwindow.sidebar:not(.categories) {
+  background: none;
+  border-right: none;
+  color: #e6ebef;
+}
+
+.budgie-popover scrolledwindow.sidebar:not(.categories) label {
+  padding: 4px 6px;
+}
+
+.budgie-popover scrolledwindow.sidebar:not(.categories):hover {
+  background-color: rgba(230, 235, 239, 0.05);
+}
+
+.budgie-popover scrolledwindow.sidebar:not(.categories):active {
+  background-color: rgba(230, 235, 239, 0.1);
+}
+
+.budgie-popover scrolledwindow.sidebar:not(.categories):selected, .budgie-popover scrolledwindow.sidebar:not(.categories):selected:hover {
   color: #ffffff;
   background-color: #5294e2;
 }
 
 .budgie-popover > frame.container > grid.horizontal > grid.horizontal > widget > grid.horizontal > stack {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.budgie-popover.bottom > frame.container > grid.horizontal > grid.horizontal > widget > grid.horizontal > stack {
+  border-top: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .budgie-popover switch {
@@ -7741,11 +7758,19 @@ MsdOsdWindow.background.osd .progressbar {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
+.budgie-popover.sound-popover buttonbox.linked > button {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
 .budgie-popover.caffeine-popover .container {
-  padding: 8px;
+  padding: 6px;
 }
 
 .budgie-popover.night-light-indicator .container {
+  padding: 6px;
+}
+
+.budgie-popover.icon-popover .container {
   padding: 6px;
 }
 
@@ -8047,7 +8072,7 @@ popover.background.places-menu row {
 .top window#ValaPanel.background button#tasklist-button.toggle.flat,
 window#ValaPanel.background .top button#tasklist-button.toggle.flat,
 .top window#ValaPanel.background button.flat.-panel-icon-button,
-window#ValaPanel.background .top button.flat.-panel-icon-button, .top .budgie-panel #tasklist-button:not(.flat), .budgie-panel .top #tasklist-button:not(.flat), .top .budgie-panel button.flat.launcher, .budgie-panel .top button.flat.launcher {
+window#ValaPanel.background .top button.flat.-panel-icon-button, .top .budgie-panel #tasklist-button:not(.flat), .budgie-panel .top #tasklist-button:not(.flat) {
   border-image: radial-gradient(circle closest-corner at center calc(1px), #5294e2 0%, transparent 0%) 0 0 0 0/0 0 0 0;
 }
 
@@ -8055,7 +8080,7 @@ window#ValaPanel.background .top button.flat.-panel-icon-button, .top .budgie-pa
 .top window#ValaPanel.background button#tasklist-button.toggle.flat:checked,
 window#ValaPanel.background .top button#tasklist-button.toggle.flat:checked,
 .top window#ValaPanel.background button.flat.-panel-icon-button:checked,
-window#ValaPanel.background .top button.flat.-panel-icon-button:checked, .top .budgie-panel #tasklist-button:checked:not(.flat), .budgie-panel .top #tasklist-button:checked:not(.flat), .top .budgie-panel button.flat.launcher:checked, .budgie-panel .top button.flat.launcher:checked {
+window#ValaPanel.background .top button.flat.-panel-icon-button:checked, .top .budgie-panel #tasklist-button:checked:not(.flat), .budgie-panel .top #tasklist-button:checked:not(.flat) {
   border-image: radial-gradient(circle closest-corner at center calc(1px), #5294e2 100%, transparent 0%) 2 0 0 0/2px 0 0 0;
 }
 
@@ -8063,7 +8088,7 @@ window#ValaPanel.background .top button.flat.-panel-icon-button:checked, .top .b
 .bottom window#ValaPanel.background button#tasklist-button.toggle.flat,
 window#ValaPanel.background .bottom button#tasklist-button.toggle.flat,
 .bottom window#ValaPanel.background button.flat.-panel-icon-button,
-window#ValaPanel.background .bottom button.flat.-panel-icon-button, .bottom .budgie-panel #tasklist-button:not(.flat), .budgie-panel .bottom #tasklist-button:not(.flat), .bottom .budgie-panel button.flat.launcher, .budgie-panel .bottom button.flat.launcher {
+window#ValaPanel.background .bottom button.flat.-panel-icon-button, .bottom .budgie-panel #tasklist-button:not(.flat), .budgie-panel .bottom #tasklist-button:not(.flat) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 0%, transparent 0%) 0 0 0 0/0 0 0 0;
 }
 
@@ -8071,7 +8096,7 @@ window#ValaPanel.background .bottom button.flat.-panel-icon-button, .bottom .bud
 .bottom window#ValaPanel.background button#tasklist-button.toggle.flat:checked,
 window#ValaPanel.background .bottom button#tasklist-button.toggle.flat:checked,
 .bottom window#ValaPanel.background button.flat.-panel-icon-button:checked,
-window#ValaPanel.background .bottom button.flat.-panel-icon-button:checked, .bottom .budgie-panel #tasklist-button:checked:not(.flat), .budgie-panel .bottom #tasklist-button:checked:not(.flat), .bottom .budgie-panel button.flat.launcher:checked, .budgie-panel .bottom button.flat.launcher:checked {
+window#ValaPanel.background .bottom button.flat.-panel-icon-button:checked, .bottom .budgie-panel #tasklist-button:checked:not(.flat), .budgie-panel .bottom #tasklist-button:checked:not(.flat) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 100%, transparent 0%) 0 0 2 0/0 0 2px 0;
 }
 
@@ -8079,7 +8104,7 @@ window#ValaPanel.background .bottom button.flat.-panel-icon-button:checked, .bot
 .left window#ValaPanel.background button#tasklist-button.toggle.flat,
 window#ValaPanel.background .left button#tasklist-button.toggle.flat,
 .left window#ValaPanel.background button.flat.-panel-icon-button,
-window#ValaPanel.background .left button.flat.-panel-icon-button, .left .budgie-panel #tasklist-button:not(.flat), .budgie-panel .left #tasklist-button:not(.flat), .left .budgie-panel button.flat.launcher, .budgie-panel .left button.flat.launcher {
+window#ValaPanel.background .left button.flat.-panel-icon-button, .left .budgie-panel #tasklist-button:not(.flat), .budgie-panel .left #tasklist-button:not(.flat) {
   border-image: radial-gradient(circle closest-corner at calc(1px) center, #5294e2 0%, transparent 0%) 0 0 0 0/0 0 0 0;
 }
 
@@ -8087,7 +8112,7 @@ window#ValaPanel.background .left button.flat.-panel-icon-button, .left .budgie-
 .left window#ValaPanel.background button#tasklist-button.toggle.flat:checked,
 window#ValaPanel.background .left button#tasklist-button.toggle.flat:checked,
 .left window#ValaPanel.background button.flat.-panel-icon-button:checked,
-window#ValaPanel.background .left button.flat.-panel-icon-button:checked, .left .budgie-panel #tasklist-button:checked:not(.flat), .budgie-panel .left #tasklist-button:checked:not(.flat), .left .budgie-panel button.flat.launcher:checked, .budgie-panel .left button.flat.launcher:checked {
+window#ValaPanel.background .left button.flat.-panel-icon-button:checked, .left .budgie-panel #tasklist-button:checked:not(.flat), .budgie-panel .left #tasklist-button:checked:not(.flat) {
   border-image: radial-gradient(circle closest-corner at calc(1px) center, #5294e2 100%, transparent 0%) 0 0 0 2/0 0 0 2px;
 }
 
@@ -8095,7 +8120,7 @@ window#ValaPanel.background .left button.flat.-panel-icon-button:checked, .left 
 .right window#ValaPanel.background button#tasklist-button.toggle.flat,
 window#ValaPanel.background .right button#tasklist-button.toggle.flat,
 .right window#ValaPanel.background button.flat.-panel-icon-button,
-window#ValaPanel.background .right button.flat.-panel-icon-button, .right .budgie-panel #tasklist-button:not(.flat), .budgie-panel .right #tasklist-button:not(.flat), .right .budgie-panel button.flat.launcher, .budgie-panel .right button.flat.launcher {
+window#ValaPanel.background .right button.flat.-panel-icon-button, .right .budgie-panel #tasklist-button:not(.flat), .budgie-panel .right #tasklist-button:not(.flat) {
   border-image: radial-gradient(circle closest-corner at calc(100% - 1px) center, #5294e2 0%, transparent 0%) 0 0 0 0/0 0 0 0;
 }
 
@@ -8103,7 +8128,7 @@ window#ValaPanel.background .right button.flat.-panel-icon-button, .right .budgi
 .right window#ValaPanel.background button#tasklist-button.toggle.flat:checked,
 window#ValaPanel.background .right button#tasklist-button.toggle.flat:checked,
 .right window#ValaPanel.background button.flat.-panel-icon-button:checked,
-window#ValaPanel.background .right button.flat.-panel-icon-button:checked, .right .budgie-panel #tasklist-button:checked:not(.flat), .budgie-panel .right #tasklist-button:checked:not(.flat), .right .budgie-panel button.flat.launcher:checked, .budgie-panel .right button.flat.launcher:checked {
+window#ValaPanel.background .right button.flat.-panel-icon-button:checked, .right .budgie-panel #tasklist-button:checked:not(.flat), .budgie-panel .right #tasklist-button:checked:not(.flat) {
   border-image: radial-gradient(circle closest-corner at calc(100% - 1px) center, #5294e2 100%, transparent 0%) 0 2 0 0/0 2px 0 0;
 }
 
@@ -8166,62 +8191,6 @@ button.flat.launcher:checked > image {
 .unpinned button.flat.launcher:checked > image,
 .pinned button.flat.launcher.running:checked > image,
 .pinned button.launcher.running.sidebar-button:checked > image {
-  background-image: none;
-}
-
-.top .budgie-panel .unpinned button.flat.launcher > image,
-.top .budgie-panel .pinned button.flat.launcher.running > image,
-.top .budgie-panel .pinned button.launcher.running.sidebar-button > image {
-  background-size: 4px 4px;
-  background-position: top center;
-  background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
-}
-
-.top .budgie-panel .unpinned button.flat.launcher:checked > image,
-.top .budgie-panel .pinned button.flat.launcher.running:checked > image,
-.top .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image {
-  background-image: none;
-}
-
-.bottom .budgie-panel .unpinned button.flat.launcher > image,
-.bottom .budgie-panel .pinned button.flat.launcher.running > image,
-.bottom .budgie-panel .pinned button.launcher.running.sidebar-button > image {
-  background-size: 4px 4px;
-  background-position: bottom center;
-  background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
-}
-
-.bottom .budgie-panel .unpinned button.flat.launcher:checked > image,
-.bottom .budgie-panel .pinned button.flat.launcher.running:checked > image,
-.bottom .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image {
-  background-image: none;
-}
-
-.left .budgie-panel .unpinned button.flat.launcher > image,
-.left .budgie-panel .pinned button.flat.launcher.running > image,
-.left .budgie-panel .pinned button.launcher.running.sidebar-button > image {
-  background-size: 4px 4px;
-  background-position: left center;
-  background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
-}
-
-.left .budgie-panel .unpinned button.flat.launcher:checked > image,
-.left .budgie-panel .pinned button.flat.launcher.running:checked > image,
-.left .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image {
-  background-image: none;
-}
-
-.right .budgie-panel .unpinned button.flat.launcher > image,
-.right .budgie-panel .pinned button.flat.launcher.running > image,
-.right .budgie-panel .pinned button.launcher.running.sidebar-button > image {
-  background-size: 4px 4px;
-  background-position: right center;
-  background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
-}
-
-.right .budgie-panel .unpinned button.flat.launcher:checked > image,
-.right .budgie-panel .pinned button.flat.launcher.running:checked > image,
-.right .budgie-panel .pinned button.launcher.running.sidebar-button:checked > image {
   background-image: none;
 }
 
