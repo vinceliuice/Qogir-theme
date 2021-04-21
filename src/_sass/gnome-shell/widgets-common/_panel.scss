@@ -7,7 +7,7 @@
   background-color: $panel_bg;
   border: none;
   font-feature-settings: "tnum";
-  ransition-duration: 250ms;
+  transition-duration: 250ms;
 
   // Fix dynamic top bar extension
   &.dynamic-top-bar-white-btn { border-image: none; }

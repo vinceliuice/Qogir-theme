@@ -1579,7 +1579,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: #21232b;
   border: none;
   font-feature-settings: "tnum";
-  ransition-duration: 250ms;
+  transition-duration: 250ms;
 }
 
 #panel.dynamic-top-bar-white-btn {
