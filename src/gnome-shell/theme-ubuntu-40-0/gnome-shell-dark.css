@@ -229,27 +229,24 @@ StEntry StLabel.hint-text {
 
 /* Slider */
 .slider {
-  -slider-height: 4px;
+  height: 15px;
+  color: rgba(255, 255, 255, 0.12);
+  -slider-height: 3px;
   -slider-background-color: rgba(255, 255, 255, 0.12);
   -slider-border-color: transparent;
   -slider-active-background-color: #fb8441;
   -slider-active-border-color: transparent;
   -slider-border-width: 0;
   -slider-handle-radius: 0;
-  height: 18px;
-  border: 0 solid transparent;
-  border-right-width: 1px;
-  border-left-width: 5px;
-  color: transparent;
-  -barlevel-height: 4px;
+  -barlevel-height: 3px;
   -barlevel-background-color: rgba(255, 255, 255, 0.12);
+  -barlevel-border-width: 0;
   -barlevel-border-color: transparent;
   -barlevel-active-background-color: #fb8441;
   -barlevel-active-border-color: transparent;
   -barlevel-overdrive-color: #F04A50;
   -barlevel-overdrive-border-color: #F04A50;
   -barlevel-overdrive-separator-width: 2px;
-  -barlevel-border-width: 0;
 }
 
 .popup-menu-item.selected .slider {
