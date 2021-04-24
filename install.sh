@@ -21,6 +21,7 @@ LOGO_NAME=''
 
 if [[ "$(command -v gnome-shell)" ]]; then
   SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
+  echo "Your gnome-shell version is '$(gnome-shell --version)'"
   if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
     GS_VERSION="new"
   else
