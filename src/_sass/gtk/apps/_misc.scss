@@ -698,3 +698,49 @@ window#meldapp {
     }
   }
 }
+
+//
+// Kooha
+//
+headerbar.flat {
+  background: none;
+  color: $fg_color;
+  border: none;
+  box-shadow: none;
+
+  button {
+    &:not(.close):not(.maximize):not(.minimize) {
+      color: $alt_fg_color;
+      border: none;
+
+      &:hover {
+        background-color: rgba($fg_color, 0.1);
+        color: $fg_color;
+      }
+
+      &:active {
+        background-color: rgba($fg_color, 0.25);
+        color: $fg_color;
+      }
+
+      &:checked {
+        background-color: rgba($fg_color, 0.2);
+        color: $fg_color;
+      }
+    }
+
+    &.titlebutton {
+      @each $k in ('close', 'maximize', 'minimize') {
+        @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+          &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}#{$asset_suffix_win}.png'),
+                                                       url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}#{$asset_suffix_win}@2.png'));
+          }
+        }
+      }
+    }
+  }
+}
+
+stackswitcher.tall {
+  margin-top: $cont_padding;
+}

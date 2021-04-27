@@ -6709,6 +6709,85 @@ window#meldapp notebook.frame.meld-notebook paned.meld-vc-console-pane {
   border: none;
 }
 
+headerbar.flat {
+  background: none;
+  color: #464853;
+  border: none;
+  box-shadow: none;
+}
+
+headerbar.flat button:not(.close):not(.maximize):not(.minimize) {
+  color: rgba(70, 72, 83, 0.75);
+  border: none;
+}
+
+headerbar.flat button:not(.close):not(.maximize):not(.minimize):hover {
+  background-color: rgba(70, 72, 83, 0.1);
+  color: #464853;
+}
+
+headerbar.flat button:not(.close):not(.maximize):not(.minimize):active {
+  background-color: rgba(70, 72, 83, 0.25);
+  color: #464853;
+}
+
+headerbar.flat button:not(.close):not(.maximize):not(.minimize):checked {
+  background-color: rgba(70, 72, 83, 0.2);
+  color: #464853;
+}
+
+headerbar.flat button.titlebutton.close {
+  background-image: -gtk-scaled(url("assets/titlebutton-close.png"), url("assets/titlebutton-close@2.png"));
+}
+
+headerbar.flat button.titlebutton.close:backdrop {
+  background-image: -gtk-scaled(url("assets/titlebutton-close-backdrop.png"), url("assets/titlebutton-close-backdrop@2.png"));
+}
+
+headerbar.flat button.titlebutton.close:hover {
+  background-image: -gtk-scaled(url("assets/titlebutton-close-hover.png"), url("assets/titlebutton-close-hover@2.png"));
+}
+
+headerbar.flat button.titlebutton.close:active {
+  background-image: -gtk-scaled(url("assets/titlebutton-close-active.png"), url("assets/titlebutton-close-active@2.png"));
+}
+
+headerbar.flat button.titlebutton.maximize {
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize.png"), url("assets/titlebutton-maximize@2.png"));
+}
+
+headerbar.flat button.titlebutton.maximize:backdrop {
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-backdrop.png"), url("assets/titlebutton-maximize-backdrop@2.png"));
+}
+
+headerbar.flat button.titlebutton.maximize:hover {
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-hover.png"), url("assets/titlebutton-maximize-hover@2.png"));
+}
+
+headerbar.flat button.titlebutton.maximize:active {
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-active.png"), url("assets/titlebutton-maximize-active@2.png"));
+}
+
+headerbar.flat button.titlebutton.minimize {
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize.png"), url("assets/titlebutton-minimize@2.png"));
+}
+
+headerbar.flat button.titlebutton.minimize:backdrop {
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-backdrop.png"), url("assets/titlebutton-minimize-backdrop@2.png"));
+}
+
+headerbar.flat button.titlebutton.minimize:hover {
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-hover.png"), url("assets/titlebutton-minimize-hover@2.png"));
+}
+
+headerbar.flat button.titlebutton.minimize:active {
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-active.png"), url("assets/titlebutton-minimize-active@2.png"));
+}
+
+stackswitcher.tall {
+  margin-top: 6px;
+}
+
 /*****************
  * Unity Desktop *
  *****************/

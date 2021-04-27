@@ -3732,7 +3732,6 @@ decoration {
 }
 
 %csd_titlebutton {
-
   @if $titlebutton == 'square' {
     > box.horizontal {
       &.left {
