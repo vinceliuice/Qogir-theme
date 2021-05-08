@@ -793,8 +793,6 @@ window.geary-main-window {
 }
 
 .geary-titlebar-left {
-  // margin-right: $cont_padding;
-
   &, &.geary-titlebar {
     @extend %side_headerbar;
   }
@@ -804,12 +802,6 @@ window.geary-main-window {
     margin: 0 -10px 0 0;
     border-right: if($variant == 'light', none, 1px solid $solid_borders_color);
     background: none;
-  }
-}
-
-.geary-main-window { // 40.0
-  > headerbar > leaflet > leaflet > headerbar:not(:last-child) {
-    @extend %side_headerbar;
   }
 }
 
@@ -857,35 +849,6 @@ window#GearyMainWindow.maximized {
   }
 }
 
-.geary-main-layout > leaflet > leaflet > box { // 40.0
-  @extend %side_background;
-
-  .geary-conversation-frame {
-    treeview.view {
-      &:hover { background-color: mix($fg_color, $base_color, 15%); }
-
-      &:selected {
-        &, &:focus {
-          background-color: mix($selected_bg_color, $base_color, 25%);
-          color: $fg_color;
-          &:dir(ltr) { box-shadow: inset -2px 0 $selected_bg_color; }
-          &:dir(rtl) { box-shadow: inset 2px 0 $selected_bg_color; }
-        }
-      }
-    }
-  }
-
-  .geary-folder-frame {
-    > border { @extend  %folder_frame_border; }
-    > scrolledwindow { @extend %folder_frame; }
-  }
-
-  separator { background: none; }
-
-  statusbar {
-    @extend %side_background;
-  }
-}
 // right-pane styling (current)
 stack#conversation_viewer {
   > grid.vertical > scrolledwindow.geary-conversation-scroller > viewport.frame {
@@ -899,6 +862,65 @@ stack#conversation_viewer {
   > scrolledwindow.frame {
     border: none;
   }
+}
+
+.geary-main-window { // 40.0
+  > headerbar > leaflet > leaflet > headerbar:not(:last-child) {
+    @extend %side_headerbar;
+  }
+
+  .geary-main-layout {
+    > leaflet, & {
+      > separator.sidebar {
+        background-image: image($header_bg);
+
+        @if $titlebar == 'light' {
+          border-bottom: 1px solid $borders_color;
+        }
+      }
+    }
+
+    > leaflet > leaflet > box { // 40.0
+      .geary-conversation-frame { // center
+        margin: -1px 0;
+        treeview.view {
+          &:hover { background-color: mix($fg_color, $base_color, 15%); }
+
+          &:selected {
+            &, &:focus {
+              background-color: mix($selected_bg_color, $base_color, 25%);
+              color: $fg_color;
+              &:dir(ltr) { box-shadow: inset -2px 0 $selected_bg_color; }
+              &:dir(rtl) { box-shadow: inset 2px 0 $selected_bg_color; }
+            }
+          }
+        }
+      }
+
+      .geary-folder-frame { // left
+        @extend %side_background;
+        > border { @extend  %folder_frame_border; }
+        > scrolledwindow { @extend %folder_frame; }
+      }
+
+      // > revealer > components-conversation-actions {
+      //   background-color: $bg_color;
+      //   color: $fg_color;
+      //   border-top: 1px solid $solid_borders_color;
+      // }
+
+      separator { background: none; }
+
+      statusbar {
+        @extend %side_background;
+        margin: -8px -12px;
+        spacing: 6px;
+        padding: 6px;
+      }
+    }
+  }
+
+  list.content.conversation-listbox { border: none; } // reset
 }
 
 //

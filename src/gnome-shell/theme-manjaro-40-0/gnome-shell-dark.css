@@ -231,14 +231,14 @@ StEntry StLabel.hint-text {
 .slider {
   height: 15px;
   color: rgba(255, 255, 255, 0.12);
-  -slider-height: 3px;
+  -slider-height: 4px;
   -slider-background-color: rgba(255, 255, 255, 0.12);
   -slider-border-color: transparent;
   -slider-active-background-color: #2eb398;
   -slider-active-border-color: transparent;
   -slider-border-width: 0;
   -slider-handle-radius: 0;
-  -barlevel-height: 3px;
+  -barlevel-height: 4px;
   -barlevel-background-color: rgba(255, 255, 255, 0.12);
   -barlevel-border-width: 0;
   -barlevel-border-color: transparent;
@@ -1570,7 +1570,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Top Bar */
 #panel {
-  font-weight: bold;
+  font-weight: normal;
   height: 2.1em;
   min-height: 27px;
   background-color: #21232b;
@@ -1611,7 +1611,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel .panel-button {
   -natural-hpadding: 10px;
   -minimum-hpadding: 6px;
-  font-weight: bold;
+  font-weight: normal;
   color: #D3DAE3;
   transition-duration: 150ms;
   text-shadow: none;
@@ -1622,14 +1622,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button:hover {
   color: #D3DAE3;
-  background-color: rgba(211, 218, 227, 0.05);
+  background-color: rgba(211, 218, 227, 0.08);
   box-shadow: none;
   border-radius: 0;
 }
 
 #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
   color: #D3DAE3;
-  background-color: rgba(211, 218, 227, 0.1);
+  background-color: rgba(211, 218, 227, 0.16);
   box-shadow: inset 0 -2px 0 #2eb398;
   border-radius: 0;
 }
@@ -1652,6 +1652,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel .panel-button .system-status-icon {
   icon-size: 16px;
   padding: 0 4px;
+  margin: 0 2px;
+}
+
+#panel .panel-button .panel-status-menu-box .system-status-icon {
+  margin: 0;
 }
 
 #panel .panel-button .app-menu-icon {

@@ -4,7 +4,7 @@
   height: 15px;
   color: $button_border;
 
-  -slider-height: 3px;
+  -slider-height: 4px;
   -slider-background-color: $button_border;                   //background of the trough
   -slider-border-color: transparent;                          //trough border color
   -slider-active-background-color: $selected_bg_color;        //active trough fill
@@ -13,7 +13,7 @@
   -slider-handle-radius: 0;
 
   // barlevels are for >= 3.29.90
-  -barlevel-height: 3px;
+  -barlevel-height: 4px;
   -barlevel-background-color: $button_border;
   -barlevel-border-width: 0;
   -barlevel-border-color: transparent;

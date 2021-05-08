@@ -1,7 +1,7 @@
 /* Top Bar */
 
 #panel {
-  font-weight: bold;
+  font-weight: normal;
   height: 2.1em;
   min-height: 27px;
   background-color: $panel_bg;
@@ -45,7 +45,7 @@
   .panel-button {
     -natural-hpadding: 10px;
     -minimum-hpadding: 6px;
-    font-weight: bold;
+    font-weight: normal;
     color: $panel_fg;
     transition-duration: 150ms;
     text-shadow: none;
@@ -55,14 +55,14 @@
 
     &:hover {
       color: $panel_fg;
-      background-color: rgba($panel_fg, 0.05);
+      background-color: rgba($panel_fg, 0.08);
       box-shadow: none;
       border-radius: 0;
     }
 
     &:active, &:overview, &:focus, &:checked {
       color: $panel_fg;
-      background-color: rgba($panel_fg, 0.1);
+      background-color: rgba($panel_fg, 0.16);
       box-shadow: inset 0 -2px 0 $selected_bg_color;
       border-radius: 0;
 
@@ -88,6 +88,12 @@
     .system-status-icon {
       icon-size: 16px;
       padding: 0 4px;
+      margin: 0 2px;
+    }
+
+    // .panel-status-indicators-box .system-status-icon,
+    .panel-status-menu-box .system-status-icon {
+      margin: 0;
     }
 
     // app menu icon

@@ -2904,6 +2904,8 @@ list {
   background-color: $base_color;
   border-color: $borders_color;
 
+  &.content { border: 1px solid $borders_color; }
+
   row { padding: 2px; }
 }
 
