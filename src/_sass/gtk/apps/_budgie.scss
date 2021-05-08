@@ -125,13 +125,30 @@
 
     label { padding: 4px 6px; }
 
-    &:hover { background-color: rgba($fg_color, 0.05); }
+    list > row.activatable {
+      &:hover { background-color: rgba($fg_color, 0.05); }
 
-    &:active { background-color: rgba($fg_color, 0.1); }
+      &:active { background-image: image(rgba($fg_color, 0.12)); }
 
-    &:selected, &:selected:hover {
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
+      &:selected, &:selected:hover {
+        color: $selected_fg_color;
+        background-color: $selected_bg_color;
+      }
+    }
+  }
+
+  stack > widget scrolledwindow:not(.sidebar) > viewport.frame {
+    > list > row.activatable {
+      &:hover { background-color: rgba($fg_color, 0.05); }
+
+      &:active { background-image: image(rgba($fg_color, 0.12)); }
+
+      &:selected, &:selected:hover {
+        color: $fg_color;
+        background-color: rgba($fg_color, 0.08);
+
+        label { color: $fg_color; }
+      }
     }
   }
 
@@ -229,7 +246,6 @@
 
 // budgie specific popover widgets
 window.budgie-popover:not(.csd) {
-
   > frame.container {
     margin: 0 -1px -1px; // remove gap
 

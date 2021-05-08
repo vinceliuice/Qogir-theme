@@ -7568,17 +7568,34 @@ MsdOsdWindow.background.osd .progressbar {
   padding: 4px 6px;
 }
 
-.budgie-popover scrolledwindow.sidebar:not(.categories):hover {
+.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:hover {
   background-color: rgba(230, 235, 239, 0.05);
 }
 
-.budgie-popover scrolledwindow.sidebar:not(.categories):active {
-  background-color: rgba(230, 235, 239, 0.1);
+.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:active {
+  background-image: image(rgba(230, 235, 239, 0.12));
 }
 
-.budgie-popover scrolledwindow.sidebar:not(.categories):selected, .budgie-popover scrolledwindow.sidebar:not(.categories):selected:hover {
+.budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:selected, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:selected:hover {
   color: #ffffff;
   background-color: #5294e2;
+}
+
+.budgie-popover stack > widget scrolledwindow:not(.sidebar) > viewport.frame > list > row.activatable:hover {
+  background-color: rgba(230, 235, 239, 0.05);
+}
+
+.budgie-popover stack > widget scrolledwindow:not(.sidebar) > viewport.frame > list > row.activatable:active {
+  background-image: image(rgba(230, 235, 239, 0.12));
+}
+
+.budgie-popover stack > widget scrolledwindow:not(.sidebar) > viewport.frame > list > row.activatable:selected, .budgie-popover stack > widget scrolledwindow:not(.sidebar) > viewport.frame > list > row.activatable:selected:hover {
+  color: #e6ebef;
+  background-color: rgba(230, 235, 239, 0.08);
+}
+
+.budgie-popover stack > widget scrolledwindow:not(.sidebar) > viewport.frame > list > row.activatable:selected label, .budgie-popover stack > widget scrolledwindow:not(.sidebar) > viewport.frame > list > row.activatable:selected:hover label {
+  color: #e6ebef;
 }
 
 .budgie-popover > frame.container > grid.horizontal > grid.horizontal > widget > grid.horizontal > stack {
