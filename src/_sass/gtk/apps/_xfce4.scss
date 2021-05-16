@@ -140,10 +140,10 @@ window#whiskermenu-window {
 //
 
 window.thunar {
-  .sidebar {
+  > grid > paned > .sidebar {
     border-top: none;
 
-    treeview.view {
+    > treeview.view {
       @extend %row_activatable;
       background-color: $bg_color;
       color: $alt_fg_color;
@@ -173,7 +173,7 @@ window.thunar {
     header.top tab.reorderable-page > box > label { min-height: 0; }
   }
 
-  toolbar#location-toolbar {
+  toolbar {
     background-color: $header_bg;
     color: $header_fg;
     box-shadow: inset 0 -1px $borders_color;

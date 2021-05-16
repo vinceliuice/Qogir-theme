@@ -1,12 +1,3 @@
-@keyframes header_ripple_effect {
-  from {
-    background-image: radial-gradient(circle farthest-corner at center, #ffffff 0%, transparent 0%);
-  }
-  to {
-    background-image: radial-gradient(circle farthest-corner at center, #ffffff 100%, transparent 0%);
-  }
-}
-
 @keyframes ripple_effect {
   from {
     background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor,0.1) 0%, transparent 0%);
@@ -1883,98 +1874,98 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
   border-image: none;
 }
 
-window.thunar toolbar#location-toolbar entry, window.thunar #location-toolbar.inline-toolbar entry, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry, .nemo-window .primary-toolbar entry, headerbar entry {
+window.thunar toolbar entry, window.thunar .inline-toolbar entry, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry, .nemo-window .primary-toolbar entry, headerbar entry {
   color: rgba(62, 67, 91, 0.8);
   border-color: rgba(0, 0, 0, 0.12);
   background-color: #f7f7f7;
 }
 
-window.thunar toolbar#location-toolbar entry image, window.thunar #location-toolbar.inline-toolbar entry image, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry image, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry image, .nemo-window .primary-toolbar entry image, headerbar entry image, headerbar entry image:hover {
+window.thunar toolbar entry image, window.thunar .inline-toolbar entry image, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry image, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry image, .nemo-window .primary-toolbar entry image, headerbar entry image, headerbar entry image:hover {
   color: inherit;
 }
 
-window.thunar toolbar#location-toolbar entry:backdrop, window.thunar #location-toolbar.inline-toolbar entry:backdrop, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry:backdrop, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry:backdrop, .nemo-window .primary-toolbar entry:backdrop, headerbar entry:backdrop {
+window.thunar toolbar entry:backdrop, window.thunar .inline-toolbar entry:backdrop, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry:backdrop, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry:backdrop, .nemo-window .primary-toolbar entry:backdrop, headerbar entry:backdrop {
   opacity: 0.85;
 }
 
-window.thunar toolbar#location-toolbar entry:focus, window.thunar #location-toolbar.inline-toolbar entry:focus, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry:focus, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry:focus, .nemo-window .primary-toolbar entry:focus, headerbar entry:focus {
+window.thunar toolbar entry:focus, window.thunar .inline-toolbar entry:focus, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry:focus, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry:focus, .nemo-window .primary-toolbar entry:focus, headerbar entry:focus {
   color: rgba(104, 111, 151, 0.8);
   border-color: #fb8441;
   background-color: #fcfcfc;
   background-clip: border-box;
 }
 
-window.thunar toolbar#location-toolbar entry:focus image, window.thunar #location-toolbar.inline-toolbar entry:focus image, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry:focus image, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry:focus image, .nemo-window .primary-toolbar entry:focus image, headerbar entry:focus image {
+window.thunar toolbar entry:focus image, window.thunar .inline-toolbar entry:focus image, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry:focus image, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry:focus image, .nemo-window .primary-toolbar entry:focus image, headerbar entry:focus image {
   color: #fb8441;
 }
 
-window.thunar toolbar#location-toolbar entry:disabled, window.thunar #location-toolbar.inline-toolbar entry:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry:disabled, .nemo-window .primary-toolbar entry:disabled, headerbar entry:disabled {
+window.thunar toolbar entry:disabled, window.thunar .inline-toolbar entry:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry:disabled, .nemo-window .primary-toolbar entry:disabled, headerbar entry:disabled {
   color: rgba(62, 67, 91, 0.35);
   border-color: rgba(0, 0, 0, 0.12);
   background-color: rgba(247, 247, 247, 0.85);
 }
 
-window.thunar toolbar#location-toolbar entry selection:focus, window.thunar #location-toolbar.inline-toolbar entry selection:focus, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry selection:focus, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry selection:focus, .nemo-window .primary-toolbar entry selection:focus, headerbar entry selection:focus {
+window.thunar toolbar entry selection:focus, window.thunar .inline-toolbar entry selection:focus, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry selection:focus, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry selection:focus, .nemo-window .primary-toolbar entry selection:focus, headerbar entry selection:focus {
   background-color: #fb8441;
   color: #ffffff;
 }
 
-window.thunar toolbar#location-toolbar entry progress, window.thunar #location-toolbar.inline-toolbar entry progress, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry progress, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry progress, .nemo-window .primary-toolbar entry progress, headerbar entry progress {
+window.thunar toolbar entry progress, window.thunar .inline-toolbar entry progress, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry progress, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry progress, .nemo-window .primary-toolbar entry progress, headerbar entry progress {
   border-color: #fb8441;
   background-image: none;
   background-color: transparent;
 }
 
-window.thunar toolbar#location-toolbar entry.warning, window.thunar #location-toolbar.inline-toolbar entry.warning, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.warning, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.warning, .nemo-window .primary-toolbar entry.warning, headerbar entry.warning {
+window.thunar toolbar entry.warning, window.thunar .inline-toolbar entry.warning, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.warning, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.warning, .nemo-window .primary-toolbar entry.warning, headerbar entry.warning {
   color: white;
   border-color: #F27835;
   background-color: #f7ae86;
 }
 
-window.thunar toolbar#location-toolbar entry.warning:focus, window.thunar #location-toolbar.inline-toolbar entry.warning:focus, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.warning:focus, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.warning:focus, .nemo-window .primary-toolbar entry.warning:focus, headerbar entry.warning:focus {
+window.thunar toolbar entry.warning:focus, window.thunar .inline-toolbar entry.warning:focus, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.warning:focus, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.warning:focus, .nemo-window .primary-toolbar entry.warning:focus, headerbar entry.warning:focus {
   color: white;
   background-color: #F27835;
 }
 
-window.thunar toolbar#location-toolbar entry.warning selection, window.thunar #location-toolbar.inline-toolbar entry.warning selection, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.warning selection, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.warning selection, .nemo-window .primary-toolbar entry.warning selection, headerbar entry.warning selection {
+window.thunar toolbar entry.warning selection, window.thunar .inline-toolbar entry.warning selection, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.warning selection, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.warning selection, .nemo-window .primary-toolbar entry.warning selection, headerbar entry.warning selection, window.thunar toolbar entry.warning selection:focus, window.thunar .inline-toolbar entry.warning selection:focus {
   background-color: white;
   color: #F27835;
 }
 
-window.thunar toolbar#location-toolbar entry.error, window.thunar #location-toolbar.inline-toolbar entry.error, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.error, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.error, .nemo-window .primary-toolbar entry.error, headerbar entry.error {
+window.thunar toolbar entry.error, window.thunar .inline-toolbar entry.error, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.error, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.error, .nemo-window .primary-toolbar entry.error, headerbar entry.error {
   color: white;
   border-color: #FC4138;
   background-color: #fd8d88;
 }
 
-window.thunar toolbar#location-toolbar entry.error:focus, window.thunar #location-toolbar.inline-toolbar entry.error:focus, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.error:focus, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.error:focus, .nemo-window .primary-toolbar entry.error:focus, headerbar entry.error:focus {
+window.thunar toolbar entry.error:focus, window.thunar .inline-toolbar entry.error:focus, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.error:focus, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.error:focus, .nemo-window .primary-toolbar entry.error:focus, headerbar entry.error:focus {
   color: white;
   background-color: #FC4138;
 }
 
-window.thunar toolbar#location-toolbar entry.error selection, window.thunar #location-toolbar.inline-toolbar entry.error selection, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.error selection, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.error selection, .nemo-window .primary-toolbar entry.error selection, headerbar entry.error selection {
+window.thunar toolbar entry.error selection, window.thunar .inline-toolbar entry.error selection, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry.error selection, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry.error selection, .nemo-window .primary-toolbar entry.error selection, headerbar entry.error selection, window.thunar toolbar entry.error selection:focus, window.thunar .inline-toolbar entry.error selection:focus {
   background-color: white;
   color: #FC4138;
 }
 
-window.thunar toolbar#location-toolbar button, window.thunar #location-toolbar.inline-toolbar button, .caja-navigation-window toolbar#Toolbar.primary-toolbar button, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button, .nemo-window .primary-toolbar button, headerbar button {
+window.thunar toolbar button, window.thunar .inline-toolbar button, .caja-navigation-window toolbar#Toolbar.primary-toolbar button, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button, .nemo-window .primary-toolbar button, headerbar button {
   color: rgba(62, 67, 91, 0.8);
   outline-offset: -3px;
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0);
 }
 
-window.thunar toolbar#location-toolbar button:backdrop, window.thunar #location-toolbar.inline-toolbar button:backdrop, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:backdrop, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:backdrop, .nemo-window .primary-toolbar button:backdrop, headerbar button:backdrop {
+window.thunar toolbar button:backdrop, window.thunar .inline-toolbar button:backdrop, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:backdrop, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:backdrop, .nemo-window .primary-toolbar button:backdrop, headerbar button:backdrop {
   opacity: 0.7;
 }
 
-window.thunar toolbar#location-toolbar button:hover, window.thunar #location-toolbar.inline-toolbar button:hover, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:hover, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:hover, .nemo-window .primary-toolbar button:hover, headerbar button:hover {
+window.thunar toolbar button:hover, window.thunar .inline-toolbar button:hover, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:hover, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:hover, .nemo-window .primary-toolbar button:hover, headerbar button:hover {
   color: rgba(62, 67, 91, 0.8);
   border-color: rgba(0, 0, 0, 0.12);
   background-color: #f2f2f2;
 }
 
-window.thunar toolbar#location-toolbar button:active, window.thunar #location-toolbar.inline-toolbar button:active, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:active, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:active, .nemo-window .primary-toolbar button:active, headerbar button:active, window.thunar toolbar#location-toolbar button:checked, window.thunar #location-toolbar.inline-toolbar button:checked, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:checked, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:checked, .nemo-window .primary-toolbar button:checked, headerbar button:checked {
+window.thunar toolbar button:active, window.thunar .inline-toolbar button:active, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:active, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:active, .nemo-window .primary-toolbar button:active, headerbar button:active, window.thunar toolbar button:checked, window.thunar .inline-toolbar button:checked, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:checked, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:checked, .nemo-window .primary-toolbar button:checked, headerbar button:checked {
   transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: #ffffff;
   border-color: #fa640f;
@@ -1982,22 +1973,22 @@ window.thunar toolbar#location-toolbar button:active, window.thunar #location-to
   background-clip: border-box;
 }
 
-window.thunar toolbar#location-toolbar button:disabled, window.thunar #location-toolbar.inline-toolbar button:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled, .nemo-window .primary-toolbar button:disabled, headerbar button:disabled {
+window.thunar toolbar button:disabled, window.thunar .inline-toolbar button:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled, .nemo-window .primary-toolbar button:disabled, headerbar button:disabled {
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0);
 }
 
-window.thunar toolbar#location-toolbar button:disabled label, window.thunar #location-toolbar.inline-toolbar button:disabled label, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled label, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled label, .nemo-window .primary-toolbar button:disabled label, headerbar button:disabled label, window.thunar toolbar#location-toolbar button:disabled, window.thunar #location-toolbar.inline-toolbar button:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled, .nemo-window .primary-toolbar button:disabled, headerbar button:disabled {
+window.thunar toolbar button:disabled label, window.thunar .inline-toolbar button:disabled label, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled label, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled label, .nemo-window .primary-toolbar button:disabled label, headerbar button:disabled label, window.thunar toolbar button:disabled, window.thunar .inline-toolbar button:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled, .nemo-window .primary-toolbar button:disabled, headerbar button:disabled {
   color: rgba(62, 67, 91, 0.3);
 }
 
-window.thunar toolbar#location-toolbar button:disabled:active, window.thunar #location-toolbar.inline-toolbar button:disabled:active, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled:active, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled:active, .nemo-window .primary-toolbar button:disabled:active, headerbar button:disabled:active, window.thunar toolbar#location-toolbar button:disabled:checked, window.thunar #location-toolbar.inline-toolbar button:disabled:checked, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled:checked, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled:checked, .nemo-window .primary-toolbar button:disabled:checked, headerbar button:disabled:checked {
+window.thunar toolbar button:disabled:active, window.thunar .inline-toolbar button:disabled:active, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled:active, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled:active, .nemo-window .primary-toolbar button:disabled:active, headerbar button:disabled:active, window.thunar toolbar button:disabled:checked, window.thunar .inline-toolbar button:disabled:checked, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled:checked, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled:checked, .nemo-window .primary-toolbar button:disabled:checked, headerbar button:disabled:checked {
   color: rgba(255, 255, 255, 0.5);
   border-color: rgba(251, 132, 65, 0.65);
   background-color: rgba(251, 132, 65, 0.65);
 }
 
-window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button, window.thunar #location-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button,
+window.thunar toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button, window.thunar .inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button, .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button,
 .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button, .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button, headerbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button {
   background: none;
@@ -2006,28 +1997,28 @@ window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stac
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #fb8441 0%, transparent 0%) 0 0 0/0 0 0;
 }
 
-window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:hover, window.thunar #location-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:hover, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:hover,
+window.thunar toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:hover, window.thunar .inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:hover, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:hover,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:hover, .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button:hover, .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:hover, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:hover, headerbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:hover {
   color: rgba(42, 44, 60, 0.8);
   background-color: transparent;
   box-shadow: inset 0 -2px rgba(251, 132, 65, 0.5);
 }
 
-window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked, window.thunar #location-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked,
-.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:checked, .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button:checked, .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:checked, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:checked, headerbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:checked, window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:active, window.thunar #location-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:active, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:active,
+window.thunar toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked, window.thunar .inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked,
+.nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:checked, .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button:checked, .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:checked, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:checked, headerbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:checked, window.thunar toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:active, window.thunar .inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:active, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:active,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:active, .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button:active, .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:active, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:active, headerbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:active {
   color: rgba(62, 67, 91, 0.8);
   background-color: transparent;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #fb8441 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:disabled, window.thunar #location-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:disabled, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:disabled,
+window.thunar toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:disabled, window.thunar .inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:disabled, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:disabled,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:disabled, .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:disabled, headerbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:disabled {
   color: rgba(62, 67, 91, 0.4);
   background-color: transparent;
 }
 
-window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked:disabled, window.thunar #location-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked:disabled, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked:disabled,
+window.thunar toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked:disabled, window.thunar .inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked:disabled, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button:checked:disabled,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button:checked:disabled, .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button:checked:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:checked:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:checked:disabled, headerbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button:checked:disabled {
   color: rgba(62, 67, 91, 0.4);
   background-color: transparent;
@@ -2643,6 +2634,7 @@ popover.background.touch-selection menuitem {
   padding: 4px 8px;
   text-shadow: none;
   transition: background-color 20ms ease-out;
+  -gtk-icon-style: symbolic;
 }
 
 menu menuitem:hover,
@@ -4019,36 +4011,36 @@ list row {
   padding: 2px;
 }
 
-window.thunar .sidebar treeview.has-open-popup.view, .budgie-menu button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, .has-open-popup.view,
+window.thunar > grid > paned > .sidebar > treeview.has-open-popup.view, .budgie-menu button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, .has-open-popup.view,
 window.thunar notebook scrolledwindow.frame.standard-view .has-open-popup.view,
 textview text.has-open-popup,
-iconview.has-open-popup, window.thunar .sidebar treeview.view:hover, .budgie-menu button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, .view:hover,
+iconview.has-open-popup, window.thunar > grid > paned > .sidebar > treeview.view:hover, .budgie-menu button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, .view:hover,
 window.thunar notebook scrolledwindow.frame.standard-view .view:hover,
 textview text:hover,
 iconview:hover, row.activatable.has-open-popup, row.activatable:hover {
   transition: none;
   animation: none;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #ebebeb;
 }
 
-window.thunar .sidebar treeview.view:active, .budgie-menu button:active, .nemo-window .nemo-places-sidebar .places-treeview:active, .view:active,
+window.thunar > grid > paned > .sidebar > treeview.view:active, .budgie-menu button:active, .nemo-window .nemo-places-sidebar .places-treeview:active, .view:active,
 window.thunar notebook scrolledwindow.frame.standard-view .view:active,
 textview text:active,
-iconview:active, window.thunar .sidebar treeview.view:checked, .budgie-menu button:checked, .nemo-window .nemo-places-sidebar .places-treeview:checked, .view:checked,
+iconview:active, window.thunar > grid > paned > .sidebar > treeview.view:checked, .budgie-menu button:checked, .nemo-window .nemo-places-sidebar .places-treeview:checked, .view:checked,
 window.thunar notebook scrolledwindow.frame.standard-view .view:checked,
 textview text:checked,
 iconview:checked, row.activatable:active, row.activatable:checked {
   transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-window.thunar .sidebar treeview.view:disabled, .budgie-menu button:disabled, .nemo-window .nemo-places-sidebar .places-treeview:disabled, .view:disabled,
+window.thunar > grid > paned > .sidebar > treeview.view:disabled, .budgie-menu button:disabled, .nemo-window .nemo-places-sidebar .places-treeview:disabled, .view:disabled,
 window.thunar notebook scrolledwindow.frame.standard-view .view:disabled,
 textview text:disabled,
 iconview:disabled, row.activatable:disabled {
   color: rgba(70, 72, 83, 0.55);
 }
 
-window.thunar .sidebar treeview.view:disabled image, .budgie-menu button:disabled image, .nemo-window .nemo-places-sidebar .places-treeview:disabled image, .view:disabled image,
+window.thunar > grid > paned > .sidebar > treeview.view:disabled image, .budgie-menu button:disabled image, .nemo-window .nemo-places-sidebar .places-treeview:disabled image, .view:disabled image,
 window.thunar notebook scrolledwindow.frame.standard-view .view:disabled image,
 textview text:disabled image,
 iconview:disabled image, row.activatable:disabled image {
@@ -4869,7 +4861,7 @@ iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar .sidebar treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button.has-open-popup:selected, .budgie-menu button:selected:hover, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button.has-open-popup:selected, .budgie-menu button:selected:hover, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
   background-color: #fb8441;
 }
 
@@ -4886,7 +4878,7 @@ iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar .sidebar treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button.has-open-popup:selected, .budgie-menu button:selected:hover, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button.has-open-popup:selected, .budgie-menu button:selected:hover, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
   color: #ffffff;
 }
 
@@ -4903,7 +4895,7 @@ iconview:disabled:selected:focus, flowbox flowboxchild:disabled:selected, entry 
 modelbutton.flat:disabled:active,
 modelbutton.flat:active arrow:disabled,
 modelbutton.flat:disabled:selected,
-modelbutton.flat:selected arrow:disabled, row:disabled:selected, window.thunar .sidebar treeview.view:disabled:selected, .budgie-menu button:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, calendar:disabled:selected {
+modelbutton.flat:selected arrow:disabled, row:disabled:selected, window.thunar > grid > paned > .sidebar > treeview.view:disabled:selected, .budgie-menu button:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, calendar:disabled:selected {
   color: #fdc2a0;
 }
 
@@ -8826,17 +8818,17 @@ window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
   color: #464853;
 }
 
-window.thunar .sidebar {
+window.thunar > grid > paned > .sidebar {
   border-top: none;
 }
 
-window.thunar .sidebar treeview.view {
+window.thunar > grid > paned > .sidebar > treeview.view {
   background-color: #fafbfc;
   color: rgba(70, 72, 83, 0.75);
   -gtk-icon-style: symbolic;
 }
 
-window.thunar .sidebar treeview.view:not(:selected):hover {
+window.thunar > grid > paned > .sidebar > treeview.view:not(:selected):hover {
   color: #464853;
   background-color: #e8e9eb;
 }
@@ -8859,13 +8851,13 @@ window.thunar notebook header.top tab.reorderable-page > box > label {
   min-height: 0;
 }
 
-window.thunar toolbar#location-toolbar, window.thunar #location-toolbar.inline-toolbar {
+window.thunar toolbar, window.thunar .inline-toolbar {
   background-color: #ffffff;
   color: rgba(62, 67, 91, 0.8);
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
-window.thunar toolbar#location-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button, window.thunar #location-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button {
+window.thunar toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button, window.thunar .inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button {
   margin: 0;
   padding: 4px;
 }
@@ -10535,7 +10527,6 @@ stack#conversation_viewer > grid.vertical > scrolledwindow.geary-conversation-sc
 
 .geary-main-window .geary-main-layout > leaflet > leaflet > box statusbar {
   margin: -8px -12px;
-  spacing: 6px;
   padding: 6px;
 }
 

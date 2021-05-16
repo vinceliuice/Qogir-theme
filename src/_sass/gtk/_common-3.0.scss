@@ -1978,6 +1978,7 @@ menu,
     padding: 4px 8px;
     text-shadow: none;
     transition: background-color 20ms ease-out;
+    -gtk-icon-style: symbolic;
 
     &:hover {
       transition: none;
@@ -2926,7 +2927,7 @@ row {
     &:hover {
       transition: none;
       animation: none;
-      background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03));
+      background-color: if($variant == 'light', mix(black, $base_color, 8%), mix(white, $base_color, 6%));
     }
 
     &:active, &:checked {
