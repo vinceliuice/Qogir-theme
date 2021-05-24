@@ -58,6 +58,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   color: $side_theme_fg;
   background-color: $side_theme_bg;
 
+  &.has-open-popup,
   &:hover {
     color: $side_theme_alt_fg;
     background-color: mix($side_theme_alt_fg, $side_theme_bg, 10%);
@@ -580,18 +581,13 @@ list#AutostartListBoxTweakGroup {
 }
 
 // Themed left sidebar
-.tweak-categories,
-.tweak-category:not(:selected):not(:hover) {
+list.tweak-categories {
   @extend %side_background;
 
   separator { background: none; }
-}
 
-.tweak-category:not(:selected) {
-  &:hover {
-    color: $side_theme_alt_fg;
-    background-image: image(rgba($side_theme_fg, 0.06));
-    // transition: all 50ms $ease-out-quad;
+  > row.activatable.tweak-category {
+    @extend %side_views;
   }
 }
 
