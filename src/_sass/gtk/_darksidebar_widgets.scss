@@ -537,25 +537,12 @@ textview.view.sourceview.gedit-view {
 //
 // Gnome Tweak Tool (Gnome tweaks)
 //
-row#Focus,
-row#ClickMethod,
-row#StaticWorkspaceTweak, // for 3.26.0
-row#dynamic-workspaces,
-row#PrimaryWorkspaceTweak, // for 3.26.0
-row#workspaces-only-on-primary {
+.tweak-group > .tweak > list {
   padding: 0;
   border: 1px solid $borders_color;
 
-  row:not(:last-child) { border-bottom: 1px solid $borders_color; }
-
-  &.tweak > list { margin-top: -3px; }
+  > row:not(:last-child) { border-bottom: 1px solid $borders_color; }
 }
-
-// Add more spaces between title and list
-row#Focus,
-row#ClickMethod,
-row#PrimaryWorkspaceTweak, // for 3.26.0
-row#workspaces-only-on-primary { margin-top: 4px; }
 
 row#AutostartTitle.tweak {
   padding: 3px;

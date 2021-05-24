@@ -7173,39 +7173,13 @@ list.gedit-document-panel row:hover:not(:selected) button:active, list.gedit-doc
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12));
 }
 
-row#Focus,
-row#ClickMethod,
-row#StaticWorkspaceTweak,
-row#dynamic-workspaces,
-row#PrimaryWorkspaceTweak,
-row#workspaces-only-on-primary {
+.tweak-group > .tweak > list {
   padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-row#Focus row:not(:last-child),
-row#ClickMethod row:not(:last-child),
-row#StaticWorkspaceTweak row:not(:last-child),
-row#dynamic-workspaces row:not(:last-child),
-row#PrimaryWorkspaceTweak row:not(:last-child),
-row#workspaces-only-on-primary row:not(:last-child) {
+.tweak-group > .tweak > list > row:not(:last-child) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-row#Focus.tweak > list,
-row#ClickMethod.tweak > list,
-row#StaticWorkspaceTweak.tweak > list,
-row#dynamic-workspaces.tweak > list,
-row#PrimaryWorkspaceTweak.tweak > list,
-row#workspaces-only-on-primary.tweak > list {
-  margin-top: -3px;
-}
-
-row#Focus,
-row#ClickMethod,
-row#PrimaryWorkspaceTweak,
-row#workspaces-only-on-primary {
-  margin-top: 4px;
 }
 
 row#AutostartTitle.tweak {
