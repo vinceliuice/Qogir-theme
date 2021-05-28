@@ -6923,78 +6923,78 @@ window#meldapp notebook.frame.meld-notebook paned.meld-vc-console-pane {
   border: none;
 }
 
-headerbar.flat {
+headerbar.flat:not(.titlebar) {
   background: none;
   color: #e6ebef;
   border: none;
   box-shadow: none;
 }
 
-headerbar.flat button:not(.close):not(.maximize):not(.minimize) {
+headerbar.flat:not(.titlebar) button:not(.close):not(.maximize):not(.minimize) {
   color: rgba(230, 235, 239, 0.75);
   border: none;
 }
 
-headerbar.flat button:not(.close):not(.maximize):not(.minimize):hover {
+headerbar.flat:not(.titlebar) button:not(.close):not(.maximize):not(.minimize):hover {
   background-color: rgba(230, 235, 239, 0.1);
   color: #e6ebef;
 }
 
-headerbar.flat button:not(.close):not(.maximize):not(.minimize):active {
+headerbar.flat:not(.titlebar) button:not(.close):not(.maximize):not(.minimize):active {
   background-color: rgba(230, 235, 239, 0.25);
   color: #e6ebef;
 }
 
-headerbar.flat button:not(.close):not(.maximize):not(.minimize):checked {
+headerbar.flat:not(.titlebar) button:not(.close):not(.maximize):not(.minimize):checked {
   background-color: rgba(230, 235, 239, 0.2);
   color: #e6ebef;
 }
 
-headerbar.flat button.titlebutton.close {
+headerbar.flat:not(.titlebar) button.titlebutton.close {
   background-image: -gtk-scaled(url("assets/titlebutton-close-dark-win.png"), url("assets/titlebutton-close-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.close:backdrop {
+headerbar.flat:not(.titlebar) button.titlebutton.close:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-close-backdrop-dark-win.png"), url("assets/titlebutton-close-backdrop-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.close:hover {
+headerbar.flat:not(.titlebar) button.titlebutton.close:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-close-hover-dark-win.png"), url("assets/titlebutton-close-hover-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.close:active {
+headerbar.flat:not(.titlebar) button.titlebutton.close:active {
   background-image: -gtk-scaled(url("assets/titlebutton-close-active-dark-win.png"), url("assets/titlebutton-close-active-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.maximize {
+headerbar.flat:not(.titlebar) button.titlebutton.maximize {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-dark-win.png"), url("assets/titlebutton-maximize-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.maximize:backdrop {
+headerbar.flat:not(.titlebar) button.titlebutton.maximize:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-backdrop-dark-win.png"), url("assets/titlebutton-maximize-backdrop-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.maximize:hover {
+headerbar.flat:not(.titlebar) button.titlebutton.maximize:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-hover-dark-win.png"), url("assets/titlebutton-maximize-hover-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.maximize:active {
+headerbar.flat:not(.titlebar) button.titlebutton.maximize:active {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-active-dark-win.png"), url("assets/titlebutton-maximize-active-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.minimize {
+headerbar.flat:not(.titlebar) button.titlebutton.minimize {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-dark-win.png"), url("assets/titlebutton-minimize-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.minimize:backdrop {
+headerbar.flat:not(.titlebar) button.titlebutton.minimize:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-backdrop-dark-win.png"), url("assets/titlebutton-minimize-backdrop-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.minimize:hover {
+headerbar.flat:not(.titlebar) button.titlebutton.minimize:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-hover-dark-win.png"), url("assets/titlebutton-minimize-hover-dark-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.minimize:active {
+headerbar.flat:not(.titlebar) button.titlebutton.minimize:active {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-active-dark-win.png"), url("assets/titlebutton-minimize-active-dark-win@2.png"));
 }
 

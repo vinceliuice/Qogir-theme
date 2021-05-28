@@ -6911,78 +6911,78 @@ window#meldapp notebook.frame.meld-notebook paned.meld-vc-console-pane {
   border: none;
 }
 
-headerbar.flat {
+headerbar.flat:not(.titlebar) {
   background: none;
   color: #464853;
   border: none;
   box-shadow: none;
 }
 
-headerbar.flat button:not(.close):not(.maximize):not(.minimize) {
+headerbar.flat:not(.titlebar) button:not(.close):not(.maximize):not(.minimize) {
   color: rgba(70, 72, 83, 0.75);
   border: none;
 }
 
-headerbar.flat button:not(.close):not(.maximize):not(.minimize):hover {
+headerbar.flat:not(.titlebar) button:not(.close):not(.maximize):not(.minimize):hover {
   background-color: rgba(70, 72, 83, 0.1);
   color: #464853;
 }
 
-headerbar.flat button:not(.close):not(.maximize):not(.minimize):active {
+headerbar.flat:not(.titlebar) button:not(.close):not(.maximize):not(.minimize):active {
   background-color: rgba(70, 72, 83, 0.25);
   color: #464853;
 }
 
-headerbar.flat button:not(.close):not(.maximize):not(.minimize):checked {
+headerbar.flat:not(.titlebar) button:not(.close):not(.maximize):not(.minimize):checked {
   background-color: rgba(70, 72, 83, 0.2);
   color: #464853;
 }
 
-headerbar.flat button.titlebutton.close {
+headerbar.flat:not(.titlebar) button.titlebutton.close {
   background-image: -gtk-scaled(url("assets/titlebutton-close-win.png"), url("assets/titlebutton-close-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.close:backdrop {
+headerbar.flat:not(.titlebar) button.titlebutton.close:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-close-backdrop-win.png"), url("assets/titlebutton-close-backdrop-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.close:hover {
+headerbar.flat:not(.titlebar) button.titlebutton.close:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-close-hover-win.png"), url("assets/titlebutton-close-hover-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.close:active {
+headerbar.flat:not(.titlebar) button.titlebutton.close:active {
   background-image: -gtk-scaled(url("assets/titlebutton-close-active-win.png"), url("assets/titlebutton-close-active-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.maximize {
+headerbar.flat:not(.titlebar) button.titlebutton.maximize {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-win.png"), url("assets/titlebutton-maximize-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.maximize:backdrop {
+headerbar.flat:not(.titlebar) button.titlebutton.maximize:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-backdrop-win.png"), url("assets/titlebutton-maximize-backdrop-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.maximize:hover {
+headerbar.flat:not(.titlebar) button.titlebutton.maximize:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-hover-win.png"), url("assets/titlebutton-maximize-hover-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.maximize:active {
+headerbar.flat:not(.titlebar) button.titlebutton.maximize:active {
   background-image: -gtk-scaled(url("assets/titlebutton-maximize-active-win.png"), url("assets/titlebutton-maximize-active-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.minimize {
+headerbar.flat:not(.titlebar) button.titlebutton.minimize {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-win.png"), url("assets/titlebutton-minimize-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.minimize:backdrop {
+headerbar.flat:not(.titlebar) button.titlebutton.minimize:backdrop {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-backdrop-win.png"), url("assets/titlebutton-minimize-backdrop-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.minimize:hover {
+headerbar.flat:not(.titlebar) button.titlebutton.minimize:hover {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-hover-win.png"), url("assets/titlebutton-minimize-hover-win@2.png"));
 }
 
-headerbar.flat button.titlebutton.minimize:active {
+headerbar.flat:not(.titlebar) button.titlebutton.minimize:active {
   background-image: -gtk-scaled(url("assets/titlebutton-minimize-active-win.png"), url("assets/titlebutton-minimize-active-win@2.png"));
 }
 
