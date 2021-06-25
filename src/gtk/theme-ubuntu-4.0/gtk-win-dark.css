@@ -950,33 +950,33 @@ stacksidebar row.needs-attention > label:dir(rtl), stackswitcher > button.needs-
   box-shadow: none;
 }
 
-.linked.path-bar:not(.vertical) > button {
+.linked:not(.vertical).path-bar > button {
   border-left-style: none;
   border-right-style: none;
 }
 
-.linked.path-bar:not(.vertical) > button:first-child {
+.linked:not(.vertical).path-bar > button:first-child {
   border-left-style: solid;
 }
 
-.linked.path-bar:not(.vertical) > button:last-child {
+.linked:not(.vertical).path-bar > button:last-child {
   border-right-style: solid;
 }
 
-.linked.path-bar:not(.vertical) > button + button {
+.linked:not(.vertical).path-bar > button + button {
   border-left-style: none;
   border-right-style: none;
 }
 
-.linked.path-bar:not(.vertical) > button + button:last-child {
+.linked:not(.vertical).path-bar > button + button:last-child {
   border-right-style: solid;
 }
 
-.linked.path-bar:not(.vertical) > button:hover:not(:checked):not(:active):not(:only-child):first-child:hover {
+.linked:not(.vertical).path-bar > button:hover:not(:checked):not(:active):not(:only-child):first-child:hover {
   box-shadow: none;
 }
 
-.linked.path-bar:not(.vertical) > button:hover:not(:checked):not(:active):not(:only-child):last-child:hover {
+.linked:not(.vertical).path-bar > button:hover:not(:checked):not(:active):not(:only-child):last-child:hover {
   box-shadow: none;
 }
 
@@ -1485,14 +1485,14 @@ list > row button.image-button:not(.flat):not(.up):not(.down):checked {
 }
 
 popover.menu box.circular-buttons button.suggested-action.circular.image-button.model,
-list > row button.image-button.suggested-action:not(.flat):not(.up):not(.down) {
+list > row button.image-button:not(.flat):not(.up):not(.down).suggested-action {
   color: #e6ebef;
   border-color: rgba(255, 255, 255, 0.12);
   background-color: #2c2f39;
 }
 
 popover.menu box.circular-buttons button.destructive-action.circular.image-button.model,
-list > row button.image-button.destructive-action:not(.flat):not(.up):not(.down) {
+list > row button.image-button:not(.flat):not(.up):not(.down).destructive-action {
   color: #e6ebef;
   border-color: rgba(255, 255, 255, 0.12);
   background-color: #2c2f39;
@@ -1940,17 +1940,17 @@ headerbar.default-decoration:not(.csd) windowcontrols button {
   margin: 0 -3px;
 }
 
-headerbar.default-decoration:not(.csd) {
+headerbar:not(.csd).default-decoration {
   min-height: 30px;
   padding: 0 3px;
   background-color: #282A33;
 }
 
-headerbar.default-decoration:not(.csd) windowcontrols button {
+headerbar:not(.csd).default-decoration windowcontrols button {
   border: none;
 }
 
-headerbar.default-decoration:not(.csd) windowcontrols menubutton button {
+headerbar:not(.csd).default-decoration windowcontrols menubutton button {
   min-height: 20px;
   min-width: 20px;
   margin: 0;
@@ -2245,11 +2245,11 @@ headerbar.selection-mode button:backdrop {
   background: none;
 }
 
-headerbar .linked > button.radio:not(:only-child) {
+headerbar .linked > button:not(:only-child).radio {
   margin-left: 1px;
 }
 
-headerbar .linked > button.radio:not(:only-child) {
+headerbar .linked > button:not(:only-child).radio {
   border-radius: 3px;
   border-style: solid;
 }
@@ -2588,11 +2588,11 @@ treeview.view:drop(active) {
   border-color: #f1b898;
 }
 
-treeview.view.after:drop(active) {
+treeview.view:drop(active).after {
   border-top-style: none;
 }
 
-treeview.view.before:drop(active) {
+treeview.view:drop(active).before {
   border-bottom-style: none;
 }
 
@@ -3245,12 +3245,12 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) slider {
+scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal slider {
   margin: 0 2px;
   min-width: 38px;
 }
 
-scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) slider {
+scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical slider {
   margin: 2px 0;
   min-height: 38px;
 }
@@ -6558,8 +6558,8 @@ leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.fra
   color: rgba(246, 246, 251, 0.35);
 }
 
-leaflet > scrolledwindow > viewport.frame > list > row.activatable.has-open-popup:selected, hdyleaflet > box.vertical > scrolledwindow > viewport .sidebar list > row.activatable.has-open-popup:selected, hdyleaflet > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row.has-open-popup:selected,
-leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row.has-open-popup:selected, .polari-room-list .sidebar .activatable.has-open-popup:selected, .polari-room-list .sidebar .inactive.has-open-popup:selected, .polari-room-list .sidebar .room-list-header.has-open-popup:selected, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable.has-open-popup:selected, .geary-main-window .geary-main-layout > leaflet > leaflet > box .geary-folder-frame > scrolledwindow treeview.view.sidebar.has-open-popup:selected, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow treeview.view.sidebar.has-open-popup:selected, .sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow treeview.view.sidebar.has-open-popup:selected, list.tweak-categories > row.activatable.tweak-category.has-open-popup:selected, textview.view.sourceview.gedit-view window#gtk-tooltip treeview.view.has-open-popup:selected, .gedit-side-panel-paned treeview.view.has-open-popup:selected, list.gedit-document-panel row.activatable.has-open-popup:selected, leaflet > scrolledwindow > viewport.frame > list > row.activatable:selected:hover, hdyleaflet > box.vertical > scrolledwindow > viewport .sidebar list > row.activatable:selected:hover, hdyleaflet > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected:hover,
+leaflet > scrolledwindow > viewport.frame > list > row.activatable:selected.has-open-popup, hdyleaflet > box.vertical > scrolledwindow > viewport .sidebar list > row.activatable:selected.has-open-popup, hdyleaflet > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected.has-open-popup,
+leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected.has-open-popup, .polari-room-list .sidebar .activatable:selected.has-open-popup, .polari-room-list .sidebar .inactive:selected.has-open-popup, .polari-room-list .sidebar .room-list-header:selected.has-open-popup, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected.has-open-popup, .geary-main-window .geary-main-layout > leaflet > leaflet > box .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected.has-open-popup, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected.has-open-popup, .sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow treeview.view.sidebar:selected.has-open-popup, list.tweak-categories > row.activatable.tweak-category:selected.has-open-popup, textview.view.sourceview.gedit-view window#gtk-tooltip treeview.view:selected.has-open-popup, .gedit-side-panel-paned treeview.view:selected.has-open-popup, list.gedit-document-panel row.activatable:selected.has-open-popup, leaflet > scrolledwindow > viewport.frame > list > row.activatable:selected:hover, hdyleaflet > box.vertical > scrolledwindow > viewport .sidebar list > row.activatable:selected:hover, hdyleaflet > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected:hover,
 leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected:hover, .polari-room-list .sidebar .activatable:selected:hover, .polari-room-list .sidebar .inactive:selected:hover, .polari-room-list .sidebar .room-list-header:selected:hover, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected:hover, .geary-main-window .geary-main-layout > leaflet > leaflet > box .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected:hover, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected:hover, .sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow treeview.view.sidebar:selected:hover, list.tweak-categories > row.activatable.tweak-category:selected:hover, textview.view.sourceview.gedit-view window#gtk-tooltip treeview.view:selected:hover, .gedit-side-panel-paned treeview.view:selected:hover, list.gedit-document-panel row.activatable:selected:hover {
   background-color: #e2773b;
 }
@@ -6958,7 +6958,7 @@ filechooser paned > separator {
   transition: box-shadow 0.2s;
 }
 
-.nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected, .nautilus-window placessidebar.sidebar row.sidebar-row:selected, .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected.has-open-popup, .nautilus-window placessidebar.sidebar row.sidebar-row:selected, .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
   box-shadow: inset 38px 0 0 0 #fb8441;
   background-color: rgba(251, 132, 65, 0);
   background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
@@ -6966,7 +6966,7 @@ filechooser paned > separator {
   background-position: 42px center;
 }
 
-.nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:selected .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover .sidebar-label {
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected.has-open-popup .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:selected .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover .sidebar-label {
   color: #f4f6f6;
 }
 
@@ -7032,7 +7032,7 @@ filechooser paned > separator {
   color: #d8dedf;
 }
 
-.nemo-window .sidebar .view.cell.has-open-popup:selected, .nemo-window .sidebar .view.cell:selected:hover, .nemo-window .sidebar row.cell.has-open-popup:selected, .nemo-window .sidebar row.cell:selected:hover {
+.nemo-window .sidebar .view.cell:selected.has-open-popup, .nemo-window .sidebar .view.cell:selected:hover, .nemo-window .sidebar row.cell:selected.has-open-popup, .nemo-window .sidebar row.cell:selected:hover {
   color: #ffffff;
   background-color: #e2773b;
 }
@@ -7195,7 +7195,7 @@ list.tweak-categories separator {
   background: none;
 }
 
-window.background.csd > box.horizontal:not(.titlebar) > separator.vertical, window.background.csd > box.horizontal:not(.titlebar) > separator.vertical:backdrop {
+window.background.csd > box:not(.titlebar).horizontal > separator.vertical, window.background.csd > box:not(.titlebar).horizontal > separator.vertical:backdrop {
   background-image: image(rgba(255, 255, 255, 0.12));
   background-color: transparent;
 }
@@ -7471,7 +7471,7 @@ leaflet.unfolded > separator.sidebar {
   background-color: #fb8441;
 }
 
-.selection-mode hdyleaflet headerbar button:not(.titlebutton), .selection-mode hdyleaflet headerbar button.flat:not(.titlebutton), .selection-mode leaflet.unfolded headerbar button:not(.titlebutton), .selection-mode leaflet.unfolded headerbar button.flat:not(.titlebutton) {
+.selection-mode hdyleaflet headerbar button:not(.titlebutton), .selection-mode hdyleaflet headerbar button:not(.titlebutton).flat, .selection-mode leaflet.unfolded headerbar button:not(.titlebutton), .selection-mode leaflet.unfolded headerbar button:not(.titlebutton).flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;

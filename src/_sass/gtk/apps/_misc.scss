@@ -56,22 +56,24 @@
     }
   }
 
-  // Rename entry
-  .nemo-window-pane widget.entry {
-    border: 1px solid;
-    border-radius: 3px;
-
-    @include entry(focus);
-
-    &:selected { &:focus, & { @extend %selected_items; } }
-  }
-
-  // Icon view container
   .nemo-window-pane {
+    widget.entry {  // Rename entry
+      border: 1px solid;
+      border-radius: 3px;
+
+      @include entry(focus);
+
+      &:selected { &:focus, & { @extend %selected_items; } }
+    }
+
     notebook {
-      scrolledwindow.view {
+      scrolledwindow.view {  // Icon view container
         @extend %file_manager_img;
       }
+
+      infobar > revealer > box { border-bottom: 1px solid $borders_color; }
+
+      box.vertical > separator { background: none; }
     }
   }
 

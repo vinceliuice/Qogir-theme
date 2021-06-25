@@ -353,11 +353,11 @@ while [[ $# -gt 0 ]]; do
       ;;
     -g|--gdm)
       gdm='true'
-      shift 1
+      shift
       ;;
     -r|--revert)
       revert='true'
-      shift 1
+      shift
       ;;
     -i|--image)
       image='true'
