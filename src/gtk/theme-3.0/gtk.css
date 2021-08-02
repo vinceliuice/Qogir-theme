@@ -1814,12 +1814,21 @@ headerbar.windowhandle viewswitcher button {
   border-radius: 0;
   margin-top: -1px;
   margin-bottom: -1px;
-  padding: 0 10px;
+  padding: 0 0;
   min-height: 0;
+  min-width: 120px;
   border: none;
   outline: none;
   background-clip: padding-box;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 0%, transparent 0%) 0 0 0/0 0 0;
+}
+
+headerbar.windowhandle viewswitcher button image {
+  margin-left: 10px;
+}
+
+headerbar.windowhandle viewswitcher button label {
+  margin-right: 10px;
 }
 
 headerbar.windowhandle viewswitcher button:hover {
@@ -10520,6 +10529,17 @@ stack#conversation_viewer > grid.vertical > scrolledwindow.geary-conversation-sc
 
 .geary-main-window list.content.conversation-listbox {
   border: none;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom-width: 0;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row > box.vertical > separator.horizontal {

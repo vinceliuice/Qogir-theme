@@ -333,8 +333,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px 0;
   background-color: #ffffff;
   border-radius: 2px;
-  margin: 2px 4px 6px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+  margin: 2px 5px 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
   border: 0 solid rgba(0, 0, 0, 0.75) !important;
 }
 
@@ -3053,4 +3053,92 @@ StWidget.focused .app-well-app-running-dot {
 .popup-menu.app-well-menu .popup-menu-item.dashtodock-app-well-preview-menu-item {
   padding-left: 1em;
   padding-right: 1em;
+}
+
+.openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
+  border: 1px solid transparent;
+  background: none;
+}
+
+.openweather-button:hover, .openweather-button-action:hover, .openweather-menu-button-container:hover, .openweather-button-box:hover {
+  border: 1px solid #5294e2;
+}
+
+.openweather-provider {
+  padding: 0 16px;
+  font-weight: 500;
+  text-shadow: none;
+  color: #464853;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: none;
+}
+
+.openweather-provider:hover {
+  text-shadow: none;
+  color: #464853;
+  background-color: #f4f4f5;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: none;
+}
+
+.openweather-provider:focus {
+  text-shadow: none;
+  color: #464853;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: none;
+}
+
+.openweather-provider:active {
+  text-shadow: none;
+  color: #ffffff;
+  background-color: #5294e2;
+  border: 1px solid #2679db;
+  box-shadow: none;
+}
+
+.openweather-provider:insensitive {
+  text-shadow: none;
+  color: rgba(70, 72, 83, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.55);
+  box-shadow: none;
+}
+
+.openweather-current-icon, .openweather-current-summary, .openweather-current-summarybox {
+  background: none;
+  color: #464853;
+  -st-icon-style: symbolic;
+}
+
+.openweather-current-databox-values {
+  background: none;
+  color: rgba(70, 72, 83, 0.6);
+}
+
+.openweather-current-databox-captions {
+  background: none;
+  color: rgba(70, 72, 83, 0.6);
+}
+
+.openweather-forecast-icon, .openweather-forecast-summary {
+  background: none;
+  color: rgba(70, 72, 83, 0.75);
+  -st-icon-style: symbolic;
+}
+
+.openweather-forecast-day {
+  background: none;
+  color: #464853;
+}
+
+.openweather-forecast-temperature {
+  background: none;
+  color: rgba(70, 72, 83, 0.75);
+}
+
+.openweather-sunrise-icon, .openweather-sunset-icon, .openweather-build-icon {
+  color: rgba(70, 72, 83, 0.75);
+  -st-icon-style: symbolic;
 }

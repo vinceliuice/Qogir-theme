@@ -1327,8 +1327,9 @@ headerbar {
       border-radius: 0;
       margin-top: -1px;
       margin-bottom: -1px;
-      padding: 0 10px;
+      padding: 0 0;
       min-height: 0;
+      min-width: 120px;
       border: none;
       outline: none;
       background-clip: padding-box;
@@ -1336,6 +1337,9 @@ headerbar {
                                     $selected_bg_color 0%,
                                     transparent 0%)
                                     0 0 0 / 0 0 0;
+
+      image { margin-left: 10px; }
+      label { margin-right: 10px; }
 
       &:hover {
         color: $alt_header_fg;

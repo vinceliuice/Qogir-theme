@@ -7302,6 +7302,17 @@ stack#conversation_viewer > grid.vertical > scrolledwindow.geary-conversation-sc
   border: none;
 }
 
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom-width: 0;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
 window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row > box.vertical > separator.horizontal {
   background: none;
   min-height: 0;

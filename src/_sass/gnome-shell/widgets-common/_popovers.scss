@@ -37,8 +37,8 @@
   padding: 6px 0;
   background-color: $base_color;
   border-radius: 2px;
-  margin: 2px 4px 6px;
-  box-shadow: 0 3px 5px rgba(black, 0.25);
+  margin: 2px 5px 10px;
+  box-shadow: 0 3px 5px rgba(black, 0.15);
   border: if($variant == 'light', 0, 1px) solid rgba(black, 0.75) !important;
 }
 
