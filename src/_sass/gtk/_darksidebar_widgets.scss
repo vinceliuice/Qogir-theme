@@ -239,19 +239,12 @@ filechooser {
   }
 
   headerbar {
-    padding-left: if($menu == 'budgie', 5px + $header_padding, 48px);
-    @if $menu == 'gnome' { @extend %headerbar_image; } // Set nautilus headerbar mountain icon
+    padding-left: 48px;
+    @extend %headerbar_image; // Set nautilus headerbar mountain icon
 
     &, &:backdrop {
       box-shadow: inset 0 -1px if($variant=='light', rgba($dark_sidebar_icon_bg, 0.15), $dark_sidebar_icon_bg),
-                  inset 38px 0 0 0 if($menu=='budgie', $dark_sidebar_icon_bg, transparent);
-    }
-
-    @if $menu == 'budgie' {
-      button.titlebutton {
-        @extend %headerbar_appmenu;
-        &.appmenu { margin-left: -1px - $header_padding; }
-      }
+                  inset 38px 0 0 0 transparent;
     }
   }
 

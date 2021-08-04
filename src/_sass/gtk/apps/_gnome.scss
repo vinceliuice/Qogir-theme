@@ -38,7 +38,7 @@ window.background { // gnome-terminal 3.32
 //
 // Nautilus
 //
-%nautilus_backimage {
+%nautilus_background_image {
   background-image: -gtk-scaled(url("assets/backimage#{$asset_suffix}.png"), url("assets/backimage#{$asset_suffix}@2.png"));
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -165,12 +165,14 @@ window.background { // gnome-terminal 3.32
 
 %file_manager_img,
 .nautilus-window notebook > stack {
-  background-image: none;
-  // @extend %nautilus_backimage;
+  @if $background == 'image' {
+    @extend %nautilus_background_image;
+  } @else {
+    background-image: none;
+  }
 }
 
 .nautilus-window {
-
   .searchbar-container { margin-top: -1px; }
 
   > menubar { // For wayland

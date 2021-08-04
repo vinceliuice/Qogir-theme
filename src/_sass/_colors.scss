@@ -1,6 +1,8 @@
 // When color definition differs for dark and light variant,
 // it gets @if ed depending on $variant
 
+@import 'tweaks-temp';
+
 $base_color: if($variant =='light', #ffffff, #282A33);
 $text_color: if($variant == 'light', #4a4c59, #e0e5eb);
 $bg_color: if($variant =='light', #fafbfc, #32343D);

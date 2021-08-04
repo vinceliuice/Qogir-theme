@@ -1,7 +1,10 @@
 
 #overviewGroup {
   background-color: darken($osd_bg_color, 5%);
-  background-image: url("background.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  @if $background == 'image' {
+    background-image: url("assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
