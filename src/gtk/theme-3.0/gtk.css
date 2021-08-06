@@ -6800,6 +6800,18 @@ stackswitcher.tall {
   margin-top: 6px;
 }
 
+.xapp-status-icon-menu-window > decoration {
+  box-shadow: none;
+  transition: none;
+  margin: 0;
+}
+
+.xapp-status-icon-menu-window > menu > menuitem > window > decoration {
+  box-shadow: none;
+  transition: none;
+  margin: 0;
+}
+
 /*****************
  * Unity Desktop *
  *****************/

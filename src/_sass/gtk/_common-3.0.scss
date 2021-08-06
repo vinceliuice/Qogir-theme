@@ -1968,7 +1968,9 @@ menu,
   background-color: $_menu_bg;
   border: 1px solid $borders_color; // adds borders in a non composited env
 
-  .csd & { border: none; }
+  .csd & {
+    border: none;
+  }
 
   separator,
   .csd & separator {

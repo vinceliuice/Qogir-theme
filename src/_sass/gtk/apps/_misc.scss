@@ -746,3 +746,22 @@ headerbar:not(.titlebar).flat {
 stackswitcher.tall {
   margin-top: $cont_padding;
 }
+
+//
+// xapp stutas icon menu
+//
+.xapp-status-icon-menu-window {
+  > decoration {
+    box-shadow: none;
+    transition: none;
+    margin: 0;
+  }
+
+  > menu > menuitem > window {
+    > decoration {
+      box-shadow: none;
+      transition: none;
+      margin: 0;
+    }
+  }
+}
