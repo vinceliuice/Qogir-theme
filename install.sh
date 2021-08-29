@@ -65,6 +65,8 @@ install() {
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
+  theme_tweaks && install_theme_color
+
   echo "Installing '${THEME_DIR}'..."
 
   mkdir -p                                                                           ${THEME_DIR}
@@ -106,17 +108,17 @@ install() {
 
   cp -r ${SRC_DIR}/src/gtk/assets/assets-common/*                                    ${THEME_DIR}/gtk-3.0/assets
 
-  if [[ "$image" == "true" || "$square" == "true" || "$theme_color" != "default" ]]; then
-    sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-3.0/gtk${color}.scss           ${THEME_DIR}/gtk-3.0/gtk.css
+  if [[ "$tweaks" == 'true' ]]; then
+    sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-3.0/gtk${color}.scss                   ${THEME_DIR}/gtk-3.0/gtk.css
   else
-    cp -r ${SRC_DIR}/src/gtk/theme-3.0/gtk${color}.css                       ${THEME_DIR}/gtk-3.0/gtk.css
+    cp -r ${SRC_DIR}/src/gtk/theme-3.0/gtk${color}.css                               ${THEME_DIR}/gtk-3.0/gtk.css
   fi
 
   if [[ ${color} != '-dark' ]]; then
-    if [[ "$image" == "true" || "$square" == "true" || "$theme_color" != "default" ]]; then
-      sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-3.0/gtk-dark.scss            ${THEME_DIR}/gtk-3.0/gtk-dark.css
+    if [[ "$tweaks" == 'true' ]]; then
+      sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-3.0/gtk-dark.scss                    ${THEME_DIR}/gtk-3.0/gtk-dark.css
     else
-      cp -r ${SRC_DIR}/src/gtk/theme-3.0/gtk-dark.css                        ${THEME_DIR}/gtk-3.0/gtk-dark.css
+      cp -r ${SRC_DIR}/src/gtk/theme-3.0/gtk-dark.css                                ${THEME_DIR}/gtk-3.0/gtk-dark.css
     fi
   fi
 
@@ -137,17 +139,17 @@ install() {
 
   cp -r ${SRC_DIR}/src/gtk/assets/assets-common/*                                    ${THEME_DIR}/gtk-4.0/assets
 
-  if [[ "$image" == "true" || "$square" == "true" || "$theme_color" != "default" ]]; then
-    sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-4.0/gtk${color}.scss           ${THEME_DIR}/gtk-4.0/gtk.css
+  if [[ "$tweaks" == 'true' ]]; then
+    sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-4.0/gtk${color}.scss                   ${THEME_DIR}/gtk-4.0/gtk.css
   else
-    cp -r ${SRC_DIR}/src/gtk/theme-4.0/gtk${color}.css                       ${THEME_DIR}/gtk-4.0/gtk.css
+    cp -r ${SRC_DIR}/src/gtk/theme-4.0/gtk${color}.css                               ${THEME_DIR}/gtk-4.0/gtk.css
   fi
 
   if [[ ${color} != '-dark' ]]; then
-    if [[ "$image" == "true" || "$square" == "true" || "$theme_color" != "default" ]]; then
-      sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-4.0/gtk-dark.scss            ${THEME_DIR}/gtk-4.0/gtk-dark.css
+    if [[ "$tweaks" == 'true' ]]; then
+      sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-4.0/gtk-dark.scss                    ${THEME_DIR}/gtk-4.0/gtk-dark.css
     else
-      cp -r ${SRC_DIR}/src/gtk/theme-4.0/gtk-dark.css                        ${THEME_DIR}/gtk-4.0/gtk-dark.css
+      cp -r ${SRC_DIR}/src/gtk/theme-4.0/gtk-dark.css                                ${THEME_DIR}/gtk-4.0/gtk-dark.css
     fi
   fi
 
@@ -170,16 +172,16 @@ install() {
   cp -r ${SRC_DIR}/src/gnome-shell/pad-osd.css                                       ${THEME_DIR}/gnome-shell
 
   if [[ "${GS_VERSION:-}" == 'new' ]]; then
-    if [[ "$image" == "true" || "$square" == "true" || "$theme_color" != "default" ]]; then
+    if [[ "$tweaks" == 'true' ]]; then
       sassc $SASSC_OPT ${SRC_DIR}/src/gnome-shell/theme-40-0/gnome-shell${ELSE_DARK}.scss ${THEME_DIR}/gnome-shell/gnome-shell.css
     else
-      cp -r ${SRC_DIR}/src/gnome-shell/theme-40-0/gnome-shell${ELSE_DARK}.css  ${THEME_DIR}/gnome-shell/gnome-shell.css
+      cp -r ${SRC_DIR}/src/gnome-shell/theme-40-0/gnome-shell${ELSE_DARK}.css        ${THEME_DIR}/gnome-shell/gnome-shell.css
     fi
   else
-    if [[ "$image" == "true" || "$square" == "true" || "$theme_color" != "default" ]]; then
+    if [[ "$tweaks" == 'true' ]]; then
       sassc $SASSC_OPT ${SRC_DIR}/src/gnome-shell/theme-3-32/gnome-shell${ELSE_DARK}.scss ${THEME_DIR}/gnome-shell/gnome-shell.css
     else
-      cp -r ${SRC_DIR}/src/gnome-shell/theme-3-32/gnome-shell${ELSE_DARK}.css  ${THEME_DIR}/gnome-shell/gnome-shell.css
+      cp -r ${SRC_DIR}/src/gnome-shell/theme-3-32/gnome-shell${ELSE_DARK}.css        ${THEME_DIR}/gnome-shell/gnome-shell.css
     fi
   fi
 
@@ -192,7 +194,7 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/cinnamon
   cp -r ${SRC_DIR}/src/cinnamon/assets${theme}/common-assets                         ${THEME_DIR}/cinnamon
   cp -r ${SRC_DIR}/src/cinnamon/assets${theme}/assets${ELSE_DARK}                    ${THEME_DIR}/cinnamon/assets
-  if [[ "$image" == "true" || "$square" == "true" || "$theme_color" != "default" ]]; then
+  if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT ${SRC_DIR}/src/cinnamon/cinnamon${ELSE_DARK}.scss               ${THEME_DIR}/cinnamon/cinnamon.css
   else
     cp -r ${SRC_DIR}/src/cinnamon/cinnamon${ELSE_DARK}.css                           ${THEME_DIR}/cinnamon/cinnamon.css
@@ -281,6 +283,131 @@ revert_gdm() {
   fi
 }
 
+while [[ $# -gt 0 ]]; do
+  case "${1}" in
+    -d|--dest)
+      dest="${2}"
+      if [[ ! -d "${dest}" ]]; then
+        echo "ERROR: Destination directory does not exist."
+        exit 1
+      fi
+      shift 2
+      ;;
+    -n|--name)
+      name="${2}"
+      shift 2
+      ;;
+    -l|--logo)
+      logo="${2}"
+      shift 2
+      ;;
+    -g|--gdm)
+      gdm='true'
+      shift
+      ;;
+    -r|--revert)
+      revert='true'
+      shift
+      ;;
+    -i|--image)
+      image='true'
+      shift
+      ;;
+    -w|--win)
+      shift
+      for win in "${@}"; do
+        case "${win}" in
+          standard)
+            wins+=("${WIN_VARIANTS[0]}")
+            shift 1
+            ;;
+          square)
+            wins+=("${WIN_VARIANTS[1]}")
+            square='true'
+            shift 1
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized titlebutton variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
+      ;;
+    -t|--theme)
+      accent='true'
+      shift
+      for theme in "${@}"; do
+        case "${theme}" in
+          default)
+            themes+=("${THEME_VARIANTS[0]}")
+            shift 1
+            ;;
+          manjaro)
+            themes+=("${THEME_VARIANTS[1]}")
+            shift 1
+            ;;
+          ubuntu)
+            themes+=("${THEME_VARIANTS[2]}")
+            shift 1
+            ;;
+          all)
+            themes+=("${THEME_VARIANTS[@]}")
+            shift 1
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized theme variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
+      ;;
+    -c|--color)
+      shift
+      for color in "${@}"; do
+        case "${color}" in
+          standard)
+            colors+=("${COLOR_VARIANTS[0]}")
+            shift 1
+            ;;
+          light)
+            colors+=("${COLOR_VARIANTS[1]}")
+            shift 1
+            ;;
+          dark)
+            colors+=("${COLOR_VARIANTS[2]}")
+            shift 1
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized color variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      echo "ERROR: Unrecognized installation option '$1'."
+      echo "Try '$0 --help' for more information."
+      exit 1
+      ;;
+  esac
+done
+
 # check command avalibility
 function has_command() {
   command -v $1 > /dev/null
@@ -359,129 +486,6 @@ install_theme() {
   done
 }
 
-while [[ $# -gt 0 ]]; do
-  case "${1}" in
-    -d|--dest)
-      dest="${2}"
-      if [[ ! -d "${dest}" ]]; then
-        echo "ERROR: Destination directory does not exist."
-        exit 1
-      fi
-      shift 2
-      ;;
-    -n|--name)
-      name="${2}"
-      shift 2
-      ;;
-    -l|--logo)
-      logo="${2}"
-      shift 2
-      ;;
-    -g|--gdm)
-      gdm='true'
-      shift
-      ;;
-    -r|--revert)
-      revert='true'
-      shift
-      ;;
-    -i|--image)
-      image='true'
-      shift
-      ;;
-    -w|--win)
-      shift
-      for win in "${@}"; do
-        case "${win}" in
-          standard)
-            wins+=("${WIN_VARIANTS[0]}")
-            shift 1
-            ;;
-          square)
-            wins+=("${WIN_VARIANTS[1]}")
-            square='true'
-            shift 1
-            ;;
-          -*|--*)
-            break
-            ;;
-          *)
-            echo "ERROR: Unrecognized titlebutton variant '$1'."
-            echo "Try '$0 --help' for more information."
-            exit 1
-            ;;
-        esac
-      done
-      ;;
-    -t|--theme)
-      shift
-      for theme in "${@}"; do
-        case "${theme}" in
-          default)
-            themes+=("${THEME_VARIANTS[0]}")
-            theme_color='default'
-            shift 1
-            ;;
-          manjaro)
-            themes+=("${THEME_VARIANTS[1]}")
-            theme_color='manjaro'
-            shift 1
-            ;;
-          ubuntu)
-            themes+=("${THEME_VARIANTS[2]}")
-            theme_color='ubuntu'
-            shift 1
-            ;;
-          -*|--*)
-            break
-            ;;
-          *)
-            echo "ERROR: Unrecognized theme variant '$1'."
-            echo "Try '$0 --help' for more information."
-            exit 1
-            ;;
-        esac
-      done
-      ;;
-    -c|--color)
-      shift
-      for color in "${@}"; do
-        case "${color}" in
-          standard)
-            colors+=("${COLOR_VARIANTS[0]}")
-            shift 1
-            ;;
-          light)
-            colors+=("${COLOR_VARIANTS[1]}")
-            shift 1
-            ;;
-          dark)
-            colors+=("${COLOR_VARIANTS[2]}")
-            shift 1
-            ;;
-          -*|--*)
-            break
-            ;;
-          *)
-            echo "ERROR: Unrecognized color variant '$1'."
-            echo "Try '$0 --help' for more information."
-            exit 1
-            ;;
-        esac
-      done
-      ;;
-    -h|--help)
-      usage
-      exit 0
-      ;;
-    *)
-      echo "ERROR: Unrecognized installation option '$1'."
-      echo "Try '$0 --help' for more information."
-      exit 1
-      ;;
-  esac
-done
-
 tweaks_temp() {
   cp -rf ${SRC_DIR}/src/_sass/_tweaks.scss ${SRC_DIR}/src/_sass/_tweaks-temp.scss
 }
@@ -497,23 +501,33 @@ install_win_titlebutton() {
 }
 
 install_theme_color() {
-  sed -i "/\$theme:/s/default/${theme_color}/" ${SRC_DIR}/src/_sass/_tweaks-temp.scss
-  echo -e "Install ${theme_color} color version ..."
+  if [[ "$theme" != '' ]]; then
+    case "$theme" in
+      -manjaro)
+        theme_color='manjaro'
+        ;;
+      -ubuntu)
+        theme_color='ubuntu'
+        ;;
+    esac
+    sed -i "/\$theme:/s/default/${theme_color}/" ${SRC_DIR}/src/_sass/_tweaks-temp.scss
+  fi
 }
 
-tweaks_temp
+theme_tweaks() {
+  if [[ "$image" == "true" || "$square" == "true" || "$accent" == 'true' ]]; then
+    tweaks='true'
+    install_package; tweaks_temp
+  fi
 
-if [[ "$image" == "true" ]] ; then
-  install_image
-fi
+  if [[ "$image" == "true" ]] ; then
+    install_image
+  fi
 
-if [[ "$square" == "true" ]] ; then
-  install_win_titlebutton
-fi
-
-if [[ "$theme_color" != "default" ]] ; then
-  install_theme_color
-fi
+  if [[ "$square" == "true" ]] ; then
+    install_win_titlebutton
+  fi
+}
 
 if [[ "${gdm:-}" != 'true' && "${revert:-}" != 'true' ]]; then
   install_theme

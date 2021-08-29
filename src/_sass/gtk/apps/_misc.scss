@@ -408,6 +408,7 @@ window.background.chromium {
 
     > menuitem {
       color: $chrome_menu_fg_color;
+      border-radius: 0;
 
       &:hover {
         color: $selected_fg_color;
