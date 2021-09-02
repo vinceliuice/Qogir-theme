@@ -6494,6 +6494,7 @@ window.background.chromium > menu > separator, window.background.chromium > menu
 
 window.background.chromium > menu > menuitem {
   color: #464853;
+  border-radius: 0;
 }
 
 window.background.chromium > menu > menuitem:hover {

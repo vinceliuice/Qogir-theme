@@ -154,16 +154,15 @@
 
 // Activities button
 #panel #panelActivities.panel-button {
-  background-image: url("assets/activities.svg");
-  width: 24px;
-  height: 24px;
-  background-color: transparent !important;
-  background-gradient-direction: none !important;
-  border: 0 solid transparent !important;
-  text-shadow: 0 0 transparent !important;
-  transition-duration: 0ms !important;
-  box-shadow: none !important;
-  color: transparent !important;
+  > * {
+    background-image: url("assets/activities.svg");
+    width: 24px;
+    height: 24px;
+    background-color: transparent !important;
+    background-gradient-direction: none !important;
+    border: none;
+    color: transparent;
+  }
 
   &:hover {
     background-color: rgba($panel_fg, 0.05) !important;
