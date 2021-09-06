@@ -219,6 +219,7 @@ install() {
   # OTHER
   cp -r ${SRC_DIR}/src/plank                                                         ${THEME_DIR}
   cp -r ${SRC_DIR}/src/unity                                                         ${THEME_DIR}
+  cp -r ${SRC_DIR}/src/xfce-notify-4.0                                               ${THEME_DIR}
 }
 
 # Backup and install files related to GDM theme
