@@ -41,7 +41,7 @@ usage() {
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-l, --logo VARIANTS..." "Specify nautilus logo [arch|budgie|debian|fedora|gnome|gentoo|manjaro|ubuntu] (Default: qogir icon)"
-  printf "  %-25s%s\n" "-w, --win VARIANTS..." "Specify titlebutton variant(s) [standard|square] (Default: All variants)"
+  printf "  %-25s%s\n" "-w, --win VARIANTS..." "Specify titlebutton variant(s) [standard|square|all] (Default: standard variant)"
   printf "  %-25s%s\n" "-t, --theme VARIANTS..." "Specify theme primary color variant(s) [default|manjaro|ubuntu] (Default: blue color)"
   printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-i, --image VARIANTS..." "Install theme with nautilus background image"
@@ -315,6 +315,7 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
     -w|--win)
+      square='true'
       shift
       for win in "${@}"; do
         case "${win}" in
@@ -324,7 +325,10 @@ while [[ $# -gt 0 ]]; do
             ;;
           square)
             wins+=("${WIN_VARIANTS[1]}")
-            square='true'
+            shift 1
+            ;;
+          all)
+            wins+=("${WIN_VARIANTS[@]}")
             shift 1
             ;;
           -*|--*)

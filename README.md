@@ -42,13 +42,13 @@ Usage:  ./install.sh  [OPTIONS...]
 |:-------------|:-------------|
 | -d, --dest   | destination directory (Default: $HOME/.themes) |
 | -n, --name   | name (Default: Qogir) |
-| -t, --theme  | theme primary color variant(s) (standard/manjaro/ubuntu) |
+| -t, --theme  | theme primary color variant(s) (standard/manjaro/ubuntu/all) (Default: standard) |
 | -l, --logo   | theme nautilius logo variant(s) (default/arch/budgie/debian/fedora/gnome/gentoo/manjaro/ubuntu) |
-| -c, --color  | color variant(s) (standard/light/dark) |
+| -c, --color  | color variant(s) (standard/light/dark) (Default: all)|
 | -i, --image  | Install theme with nautilus background image |
-| -w, --win    | titlebutton variant(s) (standard/square) |
-| -g, --gdm    | Install GDM theme, you should run this with sudo!|
-| -r, --revert | revert GDM theme, you should run this with sudo!|
+| -w, --win    | titlebutton variant(s) (standard/square/all) (Default: standard) |
+| -g, --gdm    | Install GDM theme, you should run this with sudo! |
+| -r, --revert | revert GDM theme, you should run this with sudo! |
 | -h, --help   | Show this help |
 
 **FOR EXAMPLE:**
