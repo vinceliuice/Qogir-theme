@@ -95,7 +95,7 @@ $text_shadow: 0 0 1px rgba(0, 0, 0, 0.26),
 }
 
 XfdesktopIconView.view {
-  border-radius: 2px;
+  border-radius: 0;
   background: transparent;
   color: $selected_fg_color;
   text-shadow: $text_shadow;
