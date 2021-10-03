@@ -122,6 +122,8 @@ All variants are available via Flathub:
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gtk.Gtk3theme.Qogir{,-dark,-light,-win,-manjaro, ...}
 ```
+### AUR
+[AUR](https://aur.archlinux.org/packages/qogir-gtk-theme/)
 
 ### Kde theme
 [Qogir-kde](https://github.com/vinceliuice/Qogir-kde)
