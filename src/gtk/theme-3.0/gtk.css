@@ -1280,7 +1280,7 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar)
   box-shadow: none;
 }
 
-.linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl), .budgie-settings-window buttonbox.inline-toolbar button, spinbutton:not(.vertical) button, spinbutton:not(.vertical) entry, .linked:not(.vertical) > entry, .linked:not(.vertical) > entry:focus, .linked:not(.vertical) > button, .linked:not(.vertical) > button:hover, .linked:not(.vertical) > button:active, .linked:not(.vertical) > button:checked {
+.linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl), .budgie-settings-window buttonbox.inline-toolbar button, actionbar > revealer > box > viewswitcher > box > button, spinbutton:not(.vertical) button, spinbutton:not(.vertical) entry, .linked:not(.vertical) > entry, .linked:not(.vertical) > entry:focus, .linked:not(.vertical) > button, .linked:not(.vertical) > button:hover, .linked:not(.vertical) > button:active, .linked:not(.vertical) > button:checked {
   border-radius: 0;
   border-right-style: none;
 }
@@ -1291,18 +1291,18 @@ headerbar.titlebar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar)
   border-left-style: none;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:first-child, spinbutton:not(.vertical) button:first-child, spinbutton:not(.vertical) entry:first-child, .linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
+.budgie-settings-window buttonbox.inline-toolbar button:first-child, actionbar > revealer > box > viewswitcher > box > button:first-child, spinbutton:not(.vertical) button:first-child, spinbutton:not(.vertical) entry:first-child, .linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:last-child, spinbutton:not(.vertical) button:last-child, spinbutton:not(.vertical) entry:last-child, .linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
+.budgie-settings-window buttonbox.inline-toolbar button:last-child, actionbar > revealer > box > viewswitcher > box > button:last-child, spinbutton:not(.vertical) button:last-child, spinbutton:not(.vertical) entry:last-child, .linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-right-style: solid;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:only-child, spinbutton:not(.vertical) button:only-child, spinbutton:not(.vertical) entry:only-child, .linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
+.budgie-settings-window buttonbox.inline-toolbar button:only-child, actionbar > revealer > box > viewswitcher > box > button:only-child, spinbutton:not(.vertical) button:only-child, spinbutton:not(.vertical) entry:only-child, .linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
   border-radius: 3px;
   border-style: solid;
 }
@@ -1706,6 +1706,18 @@ actionbar > revealer > box {
   background-color: #f0f3f6;
 }
 
+actionbar > revealer > box > viewswitcher > box > button:not(:checked):not(:active):hover {
+  background-color: rgba(70, 72, 83, 0.1);
+}
+
+actionbar > revealer > box > viewswitcher > box > button:active {
+  background-color: #5294e2;
+}
+
+actionbar > revealer > box > viewswitcher > box > button:not(:first-child) {
+  border-left: none;
+}
+
 headerbar {
   padding: 0 10px;
   color: rgba(228, 235, 241, 0.8);
@@ -1812,9 +1824,9 @@ headerbar entry, headerbar button, headerbar separator:not(.sidebar) {
 
 headerbar.windowhandle viewswitcher button {
   border-radius: 0;
-  margin-top: -1px;
-  margin-bottom: -1px;
-  padding: 0 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
   min-height: 0;
   min-width: 120px;
   border: none;
@@ -1823,12 +1835,16 @@ headerbar.windowhandle viewswitcher button {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 0%, transparent 0%) 0 0 0/0 0 0;
 }
 
-headerbar.windowhandle viewswitcher button image {
-  margin-left: 10px;
+headerbar.windowhandle viewswitcher button > stack > box {
+  padding: 0 12px;
 }
 
-headerbar.windowhandle viewswitcher button label {
-  margin-right: 10px;
+headerbar.windowhandle viewswitcher button > stack > box.narrow {
+  font-size: 10px;
+}
+
+headerbar.windowhandle viewswitcher button > stack > box.narrow image {
+  margin-top: 3px;
 }
 
 headerbar.windowhandle viewswitcher button:hover {
@@ -1839,13 +1855,13 @@ headerbar.windowhandle viewswitcher button:hover {
 headerbar.windowhandle viewswitcher button:active {
   color: rgba(228, 235, 241, 0.8);
   background-color: rgba(228, 235, 241, 0.15);
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 100%, transparent 0%) 0 0 3/0 0 3px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 headerbar.windowhandle viewswitcher button:checked {
   color: rgba(228, 235, 241, 0.8);
   background-color: rgba(228, 235, 241, 0.1);
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 100%, transparent 0%) 0 0 3/0 0 3px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5294e2 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 headerbar.windowhandle viewswitcher button:disabled {
@@ -1856,7 +1872,7 @@ headerbar.windowhandle viewswitcher button:disabled {
 headerbar.windowhandle viewswitcher button:checked:disabled {
   color: rgba(228, 235, 241, 0.35);
   background-color: transparent;
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), rgba(82, 148, 226, 0.35) 100%, transparent 0%) 0 0 3/0 0 3px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), rgba(82, 148, 226, 0.35) 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, window.csd > .titlebar:not(headerbar), window.csd > .titlebar:not(headerbar):backdrop {

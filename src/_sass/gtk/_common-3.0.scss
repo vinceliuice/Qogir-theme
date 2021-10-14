@@ -1191,6 +1191,22 @@ actionbar {
     padding: $cont_padding;
     border-top: 1px solid $borders_color;
     background-color: darken($bg_color, 3%);
+
+    > viewswitcher > box > button {
+      @extend %linked;
+
+      &:not(:checked):not(:active):hover {
+        background-color: rgba($fg_color, 0.1);
+      }
+
+      &:active {
+        background-color: $selected_bg_color;
+      }
+
+      &:not(:first-child) {
+        border-left: none;
+      }
+    }
   }
 }
 
@@ -1325,9 +1341,9 @@ headerbar {
   &.windowhandle {
     viewswitcher button {
       border-radius: 0;
-      margin-top: -1px;
-      margin-bottom: -1px;
-      padding: 0 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
       min-height: 0;
       min-width: 120px;
       border: none;
@@ -1338,8 +1354,15 @@ headerbar {
                                     transparent 0%)
                                     0 0 0 / 0 0 0;
 
-      image { margin-left: 10px; }
-      label { margin-right: 10px; }
+      > stack > box {
+        padding: 0 12px;
+
+        &.narrow {
+          font-size: 10px;
+
+          image { margin-top: 3px; }
+        }
+      }
 
       &:hover {
         color: $alt_header_fg;
@@ -1352,7 +1375,7 @@ headerbar {
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                       $selected_bg_color 100%,
                                       transparent 0%)
-                                      0 0 3 / 0 0 3px;
+                                      0 0 2 / 0 0 2px;
       }
 
       &:checked {
@@ -1361,7 +1384,7 @@ headerbar {
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                       $selected_bg_color 100%,
                                       transparent 0%)
-                                      0 0 3 / 0 0 3px;
+                                      0 0 2 / 0 0 2px;
       }
 
       &:disabled {
@@ -1375,7 +1398,7 @@ headerbar {
         border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                       rgba($selected_bg_color, 0.35) 100%,
                                       transparent 0%)
-                                      0 0 3 / 0 0 3px;
+                                      0 0 2 / 0 0 2px;
       }
     }
   }
