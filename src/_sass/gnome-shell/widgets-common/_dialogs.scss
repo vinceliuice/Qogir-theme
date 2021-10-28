@@ -4,7 +4,7 @@
 
 .modal-dialog {
   @extend %bubble-dialog;
-  border-radius: 2px;
+  border-radius: 3px;
   box-shadow: none;
 
   .modal-dialog-content-box {
@@ -166,10 +166,6 @@
 
 .prompt-dialog-password-layout {
   spacing: 8px;
-}
-
-.prompt-dialog-password-entry {
-  width: 20em;
 }
 
 .prompt-dialog-error-label,
