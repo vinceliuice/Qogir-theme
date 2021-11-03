@@ -1,0 +1,7 @@
+
+.workspace-background {
+  // keep in sync with BACKGROUND_CORNER_RADIUS_PIXELS in workspace.js
+  border-radius: 30px;
+  background-color: darken($osd_bg_color, 5%);
+  box-shadow: 0 4px 16px 4px transparentize(black, 0.7);
+}

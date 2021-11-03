@@ -95,7 +95,7 @@ $text_shadow: 0 0 1px rgba(0, 0, 0, 0.26),
 }
 
 XfdesktopIconView.view {
-  border-radius: 2px;
+  border-radius: 0;
   background: transparent;
   color: $selected_fg_color;
   text-shadow: $text_shadow;
@@ -140,13 +140,14 @@ window#whiskermenu-window {
 //
 
 window.thunar {
-  .sidebar {
+  > grid > paned > .sidebar {
     border-top: none;
 
-    treeview.view {
+    > treeview.view {
       @extend %row_activatable;
       background-color: $bg_color;
       color: $alt_fg_color;
+      -gtk-icon-style: symbolic; // not use?
 
       &:not(:selected):hover {
         color: $fg_color;
@@ -163,6 +164,8 @@ window.thunar {
       @extend %file_manager_img;
 
       .view { @extend %view; background-color: transparent; }
+
+      widget.view { border-radius: 2px; }
     }
 
     // an allocation height of label node affects to close button's
@@ -170,7 +173,7 @@ window.thunar {
     header.top tab.reorderable-page > box > label { min-height: 0; }
   }
 
-  toolbar#location-toolbar {
+  toolbar {
     background-color: $header_bg;
     color: $header_fg;
     box-shadow: inset 0 -1px $borders_color;

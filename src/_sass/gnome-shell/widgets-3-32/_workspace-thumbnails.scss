@@ -1,0 +1,23 @@
+
+// thumbnails in overview
+.workspace-thumbnails {
+  color: $osd_fg_color;
+  background-color: transparentize($osd_fg_color, 0.9);
+  visible-width: 32px; //amount visible before hover
+  spacing: $cont_padding;
+  padding: $cont_padding;
+  border-radius: 3px 0 0 3px;
+  border-right-width: 0;
+
+  &:rtl {
+    border-radius: 0 3px 3px 0;
+    border-left-width: 0;
+  }
+
+  // drag and drop indicator
+  .placeholder {
+    background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
+    background-size: contain;
+    height: 24px;
+  }
+}

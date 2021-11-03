@@ -1,0 +1,89 @@
+#overview {
+  spacing: 24px;
+
+  //favorties | all toggle container
+  .app-view-controls { padding-bottom: 32px; }
+
+  //favorties | all toggle button
+  .app-view-control {
+    padding: 6px 48px;
+    margin: 0;
+    background-clip: padding-box;
+
+    @include button(osd);
+    border-color: rgba(black, 0.75);
+
+    &:hover {
+      @include button(osd-hover);
+      border-color: rgba(black, 0.75);
+    }
+
+    &:checked {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+      border-color: rgba(black, 0.75);
+    }
+
+    &:first-child:ltr,
+    &:last-child:rtl {
+      border-radius: 2px 0 0 2px;
+      border-right: none;
+      margin: 0;
+    }
+
+    &:last-child:ltr,
+    &:first-child:rtl {
+      border-radius: 0 2px 2px 0;
+      border-left: none;
+      margin: 0;
+    }
+  }
+}
+
+.app-view-control {
+  &:first-child:ltr,
+  &:last-child:rtl { border-radius: 2px 0 0 2px; border-right-width: 0; }
+
+  &:last-child:ltr,
+  &:first-child:rtl { border-radius: 0 2px 2px 0; border-left-width: 1px;}
+}
+
+.overview-controls { padding-bottom: 32px; }
+
+#lockDialogGroup {
+  background: url("background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#screenShieldNotifications {
+  StButton#vhandle, StButton#hhandle {
+    background-color: transparentize($bg_color,0.7);
+    &:hover, &:focus { background-color: transparentize($bg_color,0.5); }
+    &:active { background-color: transparentize($selected_bg_color,0.5); }
+  }
+}
+
+.system-menu-action {
+  padding: 13px;
+  color: $fg_color;
+  border-radius: 32px; /* wish we could do 50% */
+  border: 1px solid transparent;
+  -st-icon-style: symbolic; // >= 3.29.90
+
+  &:hover, &:focus {
+    transition-duration: 100ms;
+    padding: 13px;
+    color: $fg_color;
+    background-color: transparent;
+    border: 1px solid $selected_bg_color;
+  }
+
+  &:active {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    border: 1px solid $selected_bg_color;
+  }
+
+  & > StIcon { icon-size: 16px; }
+}

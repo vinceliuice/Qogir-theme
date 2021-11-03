@@ -1,0 +1,50 @@
+/* Dash */
+
+$dash_background_color: lighten($panel_bg, 5%);
+$dash_placeholder_size: 32px;
+$dash_padding: 10px; // 10px
+$dash_spacing: 2px;
+
+$dash_bottom_margin: 16px;
+$dash_border_radius: 3px;
+
+#dash {
+  @include fontsize($font-size - 2);
+  margin-top: 12px;
+  padding: 0 $dash_padding;
+
+  .placeholder {
+    // background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
+    background-image:none;
+    background-size: contain;
+    height: $dash_placeholder_size;
+  }
+
+  .empty-dash-drop-target {
+    width: $dash_placeholder_size;
+    height: $dash_placeholder_size;
+  }
+
+  .overview-icon {
+    padding: $dash_padding / 2;
+  }
+}
+
+.dash-background {
+  background-color: rgba($dash_background_color, 0.9);
+  border: 1px solid darken($dash_background_color, 10%);
+  margin-bottom: $dash_bottom_margin;
+  padding: $dash_padding;
+  border-radius: $dash_border_radius;
+}
+
+// Dash Items
+.dash-item-container .app-well-app, .show-apps {
+  padding: $dash_padding $dash_spacing $dash_padding + $dash_bottom_margin;
+}
+
+.dash-separator {
+  width: 1px;
+  margin: 0 8px $dash_bottom_margin 8px;
+  background-color: transparentize($osd_fg_color, 0.8);
+}

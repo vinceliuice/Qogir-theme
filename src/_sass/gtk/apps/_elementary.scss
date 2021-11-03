@@ -8,6 +8,7 @@
   .panel {
     &, &.color-light, &.color-dark {
       background-color: $panel_bg;
+      background-image: image($panel_bg);
       transition: all 100ms ease-in-out;
       color: $panel_fg;
     }
@@ -103,6 +104,8 @@ button.flat.toggle.switcher {
       color: $selected_bg_color;
     }
   }
+
+  -gtk-outline-radius: 100px;
 }
 
 // Calendar Popover

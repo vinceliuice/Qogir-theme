@@ -1,0 +1,21 @@
+/* Workspace pager */
+
+// thumbnails in overview
+.workspace-thumbnails {
+  visible-width: 32px; //amount visible before hover
+  spacing: $cont_padding;
+  padding: $cont_padding;
+
+  .workspace-thumbnail {
+    background: rgba($osd_fg_color, 0.15);
+    color: $osd_fg_color;
+    border-radius: 3px;
+  }
+
+  // drag and drop indicator
+  .placeholder {
+    background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
+    background-size: contain;
+    width: 18px;
+  }
+}

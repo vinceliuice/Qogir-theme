@@ -1,0 +1,61 @@
+// app icons
+.icon-grid {
+  spacing: 30px;
+  -shell-grid-horizontal-item-size: 136px;
+  -shell-grid-vertical-item-size: 136px;
+
+  row-spacing: $cont_padding * 6;
+  column-spacing: $cont_padding * 6;
+  max-row-spacing: $cont_padding * 12;
+  max-column-spacing: $cont_padding * 12;
+
+  .overview-icon { icon-size: 96px; }
+}
+
+.app-folder-icon {
+  padding: $cont_padding;
+  spacing-rows: $cont_padding;
+  spacing-columns: $cont_padding;
+}
+
+.page-indicator {
+  padding: 15px 20px;
+
+  .page-indicator-icon {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px; // the same as height&width
+    color: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    background-image: url(common-assets/misc/page-indicator-inactive.svg);
+  }
+
+  &:hover .page-indicator-icon {
+    background-image: url(common-assets/misc/page-indicator-hover.svg);
+  }
+
+  &:active .page-indicator-icon {
+    margin: 0;
+    padding: 0;
+    color: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    background-image: url(common-assets/misc/page-indicator-active.svg);
+  }
+
+  &:checked .page-indicator-icon,
+  &:checked:active {
+    background-image: url(common-assets/misc/page-indicator-checked.svg);
+  }
+}
+
+// Some hacks I don't even know
+.all-apps {
+  // horizontal padding to make sure scrollbars or dash don't overlap content
+  padding: 0px 88px;
+}

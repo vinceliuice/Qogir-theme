@@ -1,56 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/org/gnome/shell/theme">
-    <file>assets/checkbox/checkbox-checked.svg</file>
-    <file>assets/checkbox/checkbox-checked-focused.svg</file>
-    <file>assets/checkbox/checkbox-unchecked.svg</file>
-    <file>assets/checkbox/checkbox-unchecked-focused.svg</file>
-    <file>assets/menu/menu.svg</file>
-    <file>assets/menu/submenu.svg</file>
-    <file>assets/menu/submenu-open.svg</file>
-    <file>assets/misc/calendar-arrow-left.svg</file>
-    <file>assets/misc/calendar-arrow-left-hover.svg</file>
-    <file>assets/misc/calendar-arrow-right.svg</file>
-    <file>assets/misc/calendar-arrow-right-hover.svg</file>
-    <file>assets/misc/message.svg</file>
-    <file>assets/misc/message-active.svg</file>
-    <file>assets/misc/message-close.svg</file>
-    <file>assets/misc/message-close-active.svg</file>
-    <file>assets/misc/message-close-hover.svg</file>
-    <file>assets/misc/message-hover.svg</file>
-    <file>assets/misc/modal.svg</file>
-    <file>assets/switch/switch-off.svg</file>
-    <file>assets/switch/switch-on.svg</file>
-    <file>common-assets/dash/dash-left.svg</file>
-    <file>common-assets/dash/dash-placeholder.svg</file>
-    <file>common-assets/dash/dash-right.svg</file>
-    <file>common-assets/dash/running1.svg</file>
-    <file>common-assets/dash/running2.svg</file>
-    <file>common-assets/dash/running3.svg</file>
-    <file>common-assets/dash/running4.svg</file>
-    <file>common-assets/menu/menu-hover.svg</file>
-    <file>common-assets/menu/menu-separator.svg</file>
-    <file>common-assets/misc/activities.svg</file>
-    <file>common-assets/misc/activities-active.svg</file>
-    <file>common-assets/misc/bg.svg</file>
-    <file>common-assets/misc/calendar-today.svg</file>
-    <file>common-assets/misc/close.svg</file>
-    <file>common-assets/misc/close-active.svg</file>
-    <file>common-assets/misc/close-hover.svg</file>
-    <file>common-assets/misc/corner-ripple-ltr.svg</file>
-    <file>common-assets/misc/corner-ripple-rtl.svg</file>
-    <file>common-assets/misc/more-results.svg</file>
-    <file>common-assets/misc/osd.svg</file>
-    <file>common-assets/misc/page-indicator-active.svg</file>
-    <file>common-assets/misc/page-indicator-checked.svg</file>
-    <file>common-assets/misc/page-indicator-hover.svg</file>
-    <file>common-assets/misc/page-indicator-inactive.svg</file>
-    <file>common-assets/misc/process-working.svg</file>
-    <file>common-assets/misc/ws-switch-arrow-down.png</file>
-    <file>common-assets/misc/ws-switch-arrow-up.png</file>
-    <file>common-assets/switch/switch-off-selected.svg</file>
-    <file>common-assets/switch/switch-on-selected.svg</file>
+    <file>assets/checkbox-checked.svg</file>
+    <file>assets/checkbox-checked-focused.svg</file>
+    <file>assets/checkbox-unchecked.svg</file>
+    <file>assets/checkbox-unchecked-focused.svg</file>
+    <file>assets/switch-off.svg</file>
+    <file>assets/switch-on.svg</file>
+    <file>assets/activities.svg</file>
+    <file>assets/calendar-today.svg</file>
+    <file>assets/switch-off-selected.svg</file>
+    <file>assets/switch-on-selected.svg</file>
     <file>background.jpeg</file>
+    <file alias="process-working.svg">assets/process-working.svg</file>
+    <file alias="no-events.svg">assets/no-events.svg</file>
+    <file alias="no-notifications.svg">assets/no-notifications.svg</file>
+    <file>icons/scalable/actions/color-pick.svg</file>
+    <file>icons/scalable/status/eye-not-looking-symbolic.svg</file>
+    <file>icons/scalable/status/eye-open-negative-filled-symbolic.svg</file>
+    <file>icons/scalable/status/keyboard-caps-lock-filled-symbolic.svg</file>
+    <file>icons/scalable/status/keyboard-enter-symbolic.svg</file>
+    <file>icons/scalable/status/keyboard-hide-symbolic.svg</file>
+    <file>icons/scalable/status/keyboard-layout-filled-symbolic.svg</file>
+    <file>icons/scalable/status/keyboard-shift-filled-symbolic.svg</file>
+    <file>icons/scalable/status/message-indicator-symbolic.svg</file>
+    <file>icons/scalable/status/window-close-24-symbolic.svg</file>
+    <file>icons/scalable/actions/pointer-double-click-symbolic.svg</file>
+    <file>icons/scalable/actions/pointer-drag-symbolic.svg</file>
+    <file>icons/scalable/actions/pointer-primary-click-symbolic.svg</file>
+    <file>icons/scalable/actions/pointer-secondary-click-symbolic.svg</file>
+    <file>pad-osd.css</file>
     <file>gnome-shell.css</file>
   </gresource>
 </gresources>

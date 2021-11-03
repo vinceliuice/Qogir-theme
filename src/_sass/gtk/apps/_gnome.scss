@@ -38,7 +38,7 @@ window.background { // gnome-terminal 3.32
 //
 // Nautilus
 //
-%nautilus_backimage {
+%nautilus_background_image {
   background-image: -gtk-scaled(url("assets/backimage#{$asset_suffix}.png"), url("assets/backimage#{$asset_suffix}@2.png"));
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -164,20 +164,16 @@ window.background { // gnome-terminal 3.32
 }
 
 %file_manager_img,
-.nautilus-window,
-.nautilus-window notebook,
 .nautilus-window notebook > stack {
-  background-image: none;
-  // @extend %nautilus_backimage;
+  @if $background == 'image' {
+    @extend %nautilus_background_image;
+  } @else {
+    background-image: none;
+  }
 }
 
 .nautilus-window {
-
-  // searchbar { border-bottom: none; }
-
   .searchbar-container { margin-top: -1px; }
-
-  actionbar { border-color: $solid_borders_color; }
 
   > menubar { // For wayland
     border: none;
@@ -189,6 +185,12 @@ window.background { // gnome-terminal 3.32
 .nautilus-window notebook,
 .nautilus-window notebook > stack:not(:only-child) searchbar {
   background-color: $base_color;
+}
+
+.nautilus-list-view {
+  treeview.view:not(:selected):not(:hover):not(:focus) {
+    background: none;
+  }
 }
 
 button.nautilus-circular-button.image-button {
@@ -292,7 +294,6 @@ eog-thumb-nav,
   }
 
   button {
-    -gtk-outline-radius: 2px;
     border-radius: 2px;
     border-top: none;
   }
@@ -507,7 +508,6 @@ layouttab {
 
 layout {
   border: 1px solid $borders_color;
-  -PnlDockBin-handle-size: 1;
 }
 
 eggsearchbar box.search-bar {
@@ -545,7 +545,6 @@ docktabstrip {
 
 dockbin {
   border: 1px solid $borders_color;
-  -PnlDockBin-handle-size: 1;
 }
 
 dockpaned {
@@ -810,7 +809,6 @@ $em-base: 16px;
 // titles inside the button!?
 headerbar > button.flat.popup.title-menu-button.toggle {
   border-radius: 2px;
-  -gtk-outline-radius: 2px;
 
   > grid {
     .title {
@@ -938,7 +936,7 @@ window.background > box.vertical box.horizontal {
 }
 
 //
-// Epiphany
+// Epiphany (Gnome Web)
 //
 
 $question_bg_color: #FFEA00;
@@ -1035,7 +1033,6 @@ popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical {
         padding: 4px; // Same as of image.sidebar-icon
         margin: 0 6px;
         border-radius: 100px;
-        -gtk-outline-radius: 100px;
       }
     }
   }
@@ -1068,6 +1065,63 @@ flowboxchild.bookmark-tag-widget {
   label { margin-bottom: 2px; }
 
   &-selected { color: $selected_fg_color; } // checked
+}
+
+// 40.0
+tabbox {
+  background-color: $bg_color;
+  box-shadow: inset 0 -1px $borders_color;
+
+  > tab {
+    padding: 2px 16px 4px 16px;
+    min-width: 24px;
+    min-height: 24px;
+    border-radius: 0;
+    border: none;
+    color: $insensitive_fg_color;
+    background-color: transparentize($bg_color, 1);
+
+    &:not(:only-child) {
+      &:first-child { margin-left: $cont_padding; }
+      &:last-child { margin-right: $cont_padding; }
+    }
+
+    &:hover {
+      color: mix($fg_color, rgba($fg_color, 0.5), 50%);
+      transition: 200ms $ease-out-quad;
+      box-shadow: inset 0 -2px rgba($selected_bg_color, 0.5);
+    }
+
+    &:checked {
+      color: $fg_color;
+      transition: 300ms $ease-out-quad;
+      box-shadow: inset 0 -2px $selected_bg_color;
+    }
+
+    button {
+      border-radius: 100%;
+      min-height: 16px;
+      min-width: 16px;
+      padding: 0;
+      margin: 4px 0;
+      color: mix($bg_color, $fg_color, 35%);
+      @extend %undecorated_button;
+
+      &:hover {
+        @extend %undecorated_button;
+        color: lighten(red, 15%);
+        background-color: darken($bg_color, 5%);
+      }
+
+      &:active {
+        @extend %undecorated_button;
+        color: $selected_bg_color;
+        background-color: darken($bg_color, 8%);
+
+        image { color: $selected_bg_color; }
+      }
+    }
+  }
 }
 
 //
@@ -1151,6 +1205,36 @@ window.background > box.vertical > toolbar.primary-toolbar {
 }
 
 //
+// Gnome Clocks
+//
+window.background.csd.unified {
+  > deck > deck > deck {
+    > box.vertical > headerbar.titlebar.windowhandle {
+      > viewswitchertitle > squeezer {
+        > viewswitcher > box.horizontal {
+          > button.radio {
+            margin: 0;
+            border-radius: 0;
+            padding: 0 6px;
+            border-width: 0;
+
+            &:hover {
+              box-shadow: inset 0 -1px $borders_color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+hdyviewswitcherbar > actionbar,
+viewswitcherbar > actionbar { // Gnome 3.38
+  background: none;
+  border: none;
+}
+
+//
 // Dialogs
 //
 dialog.background.csd {
@@ -1167,6 +1251,15 @@ dialog.background.csd {
       > stack {
         > scrolledwindow.frame { // reset border for totem setting dialog
           border: 1px solid $borders_color;
+        }
+      }
+    }
+
+    > filechooser > actionbar {
+      > revealer > box.horizontal > box.horizontal > box.horizontal {
+        > combobox > .linked > button.combo {
+          margin: 24px 6px 24px 120px;
+          background-position: right bottom;
         }
       }
     }

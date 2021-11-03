@@ -56,22 +56,24 @@
     }
   }
 
-  // Rename entry
-  .nemo-window-pane widget.entry {
-    border: 1px solid;
-    border-radius: 3px;
-
-    @include entry(focus);
-
-    &:selected { &:focus, & { @extend %selected_items; } }
-  }
-
-  // Icon view container
   .nemo-window-pane {
+    widget.entry {  // Rename entry
+      border: 1px solid;
+      border-radius: 3px;
+
+      @include entry(focus);
+
+      &:selected { &:focus, & { @extend %selected_items; } }
+    }
+
     notebook {
-      scrolledwindow.view {
+      scrolledwindow.view {  // Icon view container
         @extend %file_manager_img;
       }
+
+      infobar > revealer > box { border-bottom: 1px solid $borders_color; }
+
+      box.vertical > separator { background: none; }
     }
   }
 
@@ -266,13 +268,6 @@ window.background:not(.csd) {
     }
   }
 
-  *:not(menuitem):hover, // exclude menuitem node
-  *:focus,
-  *:active,
-  *:checked {
-    &, button { color: $fg_color; } // enforce opaque foregrounds
-  }
-
   > window.background > menu,
   > window.background > menu > menu {
     border: none; // hide ugly double borders
@@ -413,6 +408,7 @@ window.background.chromium {
 
     > menuitem {
       color: $chrome_menu_fg_color;
+      border-radius: 0;
 
       &:hover {
         color: $selected_fg_color;
@@ -702,6 +698,71 @@ window#meldapp {
 
     paned.meld-vc-console-pane {
       border: none;
+    }
+  }
+}
+
+//
+// Kooha
+//
+headerbar:not(.titlebar).flat {
+  background: none;
+  color: $fg_color;
+  border: none;
+  box-shadow: none;
+
+  button {
+    &:not(.close):not(.maximize):not(.minimize) {
+      color: $alt_fg_color;
+      border: none;
+
+      &:hover {
+        background-color: rgba($fg_color, 0.1);
+        color: $fg_color;
+      }
+
+      &:active {
+        background-color: rgba($fg_color, 0.25);
+        color: $fg_color;
+      }
+
+      &:checked {
+        background-color: rgba($fg_color, 0.2);
+        color: $fg_color;
+      }
+    }
+
+    &.titlebutton {
+      @each $k in ('close', 'maximize', 'minimize') {
+        @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+          &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}#{$asset_suffix_win}.png'),
+                                                       url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix}#{$asset_suffix_win}@2.png'));
+          }
+        }
+      }
+    }
+  }
+}
+
+stackswitcher.tall {
+  margin-top: $cont_padding;
+}
+
+//
+// xapp stutas icon menu
+//
+.xapp-status-icon-menu-window {
+  > decoration {
+    box-shadow: none;
+    transition: none;
+    margin: 0;
+  }
+
+  > menu > menuitem > window {
+    > decoration {
+      box-shadow: none;
+      transition: none;
+      margin: 0;
     }
   }
 }

@@ -21,7 +21,7 @@ Gnome ≥ 3.22:
 
 Fedora/RedHat distros:
 
-    yum install gtk-murrine-engine gtk2-engines
+    dnf install gtk-murrine-engine gtk2-engines
 
 Ubuntu/Mint/Debian distros:
 
@@ -43,12 +43,12 @@ Usage:  ./install.sh  [OPTIONS...]
 | -d, --dest   | destination directory (Default: $HOME/.themes) |
 | -n, --name   | name (Default: Qogir) |
 | -t, --theme  | theme primary color variant(s) (default/manjaro/ubuntu) (Default: blue color)|
-| -l, --logo   | theme nautilius logo variant(s) (default/arch/budgie/debian/fedora/gnome/manjaro/ubuntu) |
-| -c, --color  | color variant(s) (standard/light/dark) |
+| -l, --logo   | theme nautilius logo variant(s) (default/arch/budgie/debian/fedora/gnome/gentoo/manjaro/ubuntu) |
+| -c, --color  | color variant(s) (standard/light/dark) (Default: all)|
 | -i, --image  | Install theme with nautilus background image |
-| -w, --win    | titlebutton variant(s) (standard/square) |
-| -g, --gdm    | Install GDM theme, you should run this with sudo!|
-| -r, --revert | revert GDM theme, you should run this with sudo!|
+| -w, --win    | titlebutton variant(s) (standard/square/all) (Default: standard) |
+| -g, --gdm    | Install GDM theme, you should run this with sudo! |
+| -r, --revert | revert GDM theme, you should run this with sudo! |
 | -h, --help   | Show this help |
 
 **FOR EXAMPLE:**
@@ -64,6 +64,44 @@ Usage:  ./install.sh  [OPTIONS...]
 sudo ./install.sh -g -c dark -t standard  (Install standard dark gdm theme)
 ```
 
+### On Snapcraft
+
+<a href="https://snapcraft.io/qogir-themes">
+<img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
+</a>
+
+The snap contains all flavours of the GTK and icon themes. To connect the theme to other snap packages, please run:
+
+```
+sudo snap connect [other snap]:gtk-3-themes qogir-themes:gtk-3-themes
+```
+
+```
+sudo snap connect [other snap]:icon-themes qogir-themes:icon-themes
+```
+
+To connect the theme to an app run:
+```
+sudo snap connect [other snap]:gtk-3-themes qogir-themes:gtk-3-themes
+```
+To connect the theme to all apps which have available plugs to gtk-common-themes you can run:
+```
+for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i orchis-themes:gtk-3-themes; done
+```
+```
+for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i qogir-themes:icon-themes; done
+```
+
+### Install on OpenBSD/FreeBSD
+
+Let me show you how to install this theme on OpenBSD
+
+    sudo pkg_add bash (sudo pkg install bash #FreeBSD run this)
+    sudo ln -s /usr/local/bin/bash /bin/bash
+    git clone https://github.com/vinceliuice/Qogir-theme
+    cd Qogir-theme
+    bash install.sh
+
 ## Nautilus logos
 ```sh
 ./install.sh -l [LOGO NAME...] (Install themes with selected nautilus logo)
@@ -72,7 +110,7 @@ sudo ./install.sh -g -c dark -t standard  (Install standard dark gdm theme)
 ![logo](https://github.com/vinceliuice/Qogir-theme/blob/images/logos.png?raw=true)
 
 ## Firefox theme
-[Intall Firefox theme](src/firefox)
+[Install Firefox theme](src/firefox)
 
 ![firefox-theme](src/firefox/preview.png?raw=true)
 
@@ -84,6 +122,8 @@ All variants are available via Flathub:
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gtk.Gtk3theme.Qogir{,-dark,-light,-win,-manjaro, ...}
 ```
+### AUR
+[AUR](https://aur.archlinux.org/packages/qogir-gtk-theme/)
 
 ### Kde theme
 [Qogir-kde](https://github.com/vinceliuice/Qogir-kde)

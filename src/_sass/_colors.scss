@@ -1,10 +1,12 @@
 // When color definition differs for dark and light variant,
 // it gets @if ed depending on $variant
 
+@import 'tweaks-temp';
+
 $base_color: if($variant =='light', #ffffff, #282A33);
-$text_color: if($variant == 'light', #5c616c, #D3DAE3);
+$text_color: if($variant == 'light', #4a4c59, #e0e5eb);
 $bg_color: if($variant =='light', #fafbfc, #32343D);
-$fg_color: if($variant =='light', #5c616c, #D3DAE3);
+$fg_color: if($variant =='light', #464853, #e6ebef);
 
 $alt_base_color: if($variant == 'light', darken($base_color, 5%), lighten($base_color, 5%));
 $sec_base_color: if($variant == 'light', darken($base_color, 10%), lighten($base_color, 10%));
@@ -30,9 +32,9 @@ $warning_color: #F27835;
 $error_color: #FC4138;
 $warning_fg_color: white;
 $error_fg_color: white;
-$success_color: #73d216;
+$success_color: #6dcfa7;
 $destructive_color: #F04A50;
-$suggested_color: #5294e2;
+$suggested_color: $selected_bg_color;
 $destructive_fg_color: white;
 $suggested_fg_color: white;
 $drop_target_color: #F08437;
@@ -61,7 +63,7 @@ $header_bg_backdrop: if($titlebar == 'dark' or $variant == 'dark', lighten($head
 
 $header_border: if($variant == 'light' and $titlebar == 'light', darken($header_bg, 10%), lighten($header_bg, 10%));
 
-$header_fg: if($titlebar == 'dark', saturate(rgba(#D3DAE3, 0.8), 10%), saturate(rgba($fg_color, 0.8), 10%));
+$header_fg: if($titlebar == 'dark', saturate(rgba(#e6ebef, 0.8), 10%), saturate(rgba($fg_color, 0.8), 10%));
 $alt_header_fg: if($titlebar == 'dark', lighten($header_fg, 10%), darken($header_fg, 10%));
 
 $dark_sidebar_bg: white;
@@ -70,7 +72,7 @@ $dark_sidebar_bg: white;
 @if $trans == 'true' and $titlebar == 'dark' { $dark_sidebar_bg: rgba(#272931, 0.95); }
 @if $trans == 'false' and $titlebar == 'dark' { $dark_sidebar_bg: #272931; }
 
-$dark_sidebar_fg: if($titlebar == 'light', #646972, #C4CAD1);
+$dark_sidebar_fg: if($titlebar == 'light', #575a60, #d8dedf);
 $alt_dark_sidebar_fg: if($variant == 'light', darken($dark_sidebar_fg, 10%), lighten($dark_sidebar_fg, 10%));
 
 $dark_sidebar_icon_bg: #32343D;

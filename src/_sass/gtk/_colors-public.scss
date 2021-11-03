@@ -38,6 +38,9 @@ $theme_text_color: currentColor;
 @define-color link_color #{"" + $link_color};
 @define-color content_view_bg #{"" + $base_color};
 
+/* Very contrasty background for text views (@theme_text_color foreground) */
+@define-color text_view_bg #{"" + if($variant == 'light', $base_color, darken($base_color,6%))};
+
 //WM
 $wm_highlight: lighten(opacify($header_bg, 1), 3%);
 $wm_bg_unfocused: opacify($header_bg_backdrop, 1);
