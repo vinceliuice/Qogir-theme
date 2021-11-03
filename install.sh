@@ -42,7 +42,7 @@ usage() {
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-l, --logo VARIANTS..." "Specify nautilus logo [arch|budgie|debian|fedora|gnome|gentoo|manjaro|ubuntu] (Default: qogir icon)"
   printf "  %-25s%s\n" "-w, --win VARIANTS..." "Specify titlebutton variant(s) [standard|square|all] (Default: standard variant)"
-  printf "  %-25s%s\n" "-t, --theme VARIANTS..." "Specify theme primary color variant(s) [default|manjaro|ubuntu] (Default: blue color)"
+  printf "  %-25s%s\n" "-t, --theme VARIANTS..." "Specify theme primary color variant(s) [default|manjaro|ubuntu|all] (Default: blue color)"
   printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-i, --image VARIANTS..." "Install theme with nautilus background image"
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
