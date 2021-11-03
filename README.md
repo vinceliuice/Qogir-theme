@@ -42,7 +42,7 @@ Usage:  ./install.sh  [OPTIONS...]
 |:-------------|:-------------|
 | -d, --dest   | destination directory (Default: $HOME/.themes) |
 | -n, --name   | name (Default: Qogir) |
-| -t, --theme  | theme primary color variant(s) (standard/manjaro/ubuntu/all) (Default: standard) |
+| -t, --theme  | theme primary color variant(s) (default/manjaro/ubuntu) (Default: blue color)|
 | -l, --logo   | theme nautilius logo variant(s) (default/arch/budgie/debian/fedora/gnome/gentoo/manjaro/ubuntu) |
 | -c, --color  | color variant(s) (standard/light/dark) (Default: all)|
 | -i, --image  | Install theme with nautilus background image |
