@@ -7,6 +7,14 @@ $header_padding: if($titlebutton == 'circle', 0, 5px);
   color: $fg_color;
   background-color: if($trans == 'true', rgba($bg_color, 1), $bg_color); // without this headerbar transparency doesn't seem to work
 
+  &.csd {
+    border-radius: $corner_radius; // Set csd windows botttom border radius
+
+    &.maximized, &.tiled, &.fullscreen {
+      border-radius: 0; // Set csd windows botttom border radius
+    }
+  }
+
   &:backdrop {
     text-shadow: none;
     -gtk-icon-shadow: none;
@@ -77,7 +85,7 @@ iconview {
     border-color: $sec_selected_bg_color;
   }
 
-  &:hover, &:active, &:selected { border-radius: 2px; }
+  &:hover, &:active, &:selected { border-radius: $bt_radius; }
 }
 
 rubberband {
@@ -90,7 +98,7 @@ flowbox {
 
   > flowboxchild {
     padding: 3px;
-    border-radius: 2px;
+    border-radius: $bt_radius;
 
     &:selected {
       @extend %selected_items;
@@ -264,7 +272,7 @@ entry, %entry {
   padding: 2px 8px;
 
   caret-color: currentColor;
-  border-radius: 3px;
+  border-radius: $bt_radius;
   transition: all 200ms $ease-out-quad;
 
   &.search { border-radius: 100px; }
@@ -416,7 +424,7 @@ button {
   min-width: 20px;
   transition: $button_transition;
   border: 1px solid;
-  border-radius: 3px;
+  border-radius: $bt_radius;
   padding: 2px $cont_padding;
 
   @include button(normal);
@@ -835,18 +843,18 @@ headerbar.titlebar {
   @extend %linked_middle;
 
   &:first-child {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: $bt_radius;
+    border-bottom-left-radius: $bt_radius;
   }
 
   &:last-child {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: $bt_radius;
+    border-bottom-right-radius: $bt_radius;
     border-right-style: solid;
   }
 
   &:only-child {
-    border-radius: 3px;
+    border-radius: $bt_radius;
     border-style: solid;
   }
 }
@@ -859,18 +867,18 @@ headerbar.titlebar {
   @extend %linked_vertical_middle;
 
   &:first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: $bt_radius;
+    border-top-right-radius: $bt_radius;
   }
 
   &:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: $bt_radius;
+    border-bottom-right-radius: $bt_radius;
     border-bottom-style: solid;
   }
 
   &:only-child {
-    border-radius: 3px;
+    border-radius: $bt_radius;
     border-style: solid;
   }
 }
@@ -888,7 +896,7 @@ modelbutton.flat {
   padding-left: 8px;
   padding-right: 8px;
   outline-offset: -3px;
-  border-radius: 2px;
+  border-radius: $bt_radius;
   @extend %undecorated_button;
   border: none;
 
@@ -1025,7 +1033,7 @@ spinbutton {
     > button, > text { @extend %linked; min-height: 24px; }
 
     &:dir(ltr) > text,
-    &:dir(rtl) > button.up { border-radius: 3px 0 0 3px; }
+    &:dir(rtl) > button.up { border-radius: $bt_radius 0 0 $bt_radius; }
 
     > button + button { border-left-style: none; }
 
@@ -1077,7 +1085,7 @@ spinbutton {
       > block-cursor { @include entry(block_cursor); }
     }
 
-    > button.up { border-radius: 3px 3px 0 0; }
+    > button.up { border-radius: $bt_radius $bt_radius 0 0; }
 
     > text:focus + button { border-top-color: $selected_bg_color; }
     > text:drop(active) + button { border-top-color: $drop_target_color; }
@@ -1151,31 +1159,31 @@ combobox {
   }
 
   .linked:not(.vertical) > &:first-child > box > button.combo {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: $bt_radius;
+    border-bottom-left-radius: $bt_radius;
   }
   .linked:not(.vertical) > &:last-child > box > button.combo {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: $bt_radius;
+    border-bottom-right-radius: $bt_radius;
     border-right-style: solid;
   }
   .linked:not(.vertical) > &:only-child > box > button.combo {
-    border-radius: 3px;
+    border-radius: $bt_radius;
     border-style: solid;
   }
 
   .linked.vertical > & > box > button.combo { @extend %linked_vertical_middle; }
   .linked.vertical > &:first-child > box > button.combo {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: $bt_radius;
+    border-top-right-radius: $bt_radius;
   }
   .linked.vertical > &:last-child > box > button.combo {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: $bt_radius;
+    border-bottom-right-radius: $bt_radius;
     border-bottom-style: solid;
   }
   .linked.vertical > &:only-child > box > button.combo {
-    border-radius: 3px;
+    border-radius: $bt_radius;
     border-style: solid;
   }
 
@@ -1228,7 +1236,7 @@ toolbar {
   &.osd {
     padding: 8px;
     border: 1px solid $borders_color;
-    border-radius: 3px;
+    border-radius: $bt_radius;
     background-color: $osd_bg_color;
 
     &.left,
@@ -1242,32 +1250,32 @@ toolbar {
     &.right { border-width: 0 0 0 1px; }
   }
 
-    switch,
-    scale,
-    entry,
-    spinbutton,
-    button {
-      margin-right: 1px;
-      margin-bottom: 1px;
-    }
-    .linked > button,
-    .linked > entry { margin-right:0; }
+  switch,
+  scale,
+  entry,
+  spinbutton,
+  button {
+    margin-right: 1px;
+    margin-bottom: 1px;
+  }
+  .linked > button,
+  .linked > entry { margin-right:0; }
 }
 
 searchbar > revealer > box {
-    padding: $cont_padding;
-    border-spacing: 6px;
-    border-style: solid;
-    border-color: $solid_borders_color;
-    background-color: $bg_color;
-    border-width: 0 0 1px;
+  padding: $cont_padding;
+  border-spacing: 6px;
+  border-style: solid;
+  border-color: $solid_borders_color;
+  background-color: $bg_color;
+  border-width: 0 0 1px;
 }
 
 actionbar > revealer > box {
-    padding: $cont_padding;
-    border-spacing: 6px;
-    border-top: 1px solid $borders_color;
-    background-color: darken($bg_color, 3%);
+  padding: $cont_padding;
+  border-spacing: 6px;
+  border-top: 1px solid $borders_color;
+  background-color: darken($bg_color, 3%);
 }
 
 //
@@ -1665,7 +1673,7 @@ headerbar {
     margin-left: 1px;
 
     &, &:hover, &:active, &:checked, &:disabled {
-      border-radius: 3px;
+      border-radius: $bt_radius;
       border-style: solid;
     }
   }
@@ -1685,7 +1693,7 @@ headerbar {
     // Reset headerbar linked rules
     > entry {
       margin-left: 1px;
-      border-radius: 3px;
+      border-radius: $bt_radius;
       border: 1px solid $header_entry_border;
       &:focus { border-color: $selected_bg_color; }
     }
@@ -1950,7 +1958,7 @@ treeview.view {
 
   &.progressbar, &.progressbar:focus { // progress bar in treeviews
     color: $selected_fg_color;
-    border-radius: 3px;
+    border-radius: $bt_radius;
     background-color: $progress_color;
 
     &:selected, &:selected:focus {
@@ -1963,13 +1971,13 @@ treeview.view {
   &.trough { // progress bar trough in treeviews
     color: $fg_color;
     background-color: $borders_color;
-    border-radius: 3px;
+    border-radius: $bt_radius;
     border-width: 0;
 
     &:selected, &:selected:focus {
       color: $selected_fg_color;
       background-color: rgba(black, 0.2);
-      border-radius: 3px;
+      border-radius: $bt_radius;
       border-width: 0;
     }
   }
@@ -2065,7 +2073,7 @@ menubar {
   }
   & > item popover.menu.background popover.menu.background > contents {
     margin: 0;
-    border-radius: 2px; //including top
+    border-radius: $bt_radius; //including top
   }
 }
 
@@ -2081,9 +2089,14 @@ popover.menu {
   & > arrow,
   &.background > contents {
     background-color: $_menu_bg;
-    padding: 6px 0;
-    border-radius: 2px;
+    border-radius: $corner_radius;
     border: 1px solid $borders_color;
+
+    @if $window == 'round' {
+      padding: 3px;
+    } @else {
+      padding: 6px 0;
+    }
   }
 
   &.background separator {
@@ -2166,10 +2179,15 @@ popover.menu {
     min-height: 24px;
     min-width: 38px;
     padding: 2px 18px;
-    border-radius: 0;
     border: none;
     outline: none;
     box-shadow: none;
+
+    @if $window == 'round' {
+      border-radius: $corner_radius - 3px;
+    } @else {
+      border-radius: 0;
+    }
 
     &:hover {
       color: $selected_fg_color;
@@ -2198,7 +2216,7 @@ popover.background {
 
   &, &:backdrop {
     background-color: transparent;
-    border-radius: 3px;
+    border-radius: $material_radius;
   }
 
   > arrow,
@@ -2206,7 +2224,7 @@ popover.background {
     padding: 12px;
     background-clip: border-box;
     background-color: $_popover_bg;
-    border-radius: 3px;
+    border-radius: $bt_radius;
     border: 1px solid $borders_color;
     box-shadow: 0 2px 8px 0 if($variant=='light', rgba(black, 0.1), rgba(black, 0.15));
   }
@@ -2909,7 +2927,7 @@ progressbar {
   > trough > progress {
     background-color: $progress_color;
     border: none;
-    border-radius: 3px;
+    border-radius: $bt_radius;
     box-shadow: none; //needed for clipping
 
     headerbar & { background-color: darken($progress_color, 5%); } //3504
@@ -2947,7 +2965,7 @@ progressbar {
   // Trough
   > trough {
     border: none;
-    border-radius: 3px;
+    border-radius: $bt_radius;
     background-color: rgba($fg_color, 0.2);
 
     &:disabled {
@@ -2978,7 +2996,7 @@ levelbar {
   trough {
     border: none;
     padding: 3px;
-    border-radius: 3px;
+    border-radius: $bt_radius;
     background-color: $borders_color;
   }
 
@@ -2988,7 +3006,7 @@ levelbar {
   block:not(.empty) {
     border: 1px solid $selected_bg_color;
     background-color: $selected_bg_color;
-    border-radius: 2px;
+    border-radius: $bt_radius;
   }
 
   block.low {
@@ -3041,7 +3059,7 @@ frame,
 }
 
 frame {
-  border-radius: 2px;
+  border-radius: $bt_radius;
 
   > label {
     margin: 4px;
@@ -3238,7 +3256,7 @@ expander {
 
 expander-widget {
   > box > title {
-    border-radius: 2px;
+    border-radius: $bt_radius;
 
     &:hover > expander {
       color: rgba($fg_color, 0.75); //only lightens the icon
@@ -3285,7 +3303,7 @@ calendar {
     }
 
     > label.today {
-      border-radius: 3px;
+      border-radius: $bt_radius;
       box-shadow: none;
       background-color: $borders_color;
 
@@ -3308,7 +3326,7 @@ calendar {
 
       &:selected{
         @extend %selected_items;
-        border-radius: 3px;
+        border-radius: $bt_radius;
       }
     }
 
@@ -3491,7 +3509,7 @@ stacksidebar {
 
     &:selected {
       background-color: $selected_bg_color;
-      border-radius: 2px;
+      border-radius: $bt_radius;
       color: $selected_fg_color;
     }
 
@@ -3530,7 +3548,7 @@ separator.sidebar {
   > row {
     min-height: 28px;
     padding: 0 8px;
-    border-radius: 2px;
+    border-radius: $bt_radius;
     margin: 0 2px 2px;
 
     &:hover,
@@ -3806,7 +3824,7 @@ tooltip {
     label { padding: 4px; }
   }
 
-  border-radius: 3px;
+  border-radius: $bt_radius;
   box-shadow: none;
   padding: 6px 10px;
 
@@ -3925,7 +3943,7 @@ button.color {
 }
 
 // colorscale popup
-colorchooser .popover.osd { border-radius: 3px; }
+colorchooser .popover.osd { border-radius: $bt_radius; }
 
 //
 // Misc
@@ -4031,7 +4049,7 @@ window {
                 0 8px 8px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.08)),
                 0 0 0 1px $_wm_border;
     margin: 0px;
-    border-radius: 0;
+    border-radius: $corner_radius;
     transition: $backdrop_transition;
 
     &:backdrop {
@@ -4045,12 +4063,12 @@ window {
     }
 
     &.popup {
-      border-radius: 0;
+      border-radius: $corner_radius;
       box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
     }
 
     &.dialog.message {
-      border-radius: 3px;
+      border-radius: $bt_radius;
       box-shadow: 0 1px 2px transparentize(black, 0.8),
                   0 0 0 1px transparentize($_wm_border, 0.1);
     }

@@ -63,8 +63,8 @@
   padding-bottom: 0px;
   border-style: none;
   background-color: if($variant=='light', $osd_bg_color, $header_bg);
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: $bt_radius;
+  border-bottom-right-radius: $bt_radius;
   border: solid transparentize(black, 0.9);
   border-width: 0 1px 1px 1px;
   box-shadow: inset 0 1px if($variant=="light", $dark_sidebar_border, $header_border);
@@ -88,7 +88,7 @@
 // the user's avatar box
 #user_image {
   padding: 3px;
-  border-radius: 2px;
+  border-radius: $bt_radius;
 }
 
 // the shutdown button

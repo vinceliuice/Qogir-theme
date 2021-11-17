@@ -18,6 +18,10 @@ WIN_VARIANTS=('' '-win')
 COLOR_VARIANTS=('' '-light' '-dark')
 LOGO_NAME=''
 
+image=''
+window=''
+square=''
+
 theme_color='default'
 
 SASSC_OPT="-M -t expanded"
@@ -36,32 +40,42 @@ if [[ "$(command -v gnome-shell)" ]]; then
 fi
 
 usage() {
-  printf "%s\n" "Usage: $0 [OPTIONS...]"
-  printf "\n%s\n" "OPTIONS:"
-  printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
-  printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
-  printf "  %-25s%s\n" "-l, --logo VARIANTS..." "Specify nautilus logo [arch|budgie|debian|fedora|gnome|gentoo|manjaro|ubuntu] (Default: qogir icon)"
-  printf "  %-25s%s\n" "-w, --win VARIANTS..." "Specify titlebutton variant(s) [standard|square|all] (Default: standard variant)"
-  printf "  %-25s%s\n" "-t, --theme VARIANTS..." "Specify theme primary color variant(s) [default|manjaro|ubuntu|all] (Default: blue color)"
-  printf "  %-25s%s\n" "-c, --color VARIANTS..." "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-i, --image VARIANTS..." "Install theme with nautilus background image"
-  printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme, this option need root user authority! please run this with sudo"
-  printf "  %-25s%s\n" "-r, --revert" "revert GDM theme, this option need root user authority! please run this with sudo"
-  printf "  %-25s%s\n" "-h, --help" "Show this help"
+cat << EOF
+Usage: $0 [OPTION]...
+
+OPTIONS:
+  -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
+
+  -n, --name NAME         Specify theme name (Default: $THEME_NAME)
+
+  -t, --theme VARIANT     Specify theme primary color variant(s) [default|manjaro|ubuntu|all] (Default: blue color)
+
+  -c, --color VARIANT     Specify theme color variant(s) [standard|light|dark] (Default: All variants)
+
+  -g, --gdm               Install GDM theme, this option need root user authority! please run this with sudo
+
+  -r, --revert            revert GDM theme, this option need root user authority! please run this with sudo
+
+  --tweaks                Specify versions for tweaks [image|square|round]
+                          1. image:    Install with a background image on (Nautilus/Nemo)
+                          2. square:   Install square window button like Windows 10
+                          3. round:    Install rounded window and popup/menu version
+
+  -h, --help              Show help
+EOF
 }
 
 install() {
   local dest=${1}
   local name=${2}
   local theme=${3}
-  local win=${4}
-  local color=${5}
-  local logo=${6}
+  local color=${4}
+  local logo=${5}
 
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
-  local THEME_DIR=${dest}/${name}${theme}${win}${color}
+  local THEME_DIR=${dest}/${name}${theme}${color}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -75,13 +89,13 @@ install() {
 
   echo "[Desktop Entry]"                                                          >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme"                                                   >> ${THEME_DIR}/index.theme
-  echo "Name=${name}${theme}${win}${color}"                                       >> ${THEME_DIR}/index.theme
+  echo "Name=${name}${theme}${color}"                                             >> ${THEME_DIR}/index.theme
   echo "Comment=An Clean Gtk+ theme based on Flat Design"                         >> ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8"                                                           >> ${THEME_DIR}/index.theme
   echo ""                                                                         >> ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]"                                                      >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=${name}${theme}${win}${color}"                                   >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=${name}${theme}${win}${color}"                              >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=${name}${theme}${color}"                                         >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=${name}${theme}${color}"                                    >> ${THEME_DIR}/index.theme
   echo "IconTheme=${name}${theme}${ELSE_DARK}"                                    >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita"                                                      >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close"                                >> ${THEME_DIR}/index.theme
@@ -204,17 +218,31 @@ install() {
 
   # METACITY
   mkdir -p                                                                           ${THEME_DIR}/metacity-1
-  cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}${win}/*.png                    ${THEME_DIR}/metacity-1
-  cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3${win}.xml                         ${THEME_DIR}/metacity-1/metacity-theme-3.xml
-  cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}${win}.xml            ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+
+  if [[ "$square" == 'true' ]]; then
+    cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}-win/*.png                    ${THEME_DIR}/metacity-1
+    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-win.xml                         ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}-win.xml            ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+  else
+    cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}/*.png                        ${THEME_DIR}/metacity-1
+    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3.xml                             ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}.xml                ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+  fi
+
   cp -r ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                         ${THEME_DIR}/metacity-1/thumbnail.png
   cd ${THEME_DIR}/metacity-1
   ln -s metacity-theme-1.xml metacity-theme-2.xml
 
   # XFWM4
   mkdir -p                                                                           ${THEME_DIR}/xfwm4
-  cp -r ${SRC_DIR}/src/xfwm4/themerc${win}${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
-  cp -r ${SRC_DIR}/src/xfwm4/assets${win}${ELSE_LIGHT}/*.png                         ${THEME_DIR}/xfwm4
+
+  if [[ "$square" == 'true' ]]; then
+    cp -r ${SRC_DIR}/src/xfwm4/themerc-win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
+    cp -r ${SRC_DIR}/src/xfwm4/assets-win${ELSE_LIGHT}/*.png                         ${THEME_DIR}/xfwm4
+  else
+    cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
+    cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}/*.png                             ${THEME_DIR}/xfwm4
+  fi
 
   # OTHER
   cp -r ${SRC_DIR}/src/plank                                                         ${THEME_DIR}
@@ -232,7 +260,7 @@ UBUNTU_THEME_FILE="/usr/share/gnome-shell/theme/ubuntu.css"
 UBUNTU_NEW_THEME_FILE="/usr/share/gnome-shell/theme/gnome-shell.css"
 
 install_gdm() {
-  local GDM_THEME_DIR="${1}/${2}${3}${4}${5}"
+  local GDM_THEME_DIR="${1}/${2}${3}${4}"
 
   if [[ -f "$GS_THEME_FILE" ]] && command -v glib-compile-resources >/dev/null ; then
     echo "Installing '$GS_THEME_FILE'..."
@@ -310,38 +338,6 @@ while [[ $# -gt 0 ]]; do
       revert='true'
       shift
       ;;
-    -i|--image)
-      image='true'
-      shift
-      ;;
-    -w|--win)
-      square='true'
-      shift
-      for win in "${@}"; do
-        case "${win}" in
-          standard)
-            wins+=("${WIN_VARIANTS[0]}")
-            shift 1
-            ;;
-          square)
-            wins+=("${WIN_VARIANTS[1]}")
-            shift 1
-            ;;
-          all)
-            wins+=("${WIN_VARIANTS[@]}")
-            shift 1
-            ;;
-          -*|--*)
-            break
-            ;;
-          *)
-            echo "ERROR: Unrecognized titlebutton variant '$1'."
-            echo "Try '$0 --help' for more information."
-            exit 1
-            ;;
-        esac
-      done
-      ;;
     -t|--theme)
       accent='true'
       shift
@@ -395,6 +391,33 @@ while [[ $# -gt 0 ]]; do
             ;;
           *)
             echo "ERROR: Unrecognized color variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
+      ;;
+    --tweaks)
+      shift
+      for tweak in "${@}"; do
+        case "${tweak}" in
+          image)
+            image='true'
+            shift
+            ;;
+          round)
+            window='round'
+            shift
+            ;;
+          square)
+            square='true'
+            shift
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized tweak variant '$1'."
             echo "Try '$0 --help' for more information."
             exit 1
             ;;
@@ -483,10 +506,8 @@ install_package() {
 
 install_theme() {
   for theme in "${themes[@]-${THEME_VARIANTS[0]}}"; do
-    for win in "${wins[@]-${WIN_VARIANTS[0]}}"; do
-      for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
-          install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${win}" "${color}" "${logo:-${LOGO_NAME}}"
-      done
+    for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
+      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}" "${logo:-${LOGO_NAME}}"
     done
   done
 }
@@ -505,6 +526,11 @@ install_win_titlebutton() {
   echo -e "Install Square titlebutton version ..."
 }
 
+install_round_window() {
+  sed -i "/\$window:/s/default/round/" ${SRC_DIR}/src/_sass/_tweaks-temp.scss
+  echo -e "Install Round window version ..."
+}
+
 install_theme_color() {
   if [[ "$theme" != '' ]]; then
     case "$theme" in
@@ -520,7 +546,7 @@ install_theme_color() {
 }
 
 theme_tweaks() {
-  if [[ "$image" == "true" || "$square" == "true" || "$accent" == 'true' ]]; then
+  if [[ "$image" == "true" || "$square" == "true" || "$accent" == 'true' || "$window" == 'round' ]]; then
     tweaks='true'
     install_package; tweaks_temp
   fi
@@ -531,6 +557,10 @@ theme_tweaks() {
 
   if [[ "$square" == "true" ]] ; then
     install_win_titlebutton
+  fi
+
+  if [[ "$window" == "round" ]] ; then
+    install_round_window
   fi
 }
 

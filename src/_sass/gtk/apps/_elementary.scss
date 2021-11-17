@@ -72,7 +72,7 @@
 
       .view {
         background: none;
-        border-radius: 2px;
+        border-radius: $bt_radius;
         border: 1px solid transparent;
         color: $text_color;
         transition: $shorter_transition;
@@ -150,7 +150,7 @@ button.flat.toggle.switcher {
 
   .keyboard {
     background-color: #fff;
-    border-radius: 2px;
+    border-radius: $bt_radius;
     box-shadow: none;
     color: #333;
     font-weight: 600;
@@ -192,7 +192,7 @@ MarlinViewWindow {
 }
 
 .marlin-pathbar.pathbar {
-  border-radius: 3px;
+  border-radius: $bt_radius;
   padding-left: 4px;
   padding-right: 4px;
 
@@ -234,13 +234,13 @@ treeview.view {
       &.trough {
         color: $fg_color;
         background-color: $borders_color;
-        border-radius: 3px;
+        border-radius: $bt_radius;
         border-width: 0;
 
         &:selected, &:selected:focus {
           color: $selected_fg_color;
           background-color: rgba(black, 0.2);
-          border-radius: 3px;
+          border-radius: $bt_radius;
           border-width: 0;
         }
       }
@@ -303,7 +303,7 @@ popover {
 // Gala
 .gala-notification {
     border: 1px solid rgba(0, 0, 0, 0.35);
-    border-radius: 3px;
+    border-radius: $bt_radius;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-image: _solid(white);
     background-color: transparent;
@@ -321,7 +321,7 @@ actionbar.inline-toolbar {
   // button + button { margin-left: -6px; }
 
   button { // Reset buttons
-    border-radius: 3px;
+    border-radius: $bt_radius;
     border: 1px solid $borders_color;
 
     &:first-child { border-right-style: solid; }

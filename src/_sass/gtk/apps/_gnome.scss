@@ -19,6 +19,16 @@ terminal-window,
       background: none;
     }
   }
+
+  &.background.csd {
+    border-radius: 0;
+
+    &.maximized, &.tiled, &.fullscreen { border-radius: 0; } // Fixed gnome 3.32 issue: Unable to restore window size after maximization
+  }
+
+  decoration {
+    border-radius: $corner_radius $corner_radius 0 0;
+  }
 }
 
 window.background { // gnome-terminal 3.32
@@ -72,75 +82,85 @@ window.background { // gnome-terminal 3.32
   }
 }
 
-.nautilus-window headerbar.titlebar {
-  .path-bar-box {
-    margin-top: $icon_padding;
-    margin-bottom: $icon_padding;
-    color: $header_fg;
-    background-color: transparent;
-    border: none;
+.nautilus-window {
+  &.background.csd {
+    border-radius: 0 0 $corner_radius $corner_radius;
 
-    .path-bar { // for ≥ 3.30.1
-      button.flat.text-button.toggle,
-      button.flat.image-button.text-button.toggle {
-        @extend %pathbar_box_button;
-      }
+    &.unified { // >= 40.0
+      border-radius: $corner_radius;
     }
+  }
 
-    .linked.nautilus-path-bar { // for ≥ 3.31.90
-      button.text-button,
-      button.image-button.text-button {
-        padding: 3px $cont_padding;
-        margin-top: 0;
-        margin-bottom: 0;
-        @extend %headerbar_pathbar_button;
-
-        &:not(:only-child):last-child {
-          border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                        $selected_bg_color 100%,
-                                        transparent 0%)
-                                        0 0 2 / 0 0 2px;
-        }
-      }
-
-      button.text-button.image-button {
-        padding: 3px $cont_padding*2;
-
-        label {
-          padding-left: 0;
-          padding-right: 0;
-        }
-
-        image {
-          padding-left: 0;
-          padding-right: 0;
-        }
-      }
-
-      button.text-button label {
-        padding-right: $cont_padding;
-        padding-left: $cont_padding;
-      }
-    }
-
-    &.width-maximized {
-      border: none;
-      box-shadow: inset 0 0 0 1px if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
-      background-color: rgba($header_fg, 0.06);
-      border-radius: 3px;
-      padding: 0 $cont_padding;
-    }
-
-    // workaround for 3.30.1
-    &.background.frame {
-      border: none;
+  headerbar.titlebar {
+    .path-bar-box {
+      margin-top: $icon_padding;
+      margin-bottom: $icon_padding;
+      color: $header_fg;
       background-color: transparent;
+      border: none;
+
+      .path-bar { // for ≥ 3.30.1
+        button.flat.text-button.toggle,
+        button.flat.image-button.text-button.toggle {
+          @extend %pathbar_box_button;
+        }
+      }
+
+      .linked.nautilus-path-bar { // for ≥ 3.31.90
+        button.text-button,
+        button.image-button.text-button {
+          padding: 3px $cont_padding;
+          margin-top: 0;
+          margin-bottom: 0;
+          @extend %headerbar_pathbar_button;
+
+          &:not(:only-child):last-child {
+            border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                          $selected_bg_color 100%,
+                                          transparent 0%)
+                                          0 0 2 / 0 0 2px;
+          }
+        }
+
+        button.text-button.image-button {
+          padding: 3px $cont_padding*2;
+
+          label {
+            padding-left: 0;
+            padding-right: 0;
+          }
+
+          image {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+
+        button.text-button label {
+          padding-right: $cont_padding;
+          padding-left: $cont_padding;
+        }
+      }
+
+      &.width-maximized {
+        border: none;
+        box-shadow: inset 0 0 0 1px if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
+        background-color: rgba($header_fg, 0.06);
+        border-radius: $bt_radius;
+        padding: 0 $cont_padding;
+      }
+
+      // workaround for 3.30.1
+      &.background.frame {
+        border: none;
+        background-color: transparent;
+      }
     }
   }
 }
 
 .nautilus-canvas-item {
-  border-radius: 2px;
+  border-radius: $bt_radius;
 }
 
 %nautilus-desktop-canvas-item,
@@ -254,7 +274,7 @@ $disk_space_free: darken($bg_color, 3%);
   padding: 1px;
   background-color: $selected_bg_color;
   color: $selected_fg_color;
-  border-radius: 2px 2px 0 0;
+  border-radius: $bt_radius $bt_radius 0 0;
 
   &.bottom.left { border-top-left-radius: 0; }
   &.bottom.right { border-top-right-radius: 0; }
@@ -294,7 +314,7 @@ eog-thumb-nav,
   }
 
   button {
-    border-radius: 2px;
+    border-radius: $bt_radius;
     border-top: none;
   }
 }
@@ -312,12 +332,12 @@ button.documents-load-more {
 .documents-icon-bg {
   background-color: $selected_bg_color;
   color: $selected_fg_color;
-  border-radius: 2px;
+  border-radius: $bt_radius;
 }
 
 .documents-collection-icon {
   background-color: transparentize($fg_color, 0.7);
-  border-radius: 2px;
+  border-radius: $bt_radius;
 }
 
 button.documents-favorite:active,
@@ -328,7 +348,7 @@ button.documents-favorite:active:hover {
 .documents-entry-tag {
   color: $selected_fg_color;
   background: $selected_bg_color;
-  border-radius: 2px;
+  border-radius: $bt_radius;
   border-width: 0;
   margin: 2px;
   padding: 4px;
@@ -496,7 +516,7 @@ workbench.csd > stack.titlebar:not(headerbar) {
   headerbar {
     &,
     &:first-child,
-    &:last-child { border-radius: $_header_radius $_header_radius 0 0; }
+    &:last-child { border-radius: $corner_radius $corner_radius 0 0; }
   }
 }
 
@@ -517,7 +537,7 @@ eggsearchbar box.search-bar {
 pillbox {
   color: $selected_fg_color;
   background-color: $selected_bg_color;
-  border-radius: 3px;
+  border-radius: $bt_radius;
 
   &:disabled label { color: transparentize($selected_fg_color, 0.5) }
 }
@@ -618,7 +638,7 @@ button.run-arrow-button {
 
 omnibar.linked > entry:not(:only-child) {
   border-style: solid;
-  border-radius: 3px;
+  border-radius: $bt_radius;
   margin-left: 1px;
   margin-right: 1px;
 }
@@ -639,11 +659,46 @@ configurationview {
 
 preferencesbin {
   spinbutton {
-    border-radius: 3px;
+    border-radius: $bt_radius;
     border: 1px solid $borders_color;
     &:focus { border-color: $selected_bg_color; }
 
     entry, button { border: none; box-shadow: none; }
+  }
+}
+
+//
+// Gnome Tweak Tool ( Gnome tweaks )
+//
+
+// sidebar on gnome tweak
+.tweak-categories {
+  border-radius: 0 0 0 $corner_radius;
+
+  .maximized &,
+  .fullscreen &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left & { border-radius: 0; }
+}
+
+window.background.csd {
+  > hdyleaflet > box.vertical > stack.main-container,
+  > leaflet > box.vertical > stack.main-container { // Right side
+    border-bottom-right-radius: $corner_radius;
+  }
+
+  &.maximized, &.tiled, &.fullscreen {
+    > hdyleaflet > box.vertical > stack.main-container {
+      border-bottom-right-radius: 0;
+    }
+
+    // sidebar on gnome tweak
+    .tweak-categories {
+      border-radius: 0;
+    }
   }
 }
 
@@ -654,6 +709,64 @@ window.background.csd {
   > box.horizontal > stack.background > widget {
     > scrolledwindow.frame {
       border: none; // Remove ubuntu-dock setting page border
+    }
+  }
+
+  > leaflet > stack.background, // > 3.38.0
+  > hdyleaflet > stack.background, // > 3.34.0
+  > box.horizontal > stack.background {
+    border-bottom-right-radius: $corner_radius;
+
+    > widget {
+      > box.vertical > box.vertical { // Gnome 3.34 Wallpaper setting
+        > scrolledwindow > viewport.frame {
+          border-bottom-right-radius: $corner_radius + 1px;
+          > .view {
+            background: none;
+          }
+        }
+      }
+
+      > scrolledwindow > viewport > clamp.medium {
+        > box > box > box > frame > box > box.vertical {
+          > separator {
+            background: none;
+            min-height: 2px;
+          }
+          > list { border-radius: 4px; }
+          &:first-child:last-child > list { border-radius: $corner_radius; }
+          &:first-child > list { border-radius: $corner_radius $corner_radius 4px 4px; }
+          &:not(:first-child):last-child > list { border-radius: 4px 4px $corner_radius $corner_radius; }
+        }
+      }
+    }
+  }
+
+  > leaflet > box.vertical > scrolledwindow.view, // > 3.38.0
+  > hdyleaflet > box.vertical > scrolledwindow.view, // > 3.34.0
+  > box.horizontal > box.vertical > scrolledwindow.view { // > 3.25.90
+    border-bottom-left-radius: $corner_radius;
+  }
+
+  &.maximized, &.tiled, &.fullscreen {
+    > leaflet > stack.background, // > 3.38.0
+    > hdyleaflet > stack.background, // > 3.34.0
+    > box.horizontal > stack.background {
+      border-bottom-right-radius: 0;
+
+      > widget {
+        > box.vertical > box.vertical { // Gnome 3.34 Wallpaper setting
+          > scrolledwindow > viewport.frame {
+            border-bottom-right-radius: 0;
+          }
+        }
+      }
+    }
+
+    > leaflet > box.vertical > scrolledwindow.view, // > 3.38.0
+    > hdyleaflet > box.vertical > scrolledwindow.view, // > 3.34.0
+    > box.horizontal > box.vertical > scrolledwindow.view { // > 3.25.90
+      border-bottom-left-radius: 0;
     }
   }
 }
@@ -746,7 +859,7 @@ window.background > box.vertical > overlay > stack > widget > stack {
     color: lighten($osd_fg_color, 7%);
     background-color: $osd_bg_color;
     border: 1px solid darken($osd_bg_color, 8%);
-    border-radius: 2px;
+    border-radius: $bt_radius;
   }
 
   levelbar {
@@ -772,7 +885,7 @@ window.background > box.vertical > overlay > stack > widget > stack {
   &:selected {
     color: $selected_fg_color;
     background-color: $selected_bg_color;
-    border-radius: 2px;
+    border-radius: $bt_radius;
   }
 }
 
@@ -783,7 +896,7 @@ gf-candidate-box {
   &:selected {
     color: $selected_fg_color;
     background-color: $selected_bg_color;
-    border-radius: 2px;
+    border-radius: $bt_radius;
   }
 }
 
@@ -808,7 +921,7 @@ $em-base: 16px;
 
 // titles inside the button!?
 headerbar > button.flat.popup.title-menu-button.toggle {
-  border-radius: 2px;
+  border-radius: $bt_radius;
 
   > grid {
     .title {
@@ -999,7 +1112,7 @@ popover.background:not(.emoji-picker) > box.vertical > scrolledwindow {
     > row.activatable {
       background-color: if($variant=='light', $bg_color, lighten($bg_color, 10%));
       color: rgba($fg_color, 0.85);
-      border-radius: 2px;
+      border-radius: $bt_radius;
       border: 1px solid $borders_color;
       margin: 2px;
 
@@ -1041,7 +1154,7 @@ popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical {
 popover.background {
   > scrolledwindow > viewport.frame {
     > list > row.activatable {
-      border-radius: 2px;
+      border-radius: $bt_radius;
 
       button.page-row-close-button {
         @extend %circle_button;
@@ -1291,6 +1404,54 @@ stack {
         border-left-width: 0;
         border-right-width: 0;
       }
+    }
+  }
+}
+
+//
+// Unified window (> = Gnome 40)
+//
+
+window.background.csd.unified {
+  headerbar {
+    // box-shadow: none;
+    border-radius: $corner_radius $corner_radius 0 0;
+
+    // &.selection-mode {
+    //   box-shadow: none;
+    // }
+  }
+
+  // > deck > box > headerbar {
+  //   border-radius: $corner_radius $corner_radius 0 0;
+  // }
+
+  // ...and add it on the window itself
+  // > decoration-overlay {
+  //   box-shadow: inset 0 0 0 1px $highlight_color;
+  // }
+
+  &,
+  > decoration,
+  > decoration-overlay {
+    border-radius: $corner_radius;
+  }
+
+  &.tiled,
+  &.tiled-top,
+  &.tiled-right,
+  &.tiled-bottom,
+  &.tiled-left,
+  &.maximized,
+  &.fullscreen {
+    // > decoration-overlay {
+    //   box-shadow: none;
+    // }
+
+    &,
+    > decoration,
+    > decoration-overlay {
+      border-radius: 0;
     }
   }
 }

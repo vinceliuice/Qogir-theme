@@ -802,7 +802,7 @@ calendar.raven-calendar {
   background-color: transparent;
 
   &:selected {
-    border-radius: 3px;
+    border-radius: $bt_radius;
     background-color: $selected_bg_color;
   }
 }
@@ -886,7 +886,7 @@ box.vertical > stack > box.vertical {
 
       // sub-list rows grouping
       list {
-        border-radius: 2px;
+        border-radius: $bt_radius;
         border-top: 1px solid $borders_color;
         border-bottom: 1px solid $borders_color;
 

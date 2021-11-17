@@ -38,18 +38,27 @@ Search for the engines in your distributions repository or install the engines f
 
 Usage:  ./install.sh  [OPTIONS...]
 
-|  OPTIONS:    | |
-|:-------------|:-------------|
-| -d, --dest   | destination directory (Default: $HOME/.themes) |
-| -n, --name   | name (Default: Qogir) |
-| -t, --theme  | theme primary color variant(s) (default/manjaro/ubuntu/all) (Default: blue color)|
-| -l, --logo   | theme nautilius logo variant(s) (default/arch/budgie/debian/fedora/gnome/gentoo/manjaro/ubuntu) |
-| -c, --color  | color variant(s) (standard/light/dark) (Default: all)|
-| -i, --image  | Install theme with nautilus background image |
-| -w, --win    | titlebutton variant(s) (standard/square/all) (Default: standard) |
-| -g, --gdm    | Install GDM theme, you should run this with sudo! |
-| -r, --revert | revert GDM theme, you should run this with sudo! |
-| -h, --help   | Show this help |
+```sh
+  -d, --dest DIR          Specify destination directory (Default: /home/vince/.themes)
+
+  -n, --name NAME         Specify theme name (Default: Qogir)
+
+  -t, --theme VARIANT     Specify theme primary color variant(s) [default|manjaro|ubuntu|all] (Default: blue color)
+
+  -c, --color VARIANT     Specify theme color variant(s) [standard|light|dark] (Default: All variants)
+
+  -g, --gdm               Install GDM theme, this option need root user authority! please run this with sudo
+
+  -r, --revert            revert GDM theme, this option need root user authority! please run this with sudo
+
+  --tweaks                Specify versions for tweaks [image|square|round]
+                          1. image:    Install with a background image on (Nautilus/Nemo)
+                          2. square:   Install square window button like Windows 10
+                          3. round:    Install rounded window and popup/menu version
+
+  -h, --help              Show help
+
+```
 
 **FOR EXAMPLE:**
 ```sh

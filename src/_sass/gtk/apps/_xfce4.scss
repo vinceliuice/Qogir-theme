@@ -165,7 +165,7 @@ window.thunar {
 
       .view { @extend %view; background-color: transparent; }
 
-      widget.view { border-radius: 2px; }
+      widget.view { border-radius: $bt_radius; }
     }
 
     // an allocation height of label node affects to close button's

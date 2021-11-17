@@ -6,7 +6,7 @@
 .overlay-bar {
   background-color: $selected_bg_color;
   border-color: $selected_bg_color;
-  border-radius: 2px;
+  border-radius: $bt_radius;
   padding: 3px 6px;
   margin: 3px;
 
@@ -173,7 +173,7 @@ GraniteWidgetsWelcome .h3 {
 GraniteWidgetsPopOver {
   -GraniteWidgetsPopOver-arrow-width: 21;
   -GraniteWidgetsPopOver-arrow-height: 10;
-  -GraniteWidgetsPopOver-border-radius: 2px;
+  -GraniteWidgetsPopOver-border-radius: $bt_radius;
   -GraniteWidgetsPopOver-border-width: 1;
   -GraniteWidgetsPopOver-shadow-size: 12;
 

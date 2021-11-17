@@ -23,9 +23,9 @@ $menuitem_size: 28px;
 $icon_padding: 5px;
 
 // radiuses
-$bt_radius: 2px;
-$corner_radius: 0;
-$material_radius: 2px;
+$bt_radius: if($window == 'round', 4px, 2px);
+$corner_radius: if($window == 'round', 8px, 0);
+$material_radius: if($window == 'round', 8px, 3px);
 $circular_radius: 9999px;
 
 // durations
