@@ -1,20 +1,21 @@
 /* Date/Time Menu */
 
 .clock-display-box {
-  spacing: 4px;
+  spacing: 2px;
 
   .clock {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
 #calendarArea {
-  padding: 8px;
+  padding: 12px 0;
 }
 
 .calendar {
   margin: 0;
+  padding: 6px 3px;
   box-shadow: none;
   background: none;
   border: none;
@@ -27,7 +28,7 @@
 }
 
 .datemenu-calendar-column {
-  spacing: 8px;
+  spacing: 6px;
   border: none;
   // padding: 0 12px;
 
@@ -35,7 +36,7 @@
   // &:rtl { margin-left: 12px; border-right-width: 0; }
 
   .datemenu-displays-section { padding-bottom: 0; }
-  .datemenu-displays-box { spacing: 8px; }
+  .datemenu-displays-box { spacing: 6px; }
 }
 
 .datemenu-today-button {
