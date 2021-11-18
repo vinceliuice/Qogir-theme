@@ -6,7 +6,7 @@ $dash_padding: 10px; // 10px
 $dash_spacing: 2px;
 
 $dash_bottom_margin: 16px;
-$dash_border_radius: 3px;
+$dash_border_radius: $bt_radius + $dash_padding;
 
 #dash {
   @include fontsize($font-size - 2);

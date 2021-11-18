@@ -11,7 +11,7 @@
 
   .item-box {
     padding: 8px;
-    border-radius: 3px;
+    border-radius: $bt_radius;
     border: 1px solid transparent;
 
     &:outlined {

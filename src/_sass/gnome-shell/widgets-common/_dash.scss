@@ -2,7 +2,7 @@
 
 //osd tooltip
 .dash-label {
-  border-radius: 3px;
+  border-radius: $bt_radius;
   padding: 4px 12px;
   color: $_shell_fg_color;
   background-color: rgba(darken($osd_bg_color, 8%), 0.95);
@@ -18,7 +18,7 @@
 .show-apps {
   .overview-icon {
     background-color: transparent;
-    border-radius: 2px;
+    border-radius: $bt_radius;
     // border: 1px solid transparent;
     color: $panel_fg;
   }

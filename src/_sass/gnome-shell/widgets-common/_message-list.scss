@@ -32,7 +32,7 @@
 .message {
   background: $bg_color;
   border: 1px solid $borders_color;
-  border-radius: 3px;
+  border-radius: $bt_radius;
   color: $alt_fg_color;
   text-shadow: none;
 
@@ -121,7 +121,7 @@
     min-height: 24px;
     min-width: 24px;
     color: $alt_fg_color;
-    border-radius: 100px;
+    border-radius: 1000px;
     padding: 0;
     magrin: 0;
 
@@ -174,14 +174,14 @@
 // album-art
 .media-message-cover-icon {
   icon-size: 32px !important; // 48px
-  border-radius: 2px;
+  border-radius: $bt_radius;
 
   // when there is no artwork
   &.fallback {
     color: rgba($fg_color, 0.75);
     background-color: $bg_color;
     border: 1px solid transparent;
-    border-radius: 2px;
+    border-radius: $bt_radius;
     icon-size: 32px !important;
   }
 }

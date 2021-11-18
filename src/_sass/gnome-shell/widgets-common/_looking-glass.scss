@@ -8,12 +8,12 @@ $text_fg_color: #ccc;
   spacing: 6px;
   padding: 4px;
   border: 1px solid transparentize($osd_fg_color, 0.8);
-  border-radius: 2px;
+  border-radius: $bt_radius;
   color: $osd_fg_color;
 
   & > #Toolbar {
     border: none;
-    border-radius: 2px;
+    border-radius: $bt_radius;
     background-color: $osd_bg_color;
   }
 
@@ -73,7 +73,7 @@ $text_fg_color: #ccc;
 .lg-obj-inspector-button {
     border: 1px solid $osd_borders_color;
     padding: 4px;
-    border-radius: 2px;
+    border-radius: $bt_radius;
     &:hover { border: 1px solid #ffffff; }
 }
 
@@ -88,7 +88,7 @@ $text_fg_color: #ccc;
 .lg-extension {
     border: 1px solid lighten($osd_borders_color, 5%);
     background-color: lighten($osd_bg_color, 5%);
-    border-radius: 2px;
+    border-radius: $bt_radius;
     padding: 4px;
 }
 
@@ -104,6 +104,6 @@ $text_fg_color: #ccc;
 #LookingGlassPropertyInspector {
   background: $osd_bg_color;
   border: 1px solid $osd_borders_color;
-  border-radius: 2px;
+  border-radius: $bt_radius;
   padding: 6px;
 }

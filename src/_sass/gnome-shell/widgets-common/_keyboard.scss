@@ -1,7 +1,7 @@
 /* On-screen Keyboard */
 
 $key_size: 1.2em;
-$key_border_radius: 5px;
+$key_border_radius: $bt_radius;
 $key_bg_color: $bg_color;
 $default_key_bg_color: if($variant=='light', darken($bg_color, 8%), lighten($bg_color, 5%));
 

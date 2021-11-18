@@ -48,7 +48,7 @@
     &:default {
       @include button(normal, $c:$selected_bg_color, $tc:$selected_fg_color);
       border-color: $selected_bg_color;
-      &:hover, &:focus { 
+      &:hover, &:focus {
         @include button(hover,$c:$selected_bg_color, $tc:$selected_fg_color);
         $_def_hover_c: lighten($selected_bg_color, 5%);
         background-color: $_def_hover_c;
@@ -73,7 +73,7 @@
   .switch-user-button,
   .login-dialog-session-list-button {
     padding: 0;
-    border-radius: 99px;
+    border-radius: 1000px;
     width: 32px;
     height: 32px;
     border-color: transparentize($bg_color,0.7);

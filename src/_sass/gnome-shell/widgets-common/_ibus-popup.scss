@@ -8,7 +8,7 @@
   padding: 0.5em;
   spacing: 0.3em;
   background-color: $base_color;
-  border-radius: 2px;
+  border-radius: $material_radius;
   margin: 12px 4px 6px;
   box-shadow: 0 3px 5px rgba(black, 0.25);
   border: if($variant == 'light', 0, 1px) solid rgba(black, 0.75) !important;
@@ -21,7 +21,7 @@
 
 .candidate-box {
   padding: 0.3em 0.5em 0.3em 0.5em;
-  border-radius: 2px;
+  border-radius: $bt_radius;
   margin-right: 2px;
   color: $alt_fg_color;
 

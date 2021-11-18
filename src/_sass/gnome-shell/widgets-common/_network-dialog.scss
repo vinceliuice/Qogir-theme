@@ -33,7 +33,7 @@
   border: 1px solid $borders_color;
   padding:0;
   background-color: $base_color;
-  border-radius: 2px;
+  border-radius: $bt_radius;
 }
 
 // list item

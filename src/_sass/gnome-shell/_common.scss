@@ -42,10 +42,19 @@ stage {
 %osd_panel {
   color: $osd_fg_color;
   background-color: $osd_bg_color;
-  border-radius: 3px;
+  border-radius: $material_radius;
   padding: 12px;
   border: 1px solid rgba(black, 0.75) !important;
   box-shadow: 0 3px 8px -2px rgba(black, 0.35) !important;
+}
+
+%icon_tile {
+  color: $_shell_fg_color;
+  border-radius: $bt_radius;
+  padding: 6px;
+  border: 1px solid transparent;
+  transition-duration: 0ms;
+  text-align: center;
 }
 
 %overview-icon {
@@ -63,15 +72,6 @@ stage {
     background-color: rgba($selected_bg_color, 0.75);
     border: 1px solid $selected_bg_color;
   }
-}
-
-%icon_tile {
-  color: $_shell_fg_color;
-  border-radius: 2px;
-  padding: 6px;
-  border: 1px solid transparent;
-  transition-duration: 0ms;
-  text-align: center;
 }
 
 %status_text {

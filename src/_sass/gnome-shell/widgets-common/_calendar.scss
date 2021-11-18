@@ -10,7 +10,7 @@
 }
 
 #calendarArea {
-  padding: 6px 0;
+  padding: 8px;
 }
 
 .calendar {
@@ -39,7 +39,7 @@
 }
 
 .datemenu-today-button {
-  border-radius: 3px;
+  border-radius: $bt_radius;
   padding: 4px 8px;
   margin: 0;
   border: 1px solid transparentize($base_color, 1);
@@ -72,10 +72,11 @@
 }
 
 .pager-button {
-  width: 28px;
-  height: 28px;
-  margin: 2px;
-  border-radius: 100px;
+  width: 28px !important;
+  height: 28px !important;
+  margin: 2px !important;
+  padding: 0 !important;
+  border-radius: 1000px;
   background-color: transparent;
   color: $fg_color;
 
@@ -97,7 +98,7 @@
   width: 2.4em; height: 2.4em;
   padding: 0.1em;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: 1000px;
   font-feature-settings: "tnum";
   color: $alt_fg_color;
   background-color: transparent;
@@ -166,7 +167,7 @@
   font-size: 70%;
   font-weight: bold;
   width: 2.3em; height: 2.3em;
-  border-radius: 2px;
+  border-radius: $bt_radius;
   padding: 0 0;
   margin: 6px;
   background-color: rgba($fg_color, 0.15);
@@ -177,7 +178,7 @@
 .world-clocks-button,
 .weather-button,
 .events-button {
-  border-radius: 3px;
+  border-radius: $bt_radius;
   padding: 8px 10px;
   margin: 0;
   text-shadow: none;
