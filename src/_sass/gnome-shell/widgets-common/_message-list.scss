@@ -30,21 +30,16 @@
 
 // message bubbles
 .message {
-  background: $bg_color;
-  border: 1px solid $borders_color;
+  @include button(hover);
   border-radius: $bt_radius;
-  color: $alt_fg_color;
   text-shadow: none;
 
-  &:hover {
-    background-color: lighten($bg_color, 5%);
-    color: $fg_color;
+  &:hover, &:focus {
+    background-color: if($variant=='light', rgba(black, 0.06), rgba(white, 0.1));
+    border: 1px solid if($variant=='light', darken($button_border, 8%), lighten($button_border, 8%));
   }
 
-  &:hover {
-    background-color: darken($bg_color, 5%);
-    color: $fg_color;
-  }
+  &:active { @include button(active); }
 
   .popup-menu & {
     box-shadow: none;

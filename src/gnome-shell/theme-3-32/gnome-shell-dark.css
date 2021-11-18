@@ -790,21 +790,26 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message {
-  background: #32343D;
+  text-shadow: none;
+  color: #e6ebef;
+  background-color: #383a44;
   border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
   border-radius: 2px;
-  color: rgba(230, 235, 239, 0.75);
   text-shadow: none;
 }
 
-.message:hover {
-  background-color: #3d404b;
-  color: #e6ebef;
+.message:hover, .message:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.message:hover {
-  background-color: #27282f;
-  color: #e6ebef;
+.message:active {
+  text-shadow: none;
+  color: #ffffff;
+  background-color: #5294e2;
+  border: 1px solid #68a2e6;
+  box-shadow: none;
 }
 
 .popup-menu .message {
@@ -1998,7 +2003,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 0;
   width: 36px;
   height: 36px;
-  border-radius: 2px;
+  border-radius: 9999px;
 }
 
 .app-folder-dialog .folder-name-container .edit-folder-button > StIcon {
