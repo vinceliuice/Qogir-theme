@@ -56,7 +56,7 @@ OPTIONS:
 
   -r, --revert            revert GDM theme, this option need root user authority! please run this with sudo
 
-  --tweaks                Specify versions for tweaks [image|square|round]
+  --tweaks                Specify versions for tweaks [image|square|round] (options can mix use)
                           1. image:    Install with a background image on (Nautilus/Nemo)
                           2. square:   Install square window button like Windows 10
                           3. round:    Install rounded window and popup/menu version
