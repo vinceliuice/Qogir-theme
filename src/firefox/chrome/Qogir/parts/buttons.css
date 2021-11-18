@@ -46,6 +46,7 @@
 	min-width: 30px !important;
 	color: var(--gnome-toolbar-color) !important;
 	font: menu !important;
+	transition: all 200ms;
 }
 
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not([open]):not([active]):not([checked]):not([hover]) {

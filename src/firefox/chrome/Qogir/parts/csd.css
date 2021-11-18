@@ -4,11 +4,12 @@
 
 #main-window {
 	-moz-appearance: -moz-window-titlebar !important;
+	border-radius: 8px 8px 0 0 !important;
 }
 
 /* Headerbar top border corners rounded */
 :root[tabsintitlebar]:not([inFullscreen]):not([sizemode="maximized"]) #nav-bar {
-	border-radius: 0 0 0 0 !important;
+	border-radius: 8px 8px 0 0 !important;
 }
 
 /* Window buttons box */
@@ -18,8 +19,8 @@
 	-moz-appearance: none !important;
 	padding: 0 0;
 	position: absolute !important;
-	right: 0;
-	top: 0;
+	right: 6px;
+	top: 1px;
 	display: block !important;
 }
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox {
@@ -55,7 +56,7 @@
 	
 	/* Window buttons box */
 	:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container {
-		left: 0;
+		left: 6px;
 		right: auto;
 	}
 
@@ -119,14 +120,18 @@
 :root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
 	-moz-appearance: none !important;
 	border: none !important;
-	border-radius: 0 !important;
+	border-radius: 100px !important;
 	padding: 0 0 !important;
+	height: 24px;
+	margin: 0 0 !important;
+	width: 24px;
+	transition: all 100ms;
 }
 
 :root[tabsintitlebar] #titlebar .titlebar-button {
-	height: 38px !important;
-	margin: 0 0 !important;
-	width: 38px;
+	height: 24px !important;
+	margin: 6px 6px !important;
+	width: 24px;
 }
 
 :root[tabsintitlebar] #titlebar .titlebar-min:hover,

@@ -3,8 +3,11 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 #urlbar {
-	--urlbar-height: 30.00px;
+	--urlbar-height: 30.00px !important;
+	--urlbar-min-height: 30.00px !important;
 	--urlbar-toolbar-height: 30.00px !important;
+	--urlbar-icon-border-radius: 1000px !important;
+	--urlbar-icon-padding: 6px !important;
 }
 
 /* Center the URL bar */
@@ -15,25 +18,25 @@ toolbarspring {
 /* Megabar reset  */
 #urlbar {
 	box-shadow: none !important;
-	border-radius: 16px !important;
-	padding: 0 10px !important;
-	border: none !important;
+	background: var(--gnome-entry-background) !important;
+	border-radius: 15px !important;
+	padding: 0 0 !important;
 	outline: 1px solid var(--gnome-entry-border-color) !important;
 	outline-offset: -1px;
-	-moz-outline-radius: 16px;
 }
 #urlbar-background {
-	display: none !important;
-}
-#urlbar[breakout][breakout-extend][breakout-extend-animate]  > .urlbarView {
-	animation: none !important;
+	--urlbar-container-height: 30.00px !important;
+	box-shadow: none !important;
+	border: 0 !important;
+	background: transparent !important;
+	border-radius: 15px !important;
 }
 #urlbar[breakout][breakout-extend] {
 	left: 0 !important;
 	top: 0 !important;
 	width: 100% !important;
 	z-index: 5 !important;
-	padding: 0 10px !important;
+	padding: 0 0 !important;
 }
 #urlbar[breakout][breakout-extend][open] {
 	height: auto !important;
@@ -42,7 +45,8 @@ toolbarspring {
 #urlbar[breakout][breakout-extend] #urlbar-input-container {
 	height: 30px !important;
 	max-height: 30px !important;
-	padding: 0 !important;
+	padding: 2px !important;
+	border: none !important;
 }
 
 /* URL bar results */
@@ -51,6 +55,7 @@ toolbarspring {
 	color: var(--gnome-toolbar-color) !important;
 	margin: -2px 0 0 0 !important;
 	width: 100% !important;
+	padding: 2px !important;
 }
 
 .urlbarView-body-outer {
@@ -80,7 +85,7 @@ toolbarspring {
 	padding: 8px !important;
 	background: none !important;
 	border-top: 1px solid var(--gnome-entry-border-color) !important;
-	border-radius: 0 0 5px 5px !important;
+	border-radius: 0 0 15px 15px !important;
 }
 
 .searchbar-engine-one-off-item {
@@ -88,7 +93,7 @@ toolbarspring {
 	--toolbarbutton-hover-background: transparent !important;
 	-moz-appearance: none !important;
 	background: var(--gnome-button-background) !important;
-	box-shadow: var(--gnome-button-box-shadow) !important;
+	box-shadow: none !important;
 	border: 1px solid var(--gnome-button-border-color) !important;
 	border-left-width: 0 !important;
 	border-bottom-color: var(--gnome-button-border-accent-color) !important;
@@ -96,23 +101,25 @@ toolbarspring {
 	min-height: 34px !important;
 	min-width: 34px !important;
 	margin: 0 !important;
+	border-radius: 0 !important;
 }
 .searchbar-engine-one-off-item:hover, .searchbar-engine-one-off-item[selected] {
 	background: var(--gnome-button-hover-background) !important;
 	color: unset !important;
 }
 .searchbar-engine-one-off-item:first-child {
-	border-radius: 5px 0 0 5px;
+	border-radius: 3px 0 0 3px !important;
 	border-left-width: 1px !important;
 }
-.searchbar-engine-one-off-item.last-engine, .searchbar-engine-one-off-item:last-child {	
-	border-radius: 0 5px 5px 0;
+.searchbar-engine-one-off-item.last-engine, .searchbar-engine-one-off-item:not(.search-setting-button):last-child {
+	border-radius: 0 3px 3px 0 !important;
 }
 
-#urlbar-anon-search-settings-compact {
+#urlbar-anon-search-settings-compact,
+.search-setting-button {
 	border-left-width: 1px !important;
 	border-bottom: 1px solid var(--gnome-button-border-accent-color) !important;
-	border-radius: 5px;
+	border-radius: 3px !important;
 	margin-left: 6px !important;
 }
 

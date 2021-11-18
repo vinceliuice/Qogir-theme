@@ -2,6 +2,24 @@
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
+/* Main menu fxa */
+#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-label {
+	padding-left: 22px !important;
+	margin-inline-start: -22px !important;
+}
+#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-avatar {
+	margin-inline-start: 5px !important;
+}
+#appMenu-fxa-status2[fxastatus] > #appMenu-fxa-label2 > vbox > #appMenu-header-description, #appMenu-fxa-text {
+	font-weight: 400 !important;
+}
+#appMenu-fxa-label2 {
+	padding: 0 !important;
+	background: none !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
 /* Style main context menu & buttons */
 #context-navigation {
 	padding: 4px 8px 8px;

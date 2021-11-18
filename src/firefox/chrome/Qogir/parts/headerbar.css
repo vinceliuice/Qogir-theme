@@ -20,3 +20,9 @@
 	border-bottom-color: var(--gnome-inactive-headerbar-border-color) !important;
 	box-shadow: var(--gnome-inactive-headerbar-box-shadow) !important;
 }
+
+/* Headerbar buttons */
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton) {
+	padding: 0 10px !important;
+	--toolbarbutton-inner-padding: 0 !important;
+}

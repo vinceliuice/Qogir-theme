@@ -3,7 +3,6 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Entries */
-#urlbar,
 #searchbar,
 #search-box,
 .findbar-textbox {
@@ -15,20 +14,22 @@
 	color: var(--gnome-entry-color) !important;
 	height: 30px !important;
 	max-height: 30px !important;
-	margin: 0 !important;
 	padding: 4px 8px !important;
 	box-sizing: border-box;
 }
 
 /* Entries focused */
 #urlbar[breakout][breakout-extend],
+#urlbar:focus-within,
 #searchbar:focus-within,
 #search-box[focused], 
 .findbar-textbox[focused],
 .findbar-textbox:focus {
+	background: var(--gnome-entry-background) !important;
 	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
 	outline-offset: -2px;
 	-moz-outline-radius: 16px;
+	transition: all 100ms;
 }
 
 /* Inactive window entries */
