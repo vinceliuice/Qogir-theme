@@ -101,15 +101,23 @@ for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print 
 for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i qogir-themes:icon-themes; done
 ```
 
-### Install on OpenBSD/FreeBSD
+### Install on FreeBSD
+
+- Qogir Theme ：`pkg install qogir-gtk-themes`
+
+- Qogir Icon: `pkg install qogir-icon-themes`
+
+### Install on OpenBSD
 
 Let me show you how to install this theme on OpenBSD
 
-    sudo pkg_add bash (sudo pkg install bash #FreeBSD run this)
-    sudo ln -s /usr/local/bin/bash /bin/bash
-    git clone https://github.com/vinceliuice/Qogir-theme
-    cd Qogir-theme
-    bash install.sh
+```sh
+sudo pkg_add bash
+sudo ln -s /usr/local/bin/bash /bin/bash
+git clone https://github.com/vinceliuice/Qogir-theme
+cd Qogir-theme
+bash install.sh
+```
 
 ## Nautilus logos
 ```sh
