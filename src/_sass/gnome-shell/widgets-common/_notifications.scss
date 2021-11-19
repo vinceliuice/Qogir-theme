@@ -8,9 +8,7 @@ $notification_banner_width: 34em;
   min-height: $notification_banner_height;
   width: $notification_banner_width;
   color: $fg_color;
-  background-color: $base_color;
-  border: 1px solid $borders_color;
-  box-shadow: 0 3px 5px rgba(black, 0.15);
+  @extend %bubble-dialog;
 
   .notification-actions {
     spacing: 0;

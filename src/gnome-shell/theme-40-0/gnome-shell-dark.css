@@ -3,11 +3,11 @@ stage {
   color: #e6ebef;
 }
 
-.modal-dialog {
+.modal-dialog, .notification-banner {
   color: #e6ebef;
   background-color: #282A33;
   border: 1px solid rgba(0, 0, 0, 0.75) !important;
-  box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.35) !important;
 }
 
 .workspace-switcher-container, .switcher-list, .resize-popup, .osd-window {
@@ -789,26 +789,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message {
-  text-shadow: none;
-  color: #e6ebef;
-  background-color: #383a44;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
   border-radius: 2px;
   text-shadow: none;
 }
 
-.message:hover, .message:focus {
-  background-color: #3f424b;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.message:active {
-  background-color: #43454f;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
 .popup-menu .message {
+  box-shadow: none;
+  text-shadow: none;
+  color: #e6ebef;
+  background-color: #383a44;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: none;
 }
 
@@ -1036,9 +1026,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-height: 64px;
   width: 34em;
   color: #e6ebef;
-  background-color: #282A33;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
 }
 
 .notification-banner .notification-actions {
@@ -1119,6 +1106,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .modal-dialog {
   border-radius: 3px;
   box-shadow: none;
+  margin: 12px;
 }
 
 .modal-dialog .modal-dialog-content-box {
