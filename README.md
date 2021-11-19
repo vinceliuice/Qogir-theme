@@ -61,16 +61,22 @@ Usage:  ./install.sh  [OPTIONS...]
 ```
 
 **FOR EXAMPLE:**
-```sh
-./install.sh  (Install default themes)
-```
+Install default themes
 
 ```sh
-./install.sh --tweaks image square round (Install rounded window version with square window button and nautilus background image)
+./install.sh
 ```
 
+Install rounded window version with square window button and nautilus background image
+
 ```sh
-sudo ./install.sh -g -c dark -t standard  (Install standard dark gdm theme)
+./install.sh --tweaks image square round
+```
+
+Install standard dark gdm theme
+
+```sh
+sudo ./install.sh -g -c dark -t standard
 ```
 
 ### On Snapcraft
