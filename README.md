@@ -82,6 +82,15 @@ Install standard dark gdm theme
 sudo ./install.sh -g -c dark -t standard
 ```
 
+### On Flatpak
+
+All variants are available via Flathub:
+
+```
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.gtk.Gtk3theme.Qogir{,-dark,-light,-win,-manjaro, ...}
+```
+
 ### On Snapcraft
 
 <a href="https://snapcraft.io/qogir-themes">
@@ -140,14 +149,6 @@ bash install.sh
 
 ![firefox-theme](src/firefox/preview.png?raw=true)
 
-### Flatpak
-
-All variants are available via Flathub:
-
-```
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gtk.Gtk3theme.Qogir{,-dark,-light,-win,-manjaro, ...}
-```
 ### AUR
 [AUR](https://aur.archlinux.org/packages/qogir-gtk-theme/)
 
