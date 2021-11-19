@@ -61,6 +61,7 @@ Usage:  ./install.sh  [OPTIONS...]
 ```
 
 **FOR EXAMPLE:**
+
 Install default themes
 
 ```sh
