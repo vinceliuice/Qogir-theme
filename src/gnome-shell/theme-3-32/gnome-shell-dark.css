@@ -455,7 +455,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar {
   margin: 0;
-  padding: 6px 3px;
   box-shadow: none;
   background: none;
   border: none;
@@ -800,25 +799,30 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message:hover, .message:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #3f424b;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .message:active {
-  text-shadow: none;
-  color: #ffffff;
-  background-color: #5294e2;
-  border: 1px solid #68a2e6;
-  box-shadow: none;
+  background-color: #43454f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .popup-menu .message {
   box-shadow: none;
 }
 
+.popup-menu .message:hover, .popup-menu .message:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 .popup-menu .message:active {
-  background-color: #5294e2;
+  text-shadow: none;
   color: #ffffff;
+  background-color: #5294e2;
+  border: 1px solid #68a2e6;
+  box-shadow: none;
 }
 
 .popup-menu .message:active .message-content,

@@ -35,18 +35,25 @@
   text-shadow: none;
 
   &:hover, &:focus {
-    background-color: if($variant=='light', rgba(black, 0.06), rgba(white, 0.1));
+    background-color: mix($fg_color, $button_bg, 10%);
     border: 1px solid if($variant=='light', darken($button_border, 8%), lighten($button_border, 8%));
   }
 
-  &:active { @include button(active); }
+  &:active {
+    background-color: mix($fg_color, $button_bg, 12%);
+    border: 1px solid if($variant=='light', darken($button_border, 10%), lighten($button_border, 10%));
+  }
 
   .popup-menu & {
     box-shadow: none;
 
+    &:hover, &:focus {
+      background-color: if($variant=='light', rgba(black, 0.06), rgba(white, 0.1));
+      border: 1px solid if($variant=='light', darken($button_border, 8%), lighten($button_border, 8%));
+    }
+
     &:active {
-      background-color: $selected_bg_color;
-      color: $selected_fg_color;
+      @include button(active);
 
       .message-content,
       .message-title,
