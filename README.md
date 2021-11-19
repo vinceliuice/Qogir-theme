@@ -5,6 +5,8 @@ Qogir is a flat Design theme for GTK 3, GTK 2 and Gnome-Shell which supports GTK
 based on Arc gtk theme
 horst3180 - Arc gtk theme: https://github.com/horst3180/Arc-theme
 
+![1](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot01.png?raw=true)
+
 ## Info
 
 ### GTK+ 3.20 or later
@@ -156,7 +158,6 @@ flatpak install flathub org.gtk.Gtk3theme.Qogir{,-dark,-light,-win,-manjaro, ...
 [Qogir](https://github.com/vinceliuice/Qogir-icon-theme)
 
 ## Screenshots
-![1](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot01.png?raw=true)
 ![2](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot02.png?raw=true)
 ![3](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot03.png?raw=true)
 ![4](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot04.png?raw=true)
