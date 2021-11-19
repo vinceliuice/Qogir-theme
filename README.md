@@ -62,11 +62,11 @@ Usage:  ./install.sh  [OPTIONS...]
 
 **FOR EXAMPLE:**
 ```sh
-./install.sh  (Install all themes)
+./install.sh  (Install default themes)
 ```
 
 ```sh
-./install.sh -i  (Install themes with nautilus background image)
+./install.sh --tweaks image square round (Install rounded window version with square window button and nautilus background image)
 ```
 
 ```sh
