@@ -71,12 +71,22 @@
 
 .budgie-container { background-color: transparent; }
 
-.budgie-settings-window buttonbox.inline-toolbar {
-  border-style: none none solid;
+.budgie-settings-window {
+  list.sidebar {
+    border-radius: 0 0 0 $corner_radius;
 
-  button {
-    @extend %linked;
-    @extend %budgie_button_transition;
+    row:not(:hover):not(:selected) {
+      background: none;
+    }
+  }
+
+  buttonbox.inline-toolbar {
+    border-style: none none solid;
+
+    button {
+      @extend %linked;
+      @extend %budgie_button_transition;
+    }
   }
 }
 

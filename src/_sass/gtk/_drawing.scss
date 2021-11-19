@@ -233,9 +233,9 @@
   //
   // active osd button
   //
-    color: $osd_fg_color;
+    color: $selected_bg_color;
     border-color: $osd_button_border;
-    background-color: opacify(lighten($osd_button_bg, 7%), 0.1);
+    background-color: lighten($osd_button_bg, 5%);
   }
 
   @else if $t==osd-active {

@@ -2286,7 +2286,7 @@ StWidget.focused .app-well-app-running-dot {
 .keyboard-key:grayed {
   background-color: #f0f3f6;
   color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
+  border-color: #434655;
 }
 
 .keyboard-key.default-key {
@@ -2499,7 +2499,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .lg-obj-inspector-button {
-  border: 1px solid rgba(98, 103, 125, 0.55);
+  border: 1px solid #434655;
   padding: 4px;
   border-radius: 2px;
 }
@@ -2518,7 +2518,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .lg-extension {
-  border: 1px solid rgba(109, 115, 140, 0.55);
+  border: 1px solid #4e5264;
   background-color: #333641;
   border-radius: 2px;
   padding: 4px;
@@ -2534,7 +2534,7 @@ StWidget.focused .app-well-app-running-dot {
 
 #LookingGlassPropertyInspector {
   background: #282A33;
-  border: 1px solid rgba(98, 103, 125, 0.55);
+  border: 1px solid #434655;
   border-radius: 2px;
   padding: 6px;
 }

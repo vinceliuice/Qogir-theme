@@ -829,6 +829,30 @@ window.background > box.vertical > overlay > stack > widget > stack {
   border-image: linear-gradient(to bottom, $solid_borders_color, $solid_borders_color) 1 1 1 1 / 1px 1px 1px 1px stretch;
 }
 
+// version >= 41.1
+button.osd.featured-button-left,
+button.osd.featured-button-right {
+  background-image: image(rgba(white, 0.15));
+
+  image {
+    color: white;
+  }
+}
+
+label {
+  &.title-1 {
+    color: white;
+  }
+
+  &:backdrop.title-1 { opacity: 0.5; }
+
+  &.caption {
+    color: rgba(white, 0.65);
+  }
+
+  &:backdrop.caption { opacity: 0.5; }
+}
+
 //
 // Gnome map
 //

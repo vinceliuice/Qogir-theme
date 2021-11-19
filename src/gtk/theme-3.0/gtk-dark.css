@@ -309,8 +309,8 @@ entry:drop(active):focus, entry:drop(active) {
 
 .osd entry {
   color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
-  background-color: rgba(89, 94, 114, 0.4);
+  border-color: #434655;
+  background-color: #333641;
 }
 
 .osd entry image, .osd entry image:hover {
@@ -319,13 +319,13 @@ entry:drop(active):focus, entry:drop(active) {
 
 .osd entry:focus {
   color: #ffffff;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: #434655;
   background-color: #5294e2;
 }
 
 .osd entry:disabled {
   color: rgba(211, 218, 227, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  background-color: rgba(51, 54, 65, 0.85);
 }
 
 .osd entry selection:focus, .osd entry selection {
@@ -492,8 +492,8 @@ button:drop(active) {
 
 button.osd {
   color: #D3DAE3;
-  background-color: #282A33;
-  border-color: #16171c;
+  border-color: #434655;
+  background-color: #333641;
 }
 
 button.osd.image-button {
@@ -504,6 +504,8 @@ button.osd.image-button {
 
 button.osd:hover {
   color: #5294e2;
+  border-color: #434655;
+  background-color: #3e4250;
 }
 
 button.osd:active, button.osd:checked {
@@ -514,20 +516,20 @@ button.osd:active, button.osd:checked {
 
 button.osd:disabled {
   color: #5b5f68;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  border-color: #434655;
+  background-color: rgba(51, 54, 65, 0.85);
 }
 
 .osd button {
   color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.4);
+  border-color: #434655;
+  background-color: #333641;
 }
 
 .osd button:hover {
-  color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(105, 110, 134, 0.5);
+  color: #5294e2;
+  border-color: #434655;
+  background-color: #3e4250;
 }
 
 .osd button:active, .osd button:checked {
@@ -539,8 +541,8 @@ button.osd:disabled {
 
 .osd button:disabled {
   color: #5b5f68;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  border-color: #434655;
+  background-color: rgba(51, 54, 65, 0.85);
 }
 
 .osd button.flat {
@@ -551,15 +553,15 @@ button.osd:disabled {
 }
 
 .osd button.flat:hover {
-  color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(105, 110, 134, 0.5);
+  color: #5294e2;
+  border-color: #434655;
+  background-color: #3e4250;
 }
 
 .osd button.flat:disabled {
   color: #5b5f68;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  border-color: #434655;
+  background-color: rgba(51, 54, 65, 0.85);
   background-image: none;
 }
 
@@ -946,7 +948,7 @@ toolbar.inline-toolbar toolbutton:active, .inline-toolbar toolbutton:active, too
 }
 
 .osd .linked:not(.vertical) > entry + entry {
-  border-left-color: rgba(13, 14, 17, 0);
+  border-left-color: rgba(67, 70, 85, 0.3);
 }
 
 .osd .linked:not(.vertical) > entry.error + entry,
@@ -1019,12 +1021,12 @@ toolbar.inline-toolbar toolbutton:active, .inline-toolbar toolbutton:active, too
 
 .osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
 .osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action) {
-  box-shadow: inset 1px 0 rgba(98, 103, 125, 0.55);
+  box-shadow: inset 1px 0 #434655;
 }
 
 .osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
 .osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
-  box-shadow: inset 1px 0 rgba(98, 103, 125, 0.05);
+  box-shadow: inset 1px 0 rgba(67, 70, 85, 0.5);
 }
 
 .osd .linked:not(.vertical) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
@@ -1532,7 +1534,7 @@ spinbutton:not(.vertical) > entry:drop(active) + button {
 
 .osd spinbutton:not(.vertical) > button:hover:not(:active),
 .osd spinbutton:not(.vertical) > button:hover + button {
-  border-left-color: rgba(98, 103, 125, 0.55);
+  border-left-color: #434655;
 }
 
 .osd spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -1641,10 +1643,11 @@ toolbar.vertical separator, .vertical.inline-toolbar separator {
 }
 
 toolbar.osd, .osd.inline-toolbar {
-  padding: 7px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 2px;
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
   background-color: #282A33;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 toolbar.osd.left, .osd.left.inline-toolbar, toolbar.osd.right, .osd.right.inline-toolbar, toolbar.osd.top, .osd.top.inline-toolbar, toolbar.osd.bottom, .osd.bottom.inline-toolbar {
@@ -3818,19 +3821,20 @@ row:selected scale slider:disabled, infobar scale slider:disabled {
 }
 
 .osd scale slider {
-  background-clip: border-box;
-  background-color: #5294e2;
-  border-color: #5294e2;
+  background-color: #D3DAE3;
+  border: none;
 }
 
 .osd scale slider:hover {
-  background-color: #7eafe9;
-  border-color: #7eafe9;
+  background-color: #ffffff;
 }
 
 .osd scale slider:active {
-  background-color: #68a2e6;
-  border-color: #68a2e6;
+  background-color: #ffffff;
+}
+
+.osd scale slider:disabled {
+  background-color: #8598b1;
 }
 
 scale value {
@@ -4223,7 +4227,7 @@ iconview:disabled image, row.activatable:disabled image {
   border-radius: 0 0 2px 2px;
   border-width: 0 1px 1px 1px;
   border-style: solid;
-  border-color: rgba(98, 103, 125, 0.55);
+  border-color: #434655;
 }
 
 .app-notification border {
@@ -4232,8 +4236,8 @@ iconview:disabled image, row.activatable:disabled image {
 
 .app-notification button {
   color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.4);
+  border-color: #434655;
+  background-color: #333641;
 }
 
 .app-notification button.flat {
@@ -4241,9 +4245,9 @@ iconview:disabled image, row.activatable:disabled image {
 }
 
 .app-notification button:hover {
-  color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(105, 110, 134, 0.5);
+  color: #5294e2;
+  border-color: #434655;
+  background-color: #3e4250;
 }
 
 .app-notification button:active, .app-notification button:checked {
@@ -4255,8 +4259,8 @@ iconview:disabled image, row.activatable:disabled image {
 
 .app-notification button:disabled {
   color: #5b5f68;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  border-color: #434655;
+  background-color: rgba(51, 54, 65, 0.85);
 }
 
 expander arrow {
@@ -5910,6 +5914,32 @@ window.background > box.vertical > overlay > stack > widget > stack widget > box
 .application-details-infobar {
   background-image: image(#282A33);
   border-image: linear-gradient(to bottom, #494c59, #494c59) 1 1 1 1/1px 1px 1px 1px stretch;
+}
+
+button.osd.featured-button-left,
+button.osd.featured-button-right {
+  background-image: image(rgba(255, 255, 255, 0.15));
+}
+
+button.osd.featured-button-left image,
+button.osd.featured-button-right image {
+  color: white;
+}
+
+label.title-1 {
+  color: white;
+}
+
+label:backdrop.title-1 {
+  opacity: 0.5;
+}
+
+label.caption {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+label:backdrop.caption {
+  opacity: 0.5;
 }
 
 .maps-popover button.radio.layer-radio-button:checked {
@@ -7720,7 +7750,7 @@ window#MyControlCenter > frame > box.horizontal > widget > scrolledwindow.frame 
 
 MsdOsdWindow.background.osd {
   border-radius: 2px;
-  border: 1px solid rgba(98, 103, 125, 0.55);
+  border: 1px solid #434655;
   background-color: #282A33;
   box-shadow: none;
 }
@@ -7825,6 +7855,14 @@ MsdOsdWindow.background.osd .progressbar {
 
 .budgie-container {
   background-color: transparent;
+}
+
+.budgie-settings-window list.sidebar {
+  border-radius: 0 0 0 0;
+}
+
+.budgie-settings-window list.sidebar row:not(:hover):not(:selected) {
+  background: none;
 }
 
 .budgie-settings-window buttonbox.inline-toolbar {
@@ -9640,14 +9678,14 @@ scale.warmth trough {
 
 #buttonbox_frame button {
   color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.4);
+  border-color: #434655;
+  background-color: #333641;
 }
 
 #buttonbox_frame button:hover {
-  color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(105, 110, 134, 0.5);
+  color: #5294e2;
+  border-color: #434655;
+  background-color: #3e4250;
 }
 
 #buttonbox_frame button:active, #buttonbox_frame button:checked {
@@ -9658,8 +9696,8 @@ scale.warmth trough {
 
 #buttonbox_frame button:disabled {
   color: #5b5f68;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  border-color: #434655;
+  background-color: rgba(51, 54, 65, 0.85);
 }
 
 #login_window #user_combobox {

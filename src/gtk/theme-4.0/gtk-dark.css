@@ -383,8 +383,8 @@ entry:drop(active):focus-within, entry:drop(active), spinbutton.vertical > text:
 
 .osd entry, .osd spinbutton.vertical > text, .osd spinbutton:not(.vertical) > text {
   color: #D3DAE3;
-  border-color: rgba(13, 14, 17, 0.4);
-  background-color: rgba(89, 94, 114, 0.4);
+  border-color: #434655;
+  background-color: #333641;
 }
 
 .osd entry image, .osd spinbutton.vertical > text image, .osd spinbutton:not(.vertical) > text image {
@@ -393,13 +393,13 @@ entry:drop(active):focus-within, entry:drop(active), spinbutton.vertical > text:
 
 .osd entry:focus-within, .osd spinbutton.vertical > text:focus-within, .osd spinbutton:not(.vertical) > text:focus-within {
   color: #ffffff;
-  border-color: rgba(13, 14, 17, 0.4);
+  border-color: #434655;
   background-color: #5294e2;
 }
 
 .osd entry:disabled, .osd spinbutton.vertical > text:disabled, .osd spinbutton:not(.vertical) > text:disabled {
   color: rgba(211, 218, 227, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  background-color: rgba(51, 54, 65, 0.85);
 }
 
 .osd entry selection, .osd spinbutton.vertical > text selection, .osd spinbutton:not(.vertical) > text selection {
@@ -442,14 +442,14 @@ treeview entry.flat:focus-within, treeview entry:focus-within {
 
 popover.background.touch-selection button, popover.background.magnifier button, .osd button {
   color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.4);
+  border-color: #434655;
+  background-color: #333641;
 }
 
 popover.background.touch-selection button:hover, popover.background.magnifier button:hover, .osd button:hover {
-  color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(105, 110, 134, 0.5);
+  color: #5294e2;
+  border-color: #434655;
+  background-color: #3e4250;
 }
 
 popover.background.touch-selection button:active, popover.background.magnifier button:active, .osd button:active, popover.background.touch-selection button:checked, popover.background.magnifier button:checked, .osd button:checked {
@@ -461,8 +461,8 @@ popover.background.touch-selection button:active, popover.background.magnifier b
 
 popover.background.touch-selection button:disabled, popover.background.magnifier button:disabled, .osd button:disabled {
   color: #5b5f68;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  border-color: #434655;
+  background-color: rgba(51, 54, 65, 0.85);
 }
 
 
@@ -641,8 +641,8 @@ button.osd:checked {
 
 button.osd:disabled {
   color: #5b5f68;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  border-color: #434655;
+  background-color: rgba(51, 54, 65, 0.85);
 }
 
 .osd button.flat {
@@ -653,15 +653,15 @@ button.osd:disabled {
 }
 
 .osd button.flat:hover {
-  color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(105, 110, 134, 0.5);
+  color: #5294e2;
+  border-color: #434655;
+  background-color: #3e4250;
 }
 
 .osd button.flat:disabled {
   color: #5b5f68;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  border-color: #434655;
+  background-color: rgba(51, 54, 65, 0.85);
   background-image: none;
 }
 
@@ -989,7 +989,7 @@ stacksidebar row.needs-attention > label:dir(rtl), stackswitcher > button.needs-
 }
 
 .osd .linked:not(.vertical) > entry + entry {
-  border-left-color: rgba(13, 14, 17, 0);
+  border-left-color: rgba(67, 70, 85, 0.3);
 }
 
 .osd .linked:not(.vertical) > entry.error + entry,
@@ -1062,12 +1062,12 @@ stacksidebar row.needs-attention > label:dir(rtl), stackswitcher > button.needs-
 
 .osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
 .osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action) {
-  box-shadow: inset 1px 0 rgba(98, 103, 125, 0.55);
+  box-shadow: inset 1px 0 #434655;
 }
 
 .osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
 .osd .linked:not(.vertical) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
-  box-shadow: inset 1px 0 rgba(98, 103, 125, 0.05);
+  box-shadow: inset 1px 0 rgba(67, 70, 85, 0.5);
 }
 
 .osd .linked:not(.vertical) > button:active + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
@@ -1626,7 +1626,7 @@ spinbutton:not(.vertical) > text:drop(active) + button {
 
 .osd spinbutton:not(.vertical) > button:hover:not(:active),
 .osd spinbutton:not(.vertical) > button:hover + button {
-  border-left-color: rgba(98, 103, 125, 0.55);
+  border-left-color: #434655;
 }
 
 .osd spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -1669,14 +1669,14 @@ spinbutton.vertical > text:drop(active) + button {
 
 .osd spinbutton.vertical > button:first-child {
   color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.4);
+  border-color: #434655;
+  background-color: #333641;
 }
 
 .osd spinbutton.vertical > button:first-child:hover {
-  color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(105, 110, 134, 0.5);
+  color: #5294e2;
+  border-color: #434655;
+  background-color: #3e4250;
 }
 
 .osd spinbutton.vertical > button:first-child:active {
@@ -1687,8 +1687,8 @@ spinbutton.vertical > text:drop(active) + button {
 
 .osd spinbutton.vertical > button:first-child:disabled {
   color: #5b5f68;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  border-color: #434655;
+  background-color: rgba(51, 54, 65, 0.85);
 }
 
 treeview spinbutton:not(.vertical) {
@@ -4211,7 +4211,7 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
   border-radius: 0 0 2px 2px;
   border-width: 0 1px 1px 1px;
   border-style: solid;
-  border-color: rgba(98, 103, 125, 0.55);
+  border-color: #434655;
 }
 
 .app-notification border {
@@ -4220,8 +4220,8 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
 
 .app-notification button {
   color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.4);
+  border-color: #434655;
+  background-color: #333641;
 }
 
 .app-notification button.flat {
@@ -4229,9 +4229,9 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
 }
 
 .app-notification button:hover {
-  color: #D3DAE3;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(105, 110, 134, 0.5);
+  color: #5294e2;
+  border-color: #434655;
+  background-color: #3e4250;
 }
 
 .app-notification button:active, .app-notification button:checked {
@@ -4242,8 +4242,8 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
 
 .app-notification button:disabled {
   color: #5b5f68;
-  border-color: rgba(98, 103, 125, 0.55);
-  background-color: rgba(89, 94, 114, 0.25);
+  border-color: #434655;
+  background-color: rgba(51, 54, 65, 0.85);
 }
 
 expander arrow {
@@ -6020,6 +6020,32 @@ window.background > box.vertical > overlay > stack > widget > stack widget > box
 .application-details-infobar {
   background-image: image(#282A33);
   border-image: linear-gradient(to bottom, #494c59, #494c59) 1 1 1 1/1px 1px 1px 1px stretch;
+}
+
+button.osd.featured-button-left,
+button.osd.featured-button-right {
+  background-image: image(rgba(255, 255, 255, 0.15));
+}
+
+button.osd.featured-button-left image,
+button.osd.featured-button-right image {
+  color: white;
+}
+
+label.title-1 {
+  color: white;
+}
+
+label:backdrop.title-1 {
+  opacity: 0.5;
+}
+
+label.caption {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+label:backdrop.caption {
+  opacity: 0.5;
 }
 
 .maps-popover button.radio.layer-radio-button:checked {

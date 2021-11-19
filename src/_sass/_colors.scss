@@ -83,11 +83,11 @@ $dark_sidebar_border: if($variant == 'light', darken($dark_sidebar_bg, 10%), lig
 $osd_fg_color: #D3DAE3;
 $osd_bg_color: #282A33;
 
-$osd_button_bg: rgba(lighten($osd_bg_color, 22%), 0.4);
-$osd_button_border: rgba(lighten($osd_bg_color, 26%), 0.55);
+$osd_button_bg: lighten($osd_bg_color, 5%);
+$osd_button_border: lighten($osd_bg_color, 12%);
 
-$osd_entry_bg: rgba(lighten($osd_bg_color, 22%), 0.4);
-$osd_entry_border: rgba(darken($osd_bg_color, 12%), 0.4);
+$osd_entry_bg: lighten($osd_bg_color, 5%);
+$osd_entry_border: lighten($osd_bg_color, 12%);
 
 $osd_insensitive_bg_color: darken($osd_bg_color, 3%);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 30%);
