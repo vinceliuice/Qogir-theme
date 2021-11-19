@@ -39,7 +39,7 @@
   border-radius: $material_radius;
   margin: 2px 7px 12px;
   box-shadow: 0 3px 5px rgba(black, 0.15);
-  border: if($variant == 'light', 0, 1px) solid rgba(black, 0.75) !important;
+  border: if($variant == 'light', 0, 1px) solid $borders_color !important;
 }
 
 // menu items
@@ -52,7 +52,7 @@
 
   &:checked {
     background-color: darken($base_color, 3%);
-    box-shadow: inset 0 1px if($variant == 'light', $borders_color, rgba(black, 0.5));
+    box-shadow: inset 0 1px $borders_color;
   }
 
   &.selected {
@@ -83,7 +83,7 @@
 .popup-sub-menu {
   background-color: darken($base_color, 3%);
   border: none;
-  box-shadow: inset 0 -1px if($variant == 'light', $borders_color, rgba(black, 0.5));
+  box-shadow: inset 0 -1px $borders_color;
 }
 
 // container for radio and check boxes

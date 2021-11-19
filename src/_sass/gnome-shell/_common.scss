@@ -34,7 +34,7 @@ stage {
 %bubble-dialog {
   color: $fg_color;
   background-color: $base_color;
-  border: if($variant == 'light', 0, 1px) solid rgba(black, 0.75) !important;
+  border: if($variant == 'light', 0, 1px) solid $borders_color !important;
   box-shadow: 0 3px 8px -3px rgba(black, 0.35) !important;
 }
 
@@ -44,7 +44,7 @@ stage {
   background-color: $osd_bg_color;
   border-radius: $material_radius;
   padding: 12px;
-  border: 1px solid rgba(black, 0.75) !important;
+  border: 1px solid $osd_borders_color !important;
   box-shadow: 0 3px 8px -2px rgba(black, 0.35) !important;
 }
 

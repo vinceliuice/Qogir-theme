@@ -4856,12 +4856,12 @@ decoration {
   border-radius: 0;
   border: none;
   transition: 200ms ease-out;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08), 0 8px 8px 0 rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08), 0 8px 8px 0 rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.12);
   margin: 6px;
 }
 
 decoration:backdrop {
-  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .maximized decoration, .fullscreen decoration, .tiled decoration {
@@ -4885,12 +4885,12 @@ decoration:backdrop {
 
 .csd.popup decoration {
   border-radius: 0;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 6px rgba(255, 255, 255, 0.02), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 tooltip.csd decoration {
   border-radius: 3px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0);
 }
 
 messagedialog.csd decoration {
@@ -7875,7 +7875,7 @@ MsdOsdWindow.background.osd .progressbar {
   border-color: rgba(255, 255, 255, 0.12);
   border-radius: 2px;
   background-color: #32343D;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.02), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .budgie-popover .container {
@@ -8892,7 +8892,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   margin: 5px 9px;
   padding: 8px;
   border-radius: 2px;
-  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(255, 255, 255, 0.22);
   background-color: #282A33;
   color: rgba(228, 235, 241, 0.8);
 }

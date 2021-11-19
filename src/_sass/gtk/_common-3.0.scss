@@ -3806,7 +3806,7 @@ stackswitcher button {
 // Window Decorations
 //
 
-$_wm_border: if($variant=='light', rgba(black, 0.12), rgba(black, 0.25));
+$_wm_border: if($variant=='light', rgba(black, 0.12), rgba(white, 0.12));
 
 decoration {
   border-radius: $corner_radius;

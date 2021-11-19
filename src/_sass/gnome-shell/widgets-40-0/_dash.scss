@@ -32,7 +32,7 @@ $dash_border_radius: $bt_radius + $dash_padding;
 
 .dash-background {
   background-color: rgba($dash_background_color, 0.9);
-  border: 1px solid darken($dash_background_color, 10%);
+  // border: 1px solid darken($dash_background_color, 10%);
   margin-bottom: $dash_bottom_margin;
   padding: $dash_padding;
   border-radius: $dash_border_radius;

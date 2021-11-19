@@ -7,7 +7,7 @@
   color: $_shell_fg_color;
   background-color: rgba(darken($osd_bg_color, 8%), 0.95);
   text-align: center;
-  border: 1px solid rgba(black, 0.75);
+  border: none;
   box-shadow: none;
   -x-offset: 8px;
   -y-offset: 4px; // distance from the dash edge
