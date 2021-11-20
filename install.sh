@@ -219,14 +219,20 @@ install() {
   # METACITY
   mkdir -p                                                                           ${THEME_DIR}/metacity-1
 
-  if [[ "$square" == 'true' ]]; then
-    cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}-win/*.png                    ${THEME_DIR}/metacity-1
-    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-win.xml                         ${THEME_DIR}/metacity-1/metacity-theme-3.xml
-    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}-win.xml            ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+  if [[ "$window" == 'round' ]]; then
+    cp -r ${SRC_DIR}/src/metacity-1/assets-round                                     ${THEME_DIR}/metacity-1/assets
+    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-round.xml                       ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}-round.xml          ${THEME_DIR}/metacity-1/metacity-theme-1.xml
   else
-    cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}/*.png                        ${THEME_DIR}/metacity-1
-    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3.xml                             ${THEME_DIR}/metacity-1/metacity-theme-3.xml
-    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}.xml                ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+    if [[ "$square" == 'true' ]]; then
+      cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}-win/*.png                  ${THEME_DIR}/metacity-1
+      cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-win.xml                       ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+      cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}-win.xml          ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+    else
+      cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}/*.png                      ${THEME_DIR}/metacity-1
+      cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3.xml                           ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+      cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}.xml              ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+    fi
   fi
 
   cp -r ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                         ${THEME_DIR}/metacity-1/thumbnail.png

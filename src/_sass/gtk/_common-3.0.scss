@@ -2055,8 +2055,6 @@ menubar,
   }
 }
 
-$_menu_bg: if($variant=='light', $base_color, $bg_color);
-
 .csd.popup {
   border-radius: $corner_radius;
 }
@@ -2067,7 +2065,7 @@ menu,
   // margin: 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
   border-radius: 0;
   transition: none;
-  background-color: $_menu_bg;
+  background-color: $menu_bg;
   border: 1px solid $borders_color; // adds borders in a non composited env
 
   @if $window == 'round' {
@@ -2084,7 +2082,7 @@ menu,
   separator,
   .csd & separator {
     margin: 4px 0;
-    background-color: $_menu_bg;
+    background-color: $menu_bg;
   }
 
   menuitem {
@@ -2145,7 +2143,7 @@ menu,
     min-width: 16px;
     min-height: 16px;
     padding: 4px;
-    background-color: $_menu_bg;
+    background-color: $menu_bg;
     border-radius: 0;
     transition: none;
     // border: 1px solid $borders_color;
@@ -2176,13 +2174,12 @@ menu,
 //
 // Popovers
 //
-$_popover_bg: if($variant=='light', $base_color, $bg_color);
 
 popover,
 popover.background {
   padding: 2px;
   background-clip: border-box;
-  background-color: $_popover_bg;
+  background-color: $menu_bg;
 
   &, .csd &, &.menu {
     border-radius: $material_radius;
@@ -2190,7 +2187,7 @@ popover.background {
     box-shadow: 0 2px 8px 0 if($variant=='light', rgba(black, 0.1), rgba(black, 0.15));
   }
 
-  & separator { background-color: $_popover_bg; }
+  & separator { background-color: $menu_bg; }
   label.separator {
     @extend .dim-label;
 
@@ -3247,7 +3244,7 @@ calendar {
   border-bottom: none;
 }
 
-$dialog_bg: if($variant == 'light' and $titlebar == 'dark', $header_bg, $_menu_bg);
+$dialog_bg: if($variant == 'light' and $titlebar == 'dark', $header_bg, $menu_bg);
 $dialog_fg: $header_fg;
 
 messagedialog { // Message Dialog styling
@@ -3812,7 +3809,6 @@ decoration {
   border-radius: $corner_radius;
   border: none;
   transition: $backdrop_transition;
-
   box-shadow: 0 3px 5px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.08)),
               0 8px 8px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.08)),
               0 0 0 1px $_wm_border;

@@ -215,7 +215,7 @@ window.background:not(.csd) {
   > menu > menu {
     border-radius: 0;
 
-    > separator, .separator { color: $_menu_bg; }
+    > separator, .separator { color: $menu_bg; }
   }
 
   > menu > menuitem > label:disabled { color: $insensitive_fg_color; }
@@ -308,7 +308,7 @@ window.background:not(.csd) {
 $chrome_borders_color: $solid_borders_color;
 $chrome_bg_color: $bg_color;
 $chrome_fg_color: $fg_color;
-$chrome_menu_bg_color: $_menu_bg;
+$chrome_menu_bg_color: $menu_bg;
 $chrome_menu_fg_color: $fg_color;
 
 %circle_chrome {

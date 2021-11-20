@@ -2077,8 +2077,6 @@ menubar {
   }
 }
 
-$_menu_bg: if($variant=='light', $base_color, $bg_color);
-
 //
 // Popover Base Menus
 //
@@ -2088,7 +2086,7 @@ popover.menu {
 
   & > arrow,
   &.background > contents {
-    background-color: $_menu_bg;
+    background-color: $menu_bg;
     border-radius: $corner_radius;
     border: 1px solid $borders_color;
 
@@ -2101,7 +2099,7 @@ popover.menu {
 
   &.background separator {
     margin: 4px 0;
-    background-color: $_menu_bg;
+    background-color: $menu_bg;
   }
 
   box.inline-buttons {
@@ -3369,7 +3367,7 @@ calendar {
   border-bottom: none;
 }
 
-$dialog_bg: if($variant == 'light' and $titlebar == 'dark', $header_bg, $_menu_bg);
+$dialog_bg: if($variant == 'light' and $titlebar == 'dark', $header_bg, $menu_bg);
 $dialog_fg: $header_fg;
 
 window.dialog.message { // Message Dialog styling

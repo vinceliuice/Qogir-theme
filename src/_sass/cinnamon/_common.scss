@@ -35,7 +35,7 @@ stage {
   transition-duration: 0;
 
   &, &:focus, &:hover, &:hover:focus, &:active, &:active:focus, &:insensitive {
-    border-radius: 2px;
+    border-radius: $bt_radius;
   }
 
   @include button(normal);
@@ -51,7 +51,7 @@ stage {
   min-height: 20px;
   padding: 5px 32px;
   transition-duration: 0;
-  border-radius: 2px;
+  border-radius: $bt_radius;
 
   @include button(osd);
 
@@ -70,7 +70,7 @@ stage {
   selection-background-color: $selected_bg_color;
   selected-color: $selected_fg_color;
   transition-duration: 300ms;
-  border-radius: 3px;
+  border-radius: $bt_radius;
 
   @include entry(normal);
 
@@ -91,7 +91,7 @@ stage {
   selection-background-color: $selected_bg_color;
   selected-color: $selected_fg_color;
   transition-duration: 300ms;
-  border-radius: 3px;
+  border-radius: $bt_radius;
 
   @include entry(osd);
 
@@ -122,7 +122,7 @@ StScrollBar {
   }
 
   StButton#vhandle, StButton#hhandle {
-    border-radius: 2px;
+    border-radius: $bt_radius;
     background-color: mix($fg_color, $bg_color, 40%);
     border: 0px solid;
     margin: 0px;
@@ -254,7 +254,7 @@ StScrollBar {
 // Tooltip
 //
 #Tooltip {
-  border-radius: 3px;
+  border-radius: $material_radius;
   padding: 5px 12px;
   background-color: $osd_bg_color;
   color: $osd_fg_color;
@@ -264,40 +264,49 @@ StScrollBar {
 }
 
 //
-// Popvers/Menus
+// Popovers/Menus
 //
 .menu,
 .popup-menu,
 %menu {
   color: $fg_color;
-  border-image: url("#{$asset_path}/menu/menu.svg") 9 9 9 9;
+  background-color: $menu_bg;
+  border: if($variant == 'light', 0, 1px) solid $borders_color;
+  padding: 0;
+  margin: 8px;
+  border-radius: $material_radius;
+  box-shadow: 0 3px 6px rgba(black, 0.25);
 
   &-arrow { icon-size: 16px; }
 
   .popup-sub-menu {
     background-gradient-direction: none;
+    background-color: darken($base_color, 3%);
+    border: 1px solid $borders_color;
+    border-left: none;
+    border-right: none;
     box-shadow: none;
-    border-image: url("#{$asset_path}/menu/submenu.svg") 9 9 9 9;
 
     .popup-menu-item:ltr { padding-right: 1em; }
     .popup-menu-item:rtl { padding-left: 1em; }
 
     StScrollBar {
-      padding: 8px;
+      padding: 4px;
       StBin#trough, StBin#vhandle { border-width: 0; }
     }
   }
 
-  .popup-menu-content { padding: 1em 0em 1em 0em; }
+  .popup-menu-content { padding: 0.75em 0em 0.75em 0em; }
+
   .popup-menu-item {
-    padding: .4em 1.75em;
-    spacing: 1em;
+    padding: .3em 1.5em;
+    spacing: 0.5em;
 
     &:active {
       color: $selected_fg_color;
-      background-color: transparent;
-      border-image: url("common-assets/menu/menu-hover.svg") 9 9 1 1;
+      background-color: $selected_bg_color;
     }
+
     &:insensitive {
       color: transparentize($fg_color, 0.5);
       background: none;
@@ -318,7 +327,7 @@ StScrollBar {
 .popup-menu-boxpointer {
   -arrow-border-radius: 3px;
   -arrow-background-color:  rgba(0,0,0,0.0);
-  -arrow-border-width: 1px;
+  -arrow-border-width: 0;
   -arrow-border-color: rgba(0,0,0,0.0);
   -arrow-base: 0;
   -arrow-rise: 0;
@@ -326,18 +335,19 @@ StScrollBar {
 
 .popup-combo-menu {
   @extend %menu;
-  padding: 10px 1px;
+  padding: 6px 0;
 }
+
 .popup-image-menu-item {}
 
-.popup-combobox-item { spacing: 1em; }
+.popup-combobox-item { spacing: 0.5em; }
 
 .popup-separator-menu-item {
-  -gradient-height: 2px;
+  -gradient-height: 1px;
   -gradient-start: transparent;
   -gradient-end: transparent;
-  -margin-horizontal: 1.5em;
-  height: 1em;
+  -margin-horizontal: 1em;
+  height: 0.5em;
 }
 
 .popup-alternating-menu-item:alternate {
@@ -371,6 +381,7 @@ StScrollBar {
       background-gradient-start: rgba(255,0,0,0.05);
       background-gradient-end: rgba(255,0,0,0.2);
     }
+
     &:ltr { padding-right: 4px; }
     &:rtl { padding-left: 4px; }
 
@@ -389,6 +400,7 @@ StScrollBar {
       background-gradient-start: rgba(0,0,255,0.05);
       background-gradient-end: rgba(0,0,255,0.2);
     }
+
     &:ltr { padding-left: 4px; spacing: 0px; }
     &:rtl { padding-right: 4px; spacing: 0px; }
 
@@ -412,17 +424,17 @@ StScrollBar {
 }
 
 .panel {
-
   &-top, &-bottom, &-left, &-right {
     color: $panel_fg;
+    background-color: $panel_bg;
     font-size: 1em;
     padding: 0px;
   }
 
-  &-top { border-image: url('common-assets/panel/panel-top.svg') 1 1 1 1; }
-  &-bottom { border-image: url('common-assets/panel/panel-bottom.svg') 1 1 1 1; }
-  &-left { border-image: url('common-assets/panel/panel-left.svg') 1 1 1 1; }
-  &-right { border-image: url('common-assets/panel/panel-right.svg') 1 1 1 1; }
+  // &-top { border-image: url('common-assets/panel/panel-top.svg') 1 1 1 1; }
+  // &-bottom { border-image: url('common-assets/panel/panel-bottom.svg') 1 1 1 1; }
+  // &-left { border-image: url('common-assets/panel/panel-left.svg') 1 1 1 1; }
+  // &-right { border-image: url('common-assets/panel/panel-right.svg') 1 1 1 1; }
 
   &-dummy {
     background-color: transparentize($error_color, 0.5);
@@ -443,7 +455,7 @@ StScrollBar {
 
   &-button {
     -natural-hpadding: 6px;
-    -minimum-hpadding: 2px;
+    -minimum-hpadding: 4px;
     font-weight: bold;
     color: white;
     transition-duration: 100;
@@ -454,7 +466,7 @@ StScrollBar {
 
 .system-status-icon {
   icon-size: 16px;
-  padding: 0 1px;
+  padding: 0 3px;
 }
 
 //
@@ -467,7 +479,7 @@ StScrollBar {
   border: 1px solid $osd_bg_color;
   color: $osd_fg_color;
   spacing: 25px;
-  border-radius: 2px;
+  border-radius: $bt_radius;
   font-size: 9pt;
   padding: 5px 8px;
   -cinnamon-caption-spacing: 4px;
@@ -483,7 +495,7 @@ StScrollBar {
 .expo-workspaces-name-entry,
 .expo-workspaces-name-entry#selected {
   height: 15px;
-  border-radius: 2px;
+  border-radius: $bt_radius;
   font-size: 9pt;
   padding: 5px 8px;
   -cinnamon-caption-spacing: 4px;
@@ -503,12 +515,12 @@ StScrollBar {
 .expo-workspace-thumbnail-frame {
   border: 4px solid rgba(255,255,255,0.0);
   background-color: rgba(255,255,255,0.0);
-  border-radius: 2px;
+  border-radius: $bt_radius;
 
   &#active {
     border: 4px solid $selected_bg_color;
     background-color: black;
-    border-radius: 2px;
+    border-radius: $bt_radius;
   }
 }
 
@@ -604,7 +616,7 @@ StScrollBar {
   }
   &-scrollBox {
     border: 1px solid $borders_color;
-    border-radius: 2px;
+    border-radius: $bt_radius;
     background-color: $base_color;
     padding: 4px;
     padding-right: 0;
@@ -687,7 +699,7 @@ StScrollBar {
   font-weight: bold;
   text-align: center;
   color: $fg_color;
-  border-radius: 2px;
+  border-radius: $bt_radius;
 }
 
 .calendar-day-base {
@@ -697,7 +709,7 @@ StScrollBar {
   height: 25px;
   padding: 0.1em;
   margin: 2px;
-  border-radius: 12.5px;
+  border-radius: 100px;
 }
 
 .calendar-day-heading {
@@ -749,14 +761,16 @@ StScrollBar {
 // Notifications
 //
 #notification {
-  border-radius: 3px;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
-  padding: 13px;
+  border-radius: $material_radius;
+  background-color: $osd_bg_color;
+  padding: 12px;
   spacing-rows: 10px;
   spacing-columns: 10px;
   margin-from-right-edge-of-screen: 20px;
   width: 34em;
   color: $osd_fg_color;
+  box-shadow: 0 3px 6px rgba(black, 0.25);
+  margin: 8px;
 
   .menu &,
   .popup-menu & {
@@ -790,7 +804,6 @@ StScrollBar {
 }
 
 .notification {
-
   &-with-image {
     min-height: 159px;
     color: $osd_fg_color;
@@ -819,7 +832,7 @@ StScrollBar {
   background: none;
   border: none;
   border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
-  border-radius: 3px;
+  border-radius: $bt_radius;
   padding: 20px;
 
   > StBoxLayout {
@@ -830,7 +843,7 @@ StScrollBar {
 
   .item-box {
     padding: 8px;
-    border-radius: 2px;
+    border-radius: $bt_radius;
 
     &:outlined {
       padding: 8px;
@@ -902,10 +915,13 @@ StScrollBar {
 
 .modal-dialog {
   color: $fg_color;
-  background-color: transparentize($bg_color, 1);
+  background-color: $base_color;
   border: none;
-  border-image: url("#{$asset_path}/misc/modal.svg") 9 9 9 67;
-  padding: 0 5px 6px 5px;
+  // border-image: url("#{$asset_path}/misc/modal.svg") 9 9 9 67;
+  padding: 6px;
+  margin: 8px;
+  border-radius: $material_radius;
+  box-shadow: 0 3px 6px rgba(black, 0.25);
 
   > StBoxLayout:first-child {
     padding: 20px 10px 10px 10px;
@@ -913,11 +929,11 @@ StScrollBar {
 
   &-button-box {
     spacing: 0;
-    margin: 0px;
+    margin: 0;
     padding: 14px 10px;
-    background: none;
-    border: none;
-    border-image: url("#{$asset_path}/misc/button-box.svg") 9 9 9 9;
+    background-color: rgba($fg_color, 0.05);
+    border-top: 1px solid $borders_color;
+    // border-image: url("#{$asset_path}/misc/button-box.svg") 9 9 9 9;
 
     .modal-dialog-button {
       padding-top: 0;
@@ -957,7 +973,7 @@ StScrollBar {
   &-entry {
     width: 21em;
     padding: 7px;
-    border-radius: 3px;
+    border-radius: $bt_radius;
     caret-color: $osd_fg_color;
     selected-color: $selected_fg_color;
     selection-background-color: $selected_bg_color;
@@ -1069,7 +1085,7 @@ StScrollBar {
   min-width: 2em;
   font-size: 14pt;
   font-weight: bold;
-  border-radius: 3px;
+  border-radius: $bt_radius;
   box-shadow: none;
 
   @include button(osd);
@@ -1083,7 +1099,7 @@ StScrollBar {
 .keyboard-subkeys { //long press on a key popup
   color: $osd_fg_color;
   padding: 5px;
-  -arrow-border-radius: 2px;
+  -arrow-border-radius: $bt_radius;
   -arrow-background-color: $osd_bg_color;
   -arrow-border-width: 1px;
   -arrow-border-color: transparentize(black, 0.6);;
@@ -1101,26 +1117,27 @@ StScrollBar {
 //
 .menu {
   &-favorites-box {
-    margin: auto;
+    margin: 0 0 6px 6px;
     padding: 10px;
     transition-duration: 300;
     background-color: $bg_color;
     border: 1px solid $borders_color;
+    border-radius: $bt_radius;
   }
 
   &-favorites-button {
     padding: 10px;
     border: 1px solid rgba(0,0,0,0);
+    border-radius: $bt_radius;
 
     &:hover { @include button(hover); }
   }
 
   &-places {
-
     &-box {
-      margin: auto;
+      margin: 0;
       padding: 10px;
-      border: 0px solid red;
+      border: none;
     }
 
     &-button { padding: 10px; }
@@ -1133,15 +1150,17 @@ StScrollBar {
 
   &-application-button {
     padding: 6px;
-    border: none;
+    border: 0 none transparent !important;
+    border-radius: $bt_radius;
 
     // This style is used in menu application buttons for applications which were newly installed
     &:highlighted { font-weight: bold; }
 
     &-selected {
       padding: 6px;
-      border: none;
       @include button(active);
+      border: 0 none transparent !important;
+      border-radius: $bt_radius;
 
       &:highlighted { font-weight: bold; }
     }
@@ -1152,7 +1171,7 @@ StScrollBar {
 
   StScrollView.menu-application-button { // extracted submenu container
     padding: 0;
-    border-radius: 2px;
+    border-radius: $bt_radius;
     border: 1px solid $borders_color;
     background-color: rgba($fg_color, 0.1);
 
@@ -1180,14 +1199,14 @@ StScrollBar {
   &-category-button {
     padding: 6px;
     border: 1px solid rgba(0,0,0,0);
-    border-radius: 3px;
+    border-radius: $bt_radius;
 
     &-hover, &-selected {
       padding: 6px;
       background-color: $selected_bg_color;
       color: $selected_fg_color;
       border: 1px solid if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
-      border-radius: 3px;
+      border-radius: $bt_radius;
     }
     &-greyed {
       padding: 6px;
@@ -1226,6 +1245,7 @@ StScrollBar {
   height: 15px;
   font-weight: normal;
   caret-color: $fg_color;
+  margin-right: 6px;
 
   @extend %entry;
 }
@@ -1270,12 +1290,12 @@ StScrollBar {
     padding: 0;
     height: 4px;
     background-color: transparentize(black, 0.35);
-    border-radius: 2px;
+    border-radius: $bt_radius;
     color: $selected_bg_color;
   }
 
   .level-bar {
-    border-radius: 2px;
+    border-radius: $bt_radius;
     background-color: $selected_bg_color;
   }
 }
@@ -1395,7 +1415,7 @@ StScrollBar {
       background-gradient-direction: vertical;
       background-gradient-start: $progress_color;
       background-gradient-end: $progress_color;
-      border-radius: 2px;
+      border-radius: $bt_radius;
       box-shadow: none;
     }
   }
@@ -1434,7 +1454,7 @@ StScrollBar {
 
     .item-box {
       padding: 6px;
-      border-radius: 2px;
+      border-radius: $bt_radius;
       spacing: 4px;
 
       &:outlined {
@@ -1552,7 +1572,7 @@ StScrollBar {
       background-gradient-direction: vertical;
       background-gradient-start: $progress_color;
       background-gradient-end: $progress_color;
-      border-radius: 2px;
+      border-radius: $bt_radius;
       box-shadow: none;
     }
   }
@@ -1660,7 +1680,7 @@ StScrollBar {
       height: 13px;
       padding: 5px;
       color: $osd_fg_color;
-      border-radius: 2px;
+      border-radius: $bt_radius;
       border: 1px solid transparentize($osd_bg_color,1);
 
       StIcon { icon-size: 16px; }

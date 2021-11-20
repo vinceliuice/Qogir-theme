@@ -11071,7 +11071,7 @@ leaflet > scrolledwindow > viewport.frame > list > row.activatable .seahorse-sid
 @define-color wm_unfocused_title alpha(#e4ebf1, 0.5);
 @define-color wm_bg #282a33;
 @define-color wm_bg_unfocused #2b2e37;
-@define-color wm_highlight #2f313c;
+@define-color wm_highlight #333641;
 @define-color wm_shadow alpha(black, 0.35);
 @define-color wm_border #a6a6a6;
 @define-color wm_button_close_bg #cc575d;
