@@ -49,6 +49,8 @@ Usage:  ./install.sh  [OPTIONS...]
 
   -c, --color VARIANT     Specify theme color variant(s) [standard|light|dark] (Default: All variants)
 
+  -l, --logo VARIANT      Specify logo icon on nautilus [default|manjaro|ubuntu|fedora|debian|arch|gnome|budgie] (Default: mountain icon)
+
   -g, --gdm               Install GDM theme, this option need root user authority! please run this with sudo
 
   -r, --revert            revert GDM theme, this option need root user authority! please run this with sudo
