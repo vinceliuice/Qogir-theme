@@ -7360,7 +7360,7 @@ PanelSeparator {
   border-width: 0;
   background: none;
   background-image: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.1);
 }
 
 PanelToplevel.horizontal MatePanelAppletFrameDBus {

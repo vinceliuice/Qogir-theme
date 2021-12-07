@@ -36,7 +36,6 @@ MsdOsdWindow.background.osd {
 //
 .mate-panel-menu-bar,
 panel-toplevel.background {
-
   &, menubar { background-color: opacify($panel_bg, 1); }
 
   // menubar,
@@ -91,7 +90,7 @@ PanelSeparator {
   border-width: 0;
   background: none;
   background-image: none;
-  color: rgba(white, 10%);
+  color: rgba(white, 0.1);
 }
 
 @each $layout, $size, $dir in (horizontal, 7px 14px, right),
