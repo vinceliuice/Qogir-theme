@@ -72,7 +72,7 @@ menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
 
 /* Adjust popovers position */
 panel[type=arrow] {
-	margin-top: 9px !important;
+	margin-top: 6px !important;
 	appearance: none !important;
 	border: none !important;
 	background-color: transparent !important;
@@ -93,17 +93,6 @@ panelview {
 	border-color: var(--gnome-popover-border-color) !important;
 	border-radius: 5px;
 	color: var(--gnome-toolbar-color) !important;
-}
-
-#BMB_bookmarksPopup {
-	margin-top: 4px !important;
-	padding: 0 !important;
-	box-shadow: none !important;
-	--panel-padding: 0 !important;
-}
-
-#BMB_bookmarksPopup menupopup {
-	padding: 6px !important;
 }
 
 .panel-arrow {

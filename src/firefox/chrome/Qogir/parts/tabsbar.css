@@ -229,7 +229,7 @@ tab[selected]:-moz-window-inactive {
 	-moz-box-align: center !important;
 }
 
-	/* fix misc spacing between tabs */
+/* fix misc spacing between tabs */
 .tabbrowser-tab {
 	padding-inline: 0 !important;
 }

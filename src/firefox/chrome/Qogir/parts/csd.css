@@ -125,7 +125,7 @@
 	height: 24px;
 	margin: 0 0 !important;
 	width: 24px;
-	transition: all 100ms;
+	transition: all .2s ease;
 }
 
 :root[tabsintitlebar] #titlebar .titlebar-button {
