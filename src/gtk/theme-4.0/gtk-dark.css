@@ -1942,7 +1942,7 @@ headerbar.selection-mode .selection-menu .arrow {
   background-color: #2b2e37;
 }
 
-headerbar.default-decoration:not(.csd) windowcontrols button {
+headerbar:not(.csd).default-decoration windowcontrols button {
   min-height: 23px;
   min-width: 23px;
   padding: 2px;
@@ -5147,7 +5147,7 @@ leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.fra
 textview > text:selected,
 textview > text:selected:focus, textview > text > selection:focus, textview > text > selection,
 iconview:selected,
-iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, modelbutton.flat:active, modelbutton.flat:selected, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, treeview.view:selected, treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
+iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, modelbutton.flat:active, modelbutton.flat:selected, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, treeview.view:selected, treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable:selected.has-open-popup, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
   background-color: #5294e2;
 }
 
@@ -5156,7 +5156,7 @@ leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.fra
 textview > text:selected,
 textview > text:selected:focus, textview > text > selection:focus, textview > text > selection,
 iconview:selected,
-iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, modelbutton.flat:active, modelbutton.flat:selected, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, treeview.view:selected, treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
+iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, modelbutton.flat:active, modelbutton.flat:selected, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, treeview.view:selected, treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable:selected.has-open-popup, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
   color: #ffffff;
 }
 

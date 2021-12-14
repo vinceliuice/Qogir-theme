@@ -3260,7 +3260,7 @@ messagedialog { // Message Dialog styling
     border-bottom: none;
     border-top-left-radius: $material_radius;
     border-top-right-radius: $material_radius;
-    box-shadow: inset 0 1px $highlight;
+    // box-shadow: inset 0 1px $highlight;
 
     &:backdrop {
       background-color: $dialog_bg;
