@@ -1188,6 +1188,7 @@ actionbar {
     padding: $cont_padding;
     border-top: 1px solid $borders_color;
     background-color: darken($bg_color, 3%);
+    border-radius: 0 0 $corner_radius $corner_radius;
 
     > viewswitcher > box > button {
       @extend %linked;
