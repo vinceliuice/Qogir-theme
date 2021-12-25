@@ -89,6 +89,14 @@ window.background { // gnome-terminal 3.32
     &.unified { // >= 40.0
       border-radius: $corner_radius;
     }
+
+    placessidebar.sidebar {
+      border-bottom-left-radius: $corner_radius;
+    }
+
+    notebook, notebook > stack {
+      border-radius: 0 0 $corner_radius $corner_radius;
+    }
   }
 
   headerbar.titlebar {

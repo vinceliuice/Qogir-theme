@@ -232,7 +232,11 @@ filechooser {
 
 // Dark icon background sidebars
 .nautilus-window {
-  // &.csd.background, placessidebar list { background-color: transparent; }
+  background-color: $dark_sidebar_bg;
+  background-image: image($dark_sidebar_icon_bg);
+  background-size: 38px auto;
+  background-repeat: no-repeat;
+  border-radius: 0 0 $corner_radius;
 
   paned > separator {
     background-image: if($variant == 'light' and $titlebar == 'dark', _solid($base_color), _solid($dark_sidebar_border));
@@ -249,8 +253,7 @@ filechooser {
   }
 
   placessidebar.sidebar {
-    box-shadow: inset 38px 0 0 0 $dark_sidebar_icon_bg;
-    background-color: $dark_sidebar_bg;
+    background: none;
 
     row.sidebar-row {
       transition: none;
@@ -1151,7 +1154,7 @@ hdyleaflet {
 // Password and Keys
 //
 
-leaflet {
+window > hdyleaflet, window > leaflet {
   > scrolledwindow > viewport.frame > list {
     @extend %side_background;
 
