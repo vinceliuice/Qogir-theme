@@ -5,6 +5,7 @@
   max-width: 23em;
 }
 
+.unlock-dialog,
 .login-dialog {
   //reset
   border: none;
@@ -13,6 +14,8 @@
   $_gdm_bg: lighten(#2e3436, 19%);
 
   StEntry {
+    border-radius: 1000px;
+
     @if $variant=='dark' {
       $_gdm_entry_bg: transparentize(lighten(desaturate(#241f31, 20%), 2%), 0.5);
       background-color: $_gdm_entry_bg;
@@ -21,6 +24,7 @@
   }
 
   .modal-dialog-button-box { spacing: 3px; }
+
   .modal-dialog-button {
     padding: 4px 18px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);

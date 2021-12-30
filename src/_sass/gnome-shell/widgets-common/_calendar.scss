@@ -14,7 +14,8 @@
 }
 
 .calendar {
-  margin: 0;
+  margin: 0 6px;
+  padding: 6px;
   box-shadow: none;
   background: none;
   border: none;
@@ -29,10 +30,10 @@
 .datemenu-calendar-column {
   spacing: 6px;
   border: none;
-  // padding: 0 12px;
+  padding: 0 6px;
 
-  // &:ltr { margin-right: 12px; border-left-width: 0; }
-  // &:rtl { margin-left: 12px; border-right-width: 0; }
+  &:ltr { margin-right: 12px; border-left-width: 0; }
+  &:rtl { margin-left: 12px; border-right-width: 0; }
 
   .datemenu-displays-section { padding-bottom: 0; }
   .datemenu-displays-box { spacing: 6px; }

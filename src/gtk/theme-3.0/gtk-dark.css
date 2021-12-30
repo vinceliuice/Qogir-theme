@@ -1815,7 +1815,7 @@ headerbar.selection-mode .selection-menu .arrow {
   background-color: #2b2e37;
 }
 
-headerbar:not(.csd).default-decoration > button.titlebutton {
+headerbar.default-decoration:not(.csd) > button.titlebutton {
   min-height: 23px;
   min-width: 23px;
   padding: 2px;
@@ -2091,9 +2091,9 @@ window.thunar toolbar button:disabled:active, window.thunar .inline-toolbar butt
   background-color: rgba(82, 148, 226, 0.65);
 }
 
-window.thunar toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button, window.thunar .inline-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar button,
+window.thunar toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button, window.thunar .inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button, .nemo-window .primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) button,
 .nemo-window .primary-toolbar widget.linked.raised:not(.vertical):not(.path-bar) button, .nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.text-button,
-.nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button, .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar > button, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked:not(.vertical):not(.stack-switcher).path-bar > button, headerbar .linked:not(.vertical):not(.stack-switcher).path-bar > button {
+.nautilus-window headerbar.titlebar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button, .caja-navigation-window toolbar#Toolbar.primary-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button, headerbar .linked.path-bar:not(.vertical):not(.stack-switcher) > button {
   background: none;
   border: none;
   border-radius: 0;
@@ -5037,7 +5037,7 @@ iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button:selected.has-open-popup, .budgie-menu button:selected:hover, row.activatable:selected, row.activatable:selected.has-open-popup, row.activatable:selected:hover, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button.has-open-popup:selected, .budgie-menu button:selected:hover, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
   background-color: #5294e2;
 }
 
@@ -5054,7 +5054,7 @@ iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button:selected.has-open-popup, .budgie-menu button:selected:hover, row.activatable:selected, row.activatable:selected.has-open-popup, row.activatable:selected:hover, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button.has-open-popup:selected, .budgie-menu button:selected:hover, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
   color: #ffffff;
 }
 

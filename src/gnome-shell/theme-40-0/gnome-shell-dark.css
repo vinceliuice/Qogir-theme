@@ -454,7 +454,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar {
-  margin: 0;
+  margin: 0 6px;
+  padding: 6px;
   box-shadow: none;
   background: none;
   border: none;
@@ -469,6 +470,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .datemenu-calendar-column {
   spacing: 6px;
   border: none;
+  padding: 0 6px;
+}
+
+.datemenu-calendar-column:ltr {
+  margin-right: 12px;
+  border-left-width: 0;
+}
+
+.datemenu-calendar-column:rtl {
+  margin-left: 12px;
+  border-right-width: 0;
 }
 
 .datemenu-calendar-column .datemenu-displays-section {
@@ -1026,9 +1038,25 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-height: 64px;
   width: 34em;
   color: #e6ebef;
+  margin: 6px;
+}
+
+.notification-banner .notification-icon {
+  padding: 6px;
+}
+
+.notification-banner .notification-content {
+  padding: 6px;
+  spacing: 6px;
+}
+
+.notification-banner .secondary-icon {
+  icon-size: em(16px);
 }
 
 .notification-banner .notification-actions {
+  padding-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   spacing: 0;
 }
 
@@ -2546,20 +2574,25 @@ StWidget.focused .app-well-app-running-dot {
   max-width: 23em;
 }
 
+.unlock-dialog,
 .login-dialog {
   border: none;
   background-color: transparent;
 }
 
+.unlock-dialog StEntry,
 .login-dialog StEntry {
+  border-radius: 1000px;
   background-color: rgba(45, 44, 46, 0.5);
   color: #D3DAE3;
 }
 
+.unlock-dialog .modal-dialog-button-box,
 .login-dialog .modal-dialog-button-box {
   spacing: 3px;
 }
 
+.unlock-dialog .modal-dialog-button,
 .login-dialog .modal-dialog-button {
   padding: 4px 18px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -2568,17 +2601,21 @@ StWidget.focused .app-well-app-running-dot {
   color: #e6ebef;
 }
 
-.login-dialog .modal-dialog-button:hover, .login-dialog .modal-dialog-button:focus {
+.unlock-dialog .modal-dialog-button:hover, .unlock-dialog .modal-dialog-button:focus,
+.login-dialog .modal-dialog-button:hover,
+.login-dialog .modal-dialog-button:focus {
   background-color: #667478;
   border-color: #667478;
 }
 
+.unlock-dialog .modal-dialog-button:active,
 .login-dialog .modal-dialog-button:active {
   box-shadow: none;
   background-color: #4f595d;
   border-color: #4f595d;
 }
 
+.unlock-dialog .modal-dialog-button:insensitive,
 .login-dialog .modal-dialog-button:insensitive {
   text-shadow: none;
   color: rgba(230, 235, 239, 0.45);
@@ -2590,6 +2627,7 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(230, 235, 239, 0.7);
 }
 
+.unlock-dialog .modal-dialog-button:default,
 .login-dialog .modal-dialog-button:default {
   text-shadow: none;
   color: #ffffff;
@@ -2599,7 +2637,9 @@ StWidget.focused .app-well-app-running-dot {
   border-color: #5294e2;
 }
 
-.login-dialog .modal-dialog-button:default:hover, .login-dialog .modal-dialog-button:default:focus {
+.unlock-dialog .modal-dialog-button:default:hover, .unlock-dialog .modal-dialog-button:default:focus,
+.login-dialog .modal-dialog-button:default:hover,
+.login-dialog .modal-dialog-button:default:focus {
   text-shadow: none;
   color: #ffffff;
   background-color: #5b99e3;
@@ -2609,6 +2649,7 @@ StWidget.focused .app-well-app-running-dot {
   border-color: #68a2e6;
 }
 
+.unlock-dialog .modal-dialog-button:default:active,
 .login-dialog .modal-dialog-button:default:active {
   text-shadow: none;
   color: #ffffff;
@@ -2619,6 +2660,7 @@ StWidget.focused .app-well-app-running-dot {
   border-color: #3c86de;
 }
 
+.unlock-dialog .modal-dialog-button:default:insensitive,
 .login-dialog .modal-dialog-button:default:insensitive {
   text-shadow: none;
   color: rgba(230, 235, 239, 0.45);
@@ -2630,6 +2672,9 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.unlock-dialog .cancel-button,
+.unlock-dialog .switch-user-button,
+.unlock-dialog .login-dialog-session-list-button,
 .login-dialog .cancel-button,
 .login-dialog .switch-user-button,
 .login-dialog .login-dialog-session-list-button {
@@ -2641,12 +2686,17 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(50, 52, 61, 0.3);
 }
 
+.unlock-dialog .cancel-button StIcon,
+.unlock-dialog .switch-user-button StIcon,
+.unlock-dialog .login-dialog-session-list-button StIcon,
 .login-dialog .cancel-button StIcon,
 .login-dialog .switch-user-button StIcon,
 .login-dialog .login-dialog-session-list-button StIcon {
   icon-size: 16px;
 }
 
+.unlock-dialog .caps-lock-warning-label,
+.unlock-dialog .login-dialog-message-warning,
 .login-dialog .caps-lock-warning-label,
 .login-dialog .login-dialog-message-warning {
   color: #D3DAE3;

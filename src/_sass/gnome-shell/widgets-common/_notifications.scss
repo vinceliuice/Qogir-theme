@@ -8,9 +8,16 @@ $notification_banner_width: 34em;
   min-height: $notification_banner_height;
   width: $notification_banner_width;
   color: $fg_color;
+  margin: 6px;
   @extend %bubble-dialog;
 
+  .notification-icon { padding: 6px; }
+  .notification-content { padding: 6px; spacing: 6px; }
+  .secondary-icon { icon-size: em(16px); }
+
   .notification-actions {
+    padding-top: 0;
+    border-top: 1px solid $borders_color;
     spacing: 0;
   }
 
