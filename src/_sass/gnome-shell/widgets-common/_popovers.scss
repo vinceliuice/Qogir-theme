@@ -46,6 +46,7 @@
 .popup-menu-item {
   spacing: 6px;
   padding: 6px;
+  color: $alt_fg_color;
 
   &:ltr { padding-right:1.75em; padding-left: 0; }
   &:rtl { padding-right: 0; padding-left:1.75em; }
@@ -53,6 +54,7 @@
   &:checked {
     background-color: darken($base_color, 3%);
     box-shadow: inset 0 1px $borders_color;
+    color: $fg_color;
   }
 
   &.selected {
