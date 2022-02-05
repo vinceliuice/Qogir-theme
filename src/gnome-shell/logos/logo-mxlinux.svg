@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="76"
-   height="84"
-   enable-background="new"
-   version="1.0"
+   width="24"
+   height="24"
+   version="1.1"
    id="svg4"
-   sodipodi:docname="logo@2-manjaro.svg"
+   sodipodi:docname="logo-mxlinux.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -15,16 +14,16 @@
      id="defs8" />
   <sodipodi:namedview
      id="namedview6"
-     pagecolor="#ffffff"
+     pagecolor="#b3b3b3"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="4.9329116"
-     inkscape:cx="37.604566"
-     inkscape:cy="63.04593"
+     inkscape:zoom="10.90123"
+     inkscape:cx="2.3391856"
+     inkscape:cy="23.300123"
      inkscape:window-width="1536"
      inkscape:window-height="800"
      inkscape:window-x="0"
@@ -32,8 +31,8 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4" />
   <path
-     d="m 43,24 -23,6e-4 V 60 H 31 V 35.000417 h 12 z m 2,6e-4 V 60 H 56 V 24.0006 Z M 33,37.000383 V 60 H 43 V 37.000383 Z"
+     d="m 12,4 c -4.432,0 -8,3.568 -8,8 0,4.432 3.568,8 8,8 4.432,0 8,-3.568 8,-8 0,-4.432 -3.568,-8 -8,-8 z m -2.3032,3.703733 2.747111,3.090311 2.626756,-3.090311 0.51215,0.511574 -2.654488,3.123289 1.846044,2.076977 0.296294,-0.337964 2.559022,3.070578 H 6.370133 l 3.838578,-4.350134 0.719325,0.778934 0.570604,-0.671298 -2.825244,-3.178845 z m 2.286489,4.747111 -0.56192,0.66088 1.858222,2.012712 0.535876,-0.612845 z"
      fill="#ffffff"
-     stroke-width="1.49999"
+     stroke-width="0.296293"
      id="path2" />
 </svg>
