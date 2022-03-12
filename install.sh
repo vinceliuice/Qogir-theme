@@ -21,6 +21,7 @@ LOGO_NAME=''
 image=''
 window=''
 square=''
+hidpi=''
 
 theme_color='default'
 
@@ -62,6 +63,7 @@ OPTIONS:
                           1. image:    Install with a background image on (Nautilus/Nemo)
                           2. square:   Install square window button like Windows 10
                           3. round:    Install rounded window and popup/menu version
+                          4. hidpi:    Install HiDPI version (xfwm4)
 
   -h, --help              Show help
 EOF
@@ -245,11 +247,25 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/xfwm4
 
   if [[ "$square" == 'true' ]]; then
-    cp -r ${SRC_DIR}/src/xfwm4/themerc-win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
-    cp -r ${SRC_DIR}/src/xfwm4/assets-win${ELSE_LIGHT}/*.png                         ${THEME_DIR}/xfwm4
+    if [[ "$hidpi" == 'true' ]]; then
+      cp -r ${SRC_DIR}/src/xfwm4/themerc-win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
+      cp -r ${SRC_DIR}/src/xfwm4/assets-win${ELSE_LIGHT}-hidpi/*.png                   ${THEME_DIR}/xfwm4
+    else
+      cp -r ${SRC_DIR}/src/xfwm4/themerc-win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
+      cp -r ${SRC_DIR}/src/xfwm4/assets-win${ELSE_LIGHT}/*.png                         ${THEME_DIR}/xfwm4
+    fi
   else
-    cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
-    cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}/*.png                             ${THEME_DIR}/xfwm4
+    if [[ "$hidpi" == 'true' ]]; then
+      cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
+      cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}-hidpi/*.png                       ${THEME_DIR}/xfwm4
+      cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
+      cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}-hidpi/*.png                       ${THEME_DIR}/xfwm4
+    else
+      cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
+      cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}/*.png                             ${THEME_DIR}/xfwm4
+      cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
+      cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}/*.png                             ${THEME_DIR}/xfwm4
+    fi
   fi
 
   # OTHER
@@ -422,6 +438,10 @@ while [[ $# -gt 0 ]]; do
             ;;
           square)
             square='true'
+            shift
+            ;;
+          hidpi)
+            hidpi='true'
             shift
             ;;
           -*|--*)
