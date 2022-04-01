@@ -81,7 +81,7 @@ Install rounded window version with square window button and nautilus background
 Install standard dark gdm theme
 
 ```sh
-sudo ./install.sh -g -c dark -t standard
+sudo ./install.sh -g -c dark -t default
 ```
 
 ### On Flatpak
