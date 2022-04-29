@@ -7,6 +7,11 @@ horst3180 - Arc gtk theme: https://github.com/horst3180/Arc-theme
 
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot01.png?raw=true)
 
+## NOTICE
+
+In Gnome 42 can not use `Qogir-dark` theme, so I renamed all `*-dark` themes to `*-Dark`
+So you need to remove all old themes and reinstall the last version 
+
 ## Info
 
 ### GTK+ 3.20 or later
