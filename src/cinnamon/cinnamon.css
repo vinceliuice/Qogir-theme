@@ -15,7 +15,7 @@ stage {
   text-shadow: none;
   color: #464853;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
@@ -35,7 +35,7 @@ stage {
   text-shadow: none;
   color: #464853;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
@@ -108,7 +108,7 @@ stage {
   border-radius: 2px;
   color: #4a4c59;
   background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
@@ -122,7 +122,7 @@ stage {
 #menu-search-entry:insensitive, .menu #notification StEntry:insensitive, .popup-menu #notification StEntry:insensitive {
   color: rgba(70, 72, 83, 0.55);
   background-color: #fdfdfe;
-  border-color: 1px solid rgba(227, 228, 229, 0.5325);
+  border-color: 1px solid rgba(232, 233, 234, 0.516);
   box-shadow: inset 0 2px 4px rgba(253, 253, 254, 0.05);
 }
 
@@ -208,7 +208,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-slider-menu-item,
 .slider {
   -slider-height: 4px;
-  -slider-background-color: rgba(0, 0, 0, 0.15);
+  -slider-background-color: rgba(0, 0, 0, 0.12);
   -slider-border-color: rgba(0, 0, 0, 0);
   -slider-active-background-color: #5294e2;
   -slider-active-border-color: rgba(0, 0, 0, 0);
@@ -328,7 +328,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-combo-menu {
   color: #464853;
   background-color: #ffffff;
-  border: 0 solid rgba(0, 0, 0, 0.15);
+  border: 0 solid rgba(0, 0, 0, 0.12);
   padding: 0;
   margin: 8px;
   border-radius: 3px;
@@ -345,7 +345,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-combo-menu .popup-sub-menu {
   background-gradient-direction: none;
   background-color: #f7f7f7;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-left: none;
   border-right: none;
   box-shadow: none;
@@ -729,7 +729,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .about-scrollBox {
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 2px;
   background-color: #ffffff;
   padding: 4px;
@@ -1061,7 +1061,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 0;
   padding: 14px 10px;
   background-color: rgba(70, 72, 83, 0.05);
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .modal-dialog-button-box .modal-dialog-button {
@@ -1282,7 +1282,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 10px;
   transition-duration: 300;
   background-color: #fafbfc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 2px;
 }
 
@@ -1296,7 +1296,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: none;
   color: #464853;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
@@ -1354,7 +1354,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu StScrollView.menu-application-button {
   padding: 0;
   border-radius: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background-color: rgba(70, 72, 83, 0.1);
 }
 
@@ -2014,7 +2014,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 0;
   border: none;
   -slider-height: 0.5em;
-  -slider-background-color: rgba(0, 0, 0, 0.15);
+  -slider-background-color: rgba(0, 0, 0, 0.12);
   -slider-border-color: rgba(0, 0, 0, 0);
   -slider-active-background-color: #5294e2;
   -slider-active-border-color: rgba(0, 0, 0, 0);

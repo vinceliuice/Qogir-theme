@@ -660,7 +660,7 @@ button.raven-trigger {
   stackswitcher { padding: 0 8px 12px 8px; }
 
   button.image-button {
-    @extend %circle_button;
+    @extend %circular_button;
 
     &:active, &:checked {
       background-clip: border-box;
@@ -752,7 +752,7 @@ button.raven-trigger {
 
   viewport.frame .raven-header { margin-top: -8px; }
 
-  .expander-button { @extend %circle_button; }
+  .expander-button { @extend %circular_button; }
 
   .raven-background {
     border-style: solid none;
@@ -976,7 +976,7 @@ box.vertical > stack > box.vertical {
   }
 
   button.image-button { // 'close'
-    @extend %circle_button;
+    @extend %circular_button;
   }
 }
 

@@ -5,8 +5,8 @@ OPTIPNG="/usr/bin/optipng"
 
 INDEX="assets.txt"
 
-for theme in '' '-manjaro' '-ubuntu'; do
-  for color in '' '-dark'; do
+for theme in '' '-Manjaro' '-Ubuntu'; do
+  for color in '' '-Dark'; do
 
     ASSETS_DIR="assets${theme}${color}"
     SRC_FILE="assets${theme}${color}.svg"

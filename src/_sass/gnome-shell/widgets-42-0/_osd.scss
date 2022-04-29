@@ -1,0 +1,14 @@
+
+.osd-window {
+  spacing: 12px; // 12px
+  padding: 12px 18px;
+  & > * { spacing: 8px; }
+  margin-bottom: 4em;
+
+  StIcon { icon-size: 32px; } // 32px
+
+  StLabel {
+    &:ltr { margin-right: 6px; }
+    &:rtl { margin-left: 6px; }
+  }
+}

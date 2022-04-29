@@ -13,9 +13,9 @@ fi
 SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Qogir
-THEME_VARIANTS=('' '-manjaro' '-ubuntu')
-WIN_VARIANTS=('' '-win')
-COLOR_VARIANTS=('' '-light' '-dark')
+THEME_VARIANTS=('' '-Manjaro' '-Ubuntu')
+WIN_VARIANTS=('' '-Win')
+COLOR_VARIANTS=('' '-Light' '-Dark')
 LOGO_NAME=''
 
 image=''
@@ -28,16 +28,18 @@ theme_color='default'
 SASSC_OPT="-M -t expanded"
 
 if [[ "$(command -v gnome-shell)" ]]; then
+  gnome-shell --version
   SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-  echo "Your gnome-shell version is '$(gnome-shell --version)'"
-  if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
-    GS_VERSION="new"
+  if [[ "${SHELL_VERSION:-}" -ge "42" ]]; then
+    GS_VERSION="42-0"
+  elif [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
+    GS_VERSION="40-0"
   else
-    GS_VERSION="old"
+    GS_VERSION="3-32"
   fi
   else
     echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-    GS_VERSION="new"
+    GS_VERSION="42-0"
 fi
 
 usage() {
@@ -76,8 +78,8 @@ install() {
   local color=${4}
   local logo=${5}
 
-  [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
-  [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
+  [[ ${color} == '-Dark' ]] && local ELSE_DARK=${color}
+  [[ ${color} == '-Light' ]] && local ELSE_LIGHT=${color}
 
   local THEME_DIR=${dest}/${name}${theme}${color}
 
@@ -128,16 +130,10 @@ install() {
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-3.0/gtk${color}.scss                   ${THEME_DIR}/gtk-3.0/gtk.css
+    sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-3.0/gtk-Dark.scss                      ${THEME_DIR}/gtk-3.0/gtk-dark.css
   else
     cp -r ${SRC_DIR}/src/gtk/theme-3.0/gtk${color}.css                               ${THEME_DIR}/gtk-3.0/gtk.css
-  fi
-
-  if [[ ${color} != '-dark' ]]; then
-    if [[ "$tweaks" == 'true' ]]; then
-      sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-3.0/gtk-dark.scss                    ${THEME_DIR}/gtk-3.0/gtk-dark.css
-    else
-      cp -r ${SRC_DIR}/src/gtk/theme-3.0/gtk-dark.css                                ${THEME_DIR}/gtk-3.0/gtk-dark.css
-    fi
+    cp -r ${SRC_DIR}/src/gtk/theme-3.0/gtk-Dark.css                                  ${THEME_DIR}/gtk-3.0/gtk-dark.css
   fi
 
   cp -r ${SRC_DIR}/src/gtk/assets/thumbnail${theme}${ELSE_DARK}.png                  ${THEME_DIR}/gtk-3.0/thumbnail.png
@@ -159,21 +155,22 @@ install() {
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-4.0/gtk${color}.scss                   ${THEME_DIR}/gtk-4.0/gtk.css
+    sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-4.0/gtk-Dark.scss                      ${THEME_DIR}/gtk-4.0/gtk-dark.css
   else
     cp -r ${SRC_DIR}/src/gtk/theme-4.0/gtk${color}.css                               ${THEME_DIR}/gtk-4.0/gtk.css
-  fi
-
-  if [[ ${color} != '-dark' ]]; then
-    if [[ "$tweaks" == 'true' ]]; then
-      sassc $SASSC_OPT ${SRC_DIR}/src/gtk/theme-4.0/gtk-dark.scss                    ${THEME_DIR}/gtk-4.0/gtk-dark.css
-    else
-      cp -r ${SRC_DIR}/src/gtk/theme-4.0/gtk-dark.css                                ${THEME_DIR}/gtk-4.0/gtk-dark.css
-    fi
+    cp -r ${SRC_DIR}/src/gtk/theme-4.0/gtk-Dark.css                                  ${THEME_DIR}/gtk-4.0/gtk-dark.css
   fi
 
   cp -r ${SRC_DIR}/src/gtk/assets/thumbnail${theme}${ELSE_DARK}.png                  ${THEME_DIR}/gtk-4.0/thumbnail.png
 
- # GNOME SHELL
+  # link gtk4.0 for libadwaita
+  mkdir -p                                                                           ${HOME}/.config/gtk-4.0
+  rm -rf ${HOME}/.config/gtk-4.0/{assets,gtk.css,gtk-dark.css}
+  ln -sf ${THEME_DIR}/gtk-4.0/assets                                                 ${HOME}/.config/gtk-4.0/assets
+  ln -sf ${THEME_DIR}/gtk-4.0/gtk.css                                                ${HOME}/.config/gtk-4.0/gtk.css
+  ln -sf ${THEME_DIR}/gtk-4.0/gtk-dark.css                                           ${HOME}/.config/gtk-4.0/gtk-dark.css
+
+  # GNOME SHELL
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
   cp -r ${SRC_DIR}/src/gnome-shell/common-assets                                     ${THEME_DIR}/gnome-shell/assets
   cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/{background.jpg,calendar-today.svg} ${THEME_DIR}/gnome-shell/assets
@@ -189,18 +186,11 @@ install() {
   cp -r ${SRC_DIR}/src/gnome-shell/icons                                             ${THEME_DIR}/gnome-shell
   cp -r ${SRC_DIR}/src/gnome-shell/pad-osd.css                                       ${THEME_DIR}/gnome-shell
 
-  if [[ "${GS_VERSION:-}" == 'new' ]]; then
-    if [[ "$tweaks" == 'true' ]]; then
-      sassc $SASSC_OPT ${SRC_DIR}/src/gnome-shell/theme-40-0/gnome-shell${ELSE_DARK}.scss ${THEME_DIR}/gnome-shell/gnome-shell.css
-    else
-      cp -r ${SRC_DIR}/src/gnome-shell/theme-40-0/gnome-shell${ELSE_DARK}.css        ${THEME_DIR}/gnome-shell/gnome-shell.css
-    fi
+
+  if [[ "$tweaks" == 'true' ]]; then
+    sassc $SASSC_OPT ${SRC_DIR}/src/gnome-shell/theme-${GS_VERSION}/gnome-shell${ELSE_DARK}.scss ${THEME_DIR}/gnome-shell/gnome-shell.css
   else
-    if [[ "$tweaks" == 'true' ]]; then
-      sassc $SASSC_OPT ${SRC_DIR}/src/gnome-shell/theme-3-32/gnome-shell${ELSE_DARK}.scss ${THEME_DIR}/gnome-shell/gnome-shell.css
-    else
-      cp -r ${SRC_DIR}/src/gnome-shell/theme-3-32/gnome-shell${ELSE_DARK}.css        ${THEME_DIR}/gnome-shell/gnome-shell.css
-    fi
+    cp -r ${SRC_DIR}/src/gnome-shell/theme-${GS_VERSION}/gnome-shell${ELSE_DARK}.css ${THEME_DIR}/gnome-shell/gnome-shell.css
   fi
 
   cd ${THEME_DIR}/gnome-shell
@@ -224,14 +214,14 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/metacity-1
 
   if [[ "$window" == 'round' ]]; then
-    cp -r ${SRC_DIR}/src/metacity-1/assets-round                                     ${THEME_DIR}/metacity-1/assets
-    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-round.xml                       ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+    cp -r ${SRC_DIR}/src/metacity-1/assets-Round                                     ${THEME_DIR}/metacity-1/assets
+    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-Round.xml                       ${THEME_DIR}/metacity-1/metacity-theme-3.xml
     cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}-round.xml          ${THEME_DIR}/metacity-1/metacity-theme-1.xml
   else
     if [[ "$square" == 'true' ]]; then
-      cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}-win/*.png                  ${THEME_DIR}/metacity-1
-      cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-win.xml                       ${THEME_DIR}/metacity-1/metacity-theme-3.xml
-      cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}-win.xml          ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+      cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}-Win/*.png                  ${THEME_DIR}/metacity-1
+      cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-Win.xml                       ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+      cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}-Win.xml          ${THEME_DIR}/metacity-1/metacity-theme-1.xml
     else
       cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}/*.png                      ${THEME_DIR}/metacity-1
       cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3.xml                           ${THEME_DIR}/metacity-1/metacity-theme-3.xml
@@ -248,11 +238,11 @@ install() {
 
   if [[ "$square" == 'true' ]]; then
     if [[ "$hidpi" == 'true' ]]; then
-      cp -r ${SRC_DIR}/src/xfwm4/themerc-win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
-      cp -r ${SRC_DIR}/src/xfwm4/assets-win${ELSE_LIGHT}-hidpi/*.png                   ${THEME_DIR}/xfwm4
+      cp -r ${SRC_DIR}/src/xfwm4/themerc-Win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
+      cp -r ${SRC_DIR}/src/xfwm4/assets-Win${ELSE_LIGHT}-hidpi/*.png                   ${THEME_DIR}/xfwm4
     else
-      cp -r ${SRC_DIR}/src/xfwm4/themerc-win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
-      cp -r ${SRC_DIR}/src/xfwm4/assets-win${ELSE_LIGHT}/*.png                         ${THEME_DIR}/xfwm4
+      cp -r ${SRC_DIR}/src/xfwm4/themerc-Win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
+      cp -r ${SRC_DIR}/src/xfwm4/assets-Win${ELSE_LIGHT}/*.png                         ${THEME_DIR}/xfwm4
     fi
   else
     if [[ "$hidpi" == 'true' ]]; then

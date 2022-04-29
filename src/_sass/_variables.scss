@@ -16,11 +16,10 @@ $asset_suffix_win: if($titlebutton == 'circle', '', '-win');
 // sizes
 $small_size: 16px;
 $medium_size: 28px;
-$large_size: 38px;
+$large_size: 40px;
 
 $cont_padding: 6px;
 $menuitem_size: 28px;
-$icon_padding: 5px;
 
 // radiuses
 $bt_radius: if($window == 'round', 4px, 2px);

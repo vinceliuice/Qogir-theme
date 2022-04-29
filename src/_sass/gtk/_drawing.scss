@@ -36,6 +36,8 @@
     color: $text_color;
     border-color: $entry_border;
     background-color: $entry_bg;
+    outline: none;
+    box-shadow: none;
   }
 
   @if $t==focus {
@@ -45,6 +47,8 @@
     color: $text_color;
     border-color: $selected_bg_color;
     background-color: $entry_bg;
+    outline: none;
+    box-shadow: none;
   }
 
   @if $t==insensitive {
@@ -72,6 +76,8 @@
   //
   // focused header-bar entry
   //
+    outline: none;
+    box-shadow: none;
     color: lighten($header_fg, 20%);
     border-color: $selected_bg_color;
     background-color: if($variant=='light', lighten($header_entry_bg, 2%), lighten($header_entry_bg, 5%));
@@ -104,6 +110,8 @@
     color: $selected_fg_color;
     border-color: $osd_entry_border;
     background-color: $selected_bg_color;
+    outline: none;
+    box-shadow: none;
   }
 
   @else if $t==osd-insensitive {
@@ -131,6 +139,7 @@
     color: $fg_color;
     border-color: $button_border;
     background-color: $button_bg;
+    outline: none;
   }
 
   @else if $t==hover {
@@ -140,6 +149,7 @@
     color: darken($fg_color, 15%);
     border-color: if($variant=='light', darken($button_border, 5%), lighten($button_border, 5%));
     background-color: lighten($button_bg, 8%);
+    box-shadow: none;
   }
 
   @else if $t==active {
@@ -149,6 +159,7 @@
     color: $selected_fg_color;
     border-color: if($variant == 'light', $sec_selected_bg_color, $alt_selected_bg_color);
     background-color: $selected_bg_color;
+    box-shadow: none;
   }
 
   @else if $t==insensitive {
@@ -169,7 +180,6 @@
 
     border-color: transparentize($selected_bg_color, 0.25);
     background-color: transparentize($selected_bg_color, 0.25);
-
     opacity: 0.6;
   }
 
@@ -245,6 +255,7 @@
     color: $selected_fg_color;
     border-color: $selected_bg_color;
     background-color: $selected_bg_color;
+    background-clip: border-box;
   }
 
   @else if $t==osd-insensitive {

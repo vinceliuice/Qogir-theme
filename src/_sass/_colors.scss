@@ -40,9 +40,9 @@ $suggested_fg_color: white;
 $drop_target_color: #F08437;
 $progress_color: $selected_bg_color;
 
-$borders_color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.12));
+$borders_color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.12));
 $alt_borders_color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.05));
-$solid_borders_color: if($variant == 'light', darken($bg_color, 15%), lighten($bg_color, 10%));
+$solid_borders_color: if($variant == 'light', mix(black, $base_color, 12%), mix(white, $base_color, 12%));
 $highlight: if($variant == 'light', rgba(white, 0.13), rgba(white, 0.10));
 $alt_highlight_color: rgba(white, 0.2);
 
@@ -63,8 +63,8 @@ $header_bg_backdrop: if($titlebar == 'dark' or $variant == 'dark', lighten($head
 
 $header_border: if($variant == 'light' and $titlebar == 'light', darken($header_bg, 10%), lighten($header_bg, 10%));
 
-$header_fg: if($titlebar == 'dark', saturate(rgba(#e6ebef, 0.8), 10%), saturate(rgba($fg_color, 0.8), 10%));
-$alt_header_fg: if($titlebar == 'dark', lighten($header_fg, 10%), darken($header_fg, 10%));
+$header_fg: if($titlebar == 'light', #4a4c59, #e0e5eb);
+$alt_header_fg: mix($header_fg, $header_bg, 75%);
 
 $dark_sidebar_bg: white;
 @if $trans == 'true' and $titlebar == 'light' { $dark_sidebar_bg: rgba(#f6f9fb, 0.95); }

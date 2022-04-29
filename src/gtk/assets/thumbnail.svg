@@ -2,35 +2,26 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="200"
    height="150"
    viewBox="0 0 52.916667 39.6875"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
    sodipodi:docname="thumbnail.svg"
    inkscape:export-filename="/home/vince/桌面/thumbnail.png"
    inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96">
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2">
-    <linearGradient
-       id="selected_bg_color"
-       osb:paint="solid">
-      <stop
-         style="stop-color:#2e90b3;stop-opacity:1;"
-         offset="0"
-         id="stop5956" />
-    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#selected_bg_color-3"
@@ -43,7 +34,7 @@
        gradientTransform="rotate(45,1080.8927,414.45697)" />
     <linearGradient
        id="selected_bg_color-3"
-       osb:paint="solid">
+       inkscape:swatch="solid">
       <stop
          style="stop-color:#5294e2;stop-opacity:1;"
          offset="0"
@@ -67,21 +58,22 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="209.52867"
-     inkscape:cy="109.83638"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="387.14096"
+     inkscape:cy="76.367532"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
-     inkscape:window-width="1366"
-     inkscape:window-height="711"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="28"
      inkscape:window-maximized="1"
      inkscape:snap-global="true"
      showguides="true"
-     inkscape:guide-bbox="true">
+     inkscape:guide-bbox="true"
+     inkscape:pagecheckerboard="0">
     <inkscape:grid
        type="xygrid"
        id="grid1003" />
@@ -94,7 +86,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -105,8 +96,7 @@
      transform="translate(0,-257.31248)">
     <g
        id="thumbnail"
-       transform="translate(0,-2.661734)"
-       inkscape:label="#thumbnail">
+       transform="translate(0,-2.661734)">
       <rect
          ry="0"
          rx="0"
@@ -220,9 +210,8 @@
       </g>
     </g>
     <g
-       id="thumbnail-dark"
-       transform="translate(0,13.213261)"
-       inkscape:label="#thumbnail-dark">
+       id="thumbnail-Dark"
+       transform="translate(0,13.213261)">
       <rect
          style="opacity:1;fill:#32343d;fill-opacity:1;stroke:#646464;stroke-width:0.18362547;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect1190"
@@ -336,9 +325,8 @@
       </g>
     </g>
     <g
-       inkscape:label="#thumbnail-manjaro"
        transform="translate(50.513941,-2.661734)"
-       id="thumbnail-manjaro">
+       id="thumbnail-Manjaro">
       <rect
          style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#f2f2f2;stroke-width:0.18362547;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect52"
@@ -452,9 +440,8 @@
       </g>
     </g>
     <g
-       inkscape:label="#thumbnail-manjaro-dark"
        transform="translate(50.513941,13.213261)"
-       id="thumbnail-manjaro-dark">
+       id="thumbnail-Manjaro-Dark">
       <rect
          ry="0"
          rx="0"
@@ -568,9 +555,8 @@
       </g>
     </g>
     <g
-       id="thumbnail-ubuntu"
-       transform="translate(104.0213,-2.661734)"
-       inkscape:label="#thumbnail-ubuntu">
+       id="thumbnail-Ubuntu"
+       transform="translate(104.0213,-2.661734)">
       <rect
          ry="0"
          rx="0"
@@ -684,9 +670,8 @@
       </g>
     </g>
     <g
-       id="thumbnail-ubuntu-dark"
-       transform="translate(104.0213,13.213261)"
-       inkscape:label="#thumbnail-ubuntu-dark">
+       id="thumbnail-Ubuntu-Dark"
+       transform="translate(104.0213,13.213261)">
       <rect
          style="opacity:1;fill:#32343d;fill-opacity:1;stroke:#646464;stroke-width:0.18362547;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect170"

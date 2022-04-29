@@ -1,0 +1,32 @@
+
+// menu items
+.popup-menu-item {
+  &:ltr { padding-right: 12px; padding-left: 0; }
+  &:rtl { padding-right: 0; padding-left: 12px; }
+}
+
+// system status menu
+.aggregate-menu {
+  .popup-menu-item > :first-child {
+    // account for icons in submenus with padding
+    &:ltr {
+      padding-left: 6px;
+      margin-left: 0;
+    }
+    &:rtl {
+      padding-right: 6px;
+      margin-right: 0;
+    }
+  }
+  .popup-sub-menu .popup-menu-item > :first-child {
+    // account for icons in submenus with padding
+    &:ltr {
+      padding-left: 12px;
+      margin-left: 9px;
+    }
+    &:rtl {
+      padding-right: 12px;
+      margin-right: 9px;
+    }
+  }
+}

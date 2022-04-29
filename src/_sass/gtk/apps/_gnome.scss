@@ -82,6 +82,26 @@ window.background { // gnome-terminal 3.32
   }
 }
 
+%nautilus_dir_buttons {
+  border-radius: $bt_radius;
+  border: none;
+
+  &:hover {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.1);
+  }
+
+  &:active {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.2);
+  }
+
+  &:checked {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.15);
+  }
+}
+
 .nautilus-window {
   &.background.csd {
     border-radius: 0 0 $corner_radius $corner_radius;
@@ -101,8 +121,8 @@ window.background { // gnome-terminal 3.32
 
   headerbar.titlebar {
     .path-bar-box {
-      margin-top: $icon_padding;
-      margin-bottom: $icon_padding;
+      margin-top: $cont_padding;
+      margin-bottom: $cont_padding;
       color: $header_fg;
       background-color: transparent;
       border: none;
@@ -131,7 +151,7 @@ window.background { // gnome-terminal 3.32
         }
 
         button.text-button.image-button {
-          padding: 3px $cont_padding*2;
+          padding: 3px $cont_padding * 2;
 
           label {
             padding-left: 0;
@@ -162,6 +182,60 @@ window.background { // gnome-terminal 3.32
       &.background.frame {
         border: none;
         background-color: transparent;
+      }
+    }
+
+    &.windowhandle .linked.nautilus-path-bar {
+      background-color: rgba($header_fg, 0.06);
+      border-radius: $bt_radius + 1px;
+      margin: $cont_padding 0;
+      border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
+
+      > button.popup {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        @extend %nautilus_dir_buttons;
+      }
+
+      .path-buttons-box {
+        padding: 0 2px;
+
+        > box > button {
+          margin-top: 2px;
+          margin-bottom: 2px;
+          padding: 0 $cont_padding;
+
+          @extend %nautilus_dir_buttons;
+
+          > box > label.dim-label {
+            color: $alt_header_fg;
+
+            &:hover, &:active, &:checked {
+              color: $header_fg;
+            }
+          }
+
+          &:hover {
+            color: $header_fg;
+            background-color: rgba($header_fg, 0.1);
+          }
+
+          &:active, &:checked {
+            color: $header_fg;
+            background-color: rgba($header_fg, 0.2);
+          }
+
+          &.current-dir {
+            color: $header_fg;
+
+            &:hover, &:active {
+              background: none;
+              box-shadow: none;
+              border-image: none;
+            }
+          }
+        }
       }
     }
   }
@@ -222,7 +296,7 @@ window.background { // gnome-terminal 3.32
 }
 
 button.nautilus-circular-button.image-button {
-  @extend %circle_button;
+  @extend %circular_button;
 }
 
 $disk_space_unknown: transparentize($fg_color, 0.5);
@@ -1189,7 +1263,7 @@ popover.background {
       border-radius: $bt_radius;
 
       button.page-row-close-button {
-        @extend %circle_button;
+        @extend %circular_button;
         margin: 3px 6px;
       }
 

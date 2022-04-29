@@ -1,0 +1,19 @@
+
+// menu items
+.popup-menu-item {
+  &:ltr { padding-right: 1.75em; padding-left: 0; }
+  &:rtl { padding-right: 0; padding-left: 1.75em; }
+}
+
+// system status menu
+.popup-sub-menu .popup-menu-item > :first-child {
+  // account for icons in submenus with padding
+  &:ltr {
+    padding-left: 14px;
+    margin-left: 16px;
+  }
+  &:rtl {
+    padding-right: 14px;
+    margin-right: 16px;
+  }
+}
