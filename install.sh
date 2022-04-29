@@ -14,7 +14,6 @@ SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Qogir
 THEME_VARIANTS=('' '-Manjaro' '-Ubuntu')
-WIN_VARIANTS=('' '-Win')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 LOGO_NAME=''
 
@@ -585,6 +584,8 @@ theme_tweaks() {
   fi
 }
 
+./clean-old-theme.sh
+
 if [[ "${gdm:-}" != 'true' && "${revert:-}" != 'true' ]]; then
   install_theme
 fi
@@ -597,5 +598,4 @@ if [[ "${gdm:-}" != 'true' && "${revert:-}" == 'true' && "$UID" -eq "$ROOT_UID" 
   revert_gdm
 fi
 
-echo
-echo Done.
+echo -e "\nDone.\n"
