@@ -1,32 +1,40 @@
 
 // menu items
 .popup-menu-item {
-  &:ltr { padding-right: 12px; padding-left: 0; }
-  &:rtl { padding-right: 0; padding-left: 12px; }
+  padding: 6px !important;
+
+  &:ltr { padding-right: 12px !important; padding-left: 12px !important; }
+  &:rtl { padding-right: 12px !important; padding-left: 12px !important; }
 }
 
 // system status menu
 .aggregate-menu {
+  .popup-menu-icon {
+    margin: 0 4px 0 0 !important;
+  }
+
   .popup-menu-item > :first-child {
     // account for icons in submenus with padding
     &:ltr {
-      padding-left: 6px;
-      margin-left: 0;
+      padding-left: 0 !important;
+      margin-left: 0 !important;
     }
+
     &:rtl {
-      padding-right: 6px;
-      margin-right: 0;
+      padding-right: 0 !important;
+      margin-right: 0 !important;
     }
   }
+
   .popup-sub-menu .popup-menu-item > :first-child {
     // account for icons in submenus with padding
     &:ltr {
-      padding-left: 12px;
-      margin-left: 9px;
+      padding-left: 12px !important;
+      margin-left: 0 !important;
     }
     &:rtl {
-      padding-right: 12px;
-      margin-right: 9px;
+      padding-right: 12px !important;
+      margin-right: 0 !important;
     }
   }
 }

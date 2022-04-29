@@ -3069,34 +3069,42 @@ StWidget.focused .app-well-app-running-dot {
   width: 18px;
 }
 
+.popup-menu-item {
+  padding: 6px !important;
+}
+
 .popup-menu-item:ltr {
-  padding-right: 12px;
-  padding-left: 0;
+  padding-right: 12px !important;
+  padding-left: 12px !important;
 }
 
 .popup-menu-item:rtl {
-  padding-right: 0;
-  padding-left: 12px;
+  padding-right: 12px !important;
+  padding-left: 12px !important;
+}
+
+.aggregate-menu .popup-menu-icon {
+  margin: 0 4px 0 0 !important;
 }
 
 .aggregate-menu .popup-menu-item > :first-child:ltr {
-  padding-left: 6px;
-  margin-left: 0;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
 
 .aggregate-menu .popup-menu-item > :first-child:rtl {
-  padding-right: 6px;
-  margin-right: 0;
+  padding-right: 0 !important;
+  margin-right: 0 !important;
 }
 
 .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:ltr {
-  padding-left: 12px;
-  margin-left: 9px;
+  padding-left: 12px !important;
+  margin-left: 0 !important;
 }
 
 .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:rtl {
-  padding-right: 12px;
-  margin-right: 9px;
+  padding-right: 12px !important;
+  margin-right: 0 !important;
 }
 
 .osd-window {
