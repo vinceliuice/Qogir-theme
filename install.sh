@@ -555,10 +555,10 @@ install_round_window() {
 install_theme_color() {
   if [[ "$theme" != '' ]]; then
     case "$theme" in
-      -manjaro)
+      -Manjaro)
         theme_color='manjaro'
         ;;
-      -ubuntu)
+      -Ubuntu)
         theme_color='ubuntu'
         ;;
     esac
