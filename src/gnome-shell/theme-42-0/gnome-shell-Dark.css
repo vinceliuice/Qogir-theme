@@ -439,7 +439,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar {
-  margin: 0 6px;
+  margin: 0;
   padding: 6px;
   box-shadow: none;
   background: none;
@@ -680,10 +680,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
 }
 
-:active .world-clocks-header, :active .weather-header, :active .message-list-section-title, :active .events-section-title {
-  color: #ffffff;
-}
-
 .world-clocks-grid,
 .weather-grid {
   spacing-rows: 0.4em;
@@ -770,18 +766,48 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Message List */
 .message-list {
-  width: 31.5em;
-  padding: 0 12px;
+  width: 29em;
+  padding-left: 16px;
   text-shadow: none;
+  border: solid rgba(255, 255, 255, 0.12);
+}
+
+.message-list:ltr {
+  margin-left: 0;
+  margin-right: 4px;
+  padding-right: 6px;
+  border-right-width: 1px;
+}
+
+.message-list:rtl {
+  margin-right: 0;
+  margin-left: 4px;
+  padding-left: 6px;
+  border-left-width: 1px;
 }
 
 .message-list .message-list-placeholder {
   spacing: 12px;
 }
 
+.message-list .message-list-placeholder > StIcon {
+  icon-size: 48px;
+  margin-bottom: 12px;
+  -st-icon-style: symbolic;
+}
+
 .message-list-sections {
   spacing: 6px;
-  margin: 0 16px;
+  margin: 0;
+  padding-bottom: 6px;
+}
+
+.message-list-sections:ltr {
+  margin-right: 12px;
+}
+
+.message-list-sections:rtl {
+  margin-left: 12px;
 }
 
 .message-list-section,
@@ -790,14 +816,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-list-controls {
-  margin: 8px 16px 0;
-  padding: 4px;
-  spacing: 12px;
+  margin: 0 12px !important;
+  padding: 0 6px !important;
+  spacing: 6px !important;
+  font-weight: normal;
+}
+
+.message-list-controls .dnd-button, .message-list-controls .button {
+  font-weight: normal;
 }
 
 .message {
   border-radius: 2px;
   text-shadow: none;
+  padding: 0 !important;
+  spacing: 6px !important;
 }
 
 .popup-menu .message {
@@ -828,7 +861,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu .message:active .message-secondary-bin > .event-time,
 .popup-menu .message:active .message-close-button,
 .popup-menu .message:active .message-media-control {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .popup-menu .message:active .message-content:insensitive,
@@ -841,16 +874,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin {
-  padding: 18px 0 18px 12px;
+  padding: 12px;
+}
+
+.message .message-icon-bin:ltr {
+  padding-right: 6px;
 }
 
 .message .message-icon-bin:rtl {
-  padding: 18px 12px 18px 0;
+  padding-left: 6px;
 }
 
 .message .message-icon-bin > StIcon {
   icon-size: 32px;
   -st-icon-style: symbolic;
+  padding: 6px;
+  margin: 6px 0 6px 6px;
+  background-color: #282A33;
+  border-radius: 2px;
 }
 
 .message .message-icon-bin > .fallback-app-icon {
@@ -859,7 +900,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-content {
-  padding: 14px;
+  padding: 10px;
   spacing: 4px;
   text-shadow: none;
 }
@@ -889,12 +930,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-close-button {
-  min-height: 24px;
-  min-width: 24px;
+  min-height: 24px !important;
+  min-width: 24px !important;
   color: rgba(230, 235, 239, 0.75);
-  border-radius: 1000px;
-  padding: 0;
-  magrin: 0;
+  border-radius: 9999px;
+  padding: 0 !important;
+  magrin: 0 !important;
 }
 
 .message .message-close-button:hover {
@@ -917,20 +958,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Media Controls */
 .message-media-control {
-  margin: 18px 4px;
-  padding: 10px;
+  margin: 22px 4px !important;
+  padding: 10px !important;
   color: rgba(230, 235, 239, 0.75);
-  border-radius: 1000px;
+  border-radius: 9999px;
 }
 
 .message-media-control:last-child:ltr {
-  margin-right: 16px;
-  padding-right: 8px;
+  margin-right: 18px !important;
 }
 
 .message-media-control:last-child:rtl {
-  margin-left: 16px;
-  padding-left: 8px;
+  margin-left: 18px !important;
 }
 
 .message-media-control:hover {
@@ -948,16 +987,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .media-message-cover-icon {
-  icon-size: 32px !important;
+  icon-size: 48px !important;
   border-radius: 2px;
 }
 
 .media-message-cover-icon.fallback {
   color: rgba(230, 235, 239, 0.75);
   background-color: #32343D;
-  border: 1px solid transparent;
+  border: none;
   border-radius: 2px;
   icon-size: 32px !important;
+  padding: 12px;
 }
 
 .candidate-popup-content {

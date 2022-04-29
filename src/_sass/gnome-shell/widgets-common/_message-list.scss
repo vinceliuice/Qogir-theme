@@ -3,16 +3,35 @@
 
 // main list
 .message-list {
-  width: 31.5em;
-  padding: 0 6px * 2;
+  width: 29em;
+  padding-left: 16px;
   text-shadow: none;
+  border: solid $borders_color;
 
-  .message-list-placeholder { spacing: 12px; }
+  // padding and margins to account for scrollbar
+  &:ltr { margin-left: 0; margin-right: 4px; padding-right: 6px; border-right-width: 1px; }
+  &:rtl { margin-right: 0; margin-left: 4px; padding-left: 6px; border-left-width: 1px; }
+
+  .message-list-placeholder {
+    spacing: 12px;
+
+    // icon size and color
+    > StIcon {
+      icon-size: 48px; // 48px
+      margin-bottom: 12px;
+      -st-icon-style: symbolic;
+    }
+  }
 }
 
 .message-list-sections {
   spacing: 6px;
-  margin: 0 4px * 4; // to account for scrollbar
+  margin: 0; // to account for scrollbar
+  padding-bottom: 6px;
+
+  // to account for scrollbar
+  &:ltr { margin-right: 12px; }
+  &:rtl { margin-left: 12px; }
 }
 
 .message-list-section,
@@ -22,16 +41,23 @@
 
 // do-not-disturb + clear button
 .message-list-controls {
-  margin: (4px * 2) (4px * 4) 0;
+  margin: 0 12px !important;
   // NOTE: remove the padding if notification_bubble could remove margin for drop shadow
-  padding: 4px;
-  spacing: 6px * 2;
+  padding: 0 6px !important;
+  spacing: 6px !important;
+  font-weight: normal;
+
+  .dnd-button, .button {
+    font-weight: normal;
+  }
 }
 
 // message bubbles
 .message {
   border-radius: $bt_radius;
   text-shadow: none;
+  padding: 0 !important;
+  spacing: 6px !important;
 
   .popup-menu & {
     box-shadow: none;
@@ -51,7 +77,7 @@
       .message-secondary-bin > .event-time,
       .message-close-button,
       .message-media-control {
-        color: $selected_fg_color;
+        color: rgba($selected_fg_color, 0.75);
 
         &:insensitive { color: rgba($selected_fg_color, 0.45); }
       }
@@ -60,16 +86,19 @@
 
   // icon container
   .message-icon-bin {
-    padding: (6px * 3) 0 (6px * 3) (6px * 2);
+    padding: 6px * 2;
 
-    &:rtl {
-      padding: (6px * 3) (6px * 2) (6px * 3) 0;
-    }
+    &:ltr { padding-right: 6px; }
+    &:rtl { padding-left: 6px; }
 
     // icon size and color
     > StIcon {
       icon-size: 32px; // 32px
       -st-icon-style: symbolic;
+      padding: 6px;
+      margin: 6px 0 6px 6px;
+      background-color: $base_color;
+      border-radius: $bt_radius;
     }
 
     // fallback
@@ -81,7 +110,7 @@
 
   // content
   .message-content {
-    padding: 6px + 4px * 2;
+    padding: 6px + 4px;
     spacing: 4px;
     text-shadow: none;
   }
@@ -110,12 +139,12 @@
 
   // close button
   .message-close-button {
-    min-height: 24px;
-    min-width: 24px;
+    min-height: 24px !important;
+    min-width: 24px !important;
     color: $alt_fg_color;
-    border-radius: 1000px;
-    padding: 0;
-    magrin: 0;
+    border-radius: $circular_radius;
+    padding: 0 !important;
+    magrin: 0 !important;
 
     &:hover {
       color: $fg_color;
@@ -141,13 +170,13 @@
 
 /* Media Controls */
 .message-media-control {
-  margin: 18px 4px;
-  padding: 10px;
+  margin: 22px 4px !important;
+  padding: 10px !important;
   color: $alt_fg_color;
-  border-radius: 1000px;
+  border-radius: $circular_radius;
 
-  &:last-child:ltr { margin-right: 16px; padding-right: 8px; }
-  &:last-child:rtl { margin-left: 16px; padding-left: 8px; }
+  &:last-child:ltr { margin-right: 18px !important; }
+  &:last-child:rtl { margin-left: 18px !important; }
 
   // uses $hover_bg_color since the media controls are in a notification_bubble
   &:hover {
@@ -165,15 +194,16 @@
 
 // album-art
 .media-message-cover-icon {
-  icon-size: 32px !important; // 48px
+  icon-size: 48px !important; // 48px
   border-radius: $bt_radius;
 
   // when there is no artwork
   &.fallback {
-    color: rgba($fg_color, 0.75);
+    color: $alt_fg_color;
     background-color: $bg_color;
-    border: 1px solid transparent;
+    border: none;
     border-radius: $bt_radius;
     icon-size: 32px !important;
+    padding: 12px;
   }
 }

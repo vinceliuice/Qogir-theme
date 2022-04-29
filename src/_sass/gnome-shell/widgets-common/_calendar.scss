@@ -14,7 +14,7 @@
 }
 
 .calendar {
-  margin: 0 6px;
+  margin: 0;
   padding: 6px;
   box-shadow: none;
   background: none;
@@ -201,8 +201,6 @@
 .events-section-title {
   color: $alt_fg_color;
   font-weight: bold;
-
-  :active & { color: $selected_fg_color; }
 }
 
 .world-clocks-grid,
