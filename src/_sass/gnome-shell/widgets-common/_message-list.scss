@@ -95,10 +95,8 @@
     > StIcon {
       icon-size: 32px; // 32px
       -st-icon-style: symbolic;
-      padding: 6px;
+      padding: 6px 0;
       margin: 6px 0 6px 6px;
-      background-color: $base_color;
-      border-radius: $bt_radius;
     }
 
     // fallback
@@ -204,6 +202,7 @@
     border: none;
     border-radius: $bt_radius;
     icon-size: 32px !important;
-    padding: 12px;
+    padding: 12px !important;
+    margin: 0 !important;
   }
 }
