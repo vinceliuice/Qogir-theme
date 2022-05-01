@@ -1956,6 +1956,7 @@ path-bar > button {
 //
 // Tree Views
 //
+columnview.view,
 treeview.view {
   border-left-color: $solid_borders_color;   // this is actually the tree lines color,
   border-top-color: $solid_borders_color;         // while this is the grid lines color, better then nothing
@@ -1988,6 +1989,15 @@ treeview.view {
   }
 
   &:drop(active) {
+    border-style: solid none;
+    border-width: 1px;
+    border-color: mix($fg_color, $selected_bg_color, 50%);
+
+    &.after { border-top-style: none; }
+    &.before { border-bottom-style: none; }
+  }
+
+  > dndtarget:drop(active) {
     border-style: solid none;
     border-width: 1px;
     border-color: mix($fg_color, $selected_bg_color, 50%);
@@ -2079,14 +2089,12 @@ treeview.view {
 
   button.dnd,
   header.button.dnd {
-    &, &:selected, &:hover, &:active {
-      padding: 0 $cont_padding;
-      transition: none;
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
-      border-radius: 0;
-      border-style: none;
-    }
+    padding: 0 $cont_padding;
+    transition: none;
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    border-radius: 0;
+    border: none;
   }
 }
 

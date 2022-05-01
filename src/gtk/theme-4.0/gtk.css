@@ -82,7 +82,8 @@ iconview:hover, iconview:active, iconview:selected {
   border-radius: 2px;
 }
 
-rubberband, .content-view > rubberband, treeview.view > rubberband, gridview > rubberband, flowbox > rubberband {
+rubberband, .content-view > rubberband, columnview.view > rubberband,
+treeview.view > rubberband, gridview > rubberband, flowbox > rubberband {
   border: 1px solid #68a2e6;
   background-color: rgba(104, 162, 230, 0.2);
 }
@@ -2606,48 +2607,76 @@ path-bar > button image {
   padding-right: 4px;
 }
 
+columnview.view,
 treeview.view {
   border-left-color: #e0e0e0;
   border-top-color: #e0e0e0;
 }
 
+columnview.view acceleditor > label,
 treeview.view acceleditor > label {
   background-color: #5294e2;
 }
 
-treeview.view:selected, treeview.view:selected:focus {
+columnview.view:selected, columnview.view:selected:focus,
+treeview.view:selected,
+treeview.view:selected:focus {
   border-radius: 0;
   border-left-color: #a9caf1;
   border-top-color: rgba(70, 72, 83, 0.1);
 }
 
+columnview.view:disabled,
 treeview.view:disabled {
   color: rgba(70, 72, 83, 0.55);
 }
 
+columnview.view:disabled:selected,
 treeview.view:disabled:selected {
   color: #97bfee;
 }
 
+columnview.view.separator,
 treeview.view.separator {
   min-height: 2px;
   color: rgba(0, 0, 0, 0.1);
 }
 
+columnview.view:drop(active),
 treeview.view:drop(active) {
   border-style: solid none;
   border-width: 1px;
   border-color: #4c6e9b;
 }
 
+columnview.view:drop(active).after,
 treeview.view:drop(active).after {
   border-top-style: none;
 }
 
+columnview.view:drop(active).before,
 treeview.view:drop(active).before {
   border-bottom-style: none;
 }
 
+columnview.view > dndtarget:drop(active),
+treeview.view > dndtarget:drop(active) {
+  border-style: solid none;
+  border-width: 1px;
+  border-color: #4c6e9b;
+}
+
+columnview.view > dndtarget:drop(active).after,
+treeview.view > dndtarget:drop(active).after {
+  border-top-style: none;
+}
+
+columnview.view > dndtarget:drop(active).before,
+treeview.view > dndtarget:drop(active).before {
+  border-bottom-style: none;
+}
+
+columnview.view.expander,
 treeview.view.expander {
   min-width: 16px;
   min-height: 16px;
@@ -2655,38 +2684,50 @@ treeview.view.expander {
   color: #a3a4a9;
 }
 
+columnview.view.expander:dir(rtl),
 treeview.view.expander:dir(rtl) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
 }
 
+columnview.view.expander:hover,
 treeview.view.expander:hover {
   color: #464853;
 }
 
+columnview.view.expander:selected,
 treeview.view.expander:selected {
   color: #cbdff6;
 }
 
+columnview.view.expander:selected:hover,
 treeview.view.expander:selected:hover {
   color: #ffffff;
 }
 
+columnview.view.expander:checked,
 treeview.view.expander:checked {
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
-treeview.view.progressbar, treeview.view.progressbar:focus {
+columnview.view.progressbar, columnview.view.progressbar:focus,
+treeview.view.progressbar,
+treeview.view.progressbar:focus {
   color: #ffffff;
   border-radius: 2px;
   background-color: #5294e2;
 }
 
-treeview.view.progressbar:selected, treeview.view.progressbar:selected:focus, treeview.view.progressbar:focus:selected, treeview.view.progressbar:focus:selected:focus {
+columnview.view.progressbar:selected, columnview.view.progressbar:selected:focus, columnview.view.progressbar:focus:selected, columnview.view.progressbar:focus:selected:focus,
+treeview.view.progressbar:selected,
+treeview.view.progressbar:selected:focus,
+treeview.view.progressbar:focus:selected,
+treeview.view.progressbar:focus:selected:focus {
   color: #5294e2;
   box-shadow: none;
   background-color: #ffffff;
 }
 
+columnview.view.trough,
 treeview.view.trough {
   color: #464853;
   background-color: rgba(0, 0, 0, 0.12);
@@ -2694,13 +2735,16 @@ treeview.view.trough {
   border-width: 0;
 }
 
-treeview.view.trough:selected, treeview.view.trough:selected:focus {
+columnview.view.trough:selected, columnview.view.trough:selected:focus,
+treeview.view.trough:selected,
+treeview.view.trough:selected:focus {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   border-width: 0;
 }
 
+columnview.view > header > button,
 treeview.view > header > button {
   min-height: 0;
   min-width: 0;
@@ -2714,39 +2758,44 @@ treeview.view > header > button {
   border-image: linear-gradient(to bottom, #ffffff 20%, rgba(0, 0, 0, 0.11) 20%, rgba(0, 0, 0, 0.11) 80%, #ffffff 80%) 0 1 0 0/0 1px 0 0 stretch;
 }
 
+columnview.view > header > button:hover,
 treeview.view > header > button:hover {
   color: #5294e2;
 }
 
+columnview.view > header > button:active,
 treeview.view > header > button:active {
   color: #464853;
 }
 
-treeview.view > header > button:active, treeview.view > header > button:hover {
+columnview.view > header > button:active, columnview.view > header > button:hover,
+treeview.view > header > button:active,
+treeview.view > header > button:hover {
   background-color: #ffffff;
 }
 
+columnview.view > header > button:disabled,
 treeview.view > header > button:disabled {
   border-color: #fafbfc;
   background-image: none;
 }
 
+columnview.view > header > button:last-child,
 treeview.view > header > button:last-child {
   border-right-style: none;
   border-image: none;
 }
 
-treeview.view button.dnd, treeview.view button.dnd:selected, treeview.view button.dnd:hover, treeview.view button.dnd:active,
-treeview.view header.button.dnd,
-treeview.view header.button.dnd:selected,
-treeview.view header.button.dnd:hover,
-treeview.view header.button.dnd:active {
+columnview.view button.dnd,
+columnview.view header.button.dnd,
+treeview.view button.dnd,
+treeview.view header.button.dnd {
   padding: 0 6px;
   transition: none;
   color: #ffffff;
   background-color: #5294e2;
   border-radius: 0;
-  border-style: none;
+  border: none;
 }
 
 menubar {
@@ -5389,7 +5438,9 @@ headerbar windowcontrols > button.restore:active {
 textview > text:selected,
 textview > text:selected:focus, textview > text > selection:focus, textview > text > selection,
 iconview:selected,
-iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, modelbutton.flat:active, modelbutton.flat:selected, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, treeview.view:selected, treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
+iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, modelbutton.flat:active, modelbutton.flat:selected, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, columnview.view:selected, columnview.view:selected:focus,
+treeview.view:selected,
+treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
   background-color: #5294e2;
 }
 
@@ -5397,7 +5448,9 @@ row:selected label, label:selected, .view:selected, .view:selected:focus,
 textview > text:selected,
 textview > text:selected:focus, textview > text > selection:focus, textview > text > selection,
 iconview:selected,
-iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, modelbutton.flat:active, modelbutton.flat:selected, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, treeview.view:selected, treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
+iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, modelbutton.flat:active, modelbutton.flat:selected, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, columnview.view:selected, columnview.view:selected:focus,
+treeview.view:selected,
+treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
   color: #ffffff;
 }
 
