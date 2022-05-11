@@ -1327,6 +1327,8 @@ searchbar > revealer > box {
   background-color: $bg_color;
   border-width: 0 0 1px;
   box-shadow: none;
+
+  entry { margin: 0; }
 }
 
 actionbar > revealer > box {
@@ -2545,19 +2547,28 @@ scrollbar {
     &.up { -gtk-icon-source: -gtk-icontheme('pan-left-symbolic'); }
   }
 
-  // slider
-  slider {
-    min-width: $cont_padding;
-    min-height: $cont_padding;
-    margin: -1px;
-    border: 4px solid transparent;
-    border-radius: 8px;
-    background-clip: padding-box;
-    background-color: mix($fg_color, $bg_color, 40%);
+  > range > trough {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
 
-    &:hover { background-color: mix($fg_color, $bg_color, 30%); }
-    &:hover:active { background-color: $selected_bg_color;}
-    &:disabled { background-color: transparent; }
+    > slider { // slider
+      min-width: $cont_padding;
+      min-height: $cont_padding;
+      margin: -1px;
+      border: 4px solid transparent;
+      border-radius: 8px;
+      background-clip: padding-box;
+      background-color: mix($fg_color, $bg_color, 40%);
+      outline: none;
+
+      &:hover { background-color: mix($fg_color, $bg_color, 30%); }
+      &:hover:active { background-color: $selected_bg_color;}
+      &:disabled { background-color: transparent; }
+    }
+
   }
 
   &.fine-tune {

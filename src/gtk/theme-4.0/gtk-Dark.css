@@ -1933,6 +1933,10 @@ searchbar > revealer > box {
   box-shadow: none;
 }
 
+searchbar > revealer > box entry {
+  margin: 0;
+}
+
 actionbar > revealer > box {
   padding: 6px;
   border-spacing: 6px;
@@ -3292,7 +3296,15 @@ scrollbar.horizontal button.up {
   -gtk-icon-source: -gtk-icontheme("pan-left-symbolic");
 }
 
-scrollbar slider {
+scrollbar > range > trough {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+scrollbar > range > trough > slider {
   min-width: 6px;
   min-height: 6px;
   margin: -1px;
@@ -3300,17 +3312,18 @@ scrollbar slider {
   border-radius: 8px;
   background-clip: padding-box;
   background-color: #7a7d84;
+  outline: none;
 }
 
-scrollbar slider:hover {
+scrollbar > range > trough > slider:hover {
   background-color: #686b72;
 }
 
-scrollbar slider:hover:active {
+scrollbar > range > trough > slider:hover:active {
   background-color: #5294e2;
 }
 
-scrollbar slider:disabled {
+scrollbar > range > trough > slider:disabled {
   background-color: transparent;
 }
 
