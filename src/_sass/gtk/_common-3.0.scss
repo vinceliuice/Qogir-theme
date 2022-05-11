@@ -2162,9 +2162,8 @@ menu,
 // Popovers
 //
 
-popover,
 popover.background {
-  padding: 2px;
+  padding: 0;
   background-clip: border-box;
   background-color: $menu_bg;
 
@@ -2184,7 +2183,7 @@ popover.background {
   > list,
   > .view,
   > toolbar {
-    border-style: none;
+    border: none;
     background-color: transparent;
   }
 
@@ -2205,6 +2204,17 @@ popover.background {
     &:active {
       background-color: $selected_bg_color;
       color: $selected_fg_color;
+    }
+  }
+
+  &.combo {
+    list {
+      padding: $cont_padding / 2;
+      background-color: transparent;
+
+      > row {
+        padding: $cont_padding / 2 $cont_padding;
+      }
     }
   }
 }
@@ -3079,9 +3089,7 @@ list {
   &.content:not(.conversation-listbox) {
     @extend %circular_list;
 
-    > row {
-      @extend %circular_row;
-    }
+    > row { @extend %circular_row; }
   }
 }
 
@@ -3089,13 +3097,8 @@ row {
   &:selected {
     @extend %selected_items;
 
-    button {
-      @extend %selected-button;
-      // &:active, &:checked { background-image: image($selected_fg_color); }
-    }
+    button { @extend %selected-button; }
   }
-
-  // button { &:active, &:checked { background-image: image($selected_bg_color); } }
 
   @at-root %row_activatable, &.activatable {
     &.has-open-popup,
@@ -3913,8 +3916,8 @@ decoration {
 
     &.close, &.maximize, &.minimize { // csd windows control titlebuttons
       padding: 0;
-      min-width: if($titlebutton == 'circle', 26px, $large_size);
-      min-height: if($titlebutton == 'circle', 26px, $large_size);
+      min-width: if($titlebutton == 'circle', 24px, $large_size);
+      min-height: if($titlebutton == 'circle', 24px, $large_size);
       border: none;
       border-radius: if($titlebutton == 'circle', $circular_radius, 0);
       margin: if($titlebutton == 'circle', 0 3px, 0 -3px);

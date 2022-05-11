@@ -5,26 +5,43 @@ OPTIPNG="/usr/bin/optipng"
 
 INDEX="assets.txt"
 
-for wmbutton in '' '-win'; do
-for variant in '' '-light'; do
-for i in `cat $INDEX`; do 
+for wmbutton in '' '-Win'; do
+  for variant in '' '-Light'; do
+    for screen in '' '-hdpi' '-xhdpi'; do
+      for i in `cat $INDEX`; do
 
-ASSETS_DIR="assets${wmbutton}${variant}"
-SRC_FILE="assets${wmbutton}${variant}.svg"
+      ASSETS_DIR="assets${wmbutton}${variant}${screen}"
+      SRC_FILE="assets${wmbutton}${variant}.svg"
 
-if [ -f $ASSETS_DIR/$i.png ]; then
-    echo $ASSETS_DIR/$i.png exists.
-else
-    echo
-    echo Rendering $ASSETS_DIR/$i.png
-    $INKSCAPE --export-id=$i \
-              --export-id-only \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
-    && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png 
-fi
+      mkdir -p $ASSETS_DIR
 
-done
-done
+      case "${screen}" in
+        -hdpi)
+          dpi='144'
+          ;;
+        -xhdpi)
+          dpi='192'
+          ;;
+        *)
+          dpi='96'
+          ;;
+      esac
+
+      if [ -f $ASSETS_DIR/$i.png ]; then
+        echo $ASSETS_DIR/$i.png exists.
+      else
+        echo
+        echo Rendering $ASSETS_DIR/$i.png
+        $INKSCAPE --export-id=$i \
+                  --export-id-only \
+                  --export-dpi=$dpi \
+                  --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+        && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png 
+      fi
+
+      done
+    done
+  done
 done
 
 exit 0

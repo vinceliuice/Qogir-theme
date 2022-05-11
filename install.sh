@@ -20,7 +20,6 @@ LOGO_NAME=''
 image=''
 window=''
 square=''
-hidpi=''
 
 theme_color='default'
 
@@ -58,13 +57,13 @@ OPTIONS:
 
   -g, --gdm               Install GDM theme, this option need root user authority! please run this with sudo
 
-  -r, --revert            revert GDM theme, this option need root user authority! please run this with sudo
+  -r, --remove,
+  -u, --uninstall         Uninstall/Remove installed themes
 
   --tweaks                Specify versions for tweaks [image|square|round] (options can mix use)
-                          1. image:    Install with a background image on (Nautilus/Nemo)
-                          2. square:   Install square window button like Windows 10
-                          3. round:    Install rounded window and popup/menu version
-                          4. hidpi:    Install HiDPI version (xfwm4)
+                          1. image:      Install with a background image on (Nautilus/Nemo)
+                          2. square:     Install square window button like Windows 10
+                          3. round:      Install rounded window and popup/menu version
 
   -h, --help              Show help
 EOF
@@ -232,39 +231,50 @@ install() {
   cd ${THEME_DIR}/metacity-1
   ln -s metacity-theme-1.xml metacity-theme-2.xml
 
-  # XFWM4
-  mkdir -p                                                                           ${THEME_DIR}/xfwm4
-
-  if [[ "$square" == 'true' ]]; then
-    if [[ "$hidpi" == 'true' ]]; then
-      cp -r ${SRC_DIR}/src/xfwm4/themerc-Win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
-      cp -r ${SRC_DIR}/src/xfwm4/assets-Win${ELSE_LIGHT}-hidpi/*.png                   ${THEME_DIR}/xfwm4
-    else
-      cp -r ${SRC_DIR}/src/xfwm4/themerc-Win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
-      cp -r ${SRC_DIR}/src/xfwm4/assets-Win${ELSE_LIGHT}/*.png                         ${THEME_DIR}/xfwm4
-    fi
-  else
-    if [[ "$hidpi" == 'true' ]]; then
-      cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
-      cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}-hidpi/*.png                       ${THEME_DIR}/xfwm4
-      cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
-      cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}-hidpi/*.png                       ${THEME_DIR}/xfwm4
-    else
-      cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
-      cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}/*.png                             ${THEME_DIR}/xfwm4
-      cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
-      cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}/*.png                             ${THEME_DIR}/xfwm4
-    fi
-  fi
-
   # OTHER
   cp -r ${SRC_DIR}/src/plank                                                         ${THEME_DIR}
   cp -r ${SRC_DIR}/src/unity                                                         ${THEME_DIR}
   cp -r ${SRC_DIR}/src/xfce-notify-4.0                                               ${THEME_DIR}
 }
 
-# Backup and install files related to GDM theme
+install_xfwm() {
+  local dest=${1}
+  local name=${2}
+  local color=${3}
+  local screen=${4}
 
+  [[ ${color} == '-Dark' ]] && local ELSE_DARK=${color}
+  [[ ${color} == '-Light' ]] && local ELSE_LIGHT=${color}
+
+  local THEME_DIR=${dest}/${name}${color}${screen}
+
+  [[ ${screen} != '' && -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
+
+  # XFWM4
+  mkdir -p                                                                           ${THEME_DIR}/xfwm4
+
+  if [[ "$square" == 'true' ]]; then
+    cp -r ${SRC_DIR}/src/xfwm4/themerc-Win${ELSE_LIGHT}                              ${THEME_DIR}/xfwm4/themerc
+    cp -r ${SRC_DIR}/src/xfwm4/assets-Win${ELSE_LIGHT}${screen}/*.png                ${THEME_DIR}/xfwm4
+  else
+    cp -r ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                  ${THEME_DIR}/xfwm4/themerc
+    cp -r ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}${screen}/*.png                    ${THEME_DIR}/xfwm4
+  fi
+}
+
+uninstall() {
+  local dest=${1}
+  local name=${2}
+  local theme=${3}
+  local color=${4}
+  local screen=${5}
+
+  local THEME_DIR=${dest}/${name}${theme}${color}${screen}
+
+  [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR" && echo -e "Uninstalling "$THEME_DIR" ..."
+}
+
+# Backup and install files related to GDM theme
 GS_THEME_FILE="/usr/share/gnome-shell/gnome-shell-theme.gresource"
 SHELL_THEME_FOLDER="/usr/share/gnome-shell/theme"
 UBUNTU_THEME_FILE="/usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource"
@@ -350,8 +360,8 @@ while [[ $# -gt 0 ]]; do
       gdm='true'
       shift
       ;;
-    -r|--revert)
-      revert='true'
+    -r|--remove|-u|--uninstall)
+      remove='true'
       shift
       ;;
     -t|--theme)
@@ -427,10 +437,6 @@ while [[ $# -gt 0 ]]; do
             ;;
           square)
             square='true'
-            shift
-            ;;
-          hidpi)
-            hidpi='true'
             shift
             ;;
           -*|--*)
@@ -530,6 +536,26 @@ install_theme() {
       install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}" "${logo:-${LOGO_NAME}}"
     done
   done
+
+  for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
+    for screen in '' '-hdpi' '-xhdpi'; do
+      install_xfwm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${screen}"
+    done
+  done
+}
+
+uninstall_theme() {
+  for theme in "${themes[@]-${THEME_VARIANTS[@]}}"; do
+    for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
+      for screen in '' '-hdpi' '-xhdpi'; do
+        uninstall "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}" "${screen}"
+      done
+    done
+  done
+
+  [[ -L "${HOME}/.config/gtk-4.0/assets" ]] && rm -rf "${HOME}/.config/gtk-4.0/assets" && echo -e "Removing ${HOME}/.config/gtk-4.0/assets"
+  [[ -L "${HOME}/.config/gtk-4.0/gtk.css" ]] && rm -rf "${HOME}/.config/gtk-4.0/gtk.css" && echo -e "Removing ${HOME}/.config/gtk-4.0/gtk.css"
+  [[ -L "${HOME}/.config/gtk-4.0/gtk-dark.css" ]] && rm -rf "${HOME}/.config/gtk-4.0/gtk-dark.css" && echo -e "Removing ${HOME}/.config/gtk-4.0/gtk-dark.css"
 }
 
 tweaks_temp() {
@@ -586,15 +612,19 @@ theme_tweaks() {
 
 ./clean-old-theme.sh
 
-if [[ "${gdm:-}" != 'true' && "${revert:-}" != 'true' ]]; then
+if [[ "${gdm:-}" != 'true' && "${remove:-}" != 'true' ]]; then
   install_theme
 fi
 
-if [[ "${gdm:-}" == 'true' && "${revert:-}" != 'true' && "$UID" -eq "$ROOT_UID" ]]; then
+if [[ "${gdm:-}" != 'true' && "${remove:-}" == 'true' ]]; then
+  uninstall_theme
+fi
+
+if [[ "${gdm:-}" == 'true' && "${remove:-}" != 'true' && "$UID" -eq "$ROOT_UID" ]]; then
   install_theme && install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}"
 fi
 
-if [[ "${gdm:-}" != 'true' && "${revert:-}" == 'true' && "$UID" -eq "$ROOT_UID" ]]; then
+if [[ "${gdm:-}" == 'true' && "${remove:-}" == 'true' && "$UID" -eq "$ROOT_UID" ]]; then
   revert_gdm
 fi
 

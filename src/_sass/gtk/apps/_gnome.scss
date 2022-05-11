@@ -311,10 +311,12 @@ $disk_space_free: darken($bg_color, 3%);
     background-color: $disk_space_unknown;
     border-color: darken($disk_space_unknown, 10%);
   }
+
   &.used {
     background-color: $disk_space_used;
     border-color: darken($disk_space_used, 10%);
   }
+
   &.free {
     background-color: $disk_space_free;
     border-color: darken($disk_space_free, 10%);
@@ -322,8 +324,8 @@ $disk_space_free: darken($bg_color, 3%);
 }
 
 @keyframes needs_attention_keyframes {
-    0% { @include button(header-hover); }
-    100% { @include button(header-active) }
+  0% { @include button(header-hover); }
+  100% { @include button(header-active) }
 }
 
 .nautilus-operations-button-needs-attention {

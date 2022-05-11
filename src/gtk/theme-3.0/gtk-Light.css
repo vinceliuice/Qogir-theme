@@ -131,8 +131,7 @@ label:disabled selection {
 
 .dim-label, .slate-notification .notification-body,
 .budgie-notification .notification-body,
-.budgie-switcher .notification-body, popover label.separator,
-popover.background label.separator, headerbar .subtitle, label.separator {
+.budgie-switcher .notification-body, popover.background label.separator, headerbar .subtitle, label.separator {
   color: rgba(70, 72, 83, 0.55);
 }
 
@@ -158,9 +157,7 @@ textview {
   background-color: #ffffff;
 }
 
-.osd .scale-popup, popover.osd, popover.magnifier, .csd popover.osd, .csd popover.magnifier,
-popover.background.osd,
-popover.background.magnifier, .csd popover.background.osd, .csd popover.background.magnifier, .osd {
+.osd .scale-popup, popover.background.osd, popover.background.magnifier, .csd popover.background.osd, .csd popover.background.magnifier, .osd {
   color: #D3DAE3;
   border: none;
   background-color: #282A33;
@@ -2709,8 +2706,6 @@ menubar > menuitem label:disabled,
 menu,
 .menu,
 .context-menu,
-popover.touch-selection,
-.csd popover.touch-selection,
 popover.background.touch-selection,
 .csd popover.background.touch-selection {
   border-radius: 0;
@@ -2720,8 +2715,7 @@ popover.background.touch-selection,
   padding: 6px 0;
 }
 
-.csd menu, .csd .menu, .csd .context-menu, .csd popover.touch-selection,
-.csd popover.background.touch-selection {
+.csd menu, .csd .menu, .csd .context-menu, .csd popover.background.touch-selection {
   border: none;
   border-radius: 0;
 }
@@ -2729,9 +2723,8 @@ popover.background.touch-selection,
 menu separator, .csd menu separator,
 .menu separator, .csd .menu separator,
 .context-menu separator,
-popover.touch-selection separator,
-.csd popover.touch-selection separator,
-popover.background.touch-selection separator, .csd .context-menu separator {
+popover.background.touch-selection separator,
+.csd popover.background.touch-selection separator, .csd .context-menu separator {
   margin: 4px 0;
   background-color: #ffffff;
 }
@@ -2739,9 +2732,8 @@ popover.background.touch-selection separator, .csd .context-menu separator {
 menu menuitem,
 .menu menuitem,
 .context-menu menuitem,
-popover.touch-selection menuitem,
-.csd popover.touch-selection menuitem,
-popover.background.touch-selection menuitem {
+popover.background.touch-selection menuitem,
+.csd popover.background.touch-selection menuitem {
   min-height: 16px;
   min-width: 38px;
   padding: 4px 8px;
@@ -2752,7 +2744,7 @@ popover.background.touch-selection menuitem {
 menu menuitem:hover,
 .menu menuitem:hover,
 .context-menu menuitem:hover,
-popover.touch-selection menuitem:hover {
+popover.background.touch-selection menuitem:hover {
   transition: none;
   color: #ffffff;
   background-color: #5294e2;
@@ -2761,7 +2753,7 @@ popover.touch-selection menuitem:hover {
 menu menuitem:disabled,
 .menu menuitem:disabled,
 .context-menu menuitem:disabled,
-popover.touch-selection menuitem:disabled {
+popover.background.touch-selection menuitem:disabled {
   color: rgba(70, 72, 83, 0.55);
 }
 
@@ -2769,18 +2761,17 @@ menu menuitem label:dir(rtl), menu menuitem label:dir(ltr),
 .menu menuitem label:dir(rtl),
 .menu menuitem label:dir(ltr),
 .context-menu menuitem label:dir(rtl),
-popover.touch-selection menuitem label:dir(rtl),
+popover.background.touch-selection menuitem label:dir(rtl),
 .context-menu menuitem label:dir(ltr),
-popover.touch-selection menuitem label:dir(ltr) {
+popover.background.touch-selection menuitem label:dir(ltr) {
   color: inherit;
 }
 
 menu menuitem arrow,
 .menu menuitem arrow,
 .context-menu menuitem arrow,
-popover.touch-selection menuitem arrow,
-.csd popover.touch-selection menuitem arrow,
-popover.background.touch-selection menuitem arrow {
+popover.background.touch-selection menuitem arrow,
+.csd popover.background.touch-selection menuitem arrow {
   min-height: 16px;
   min-width: 16px;
 }
@@ -2788,7 +2779,7 @@ popover.background.touch-selection menuitem arrow {
 menu menuitem arrow:dir(ltr),
 .menu menuitem arrow:dir(ltr),
 .context-menu menuitem arrow:dir(ltr),
-popover.touch-selection menuitem arrow:dir(ltr) {
+popover.background.touch-selection menuitem arrow:dir(ltr) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
   margin-left: 8px;
 }
@@ -2796,7 +2787,7 @@ popover.touch-selection menuitem arrow:dir(ltr) {
 menu menuitem arrow:dir(rtl),
 .menu menuitem arrow:dir(rtl),
 .context-menu menuitem arrow:dir(rtl),
-popover.touch-selection menuitem arrow:dir(rtl) {
+popover.background.touch-selection menuitem arrow:dir(rtl) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
   margin-right: 8px;
 }
@@ -2823,9 +2814,8 @@ menuitem check:dir(rtl), menuitem radio:dir(rtl) {
 menu > arrow,
 .menu > arrow,
 .context-menu > arrow,
-popover.touch-selection > arrow,
-.csd popover.touch-selection > arrow,
-popover.background.touch-selection > arrow {
+popover.background.touch-selection > arrow,
+.csd popover.background.touch-selection > arrow {
   min-width: 16px;
   min-height: 16px;
   padding: 4px;
@@ -2837,8 +2827,8 @@ popover.background.touch-selection > arrow {
 menu > arrow.top,
 .menu > arrow.top,
 .context-menu > arrow.top,
-popover.touch-selection > arrow.top,
-.csd popover.touch-selection > arrow.top {
+popover.background.touch-selection > arrow.top,
+.csd popover.background.touch-selection > arrow.top {
   margin-top: -4px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
@@ -2847,8 +2837,8 @@ popover.touch-selection > arrow.top,
 menu > arrow.bottom,
 .menu > arrow.bottom,
 .context-menu > arrow.bottom,
-popover.touch-selection > arrow.bottom,
-.csd popover.touch-selection > arrow.bottom {
+popover.background.touch-selection > arrow.bottom,
+.csd popover.background.touch-selection > arrow.bottom {
   margin-top: 8px;
   margin-bottom: -12px;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
@@ -2858,69 +2848,66 @@ popover.touch-selection > arrow.bottom,
 menu > arrow:hover,
 .menu > arrow:hover,
 .context-menu > arrow:hover,
-popover.touch-selection > arrow:hover,
-.csd popover.touch-selection > arrow:hover {
+popover.background.touch-selection > arrow:hover,
+.csd popover.background.touch-selection > arrow:hover {
   background-color: #ededee;
 }
 
 menu > arrow:disabled,
 .menu > arrow:disabled,
 .context-menu > arrow:disabled,
-popover.touch-selection > arrow:disabled,
-.csd popover.touch-selection > arrow:disabled {
+popover.background.touch-selection > arrow:disabled,
+.csd popover.background.touch-selection > arrow:disabled {
   color: transparent;
   background-color: transparent;
   border-color: transparent;
 }
 
-popover,
 popover.background {
-  padding: 2px;
+  padding: 0;
   background-clip: border-box;
   background-color: #ffffff;
 }
 
-popover, .csd popover, popover.menu,
-popover.background, .csd popover.background,
-popover.background.menu {
+popover.background, .csd popover.background, popover.background.menu {
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-popover separator,
 popover.background separator {
   background-color: #ffffff;
 }
 
-popover label.separator,
 popover.background label.separator {
   color: #464853;
 }
 
-popover > list,
-popover > .view,
-popover > toolbar,
-popover > .inline-toolbar,
 popover.background > list,
 popover.background > .view,
 popover.background > toolbar,
 popover.background > .inline-toolbar {
-  border-style: none;
+  border: none;
   background-color: transparent;
 }
 
-popover button:not(.suggested-action):not(.destructive-action):hover,
 popover.background button:not(.suggested-action):not(.destructive-action):hover {
   background-color: rgba(0, 0, 0, 0.05);
   color: #4a4c59;
 }
 
-popover button:not(.suggested-action):not(.destructive-action):checked, popover button:not(.suggested-action):not(.destructive-action):active,
-popover.background button:not(.suggested-action):not(.destructive-action):checked,
-popover.background button:not(.suggested-action):not(.destructive-action):active {
+popover.background button:not(.suggested-action):not(.destructive-action):checked, popover.background button:not(.suggested-action):not(.destructive-action):active {
   background-color: #5294e2;
   color: #ffffff;
+}
+
+popover.background.combo list {
+  padding: 3px;
+  background-color: transparent;
+}
+
+popover.background.combo list > row {
+  padding: 3px 6px;
 }
 
 cursor-handle {
@@ -4812,8 +4799,7 @@ colorchooser .popover.osd {
   box-shadow: none;
 }
 
-.context-menu, popover.touch-selection, .csd popover.touch-selection,
-popover.background.touch-selection, .csd popover.background.touch-selection {
+.context-menu, popover.background.touch-selection, .csd popover.background.touch-selection {
   font: initial;
 }
 
@@ -4906,8 +4892,8 @@ headerbar button.titlebutton, .titlebar button.titlebutton {
 
 headerbar button.titlebutton.close, .titlebar button.titlebutton.close, headerbar button.titlebutton.maximize, .titlebar button.titlebutton.maximize, headerbar button.titlebutton.minimize, .titlebar button.titlebutton.minimize {
   padding: 0;
-  min-width: 26px;
-  min-height: 26px;
+  min-width: 24px;
+  min-height: 24px;
   border: none;
   border-radius: 9999px;
   margin: 0 3px;
@@ -5280,7 +5266,7 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
 
 .nautilus-canvas-item.dim-label, .slate-notification .nautilus-canvas-item.notification-body,
 .budgie-notification .nautilus-canvas-item.notification-body,
-.budgie-switcher .nautilus-canvas-item.notification-body, label.nautilus-canvas-item.separator, headerbar .nautilus-canvas-item.subtitle,
+.budgie-switcher .nautilus-canvas-item.notification-body, label.nautilus-canvas-item.separator, headerbar .nautilus-canvas-item.subtitle, popover.background label.nautilus-canvas-item.separator,
 .nautilus-list-dim-label,
 .caja-list-dim-label {
   color: #a0a2a8;

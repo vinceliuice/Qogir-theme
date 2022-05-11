@@ -3206,6 +3206,7 @@ list {
   &.separators.horizontal > row:not(.separator) {
     border-left: 1px solid $solid_borders_color;
   }
+
   &:not(.horizontal) row.separator,
   &.separators:not(.horizontal) > row:not(.separator) {
     border-bottom: 1px solid $solid_borders_color;
