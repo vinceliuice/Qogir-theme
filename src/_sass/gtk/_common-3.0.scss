@@ -1277,34 +1277,28 @@ headerbar {
     &:backdrop { background-color: opacify($header_bg_backdrop, 1); }
   }
 
-  %square_titlebutton {
-    min-width: 38px;
-    min-height: 30px;
-    margin: 0 -3px;
-  }
-
-  %circle_titlebutton {
-    min-height: 23px;
-    min-width: 23px;
-    padding: 2px;
-  }
-
   &:not(.csd).default-decoration {
     min-height: 30px;
     padding: 0 if($titlebutton == 'circle', 8px, 3px);
-    background-color: $header_bg;
 
     > button.titlebutton {
       border: none;
-      @if $titlebutton == 'circle' { @extend %circle_titlebutton; }
-      @else { @extend %square_titlebutton; }
+
+      @if $titlebutton == 'circle' {
+        min-height: 26px;
+        min-width: 26px;
+        padding: 0;
+        margin: 0 3px;
+      } @else {
+        min-width: $large_size;
+        min-height: 30px;
+        margin: 0 -3px;
+      }
     }
   }
 
   &.default-decoration,
-  .csd &.default-decoration,             // needed under wayland, since all gtk3 windows are csd windows
-  &.default-decoration:backdrop,
-  .csd &.default-decoration:backdrop {
+  &.default-decoration:backdrop {
     background-color: $header_bg;
     border-bottom-width: 0;
     box-shadow: none;
@@ -3864,148 +3858,42 @@ decoration {
 // Titlebuttons
 //
 
-%small_titlebutton {
-  > box.horizontal {
-    &.left {
-      @each $class, $_left, $_right in ('.close', -3px, 0),
-                                       ('.maximize', -3px, 0),
-                                       ('.minimize', -3px, 0) {
-        > button.titlebutton#{$class} {
-          margin-left: #{$_left};
-        }
-      }
-    }
-
-    &.right {
-      @each $class, $_left, $_right in ('.close', 0, -3px),
-                                       ('.maximize', 0, -3px),
-                                       ('.minimize', 0, -3px) {
-        > button.titlebutton#{$class} {
-          margin-right: #{$_right};
-        }
-      }
-    }
-  }
-
-  button.titlebutton {
-    &.close, &.maximize, &.minimize, &.restore {
-      min-width: 38px;
-      min-height: 30px;
-    }
-
-    // Load png assets for each button, Fix the Chrome window restore button bug
-    @each $k in ('close', 'maximize', 'minimize', 'restore') {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-
-        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-smaller.png'),
-                                                     url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-smaller@2.png')); }
-      }
-    }
-  }
-
-  .fullscreen &,
-  .maximized & {
-    button.titlebutton {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-smaller.png'),
-                                                      url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-smaller@2.png')); }
-      }
-    }
-  }
-}
-
 %csd_titlebutton {
   @if $titlebutton == 'square' {
     > box.horizontal {
       &.left {
-        @each $class, $_left, $_right in ('.close', -10px, 0),
-                                         ('.maximize', -6px, 0),
-                                         ('.minimize', -6px, 0) {
-          > button.titlebutton#{$class} {
-            margin-left: #{$_left};
-          }
-        }
+        margin-left: -3px;
 
         > button.titlebutton.close { border-top-left-radius: $corner_radius; }
       }
 
       &.right {
-        @each $class, $_left, $_right in ('.close', 0, -10px),
-                                         ('.maximize', 0, -6px),
-                                         ('.minimize', 0, -6px) {
-          > button.titlebutton#{$class} {
-            margin-right: #{$_right};
-          }
-        }
+        margin-right: -3px;
 
         > button.titlebutton.close { border-top-right-radius: $corner_radius; }
       }
     }
 
-    &.default-decoration { @extend %small_titlebutton; }
-  }
+    &.default-decoration {
+      > box.horizontal {
+        &.left {
+          margin-left: 0;
+        }
 
-  button.titlebutton { // csd titlebuttons
-    margin: 0;
-    padding: 0;
-    min-width: $medium_size;
-    min-height: $medium_size;
+        &.right {
+          margin-right: 0;
+        }
+      }
 
-    @include button(undecorated);
-    background-color: transparentize($header_bg, 1);
-
-    &:hover {
-      @include button(header-hover);
-    }
-
-    &:active, &:checked {
-      @include button(header-active);
-    }
-
-    &.close, &.maximize, &.minimize, &.restore { // csd windows control titlebuttons
-      padding: 0;
-      min-width: if($titlebutton == 'circle', 27px, 38px);
-      min-height: if($titlebutton == 'circle', 27px, 38px);
-      color: transparent;
-      background-color: transparent;
-      background-position: center;
-      background-repeat: no-repeat;
-      border-width: 0;
-      border-radius: 0;
-
-      &:backdrop { opacity: 1; }
-    }
-
-    // Load png assets for each button, Fix the Chrome window restore button bug
-    @each $k in ('close', 'maximize', 'minimize', 'restore') {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-
-        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}#{$asset_suffix_win}.png'),
-                                                     url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}#{$asset_suffix_win}@2.png'));
+      button.titlebutton {
+        &.close, &.maximize, &.minimize {
+          min-height: 30px;
         }
       }
     }
-  }
 
-  .fullscreen &,
-  .maximized & {
-    button.titlebutton {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-        &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}#{$asset_suffix_win}.png'),
-                                                        url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}#{$asset_suffix_win}@2.png'));
-        }
-      }
-    }
-  }
-}
-
-headerbar, .titlebar {
-  &, .csd &, .solid-csd & {
-    @extend %csd_titlebutton;
-  }
-
-  .maximized &, .maximized.csd &, .maximized.solid-csd & {
-    @if $titlebutton == 'square' {
+    .maximized &,
+    .tiled & {
       > box.horizontal {
         &.left {
           > button.titlebutton.close { border-top-left-radius: 0; }
@@ -4017,6 +3905,48 @@ headerbar, .titlebar {
       }
     }
   }
+
+  button.titlebutton { // csd titlebuttons
+    padding: 0;
+    min-width: $medium_size;
+    min-height: $medium_size;
+
+    &.close, &.maximize, &.minimize { // csd windows control titlebuttons
+      padding: 0;
+      min-width: if($titlebutton == 'circle', 26px, $large_size);
+      min-height: if($titlebutton == 'circle', 26px, $large_size);
+      border: none;
+      border-radius: if($titlebutton == 'circle', $circular_radius, 0);
+      margin: if($titlebutton == 'circle', 0 3px, 0 -3px);
+    }
+
+    &.maximize, &.minimize {
+      &:hover {
+        background-color: rgba($header_fg, 0.1);
+      }
+
+      &:active {
+        background-color: rgba($header_fg, 0.2);
+        color: $header_fg;
+      }
+    }
+
+    &.close {
+      &:hover {
+        background-color: $wm_button_close_hover_bg;
+        color: white;
+      }
+
+      &:active {
+        background-color: $wm_button_close_active_bg;
+        color: white;
+      }
+    }
+  }
+}
+
+headerbar, .titlebar {
+  @extend %csd_titlebutton;
 }
 
 // catch all extend

@@ -2006,36 +2006,25 @@ headerbar.selection-mode .selection-menu .arrow {
   background-color: #2b2e37;
 }
 
-headerbar.default-decoration:not(.csd) windowcontrols button {
-  min-height: 23px;
-  min-width: 23px;
-  padding: 2px;
-}
-
-headerbar:not(.csd).default-decoration {
+headerbar.default-decoration {
   min-height: 30px;
   padding: 0 8px;
-  background-color: #282A33;
 }
 
-headerbar:not(.csd).default-decoration windowcontrols button {
-  border: none;
-}
-
-headerbar:not(.csd).default-decoration windowcontrols menubutton button {
+headerbar.default-decoration windowcontrols menubutton button {
   min-height: 20px;
   min-width: 20px;
   margin: 0;
   padding: 4px;
 }
 
-headerbar.default-decoration, .csd headerbar.default-decoration, headerbar.default-decoration:backdrop, .csd headerbar.default-decoration:backdrop {
+headerbar.default-decoration headerbar.default-decoration:backdrop {
   background-color: #282A33;
   border-bottom-width: 0;
   box-shadow: none;
 }
 
-.tiled headerbar.default-decoration, .maximized headerbar.default-decoration, .fullscreen headerbar.default-decoration, .tiled .csd headerbar.default-decoration, .maximized .csd headerbar.default-decoration, .fullscreen .csd headerbar.default-decoration, .tiled headerbar.default-decoration:backdrop, .maximized headerbar.default-decoration:backdrop, .fullscreen headerbar.default-decoration:backdrop, .tiled .csd headerbar.default-decoration:backdrop, .maximized .csd headerbar.default-decoration:backdrop, .fullscreen .csd headerbar.default-decoration:backdrop {
+.tiled headerbar.default-decoration headerbar.default-decoration:backdrop, .maximized headerbar.default-decoration headerbar.default-decoration:backdrop, .fullscreen headerbar.default-decoration headerbar.default-decoration:backdrop {
   box-shadow: none;
 }
 
@@ -5314,124 +5303,43 @@ window.ssd {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
-headerbar windowcontrols > button, .csd headerbar windowcontrols > button, .solid-csd headerbar windowcontrols > button {
+headerbar windowcontrols > button {
   margin: 0;
   padding: 0;
   min-width: 28px;
   min-height: 28px;
-  border-color: transparent;
-  background-color: transparent;
-  background-image: none;
-  background-color: rgba(40, 42, 51, 0);
-}
-
-headerbar windowcontrols > button:hover {
-  color: #e0e5eb;
-  border-color: rgba(255, 255, 255, 0.12);
-  background-color: #333641;
-}
-
-headerbar windowcontrols > button:active, headerbar windowcontrols > button:checked {
-  color: #ffffff;
-  border-color: #68a2e6;
-  background-color: #5294e2;
 }
 
 headerbar windowcontrols > button.close, headerbar windowcontrols > button.maximize, headerbar windowcontrols > button.minimize {
   padding: 0;
-  margin: 0 2px;
-  min-width: 27px;
-  min-height: 27px;
-  color: transparent;
-  background-color: transparent;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-width: 0;
-  border-radius: 0;
+  min-width: 26px;
+  min-height: 26px;
+  border: none;
+  border-radius: 9999px;
+  margin: 0 3px;
 }
 
-headerbar windowcontrols > button.close:backdrop, headerbar windowcontrols > button.maximize:backdrop, headerbar windowcontrols > button.minimize:backdrop {
-  opacity: 1;
+headerbar windowcontrols > button.close > image, headerbar windowcontrols > button.maximize > image, headerbar windowcontrols > button.minimize > image {
+  background: none;
 }
 
-headerbar windowcontrols > button.close {
-  background-image: -gtk-scaled(url("assets/titlebutton-close-dark.png"), url("assets/titlebutton-close-dark@2.png"));
+headerbar windowcontrols > button.maximize:hover, headerbar windowcontrols > button.minimize:hover {
+  background-color: rgba(224, 229, 235, 0.1);
 }
 
-headerbar windowcontrols > button.close:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-close-backdrop-dark.png"), url("assets/titlebutton-close-backdrop-dark@2.png"));
+headerbar windowcontrols > button.maximize:active, headerbar windowcontrols > button.minimize:active {
+  background-color: rgba(224, 229, 235, 0.2);
+  color: #e0e5eb;
 }
 
 headerbar windowcontrols > button.close:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-close-hover-dark.png"), url("assets/titlebutton-close-hover-dark@2.png"));
+  background-color: #d7787d;
+  color: white;
 }
 
 headerbar windowcontrols > button.close:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-close-active-dark.png"), url("assets/titlebutton-close-active-dark@2.png"));
-}
-
-headerbar windowcontrols > button.maximize {
-  background-image: -gtk-scaled(url("assets/titlebutton-maximize-dark.png"), url("assets/titlebutton-maximize-dark@2.png"));
-}
-
-headerbar windowcontrols > button.maximize:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-maximize-backdrop-dark.png"), url("assets/titlebutton-maximize-backdrop-dark@2.png"));
-}
-
-headerbar windowcontrols > button.maximize:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-maximize-hover-dark.png"), url("assets/titlebutton-maximize-hover-dark@2.png"));
-}
-
-headerbar windowcontrols > button.maximize:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-maximize-active-dark.png"), url("assets/titlebutton-maximize-active-dark@2.png"));
-}
-
-headerbar windowcontrols > button.minimize {
-  background-image: -gtk-scaled(url("assets/titlebutton-minimize-dark.png"), url("assets/titlebutton-minimize-dark@2.png"));
-}
-
-headerbar windowcontrols > button.minimize:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-minimize-backdrop-dark.png"), url("assets/titlebutton-minimize-backdrop-dark@2.png"));
-}
-
-headerbar windowcontrols > button.minimize:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-minimize-hover-dark.png"), url("assets/titlebutton-minimize-hover-dark@2.png"));
-}
-
-headerbar windowcontrols > button.minimize:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-minimize-active-dark.png"), url("assets/titlebutton-minimize-active-dark@2.png"));
-}
-
-headerbar windowcontrols > button.restore {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-dark.png"), url("assets/titlebutton-restore-dark@2.png"));
-}
-
-headerbar windowcontrols > button.restore:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop-dark.png"), url("assets/titlebutton-restore-backdrop-dark@2.png"));
-}
-
-headerbar windowcontrols > button.restore:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover-dark.png"), url("assets/titlebutton-restore-hover-dark@2.png"));
-}
-
-headerbar windowcontrols > button.restore:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-active-dark.png"), url("assets/titlebutton-restore-active-dark@2.png"));
-}
-
-.fullscreen headerbar windowcontrols > button.maximize, .maximized headerbar windowcontrols > button.maximize {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-dark.png"), url("assets/titlebutton-restore-dark@2.png"));
-}
-
-.fullscreen headerbar windowcontrols > button.maximize:backdrop, .maximized headerbar windowcontrols > button.maximize:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop-dark.png"), url("assets/titlebutton-restore-backdrop-dark@2.png"));
-}
-
-.fullscreen headerbar windowcontrols > button.maximize:hover, .maximized headerbar windowcontrols > button.maximize:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover-dark.png"), url("assets/titlebutton-restore-hover-dark@2.png"));
-}
-
-.fullscreen headerbar windowcontrols > button.maximize:active, .maximized headerbar windowcontrols > button.maximize:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-active-dark.png"), url("assets/titlebutton-restore-active-dark@2.png"));
+  background-color: #be3841;
+  color: white;
 }
 
 .view:selected, .view:selected:focus,
