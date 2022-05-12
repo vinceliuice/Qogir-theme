@@ -3205,6 +3205,11 @@ notebook > header.left > tabs > arrow.down:first-child, notebook > header.right 
   margin-bottom: 2px;
 }
 
+notebook > header > tabs {
+  margin: 0;
+  padding: 0;
+}
+
 notebook > header > tabs > arrow {
   color: rgba(70, 72, 83, 0.55);
 }

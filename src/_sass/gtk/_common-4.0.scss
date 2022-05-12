@@ -2354,6 +2354,7 @@ cursor-handle {
 //
 notebook {
   padding: 0;
+
   &.frame {
     border: 1px solid $borders_color;
   }
@@ -2471,47 +2472,52 @@ notebook {
       }
     }
 
-    > tabs > arrow {
-      color: $insensitive_fg_color;
+    > tabs {
+      margin: 0;
+      padding: 0;
 
-      &:hover { color: mix($fg_color, rgba($fg_color, 0.5), 50%); }
-      &:active { color: $fg_color; }
-      &:disabled { color: rgba($fg_color, 0.3); }
-    }
+      > arrow {
+        color: $insensitive_fg_color;
 
-    > tabs > tab {
-      color: $insensitive_fg_color;
-      background-color: transparentize($bg_color, 1);
-
-      &:hover:not(:checked) {
-        color: mix($fg_color, rgba($fg_color, 0.5), 50%);
-        transition: 200ms $ease-out-quad;
+        &:hover { color: mix($fg_color, rgba($fg_color, 0.5), 50%); }
+        &:active { color: $fg_color; }
+        &:disabled { color: rgba($fg_color, 0.3); }
       }
 
-      &:checked {
-        color: $fg_color;
-        transition: 300ms $ease-out-quad;
-      }
+      > tab {
+        color: $insensitive_fg_color;
+        background-color: transparentize($bg_color, 1);
 
-      // close button
-      button.flat {
-        border-radius: 100%;
-        min-height: 16px;
-        min-width: 16px;
-        padding: 0;
-        margin: 4px 0;
-        color: mix($bg_color, $fg_color, 35%);
-
-        &:hover {
-          @extend %undecorated_button;
-          color: lighten(red, 15%);
-          background-color: darken($bg_color, 5%);
+        &:hover:not(:checked) {
+          color: mix($fg_color, rgba($fg_color, 0.5), 50%);
+          transition: 200ms $ease-out-quad;
         }
 
-        &:active {
-          @extend %undecorated_button;
-          color: $selected_bg_color;
-          background-color: darken($bg_color, 8%);
+        &:checked {
+          color: $fg_color;
+          transition: 300ms $ease-out-quad;
+        }
+
+        // close button
+        button.flat {
+          border-radius: 100%;
+          min-height: 16px;
+          min-width: 16px;
+          padding: 0;
+          margin: 4px 0;
+          color: mix($bg_color, $fg_color, 35%);
+
+          &:hover {
+            @extend %undecorated_button;
+            color: lighten(red, 15%);
+            background-color: darken($bg_color, 5%);
+          }
+
+          &:active {
+            @extend %undecorated_button;
+            color: $selected_bg_color;
+            background-color: darken($bg_color, 8%);
+          }
         }
       }
     }
