@@ -1134,11 +1134,13 @@ toolbar {
     entry,
     spinbutton,
     button {
-      margin-right: 1px;
-      margin-bottom: 1px;
+      margin: 1px;
     }
+
     .linked > button,
-    .linked > entry { margin-right:0; }
+    .linked > entry,
+    spinbutton > button,
+    spinbutton > entry { margin:0; }
   }
 }
 

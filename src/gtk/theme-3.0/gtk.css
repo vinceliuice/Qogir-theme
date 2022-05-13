@@ -1682,14 +1682,17 @@ toolbar:not(.inline-toolbar) spinbutton,
 .inline-toolbar:not(.inline-toolbar) spinbutton,
 toolbar:not(.inline-toolbar) button,
 .inline-toolbar:not(.inline-toolbar) button {
-  margin-right: 1px;
-  margin-bottom: 1px;
+  margin: 1px;
 }
 
 toolbar:not(.inline-toolbar) .linked > button, .inline-toolbar:not(.inline-toolbar) .linked > button,
 toolbar:not(.inline-toolbar) .linked > entry,
-.inline-toolbar:not(.inline-toolbar) .linked > entry {
-  margin-right: 0;
+.inline-toolbar:not(.inline-toolbar) .linked > entry,
+toolbar:not(.inline-toolbar) spinbutton > button,
+.inline-toolbar:not(.inline-toolbar) spinbutton > button,
+toolbar:not(.inline-toolbar) spinbutton > entry,
+.inline-toolbar:not(.inline-toolbar) spinbutton > entry {
+  margin: 0;
 }
 
 .primary-toolbar:not(.libreoffice-toolbar) {

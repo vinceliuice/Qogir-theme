@@ -250,12 +250,6 @@ window.background:not(.csd) {
 	    padding-left: 10px;
       padding-right: 10px;
     }
-
-    @if $titlebutton == 'square' {
-      &.default-decoration {
-        @extend %small_titlebutton;
-      }
-    }
   }
 
   scrollbar {
