@@ -6763,13 +6763,6 @@ window.background:not(.csd) > window > menu menuitem {
   color: #4a4c59;
 }
 
-window.background.chromium headerbar.titlebar button.titlebutton {
-  min-width: 23px;
-  min-height: 23px;
-  padding: 0 2px;
-  color: transparent;
-}
-
 window.background.chromium {
   background-color: #fafbfc;
   color: #464853;
@@ -6792,6 +6785,10 @@ window.background.chromium headerbar.titlebar button.toggle:checked, window.back
   color: #ffffff;
   border-color: #2679db;
   background-color: #5294e2;
+}
+
+window.background.chromium headerbar.titlebar button.titlebutton.close:not(:hover):not(:active), window.background.chromium headerbar.titlebar button.titlebutton.maximize:not(:hover):not(:active), window.background.chromium headerbar.titlebar button.titlebutton.minimize:not(:hover):not(:active), window.background.chromium headerbar.titlebar button.titlebutton.restore:not(:hover):not(:active) {
+  background: none;
 }
 
 window.background.chromium button {

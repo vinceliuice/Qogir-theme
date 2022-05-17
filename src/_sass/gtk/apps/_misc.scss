@@ -305,57 +305,25 @@ $chrome_fg_color: $fg_color;
 $chrome_menu_bg_color: $menu_bg;
 $chrome_menu_fg_color: $fg_color;
 
-%circle_chrome {
-  headerbar.titlebar button.titlebutton {
-    min-width: 23px;
-    min-height: 23px;
-    padding: 0 2px;
-    color: transparent;
-  }
-}
-
-%square_chrome {
-  headerbar.titlebar button.titlebutton {
-    &.close, &.maximize, &.minimize, &.restore {
-      min-width: 30px;
-      min-height: 30px;
-      border-radius: $bt_radius;
-    }
-
-    // Load png assets for each button, Fix the Chrome window restore button bug
-    @each $k in ('close', 'maximize', 'minimize', 'restore') {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-
-        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small.png'),
-                                                     url('assets/titlebutton-#{$k}#{$m}#{$asset_suffix_dark}-small@2.png'));
-        }
-      }
-    }
-  }
-
-  // for unmaximize(restore) titlebutton
-  &.maximized headerbar.titlebar button.titlebutton.maximize {
-    @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small.png'),
-                                                      url('assets/titlebutton-restore#{$m}#{$asset_suffix_dark}-small@2.png'));
-      }
-    }
-  }
-}
-
 window.background.chromium {
   // checked-tab & toolbar & button widgets
   background-color: $chrome_bg_color;
   color: $chrome_fg_color;
 
-  @if $titlebutton == 'circle' { @extend %circle_chrome; }
-  @else { @extend %square_chrome; }
-
   headerbar.titlebar {
+    @if $titlebutton == 'square' { padding: 0 3px; }
+
     button.toggle { // account-button (> 64.0.3282?)
       @include button(header-normal);
       &:hover { @include button(header-hover); }
       &:checked, &:active { @include button(header-active); }
+    }
+
+    button.titlebutton {
+      &.close, &.maximize, &.minimize, &.restore {
+        @if $titlebutton == 'square' { margin-top: -1px; }
+        &:not(:hover):not(:active) { background: none; }
+      }
     }
   }
 
