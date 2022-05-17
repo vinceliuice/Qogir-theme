@@ -4403,11 +4403,11 @@ window {
       }
     }
 
-    > windowhandle > box > box.end > windowcontrols {
+    > windowhandle box.end > windowcontrols {
       margin-right: -$cont_padding;
     }
 
-    > windowhandle > box > box.start > windowcontrols {
+    > windowhandle box.start > windowcontrols {
       margin-left: -$cont_padding;
     }
   }

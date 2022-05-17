@@ -491,6 +491,7 @@ viewswitcher {
     font-weight: bold;
     padding: 0;
     min-height: 0;
+    border: none;
 
     > stack > box {
       &.narrow {
