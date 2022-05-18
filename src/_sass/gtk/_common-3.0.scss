@@ -714,7 +714,7 @@ toolbar.inline-toolbar toolbutton {
     > entry.error + entry.warning,
     > entry.warning + entry.error { border-#{$_border}-color: $e_border; }
 
-    @each $e_type, $e_color in (':focus',$selected_bg_color),
+    @each $e_type, $e_color in (':focus', $selected_bg_color),
                                (':drop(active)', $drop_target_color),
                                ('.warning:focus', $warning_color),
                                ('.error:focus', $error_color) {
@@ -729,6 +729,11 @@ toolbar.inline-toolbar toolbutton {
       > entry#{$e_type}:not(:only-child) {
         + button,
         + combobox > box > button.combo { border-#{$_border}-color: transparent; }
+      }
+
+      > entry#{$e_type}:not(:only-child) {
+        + button:active,
+        + combobox > box > button.combo:active { border-#{$_border}-color: if($titlebar == 'light', $sec_selected_bg_color, $alt_selected_bg_color); }
       }
     }
 
@@ -759,8 +764,9 @@ toolbar.inline-toolbar toolbutton {
     > button:checked + #{$_uncolored_button}:hover,
     > button.suggested-action + #{$_uncolored_button}:hover,
     > button.destructive-action + #{$_uncolored_button}:hover,
-    > entry + #{$_uncolored_button}:hover:not(:only-child),
-    > #{$_uncolored_button}:first-child:hover, {
+    > entry:not(:only-child) + #{$_uncolored_button}:hover:not(:only-child),
+    > entry:focus:not(:only-child) + #{$_uncolored_button}:hover:not(:only-child),
+    > #{$_uncolored_button}:first-child:hover {
       box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border;
       border-#{$_border}-color: if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
     }
@@ -795,11 +801,8 @@ toolbar.inline-toolbar toolbutton {
   .osd & { @include linking_rules($e_border:$osd_entry_border, $b_border:$osd_button_border); }
 }
 
-headerbar,
-headerbar.titlebar {
-  .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.stack-switcher) {
-    @include linking_rules($entry_rules:'false', $button_rules:'false', $e_border: $header_entry_border, $b_border: transparent);
-  }
+headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.stack-switcher) {
+  @include linking_rules($entry_rules:'false', $button_rules:'false', $e_border: $header_entry_border, $b_border: transparent);
 }
 
 .linked.vertical { @include linking_rules($vert:'true'); }
@@ -1823,7 +1826,6 @@ headerbar {
 // Pathbars
 //
 .path-bar button {
-
   &:hover { background-color: rgba($fg_color, 0.06); }
   &:checked, &:active {
     background-color: $selected_bg_color;

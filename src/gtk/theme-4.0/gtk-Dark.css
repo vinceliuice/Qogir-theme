@@ -5955,6 +5955,7 @@ viewswitcher button.toggle {
   font-weight: bold;
   padding: 0;
   min-height: 0;
+  border: none;
 }
 
 viewswitcher button.toggle > stack > box.narrow {
