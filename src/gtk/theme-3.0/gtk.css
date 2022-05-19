@@ -6774,6 +6774,10 @@ window.background.chromium headerbar.titlebar button.toggle:checked, window.back
   background-color: #5294e2;
 }
 
+window.background.chromium headerbar.titlebar button.titlebutton.close, window.background.chromium headerbar.titlebar button.titlebutton.maximize, window.background.chromium headerbar.titlebar button.titlebutton.minimize, window.background.chromium headerbar.titlebar button.titlebutton.restore {
+  color: #e0e5eb;
+}
+
 window.background.chromium headerbar.titlebar button.titlebutton.close:not(:hover):not(:active), window.background.chromium headerbar.titlebar button.titlebutton.maximize:not(:hover):not(:active), window.background.chromium headerbar.titlebar button.titlebutton.minimize:not(:hover):not(:active), window.background.chromium headerbar.titlebar button.titlebutton.restore:not(:hover):not(:active) {
   background: none;
 }

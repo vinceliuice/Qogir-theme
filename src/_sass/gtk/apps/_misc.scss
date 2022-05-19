@@ -321,6 +321,8 @@ window.background.chromium {
 
     button.titlebutton {
       &.close, &.maximize, &.minimize, &.restore {
+        color: $header_fg;
+
         @if $titlebutton == 'square' { margin-top: -1px; }
         &:not(:hover):not(:active) { background: none; }
       }
