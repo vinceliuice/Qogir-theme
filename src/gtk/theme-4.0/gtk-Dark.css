@@ -5273,19 +5273,19 @@ stackswitcher.circular > button.text-button.circular {
 window {
   border: none;
   outline: none;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08), 0 8px 8px 0 rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.12), 0 8px 8px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.12);
   margin: 0;
   border-radius: 0;
   transition: 200ms ease-out;
 }
 
 window:backdrop {
-  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 window.popup {
   border-radius: 0;
-  box-shadow: 0 3px 6px rgba(255, 255, 255, 0.02), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 window.dialog.message {
@@ -5302,7 +5302,7 @@ window.solid-csd {
 
 window.maximized, window.fullscreen, window.tiled, window.tiled-top, window.tiled-left, window.tiled-right, window.tiled-bottom {
   border-radius: 0;
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.08);
 }
 
 window.ssd {

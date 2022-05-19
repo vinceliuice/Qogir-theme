@@ -3797,15 +3797,13 @@ stackswitcher button {
 // Window Decorations
 //
 
-$_wm_border: if($variant=='light', rgba(black, 0.12), rgba(white, 0.12));
-
 decoration {
   border-radius: $corner_radius;
   border: none;
   transition: $backdrop_transition;
-  box-shadow: 0 3px 5px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.08)),
-              0 8px 8px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.08)),
-              0 0 0 1px $_wm_border;
+  box-shadow: 0 3px 5px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.12)),
+              0 8px 8px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.12)),
+              0 0 0 1px $borders_color;
 
   // this is used for the resize cursor area
   margin: 6px;
@@ -3814,15 +3812,15 @@ decoration {
     // the transparent shadow here is to enforce that the shadow extents don't
     // change when we go to backdrop, to prevent jumping windows
     box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent,
-                0 3px 3px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.06)),
-                0 0 0 1px $_wm_border;
+                0 3px 3px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.08)),
+                0 0 0 1px $borders_color;
   }
 
   .maximized &,
   .fullscreen &,
   .tiled & {
     border-radius: 0;
-    box-shadow: 0 3px 3px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.06));
+    box-shadow: 0 3px 3px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.08));
   }
 
   // server-side decorations as used by mutter
@@ -3840,12 +3838,12 @@ decoration {
 
   .csd.popup & {
     border-radius: $corner_radius;
-    box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
+    box-shadow: 0 3px 6px if($variant == 'light', rgba(black, 0.12), rgba(black, 0.1)), 0 0 0 1px $borders_color;
   }
 
   tooltip.csd & {
     border-radius: $material_radius;
-    box-shadow: 0 1px 3px 0 if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.3));
+    box-shadow: 0 1px 3px 0 if($variant == 'light', rgba(black, 0.12), rgba(black, 0.1));
   }
 
   messagedialog.csd & {

@@ -8889,7 +8889,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   margin: 5px 9px;
   padding: 8px;
   border-radius: 2px;
-  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.27);
+  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.15);
   background-color: #282A33;
   color: #e0e5eb;
 }

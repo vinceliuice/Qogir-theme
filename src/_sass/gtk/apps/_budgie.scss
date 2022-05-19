@@ -96,7 +96,7 @@
   border-color: $borders_color;
   border-radius: $bt_radius;
   background-color: if($variant=='light', $base_color, $bg_color);
-  box-shadow: 0 3px 5px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $_wm_border;
+  box-shadow: 0 3px 5px if($variant == 'light', rgba(black, 0.12), rgba(black, 0.1)), 0 0 0 1px $borders_color;
 
   .container {
     padding: 0;
@@ -1012,7 +1012,7 @@ box.vertical > stack > box.vertical {
   padding: 8px;
   border-radius: $bt_radius;
   box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent,
-              0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
+              0 3px 3px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.12));
 
   background-color: $header_bg;
   color: $header_fg;

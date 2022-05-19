@@ -4334,14 +4334,12 @@ stackswitcher {
 // Window Decorations
 //
 
-$_wm_border: if($variant=='light', rgba(black, 0.12), rgba(white, 0.12));
-
 window {
   border: none;
   outline: none;
-  box-shadow: 0 3px 5px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.08)),
-              0 8px 8px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.08)),
-              0 0 0 1px $_wm_border;
+  box-shadow: 0 3px 5px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.12)),
+              0 8px 8px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.12)),
+              0 0 0 1px $borders_color;
   margin: 0;
   border-radius: $corner_radius;
   transition: $backdrop_transition;
@@ -4352,13 +4350,13 @@ window {
     // The biggest shadow should be in the same order then in the active state
     // or the jumping will happen during the transition.
     box-shadow: 0 3px 5px 0 transparent, 0 8px 8px 0 transparent,
-                0 3px 3px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.06)),
-                0 0 0 1px $_wm_border;
+                0 3px 3px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.08)),
+                0 0 0 1px $borders_color;
   }
 
   &.popup {
     border-radius: $corner_radius;
-    box-shadow: 0 3px 6px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.1)), 0 0 0 1px $borders_color;
+    box-shadow: 0 3px 6px if($variant == 'light', rgba(black, 0.12), rgba(black, 0.1)), 0 0 0 1px $borders_color;
   }
 
   &.dialog.message {
@@ -4381,11 +4379,11 @@ window {
   &.tiled-right,
   &.tiled-bottom {
     border-radius: 0;
-    box-shadow: 0 3px 3px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.06));
+    box-shadow: 0 3px 3px 0 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.08));
   }
 
   // server-side decorations as used by mutter
-  &.ssd { box-shadow: 0 0 0 1px $_wm_border; } //just doing borders, wm draws actual shadows
+  &.ssd { box-shadow: 0 0 0 1px $borders_color; } //just doing borders, wm draws actual shadows
 }
 
 //
