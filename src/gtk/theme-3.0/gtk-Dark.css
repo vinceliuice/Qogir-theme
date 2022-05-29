@@ -85,6 +85,13 @@ textview text {
   background-color: #282A33;
 }
 
+.view:hover,
+window.thunar notebook scrolledwindow.frame.standard-view .view:hover,
+iconview:hover,
+textview text:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
 textview border {
   background-color: #2d2f38;
 }
@@ -2509,6 +2516,10 @@ treeview.view acceleditor > label {
   background-color: #5294e2;
 }
 
+treeview.view:hover {
+  background-image: image(#282A33);
+}
+
 treeview.view:selected, treeview.view:selected:focus {
   border-radius: 0;
   border-left-color: #a9caf1;
@@ -4162,39 +4173,21 @@ list row {
   padding: 2px;
 }
 
-window.thunar > grid > paned > .sidebar > treeview.has-open-popup.view, .budgie-menu button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, .has-open-popup.view,
-window.thunar notebook scrolledwindow.frame.standard-view .has-open-popup.view,
-textview text.has-open-popup,
-iconview.has-open-popup, window.thunar > grid > paned > .sidebar > treeview.view:hover, .budgie-menu button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, .view:hover,
-window.thunar notebook scrolledwindow.frame.standard-view .view:hover,
-textview text:hover,
-iconview:hover, row.activatable.has-open-popup, row.activatable:hover {
+window.thunar > grid > paned > .sidebar > treeview.has-open-popup.view, .budgie-menu button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, window.thunar > grid > paned > .sidebar > treeview.view:hover, .budgie-menu button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, row.activatable.has-open-popup, row.activatable:hover {
   transition: none;
   animation: none;
-  background-color: #35373f;
+  background-color: rgba(255, 255, 255, 0.06);
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view:active, .budgie-menu button:active, .nemo-window .nemo-places-sidebar .places-treeview:active, .view:active,
-window.thunar notebook scrolledwindow.frame.standard-view .view:active,
-textview text:active,
-iconview:active, window.thunar > grid > paned > .sidebar > treeview.view:checked, .budgie-menu button:checked, .nemo-window .nemo-places-sidebar .places-treeview:checked, .view:checked,
-window.thunar notebook scrolledwindow.frame.standard-view .view:checked,
-textview text:checked,
-iconview:checked, row.activatable:active, row.activatable:checked {
+window.thunar > grid > paned > .sidebar > treeview.view:active, .budgie-menu button:active, .nemo-window .nemo-places-sidebar .places-treeview:active, window.thunar > grid > paned > .sidebar > treeview.view:checked, .budgie-menu button:checked, .nemo-window .nemo-places-sidebar .places-treeview:checked, row.activatable:active, row.activatable:checked {
   transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view:disabled, .budgie-menu button:disabled, .nemo-window .nemo-places-sidebar .places-treeview:disabled, .view:disabled,
-window.thunar notebook scrolledwindow.frame.standard-view .view:disabled,
-textview text:disabled,
-iconview:disabled, row.activatable:disabled {
+window.thunar > grid > paned > .sidebar > treeview.view:disabled, .budgie-menu button:disabled, .nemo-window .nemo-places-sidebar .places-treeview:disabled, row.activatable:disabled {
   color: rgba(230, 235, 239, 0.45);
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view:disabled image, .budgie-menu button:disabled image, .nemo-window .nemo-places-sidebar .places-treeview:disabled image, .view:disabled image,
-window.thunar notebook scrolledwindow.frame.standard-view .view:disabled image,
-textview text:disabled image,
-iconview:disabled image, row.activatable:disabled image {
+window.thunar > grid > paned > .sidebar > treeview.view:disabled image, .budgie-menu button:disabled image, .nemo-window .nemo-places-sidebar .places-treeview:disabled image, row.activatable:disabled image {
   color: inherit;
 }
 
@@ -4392,6 +4385,10 @@ filechooserbutton:drop(active) {
 
 messagedialog.background:not(.csd) .dialog-vbox .dialog-action-box button {
   border-radius: 0;
+}
+
+dialog > .dialog-vbox.view {
+  background: none;
 }
 
 .sidebar {

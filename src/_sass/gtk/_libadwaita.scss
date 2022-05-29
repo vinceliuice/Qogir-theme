@@ -691,5 +691,51 @@ tabbox:drop(active) {
 }
 
 // Sidebar
-
 .unfolded stacksidebar.sidebar { border: none; }
+
+// preferences
+preferencespage > scrolledwindow > viewport > clamp > box {
+  margin: 24px 12px;
+  border-spacing: 24px;
+}
+
+preferencesgroup > box {
+  &, .labels {
+    border-spacing: 6px;
+  }
+
+  > box.header:not(.single-line) {
+    margin-bottom: 6px;
+  }
+
+  > box.single-line {
+    min-height: $medium_size;
+  }
+
+  button.background-preview-button.toggle {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    outline-color: transparent;
+    outline-width: 2px;
+    outline-offset: 3px;
+    outline-style: solid;
+    border: none;
+
+    &, > background-preview {
+      border-radius: $bt_radius;
+    }
+
+    &:hover {
+      outline-color: rgba($fg_color, 0.06);
+    }
+
+    &:active {
+      outline-color: rgba($fg_color, 0.2);
+    }
+
+    &:checked {
+      outline-color: $selected_bg_color;
+    }
+  }
+}

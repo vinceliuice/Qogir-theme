@@ -6138,6 +6138,50 @@ tabbox:drop(active) {
   border: none;
 }
 
+preferencespage > scrolledwindow > viewport > clamp > box {
+  margin: 24px 12px;
+  border-spacing: 24px;
+}
+
+preferencesgroup > box, preferencesgroup > box .labels {
+  border-spacing: 6px;
+}
+
+preferencesgroup > box > box.header:not(.single-line) {
+  margin-bottom: 6px;
+}
+
+preferencesgroup > box > box.single-line {
+  min-height: 28px;
+}
+
+preferencesgroup > box button.background-preview-button.toggle {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  outline-color: transparent;
+  outline-width: 2px;
+  outline-offset: 3px;
+  outline-style: solid;
+  border: none;
+}
+
+preferencesgroup > box button.background-preview-button.toggle, preferencesgroup > box button.background-preview-button.toggle > background-preview {
+  border-radius: 2px;
+}
+
+preferencesgroup > box button.background-preview-button.toggle:hover {
+  outline-color: rgba(70, 72, 83, 0.06);
+}
+
+preferencesgroup > box button.background-preview-button.toggle:active {
+  outline-color: rgba(70, 72, 83, 0.2);
+}
+
+preferencesgroup > box button.background-preview-button.toggle:checked {
+  outline-color: #5294e2;
+}
+
 @define-color theme_fg_color #464853;
 @define-color theme_text_color currentColor;
 @define-color theme_bg_color #fafbfc;

@@ -74,9 +74,12 @@ button.gtkstyle-fallback { // For Cinnamon system setting
 
 .view,
 %view {
-  @extend %row_activatable;
   color: $text_color;
   background-color: $base_color;
+
+  &:hover {
+    background-color: if($variant == 'light', rgba(black, 0.08), rgba(white, 0.06));
+  }
 
   &:selected {
     &, &:focus {
@@ -1874,14 +1877,14 @@ treeview.view {
     -GtkTreeView-expander-size: 16;
   }
 
-  @extend %row_activatable;
-
   border-left-color: transparentize($fg_color, 0.85);   // this is actually the tree lines color,
   border-top-color: transparentize(black, 0.9);         // while this is the grid lines color, better then nothing
 
   rubberband { @extend rubberband; }                    // to avoid borders being overridden by the previously set props
 
   acceleditor > label { background-color: $selected_bg_color; }
+
+  &:hover { background-image: image($base_color); }
 
   &:selected {
     &, &:focus {
@@ -3109,7 +3112,7 @@ row {
     &:hover {
       transition: none;
       animation: none;
-      background-color: if($variant == 'light', mix(black, $base_color, 8%), mix(white, $base_color, 6%));
+      background-color: if($variant == 'light', rgba(black, 0.08), rgba(white, 0.06));
     }
 
     &:active, &:checked {
@@ -3242,7 +3245,6 @@ $dialog_bg: if($variant == 'light' and $titlebar == 'dark', $header_bg, $menu_bg
 $dialog_fg: $header_fg;
 
 messagedialog { // Message Dialog styling
-
   &.background {
     background-color: $dialog_bg;
     color: $dialog_fg;
@@ -3289,7 +3291,6 @@ messagedialog { // Message Dialog styling
   }
 
   .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
-
     &:hover {
       background-color: rgba($dialog_fg, 0.06);
     }
@@ -3336,6 +3337,8 @@ messagedialog.background:not(.csd) {
     }
   }
 }
+
+dialog > .dialog-vbox.view { background: none; }
 
 //
 // Sidebar
