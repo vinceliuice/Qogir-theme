@@ -2516,7 +2516,7 @@ treeview.view acceleditor > label {
   background-color: #5294e2;
 }
 
-treeview.view:hover {
+treeview.view:not(:selected):not(:disabled):not(.progressbar):not(.expander):not(.trough):not(.separator):hover {
   background-image: image(#282A33);
 }
 
