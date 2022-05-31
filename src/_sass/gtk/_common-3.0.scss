@@ -1884,7 +1884,7 @@ treeview.view {
 
   acceleditor > label { background-color: $selected_bg_color; }
 
-  &:not(:selected):not(:disabled):not(.progressbar):not(.expander):not(.trough):not(.separator):hover { background-image: image($base_color); }
+  .background:not(.csd) &:not(:selected):not(.progressbar):not(.expander):not(.trough):not(.separator):hover { background-color: if($variant == 'light', mix(black, $base_color, 8%), mix(white, $base_color, 6%)); }
 
   &:selected {
     &, &:focus {
