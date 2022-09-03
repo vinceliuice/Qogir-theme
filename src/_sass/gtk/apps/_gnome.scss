@@ -365,7 +365,7 @@ $disk_space_free: darken($bg_color, 3%);
 
   button {
     border: none;
-    border-radius: 100px;
+    border-radius: $circular_radius;
     min-height: 0;
     min-width: 0;
     padding: 0;
