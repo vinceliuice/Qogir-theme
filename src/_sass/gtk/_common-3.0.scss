@@ -12,7 +12,7 @@ $header_padding: if($titlebutton == 'circle', 0, 5px);
   -GtkWidget-text-handle-width: 20;
   -GtkWidget-text-handle-height: 20;
 
-  -GtkDialog-button-spacing: 4;
+  -GtkDialog-button-spacing: 6;
   -GtkDialog-action-area-border: 0;
 
   // We use the outline properties to signal the focus properties
