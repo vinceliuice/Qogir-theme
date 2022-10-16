@@ -116,12 +116,7 @@ StEntry StLabel.hint-text {
 }
 
 /* Buttons */
-.hotplug-notification-item, .notification-banner .notification-button,
-.button {
-  min-height: 20px;
-  padding: 5px 32px;
-  transition-duration: 0;
-  border-radius: 2px;
+.hotplug-notification-item, .notification-banner .notification-button, .button {
   text-shadow: none;
   color: #464853;
   background-color: white;
@@ -129,8 +124,7 @@ StEntry StLabel.hint-text {
   box-shadow: none;
 }
 
-.hotplug-notification-item:focus, .notification-banner .notification-button:focus,
-.button:focus {
+.hotplug-notification-item:focus, .notification-banner .notification-button:focus, .button:focus {
   text-shadow: none;
   color: #464853;
   background-color: white;
@@ -138,8 +132,7 @@ StEntry StLabel.hint-text {
   box-shadow: none;
 }
 
-.hotplug-notification-item:hover, .notification-banner .notification-button:hover,
-.button:hover {
+.hotplug-notification-item:hover, .notification-banner .notification-button:hover, .button:hover {
   text-shadow: none;
   color: #464853;
   background-color: #f4f4f5;
@@ -147,8 +140,7 @@ StEntry StLabel.hint-text {
   box-shadow: none;
 }
 
-.hotplug-notification-item:hover:focus, .notification-banner .notification-button:hover:focus,
-.button:hover:focus {
+.hotplug-notification-item:hover:focus, .notification-banner .notification-button:hover:focus, .button:hover:focus {
   text-shadow: none;
   color: #464853;
   background-color: rgba(0, 0, 0, 0.03);
@@ -156,10 +148,7 @@ StEntry StLabel.hint-text {
   box-shadow: none;
 }
 
-.hotplug-notification-item:active, .notification-banner .notification-button:active, .hotplug-notification-item:checked, .notification-banner .notification-button:checked,
-.button:active,
-.button:active:focus,
-.button:checked {
+.hotplug-notification-item:active, .notification-banner .notification-button:active, .button:active, .hotplug-notification-item:checked, .notification-banner .notification-button:checked, .button:checked {
   text-shadow: none;
   color: #ffffff;
   background-color: #5294e2;
@@ -167,13 +156,19 @@ StEntry StLabel.hint-text {
   box-shadow: none;
 }
 
-.hotplug-notification-item:insensitive, .notification-banner .notification-button:insensitive,
-.button:insensitive {
+.hotplug-notification-item:insensitive, .notification-banner .notification-button:insensitive, .button:insensitive {
   text-shadow: none;
   color: rgba(70, 72, 83, 0.55);
   border: 1px solid rgba(0, 0, 0, 0);
   background-color: rgba(255, 255, 255, 0.55);
   box-shadow: none;
+}
+
+.button {
+  min-height: 20px;
+  padding: 5px 32px;
+  transition-duration: 0;
+  border-radius: 2px;
 }
 
 /* Check Boxes */

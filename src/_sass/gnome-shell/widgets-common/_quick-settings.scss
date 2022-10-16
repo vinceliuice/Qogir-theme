@@ -1,0 +1,150 @@
+.quick-settings {
+  padding: $cont_padding * 2 !important;
+  border-radius: $bt_radius + $cont_padding * 2 !important;
+
+  .icon-button, .button {
+    padding: $cont_padding * 1.75;
+  }
+}
+
+.quick-settings-grid {
+  spacing-rows: $cont_padding * 2;
+  spacing-columns: $cont_padding * 2;
+}
+
+.quick-toggle {
+  border-radius: $material_radius;
+  min-width: 12em;
+  max-width: 12em;
+  min-height: 40px;
+  border: 1px solid $borders_color;
+  @extend %button;
+
+  & > StBoxLayout { spacing: $cont_padding; }
+
+  /* Move padding into the box; this is to allow menu arrows
+     to extend to the border */
+  &.button { padding: 0; }
+  & > StBoxLayout { padding: 0 $cont_padding * 2; }
+  &:ltr > StBoxLayout { padding-left: $cont_padding * 2.5; }
+  &:rtl > StBoxLayout { padding-right: $cont_padding * 2.5; }
+
+  .quick-toggle-label { font-weight: bold; }
+  .quick-toggle-icon, .quick-toggle-arrow { icon-size: 16px; }
+}
+
+.quick-menu-toggle {
+  &:ltr > StBoxLayout { padding-right: 0; }
+  &:rtl > StBoxLayout { padding-left: 0; }
+
+  .quick-toggle-arrow {
+    background-color: rgba($fg_color, 0.06) !important;
+    padding: $cont_padding $cont_padding * 1.75;
+
+    &:active, &:checked {
+      background-color: rgba($fg_color, 0.12) !important;
+    }
+
+    &:ltr { border-radius: 0 $bt_radius $bt_radius 0; }
+    &:rtl { border-radius: $bt_radius 0 0 $bt_radius; }
+  }
+}
+
+.quick-slider {
+  padding: 0 $cont_padding;
+
+  & > StBoxLayout { spacing: $cont_padding; }
+
+  .slider-bin {
+    &:focus { @include button(focus); }
+    min-height: 16px; // slider size
+    padding: $cont_padding;
+    border-radius: 16px;
+  }
+
+  .quick-toggle-icon {
+    icon-size: 16px;
+  }
+
+  .icon-button {
+    background-color: transparent;
+    color: $text_color !important;
+
+    &:hover {
+      background-color: rgba($fg_color, 0.06);
+    }
+
+    &:active {
+      background-color: rgba($fg_color, 0.12);
+    }
+  }
+}
+
+.quick-toggle-menu {
+  background-color: $menu_bg !important;
+  color: $text_color !important;
+  border-radius: $bt_radius + $cont_padding !important;
+  padding: $cont_padding;
+  margin: $cont_padding * 2 $cont_padding * 3 0;
+
+  .popup-menu-item {
+    border-radius: $bt_radius !important;
+
+    &:focus, &:hover, &.selected {
+      color: $text_color !important;
+      background-color: rgba($text_color, 0.1) !important;
+    }
+
+    &:active {
+      color: $text_color !important;
+      background-color: rgba($text_color, 0.2) !important;
+    }
+
+    > StIcon { -st-icon-style: symbolic; }
+  }
+
+  & .header {
+    spacing-rows: 0.5 * $cont_padding;
+    spacing-columns: $cont_padding * 2;
+    padding-bottom: 2 * $cont_padding;
+
+    & .icon {
+      icon-size: 16px * 1.5; // a non-standard symbolic size but ok
+      border-radius: $bt_radius;
+      padding: 1.5 * $cont_padding;
+      background-color: rgba($fg_color, 0.12) !important;
+
+      &.active {
+        background-color: $selected_bg_color !important;
+        color: $selected_fg_color;
+      }
+    }
+  }
+}
+
+.quick-settings-system-item {
+  & > StBoxLayout { spacing: 2 * $cont_padding; }
+
+  .icon-button {
+    background-color: $button_bg;
+    color: $text_color;
+    border-radius: $material_radius;
+    @extend %button;
+
+    > StIcon { -st-icon-style: symbolic; }
+  }
+
+  & .power-item {
+    min-height: 0;
+    min-width: 0;
+
+    &:insensitive {
+      @include button(normal);
+      background-color: transparent;
+    }
+  }
+}
+
+.nm-network-item {
+  .wireless-secure-icon { icon-size: 0.5 * 16px; }
+}

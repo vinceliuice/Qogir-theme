@@ -1,11 +1,6 @@
 /* Buttons */
 
-%button,
-.button {
-  min-height: 20px;
-  padding: 5px 32px;
-  transition-duration: 0;
-  border-radius: $bt_radius;
+%button {
   @include button(normal);
 
   &:focus { @include button(focus); }
@@ -13,6 +8,15 @@
   &:hover:focus { @include button(focus-hover); }
   &:active, &:active:focus, &:checked { @include button(active); }
   &:insensitive { @include button(insensitive); }
+}
+
+.button {
+  min-height: 20px;
+  padding: 5px 32px;
+  transition-duration: 0;
+  border-radius: $bt_radius;
+
+  @extend %button;
 }
 
 %osd_button {

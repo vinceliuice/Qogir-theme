@@ -16,6 +16,7 @@
 @import 'widgets-common/calendar';
 @import 'widgets-common/message-list';
 @import 'widgets-common/ibus-popup';
+@import 'widgets-common/quick-settings';
 // Notifications
 @import 'widgets-common/notifications';
 @import 'widgets-common/hotplug';
@@ -48,7 +49,7 @@
 @import 'widgets-common/screen-shield';
 
 // widgets-40-0
-@import 'widgets-40-0/app-grid';
+@import 'widgets-42-0/app-grid';
 @import 'widgets-40-0/dash';
 @import 'widgets-40-0/overview';
 @import 'widgets-40-0/search-entry';
