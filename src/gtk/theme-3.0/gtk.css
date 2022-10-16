@@ -7900,7 +7900,7 @@ MsdOsdWindow.background.osd .progressbar {
 
 .budgie-popover list.content-box row.activatable {
   padding: 0;
-  background: 0;
+  background: none;
   border: none;
   box-shadow: none;
 }
@@ -7972,10 +7972,6 @@ MsdOsdWindow.background.osd .progressbar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.budgie-popover switch {
-  margin-left: 56px;
-}
-
 .budgie-popover:not(.budgie-menu) button.flat:not(.image-button) {
   min-height: 28px;
   padding: 0 8px;
@@ -8002,8 +7998,8 @@ MsdOsdWindow.background.osd .progressbar {
   padding: 0;
 }
 
-.budgie-popover.user-menu .container {
-  padding: 8px;
+.budgie-popover.user-menu frame.container {
+  padding: 6px;
 }
 
 .budgie-popover.user-menu separator {
@@ -8020,20 +8016,20 @@ MsdOsdWindow.background.osd .progressbar {
   border-color: rgba(0, 0, 0, 0.12);
 }
 
-.budgie-popover.caffeine-popover .container {
+.budgie-popover.caffeine-popover frame.container {
   padding: 6px;
 }
 
-.budgie-popover.night-light-indicator .container {
+.budgie-popover.night-light-indicator frame.container {
   padding: 6px;
 }
 
-.budgie-popover.icon-popover .container {
+.budgie-popover.icon-popover frame.container {
   padding: 6px;
 }
 
-.budgie-popover.places-menu .container {
-  padding: 8px;
+.budgie-popover.places-menu frame.container {
+  padding: 6px;
 }
 
 .budgie-popover.places-menu .places-list:not(.always-expand) {
@@ -8045,6 +8041,14 @@ MsdOsdWindow.background.osd .progressbar {
 .budgie-popover.places-menu .alternative-label {
   padding: 3px;
   font-size: 15px;
+}
+
+.budgie-popover.places-menu list > row.activatable {
+  padding: 0;
+}
+
+.budgie-popover.places-menu list > row.activatable, .budgie-popover.places-menu list > row.activatable:hover, .budgie-popover.places-menu list > row.activatable:active, .budgie-popover.places-menu list > row.activatable:selected {
+  background: none;
 }
 
 .budgie-popover.workspace-popover .container {

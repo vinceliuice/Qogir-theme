@@ -111,7 +111,7 @@
     &.content-box {
       row.activatable {
         padding: 0;
-        background: 0;
+        background: none;
         border: none;
         box-shadow: none;
       }
@@ -177,8 +177,6 @@
     }
   }
 
-  switch { margin-left: 56px; }
-
   &:not(.budgie-menu) button.flat:not(.image-button) {
     @extend %budgie_button_transition;
     min-height: 28px;
@@ -206,7 +204,7 @@
   }
 
   &.user-menu {
-    .container { padding: 8px; }
+    frame.container { padding: 6px; }
 
     separator { margin: 4px 0; background-color: $borders_color; }
   }
@@ -220,19 +218,19 @@
   }
 
   &.caffeine-popover {
-    .container { padding: 6px; }
+    frame.container { padding: 6px; }
   }
 
   &.night-light-indicator {
-    .container { padding: 6px; }
+    frame.container { padding: 6px; }
   }
 
   &.icon-popover {
-    .container { padding: 6px; }
+    frame.container { padding: 6px; }
   }
 
   &.places-menu {
-    .container { padding: 8px; }
+    frame.container { padding: 6px; }
 
     .places-list:not(.always-expand) {
       margin-top: 4px;
@@ -244,6 +242,14 @@
     .alternative-label {
       padding: 3px;
       font-size: 15px;
+    }
+
+    list > row.activatable {
+      padding: 0;
+
+      &, &:hover, &:active, &:selected {
+        background: none;
+      }
     }
   }
 
