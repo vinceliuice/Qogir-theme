@@ -4608,7 +4608,6 @@ window.dialog.message .dialog-action-area button {
   padding: 6px 10px 8px 10px;
   border-radius: 0;
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
   background-color: #ffffff;
   color: #4a4c59;
 }
@@ -6301,8 +6300,8 @@ tabbar .box {
 
 tabbar tabbox > tabboxchild {
   border-radius: 0;
-  margin-bottom: 6px;
-  margin-top: 6px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 tabbar tabbox > separator {
@@ -6326,13 +6325,13 @@ tabbar tab {
   transition: background 150ms ease-in-out;
 }
 
-tabbar tab:selected, tabbar tab:checked, tabbar tab:active, tabbar tab:active:hover, tabbar tab:checked:hover {
+tabbar tab:selected, tabbar tab:checked {
   background-color: transparent;
   box-shadow: inset 0 -2px #5294e2;
   color: #464853;
 }
 
-tabbar tab:hover {
+tabbar tab:hover:not(:selected):not(:checked) {
   box-shadow: inset 0 -2px #a9caf1;
 }
 

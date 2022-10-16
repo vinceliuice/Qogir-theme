@@ -569,8 +569,8 @@ tabbar {
   tabbox {
     > tabboxchild {
       border-radius: 0;
-      margin-bottom: $cont_padding;
-      margin-top: $cont_padding;
+      margin-bottom: 0;
+      margin-top: 0;
     }
 
     > separator {
@@ -594,13 +594,13 @@ tabbar {
   tab {
     transition: background 150ms ease-in-out;
 
-    &:selected, &:checked, &:active, &:active:hover, &:checked:hover {
+    &:selected, &:checked {
       background-color: transparent;
       box-shadow: inset 0 -2px $selected_bg_color;
       color: $fg_color;
     }
 
-    &:hover {
+    &:hover:not(:selected):not(:checked) {
       box-shadow: inset 0 -2px mix($selected_bg_color, $header_bg, 50%);
     }
   }
