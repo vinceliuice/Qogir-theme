@@ -90,6 +90,7 @@
     color: transparentize($header_fg, 0.45);
     border-color: $header_entry_border;
     background-color: transparentize($header_entry_bg, 0.15);
+    opacity: 1;
   }
 
   @else if $t==osd {
@@ -120,6 +121,7 @@
   //
     color: transparentize($osd_fg_color, 0.45);
     background-color: transparentize($osd_entry_bg, 0.15);
+    opacity: 1;
   }
 }
 
@@ -166,7 +168,10 @@
   //
   // insensitive button
   //
-    label, & { color: $insensitive_fg_color; }
+    label, & {
+      color: $insensitive_fg_color;
+      opacity: 1;
+    }
 
     border-color: $alt_borders_color;
     background-color: transparentize($button_bg, 0.45);
@@ -215,7 +220,10 @@
   //
   // insensitive header-bar button
   //
-    label, & { color: transparentize($header_fg, 0.5); }
+    label, & {
+      color: transparentize($header_fg, 0.5);
+      opacity: 1;
+    }
 
     background-color: transparentize($header_bg, 1);
     border-color: transparentize($header_bg, 1);
@@ -262,6 +270,7 @@
   //
   // insensitive osd button
   //
+    opacity: 1;
     color: $osd_insensitive_fg_color;
     border-color: $osd_button_border;
     background-color: transparentize($osd_button_bg, 0.15);

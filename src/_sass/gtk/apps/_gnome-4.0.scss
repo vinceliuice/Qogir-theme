@@ -1,0 +1,339 @@
+
+//
+// Nautilus
+//
+
+%nautilus_background_image {
+  background-image: -gtk-scaled(url("assets/backimage#{$asset_suffix}.png"), url("assets/backimage#{$asset_suffix}@2.png"));
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+%headerbar_image {
+  background-image: -gtk-scaled(url("assets/logo.svg"),url("assets/logo@2.svg")), image($dark_sidebar_icon_bg);
+  background-repeat: no-repeat;
+  background-size: 38px auto;
+  background-position: left center;
+}
+
+%nautilus_dir_buttons {
+  border-radius: $bt_radius;
+  border: none;
+  min-height: 20px;
+  min-width: 20px;
+  padding: 0 $cont_padding;
+
+  &:hover {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.1);
+  }
+
+  &:active {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.2);
+  }
+
+  &:checked {
+    color: $header_fg;
+    background-color: rgba($header_fg, 0.15);
+  }
+}
+
+%dark_sidebar_scrollbar {
+  border-color: $borders_color;
+
+  &.overlay-indicator:not(.dragging):not(.hovering) slider {
+    background-color: lighten($dark_sidebar_fg, 15%);
+    border: 1px solid $borders_color;
+  }
+
+  slider {
+    background-color: transparentize(lighten($dark_sidebar_fg, 15%), 0.3);
+
+    &:hover { background-color: lighten($dark_sidebar_fg, 20%); }
+    &:hover:active { background-color: $selected_bg_color; }
+    &:disabled { background-color: transparent; }
+  }
+
+  trough { background-color: darken($dark_sidebar_bg, 5%); }
+}
+
+.nautilus-window {
+  headerbar {
+    * { // reset
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    padding-left: 38px;
+    @extend %headerbar_image; // Set nautilus headerbar mountain icon
+
+    &, &:backdrop {
+      box-shadow: inset 0 -1px if($variant=='light', rgba($dark_sidebar_icon_bg, 0.15), $dark_sidebar_icon_bg),
+                  inset 38px 0 0 0 transparent;
+    }
+
+    splitbutton {
+      border-radius: $bt_radius + 2px;
+      border: 1px solid transparent;
+      padding: 0 1px;
+      min-height: 26px;
+
+      &:hover {
+        @include button(header-hover);
+      }
+
+      > button, > menubutton > button {
+        @extend %nautilus_dir_buttons;
+        margin: 2px 1px;
+      }
+    }
+  }
+
+  flap.unfolded {
+    background-color: $dark_sidebar_bg;
+    background-image: image($dark_sidebar_icon_bg);
+    background-size: 38px auto;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding: 0;
+
+    > separator {
+      background-color: if($variant == 'light' and $titlebar == 'dark', $base_color, $dark_sidebar_border);
+    }
+
+    > placessidebar {
+      background-color: transparent;
+      color: $dark_sidebar_fg;
+      padding: 0;
+
+      list {
+        padding: 0;
+        background-color: transparent;
+      }
+
+      row.sidebar-row {
+        margin: 0;
+        transition: none;
+        color: $dark_sidebar_fg;
+        border-radius: 0;
+  
+        .sidebar-icon { color: transparentize($dark_sidebar_icon_fg, 0.15); }
+  
+        image.sidebar-icon {
+          padding-right: 2px;
+        }
+  
+        label.sidebar-label {
+          padding-right: 2px; padding-left: 20px;
+        }
+  
+        &.has-open-popup,
+        &:hover {
+          background-color: transparentize($dark_sidebar_fg, 0.95);
+          box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
+                      inset 38px 0 0 0 $dark_sidebar_icon_bg;
+        }
+  
+        &:disabled {
+          &, label, image { color: transparentize($dark_sidebar_fg, 0.6); }
+        }
+  
+        &:active { transition: box-shadow 0.2s; }
+  
+        &:selected.has-open-popup,
+        &:selected, &:selected:hover, &:active:hover {
+          box-shadow: inset 38px 0 0 0 $selected_bg_color;
+          background-color: rgba($selected_bg_color, 0.0);
+          background-image: -gtk-scaled(url("assets/selected-dot.png"),
+                                        url("assets/selected-dot@2.png"));
+          background-repeat: no-repeat;
+          background-position: 42px center;
+          .sidebar-label { color: $alt_dark_sidebar_fg; }
+          // .sidebar-icon { color: inherit; }
+        }
+  
+        &:selected:hover, &:active:hover {
+          background-color: transparentize($dark_sidebar_fg, 0.95);
+          box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
+                      inset 38px 0 0 0 $selected_bg_color;
+          background-image: -gtk-scaled(url("assets/selected-dot.png"),
+                                        url("assets/selected-dot@2.png"));
+          background-repeat: no-repeat;
+          background-position: 42px center;
+        }
+  
+        button.sidebar-button {
+          color: $dark_sidebar_fg;
+  
+          &:hover { @include button(hover); }
+          &:active { @include button(active); }
+  
+          &:not(:hover):not(:active) > image { opacity: 0.5 };
+        }
+  
+        &.sidebar-new-bookmark-row {
+          color: $selected_bg_color;
+  
+          // .sidebar-icon { color: inherit; }
+        }
+  
+       &:backdrop { opacity: 0.75; }
+  
+        &:drop(active):not(:disabled) {
+          &, label, .sidebar-icon { color: $drop_target_color; }
+  
+          &:selected {
+            &, label, .sidebar-icon { color: $selected_fg_color; }
+            background-color: $drop_target_color;
+          }
+        }
+      }
+
+      separator { background-color: transparent; }
+
+      scrollbar { @extend %dark_sidebar_scrollbar; }
+    }
+  }
+
+  .nautilus-grid-view.view {
+    gridview.view {
+      @if $background == 'image' {
+        @extend %nautilus_background_image;
+      } @else {
+        background-image: none;
+      }
+
+      child.activatable {
+        border-radius: $bt_radius * 2;
+        border: 1px solid transparent;
+
+        &:hover {
+          border-color: rgba($selected_bg_color, 0.65);
+          background-color: rgba($selected_bg_color, 0.15);
+        }
+
+        &:active, &:selected {
+          @include button(active);
+        }
+      }
+    }
+  }
+
+  placesview {
+    label { color: $alt_fg_color; }
+  }
+
+  .floating-bar {
+    padding: 3px;
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+    border-radius: $bt_radius $bt_radius 0 0;
+    box-shadow: none;
+    border: none;
+  
+    &.bottom.left { border-top-left-radius: 0; }
+    &.bottom.right { border-top-right-radius: 0; }
+  
+    button {
+      border: none;
+      border-radius: $circular_radius;
+      min-height: 0;
+      min-width: 0;
+      padding: 0;
+      margin-right: $cont_padding;
+      -gtk-icon-shadow: none;
+      @extend %selected-button;
+    }
+  }
+}
+
+#NautilusViewCell {
+  clamp box {
+    margin: 0;
+    border-spacing: 0;
+  }
+}
+
+#NautilusQueryEditor { // search entry
+  padding: 2px 2px 2px $cont_padding - 2px;
+  margin-top: $cont_padding;
+  margin-bottom: $cont_padding;
+
+  & > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > menubutton {
+    margin: 0;
+
+    > button {
+      min-width: 16px;
+      min-height: 16px;
+      margin: 0;
+    }
+  }
+
+  > text { margin: 0; }
+
+  #NautilusQueryEditorTag {
+    border-radius: $circular_radius;
+  
+    > button {
+     margin: 3px;
+     padding: 0;
+     min-height: 20px;
+     min-width: 20px;
+    }
+  }
+}
+
+#NautilusPathBar {
+  min-height: 0;
+  background-color: rgba($header_fg, 0.1);
+  border-radius: $bt_radius + 2px;
+  margin: 6px 0;
+  padding: 0 1px;
+  border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
+
+  #NautilusPathButton {
+    margin: 2px 1px;
+    @extend %nautilus_dir_buttons;
+
+    label.dim-label {
+      color: $alt_header_fg;
+
+      &:hover, &:active, &:checked {
+        color: $header_fg;
+      }
+    }
+
+    &.current-dir {
+      color: $header_fg;
+
+      &:hover, &:active {
+        background: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  > menubutton > button {
+    border: none;
+    margin: 2px 1px;
+    @extend %nautilus_dir_buttons;
+  }
+}
+
+//
+// Gnome Control Center
+//
+window.dialog {
+  > box > stack > box > box {
+    > notebook.frame {
+      border-width: 0 0 0 1px;
+      border-radius: 0;
+    }
+  }
+}

@@ -15,7 +15,7 @@ SRC_DIR=$(cd $(dirname $0) && pwd)
 THEME_NAME=Qogir
 THEME_VARIANTS=('' '-Manjaro' '-Ubuntu')
 COLOR_VARIANTS=('' '-Light' '-Dark')
-LOGO_NAME=''
+ICON_NAME=''
 
 image=''
 window=''
@@ -53,9 +53,11 @@ OPTIONS:
 
   -c, --color VARIANT     Specify theme color variant(s) [standard|light|dark] (Default: All variants)
 
-  -l, --logo VARIANT      Specify logo icon on nautilus [default|manjaro|ubuntu|fedora|debian|arch|gnome|budgie|popos|gentoo|void|zorin|mxlinux|opensuse] (Default: mountain icon)
+  -i, --icon VARIANT      Specify logo icon on nautilus [default|manjaro|ubuntu|fedora|debian|arch|gnome|budgie|popos|gentoo|void|zorin|mxlinux|opensuse] (Default: mountain icon)
 
   -g, --gdm               Install GDM theme, this option need root user authority! please run this with sudo
+
+  -l, --libadwaita        Install link to gtk4 config for theming libadwaita
 
   -r, --remove,
   -u, --uninstall         Uninstall/Remove installed themes
@@ -74,7 +76,7 @@ install() {
   local name=${2}
   local theme=${3}
   local color=${4}
-  local logo=${5}
+  local icon=${5}
 
   [[ ${color} == '-Dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-Light' ]] && local ELSE_LIGHT=${color}
@@ -115,11 +117,11 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
   cp -r ${SRC_DIR}/src/gtk/assets/assets${theme}                                     ${THEME_DIR}/gtk-3.0/assets
 
-  if [[ -f ${SRC_DIR}/src/gtk/assets/logos/logo-${logo}.svg ]] ; then
-    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo-${logo}.svg                           ${THEME_DIR}/gtk-3.0/assets/logo.svg
-    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo@2-${logo}.svg                         ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
+  if [[ -f ${SRC_DIR}/src/gtk/assets/logos/logo-${icon}.svg ]] ; then
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo-${icon}.svg                           ${THEME_DIR}/gtk-3.0/assets/logo.svg
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo@2-${icon}.svg                         ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
   else
-    echo "${logo} icon not supported, default icon will install..."
+    echo "${icon} icon not supported, default icon will install..."
     cp -r ${SRC_DIR}/src/gtk/assets/logos/logo-.svg                                  ${THEME_DIR}/gtk-3.0/assets/logo.svg
     cp -r ${SRC_DIR}/src/gtk/assets/logos/logo@2-.svg                                ${THEME_DIR}/gtk-3.0/assets/logo@2.svg
   fi
@@ -140,11 +142,11 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/gtk-4.0
   cp -r ${SRC_DIR}/src/gtk/assets/assets${theme}                                     ${THEME_DIR}/gtk-4.0/assets
 
-  if [[ -f ${SRC_DIR}/src/gtk/assets/logos/logo-${logo}.svg ]] ; then
-    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo-${logo}.svg                           ${THEME_DIR}/gtk-4.0/assets/logo.svg
-    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo@2-${logo}.svg                         ${THEME_DIR}/gtk-4.0/assets/logo@2.svg
+  if [[ -f ${SRC_DIR}/src/gtk/assets/logos/logo-${icon}.svg ]] ; then
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo-${icon}.svg                           ${THEME_DIR}/gtk-4.0/assets/logo.svg
+    cp -r ${SRC_DIR}/src/gtk/assets/logos/logo@2-${icon}.svg                         ${THEME_DIR}/gtk-4.0/assets/logo@2.svg
   else
-    echo "${logo} icon not supported, default icon will install..."
+    echo "${icon} icon not supported, default icon will install..."
     cp -r ${SRC_DIR}/src/gtk/assets/logos/logo-.svg                                  ${THEME_DIR}/gtk-4.0/assets/logo.svg
     cp -r ${SRC_DIR}/src/gtk/assets/logos/logo@2-.svg                                ${THEME_DIR}/gtk-4.0/assets/logo@2.svg
   fi
@@ -161,23 +163,16 @@ install() {
 
   cp -r ${SRC_DIR}/src/gtk/assets/thumbnail${theme}${ELSE_DARK}.png                  ${THEME_DIR}/gtk-4.0/thumbnail.png
 
-  # link gtk4.0 for libadwaita
-  mkdir -p                                                                           ${HOME}/.config/gtk-4.0
-  rm -rf ${HOME}/.config/gtk-4.0/{assets,gtk.css,gtk-dark.css}
-  ln -sf ${THEME_DIR}/gtk-4.0/assets                                                 ${HOME}/.config/gtk-4.0/assets
-  ln -sf ${THEME_DIR}/gtk-4.0/gtk.css                                                ${HOME}/.config/gtk-4.0/gtk.css
-  ln -sf ${THEME_DIR}/gtk-4.0/gtk-dark.css                                           ${HOME}/.config/gtk-4.0/gtk-dark.css
-
   # GNOME SHELL
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
   cp -r ${SRC_DIR}/src/gnome-shell/common-assets                                     ${THEME_DIR}/gnome-shell/assets
   cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/{background.jpg,calendar-today.svg} ${THEME_DIR}/gnome-shell/assets
   cp -r ${SRC_DIR}/src/gnome-shell/assets${theme}/assets${ELSE_DARK}/*.svg           ${THEME_DIR}/gnome-shell/assets
 
-  if [[ -f ${SRC_DIR}/src/gnome-shell/logos/logo-${logo}.svg ]] ; then
-    cp -r ${SRC_DIR}/src/gnome-shell/logos/logo-${logo}.svg                          ${THEME_DIR}/gnome-shell/assets/activities.svg
+  if [[ -f ${SRC_DIR}/src/gnome-shell/logos/logo-${icon}.svg ]] ; then
+    cp -r ${SRC_DIR}/src/gnome-shell/logos/logo-${icon}.svg                          ${THEME_DIR}/gnome-shell/assets/activities.svg
   else
-    echo "${logo} icon not supported, Qogir icon will install..."
+    echo "${icon} icon not supported, Qogir icon will install..."
     cp -r ${SRC_DIR}/src/gnome-shell/logos/logo-qogir.svg                            ${THEME_DIR}/gnome-shell/assets/activities.svg
   fi
 
@@ -352,12 +347,16 @@ while [[ $# -gt 0 ]]; do
       name="${2}"
       shift 2
       ;;
-    -l|--logo)
-      logo="${2}"
+    -i|--icon)
+      icon="${2}"
       shift 2
       ;;
     -g|--gdm)
       gdm='true'
+      shift
+      ;;
+    -l|--libadwaita)
+      libadwaita="true"
       shift
       ;;
     -r|--remove|-u|--uninstall)
@@ -402,15 +401,18 @@ while [[ $# -gt 0 ]]; do
         case "${color}" in
           standard)
             colors+=("${COLOR_VARIANTS[0]}")
-            shift 1
+            lcolors+=("${COLOR_VARIANTS[0]}")
+            shift
             ;;
           light)
             colors+=("${COLOR_VARIANTS[1]}")
-            shift 1
+            lcolors+=("${COLOR_VARIANTS[1]}")
+            shift
             ;;
           dark)
             colors+=("${COLOR_VARIANTS[2]}")
-            shift 1
+            lcolors+=("${COLOR_VARIANTS[2]}")
+            shift
             ;;
           -*|--*)
             break
@@ -530,32 +532,24 @@ install_package() {
   fi
 }
 
-install_theme() {
-  for theme in "${themes[@]-${THEME_VARIANTS[0]}}"; do
-    for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
-      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}" "${logo:-${LOGO_NAME}}"
-    done
-  done
-
-  for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
-    for screen in '' '-hdpi' '-xhdpi'; do
-      install_xfwm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${screen}"
-    done
-  done
+uninstall_link() {
+  rm -rf "${HOME}/.config/gtk-4.0"/{assets,gtk.css,gtk-dark.css}
 }
 
-uninstall_theme() {
-  for theme in "${themes[@]-${THEME_VARIANTS[@]}}"; do
-    for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
-      for screen in '' '-hdpi' '-xhdpi'; do
-        uninstall "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}" "${screen}"
-      done
-    done
-  done
+link_libadwaita() {
+  local dest="${1}"
+  local name="${2}"
+  local theme="${3}"
+  local lcolor="${4}"
 
-  [[ -L "${HOME}/.config/gtk-4.0/assets" ]] && rm -rf "${HOME}/.config/gtk-4.0/assets" && echo -e "Removing ${HOME}/.config/gtk-4.0/assets"
-  [[ -L "${HOME}/.config/gtk-4.0/gtk.css" ]] && rm -rf "${HOME}/.config/gtk-4.0/gtk.css" && echo -e "Removing ${HOME}/.config/gtk-4.0/gtk.css"
-  [[ -L "${HOME}/.config/gtk-4.0/gtk-dark.css" ]] && rm -rf "${HOME}/.config/gtk-4.0/gtk-dark.css" && echo -e "Removing ${HOME}/.config/gtk-4.0/gtk-dark.css"
+  local THEME_DIR="${1}/${2}${3}${4}"
+
+  echo -e "\nLink '$THEME_DIR/gtk-4.0' to '${HOME}/.config/gtk-4.0' for libadwaita..."
+
+  mkdir -p                                                                      "${HOME}/.config/gtk-4.0"
+  ln -sf "${THEME_DIR}/gtk-4.0/assets"                                          "${HOME}/.config/gtk-4.0/assets"
+  ln -sf "${THEME_DIR}/gtk-4.0/gtk.css"                                         "${HOME}/.config/gtk-4.0/gtk.css"
+  ln -sf "${THEME_DIR}/gtk-4.0/gtk-dark.css"                                    "${HOME}/.config/gtk-4.0/gtk-dark.css"
 }
 
 tweaks_temp() {
@@ -610,18 +604,59 @@ theme_tweaks() {
   fi
 }
 
+link_theme() {
+  for theme in "${themes[@]-${THEME_VARIANTS[0]}}"; do
+    for lcolor in "${lcolors[@]-${COLOR_VARIANTS[1]}}"; do
+      link_libadwaita "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$lcolor"
+    done
+  done
+}
+
+install_theme() {
+  for theme in "${themes[@]-${THEME_VARIANTS[0]}}"; do
+    for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
+      install "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${color}" "${icon:-${ICON_NAME}}"
+    done
+  done
+
+  for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
+    for screen in '' '-hdpi' '-xhdpi'; do
+      install_xfwm "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${color}" "${screen}"
+    done
+  done
+}
+
+uninstall_theme() {
+  for theme in "${themes[@]-${THEME_VARIANTS[@]}}"; do
+    for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
+      for screen in '' '-hdpi' '-xhdpi'; do
+        uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${color}" "${screen}"
+      done
+    done
+  done
+}
+
 ./clean-old-theme.sh
 
 if [[ "${gdm:-}" != 'true' && "${remove:-}" != 'true' ]]; then
   install_theme
+
+   if [[ "$libadwaita" == 'true' ]]; then
+     uninstall_link && link_theme
+   fi
 fi
 
 if [[ "${gdm:-}" != 'true' && "${remove:-}" == 'true' ]]; then
-  uninstall_theme
+  if [[ "$libadwaita" == 'true' ]]; then
+    echo -e "\nUninstall ${HOME}/.config/gtk-4.0 links ..."
+    uninstall_link
+  else
+    echo && uninstall_theme && uninstall_link
+  fi
 fi
 
 if [[ "${gdm:-}" == 'true' && "${remove:-}" != 'true' && "$UID" -eq "$ROOT_UID" ]]; then
-  install_theme && install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}"
+  install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}"
 fi
 
 if [[ "${gdm:-}" == 'true' && "${remove:-}" == 'true' && "$UID" -eq "$ROOT_UID" ]]; then

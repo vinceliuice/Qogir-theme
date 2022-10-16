@@ -54,9 +54,11 @@ Usage:  ./install.sh  [OPTIONS...]
 
   -c, --color VARIANT     Specify theme color variant(s) [standard|light|dark] (Default: All variants)
 
-  -l, --logo VARIANT      Specify logo icon on nautilus [default|manjaro|ubuntu|fedora|debian|arch|gnome|budgie|popos|gentoo|void|zorin|mxlinux|opensuse] (Default: mountain icon)
+  -i, --icon VARIANT      Specify logo icon on nautilus [default|manjaro|ubuntu|fedora|debian|arch|gnome|budgie|popos|gentoo|void|zorin|mxlinux|opensuse] (Default: mountain icon)
 
   -g, --gdm               Install GDM theme, this option need root user authority! please run this with sudo
+
+  -l, --libadwaita        Install link to gtk4 config for theming libadwaita
 
   -r, --remove,
   -u, --uninstall         Uninstall/Remove installed themes
@@ -77,6 +79,12 @@ Install default themes
 
 ```sh
 ./install.sh
+```
+
+Install dark rounded window version and links for libadwaita
+
+```sh
+./install.sh --tweaks round -c dark -l
 ```
 
 Install rounded window version with square window button and nautilus background image

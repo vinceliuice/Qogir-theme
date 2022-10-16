@@ -151,12 +151,17 @@ label {
 
   &:disabled {
     color: $insensitive_fg_color;
+    opacity: 1;
+    filter: none;
+
     button & { color: inherit; }
+
     > selection { color: mix($selected_fg_color, $selected_bg_color, 50%); }
   }
 
   &.error {
    color: $error_color;
+
    &:disabled { color: transparentize($error_color, 0.5); }
   }
 }
@@ -472,7 +477,6 @@ $button_transition: all 200ms $ease-out-quad;
   }
 }
 
-%button,
 button {
   min-height: 22px;
   min-width: 20px;
@@ -518,18 +522,11 @@ button {
   }
 
   &:disabled {
+    filter: none;
     @include button(insensitive);
 
     &:active, &:checked {
       @include button(insensitive-active);
-    }
-  }
-
-  &:disabled {
-    filter: opacity(0.45);
-
-    label {
-      filter: none;
     }
   }
 
@@ -1321,22 +1318,24 @@ toolbar {
 
 searchbar > revealer > box {
   padding: $cont_padding;
-  border-spacing: 6px;
+  border-spacing: $cont_padding;
   border-style: solid;
   border-color: $solid_borders_color;
   background-color: $bg_color;
   border-width: 0 0 1px;
   box-shadow: none;
 
-  entry { margin: 0; }
+  entry, button { margin: 0; }
 }
 
 actionbar > revealer > box {
   padding: $cont_padding;
-  border-spacing: 6px;
+  border-spacing: $cont_padding;
   border-top: 1px solid $borders_color;
   background-color: darken($bg_color, 3%);
   box-shadow: none;
+
+  entry, button, menubutton { margin: 0; }
 }
 
 //
@@ -1347,6 +1346,8 @@ $_header_radius: 0;
 
 headerbar {
   padding: 0;
+  margin: 0;
+  border: none;
   color: $header_fg;
   box-shadow: inset 0 -1px $borders_color;
   background-color: $header_bg;
@@ -1356,6 +1357,24 @@ headerbar {
     transition: $backdrop_transition;
     color: transparentize($header_fg, 0.3);
     background-color: $header_bg_backdrop;
+  }
+
+  &.flat {
+    background-color: transparent;
+    color: $text_color;
+    box-shadow: none;
+
+    @if $variant == 'light' and $titlebar == 'dark' {
+      button:not(.suggested-action):not(.destructive-action) {
+        @include button(undecorated);
+
+        &:hover { @include button(hover); }
+
+        &:checked, &:active { @include button(active); }
+
+        &:disabled { @include button(insensitive); }
+      }
+    }
   }
 
   .title {
@@ -1370,6 +1389,93 @@ headerbar {
     margin-top: -3px;
     @extend .dim-label;
   }
+
+  @extend %header_widgets;
+
+  > windowhandle > box {
+    padding: 0 $cont_padding;
+
+    &,
+    > box.start,
+    > box.end {
+      border-spacing: $cont_padding;
+    }
+  }
+
+  entry,
+  spinbutton,
+  button,
+  stackswitcher,
+  separator {
+    margin-top: $cont_padding;
+    margin-bottom: $cont_padding;
+  }
+
+  splitbutton { filter: none; }
+
+  // Reset margins for buttons inside menubutton
+  menubutton > button,
+  spinbutton > button,
+  splitbutton > button {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &.windowhandle {
+    viewswitcher button {
+      border-radius: 0;
+      margin-top: -1px;
+      margin-bottom: -1px;
+      padding: 0 10px;
+      min-height: 0;
+      border: none;
+      outline: none;
+      background-clip: padding-box;
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $selected_bg_color 0%,
+                                    transparent 0%)
+                                    0 0 0 / 0 0 0;
+
+      &:hover {
+        color: $alt_header_fg;
+        background-color: rgba($header_fg, 0.06);
+      }
+
+      &:active {
+        color: $header_fg;
+        background-color: rgba($header_fg, 0.15);
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $selected_bg_color 100%,
+                                      transparent 0%)
+                                      0 0 3 / 0 0 3px;
+      }
+
+      &:checked {
+        color: $header_fg;
+        background-color: rgba($header_fg, 0.1);
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $selected_bg_color 100%,
+                                      transparent 0%)
+                                      0 0 3 / 0 0 3px;
+      }
+
+      &:disabled {
+        color: rgba($header_fg, 0.35);
+        background-color: transparent;
+      }
+
+      &:checked:disabled {
+        color: rgba($header_fg, 0.35);
+        background-color: transparent;
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      rgba($selected_bg_color, 0.35) 100%,
+                                      transparent 0%)
+                                      0 0 3 / 0 0 3px;
+      }
+    }
+  }
+
+  separator { @extend %header_separator; }
 
   // Selectionmode
   &.selection-mode {
@@ -1448,91 +1554,6 @@ headerbar {
   }
 
   separator.titlebutton { @extend %header_separator; }
-}
-
-headerbar {
-  @extend %header_widgets;
-
-  > windowhandle > box {
-    padding: 0 $cont_padding;
-
-    &,
-    > box.start,
-    > box.end {
-      border-spacing: $cont_padding;
-    }
-  }
-
-  entry,
-  spinbutton,
-  separator:not(.sidebar),
-  button,
-  menubutton {
-    margin-top: $cont_padding;
-    margin-bottom: $cont_padding;
-  }
-
-  // Reset margins for buttons inside menubutton
-  menubutton > button {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  &.windowhandle {
-    viewswitcher button {
-      border-radius: 0;
-      margin-top: -1px;
-      margin-bottom: -1px;
-      padding: 0 10px;
-      min-height: 0;
-      border: none;
-      outline: none;
-      background-clip: padding-box;
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $selected_bg_color 0%,
-                                    transparent 0%)
-                                    0 0 0 / 0 0 0;
-
-      &:hover {
-        color: $alt_header_fg;
-        background-color: rgba($header_fg, 0.06);
-      }
-
-      &:active {
-        color: $header_fg;
-        background-color: rgba($header_fg, 0.15);
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $selected_bg_color 100%,
-                                      transparent 0%)
-                                      0 0 3 / 0 0 3px;
-      }
-
-      &:checked {
-        color: $header_fg;
-        background-color: rgba($header_fg, 0.1);
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $selected_bg_color 100%,
-                                      transparent 0%)
-                                      0 0 3 / 0 0 3px;
-      }
-
-      &:disabled {
-        color: rgba($header_fg, 0.35);
-        background-color: transparent;
-      }
-
-      &:checked:disabled {
-        color: rgba($header_fg, 0.35);
-        background-color: transparent;
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      rgba($selected_bg_color, 0.35) 100%,
-                                      transparent 0%)
-                                      0 0 3 / 0 0 3px;
-      }
-    }
-  }
-
-  separator { @extend %header_separator; }
 }
 
 // Fixes split headerbars too
@@ -2745,11 +2766,6 @@ checkbutton, radiobutton {
     &:hover { color: darken($fg_color, 15%); }
     &:disabled { color: $insensitive_fg_color; }
   }
-
-  label:not(:only-child) {
-    &:first-child { margin-left: 4px; }
-    &:last-child { margin-right: 4px; }
-  }
 }
 
 check,
@@ -2763,8 +2779,6 @@ radio {
   border: none;
   box-shadow: none;
   color: transparent;
-
-  &:only-child { margin: 0; }
 }
 
 //

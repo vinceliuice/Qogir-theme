@@ -337,6 +337,7 @@ entry:drop(active):focus, entry:drop(active) {
 .osd entry:disabled {
   color: rgba(211, 218, 227, 0.55);
   background-color: rgba(51, 54, 65, 0.85);
+  opacity: 1;
 }
 
 .osd entry selection:focus, .osd entry selection {
@@ -450,6 +451,7 @@ button:disabled {
 
 button:disabled label, button:disabled {
   color: rgba(230, 235, 239, 0.45);
+  opacity: 1;
 }
 
 button:disabled:active, button:disabled:checked {
@@ -530,6 +532,7 @@ button.osd:active, button.osd:checked {
 }
 
 button.osd:disabled {
+  opacity: 1;
   color: #5b5f68;
   border-color: #434655;
   background-color: rgba(51, 54, 65, 0.85);
@@ -556,6 +559,7 @@ button.osd:disabled {
 }
 
 .osd button:disabled {
+  opacity: 1;
   color: #5b5f68;
   border-color: #434655;
   background-color: rgba(51, 54, 65, 0.85);
@@ -575,6 +579,7 @@ button.osd:disabled {
 }
 
 .osd button.flat:disabled {
+  opacity: 1;
   color: #5b5f68;
   border-color: #434655;
   background-color: rgba(51, 54, 65, 0.85);
@@ -634,6 +639,7 @@ button.suggested-action:disabled {
 
 button.suggested-action:disabled label, button.suggested-action:disabled {
   color: rgba(230, 235, 239, 0.45);
+  opacity: 1;
 }
 
 button.destructive-action {
@@ -678,6 +684,7 @@ button.destructive-action:disabled {
 
 button.destructive-action:disabled label, button.destructive-action:disabled {
   color: rgba(230, 235, 239, 0.45);
+  opacity: 1;
 }
 
 .stack-switcher > button {
@@ -798,6 +805,7 @@ button.circular-button label, .app-notification button.flat label, button.close 
 
 .inline-toolbar toolbutton > button:disabled label, .inline-toolbar toolbutton > button:disabled {
   color: rgba(230, 235, 239, 0.45);
+  opacity: 1;
 }
 
 .inline-toolbar toolbutton > button:disabled:active, .inline-toolbar toolbutton > button:disabled:checked {
@@ -2001,6 +2009,7 @@ window.thunar toolbar entry:disabled, window.thunar .inline-toolbar entry:disabl
   color: rgba(224, 229, 235, 0.55);
   border-color: rgba(255, 255, 255, 0.12);
   background-color: rgba(33, 35, 42, 0.85);
+  opacity: 1;
 }
 
 window.thunar toolbar entry selection:focus, window.thunar .inline-toolbar entry selection:focus, .caja-navigation-window toolbar#Toolbar.primary-toolbar entry selection:focus, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar entry selection:focus, .nemo-window .primary-toolbar entry selection:focus, headerbar entry selection:focus {
@@ -2078,6 +2087,7 @@ window.thunar toolbar button:disabled, window.thunar .inline-toolbar button:disa
 
 window.thunar toolbar button:disabled label, window.thunar .inline-toolbar button:disabled label, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled label, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled label, .nemo-window .primary-toolbar button:disabled label, headerbar button:disabled label, window.thunar toolbar button:disabled, window.thunar .inline-toolbar button:disabled, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled, .nemo-window .primary-toolbar button:disabled, headerbar button:disabled {
   color: rgba(224, 229, 235, 0.5);
+  opacity: 1;
 }
 
 window.thunar toolbar button:disabled:active, window.thunar .inline-toolbar button:disabled:active, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled:active, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled:active, .nemo-window .primary-toolbar button:disabled:active, headerbar button:disabled:active, window.thunar toolbar button:disabled:checked, window.thunar .inline-toolbar button:disabled:checked, .caja-navigation-window toolbar#Toolbar.primary-toolbar button:disabled:checked, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button:disabled:checked, .nemo-window .primary-toolbar button:disabled:checked, headerbar button:disabled:checked {
@@ -2297,6 +2307,7 @@ headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar) > button
 
 .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action:disabled label, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action:disabled label, .nemo-window .primary-toolbar button.suggested-action:disabled label, headerbar button.suggested-action:disabled label, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action:disabled, .nemo-window .primary-toolbar button.suggested-action:disabled, headerbar button.suggested-action:disabled {
   color: rgba(224, 229, 235, 0.5);
+  opacity: 1;
 }
 
 .caja-navigation-window toolbar#Toolbar.primary-toolbar button.suggested-action:backdrop, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.suggested-action:backdrop, .nemo-window .primary-toolbar button.suggested-action:backdrop, headerbar button.suggested-action:backdrop {
@@ -2338,6 +2349,7 @@ headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar) > button
 
 .caja-navigation-window toolbar#Toolbar.primary-toolbar button.destructive-action:disabled label, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.destructive-action:disabled label, .nemo-window .primary-toolbar button.destructive-action:disabled label, headerbar button.destructive-action:disabled label, .caja-navigation-window toolbar#Toolbar.primary-toolbar button.destructive-action:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.destructive-action:disabled, .nemo-window .primary-toolbar button.destructive-action:disabled, headerbar button.destructive-action:disabled {
   color: rgba(224, 229, 235, 0.5);
+  opacity: 1;
 }
 
 .caja-navigation-window toolbar#Toolbar.primary-toolbar button.destructive-action:backdrop, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar button.destructive-action:backdrop, .nemo-window .primary-toolbar button.destructive-action:backdrop, headerbar button.destructive-action:backdrop {
@@ -2394,6 +2406,7 @@ headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar) > button
 
 .caja-navigation-window toolbar#Toolbar.primary-toolbar combobox > .linked > button.combo:disabled label, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar combobox > .linked > button.combo:disabled label, .nemo-window .primary-toolbar combobox > .linked > button.combo:disabled label, headerbar combobox > .linked > button.combo:disabled label, .caja-navigation-window toolbar#Toolbar.primary-toolbar combobox > .linked > button.combo:disabled, .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar combobox > .linked > button.combo:disabled, .nemo-window .primary-toolbar combobox > .linked > button.combo:disabled, headerbar combobox > .linked > button.combo:disabled {
   color: rgba(224, 229, 235, 0.5);
+  opacity: 1;
 }
 
 .caja-navigation-window toolbar#Toolbar.primary-toolbar combobox > .linked > entry.combo:dir(ltr), .caja-navigation-window #Toolbar.primary-toolbar.inline-toolbar combobox > .linked > entry.combo:dir(ltr), .nemo-window .primary-toolbar combobox > .linked > entry.combo:dir(ltr), headerbar combobox > .linked > entry.combo:dir(ltr) {
@@ -4231,6 +4244,7 @@ window.thunar > grid > paned > .sidebar > treeview.view:disabled image, .budgie-
 }
 
 .app-notification button:disabled {
+  opacity: 1;
   color: #5b5f68;
   border-color: #434655;
   background-color: rgba(51, 54, 65, 0.85);
@@ -6135,6 +6149,7 @@ headerbar.titlebar.incognito-mode entry:disabled {
   color: rgba(224, 229, 235, 0.55);
   border-color: rgba(255, 255, 255, 0.12);
   background-color: rgba(33, 35, 42, 0.85);
+  opacity: 1;
 }
 
 notebook > box > stack > box.vertical > paned.vertical > overlay > .floating-bar {
@@ -6163,6 +6178,7 @@ notebook > box > stack > box.vertical > paned.vertical > overlay > .floating-bar
   color: rgba(224, 229, 235, 0.55);
   border-color: rgba(255, 255, 255, 0.12);
   background-color: rgba(33, 35, 42, 0.85);
+  opacity: 1;
 }
 
 .background headerbar entry.starred > image.right {
@@ -6510,6 +6526,7 @@ window.background.csd.unified.fullscreen > decoration-overlay {
 .nemo-window notebook .primary-toolbar combobox > .linked > button.combo:disabled label,
 .nemo-window notebook .primary-toolbar combobox > .linked > button.combo:disabled {
   color: rgba(230, 235, 239, 0.45);
+  opacity: 1;
 }
 
 .nemo-window notebook .primary-toolbar button:disabled:active, .nemo-window notebook .primary-toolbar button:disabled:checked,
@@ -8882,6 +8899,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 .budgie-switcher-window button:disabled,
 .budgie-osd-window button:disabled {
   color: rgba(224, 229, 235, 0.5);
+  opacity: 1;
 }
 
 .slate-notification .notification-title,
@@ -9467,6 +9485,7 @@ MarlinViewWindow FMListView, MarlinViewWindow FMColumnView {
   color: rgba(224, 229, 235, 0.55);
   border-color: rgba(255, 255, 255, 0.12);
   background-color: rgba(33, 35, 42, 0.85);
+  opacity: 1;
 }
 
 .marlin-pathbar.pathbar:active, .marlin-pathbar.pathbar:checked {
@@ -9673,6 +9692,7 @@ scale.warmth trough {
 
 #content_frame button:disabled label, #content_frame button:disabled {
   color: rgba(230, 235, 239, 0.45);
+  opacity: 1;
 }
 
 #buttonbox_frame {
@@ -9707,6 +9727,7 @@ scale.warmth trough {
 }
 
 #buttonbox_frame button:disabled {
+  opacity: 1;
   color: #5b5f68;
   border-color: #434655;
   background-color: rgba(51, 54, 65, 0.85);
