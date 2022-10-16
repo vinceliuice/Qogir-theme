@@ -477,8 +477,32 @@ preferencesgroup > box {
 viewswitcher {
   margin: 0;
 
+  button.toggle {
+    &:hover {
+      background-color: rgba($header_fg, 0.06);
+      color: $header_fg;
+    }
+
+    &:active {
+      background-color: rgba($header_fg, 0.16);
+      color: $header_fg;
+    }
+
+    &:checked {
+      background-color: rgba($header_fg, 0.08);
+      color: $header_fg;
+      box-shadow: inset 0 -2px $selected_bg_color;
+    }
+  }
+
   &.wide {
-    border-spacing: 3px;
+    border-spacing: 0;
+
+    button.toggle {
+      border-radius: 0;
+      margin: 0;
+      border: none;
+    }
   }
 
   &.narrow button.toggle {
@@ -496,9 +520,9 @@ viewswitcher {
     > stack > box {
       &.narrow {
         font-size: 0.75rem;
-        padding-top: 7px;
+        padding-top: 6px;
         padding-bottom: 5px;
-        border-spacing: 4px;
+        border-spacing: 3px;
 
         > stack > label {
           padding-left: 8px;
@@ -517,6 +541,28 @@ viewswitcher {
 // AdwViewSwitcherBar
 viewswitcherbar actionbar > revealer > box {
   padding: 0;
+
+  viewswitcher {
+    margin-top: -1px;
+
+    button.toggle {
+      &:hover {
+        background-color: rgba($fg_color, 0.06);
+        color: $fg_color;
+      }
+  
+      &:active {
+        background-color: rgba($fg_color, 0.16);
+        color: $fg_color;
+      }
+  
+      &:checked {
+        background-color: rgba($fg_color, 0.08);
+        color: $fg_color;
+        box-shadow: inset 0 2px $selected_bg_color;
+      }
+    }
+  }
 }
 
 // AdwViewSwitcherTitle
@@ -540,7 +586,7 @@ indicatorbin {
     > label {
       font-size: 0.6rem;
       font-weight: bold;
-      padding: 1px 4px;
+      padding: 0 4px;
       color: white;
     }
   }

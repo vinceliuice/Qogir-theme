@@ -1,3 +1,126 @@
+// Dark sidebar theme apps
+$side_theme_bg: $dark_sidebar_icon_bg;
+$side_theme_fg: rgba($dark_sidebar_icon_fg, 0.8);
+$side_theme_alt_fg: $dark_sidebar_icon_fg;
+
+%side_background {
+  color: $side_theme_fg;
+  background-color: $side_theme_bg;
+
+  &:disabled, label:disabled {
+    color: rgba($side_theme_alt_fg, 0.35);
+  }
+}
+
+%side_buttons {
+  color: $side_theme_fg;
+  background-color: rgba($dark_sidebar_icon_fg, 0.15);
+  border: none;
+
+  &:hover {
+    color: $side_theme_alt_fg;
+    background-color: rgba($dark_sidebar_icon_fg, 0.25);
+  }
+
+  &:focus {
+    color: $side_theme_fg;
+    box-shadow: none;
+  }
+
+  &:active, &:checked {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+  }
+
+  &:disabled {
+    color: rgba($side_theme_alt_fg, 0.35);
+    background-color: rgba($side_theme_alt_fg, 0.08);
+  }
+
+  @at-root %side_buttons_flat, &.flat {
+    border: none;
+    background: none;
+    box-shadow: none;
+    color: $side_theme_fg;
+
+    &:hover {
+      color: $side_theme_alt_fg;
+      background-color: rgba($dark_sidebar_icon_fg, 0.15);
+    }
+
+    &:focus {
+      color: $side_theme_fg;
+      box-shadow: none;
+    }
+
+    &:active, &:checked {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+
+    &:disabled {
+      color: rgba($side_theme_alt_fg, 0.35);
+    }
+  }
+}
+
+%side_views {
+  color: $side_theme_fg;
+  background-color: $side_theme_bg;
+
+  &:hover {
+    color: $side_theme_alt_fg;
+    background-color: mix($side_theme_alt_fg, $side_theme_bg, 10%);
+  }
+
+  &:disabled, label:disabled {
+    color: rgba($side_theme_alt_fg, 0.35);
+  }
+
+  &:selected {
+    @extend %selected_items;
+
+    &:hover { background-color: mix(black, $selected_bg_color, 10%); }
+  }
+}
+
+%side_entry {
+  color: $side_theme_fg;
+  background-color: rgba($side_theme_fg, 0.1);
+  border-color: rgba(white, 0.12);
+
+  image { color: $side_theme_fg; }
+
+  &:focus-within {
+    background-color: rgba($side_theme_fg, 0.12);
+    border-color: $selected_bg_color;
+  }
+
+  &:disabled, label:disabled, image:disabled {
+    color: rgba($side_theme_alt_fg, 0.35);
+  }
+}
+
+%side_searchbar {
+  background: none;
+  box-shadow: none;
+  border: none;
+
+  > revealer > box {
+    background-color: $side_theme_bg;
+    border: none;
+  }
+}
+
+%side_headerbar {
+  color: $side_theme_fg;
+  background-color: $side_theme_bg;
+  border: none;
+  box-shadow: none;
+
+  button { @extend %side_buttons_flat; }
+}
+
 
 //
 // Nautilus
@@ -329,11 +452,90 @@
 //
 // Gnome Control Center
 //
+
 window.dialog {
   > box > stack > box > box {
     > notebook.frame {
       border-width: 0 0 0 1px;
       border-radius: 0;
     }
+  }
+}
+
+//
+// Dark sidebar style ( Gnome control center / Gnome Calendar / ... )
+//
+
+leaflet.unfolded {
+  > box:last-child {
+    @extend %side_background;
+
+    > headerbar {
+      @extend %side_headerbar;
+    }
+
+    list, .view {
+      color: $side_theme_fg;
+      background-color: transparent;
+    }
+
+    button { @extend %side_buttons; }
+
+    entry { @extend %side_entry; }
+
+    searchbar { @extend %side_searchbar; }
+
+    list {
+      > separator { background-color: transparent; }
+
+      > row { @extend %side_views; }
+    }
+
+    popover.background {
+      > contents, > arrow {
+        @extend %side_background;
+
+        .button, button, modelbutton {
+          @extend %side_buttons_flat;
+        }
+      }
+    }
+  }
+
+  > separator, > separator.sidebar {
+    min-width: if($variant == 'light', 0, 1px);
+  }
+}
+
+//
+// Gnome Calendar
+//
+
+toastoverlay {
+  > leaflet.unfolded {
+    > box:last-child {
+      event.color-light {
+        color: $side_theme_fg;
+      }
+
+      label.weekday {
+        color: rgba($side_theme_fg, 0.35);
+      }
+    
+      label.weeknum {
+        color: rgba($side_theme_fg, 0.55);
+      }
+    
+      widget.current-week {
+        border-radius: 6px;
+        background-color: rgba($side_theme_alt_fg, 0.08);
+      }
+    }
+  }
+
+  navigator > button.flat.pill.popup.toggle {
+    min-height: 24px;
+    min-width: 24px;
+    padding: 2px;
   }
 }

@@ -1421,60 +1421,6 @@ headerbar {
     margin-bottom: 0;
   }
 
-  &.windowhandle {
-    viewswitcher button {
-      border-radius: 0;
-      margin-top: -1px;
-      margin-bottom: -1px;
-      padding: 0 10px;
-      min-height: 0;
-      border: none;
-      outline: none;
-      background-clip: padding-box;
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $selected_bg_color 0%,
-                                    transparent 0%)
-                                    0 0 0 / 0 0 0;
-
-      &:hover {
-        color: $alt_header_fg;
-        background-color: rgba($header_fg, 0.06);
-      }
-
-      &:active {
-        color: $header_fg;
-        background-color: rgba($header_fg, 0.15);
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $selected_bg_color 100%,
-                                      transparent 0%)
-                                      0 0 3 / 0 0 3px;
-      }
-
-      &:checked {
-        color: $header_fg;
-        background-color: rgba($header_fg, 0.1);
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $selected_bg_color 100%,
-                                      transparent 0%)
-                                      0 0 3 / 0 0 3px;
-      }
-
-      &:disabled {
-        color: rgba($header_fg, 0.35);
-        background-color: transparent;
-      }
-
-      &:checked:disabled {
-        color: rgba($header_fg, 0.35);
-        background-color: transparent;
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      rgba($selected_bg_color, 0.35) 100%,
-                                      transparent 0%)
-                                      0 0 3 / 0 0 3px;
-      }
-    }
-  }
-
   separator { @extend %header_separator; }
 
   // Selectionmode
@@ -3795,7 +3741,7 @@ stacksidebar {
   }
 
   row {
-    padding: 4px 4px;
+    padding: 4px;
 
     > label {
       padding-left: $cont_padding;
@@ -3841,7 +3787,7 @@ separator.sidebar {
 //
 
 .navigation-sidebar {
-  padding: 3px 0; //only vertical padding. horizontal row size would clip
+  padding: 4px 0; //only vertical padding. horizontal row size would clip
 
   > separator {
     margin: 3px 0;
@@ -3851,7 +3797,11 @@ separator.sidebar {
     min-height: 28px;
     padding: 2px 8px;
     border-radius: $bt_radius;
-    margin: 0 3px 2px;
+    margin: 2px 6px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     &:hover,
     &:focus-visible:focus-within {
@@ -3886,8 +3836,6 @@ placessidebar {
   .navigation-sidebar > row {
     // Needs overriding of the GtkListBoxRow padding
     min-height: $medium_size;
-    padding: 2px;
-    outline-offset: -3px;
 
     // Using margins/padding directly in the SidebarRow
     // will make the animation of the new bookmark row jump
