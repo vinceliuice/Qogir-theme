@@ -240,30 +240,30 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
         transition: none;
         color: $dark_sidebar_fg;
         border-radius: 0;
-  
+
         .sidebar-icon { color: transparentize($dark_sidebar_icon_fg, 0.15); }
-  
+
         image.sidebar-icon {
           padding-right: 2px;
         }
-  
+
         label.sidebar-label {
           padding-right: 2px; padding-left: 20px;
         }
-  
+
         &.has-open-popup,
         &:hover {
           background-color: transparentize($dark_sidebar_fg, 0.95);
           box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
                       inset 38px 0 0 0 $dark_sidebar_icon_bg;
         }
-  
+
         &:disabled {
           &, label, image { color: transparentize($dark_sidebar_fg, 0.6); }
         }
-  
+
         &:active { transition: box-shadow 0.2s; }
-  
+
         &:selected.has-open-popup,
         &:selected, &:selected:hover, &:active:hover {
           box-shadow: inset 38px 0 0 0 $selected_bg_color;
@@ -275,7 +275,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
           .sidebar-label { color: $alt_dark_sidebar_fg; }
           // .sidebar-icon { color: inherit; }
         }
-  
+
         &:selected:hover, &:active:hover {
           background-color: transparentize($dark_sidebar_fg, 0.95);
           box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
@@ -285,27 +285,27 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
           background-repeat: no-repeat;
           background-position: 42px center;
         }
-  
+
         button.sidebar-button {
           color: $dark_sidebar_fg;
-  
+
           &:hover { @include button(hover); }
           &:active { @include button(active); }
-  
+
           &:not(:hover):not(:active) > image { opacity: 0.5 };
         }
-  
+
         &.sidebar-new-bookmark-row {
           color: $selected_bg_color;
-  
+
           // .sidebar-icon { color: inherit; }
         }
-  
+
        &:backdrop { opacity: 0.75; }
-  
+
         &:drop(active):not(:disabled) {
           &, label, .sidebar-icon { color: $drop_target_color; }
-  
+
           &:selected {
             &, label, .sidebar-icon { color: $selected_fg_color; }
             background-color: $drop_target_color;
@@ -354,10 +354,10 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     border-radius: $bt_radius $bt_radius 0 0;
     box-shadow: none;
     border: none;
-  
+
     &.bottom.left { border-top-left-radius: 0; }
     &.bottom.right { border-top-right-radius: 0; }
-  
+
     button {
       border: none;
       border-radius: $circular_radius;
@@ -402,7 +402,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 
   #NautilusQueryEditorTag {
     border-radius: $circular_radius;
-  
+
     > button {
      margin: 3px;
      padding: 0;
@@ -459,6 +459,29 @@ window.dialog {
       border-width: 0 0 0 1px;
       border-radius: 0;
     }
+  }
+}
+
+//
+// Calculator
+//
+
+.history-view { background-color: $bg_color; }
+
+#displayitem {
+  border-top: 1px solid $borders_color;
+}
+
+.small .card {
+  border-radius: 0;
+  box-shadow: none;
+
+  &.forecast-card {
+    border-width: 1px 0;
+  }
+
+  &.display-container {
+    border-width: 0 0 1px 0;
   }
 }
 
@@ -521,11 +544,11 @@ toastoverlay {
       label.weekday {
         color: rgba($side_theme_fg, 0.35);
       }
-    
+
       label.weeknum {
         color: rgba($side_theme_fg, 0.55);
       }
-    
+
       widget.current-week {
         border-radius: 6px;
         background-color: rgba($side_theme_alt_fg, 0.08);

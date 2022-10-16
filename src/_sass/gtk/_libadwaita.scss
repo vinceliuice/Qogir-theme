@@ -107,7 +107,9 @@ button {
 
   @at-root %pill_button,
   &.pill {
-    padding: 10px 32px;
+    min-height: $medium_size;
+    min-width: $medium_size;
+    padding: $cont_padding;
     border-radius: $circular_radius;
   }
 
@@ -550,12 +552,12 @@ viewswitcherbar actionbar > revealer > box {
         background-color: rgba($fg_color, 0.06);
         color: $fg_color;
       }
-  
+
       &:active {
         background-color: rgba($fg_color, 0.16);
         color: $fg_color;
       }
-  
+
       &:checked {
         background-color: rgba($fg_color, 0.08);
         color: $fg_color;
