@@ -240,15 +240,18 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
         transition: none;
         color: $dark_sidebar_fg;
         border-radius: 0;
+        padding: 2px 0;
 
         .sidebar-icon { color: transparentize($dark_sidebar_icon_fg, 0.15); }
 
         image.sidebar-icon {
           padding-right: 2px;
+          padding-left: 2px;
         }
 
         label.sidebar-label {
-          padding-right: 2px; padding-left: 20px;
+          padding-right: 2px;
+          padding-left: 20px;
         }
 
         &.has-open-popup,

@@ -5642,6 +5642,7 @@ leaflet.unfolded > box:last-child > headerbar {
   transition: none;
   color: #d8dedf;
   border-radius: 0;
+  padding: 2px 0;
 }
 
 .nautilus-window flap.unfolded > placessidebar row.sidebar-row .sidebar-icon {
@@ -5650,6 +5651,7 @@ leaflet.unfolded > box:last-child > headerbar {
 
 .nautilus-window flap.unfolded > placessidebar row.sidebar-row image.sidebar-icon {
   padding-right: 2px;
+  padding-left: 2px;
 }
 
 .nautilus-window flap.unfolded > placessidebar row.sidebar-row label.sidebar-label {
