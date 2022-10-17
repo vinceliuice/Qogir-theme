@@ -243,7 +243,7 @@ filechooser {
   }
 
   headerbar {
-    padding-left: 48px;
+    padding-left: 44px;
     @extend %headerbar_image; // Set nautilus headerbar mountain icon
 
     &, &:backdrop {
