@@ -1082,6 +1082,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 0.5em;
   spacing: 0.3em;
   background-color: #ffffff;
+  color: rgba(70, 72, 83, 0.75);
   border-radius: 3px;
   margin: 12px 4px 6px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
@@ -1090,23 +1091,32 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .candidate-index {
   padding: 0 0.5em 0 0;
-  color: rgba(70, 72, 83, 0.75);
+  color: rgba(70, 72, 83, 0.75) !important;
 }
 
 .candidate-box {
   padding: 0.3em 0.5em 0.3em 0.5em;
   border-radius: 2px;
   margin-right: 2px;
-  color: rgba(70, 72, 83, 0.75);
+  color: rgba(70, 72, 83, 0.75) !important;
 }
 
-.candidate-box:selected, .candidate-box:hover, .candidate-box:focus {
-  background-color: #5294e2;
-  color: #ffffff;
+.candidate-box:hover, .candidate-box:focus {
+  background-color: rgba(70, 72, 83, 0.1) !important;
+  color: #464853 !important;
 }
 
-.candidate-box:selected .candidate-index, .candidate-box:hover .candidate-index, .candidate-box:focus .candidate-index {
-  color: #ffffff;
+.candidate-box:hover .candidate-index, .candidate-box:focus .candidate-index {
+  color: #464853 !important;
+}
+
+.candidate-box:selected, .candidate-box:checked {
+  background-color: #5294e2 !important;
+  color: #ffffff !important;
+}
+
+.candidate-box:selected .candidate-index, .candidate-box:checked .candidate-index {
+  color: #ffffff !important;
 }
 
 .candidate-page-button-box {
@@ -1123,6 +1133,22 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .candidate-page-button {
   padding: 0 8px;
+}
+
+.candidate-page-button:hover {
+  text-shadow: none;
+  color: #464853;
+  background-color: #f4f4f5;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+}
+
+.candidate-page-button:active {
+  text-shadow: none;
+  color: #ffffff;
+  background-color: #5294e2;
+  border: 1px solid #2679db;
+  box-shadow: none;
 }
 
 .candidate-page-button:insensitive {
