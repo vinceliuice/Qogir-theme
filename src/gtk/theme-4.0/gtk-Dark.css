@@ -696,14 +696,15 @@ button:drop(active) {
 button.osd {
   color: #D3DAE3;
   background-color: #282A33;
-  border-color: #434655;
+  border: none;
   box-shadow: none;
+  background-clip: border-box;
 }
 
 button.osd.image-button {
-  padding: 0;
-  min-height: 36px;
-  min-width: 36px;
+  padding: 6px;
+  min-height: 28px;
+  min-width: 28px;
 }
 
 button.osd:hover {
@@ -1713,10 +1714,6 @@ treeview spinbutton:not(.vertical) > text {
   padding: 1px 2px;
 }
 
-dropdown > popover.menu.background > contents {
-  padding: 0;
-}
-
 dropdown > button > box {
   border-spacing: 6px;
 }
@@ -1794,7 +1791,7 @@ combobox popover {
 
 dropdown popover listview,
 combobox popover listview {
-  margin: 6px 0;
+  margin: 0;
 }
 
 dropdown popover listview > row,
@@ -2748,14 +2745,6 @@ popover.menu {
   padding: 0;
 }
 
-popover.menu > arrow, popover.menu.background > contents {
-  background-color: #32343D;
-  border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 3px;
-  color: #e0e5eb;
-}
-
 popover.menu.background separator {
   margin: 3px 0;
   background-color: #32343D;
@@ -2890,7 +2879,7 @@ popover.background label.separator {
 popover.background > contents > list,
 popover.background > contents > .view,
 popover.background > contents > toolbar {
-  border-style: none;
+  border: none;
   background-color: transparent;
 }
 
@@ -2898,7 +2887,25 @@ popover.background > contents separator {
   margin: 3px;
 }
 
+popover.background > contents list {
+  padding: 0;
+}
+
 popover.background > contents list separator {
+  margin: 0;
+}
+
+popover.background > contents list > row {
+  margin: 0;
+  padding: 3px 6px;
+  border-radius: 2px;
+}
+
+popover.background > contents stack > box {
+  padding: 0;
+}
+
+popover.background > contents > box > button {
   margin: 0;
 }
 
@@ -3710,23 +3717,28 @@ scale > trough > slider {
   border-radius: 100%;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-property: background, border;
+  box-shadow: none;
+  background-clip: padding-box;
 }
 
 scale > trough > slider:hover {
   background-clip: border-box;
   background-color: #5f9ce4;
   border-color: #68a2e6;
+  box-shadow: none;
 }
 
 scale > trough > slider:active {
   background-clip: border-box;
   background-color: #458ce0;
   border-color: #68a2e6;
+  box-shadow: none;
 }
 
 scale > trough > slider:disabled {
   background-color: #e6e6e6;
   border-color: rgba(242, 242, 242, 0.1);
+  box-shadow: none;
 }
 
 row:selected scale > trough > slider, infobar scale > trough > slider {
@@ -4208,6 +4220,10 @@ row.combo listview.inline, row.combo listview.inline:disabled {
 
 row.combo popover > contents {
   min-width: 120px;
+}
+
+button:hover row.activatable:hover, button:active row.activatable:hover {
+  background-color: transparent;
 }
 
 list.content > row, list.content > row.expander row.header,
@@ -5811,6 +5827,27 @@ window.dialog > box > stack > box > box > notebook.frame {
   border-radius: 0;
 }
 
+.history-view {
+  background-color: #32343D;
+}
+
+#displayitem {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.small .card {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.small .card.forecast-card {
+  border-width: 1px 0;
+}
+
+.small .card.display-container {
+  border-width: 0 0 1px 0;
+}
+
 leaflet.unfolded > box:last-child list, leaflet.unfolded > box:last-child .view {
   color: rgba(246, 246, 251, 0.8);
   background-color: transparent;
@@ -5993,7 +6030,9 @@ button.font > box > box > label {
 }
 
 menubutton.pill > button, button.pill {
-  padding: 10px 32px;
+  min-height: 28px;
+  min-width: 28px;
+  padding: 6px;
   border-radius: 9999px;
 }
 

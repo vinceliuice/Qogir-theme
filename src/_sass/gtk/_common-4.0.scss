@@ -597,13 +597,14 @@ button {
   &.osd {
     color: $osd_fg_color;
     background-color: $osd_bg_color;
-    border-color: $osd_button_border;
+    border: none;
     box-shadow: none;
+    background-clip: border-box;
 
     &.image-button {
-      padding: 0;
-      min-height: 36px;
-      min-width: 36px;
+      padding: $cont_padding;
+      min-height: $medium_size;
+      min-width: $medium_size;
     }
 
     &:hover { color: $selected_bg_color; }
@@ -1182,8 +1183,6 @@ spinbutton {
 // Comboboxes
 //
 
-dropdown > popover.menu.background > contents { padding: 0; } //allow search entries with no margin
-
 dropdown > button > box {
   border-spacing: 6px;
 }
@@ -1228,26 +1227,31 @@ combobox {
     border-top-left-radius: $bt_radius;
     border-bottom-left-radius: $bt_radius;
   }
+
   .linked:not(.vertical) > &:last-child > box > button.combo {
     border-top-right-radius: $bt_radius;
     border-bottom-right-radius: $bt_radius;
     border-right-style: solid;
   }
+
   .linked:not(.vertical) > &:only-child > box > button.combo {
     border-radius: $bt_radius;
     border-style: solid;
   }
 
   .linked.vertical > & > box > button.combo { @extend %linked_vertical_middle; }
+
   .linked.vertical > &:first-child > box > button.combo {
     border-top-left-radius: $bt_radius;
     border-top-right-radius: $bt_radius;
   }
+
   .linked.vertical > &:last-child > box > button.combo {
     border-bottom-left-radius: $bt_radius;
     border-bottom-right-radius: $bt_radius;
     border-bottom-style: solid;
   }
+
   .linked.vertical > &:only-child > box > button.combo {
     border-radius: $bt_radius;
     border-style: solid;
@@ -1255,22 +1259,22 @@ combobox {
 
   // newstyle
   popover {
-   margin-top: 6px;
-   padding: 0;
+    margin-top: 6px;
+    padding: 0;
 
-   listview {
-      margin: 6px 0;
+    listview {
+      margin: 0;
 
-      & > row {
-         padding: 6px;
+      > row {
+        padding: 6px;
 
-         &:selected {
-           outline-color: $borders_color;
-           color: $selected_fg_color;
-           background-color: $selected_bg_color;
-         }
+        &:selected {
+          outline-color: $borders_color;
+          color: $selected_fg_color;
+          background-color: $selected_bg_color;
+        }
       }
-   }
+    }
 
     // drodowns with searchboxes on top
     .dropdown-searchbar {
@@ -2110,15 +2114,6 @@ menubar {
 popover.menu {
   padding: 0;
 
-  & > arrow,
-  &.background > contents {
-    background-color: $menu_bg;
-    border-radius: $material_radius;
-    border: 1px solid $borders_color;
-    padding: 3px;
-    color: $text_color;
-  }
-
   &.background separator {
     margin: 3px 0;
     background-color: $menu_bg;
@@ -2262,7 +2257,7 @@ popover.background {
     > list,
     > .view,
     > toolbar {
-      border-style: none;
+      border: none;
       background-color: transparent;
     }
 
@@ -2270,7 +2265,21 @@ popover.background {
       margin: 3px;
     }
 
-    list separator { margin: 0; }
+    list {
+      padding: 0;
+
+      separator { margin: 0; }
+
+      > row {
+        margin: 0;
+        padding: 3px 6px;
+        border-radius: $bt_radius;
+      }
+    }
+
+    stack > box { padding: 0; }
+
+    > box > button { margin: 0; }
 
     listview {
       background-color: transparent;
@@ -2817,25 +2826,29 @@ scale {
     background-color: $selected_fg_color;
     border: 1px solid $_slider_border;
     border-radius: 100%;
-
     transition: $button_transition;
     transition-property: background, border;
+    box-shadow: none;
+    background-clip: padding-box;
 
     &:hover {
       background-clip: border-box;
       background-color: lighten($selected_bg_color, 3%);
       border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
+      box-shadow: none;
     }
 
     &:active {
       background-clip: border-box;
       background-color: darken($selected_bg_color, 3%);
       border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
+      box-shadow: none;
     }
 
     &:disabled {
       background-color: darken($selected_fg_color, 10%);
       border-color: darken($_slider_border, 5%);
+      box-shadow: none;
     }
 
     // Selected list-row and infobar sliders
@@ -3246,6 +3259,10 @@ row {
     popover > contents {
       min-width: 120px;
     }
+  }
+
+  button:hover &.activatable:hover, button:active &.activatable:hover {
+    background-color: transparent;
   }
 }
 
