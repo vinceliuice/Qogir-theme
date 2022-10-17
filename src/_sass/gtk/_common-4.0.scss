@@ -2671,10 +2671,10 @@ switch {
     }
 
     popover.menu modelbutton:hover #{$w}#{$s},
-    popover.menu modelbutton:selected #{$w}#{$s},
     .view:selected #{$w}#{$s},
     row:selected #{$w}#{$s},
     infobar #{$w}#{$s} {
+      transition: none;
       -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}-selected.png"),
                                     url("assets/#{$a}#{$as}-selected@2.png"));
     }
@@ -2730,6 +2730,7 @@ radio {
 //
 // GtkScale
 //
+
 scale {
   $_marks_length: 3px;
   $_marks_distance: 1px;

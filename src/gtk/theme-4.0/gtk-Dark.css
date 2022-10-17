@@ -3387,10 +3387,10 @@ check {
 }
 
 popover.menu modelbutton:hover check,
-popover.menu modelbutton:selected check,
 .view:selected check,
 row:selected check,
 infobar check {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-selected.png"), url("assets/checkbox-unchecked-selected@2.png"));
 }
 
@@ -3404,10 +3404,10 @@ check:disabled {
 }
 
 popover.menu modelbutton:hover check:disabled,
-popover.menu modelbutton:selected check:disabled,
 .view:selected check:disabled,
 row:selected check:disabled,
 infobar check:disabled {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-insensitive-selected.png"), url("assets/checkbox-unchecked-insensitive-selected@2.png"));
 }
 
@@ -3421,10 +3421,10 @@ check:indeterminate {
 }
 
 popover.menu modelbutton:hover check:indeterminate,
-popover.menu modelbutton:selected check:indeterminate,
 .view:selected check:indeterminate,
 row:selected check:indeterminate,
 infobar check:indeterminate {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-selected.png"), url("assets/checkbox-mixed-selected@2.png"));
 }
 
@@ -3438,10 +3438,10 @@ check:indeterminate:disabled {
 }
 
 popover.menu modelbutton:hover check:indeterminate:disabled,
-popover.menu modelbutton:selected check:indeterminate:disabled,
 .view:selected check:indeterminate:disabled,
 row:selected check:indeterminate:disabled,
 infobar check:indeterminate:disabled {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-insensitive-selected.png"), url("assets/checkbox-mixed-insensitive-selected@2.png"));
 }
 
@@ -3455,10 +3455,10 @@ check:checked {
 }
 
 popover.menu modelbutton:hover check:checked,
-popover.menu modelbutton:selected check:checked,
 .view:selected check:checked,
 row:selected check:checked,
 infobar check:checked {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-selected.png"), url("assets/checkbox-checked-selected@2.png"));
 }
 
@@ -3472,10 +3472,10 @@ check:checked:disabled {
 }
 
 popover.menu modelbutton:hover check:checked:disabled,
-popover.menu modelbutton:selected check:checked:disabled,
 .view:selected check:checked:disabled,
 row:selected check:checked:disabled,
 infobar check:checked:disabled {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive-selected.png"), url("assets/checkbox-checked-insensitive-selected@2.png"));
 }
 
@@ -3489,10 +3489,10 @@ radio {
 }
 
 popover.menu modelbutton:hover radio,
-popover.menu modelbutton:selected radio,
 .view:selected radio,
 row:selected radio,
 infobar radio {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-selected.png"), url("assets/radio-unchecked-selected@2.png"));
 }
 
@@ -3506,10 +3506,10 @@ radio:disabled {
 }
 
 popover.menu modelbutton:hover radio:disabled,
-popover.menu modelbutton:selected radio:disabled,
 .view:selected radio:disabled,
 row:selected radio:disabled,
 infobar radio:disabled {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-insensitive-selected.png"), url("assets/radio-unchecked-insensitive-selected@2.png"));
 }
 
@@ -3523,10 +3523,10 @@ radio:indeterminate {
 }
 
 popover.menu modelbutton:hover radio:indeterminate,
-popover.menu modelbutton:selected radio:indeterminate,
 .view:selected radio:indeterminate,
 row:selected radio:indeterminate,
 infobar radio:indeterminate {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-selected.png"), url("assets/radio-mixed-selected@2.png"));
 }
 
@@ -3540,10 +3540,10 @@ radio:indeterminate:disabled {
 }
 
 popover.menu modelbutton:hover radio:indeterminate:disabled,
-popover.menu modelbutton:selected radio:indeterminate:disabled,
 .view:selected radio:indeterminate:disabled,
 row:selected radio:indeterminate:disabled,
 infobar radio:indeterminate:disabled {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive-selected.png"), url("assets/radio-mixed-insensitive-selected@2.png"));
 }
 
@@ -3557,10 +3557,10 @@ radio:checked {
 }
 
 popover.menu modelbutton:hover radio:checked,
-popover.menu modelbutton:selected radio:checked,
 .view:selected radio:checked,
 row:selected radio:checked,
 infobar radio:checked {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-selected.png"), url("assets/radio-checked-selected@2.png"));
 }
 
@@ -3574,10 +3574,10 @@ radio:checked:disabled {
 }
 
 popover.menu modelbutton:hover radio:checked:disabled,
-popover.menu modelbutton:selected radio:checked:disabled,
 .view:selected radio:checked:disabled,
 row:selected radio:checked:disabled,
 infobar radio:checked:disabled {
+  transition: none;
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-insensitive-selected.png"), url("assets/radio-checked-insensitive-selected@2.png"));
 }
 
