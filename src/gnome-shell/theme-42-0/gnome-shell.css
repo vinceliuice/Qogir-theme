@@ -29,8 +29,8 @@
   color: #464853;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .notification-banner .notification-button:hover {
@@ -41,16 +41,12 @@
   box-shadow: none;
 }
 
-.notification-banner .notification-button:active {
+.notification-banner .notification-button:active, .notification-banner .notification-button:checked {
   text-shadow: none;
   color: #ffffff;
   background-color: #5294e2;
   border: 1px solid #2679db;
   box-shadow: none;
-}
-
-.notification-banner .notification-button:checked {
-  text-shadow: none;
 }
 
 .notification-banner .notification-button:first-child:ltr {
@@ -203,8 +199,8 @@ StEntry StLabel.hint-text {
   color: #464853;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .hotplug-notification-item:hover, .quick-settings-system-item .icon-button:hover, .quick-toggle:hover, .button:hover {
@@ -220,7 +216,8 @@ StEntry StLabel.hint-text {
   color: #464853;
   background-color: rgba(0, 0, 0, 0.03);
   border: 1px solid #5294e2;
-  box-shadow: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .hotplug-notification-item:active, .quick-settings-system-item .icon-button:active, .quick-toggle:active, .button:active, .hotplug-notification-item:checked, .quick-settings-system-item .icon-button:checked, .quick-toggle:checked, .button:checked {
@@ -1245,8 +1242,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #464853;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .quick-slider .quick-toggle-icon {
@@ -2581,8 +2578,8 @@ StWidget.focused .app-well-app-running-dot {
   color: #464853;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .keyboard-key:hover, .keyboard-key:checked {
@@ -2688,8 +2685,8 @@ StWidget.focused .app-well-app-running-dot {
   color: #464853;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .keyboard-subkeys .keyboard-key:hover, .keyboard-subkeys .keyboard-key:checked {
@@ -3493,8 +3490,8 @@ StWidget.focused .app-well-app-running-dot {
   color: #464853;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .openweather-provider:active {

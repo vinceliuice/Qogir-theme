@@ -44,8 +44,7 @@ $bubble_button_radius: $material_radius - 1px;
   &:insensitive { @include button(insensitive);}
   &:focus { @include button(focus);}
   &:hover { @include button(hover);}
-  &:active { @include button(active);}
-  &:checked { @include button(checked);}
+  &:active, &:checked { @include button(active);}
   
   &:first-child:ltr {
     border-radius: 0 0 0 $bubble_button_radius; 

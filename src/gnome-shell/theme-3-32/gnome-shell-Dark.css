@@ -29,8 +29,8 @@
   color: #e6ebef;
   background-color: #2c2f39;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .notification-banner .notification-button:hover {
@@ -41,16 +41,12 @@
   box-shadow: none;
 }
 
-.notification-banner .notification-button:active {
+.notification-banner .notification-button:active, .notification-banner .notification-button:checked {
   text-shadow: none;
   color: #ffffff;
   background-color: #5294e2;
   border: 1px solid #68a2e6;
   box-shadow: none;
-}
-
-.notification-banner .notification-button:checked {
-  text-shadow: none;
 }
 
 .notification-banner .notification-button:first-child:ltr {
@@ -203,8 +199,8 @@ StEntry StLabel.hint-text {
   color: #e6ebef;
   background-color: #2c2f39;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .hotplug-notification-item:hover, .button:hover {
@@ -220,7 +216,8 @@ StEntry StLabel.hint-text {
   color: #e6ebef;
   background-color: rgba(255, 255, 255, 0.06);
   border: 1px solid #5294e2;
-  box-shadow: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .hotplug-notification-item:active, .button:active, .hotplug-notification-item:checked, .button:checked {
@@ -2404,8 +2401,8 @@ StWidget.focused .app-well-app-running-dot {
   color: #e6ebef;
   background-color: #2c2f39;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .keyboard-key:hover, .keyboard-key:checked {
@@ -2511,8 +2508,8 @@ StWidget.focused .app-well-app-running-dot {
   color: #e6ebef;
   background-color: #2c2f39;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .keyboard-subkeys .keyboard-key:hover, .keyboard-subkeys .keyboard-key:checked {
@@ -3321,8 +3318,8 @@ StWidget.focused .app-well-app-running-dot {
   color: #e6ebef;
   background-color: #2c2f39;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .openweather-provider:active {

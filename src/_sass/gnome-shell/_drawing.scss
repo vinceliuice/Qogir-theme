@@ -93,8 +93,8 @@
     color: $tc;
     background-color: $c;
     border: 1px solid $button_border;
-    box-shadow: none;
-    outline: none;
+    box-shadow: none !important;
+    outline: none !important;
   }
 
   @else if $t==focus-hover {
@@ -104,7 +104,8 @@
     color: $tc;
     background-color: if($variant=='light', rgba(black, 0.03), rgba(white, 0.06));
     border: 1px solid $selected_bg_color;
-    box-shadow: none;
+    box-shadow: none !important;
+    outline: none !important;
   }
 
   @else if $t==hover {
