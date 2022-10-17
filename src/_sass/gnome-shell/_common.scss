@@ -10,11 +10,11 @@ $_bubble_fg_color: $osd_fg_color;
 $_bubble_borders_color: transparentize($osd_fg_color,0.8);
 $_shell_fg_color: white;
 
-stage {
-  // font-family: $font-family;
-  @include fontsize($font-size);
-  color: $fg_color;
-}
+// stage {
+//   // font-family: $font-family;
+//   @include fontsize($font-size);
+//   color: $fg_color;
+// }
 
 %reset_style {
   background-color: transparent !important;
@@ -29,6 +29,47 @@ stage {
   border-color: $borders_color;
   box-shadow: none;
   &:focus { border: 1px solid $selected_bg_color; }
+}
+
+$bubble_button_radius: $material_radius - 1px;
+
+%bubble_button {
+  padding: $cont_padding * 2;
+  font-weight: bold !important;
+
+  &:ltr { margin-right: 0; }
+  &:rtl { margin-left: 0; }
+
+  @include button(normal);
+  &:insensitive { @include button(insensitive);}
+  &:focus { @include button(focus);}
+  &:hover { @include button(hover);}
+  &:active { @include button(active);}
+  &:checked { @include button(checked);}
+  
+  &:first-child:ltr {
+    border-radius: 0 0 0 $bubble_button_radius; 
+  }
+
+  &:last-child:ltr {
+    border-radius: 0 0 $bubble_button_radius 0;
+    margin-right: 0 !important;
+  }
+
+  &:first-child:rtl {
+    border-radius: 0 0 $bubble_button_radius 0;
+  }
+
+  &:last-child:rtl {
+    border-radius: 0 0 0 $bubble_button_radius;
+    margin-left: 0 !important;
+  }
+
+  &:first-child:last-child {
+    border-radius: 0 0 $bubble_button_radius $bubble_button_radius !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 %bubble-dialog {

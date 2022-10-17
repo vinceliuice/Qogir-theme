@@ -10,6 +10,24 @@
   &:insensitive { @include button(insensitive); }
 }
 
+%osd_button {
+  @include button(osd);
+
+  &:hover, &:hover:focus { @include button(osd-hover); }
+  &:focus { @include button(osd-focus); }
+  &:active, &:checked { @include button(osd-active); }
+  &:insensitive { @include button(osd-insensitive); }
+}
+
+%icon_button {
+  border-radius: $circular_radius;
+  border: none;
+  font-weight: bold;
+  padding: $cont_padding * 2;
+
+  & > StIcon { icon-size: 16px; }
+}
+
 .button {
   min-height: 20px;
   padding: 5px 32px;
@@ -19,11 +37,6 @@
   @extend %button;
 }
 
-%osd_button {
-  @include button(osd);
-
-  &:hover, &:hover:focus { @include button(osd-hover); }
-  &:focus { @include button(osd-focus); }
-  &:active, &:checked { @include button(osd-active); }
-  &:insensitive { @include button(osd-insensitive); }
+.icon-button {
+  @extend %icon_button; // that's it
 }

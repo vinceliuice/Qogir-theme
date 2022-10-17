@@ -94,6 +94,7 @@
     background-color: $c;
     border: 1px solid $button_border;
     box-shadow: none;
+    outline: none;
   }
 
   @else if $t==focus-hover {

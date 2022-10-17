@@ -83,22 +83,12 @@
 .quick-toggle-menu {
   background-color: $menu_bg !important;
   color: $text_color !important;
-  border-radius: $bt_radius + $cont_padding !important;
-  padding: $cont_padding;
+  border-radius: $material_radius !important;
+  padding: $cont_padding * 2;
   margin: $cont_padding * 2 $cont_padding * 3 0;
 
   .popup-menu-item {
     border-radius: $bt_radius !important;
-
-    &:focus, &:hover, &.selected {
-      color: $text_color !important;
-      background-color: rgba($text_color, 0.1) !important;
-    }
-
-    &:active {
-      color: $text_color !important;
-      background-color: rgba($text_color, 0.2) !important;
-    }
 
     > StIcon { -st-icon-style: symbolic; }
   }
@@ -110,7 +100,7 @@
 
     & .icon {
       icon-size: 16px * 1.5; // a non-standard symbolic size but ok
-      border-radius: $bt_radius;
+      border-radius: $circular_radius;
       padding: 1.5 * $cont_padding;
       background-color: rgba($fg_color, 0.12) !important;
 
@@ -126,9 +116,8 @@
   & > StBoxLayout { spacing: 2 * $cont_padding; }
 
   .icon-button {
-    background-color: $button_bg;
-    color: $text_color;
-    border-radius: $material_radius;
+    // background-color: $button_bg;
+    // color: $text_color;
     @extend %button;
 
     > StIcon { -st-icon-style: symbolic; }

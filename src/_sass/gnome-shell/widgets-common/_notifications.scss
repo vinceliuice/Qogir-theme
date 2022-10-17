@@ -22,7 +22,7 @@ $notification_banner_width: 34em;
   }
 
   .notification-button {
-    @extend %button;
+    @extend %bubble_button;
   }
 }
 

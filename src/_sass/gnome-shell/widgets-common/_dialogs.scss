@@ -17,6 +17,7 @@
   &-linked-button {
     height: if($variant=='light', 38px, 37px);
     padding: 0;
+    margin: 0;
     box-shadow: none;
     color: $osd_fg_color;
     background-color: $osd_bg_color;
@@ -24,18 +25,27 @@
     border-top: if($variant == 'light', 0, 1px) solid $borders_color !important;
 
     &:hover { background-color: lighten($osd_bg_color, 5%); }
-    &:focus { color: $selected_bg_color; }
+
+    &:focus {
+      color: $selected_bg_color;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
     &:active {
       color: $osd_fg_color;
       background-color: darken($osd_bg_color, 5%);
     }
+
     &:insensitive {
       color: transparentize($osd_fg_color, 0.5);
       background-color: darken($osd_bg_color, 2%);
     }
+
     &:first-child {
       border-radius: 0 0 0 ($material_radius - 1px);
     }
+
     &:last-child {
       border-radius: 0 0 ($material_radius - 1px) 0;
     }
