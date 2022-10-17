@@ -1526,18 +1526,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .switcher-list .item-box {
-  padding: 8px;
+  padding: 4px;
   border-radius: 2px;
   border: 1px solid transparent;
 }
 
 .switcher-list .item-box:outlined {
-  background-color: rgba(211, 218, 227, 0.3);
+  border: 1px solid #5294e2;
+  background-color: transparent;
 }
 
 .switcher-list .item-box:selected {
-  background-color: rgba(211, 218, 227, 0.3);
-  color: #D3DAE3;
+  background-color: rgba(82, 148, 226, 0.5);
+  color: #ffffff;
+  border: 1px solid #5294e2;
 }
 
 .switcher-list .thumbnail-box {
