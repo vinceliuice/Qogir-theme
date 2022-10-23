@@ -46,7 +46,7 @@ $window_clone_border_size: 3px;
 
 // Close button
 .window-close {
-  background-color: $selected_bg_color;
+  background-color: $wm_button_close_bg;
   color: $selected_fg_color;
   border: none;
   border-radius: $window_close_button_size * 0.5 + $window_close_button_padding * 2;
@@ -59,10 +59,10 @@ $window_clone_border_size: 3px;
   -shell-close-overlap: $window_close_button_size * 0.5; // 3.36.0
 
   &:hover {
-    background-color: lighten($selected_bg_color, 5%);
+    background-color: lighten($wm_button_close_hover_bg, 5%);
   }
 
   &:active {
-    background-color: darken($selected_bg_color, 5%);
+    background-color: darken($wm_button_close_active_bg, 5%);
   }
 }
