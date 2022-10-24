@@ -11,7 +11,7 @@ $fg_color: if($variant =='light', #464853, #e6ebef);
 $alt_base_color: if($variant == 'light', darken($base_color, 5%), lighten($base_color, 5%));
 $sec_base_color: if($variant == 'light', darken($base_color, 10%), lighten($base_color, 10%));
 $alt_bg_color: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 5%));
-$sec_bg_color: dif($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 10%));
+$sec_bg_color: if($variant == 'light', darken($bg_color, 10%), lighten($bg_color, 10%));
 $alt_fg_color: rgba($fg_color, 0.75);
 $sec_fg_color: rgba($fg_color, 0.6);
 
