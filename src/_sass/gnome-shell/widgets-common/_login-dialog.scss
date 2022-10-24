@@ -11,11 +11,7 @@
   border: none;
   background-color: transparent;
 
-  $_gdm_bg: lighten(#2e3436, 19%);
-
   StEntry {
-    border-radius: 1000px;
-
     @if $variant=='dark' {
       $_gdm_entry_bg: transparentize(lighten(desaturate(#241f31, 20%), 2%), 0.5);
       background-color: $_gdm_entry_bg;
@@ -26,50 +22,21 @@
   .modal-dialog-button-box { spacing: 3px; }
 
   .modal-dialog-button {
+    @include button(normal);
     padding: 4px 18px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    background-color: $_gdm_bg;
-    border-color: $_gdm_bg;
-    color: $fg_color;
 
-    $_hover_c: lighten($_gdm_bg, 5%);
     &:hover, &:focus {
-      background-color: $_hover_c;
-      border-color: $_hover_c;
+      @include button(hover);
     }
     &:active {
-      $_active_c: darken($_gdm_bg, 5%);
-      box-shadow: none;
-      background-color: $_active_c;
-      border-color: $_active_c;
+      @include button(active);
     }
     &:insensitive {
       @include button(insensitive);
-      border-color: darken($_gdm_bg, 5%);
-      background-color: darken($_gdm_bg, 5%);
-      color: transparentize($fg_color, 0.3);
     }
     &:default {
-      @include button(normal, $c:$selected_bg_color, $tc:$selected_fg_color);
-      border-color: $selected_bg_color;
-      &:hover, &:focus {
-        @include button(hover,$c:$selected_bg_color, $tc:$selected_fg_color);
-        $_def_hover_c: lighten($selected_bg_color, 5%);
-        background-color: $_def_hover_c;
-        border-color: $_def_hover_c;
-      }
-      &:active {
-        @include button(active,$c:$selected_bg_color, $tc:$selected_fg_color);
-        $_def_active_c: darken($selected_bg_color, 5%);
-        background-color: $_def_active_c;
-        border-color: $_def_active_c;
-      }
-      &:insensitive {
-        @include button(insensitive);
-        border-color: darken($selected_bg_color, 10%);
-        background-color: darken($selected_bg_color, 10%);
-        color: transparentize($selected_fg_color, 0.3);
-      }
+      @include button(default);
     }
   }
 
@@ -77,11 +44,8 @@
   .switch-user-button,
   .login-dialog-session-list-button {
     padding: 0;
-    border-radius: 1000px;
-    width: 32px;
-    height: 32px;
-    border-color: transparentize($bg_color,0.7);
-    background-color: transparentize($bg_color,0.7);
+    width: 36px;
+    height: 36px;
 
     StIcon { icon-size: 16px; }
   }
