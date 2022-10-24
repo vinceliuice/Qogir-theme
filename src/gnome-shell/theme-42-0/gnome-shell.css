@@ -2358,7 +2358,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-close, .screenshot-ui-close-button {
-  background-color: #5294e2;
+  background-color: #cc575d;
   color: #ffffff;
   border: none;
   border-radius: 22px;
@@ -2371,11 +2371,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-close:hover, .screenshot-ui-close-button:hover {
-  background-color: #68a2e6;
+  background-color: #dd8c90;
 }
 
 .window-close:active, .screenshot-ui-close-button:active {
-  background-color: #3c86de;
+  background-color: #aa323a;
 }
 
 .app-folder-dialog .folder-name-container .folder-name-entry,
