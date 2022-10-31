@@ -3223,12 +3223,12 @@ row {
     &.has-open-popup,
     &:hover {
       transition: none;
-      animation: none;
       background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03));
     }
 
     &:active, &:checked {
       transition: all 150ms $ease-out-quad;
+      background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08));
     }
 
     &:disabled {

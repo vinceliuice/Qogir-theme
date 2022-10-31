@@ -4,12 +4,12 @@
   font-weight: 400;
   @include fontsize(9);
 
-  StIcon { icon-size: 32px;}
+  StIcon { icon-size: 32px; }
 }
 
 $screenshot_ui_panel_padding: $cont_padding * 3;
-$screenshot_ui_shot_cast_margin: 21px;
-$screenshot_ui_panel_border_radius: $corner_radius;
+$screenshot_ui_shot_cast_margin: 20px;
+$screenshot_ui_panel_border_radius: $material_radius + $screenshot_ui_panel_padding;
 $screenshot_ui_shot_cast_spacing: 3px;
 $screenshot_ui_base_icon_size: 1.09em;
 $screenshot_ui_button_red: $error_color;
@@ -28,29 +28,31 @@ $screenshot_ui_button_red: $error_color;
   @extend .window-close; // copy window close button
   padding: $cont_padding !important; // but with more padding
   margin-top: 12px;
-  &.left { margin-left: 12px;}
-  &.right { margin-right: 12px;}
+
+  &.left { margin-left: 12px; }
+  &.right { margin-right: 12px; }
 }
 
 .screenshot-ui-type-button {
   @extend %osd_button;
   min-width: 48px;
   padding: $cont_padding * 2 $cont_padding * 3 !important;
-  border-radius: $bt_radius;
+  border-radius: $material_radius;
 }
 
 .screenshot-ui-capture-button {
   width: 36px;
   height: 36px;
-  border-radius: 99px;
+  border-radius: $circular_radius;
   border: 4px $osd_fg_color;
   padding: 4px;
 
   .screenshot-ui-capture-button-circle {
     background-color: $osd_fg_color;
     transition-duration: 200ms;
-    &:hover, &:focus { background-color: $alt_bg_color;}
-    border-radius: 99px;
+    border-radius: $circular_radius;
+
+    &:hover, &:focus { background-color: $alt_bg_color; }
   }
 
   &:hover, &:focus {
@@ -61,7 +63,7 @@ $screenshot_ui_button_red: $error_color;
 
   &:active {
     .screenshot-ui-capture-button-circle {
-      background-color: darken($osd_fg_color, 50%);
+      background-color: darken($osd_fg_color, 25%);
     }
   }
 
@@ -69,11 +71,13 @@ $screenshot_ui_button_red: $error_color;
     .screenshot-ui-capture-button-circle {
       background-color: $screenshot_ui_button_red;
     }
+
     &:hover, &:focus {
       .screenshot-ui-capture-button-circle {
         background-color: lighten($screenshot_ui_button_red, 5%);
       }
     }
+
     &:active {
       .screenshot-ui-capture-button-circle {
         background-color: darken($screenshot_ui_button_red, 7%);
@@ -83,8 +87,8 @@ $screenshot_ui_button_red: $error_color;
 }
 
 .screenshot-ui-shot-cast-container {
-  background-color: lighten($osd_bg_color,5%);
-  border-radius: $bt_radius;
+  background-color: lighten($osd_bg_color, 5%);
+  border-radius: $material_radius + $screenshot_ui_shot_cast_spacing !important;
   padding: $screenshot_ui_shot_cast_spacing;
   spacing: $screenshot_ui_shot_cast_spacing;
 
@@ -93,22 +97,23 @@ $screenshot_ui_button_red: $error_color;
 }
 
 .screenshot-ui-shot-cast-button {
-  padding: $cont_padding $cont_padding*2;
+  padding: $cont_padding $cont_padding * 2;
   background-color: transparent;
-  &:hover, &:focus { background-color: lighten($osd_bg_color, 10%);}
-  &:active { background-color: lighten($sec_bg_color,5%);}
-  &:checked { background-color: white;color: black;}
-  &:insensitive { color: transparentize($osd_fg_color, 0.5);}
+  border-radius: $material_radius;
 
-  border-radius: $bt_radius;
+  &:hover, &:focus { background-color: lighten($osd_bg_color, 10%); }
+  &:active { background-color: lighten($sec_bg_color,5%);}
+  &:checked { background-color: white; color: black;}
+  &:insensitive { color: transparentize($osd_fg_color, 0.5);}
 
   StIcon { icon-size: $screenshot_ui_base_icon_size;}
 }
 
 .screenshot-ui-show-pointer-button {
   @extend %osd_button;
-  border-radius: 99px;
+  border-radius: $circular_radius;
   padding: $cont_padding * 2 !important;
+
   StIcon { icon-size: $screenshot_ui_base_icon_size;}
 }
 
@@ -127,7 +132,7 @@ $screenshot_ui_button_red: $error_color;
 }
 
 .screenshot-ui-area-selector-handle {
-  border-radius: 99px;
+  border-radius: $circular_radius;
   background-color: white;
   box-shadow: 0 1px 3px 2px rgba(0,0,0,0.2);
   width: 24px;
@@ -135,7 +140,7 @@ $screenshot_ui_button_red: $error_color;
 }
 
 .screenshot-ui-window-selector {
-  background-color: $base_color;
+  background-color: $osd_bg_color;
 
   .screenshot-ui-window-selector-window-container {
     margin: 100px;
@@ -151,14 +156,14 @@ $screenshot_ui_button_red: $error_color;
 
 .screenshot-ui-window-selector-window-border {
   transition-duration: 200ms;
-  border-radius: $corner_radius;
-  border: 2px transparent;
+  border-radius: $material_radius;
+  border: 2px solid transparent;
 }
 
 .screenshot-ui-window-selector-check {
   transition-duration: 200ms;
   color: transparent;
-  border-radius: 99px;
+  border-radius: $circular_radius;
   border-width: 12px;
   icon-size: 24px;
 }
@@ -169,6 +174,7 @@ $screenshot_ui_button_red: $error_color;
       border-color: darken($selected_bg_color, 15%);
     }
   }
+
   &:checked {
     .screenshot-ui-window-selector-window-border {
       border-color: $selected_bg_color;
@@ -186,8 +192,8 @@ $screenshot_ui_button_red: $error_color;
   transition-duration: 200ms;
   background-color: rgba(0,0,0,.5);
 
-  &:hover { background-color: rgba(0,0,0,.3);}
-  &:active { background-color: rgba(0,0,0,.7);}
+  &:hover { background-color: rgba(0,0,0,.3); }
+  &:active { background-color: rgba(0,0,0,.7); }
   &:checked {
     background-color: transparent;
     border: 2px white;
@@ -197,7 +203,7 @@ $screenshot_ui_button_red: $error_color;
 .screenshot-ui-tooltip {
   color: $_shell_fg_color;
   background-color: rgba(darken($osd_bg_color, 8%), 0.95);
-  border-radius: $bt_radius;
+  border-radius: $material_radius;
   padding: 4px 12px;
   text-align: center;
   -y-offset: 24px;

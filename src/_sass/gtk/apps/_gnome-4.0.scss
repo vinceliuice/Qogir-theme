@@ -73,6 +73,11 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     background-color: mix($side_theme_alt_fg, $side_theme_bg, 10%);
   }
 
+  &:active {
+    color: $side_theme_alt_fg;
+    background-color: mix($side_theme_alt_fg, $side_theme_bg, 16%);
+  }
+
   &:disabled, label:disabled {
     color: rgba($side_theme_alt_fg, 0.35);
   }
@@ -142,8 +147,8 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 %nautilus_dir_buttons {
   border-radius: $bt_radius;
   border: none;
-  min-height: 20px;
-  min-width: 20px;
+  min-height: 22px;
+  min-width: 22px;
   padding: 0 $cont_padding;
 
   &:hover {
@@ -385,6 +390,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   padding: 2px 2px 2px $cont_padding - 2px;
   margin-top: $cont_padding;
   margin-bottom: $cont_padding;
+  border-radius: $bt_radius;
 
   & > * {
     margin-top: 0;

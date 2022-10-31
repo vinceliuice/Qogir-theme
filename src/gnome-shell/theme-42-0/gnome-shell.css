@@ -280,7 +280,7 @@ StEntry StLabel.hint-text {
   text-shadow: none;
   color: rgba(211, 218, 227, 0.35);
   border-color: rgba(0, 0, 0, 0.15);
-  background-color: rgba(62, 66, 80, 0.35);
+  background-color: rgba(40, 42, 51, 0.35);
   box-shadow: none;
 }
 
@@ -1964,7 +1964,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .screenshot-ui-panel {
-  border-radius: 0;
+  border-radius: 21px;
   padding: 18px;
   padding-bottom: 12px;
   margin-bottom: 4em;
@@ -1987,13 +1987,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .screenshot-ui-type-button {
   min-width: 48px;
   padding: 12px 18px !important;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .screenshot-ui-capture-button {
   width: 36px;
   height: 36px;
-  border-radius: 99px;
+  border-radius: 9999px;
   border: 4px #D3DAE3;
   padding: 4px;
 }
@@ -2001,7 +2001,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .screenshot-ui-capture-button .screenshot-ui-capture-button-circle {
   background-color: #D3DAE3;
   transition-duration: 200ms;
-  border-radius: 99px;
+  border-radius: 9999px;
 }
 
 .screenshot-ui-capture-button .screenshot-ui-capture-button-circle:hover, .screenshot-ui-capture-button .screenshot-ui-capture-button-circle:focus {
@@ -2013,7 +2013,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .screenshot-ui-capture-button:active .screenshot-ui-capture-button-circle {
-  background-color: #475970;
+  background-color: #8598b1;
 }
 
 .screenshot-ui-capture-button:cast .screenshot-ui-capture-button-circle {
@@ -2030,23 +2030,23 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .screenshot-ui-shot-cast-container {
   background-color: #333641;
-  border-radius: 2px;
+  border-radius: 6px !important;
   padding: 3px;
   spacing: 3px;
 }
 
 .screenshot-ui-shot-cast-container:ltr {
-  margin-left: 3px;
+  margin-left: 2px;
 }
 
 .screenshot-ui-shot-cast-container:rtl {
-  margin-right: 3px;
+  margin-right: 2px;
 }
 
 .screenshot-ui-shot-cast-button {
   padding: 6px 12px;
   background-color: transparent;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .screenshot-ui-shot-cast-button:hover, .screenshot-ui-shot-cast-button:focus {
@@ -2071,7 +2071,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .screenshot-ui-show-pointer-button {
-  border-radius: 99px;
+  border-radius: 9999px;
   padding: 12px !important;
 }
 
@@ -2092,7 +2092,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .screenshot-ui-area-selector-handle {
-  border-radius: 99px;
+  border-radius: 9999px;
   background-color: white;
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2);
   width: 24px;
@@ -2100,7 +2100,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .screenshot-ui-window-selector {
-  background-color: #ffffff;
+  background-color: #282A33;
 }
 
 .screenshot-ui-window-selector .screenshot-ui-window-selector-window-container {
@@ -2113,14 +2113,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .screenshot-ui-window-selector-window-border {
   transition-duration: 200ms;
-  border-radius: 0;
-  border: 2px transparent;
+  border-radius: 3px;
+  border: 2px solid transparent;
 }
 
 .screenshot-ui-window-selector-check {
   transition-duration: 200ms;
   color: transparent;
-  border-radius: 99px;
+  border-radius: 9999px;
   border-width: 12px;
   icon-size: 24px;
 }
@@ -2160,7 +2160,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .screenshot-ui-tooltip {
   color: white;
   background-color: rgba(22, 23, 28, 0.95);
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 4px 12px;
   text-align: center;
   -y-offset: 24px;
