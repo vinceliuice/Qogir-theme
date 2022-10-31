@@ -5916,7 +5916,7 @@ button.osd.featured-button-right image {
 }
 
 label.title-1 {
-  color: white;
+  color: #464853;
 }
 
 label.title-1:backdrop {
@@ -5924,7 +5924,7 @@ label.title-1:backdrop {
 }
 
 label.caption {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(70, 72, 83, 0.65);
 }
 
 label.caption:backdrop {
