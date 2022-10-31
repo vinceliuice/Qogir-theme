@@ -925,13 +925,13 @@ button.osd.featured-button-right {
 
 label {
   &.title-1 {
-    color: white;
+    color: $fg_color;
   }
 
   &:backdrop.title-1 { opacity: 0.5; }
 
   &.caption {
-    color: rgba(white, 0.65);
+    color: rgba($fg_color, 0.65);
   }
 
   &:backdrop.caption { opacity: 0.5; }
