@@ -8,6 +8,8 @@
 
   &:checked { background-image: url("assets/switch-on.svg"); }
 
+  .popup-menu-item:hover &,
+  .popup-menu-item:focus &,
   .popup-menu-item.selected & {
     background-image: url("assets/switch-off-selected.svg");
 
