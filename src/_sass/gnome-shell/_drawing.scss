@@ -193,7 +193,7 @@
   // insensitive osd button
   //
     color: rgba($osd_fg_color, 0.35);
-    border-color: rgba(black, 0.15);
+    border-color: lighten($osd_bg_color, 2%);
     background-color: rgba($osd_bg_color, 0.35);
     box-shadow: none;
   }

@@ -279,7 +279,7 @@ StEntry StLabel.hint-text {
 .screenshot-ui-show-pointer-button:insensitive, .screenshot-ui-type-button:insensitive {
   text-shadow: none;
   color: rgba(211, 218, 227, 0.35);
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: #2c2f39;
   background-color: rgba(40, 42, 51, 0.35);
   box-shadow: none;
 }
@@ -2030,7 +2030,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .screenshot-ui-shot-cast-container {
   background-color: #333641;
-  border-radius: 6px !important;
+  border-radius: 6px;
   padding: 3px;
   spacing: 3px;
 }
@@ -2050,11 +2050,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .screenshot-ui-shot-cast-button:hover, .screenshot-ui-shot-cast-button:focus {
-  background-color: #3e4250;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .screenshot-ui-shot-cast-button:active {
-  background-color: #545867;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .screenshot-ui-shot-cast-button:checked {

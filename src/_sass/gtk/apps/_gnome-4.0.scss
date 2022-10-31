@@ -344,8 +344,21 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
           background-color: rgba($selected_bg_color, 0.15);
         }
 
-        &:active, &:selected {
-          @include button(active);
+        &:active {
+          border-color: rgba($selected_bg_color, 0.75);
+          background-color: rgba($selected_bg_color, 0.25);
+          transition: $shorter_transition;
+        }
+
+        &:selected {
+          border-color: $selected_bg_color;
+          background-color: rgba($selected_bg_color, 0.35);
+          color: $selected_bg_color;
+          transition: $shorter_transition;
+
+          &:hover {
+            background-color: rgba($selected_bg_color, 0.42);
+          }
         }
       }
     }

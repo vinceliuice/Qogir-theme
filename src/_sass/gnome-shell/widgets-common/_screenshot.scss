@@ -88,7 +88,7 @@ $screenshot_ui_button_red: $error_color;
 
 .screenshot-ui-shot-cast-container {
   background-color: lighten($osd_bg_color, 5%);
-  border-radius: $material_radius + $screenshot_ui_shot_cast_spacing !important;
+  border-radius: $material_radius + $screenshot_ui_shot_cast_spacing;
   padding: $screenshot_ui_shot_cast_spacing;
   spacing: $screenshot_ui_shot_cast_spacing;
 
@@ -101,10 +101,10 @@ $screenshot_ui_button_red: $error_color;
   background-color: transparent;
   border-radius: $material_radius;
 
-  &:hover, &:focus { background-color: lighten($osd_bg_color, 10%); }
-  &:active { background-color: lighten($sec_bg_color,5%);}
-  &:checked { background-color: white; color: black;}
-  &:insensitive { color: transparentize($osd_fg_color, 0.5);}
+  &:hover, &:focus { background-color: rgba(white, 0.1); }
+  &:active { background-color: rgba(white, 0.25); }
+  &:checked { background-color: white; color: black; }
+  &:insensitive { color: transparentize($osd_fg_color, 0.5); }
 
   StIcon { icon-size: $screenshot_ui_base_icon_size;}
 }
