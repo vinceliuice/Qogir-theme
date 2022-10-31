@@ -329,11 +329,11 @@ StEntry StLabel.hint-text {
   background-image: url("assets/switch-on.svg");
 }
 
-.popup-menu-item.selected .toggle-switch {
+.popup-menu-item:hover .toggle-switch, .popup-menu-item:focus .toggle-switch, .popup-menu-item.selected .toggle-switch {
   background-image: url("assets/switch-off-selected.svg");
 }
 
-.popup-menu-item.selected .toggle-switch:checked {
+.popup-menu-item:hover .toggle-switch:checked, .popup-menu-item:focus .toggle-switch:checked, .popup-menu-item.selected .toggle-switch:checked {
   background-image: url("assets/switch-on-selected.svg");
 }
 
@@ -359,7 +359,7 @@ StEntry StLabel.hint-text {
   -barlevel-overdrive-separator-width: 2px;
 }
 
-.popup-menu-item.selected .slider {
+.popup-menu-item:hover .slider, .popup-menu-item:focus .slider, .popup-menu-item.selected .slider {
   -slider-background-color: rgba(0, 0, 0, 0.2);
   -slider-active-background-color: #ffffff;
   -barlevel-background-color: rgba(0, 0, 0, 0.2);

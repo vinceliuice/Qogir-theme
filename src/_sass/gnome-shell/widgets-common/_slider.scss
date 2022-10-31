@@ -23,6 +23,8 @@
   -barlevel-overdrive-border-color: $destructive_color;
   -barlevel-overdrive-separator-width: 2px;
 
+  .popup-menu-item:hover &,
+  .popup-menu-item:focus &,
   .popup-menu-item.selected & {
     -slider-background-color: rgba(black, 0.2);
     -slider-active-background-color: $selected_fg_color;

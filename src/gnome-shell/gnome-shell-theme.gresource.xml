@@ -35,5 +35,13 @@
     <file alias="gdm3.css">gnome-shell.css</file>
     <file alias="Yaru/gnome-shell.css">gnome-shell.css</file>
     <file alias="Yaru-dark/gnome-shell.css">gnome-shell.css</file>
+    <file alias="Yaru/assets/switch-off.svg">assets/switch-off.svg</file>
+    <file alias="Yaru/assets/switch-on.svg">assets/switch-on.svg</file>
+    <file alias="Yaru/assets/switch-off-selected.svg">assets/switch-off-selected.svg</file>
+    <file alias="Yaru/assets/switch-on-selected.svg">assets/switch-on-selected.svg</file>
+    <file alias="Yaru-dark/assets/switch-off.svg">assets/switch-off.svg</file>
+    <file alias="Yaru-dark/assets/switch-on.svg">assets/switch-on.svg</file>
+    <file alias="Yaru-dark/assets/switch-off-selected.svg">assets/switch-off-selected.svg</file>
+    <file alias="Yaru-dark/assets/switch-on-selected.svg">assets/switch-on-selected.svg</file>
   </gresource>
 </gresources>
