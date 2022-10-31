@@ -10435,7 +10435,16 @@ window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child but
   background-image: -gtk-scaled(url("assets/logo.svg"), url("assets/logo@2.svg")), image(#32343D);
   background-repeat: no-repeat;
   background-size: 38px auto;
+}
+
+.nautilus-window headerbar:dir(ltr) {
   background-position: left center;
+  padding-left: 44px;
+}
+
+.nautilus-window headerbar:dir(rtl) {
+  background-position: right center;
+  padding-right: 44px;
 }
 
 filechooser paned > separator {
@@ -10450,12 +10459,12 @@ filechooser paned > separator {
   border-radius: 0 0 0;
 }
 
-.nautilus-window paned > separator {
-  background-image: linear-gradient(to bottom, #393c48, #393c48);
+.nautilus-window:dir(rtl) {
+  background-position: right;
 }
 
-.nautilus-window headerbar {
-  padding-left: 44px;
+.nautilus-window paned > separator {
+  background-image: linear-gradient(to bottom, #393c48, #393c48);
 }
 
 .nautilus-window headerbar, .nautilus-window headerbar:backdrop {
@@ -10475,18 +10484,34 @@ filechooser paned > separator {
   color: rgba(246, 246, 251, 0.85);
 }
 
-.nautilus-window placessidebar.sidebar row.sidebar-row image.sidebar-icon {
+.nautilus-window placessidebar.sidebar row.sidebar-row image.sidebar-icon:dir(ltr) {
   padding-right: 2px;
 }
 
-.nautilus-window placessidebar.sidebar row.sidebar-row label.sidebar-label {
+.nautilus-window placessidebar.sidebar row.sidebar-row image.sidebar-icon:dir(rtl) {
+  padding-left: 2px;
+}
+
+.nautilus-window placessidebar.sidebar row.sidebar-row label.sidebar-label:dir(ltr) {
   padding-right: 2px;
   padding-left: 20px;
 }
 
+.nautilus-window placessidebar.sidebar row.sidebar-row label.sidebar-label:dir(rtl) {
+  padding-right: 20px;
+  padding-left: 2px;
+}
+
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup, .nautilus-window placessidebar.sidebar row.sidebar-row:hover {
   background-color: rgba(216, 222, 223, 0.05);
+}
+
+.nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:dir(ltr), .nautilus-window placessidebar.sidebar row.sidebar-row:hover:dir(ltr) {
   box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #32343D;
+}
+
+.nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:dir(rtl), .nautilus-window placessidebar.sidebar row.sidebar-row:hover:dir(rtl) {
+  box-shadow: inset 2px 0 #7eafe9, inset -38px 0 0 0 #32343D;
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row:disabled, .nautilus-window placessidebar.sidebar row.sidebar-row:disabled label, .nautilus-window placessidebar.sidebar row.sidebar-row:disabled image {
@@ -10498,23 +10523,35 @@ filechooser paned > separator {
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected, .nautilus-window placessidebar.sidebar row.sidebar-row:selected, .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
-  box-shadow: inset 38px 0 0 0 #5294e2;
   background-color: rgba(82, 148, 226, 0);
   background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
   background-repeat: no-repeat;
-  background-position: 42px center;
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:selected .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-label, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover .sidebar-label {
   color: #f4f6f6;
 }
 
+.nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected:dir(ltr), .nautilus-window placessidebar.sidebar row.sidebar-row:selected:dir(ltr), .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover:dir(ltr), .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover:dir(ltr) {
+  box-shadow: inset 38px 0 0 0 #5294e2;
+  background-position: 42px center;
+}
+
+.nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected:dir(rtl), .nautilus-window placessidebar.sidebar row.sidebar-row:selected:dir(rtl), .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover:dir(rtl), .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover:dir(rtl) {
+  box-shadow: inset -38px 0 0 0 #5294e2;
+  background-position: calc(100% - 42px) center;
+}
+
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover, .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover {
   background-color: rgba(216, 222, 223, 0.05);
-  box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #5294e2;
-  background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
-  background-repeat: no-repeat;
-  background-position: 42px center;
+}
+
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover:dir(ltr), .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover:dir(ltr) {
+  box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 #5294e2;
+}
+
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover:dir(rtl), .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover:dir(rtl) {
+  box-shadow: inset 2px 0 #7eafe9, inset -38px 0 0 0 #5294e2;
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row button.sidebar-button {
