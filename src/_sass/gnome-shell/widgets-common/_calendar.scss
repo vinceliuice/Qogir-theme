@@ -97,15 +97,20 @@
 .calendar-day-base {
   font-size: 90%;
   text-align: center;
-  width: 2.4em; height: 2.4em;
-  padding: 0.1em;
-  margin: 2px;
-  border-radius: 1000px;
+  width: 2.4em !important;
+  height: 2.4em !important;
+  padding: 0.1em !important;
+  margin: 2px !important;
+  border-radius: $circular_radius;
   font-feature-settings: "tnum";
   color: $alt_fg_color;
   background-color: transparent;
 
-  &:hover, &:focus { background-color: $alt_bg_color; }
+  &:hover, &:focus {
+    background-color: $alt_bg_color;
+    box-shadow: none;
+    outline: none;
+  }
 
   &:active, &:checked, &:selected {
     color: $fg_color;

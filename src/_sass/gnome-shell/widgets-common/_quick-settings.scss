@@ -1,6 +1,7 @@
 .quick-settings {
   padding: $cont_padding * 2 !important;
   border-radius: $bt_radius + $cont_padding * 2 !important;
+  margin-top: $cont_padding !important;
 
   .icon-button, .button {
     padding: $cont_padding * 1.75;
@@ -84,19 +85,21 @@
   background-color: $menu_bg !important;
   color: $text_color !important;
   border-radius: $material_radius !important;
-  padding: $cont_padding * 2;
-  margin: $cont_padding * 2 $cont_padding * 3 0;
+  padding: $cont_padding * 2 0 !important;
+  margin: $cont_padding * 2 $cont_padding * 3 + 1px 0 !important;
 
   .popup-menu-item {
-    border-radius: $bt_radius !important;
+    border-radius: 0 !important;
 
-    > StIcon { -st-icon-style: symbolic; }
+    > StIcon {
+      -st-icon-style: symbolic;
+    }
   }
 
   & .header {
     spacing-rows: 0.5 * $cont_padding;
     spacing-columns: $cont_padding * 2;
-    padding-bottom: 2 * $cont_padding;
+    padding: 0 $cont_padding * 2 $cont_padding * 2 !important;
 
     & .icon {
       icon-size: 16px * 1.5; // a non-standard symbolic size but ok

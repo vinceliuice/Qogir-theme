@@ -7,6 +7,7 @@
   &:hover { @include button(hover); }
   &:hover:focus { @include button(focus-hover); }
   &:active, &:active:focus, &:checked { @include button(active); }
+  &:checked:hover { @include button(active-hover); }
   &:insensitive { @include button(insensitive); }
 }
 

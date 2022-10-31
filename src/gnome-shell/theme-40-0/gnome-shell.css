@@ -228,6 +228,14 @@ StEntry StLabel.hint-text {
   box-shadow: none;
 }
 
+.hotplug-notification-item:checked:hover, .button:checked:hover {
+  text-shadow: none;
+  color: #ffffff;
+  background-color: #68a2e6;
+  border: 1px solid #3c86de;
+  box-shadow: none;
+}
+
 .hotplug-notification-item:insensitive, .button:insensitive {
   text-shadow: none;
   color: rgba(70, 72, 83, 0.55);
@@ -299,15 +307,17 @@ StEntry StLabel.hint-text {
 
 /* Slider */
 .slider {
-  height: 15px;
-  color: rgba(0, 0, 0, 0.12);
+  height: 20px;
+  color: #ffffff;
   -slider-height: 4px;
   -slider-background-color: rgba(0, 0, 0, 0.12);
   -slider-border-color: transparent;
   -slider-active-background-color: #5294e2;
   -slider-active-border-color: transparent;
   -slider-border-width: 0;
-  -slider-handle-radius: 0;
+  -slider-handle-radius: 9px;
+  -slider-handle-border-width: 1px;
+  -slider-handle-border-color: rgba(0, 0, 0, 0.12);
   -barlevel-height: 4px;
   -barlevel-background-color: rgba(0, 0, 0, 0.12);
   -barlevel-border-width: 0;
@@ -629,11 +639,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .calendar-day-base {
   font-size: 90%;
   text-align: center;
-  width: 2.4em;
-  height: 2.4em;
-  padding: 0.1em;
-  margin: 2px;
-  border-radius: 1000px;
+  width: 2.4em !important;
+  height: 2.4em !important;
+  padding: 0.1em !important;
+  margin: 2px !important;
+  border-radius: 9999px;
   font-feature-settings: "tnum";
   color: rgba(70, 72, 83, 0.75);
   background-color: transparent;
@@ -641,6 +651,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar-day-base:hover, .calendar-day-base:focus {
   background-color: #eaeef2;
+  box-shadow: none;
+  outline: none;
 }
 
 .calendar-day-base:active, .calendar-day-base:checked, .calendar-day-base:selected {

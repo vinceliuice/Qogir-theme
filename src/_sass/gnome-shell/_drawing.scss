@@ -128,6 +128,16 @@
     box-shadow: none;
   }
 
+  @else if $t==active-hover {
+  //
+  // pushed button
+  //
+    color: $selected_fg_color;
+    background-color: lighten($selected_bg_color, 5%);
+    border: 1px solid if($variant == 'light', darken($selected_bg_color, 5%), lighten($selected_bg_color, 10%));
+    box-shadow: none;
+  }
+
   @else if $t==insensitive {
   //
   // insensitive button
