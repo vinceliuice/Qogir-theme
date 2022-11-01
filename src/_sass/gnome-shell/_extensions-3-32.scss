@@ -167,13 +167,6 @@ $empty_shadow: 0 0 0 transparent;
       background-color: $selected_bg_color;
     }
 
-    // @each $var in 1, 2, 3, 4 {
-    //   .running#{$var} .app-well-app-running-dot {
-    //     background-image: url("common-assets/dash/running#{$var}.svg");
-    //     box-shadow: none;
-    //   }
-    // }
-
     > StWidget.focused .app-well-app-running-dot {
       width: 18px;
       height: 2px;
@@ -187,19 +180,19 @@ $empty_shadow: 0 0 0 transparent;
     min-height: 1.4em;
     margin: 0; // unset margin/padding
     padding: 0;
-    border-radius: 3px;
+    border-radius: $circular_radius;
     font-weight: 700;
     text-align: center;
   }
 
   .number-overlay {
-    background-color: $osd_bg_color;
-    color: $osd_fg_color;
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
   }
 
   .notification-badge {
-    background-color: $osd_bg_color;
-    color: $osd_fg_color;
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
   }
 }
 

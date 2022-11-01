@@ -39,19 +39,19 @@ $empty_shadow: 0 0 0 transparent;
     min-height: 1.4em;
     margin: 0; // unset margin/padding
     padding: 0;
-    border-radius: 3px;
+    border-radius: $circular_radius;
     font-weight: 700;
     text-align: center;
   }
 
   .number-overlay {
-    background-color: $osd_bg_color;
-    color: $osd_fg_color;
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
   }
 
   .notification-badge {
-    background-color: $osd_bg_color;
-    color: $osd_fg_color;
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
   }
 }
 

@@ -3216,19 +3216,19 @@ StWidget.focused .app-well-app-running-dot {
   min-height: 1.4em;
   margin: 0;
   padding: 0;
-  border-radius: 3px;
+  border-radius: 9999px;
   font-weight: 700;
   text-align: center;
 }
 
 #dashtodockContainer .number-overlay {
-  background-color: #282A33;
-  color: #D3DAE3;
+  background-color: #5294e2;
+  color: #ffffff;
 }
 
 #dashtodockContainer .notification-badge {
-  background-color: #282A33;
-  color: #D3DAE3;
+  background-color: #5294e2;
+  color: #ffffff;
 }
 
 .popup-menu.app-well-menu .popup-menu-item.dashtodock-app-well-preview-menu-item {
