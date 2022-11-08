@@ -419,7 +419,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: rgba(255, 255, 255, 0.12);
-  -arrow-base: 64px;
+  -arrow-base: 12px;
   -arrow-rise: 0;
   -arrow-box-shadow: none;
 }
