@@ -15,6 +15,15 @@
 
 // Drawing mixins
 
+@mixin focus-ring($target: null, $width: 1px, $offset: -3px, $focus-state: ':focus:focus-visible') {
+  &#{$focus-state} #{$target} {
+    outline-color: gtkalpha(currentcolor, 0.3);
+    outline-offset: $offset;
+    outline-style: dashed;
+    outline-width: $width;
+  }
+}
+
 // Solid color image
 @function _solid($c) {
   @return linear-gradient(to bottom, $c, $c);
@@ -141,7 +150,6 @@
     color: $fg_color;
     border-color: $button_border;
     background-color: $button_bg;
-    outline: none;
   }
 
   @else if $t==hover {

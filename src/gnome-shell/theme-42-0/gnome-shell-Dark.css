@@ -99,7 +99,8 @@
   text-align: center;
 }
 
-.app-well-app:hover .overview-icon,
+.app-well-app:focus .overview-icon,
+.grid-search-result:focus .overview-icon, .app-well-app:hover .overview-icon,
 .grid-search-result:hover .overview-icon {
   background-color: rgba(82, 148, 226, 0.5);
   border: 1px solid #5294e2;
@@ -2550,7 +2551,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 3px;
 }
 
-.app-well-app.app-folder:hover {
+.app-well-app.app-folder:focus, .app-well-app.app-folder:hover {
   background-color: rgba(57, 59, 69, 0.5);
   border-color: #3d404b;
 }

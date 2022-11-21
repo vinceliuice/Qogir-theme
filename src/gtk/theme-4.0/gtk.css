@@ -68,6 +68,13 @@ textview > border {
   background-color: #fdfdfe;
 }
 
+iconview:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
 iconview:drop(active) {
   box-shadow: none;
 }
@@ -93,6 +100,13 @@ flowbox > flowboxchild {
   border-radius: 2px;
 }
 
+flowbox > flowboxchild:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
 flowbox > flowboxchild:selected {
   outline-offset: -2px;
 }
@@ -103,6 +117,13 @@ flowbox.search-bar {
 
 gridview > child {
   padding: 3px;
+}
+
+gridview > child:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 gridview > child:selected {
@@ -118,6 +139,13 @@ coverflow cover {
   color: #4a4c59;
   background-color: #ffffff;
   border: 1px solid black;
+}
+
+label:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 label.separator {
@@ -547,7 +575,13 @@ button {
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
+}
+
+button:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 button separator {
@@ -736,6 +770,13 @@ button.suggested-action {
   border-color: #3c86de;
 }
 
+button.suggested-action:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
 button.suggested-action.flat {
   border-color: transparent;
   background-color: transparent;
@@ -779,6 +820,13 @@ button.destructive-action {
   color: white;
   background-color: #F04A50;
   border-color: #ee3239;
+}
+
+button.destructive-action:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 button.destructive-action.flat {
@@ -1431,10 +1479,6 @@ modelbutton.flat {
   border: none;
 }
 
-modelbutton.flat:hover {
-  background-color: #f1f2f4;
-}
-
 modelbutton.flat:checked {
   color: #464853;
 }
@@ -1503,7 +1547,14 @@ list > row button.image-button.suggested-action:not(.flat):not(.up):not(.down) {
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
+}
+
+popover.menu box.circular-buttons button.suggested-action.circular.image-button.model:focus:focus-visible,
+list > row button.image-button.suggested-action:not(.flat):not(.up):not(.down):focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 popover.menu box.circular-buttons button.destructive-action.circular.image-button.model,
@@ -1511,12 +1562,27 @@ list > row button.image-button.destructive-action:not(.flat):not(.up):not(.down)
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
+}
+
+popover.menu box.circular-buttons button.destructive-action.circular.image-button.model:focus:focus-visible,
+list > row button.image-button.destructive-action:not(.flat):not(.up):not(.down):focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 button.link,
 link {
   color: #2679db;
+}
+
+button.link:focus:focus-visible,
+link:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 button.link:visited,
@@ -2544,6 +2610,14 @@ treeview.view {
   border-top-color: #e0e0e0;
 }
 
+columnview.view:focus:focus-visible,
+treeview.view:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
 columnview.view acceleditor > label,
 treeview.view acceleditor > label {
   background-color: #5294e2;
@@ -2747,7 +2821,7 @@ menubar > item {
   border-radius: 0;
 }
 
-menubar > item:hover {
+menubar > item:selected {
   background-color: #5294e2;
   box-shadow: none;
   border-color: #68a2e6;
@@ -2861,20 +2935,9 @@ popover.menu modelbutton {
   border-radius: 2px;
 }
 
-popover.menu modelbutton:focus:not(:hover):not(:active) {
-  color: #464853;
-  background-color: transparent;
-  transition: background-color 0, color 0;
-}
-
-popover.menu modelbutton:hover {
+popover.menu modelbutton:hover:not(:focus-visible), popover.menu modelbutton:selected:focus-visible {
   color: #ffffff;
   background-color: #5294e2;
-}
-
-popover.menu modelbutton:active {
-  color: #ffffff;
-  background-color: #2679db;
 }
 
 popover.menu label.title {
@@ -2982,6 +3045,13 @@ cursor-handle.bottom {
 
 notebook {
   padding: 0;
+}
+
+notebook:focus:focus-visible > header > tabs > tab:checked {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -4px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 notebook.frame {
@@ -3343,16 +3413,24 @@ switch {
   background-position: center center;
   transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   padding: 0;
+  border-radius: 100px;
 }
 
-switch > slider {
+switch:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: 3px;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
+switch > slider,
+switch > image {
   min-width: 0;
   min-height: 0;
+  color: transparent;
 }
 
 switch, switch > slider {
-  outline-color: transparent;
-  color: transparent;
   border: none;
   box-shadow: none;
   background-color: transparent;
@@ -3423,7 +3501,8 @@ check {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-dark.png"), url("assets/checkbox-unchecked-dark@2.png"));
 }
 
-popover.menu modelbutton:hover check,
+popover.menu modelbutton:hover:not(:focus-visible) > box > check,
+popover.menu modelbutton:selected:focus-visible > box > check,
 .view:selected check,
 row:selected check,
 infobar check {
@@ -3440,7 +3519,8 @@ check:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked-insensitive-dark.png"), url("assets/checkbox-unchecked-insensitive-dark@2.png"));
 }
 
-popover.menu modelbutton:hover check:disabled,
+popover.menu modelbutton:hover:not(:focus-visible) > box > check:disabled,
+popover.menu modelbutton:selected:focus-visible > box > check:disabled,
 .view:selected check:disabled,
 row:selected check:disabled,
 infobar check:disabled {
@@ -3457,7 +3537,8 @@ check:indeterminate {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-dark.png"), url("assets/checkbox-mixed-dark@2.png"));
 }
 
-popover.menu modelbutton:hover check:indeterminate,
+popover.menu modelbutton:hover:not(:focus-visible) > box > check:indeterminate,
+popover.menu modelbutton:selected:focus-visible > box > check:indeterminate,
 .view:selected check:indeterminate,
 row:selected check:indeterminate,
 infobar check:indeterminate {
@@ -3474,7 +3555,8 @@ check:indeterminate:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed-insensitive-dark.png"), url("assets/checkbox-mixed-insensitive-dark@2.png"));
 }
 
-popover.menu modelbutton:hover check:indeterminate:disabled,
+popover.menu modelbutton:hover:not(:focus-visible) > box > check:indeterminate:disabled,
+popover.menu modelbutton:selected:focus-visible > box > check:indeterminate:disabled,
 .view:selected check:indeterminate:disabled,
 row:selected check:indeterminate:disabled,
 infobar check:indeterminate:disabled {
@@ -3491,7 +3573,8 @@ check:checked {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-dark.png"), url("assets/checkbox-checked-dark@2.png"));
 }
 
-popover.menu modelbutton:hover check:checked,
+popover.menu modelbutton:hover:not(:focus-visible) > box > check:checked,
+popover.menu modelbutton:selected:focus-visible > box > check:checked,
 .view:selected check:checked,
 row:selected check:checked,
 infobar check:checked {
@@ -3508,7 +3591,8 @@ check:checked:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-insensitive-dark.png"), url("assets/checkbox-checked-insensitive-dark@2.png"));
 }
 
-popover.menu modelbutton:hover check:checked:disabled,
+popover.menu modelbutton:hover:not(:focus-visible) > box > check:checked:disabled,
+popover.menu modelbutton:selected:focus-visible > box > check:checked:disabled,
 .view:selected check:checked:disabled,
 row:selected check:checked:disabled,
 infobar check:checked:disabled {
@@ -3525,7 +3609,8 @@ radio {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-dark.png"), url("assets/radio-unchecked-dark@2.png"));
 }
 
-popover.menu modelbutton:hover radio,
+popover.menu modelbutton:hover:not(:focus-visible) > box > radio,
+popover.menu modelbutton:selected:focus-visible > box > radio,
 .view:selected radio,
 row:selected radio,
 infobar radio {
@@ -3542,7 +3627,8 @@ radio:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-unchecked-insensitive-dark.png"), url("assets/radio-unchecked-insensitive-dark@2.png"));
 }
 
-popover.menu modelbutton:hover radio:disabled,
+popover.menu modelbutton:hover:not(:focus-visible) > box > radio:disabled,
+popover.menu modelbutton:selected:focus-visible > box > radio:disabled,
 .view:selected radio:disabled,
 row:selected radio:disabled,
 infobar radio:disabled {
@@ -3559,7 +3645,8 @@ radio:indeterminate {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-dark.png"), url("assets/radio-mixed-dark@2.png"));
 }
 
-popover.menu modelbutton:hover radio:indeterminate,
+popover.menu modelbutton:hover:not(:focus-visible) > box > radio:indeterminate,
+popover.menu modelbutton:selected:focus-visible > box > radio:indeterminate,
 .view:selected radio:indeterminate,
 row:selected radio:indeterminate,
 infobar radio:indeterminate {
@@ -3576,7 +3663,8 @@ radio:indeterminate:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed-insensitive-dark.png"), url("assets/radio-mixed-insensitive-dark@2.png"));
 }
 
-popover.menu modelbutton:hover radio:indeterminate:disabled,
+popover.menu modelbutton:hover:not(:focus-visible) > box > radio:indeterminate:disabled,
+popover.menu modelbutton:selected:focus-visible > box > radio:indeterminate:disabled,
 .view:selected radio:indeterminate:disabled,
 row:selected radio:indeterminate:disabled,
 infobar radio:indeterminate:disabled {
@@ -3593,7 +3681,8 @@ radio:checked {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-dark.png"), url("assets/radio-checked-dark@2.png"));
 }
 
-popover.menu modelbutton:hover radio:checked,
+popover.menu modelbutton:hover:not(:focus-visible) > box > radio:checked,
+popover.menu modelbutton:selected:focus-visible > box > radio:checked,
 .view:selected radio:checked,
 row:selected radio:checked,
 infobar radio:checked {
@@ -3610,7 +3699,8 @@ radio:checked:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-insensitive-dark.png"), url("assets/radio-checked-insensitive-dark@2.png"));
 }
 
-popover.menu modelbutton:hover radio:checked:disabled,
+popover.menu modelbutton:hover:not(:focus-visible) > box > radio:checked:disabled,
+popover.menu modelbutton:selected:focus-visible > box > radio:checked:disabled,
 .view:selected radio:checked:disabled,
 row:selected radio:checked:disabled,
 infobar radio:checked:disabled {
@@ -3639,6 +3729,13 @@ infobar radio:checked:disabled {
 .content-view .tile check:checked:not(list) {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-selectionmode.png"), url("assets/checkbox-checked-selectionmode@2.png"));
   background-color: transparent;
+}
+
+checkbutton:focus:focus-visible, radiobutton:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: 0;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 checkbutton.text-button, radiobutton.text-button {
@@ -3671,6 +3768,13 @@ scale {
   min-height: 15px;
   min-width: 15px;
   padding: 3px;
+}
+
+scale:focus:focus-visible > trough {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: 2px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 scale > trough > slider {
@@ -3818,60 +3922,64 @@ scale > marks {
 
 scale > marks.top {
   margin-bottom: 1px;
-  margin-top: -4px;
+  margin-top: -5px;
 }
 
 scale > marks.bottom {
   margin-top: 1px;
-  margin-bottom: -4px;
+  margin-bottom: -5px;
 }
 
 scale > marks.top {
   margin-right: 1px;
-  margin-left: -4px;
+  margin-left: -5px;
 }
 
 scale > marks.bottom {
   margin-left: 1px;
-  margin-right: -4px;
+  margin-right: -5px;
+}
+
+scale > marks indicator {
+  background-color: currentcolor;
 }
 
 scale.fine-tune > marks.top {
   margin-bottom: 0px;
-  margin-top: -2px;
+  margin-top: -3px;
 }
 
 scale.fine-tune > marks.bottom {
   margin-top: 0px;
-  margin-bottom: -2px;
+  margin-bottom: -3px;
 }
 
 scale.fine-tune > marks.top {
   margin-right: 0px;
-  margin-left: -2px;
+  margin-left: -3px;
 }
 
 scale.fine-tune > marks.bottom {
   margin-left: 0px;
-  margin-right: -2px;
+  margin-right: -3px;
 }
 
 scale.horizontal indicator {
-  min-height: 3px;
+  min-height: 4px;
   min-width: 1px;
 }
 
 scale.horizontal.fine-tune indicator {
-  min-height: 2px;
+  min-height: 3px;
 }
 
 scale.vertical indicator {
   min-height: 1px;
-  min-width: 3px;
+  min-width: 4px;
 }
 
 scale.vertical.fine-tune indicator {
-  min-width: 2px;
+  min-width: 3px;
 }
 
 progressbar {
@@ -4198,6 +4306,13 @@ list.separators:not(.horizontal) > row:not(.separator) {
   border-bottom: 1px solid #e0e0e0;
 }
 
+row:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
 row label.subtitle {
   font-size: smaller;
 }
@@ -4261,6 +4376,15 @@ list.boxed-list > row,
 list.boxed-list > row.expander row.header, row.expander list.nested > row {
   transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+list.content > row:focus:focus-visible, list.content > row.expander row.header:focus:focus-visible,
+list.boxed-list > row:focus:focus-visible,
+list.boxed-list > row.expander row.header:focus:focus-visible, row.expander list.nested > row:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 list.content > row.activatable:not(:selected):hover, list.content > row.expander row.header.activatable:not(:selected):hover,
@@ -4499,6 +4623,13 @@ expander:disabled {
   filter: opacity(0.45);
 }
 
+expander-widget:focus:focus-visible > box > title {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: 0;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
 expander-widget > box > title {
   border-radius: 2px;
 }
@@ -4696,6 +4827,13 @@ stacksidebar row {
   padding: 4px;
 }
 
+stacksidebar row:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
 stacksidebar row > label {
   padding-left: 6px;
   padding-right: 6px;
@@ -4745,6 +4883,13 @@ separator.sidebar {
   padding: 2px 8px;
   border-radius: 2px;
   margin: 2px 6px;
+}
+
+.navigation-sidebar > rowfocus-visible:focus-within {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 .navigation-sidebar > row:last-child {
@@ -5028,6 +5173,13 @@ tooltip > box {
   border-spacing: 6px;
 }
 
+colorswatch:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: 2px;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
 colorswatch, colorswatch:drop(active) {
   border-style: none;
 }
@@ -5111,7 +5263,6 @@ colorswatch#add-color-button {
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
 }
 
 colorswatch#add-color-button:hover {
@@ -5125,6 +5276,13 @@ colorswatch#add-color-button overlay {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
+}
+
+plane:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: 2px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 button.color {
@@ -5310,7 +5468,7 @@ leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:sel
 textview > text:selected,
 textview > text:selected:focus, textview > text > selection:focus, textview > text > selection,
 iconview:selected,
-iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, modelbutton.flat:active, modelbutton.flat:selected, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, columnview.view:selected, columnview.view:selected:focus,
+iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, columnview.view:selected, columnview.view:selected:focus,
 treeview.view:selected,
 treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
   background-color: #5294e2;
@@ -5320,7 +5478,7 @@ row:selected label, label:selected, leaflet.unfolded > box:last-child list > row
 textview > text:selected,
 textview > text:selected:focus, textview > text > selection:focus, textview > text > selection,
 iconview:selected,
-iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, modelbutton.flat:active, modelbutton.flat:selected, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, columnview.view:selected, columnview.view:selected:focus,
+iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, columnview.view:selected, columnview.view:selected:focus,
 treeview.view:selected,
 treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
   color: #ffffff;
@@ -5330,7 +5488,7 @@ row:selected label:disabled, label:disabled:selected, leaflet.unfolded > box:las
 textview > text:disabled:selected,
 textview > text:disabled:selected:focus, textview > text > selection:disabled,
 iconview:disabled:selected,
-iconview:disabled:selected:focus, flowbox > flowboxchild:disabled:selected, gridview > child:disabled:selected, entry > text > selection:disabled, modelbutton.flat:disabled:active, modelbutton.flat:disabled:selected, spinbutton:not(.vertical) > text > text > selection:disabled, spinbutton.vertical > text > text > selection:disabled, spinbutton.vertical > text > selection:disabled, row:disabled:selected, calendar > grid > label.day-number:disabled:selected {
+iconview:disabled:selected:focus, flowbox > flowboxchild:disabled:selected, gridview > child:disabled:selected, entry > text > selection:disabled, spinbutton:not(.vertical) > text > text > selection:disabled, spinbutton.vertical > text > text > selection:disabled, spinbutton.vertical > text > selection:disabled, row:disabled:selected, calendar > grid > label.day-number:disabled:selected {
   color: #a9caf1;
 }
 
@@ -5380,7 +5538,14 @@ popover.emoji-picker emoji {
   border-radius: 6px;
 }
 
-popover.emoji-picker emoji:focus, popover.emoji-picker emoji:hover {
+popover.emoji-picker emoji:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
+popover.emoji-picker emoji:hover {
   background-color: #5294e2;
 }
 
@@ -6103,7 +6268,6 @@ button.card {
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
   box-shadow: none;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -6389,7 +6553,6 @@ list.boxed-list, .card {
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
   border-radius: 2px;
   box-shadow: none;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -6561,6 +6724,13 @@ tabbar tabbox > tabboxchild {
   border-radius: 0;
   margin-bottom: 0;
   margin-top: 0;
+}
+
+tabbar tabbox > tabboxchild:focus:focus-visible {
+  outline-color: alpha(currentcolor,0.3);
+  outline-offset: -3px;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 tabbar tabbox > separator {
