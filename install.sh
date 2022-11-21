@@ -271,7 +271,6 @@ uninstall() {
 
 # Backup and install files related to GDM theme
 GS_THEME_FILE="/usr/share/gnome-shell/gnome-shell-theme.gresource"
-SHELL_THEME_FOLDER="/usr/share/gnome-shell/theme"
 UBUNTU_THEME_FILE="/usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource"
 POP_OS_THEME_FILE="/usr/share/gnome-shell/theme/Pop/gnome-shell-theme.gresource"
 ZORIN_THEME_FILE="/usr/share/gnome-shell/theme/ZorinBlue-Light/gnome-shell-theme.gresource"
@@ -656,7 +655,15 @@ if [[ "${gdm:-}" != 'true' && "${remove:-}" == 'true' ]]; then
 fi
 
 if [[ "${gdm:-}" == 'true' && "${remove:-}" != 'true' && "$UID" -eq "$ROOT_UID" ]]; then
-  install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}"
+  if [[ "${#colors[@]}" -gt 1 ]]; then
+    echo 'Error: To install a gdm theme you can only select one color'
+    exit 1
+  fi
+  if [[ "${#themes[@]}" -gt 1 ]]; then
+    echo 'Error: To install a gdm theme you can only select one theme'
+    exit 1
+  fi
+  install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${themes[0]}" "${colors[0]}"
 fi
 
 if [[ "${gdm:-}" == 'true' && "${remove:-}" == 'true' && "$UID" -eq "$ROOT_UID" ]]; then
