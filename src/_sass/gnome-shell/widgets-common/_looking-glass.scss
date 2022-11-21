@@ -15,6 +15,13 @@ $text_fg_color: #ccc;
     border: none;
     border-radius: $bt_radius;
     background-color: $osd_bg_color;
+
+    .lg-toolbar-button {
+      padding: 6px 12px;
+      @extend %button;
+
+      & > StIcon { icon-size: 16px; }
+    }
   }
 
   .labels { spacing: 6px; }
@@ -68,13 +75,18 @@ $text_fg_color: #ccc;
 
 .lg-obj-inspector-title {
     spacing: 6px;
+
+    .window-close {
+        height: $window_close_button_size / 1.5;
+        width: $window_close_button_size / 1.5;
+    }
 }
 
 .lg-obj-inspector-button {
+    @extend %button;
     border: 1px solid $osd_borders_color;
     padding: 4px;
     border-radius: $bt_radius;
-    &:hover { border: 1px solid #ffffff; }
 }
 
 // Extensions
@@ -105,5 +117,6 @@ $text_fg_color: #ccc;
   background: $osd_bg_color;
   border: 1px solid $osd_borders_color;
   border-radius: $bt_radius;
+  color: $osd_fg_color;
   padding: 6px;
 }
