@@ -186,7 +186,7 @@ StEntry StLabel.hint-text {
 }
 
 /* Buttons */
-.hotplug-notification-item, .quick-settings-system-item .icon-button, .quick-toggle, .button {
+.lg-obj-inspector-button, #LookingGlassDialog > #Toolbar .lg-toolbar-button, .hotplug-notification-item, .quick-settings-system-item .icon-button, .quick-toggle, .button {
   text-shadow: none;
   color: #e6ebef;
   background-color: #2c2f39;
@@ -194,7 +194,7 @@ StEntry StLabel.hint-text {
   box-shadow: none;
 }
 
-.hotplug-notification-item:focus, .quick-settings-system-item .icon-button:focus, .quick-toggle:focus, .button:focus {
+.lg-obj-inspector-button:focus, #LookingGlassDialog > #Toolbar .lg-toolbar-button:focus, .hotplug-notification-item:focus, .quick-settings-system-item .icon-button:focus, .quick-toggle:focus, .button:focus {
   text-shadow: none;
   color: #e6ebef;
   background-color: #2c2f39;
@@ -203,7 +203,7 @@ StEntry StLabel.hint-text {
   outline: none !important;
 }
 
-.hotplug-notification-item:hover, .quick-settings-system-item .icon-button:hover, .quick-toggle:hover, .button:hover {
+.lg-obj-inspector-button:hover, #LookingGlassDialog > #Toolbar .lg-toolbar-button:hover, .hotplug-notification-item:hover, .quick-settings-system-item .icon-button:hover, .quick-toggle:hover, .button:hover {
   text-shadow: none;
   color: #e6ebef;
   background-color: #383a44;
@@ -211,7 +211,7 @@ StEntry StLabel.hint-text {
   box-shadow: none;
 }
 
-.hotplug-notification-item:hover:focus, .quick-settings-system-item .icon-button:hover:focus, .quick-toggle:hover:focus, .button:hover:focus {
+.lg-obj-inspector-button:hover:focus, #LookingGlassDialog > #Toolbar .lg-toolbar-button:hover:focus, .hotplug-notification-item:hover:focus, .quick-settings-system-item .icon-button:hover:focus, .quick-toggle:hover:focus, .button:hover:focus {
   text-shadow: none;
   color: #e6ebef;
   background-color: rgba(255, 255, 255, 0.06);
@@ -220,7 +220,7 @@ StEntry StLabel.hint-text {
   outline: none !important;
 }
 
-.hotplug-notification-item:active, .quick-settings-system-item .icon-button:active, .quick-toggle:active, .button:active, .hotplug-notification-item:checked, .quick-settings-system-item .icon-button:checked, .quick-toggle:checked, .button:checked {
+.lg-obj-inspector-button:active, #LookingGlassDialog > #Toolbar .lg-toolbar-button:active, .hotplug-notification-item:active, .quick-settings-system-item .icon-button:active, .quick-toggle:active, .button:active, .lg-obj-inspector-button:checked, #LookingGlassDialog > #Toolbar .lg-toolbar-button:checked, .hotplug-notification-item:checked, .quick-settings-system-item .icon-button:checked, .quick-toggle:checked, .button:checked {
   text-shadow: none;
   color: #ffffff;
   background-color: #5294e2;
@@ -228,7 +228,7 @@ StEntry StLabel.hint-text {
   box-shadow: none;
 }
 
-.hotplug-notification-item:checked:hover, .quick-settings-system-item .icon-button:checked:hover, .quick-toggle:checked:hover, .button:checked:hover {
+.lg-obj-inspector-button:checked:hover, #LookingGlassDialog > #Toolbar .lg-toolbar-button:checked:hover, .hotplug-notification-item:checked:hover, .quick-settings-system-item .icon-button:checked:hover, .quick-toggle:checked:hover, .button:checked:hover {
   text-shadow: none;
   color: #ffffff;
   background-color: #68a2e6;
@@ -236,7 +236,7 @@ StEntry StLabel.hint-text {
   box-shadow: none;
 }
 
-.hotplug-notification-item:insensitive, .quick-settings-system-item .icon-button:insensitive, .quick-toggle:insensitive, .button:insensitive {
+.lg-obj-inspector-button:insensitive, #LookingGlassDialog > #Toolbar .lg-toolbar-button:insensitive, .hotplug-notification-item:insensitive, .quick-settings-system-item .icon-button:insensitive, .quick-toggle:insensitive, .button:insensitive {
   text-shadow: none;
   color: rgba(230, 235, 239, 0.45);
   border: 1px solid rgba(255, 255, 255, 0);
@@ -3032,6 +3032,14 @@ StWidget.focused .app-well-app-running-dot {
   background-color: #282A33;
 }
 
+#LookingGlassDialog > #Toolbar .lg-toolbar-button {
+  padding: 6px 12px;
+}
+
+#LookingGlassDialog > #Toolbar .lg-toolbar-button > StIcon {
+  icon-size: 16px;
+}
+
 #LookingGlassDialog .labels {
   spacing: 6px;
 }
@@ -3108,14 +3116,15 @@ StWidget.focused .app-well-app-running-dot {
   spacing: 6px;
 }
 
+.lg-obj-inspector-title .window-close, .lg-obj-inspector-title .screenshot-ui-close-button {
+  height: 21.3333333333px;
+  width: 21.3333333333px;
+}
+
 .lg-obj-inspector-button {
   border: 1px solid #434655;
   padding: 4px;
   border-radius: 2px;
-}
-
-.lg-obj-inspector-button:hover {
-  border: 1px solid #ffffff;
 }
 
 #lookingGlassExtensions {
@@ -3146,6 +3155,7 @@ StWidget.focused .app-well-app-running-dot {
   background: #282A33;
   border: 1px solid #434655;
   border-radius: 2px;
+  color: #D3DAE3;
   padding: 6px;
 }
 
