@@ -21,6 +21,7 @@
   border: 1px solid darken($dark_sidebar_icon_bg, 3%);
   border-radius: $material_radius;
 
+  &:focus,
   &:hover {
     background-color: rgba(lighten($dark_sidebar_icon_bg, 3%), 0.5);
     border-color: lighten($dark_sidebar_icon_bg, 5%);
