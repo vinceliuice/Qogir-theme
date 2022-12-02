@@ -421,7 +421,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: rgba(255, 255, 255, 0.12);
-  -arrow-base: 12px;
+  -arrow-base: 28px;
   -arrow-rise: 0;
   -arrow-box-shadow: none;
 }
@@ -1039,7 +1039,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message .message-title {
   font-weight: bold;
   text-shadow: none;
-  padding-top: 0.7em;
+  padding-top: 0.57em;
 }
 
 .message .message-secondary-bin {
@@ -1139,7 +1139,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 2px;
   icon-size: 32px !important;
-  padding: 12px !important;
+  padding: 16px !important;
   margin: 0 !important;
 }
 
@@ -3778,6 +3778,23 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .osd-window StLabel:rtl {
+  margin-left: 6px;
+}
+
+.osd-window .level {
+  margin-bottom: 4px;
+  min-width: 160px;
+}
+
+.osd-window .level:first-child {
+  margin-bottom: 0px;
+}
+
+.osd-window .level:ltr {
+  margin-right: 6px;
+}
+
+.osd-window .level:rtl {
   margin-left: 6px;
 }
 
