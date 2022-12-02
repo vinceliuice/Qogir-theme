@@ -2,11 +2,11 @@
 
 //.the popover itself
 .popup-menu-boxpointer {
-  -arrow-border-radius: 2px;
+  -arrow-border-radius: 6px;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: $borders_color;
-  -arrow-base: 28px;
+  -arrow-base: 24px;
   -arrow-rise: 0;
   -arrow-box-shadow: none; // dreaming bugzilla #689995
 }

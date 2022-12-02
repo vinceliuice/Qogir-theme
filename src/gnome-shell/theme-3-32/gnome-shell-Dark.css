@@ -377,11 +377,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Popovers/Menus */
 .popup-menu-boxpointer, .candidate-popup-boxpointer {
-  -arrow-border-radius: 2px;
+  -arrow-border-radius: 6px;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: rgba(255, 255, 255, 0.12);
-  -arrow-base: 28px;
+  -arrow-base: 24px;
   -arrow-rise: 0;
   -arrow-box-shadow: none;
 }
