@@ -1,6 +1,6 @@
 // Rubberband for select-area screenshots
 .select-area-rubberband {
-  background-color: transparentize($selected_bg_color,0.7);
+  background-color: transparentize($selected_bg_color, 0.7);
   border: 1px solid $selected_bg_color;
 }
 
@@ -10,12 +10,13 @@
   color: $osd_fg_color;
   border-radius: 99px;
   border: 2px $osd_fg_color;
+
   &:hover {
-    color: lighten($osd_fg_color,30%);
+    color: lighten($osd_fg_color, 30%);
   }
 
-  & StIcon {
-    background-color: transparentize($osd_fg_color,0.95);
+  StIcon {
+    background-color: transparentize($osd_fg_color, 0.95);
     border-radius: 99px;
     padding: 12px; // 12px
     width: 40px; height: 40px; // 40px;
@@ -44,7 +45,6 @@
 
 .lightbox { background-color: black; }
 .flashspot { background-color: white; }
-
 
 // Hidden
 .hidden { color: rgba(0,0,0,0);}

@@ -24,17 +24,20 @@
   .modal-dialog-button {
     @include button(normal);
     padding: 4px 18px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-radius: $bt_radius;
 
     &:hover, &:focus {
       @include button(hover);
     }
+
     &:active {
       @include button(active);
     }
+
     &:insensitive {
       @include button(insensitive);
     }
+
     &:default {
       @include button(default);
     }
@@ -46,6 +49,9 @@
     padding: 0;
     width: 36px;
     height: 36px;
+    border-radius: 100px;
+    background-color: rgba($osd_fg_color, 0.1);
+    border-color: rgba($osd_fg_color, 0.1);
 
     StIcon { icon-size: 16px; }
   }
@@ -57,7 +63,7 @@
 }
 
 .login-dialog-logo-bin { padding: 24px 0px; }
-.login-dialog-banner { color: darken($osd_fg_color,10%); }
+.login-dialog-banner { color: darken($osd_fg_color, 10%); }
 .login-dialog-button-box { width: 23em; spacing: 5px; }
 .login-dialog-message { text-align: center; }
 .login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
@@ -75,6 +81,32 @@
   font-weight: bold;
   color: darken($osd_fg_color,30%);
   padding-top: 1em;
+}
+
+.login-dialog-auth-list-view { -st-vfade-offset: 1em; }
+.login-dialog-auth-list {
+  spacing: 6px;
+  margin-left: 2em;
+}
+
+.login-dialog-auth-list-title {
+  margin-left: 2em;
+}
+
+.login-dialog-auth-list-item {
+  border-radius: $bt_radius + 4px;
+  padding: 6px;
+  color: darken($osd_fg_color, 30%);
+  &:focus, &:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
+}
+
+.login-dialog-auth-list-label {
+  @include fontsize($font-size + 2);
+  font-weight: bold;
+  padding-left: 15px;
+
+  &:ltr { padding-left: 14px; text-align: left; }
+  &:rtl { padding-right: 14px; text-align: right; }
 }
 
 .login-dialog-user-list-view { -st-vfade-offset: 1em; }
@@ -119,6 +151,11 @@
   padding-top: 16px;
 }
 
+.login-dialog-timed-login-indicator {
+  height: 2px;
+  background-color: darken($osd_fg_color, 40%);
+}
+
 .login-dialog-prompt-layout {
   padding-top: 24px;
   padding-bottom: 12px;
@@ -134,4 +171,34 @@
   color: darken($osd_fg_color, 20%);
   @include fontsize($font-size + 1);
   padding-top: 1em;
+}
+
+.login-dialog {
+  StEntry {
+    @if $variant=='dark' {
+      background-color: darken($osd_bg_color, 3%);
+      color: $osd_fg_color;
+    }
+  }
+}
+
+// Custom styling for unlock entry
+.unlock-dialog {
+  StEntry {
+    border:none !important;
+    &:focus {
+      background-color: transparentize($osd_fg_color, 0.9);
+    }
+    &:insensitive {
+      color: transparentize($osd_fg_color, 0.5);
+      background-color: transparentize($osd_fg_color, 0.95);
+    }
+  }
+
+  .cancel-button,
+  .switch-user-button,
+  .login-dialog-session-list-button {
+    border-color: transparent;
+    background-color: transparentize($fg_color, 0.9);
+  }
 }

@@ -136,7 +136,7 @@
 
 /* Entries */
 StEntry {
-  padding: 7px;
+  padding: 8px;
   caret-size: 1px;
   caret-color: #e6ebef;
   selection-background-color: #5294e2;
@@ -1006,7 +1006,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin {
-  padding: 12px;
+  padding: 18px;
 }
 
 .message .message-icon-bin:ltr {
@@ -1068,6 +1068,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   magrin: 0 !important;
 }
 
+.message .message-close-button StIcon {
+  icon-size: 16px;
+  -st-icon-style: symbolic;
+}
+
 .message .message-close-button:hover {
   color: #e6ebef;
   background-color: rgba(230, 235, 239, 0.1);
@@ -1100,6 +1105,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message-media-control:last-child:rtl {
   margin-left: 18px !important;
+}
+
+.message-media-control StIcon {
+  icon-size: 16px;
+  -st-icon-style: symbolic;
 }
 
 .message-media-control:hover {
@@ -3191,7 +3201,7 @@ StWidget.focused .app-well-app-running-dot {
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: none;
   padding: 4px 18px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
 }
 
 .unlock-dialog .modal-dialog-button:hover, .unlock-dialog .modal-dialog-button:focus,
@@ -3236,6 +3246,9 @@ StWidget.focused .app-well-app-running-dot {
   padding: 0;
   width: 36px;
   height: 36px;
+  border-radius: 100px;
+  background-color: rgba(211, 218, 227, 0.1);
+  border-color: rgba(211, 218, 227, 0.1);
 }
 
 .unlock-dialog .cancel-button StIcon,
@@ -3293,6 +3306,46 @@ StWidget.focused .app-well-app-running-dot {
   font-weight: bold;
   color: #768ba8;
   padding-top: 1em;
+}
+
+.login-dialog-auth-list-view {
+  -st-vfade-offset: 1em;
+}
+
+.login-dialog-auth-list {
+  spacing: 6px;
+  margin-left: 2em;
+}
+
+.login-dialog-auth-list-title {
+  margin-left: 2em;
+}
+
+.login-dialog-auth-list-item {
+  border-radius: 6px;
+  padding: 6px;
+  color: #768ba8;
+}
+
+.login-dialog-auth-list-item:focus, .login-dialog-auth-list-item:selected {
+  background-color: #5294e2;
+  color: #ffffff;
+}
+
+.login-dialog-auth-list-label {
+  font-size: 12pt;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+.login-dialog-auth-list-label:ltr {
+  padding-left: 14px;
+  text-align: left;
+}
+
+.login-dialog-auth-list-label:rtl {
+  padding-right: 14px;
+  text-align: right;
 }
 
 .login-dialog-user-list-view {
@@ -3364,6 +3417,11 @@ StWidget.focused .app-well-app-running-dot {
   padding-top: 16px;
 }
 
+.login-dialog-timed-login-indicator {
+  height: 2px;
+  background-color: #5b728f;
+}
+
 .login-dialog-prompt-layout {
   padding-top: 24px;
   padding-bottom: 12px;
@@ -3379,6 +3437,31 @@ StWidget.focused .app-well-app-running-dot {
   color: #95a6bb;
   font-size: 11pt;
   padding-top: 1em;
+}
+
+.login-dialog StEntry {
+  background-color: #21232a;
+  color: #D3DAE3;
+}
+
+.unlock-dialog StEntry {
+  border: none !important;
+}
+
+.unlock-dialog StEntry:focus {
+  background-color: rgba(211, 218, 227, 0.1);
+}
+
+.unlock-dialog StEntry:insensitive {
+  color: rgba(211, 218, 227, 0.5);
+  background-color: rgba(211, 218, 227, 0.05);
+}
+
+.unlock-dialog .cancel-button,
+.unlock-dialog .switch-user-button,
+.unlock-dialog .login-dialog-session-list-button {
+  border-color: transparent;
+  background-color: rgba(230, 235, 239, 0.1);
 }
 
 /* Screen Shield */
@@ -3513,6 +3596,10 @@ StWidget.focused .app-well-app-running-dot {
   background-gradient-end: rgba(255, 255, 255, 0.05);
   background-gradient-direction: horizontal;
   border-radius: 0px 15px 15px 0px;
+}
+
+.page-navigation-arrow {
+  border-radius: 100%;
 }
 
 .page-navigation-arrow > StIcon {
