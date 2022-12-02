@@ -3436,29 +3436,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .login-dialog StEntry {
-  background-color: #21232a;
-  color: #D3DAE3;
-}
-
-.unlock-dialog StEntry {
-  border: none !important;
-}
-
-.unlock-dialog StEntry:focus {
-  background-color: rgba(211, 218, 227, 0.1);
-}
-
-.unlock-dialog StEntry:insensitive {
-  color: rgba(211, 218, 227, 0.5);
-  background-color: rgba(211, 218, 227, 0.05);
-}
-
-.unlock-dialog .cancel-button,
-.unlock-dialog .switch-user-button,
-.unlock-dialog .login-dialog-session-list-button {
-  border-color: transparent;
-  background-color: rgba(230, 235, 239, 0.1);
-  border-radius: 100px;
+  border-radius: 1000px;
 }
 
 /* Screen Shield */
@@ -3500,7 +3478,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .unlock-dialog-notifications-container .notification,
 .unlock-dialog-notifications-container .unlock-dialog-notification-source {
-  padding: 12px 6px;
+  padding: 12px 16px;
   border: none;
   background-color: rgba(40, 42, 51, 0.3);
   color: #D3DAE3;
@@ -3513,21 +3491,51 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .unlock-dialog-notification-label {
-  padding: 0px 0px 0px 12px;
+  padding-left: 12px;
+  padding-right: 0;
+}
+
+.unlock-dialog-notification-label:rtl {
+  padding-right: 12px;
+  padding-left: 0;
 }
 
 .unlock-dialog-notification-count-text {
   weight: bold;
-  padding: 0 6px;
+  padding: 0 16px;
   color: #282A33;
-  background-color: rgba(211, 218, 227, 0.3);
+  background-color: rgba(211, 218, 227, 0.1);
   border-radius: 1000px;
-  margin-right: 12px;
 }
 
 .screen-shield-background {
   background: black;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.unlock-dialog StEntry {
+  border: none !important;
+  border-radius: 1000px;
+  background-color: rgba(211, 218, 227, 0.05);
+  color: rgba(211, 218, 227, 0.7);
+}
+
+.unlock-dialog StEntry:focus {
+  background-color: rgba(211, 218, 227, 0.1);
+  color: #D3DAE3;
+}
+
+.unlock-dialog StEntry:insensitive {
+  color: rgba(211, 218, 227, 0.5);
+  background-color: rgba(211, 218, 227, 0.05);
+}
+
+.unlock-dialog .cancel-button,
+.unlock-dialog .switch-user-button,
+.unlock-dialog .login-dialog-session-list-button {
+  border-color: transparent;
+  background-color: rgba(230, 235, 239, 0.1);
+  border-radius: 1000px;
 }
 
 #lockDialogGroup {
@@ -3641,7 +3649,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #dash .overview-icon {
-  padding: 5px;
+  padding: 4px;
 }
 
 .dash-background {
