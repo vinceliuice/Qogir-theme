@@ -21,7 +21,7 @@
     box-shadow: none;
     color: $osd_fg_color;
     background-color: $osd_bg_color;
-    border: none;
+    border: none !important;
     border-top: if($variant == 'light', 0, 1px) solid $borders_color !important;
 
     &:hover { background-color: lighten($osd_bg_color, 5%); }
