@@ -11,14 +11,6 @@
   border: none;
   background-color: transparent;
 
-  StEntry {
-    @if $variant=='dark' {
-      $_gdm_entry_bg: transparentize(lighten(desaturate(#241f31, 20%), 2%), 0.5);
-      background-color: $_gdm_entry_bg;
-      color: $osd_fg_color;
-    }
-  }
-
   .modal-dialog-button-box { spacing: 3px; }
 
   .modal-dialog-button {
@@ -200,5 +192,6 @@
   .login-dialog-session-list-button {
     border-color: transparent;
     background-color: transparentize($fg_color, 0.9);
+    border-radius: 100px;
   }
 }

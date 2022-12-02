@@ -53,14 +53,12 @@
 }
 
 .page-navigation-arrow {
-  border-radius: 100%;
-
   > StIcon {
     margin: 6px;
     padding: 18px;
     width: 24px;
     height: 24px;
-    border-radius: 100%;
+    border-radius: 1000px;
     color: rgba(white, 0.8);
   }
 

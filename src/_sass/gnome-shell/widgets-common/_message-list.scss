@@ -4,16 +4,28 @@
 // main list
 .message-list {
   width: 29em;
-  padding-left: 16px;
   text-shadow: none;
   border: solid $borders_color;
 
   // padding and margins to account for scrollbar
-  &:ltr { margin-left: 0; margin-right: 4px; padding-right: 6px; border-right-width: 1px; }
-  &:rtl { margin-right: 0; margin-left: 4px; padding-left: 6px; border-left-width: 1px; }
+  &:ltr {
+    margin-left: 0;
+    margin-right: 4px;
+    padding-left: 18px;
+    padding-right: 6px;
+    border-right-width: 1px;
+  }
+
+  &:rtl {
+    margin-right: 0;
+    margin-left: 4px;
+    padding-left: 6px;
+    padding-right: 18px;
+    border-left-width: 1px;
+  }
 
   .message-list-placeholder {
-    spacing: 12px;
+    color: $insensitive_fg_color;
 
     // icon size and color
     > StIcon {
@@ -95,8 +107,6 @@
     > StIcon {
       icon-size: 32px; // 32px
       -st-icon-style: symbolic;
-      padding: 6px 0;
-      margin: 6px 0 6px 6px;
     }
 
     // fallback
@@ -108,8 +118,9 @@
 
   // content
   .message-content {
-    padding: 6px + 4px;
+    padding: 9px;
     spacing: 4px;
+    margin-bottom: 8px;
     text-shadow: none;
   }
 
@@ -117,11 +128,12 @@
   .message-title {
     font-weight: bold;
     text-shadow: none;
+    padding-top: 0.7em;
   }
 
   // secondary container in title box
   .message-secondary-bin {
-    padding: 0 4px * 2;
+    padding: 0 8px;
 
     // notification time stamp
     > .event-time {
@@ -173,8 +185,8 @@
 
 /* Media Controls */
 .message-media-control {
-  margin: 22px 4px !important;
-  padding: 10px !important;
+  margin: 28px 4px !important;
+  padding: 0 10px !important;
   color: $alt_fg_color;
   border-radius: $circular_radius;
 

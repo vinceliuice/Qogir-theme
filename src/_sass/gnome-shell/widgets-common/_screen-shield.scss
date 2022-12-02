@@ -57,7 +57,6 @@
   background-color: transparentize($osd_fg_color, 0.7);
   border-radius: 1000px;
   margin-right: 12px;
-
 }
 
 .screen-shield-background { //just the shadow, really
@@ -67,6 +66,9 @@
 
 #lockDialogGroup {
   background-color: $osd_bg_color;
+  background-image: url("assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #unlockDialogNotifications {

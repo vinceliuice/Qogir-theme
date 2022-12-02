@@ -38,3 +38,27 @@
     }
   }
 }
+
+// desktop background menu
+.background-menu {
+  -boxpointer-gap: 0px;
+  -arrow-rise: 0px; // hide the beak on the menu
+}
+
+// right-click (and panel) app menu
+.app-menu {
+  max-width: 27.25em;
+
+  // this is unneeded at the top-level in this menu, hide it
+  .popup-menu-ornament { width: 0 !important; }
+
+  .popup-inactive-menu-item:first-child {
+    // "Open Windows" label
+    > StLabel {
+      font-weight: 700;
+      @include fontsize(9);
+      &:ltr {margin-right: 8px;}
+      &:rtl {margin-left: 8px;}
+    }
+  }
+}

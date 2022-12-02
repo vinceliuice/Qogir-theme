@@ -388,22 +388,23 @@ StScrollView.hfade {
 
 StScrollBar {
   padding: 0;
+  margin: 6px;
 }
 
 StScrollView StScrollBar {
-  min-width: 10px;
-  min-height: 10px;
+  min-width: 6px;
+  min-height: 6px;
 }
 
 StScrollBar StBin#trough {
-  border-radius: 0;
+  border-radius: 100px;
   background-color: transparent;
 }
 
 StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
-  border-radius: 5px;
+  border-radius: 100px;
   background-color: #9ea2a8;
-  margin: 2px;
+  border: 3px solid transparent;
 }
 
 StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover {
@@ -899,7 +900,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Message List */
 .message-list {
   width: 29em;
-  padding-left: 16px;
   text-shadow: none;
   border: solid rgba(255, 255, 255, 0.12);
 }
@@ -907,6 +907,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message-list:ltr {
   margin-left: 0;
   margin-right: 4px;
+  padding-left: 18px;
   padding-right: 6px;
   border-right-width: 1px;
 }
@@ -915,11 +916,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin-right: 0;
   margin-left: 4px;
   padding-left: 6px;
+  padding-right: 18px;
   border-left-width: 1px;
 }
 
 .message-list .message-list-placeholder {
-  spacing: 12px;
+  color: rgba(230, 235, 239, 0.45);
 }
 
 .message-list .message-list-placeholder > StIcon {
@@ -1020,8 +1022,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message .message-icon-bin > StIcon {
   icon-size: 32px;
   -st-icon-style: symbolic;
-  padding: 6px 0;
-  margin: 6px 0 6px 6px;
 }
 
 .message .message-icon-bin > .fallback-app-icon {
@@ -1030,14 +1030,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-content {
-  padding: 10px;
+  padding: 9px;
   spacing: 4px;
+  margin-bottom: 8px;
   text-shadow: none;
 }
 
 .message .message-title {
   font-weight: bold;
   text-shadow: none;
+  padding-top: 0.7em;
 }
 
 .message .message-secondary-bin {
@@ -1093,8 +1095,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Media Controls */
 .message-media-control {
-  margin: 22px 4px !important;
-  padding: 10px !important;
+  margin: 28px 4px !important;
+  padding: 0 10px !important;
   color: rgba(230, 235, 239, 0.75);
   border-radius: 9999px;
 }
@@ -3182,12 +3184,6 @@ StWidget.focused .app-well-app-running-dot {
   background-color: transparent;
 }
 
-.unlock-dialog StEntry,
-.login-dialog StEntry {
-  background-color: rgba(45, 44, 46, 0.5);
-  color: #D3DAE3;
-}
-
 .unlock-dialog .modal-dialog-button-box,
 .login-dialog .modal-dialog-button-box {
   spacing: 3px;
@@ -3462,6 +3458,7 @@ StWidget.focused .app-well-app-running-dot {
 .unlock-dialog .login-dialog-session-list-button {
   border-color: transparent;
   background-color: rgba(230, 235, 239, 0.1);
+  border-radius: 100px;
 }
 
 /* Screen Shield */
@@ -3535,6 +3532,9 @@ StWidget.focused .app-well-app-running-dot {
 
 #lockDialogGroup {
   background-color: #282A33;
+  background-image: url("assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #unlockDialogNotifications StButton#vhandle, #unlockDialogNotifications StButton#hhandle {
@@ -3598,16 +3598,12 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 0px 15px 15px 0px;
 }
 
-.page-navigation-arrow {
-  border-radius: 100%;
-}
-
 .page-navigation-arrow > StIcon {
   margin: 6px;
   padding: 18px;
   width: 24px;
   height: 24px;
-  border-radius: 100%;
+  border-radius: 1000px;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -3735,6 +3731,32 @@ StWidget.focused .app-well-app-running-dot {
 .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:rtl {
   padding-right: 12px !important;
   margin-right: 0 !important;
+}
+
+.background-menu {
+  -boxpointer-gap: 0px;
+  -arrow-rise: 0px;
+}
+
+.app-menu {
+  max-width: 27.25em;
+}
+
+.app-menu .popup-menu-ornament {
+  width: 0 !important;
+}
+
+.app-menu .popup-inactive-menu-item:first-child > StLabel {
+  font-weight: 700;
+  font-size: 9pt;
+}
+
+.app-menu .popup-inactive-menu-item:first-child > StLabel:ltr {
+  margin-right: 8px;
+}
+
+.app-menu .popup-inactive-menu-item:first-child > StLabel:rtl {
+  margin-left: 8px;
 }
 
 .osd-window {
