@@ -75,6 +75,8 @@ textview > border { background-color: mix($bg_color, $base_color, 50%); }
 iconview {
   @extend %view;
 
+  @include focus-ring();
+
   &:drop(active) {
     box-shadow: none;
   }
@@ -100,6 +102,8 @@ flowbox {
     padding: 3px;
     border-radius: $bt_radius;
 
+    @include focus-ring();
+
     &:selected {
       @extend %selected_items;
       outline-offset: -2px;
@@ -114,6 +118,8 @@ gridview {
 
   > child {
     padding: 3px;
+
+    @include focus-ring();
 
     &:selected {
       outline-color: $selected_bg_color;
@@ -135,6 +141,8 @@ coverflow cover {
 }
 
 label {
+  @include focus-ring();
+
   &.separator {
     @extend .dim-label;
 
@@ -486,6 +494,7 @@ button {
   padding: 2px $cont_padding;
 
   @include button(normal);
+  @include focus-ring();
 
   separator { margin: 4px 1px; }
 
@@ -625,6 +634,7 @@ button {
                                     (destructive-action, $destructive_color, $destructive_fg_color) {
     &.#{$b_type} {
       @include button(suggested_destructive, $b_color, $b_fg);
+      @include focus-ring();
 
       &.flat {
         @include button(undecorated);
@@ -967,16 +977,6 @@ modelbutton.flat {
   @extend %undecorated_button;
   border: none;
 
-  &:hover {
-    background-color: if($variant=='light', mix($fg_color,$bg_color,5%), mix($fg_color,$bg_color,10%));
-    // border: 1px solid $borders_color;
-  }
-
-  &:active, &:selected {
-    // border: 1px solid if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
-    @extend %selected_items;
-  }
-
   &:checked { color: $fg_color; }
   &:disabled { color: $insensitive_fg_color; }
 
@@ -1020,6 +1020,7 @@ list > row button.image-button:not(.flat):not(.up):not(.down) {
                              (destructive-action, $destructive_color) {
     &.#{$b_type} { // allow colored buttons in lists #3643
       @include button(normal, $b_color, white);
+      @include focus-ring();
     }
   }
 }
@@ -1030,6 +1031,8 @@ list > row button.image-button:not(.flat):not(.up):not(.down) {
 %link,
 link {
   color: $link_color;
+
+  @include focus-ring();
 
   &:visited {
     color: $link_visited_color;
@@ -1925,6 +1928,8 @@ treeview.view {
   border-left-color: $solid_borders_color;   // this is actually the tree lines color,
   border-top-color: $solid_borders_color;         // while this is the grid lines color, better then nothing
 
+  @include focus-ring($offset: -3px)
+
   > rubberband { @extend rubberband; }                    // to avoid borders being overridden by the previously set props
 
   acceleditor > label { background-color: $selected_bg_color; }
@@ -2082,7 +2087,7 @@ menubar {
     border: 1px solid transparent;
     border-radius: 0;
 
-    &:hover { //Seems like it :hover even with keyboard focus
+    &:selected { //Seems like it :hover even with keyboard focus
       background-color: $selected_bg_color;
       box-shadow: none;
       border-color: if($titlebar == 'light', $sec_selected_bg_color, $alt_selected_bg_color);
@@ -2200,21 +2205,10 @@ popover.menu {
       border-radius: $bt_radius;
     }
 
-    &:focus:not(:hover):not(:active) {
-      color: $fg_color;
-      background-color: transparent;
-      transition: background-color 0,
-                  color 0;
-    }
-
-    &:hover {
+    &:hover:not(:focus-visible),
+    &:selected:focus-visible {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
-    }
-
-    &:active {
-      color: $selected_fg_color;
-      background-color: darken($selected_bg_color, 10%); // matching buttons
     }
   }
 
@@ -2330,6 +2324,7 @@ cursor-handle {
 //
 notebook {
   padding: 0;
+  @include focus-ring("> header > tabs > tab:checked", $offset: -4px, $focus-state: ':focus:focus-visible');
 
   &.frame {
     border: 1px solid $borders_color;
@@ -2613,15 +2608,18 @@ switch {
   background-position: center center;
   transition: all 350ms $ease-out-quad;
   padding: 0;
+  border-radius: 100px;
 
-  > slider {
+  @include focus-ring($offset: 3px);
+
+  > slider,
+  > image {
     min-width: 0;
     min-height: 0;
+    color: transparent;
   }
 
   &, > slider {
-    outline-color: transparent;
-    color: transparent;
     border: none;
     box-shadow: none;
     background-color: transparent;
@@ -2679,7 +2677,8 @@ switch {
       }
     }
 
-    popover.menu modelbutton:hover #{$w}#{$s},
+    popover.menu modelbutton:hover:not(:focus-visible) > box > #{$w}#{$s},
+    popover.menu modelbutton:selected:focus-visible > box > #{$w}#{$s},
     .view:selected #{$w}#{$s},
     row:selected #{$w}#{$s},
     infobar #{$w}#{$s} {
@@ -2713,6 +2712,8 @@ switch {
 }
 
 checkbutton, radiobutton {
+  @include focus-ring($offset: 0);
+
   // this is for a nice focus on check and radios text
   &.text-button {
     padding: 2px 0;
@@ -2741,8 +2742,10 @@ radio {
 //
 
 scale {
-  $_marks_length: 3px;
+  $_marks_length: 4px;
   $_marks_distance: 1px;
+
+  @include focus-ring("> trough", $offset: 2px);
 
   min-height: 15px;
   min-width: 15px;
@@ -2908,6 +2911,10 @@ scale {
         margin-#{$marks_margin}: $_marks_distance;
         margin-#{$marks_pos}: -($_marks_distance + $_marks_length);
       }
+    }
+
+    indicator {
+      background-color: currentcolor;
     }
   }
 
@@ -3194,6 +3201,8 @@ list {
 }
 
 row {
+  @include focus-ring($offset: -3px);
+
   label.subtitle {
     font-size: smaller;
     @extend .dim-label;
@@ -3280,6 +3289,8 @@ row {
 %boxed_list_row {
   transition: 200ms $ease-out-quad;
   border-bottom: 1px solid $borders_color;
+
+  @include focus-ring($offset: -3px);
 
   &:not(:selected).activatable {
     &:hover {
@@ -3517,6 +3528,8 @@ expander {
 }
 
 expander-widget {
+  @include focus-ring("> box > title", $offset: 0);
+
   > box > title {
     border-radius: $bt_radius;
 
@@ -3761,6 +3774,8 @@ stacksidebar {
   row {
     padding: 4px;
 
+    @include focus-ring();
+
     > label {
       padding-left: $cont_padding;
       padding-right: $cont_padding;
@@ -3816,6 +3831,8 @@ separator.sidebar {
     padding: 2px 8px;
     border-radius: $bt_radius;
     margin: 2px 6px;
+
+    @include focus-ring($focus-state: 'focus-visible:focus-within');
 
     &:last-child {
       margin-bottom: 0;
@@ -4110,6 +4127,7 @@ colorswatch {
   // is applied to the overlay box.
 
   $_colorswatch-radius: 2px;
+  @include focus-ring($offset: 2px);
 
   &, &:drop(active) { border-style: none; }
 
@@ -4186,6 +4204,10 @@ colorswatch {
     &:hover { @include button(hover); }
     overlay { @include button(undecorated); } // reset the overlay to not cover the button style underneath
   }
+}
+
+plane {
+  @include focus-ring($offset: 2px);
 }
 
 button.color {
@@ -4508,7 +4530,8 @@ popover.emoji-picker emoji {
   padding: 6px;
   border-radius: 6px;
 
-  &:focus,
+  @include focus-ring($offset: -3px)
+
   &:hover {
     background-color: $selected_bg_color;
   }

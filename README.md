@@ -162,7 +162,7 @@ bash install.sh
 
 ## Nautilus logos
 ```sh
-./install.sh -l [LOGO NAME...] (Install themes with selected nautilus logo)
+./install.sh -i [LOGO NAME...] (Install themes with selected nautilus logo)
 ```
 
 ![logo](https://github.com/vinceliuice/Qogir-theme/blob/images/logos.png?raw=true)

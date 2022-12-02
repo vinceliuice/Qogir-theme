@@ -385,7 +385,6 @@ button {
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
 }
 
 button separator {
@@ -769,7 +768,6 @@ button.circular-button label, .app-notification button.flat label, button.close 
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
 }
 
 .inline-toolbar toolbutton > button:hover {
@@ -4740,7 +4738,6 @@ colorswatch#add-color-button {
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
 }
 
 colorswatch#add-color-button:hover {
@@ -6460,7 +6457,6 @@ window.background.csd.unified.fullscreen > decoration-overlay {
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
 }
 
 .nemo-window notebook .primary-toolbar button:hover,
@@ -9644,7 +9640,6 @@ scale.warmth trough {
   color: #464853;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: white;
-  outline: none;
 }
 
 #content_frame button:hover {

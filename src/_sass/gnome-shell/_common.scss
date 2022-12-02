@@ -102,12 +102,14 @@ $bubble_button_radius: $material_radius - 1px;
     @extend %icon_tile;
   }
 
+  &:focus .overview-icon,
   &:hover .overview-icon {
     background-color: rgba($selected_bg_color, 0.5);
     border: 1px solid $selected_bg_color;
   }
 
   &:active .overview-icon,
+  &:active:focus .overview-icon,
   &:active:hover .overview-icon {
     background-color: rgba($selected_bg_color, 0.75);
     border: 1px solid $selected_bg_color;

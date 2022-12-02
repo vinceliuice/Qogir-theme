@@ -86,7 +86,7 @@
 
   // icon container
   .message-icon-bin {
-    padding: 6px * 2;
+    padding: 18px;
 
     &:ltr { padding-right: 6px; }
     &:rtl { padding-left: 6px; }
@@ -144,6 +144,11 @@
     padding: 0 !important;
     magrin: 0 !important;
 
+    StIcon {
+      icon-size: 16px;
+      -st-icon-style: symbolic;
+    }
+
     &:hover {
       color: $fg_color;
       background-color: rgba($fg_color, 0.1);
@@ -175,6 +180,11 @@
 
   &:last-child:ltr { margin-right: 18px !important; }
   &:last-child:rtl { margin-left: 18px !important; }
+
+  StIcon {
+    icon-size: 16px;
+    -st-icon-style: symbolic;
+  }
 
   // uses $hover_bg_color since the media controls are in a notification_bubble
   &:hover {

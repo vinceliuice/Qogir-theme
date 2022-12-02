@@ -42,7 +42,7 @@
 	border-radius: 0 !important;
 }
 
-:root[tabsintitlebar] #titlebar .titlebar-close,
+:root[tabsintitlebar]:not([sizemode="maximized"]) #titlebar .titlebar-close,
 :root[tabsintitlebar] #titlebar #titlebar-close {
 	border-top-right-radius: 8px !important;
 }

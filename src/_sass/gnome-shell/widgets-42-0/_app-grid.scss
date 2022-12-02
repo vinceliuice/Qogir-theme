@@ -53,7 +53,9 @@
 }
 
 .page-navigation-arrow {
-  &  > StIcon {
+  border-radius: 100%;
+
+  > StIcon {
     margin: 6px;
     padding: 18px;
     width: 24px;
