@@ -416,7 +416,7 @@ while [[ $# -gt 0 ]]; do
     -d|--dest)
       dest="${2}"
       if [[ ! -d "${dest}" ]]; then
-        echo "ERROR: Destination directory does not exist."
+        echo -e "ERROR: Destination directory does not exist."
         exit 1
       fi
       shift 2
@@ -466,8 +466,8 @@ while [[ $# -gt 0 ]]; do
             break
             ;;
           *)
-            echo "ERROR: Unrecognized theme variant '$1'."
-            echo "Try '$0 --help' for more information."
+            echo -e "ERROR: Unrecognized theme variant '$1'."
+            echo -e "Try '$0 --help' for more information."
             exit 1
             ;;
         esac
@@ -499,8 +499,8 @@ while [[ $# -gt 0 ]]; do
             break
             ;;
           *)
-            echo "ERROR: Unrecognized color variant '$1'."
-            echo "Try '$0 --help' for more information."
+            echo -e "ERROR: Unrecognized color variant '$1'."
+            echo -e "Try '$0 --help' for more information."
             exit 1
             ;;
         esac
@@ -526,8 +526,8 @@ while [[ $# -gt 0 ]]; do
             break
             ;;
           *)
-            echo "ERROR: Unrecognized tweak variant '$1'."
-            echo "Try '$0 --help' for more information."
+            echo -e "ERROR: Unrecognized tweak variant '$1'."
+            echo -e "Try '$0 --help' for more information."
             exit 1
             ;;
         esac
@@ -538,8 +538,8 @@ while [[ $# -gt 0 ]]; do
       exit 0
       ;;
     *)
-      echo "ERROR: Unrecognized installation option '$1'."
-      echo "Try '$0 --help' for more information."
+      echo -e "ERROR: Unrecognized installation option '$1'."
+      echo -e "Try '$0 --help' for more information."
       exit 1
       ;;
   esac
@@ -738,13 +738,16 @@ fi
 
 if [[ "${gdm:-}" == 'true' && "${remove:-}" != 'true' && "$UID" -eq "$ROOT_UID" ]]; then
   if [[ "${#gcolors[@]}" -gt 1 ]]; then
-    echo 'Error: To install a gdm theme you can only select one color'
+    echo -e 'Error: To install a gdm theme you can only select one color'
     exit 1
   fi
   if [[ "${#themes[@]}" -gt 1 ]]; then
-    echo 'Error: To install a gdm theme you can only select one theme'
+    echo -e 'Error: To install a gdm theme you can only select one theme'
     exit 1
   fi
+
+  echo -e "\nNOTICE: Only GDM theme will installed..."
+
   for theme in "${themes[@]-${THEME_VARIANTS[0]}}"; do
     for gcolor in "${gcolors[@]-${COLOR_VARIANTS[2]}}"; do
       install_gdm "${name:-${THEME_NAME}}" "${theme}" "${gcolor}" "${icon:-${ICON_NAME}}"
@@ -757,7 +760,7 @@ if [[ "${gdm:-}" == 'true' && "${remove:-}" == 'true' && "$UID" -eq "$ROOT_UID" 
 fi
 
 if [[ "${gdm:-}" == 'true' && "$UID" != "$ROOT_UID" ]]; then
-  echo 'Error: need run it with sudo !'
+  echo -e 'Error: need run it with sudo !'
   exit 0
 fi
 
