@@ -2,7 +2,7 @@
 
 $dash_background_color: lighten($panel_bg, 5%);
 $dash_placeholder_size: 32px;
-$dash_padding: 10px; // 10px
+$dash_padding: 10px;
 $dash_spacing: 2px;
 
 $dash_bottom_margin: 16px;
@@ -24,10 +24,6 @@ $dash_border_radius: $bt_radius + $dash_padding;
     width: $dash_placeholder_size;
     height: $dash_placeholder_size;
   }
-
-  .overview-icon {
-    padding: $dash_padding / 2;
-  }
 }
 
 .dash-background {
@@ -39,8 +35,22 @@ $dash_border_radius: $bt_radius + $dash_padding;
 }
 
 // Dash Items
-.dash-item-container .app-well-app, .show-apps {
-  padding: $dash_padding $dash_spacing $dash_padding + $dash_bottom_margin;
+.dash-item-container {
+  > * { margin: 0 2px; }
+  &:ltr{ &:first-child { margin-left: 0; } }
+  &:rtl{ &:first-child { margin-right: 0; } }
+
+  .app-well-app, .show-apps {
+    padding-bottom: $dash_bottom_margin;
+
+    .overview-icon {
+      padding: 8px;
+    }
+  }
+
+  .app-well-app-running-dot {
+    margin-bottom: $dash_padding + 2px; // hardcoded
+  }
 }
 
 .dash-separator {

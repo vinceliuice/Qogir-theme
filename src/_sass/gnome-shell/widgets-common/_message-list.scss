@@ -128,7 +128,7 @@
   .message-title {
     font-weight: bold;
     text-shadow: none;
-    padding-top: 0.7em;
+    padding-top: 0.57em;
   }
 
   // secondary container in title box
@@ -142,8 +142,8 @@
       /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
       padding-bottom: 0.13em;
 
-      &:ltr { text-align: right };
-      &:rtl { text-align: left };
+      &:ltr { text-align: right; }
+      &:rtl { text-align: left; }
     }
   }
 
@@ -224,7 +224,7 @@
     border: none;
     border-radius: $bt_radius;
     icon-size: 32px !important;
-    padding: 12px !important;
+    padding: 16px !important;
     margin: 0 !important;
   }
 }
