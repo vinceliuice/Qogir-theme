@@ -1243,7 +1243,7 @@ headerbar {
     padding-left: $cont_padding * 2;
     padding-right: $cont_padding * 2;
     margin-top: -3px;
-    @extend .dim-label;
+    color: transparentize($header_fg, 0.65);
   }
 
   // Selectionmode

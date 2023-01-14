@@ -138,7 +138,7 @@ label:disabled selection {
 
 .dim-label, .slate-notification .notification-body,
 .budgie-notification .notification-body,
-.budgie-switcher .notification-body, popover.background label.separator, headerbar .subtitle, label.separator {
+.budgie-switcher .notification-body, popover.background label.separator, label.separator {
   color: rgba(230, 235, 239, 0.45);
 }
 
@@ -1772,6 +1772,7 @@ headerbar .subtitle {
   padding-left: 12px;
   padding-right: 12px;
   margin-top: -3px;
+  color: rgba(224, 229, 235, 0.35);
 }
 
 headerbar.selection-mode {
@@ -5213,7 +5214,7 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
 .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body,
 .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body,
 .budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body,
-.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.subtitle {
+.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator {
   color: #b2b6bd;
 }
 
@@ -5221,15 +5222,15 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
 .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body:hover,
 .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body:hover,
 .budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:hover,
-.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.subtitle:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body:active, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active,
+.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body:active, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active,
 .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body:active,
 .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body:active,
 .budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active,
-.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.subtitle:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body:checked, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked,
+.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body:checked, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked,
 .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body:checked,
 .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body:checked,
 .budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked,
-.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.subtitle:checked {
+.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:checked {
   color: #e0e5eb;
 }
 
@@ -5276,7 +5277,7 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
 
 .nautilus-canvas-item.dim-label, .slate-notification .nautilus-canvas-item.notification-body,
 .budgie-notification .nautilus-canvas-item.notification-body,
-.budgie-switcher .nautilus-canvas-item.notification-body, label.nautilus-canvas-item.separator, headerbar .nautilus-canvas-item.subtitle, popover.background label.nautilus-canvas-item.separator,
+.budgie-switcher .nautilus-canvas-item.notification-body, label.nautilus-canvas-item.separator, popover.background label.nautilus-canvas-item.separator,
 .nautilus-list-dim-label,
 .caja-list-dim-label {
   color: #8c9096;
@@ -5284,7 +5285,7 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
 
 .nautilus-canvas-item.dim-label:selected, .slate-notification .nautilus-canvas-item.notification-body:selected,
 .budgie-notification .nautilus-canvas-item.notification-body:selected,
-.budgie-switcher .nautilus-canvas-item.notification-body:selected, label.nautilus-canvas-item.separator:selected, headerbar .nautilus-canvas-item.subtitle:selected, .nautilus-canvas-item.dim-label:selected:focus,
+.budgie-switcher .nautilus-canvas-item.notification-body:selected, label.nautilus-canvas-item.separator:selected, .nautilus-canvas-item.dim-label:selected:focus,
 .nautilus-list-dim-label:selected,
 .caja-list-dim-label:selected,
 .nautilus-list-dim-label:selected:focus {
@@ -5677,7 +5678,7 @@ button.dzlmenubuttonitem.check label.dim-label, button.dzlmenubuttonitem.check .
 button.dzlmenubuttonitem.check .budgie-notification label.notification-body,
 button.dzlmenubuttonitem.check .budgie-switcher label.notification-body,
 .budgie-notification button.dzlmenubuttonitem.check label.notification-body,
-.budgie-switcher button.dzlmenubuttonitem.check label.notification-body, button.dzlmenubuttonitem.check label.separator, button.dzlmenubuttonitem.check headerbar label.subtitle, headerbar button.dzlmenubuttonitem.check label.subtitle {
+.budgie-switcher button.dzlmenubuttonitem.check label.notification-body, button.dzlmenubuttonitem.check label.separator {
   color: #e6ebef;
 }
 
@@ -9005,7 +9006,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   border: none;
 }
 
-.budgie-run-dialog list .dim-label, .budgie-run-dialog list label.separator, .budgie-run-dialog list headerbar .subtitle, headerbar .budgie-run-dialog list .subtitle, .budgie-run-dialog list .slate-notification .notification-body, .slate-notification .budgie-run-dialog list .notification-body,
+.budgie-run-dialog list .dim-label, .budgie-run-dialog list label.separator, .budgie-run-dialog list .slate-notification .notification-body, .slate-notification .budgie-run-dialog list .notification-body,
 .budgie-run-dialog list .budgie-notification .notification-body,
 .budgie-notification .budgie-run-dialog list .notification-body,
 .budgie-run-dialog list .budgie-switcher .notification-body,
