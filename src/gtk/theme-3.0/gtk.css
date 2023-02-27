@@ -8764,6 +8764,7 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 
 .raven .audio-widget .raven-background .devices-list {
   padding: 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .raven .audio-widget .raven-background .devices-list > row {
@@ -8775,7 +8776,7 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 }
 
 .raven .audio-widget .raven-background stackswitcher {
-  padding: 0 6px 6px;
+  padding: 6px;
 }
 
 .raven .raven-mpris {

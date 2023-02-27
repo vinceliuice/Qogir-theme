@@ -868,6 +868,7 @@ button.raven-trigger {
     .raven-background {
       .devices-list {
         padding: 6px;
+        border-bottom: 1px solid $borders_color;
 
         > row {
           border-radius: 2px;
@@ -879,7 +880,7 @@ button.raven-trigger {
       }
 
       stackswitcher {
-        padding: 0 6px 6px;
+        padding: 6px;
       }
     }
   }
