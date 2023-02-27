@@ -824,6 +824,26 @@ window.background.csd {
         }
       }
     }
+
+    button.osd.remove-button {
+      padding: 0;
+      margin: 6px;
+      min-width: 24px;
+      min-height: 22px;
+      border: none;
+      background-color: rgba(black, 0.45);
+      color: rgba(white, 0.75);
+
+      &:hover {
+        background-color: rgba(black, 0.65);
+        color: white;
+      }
+
+      &:active {
+        background-color: rgba(black, 0.75);
+        color: white;
+      }
+    }
   }
 
   > leaflet > box.vertical > scrolledwindow.view, // > 3.38.0

@@ -5782,6 +5782,32 @@ window.background.csd > box.horizontal > stack.background > widget > scrolledwin
   border-radius: 4px 4px 0 0;
 }
 
+window.background.csd > leaflet > stack.background button.osd.remove-button,
+window.background.csd > hdyleaflet > stack.background button.osd.remove-button,
+window.background.csd > box.horizontal > stack.background button.osd.remove-button {
+  padding: 0;
+  margin: 6px;
+  min-width: 24px;
+  min-height: 22px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+window.background.csd > leaflet > stack.background button.osd.remove-button:hover,
+window.background.csd > hdyleaflet > stack.background button.osd.remove-button:hover,
+window.background.csd > box.horizontal > stack.background button.osd.remove-button:hover {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+}
+
+window.background.csd > leaflet > stack.background button.osd.remove-button:active,
+window.background.csd > hdyleaflet > stack.background button.osd.remove-button:active,
+window.background.csd > box.horizontal > stack.background button.osd.remove-button:active {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+
 window.background.csd > leaflet > box.vertical > scrolledwindow.view,
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view,
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view {

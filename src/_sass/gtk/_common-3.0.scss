@@ -111,7 +111,7 @@ rubberband,
 }
 
 flowbox {
-  rubberband { @extend rubberband }
+  rubberband { @extend rubberband; }
 
   flowboxchild {
     padding: 3px;
