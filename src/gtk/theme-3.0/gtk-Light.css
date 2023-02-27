@@ -8967,13 +8967,16 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 
 .budgie-run-dialog, .budgie-session-dialog,
 .budgie-polkit-dialog {
-  background-color: #fafbfc;
+  background-color: #ffffff;
+  border-radius: 3px;
 }
 
-.budgie-run-dialog, .budgie-session-dialog,
-.budgie-polkit-dialog, .budgie-run-dialog decoration, .budgie-session-dialog decoration,
+.background.csd.budgie-run-dialog, .background.csd.budgie-session-dialog,
+.background.csd.budgie-polkit-dialog,
+.budgie-run-dialog decoration,
+.budgie-session-dialog decoration,
 .budgie-polkit-dialog decoration {
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .budgie-run-dialog > box > grid, .budgie-session-dialog > box > grid,
@@ -8998,12 +9001,12 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 
 .budgie-session-dialog buttonbox.linked.horizontal > button:first-child,
 .budgie-polkit-dialog buttonbox.linked.horizontal > button:first-child {
-  border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 3px;
 }
 
 .budgie-session-dialog buttonbox.linked.horizontal > button:last-child,
 .budgie-polkit-dialog buttonbox.linked.horizontal > button:last-child {
-  border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 3px;
 }
 
 .budgie-session-dialog buttonbox.linked.horizontal > button:not(.suggested-action):not(.destructive-action):hover,
@@ -9031,10 +9034,6 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 
 .budgie-polkit-dialog > box > grid {
   padding: 24px 24px 0;
-}
-
-.budgie-run-dialog {
-  background-color: #ffffff;
 }
 
 .budgie-run-dialog entry.search {
