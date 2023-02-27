@@ -351,7 +351,7 @@ button {
 
   separator { margin: 4px 1px; }
 
-  @at-root %flat_button, &.flat {
+  &.flat {
     @include button(undecorated);
     // to avoid adiacent buttons borders clashing when transitioning, the transition on the normal state is set
     // to none, while it's added back in the hover state, so the button decoration will fade in on hover, but
@@ -3423,9 +3423,9 @@ placessidebar {
       margin-top: 2px;
       margin-bottom: 2px;
       padding: 0;
-      @extend %flat_button;
       border-radius: 100%;
       -gtk-outline-radius: 100%;
+      @include button(undecorated);
 
       &:not(:hover):not(:active) > image { opacity: 0.5 };
     }

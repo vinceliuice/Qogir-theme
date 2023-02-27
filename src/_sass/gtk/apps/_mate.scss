@@ -120,7 +120,7 @@ PanelSeparator {
 
 // 'hide' arrow buttons
 PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
-  @extend %flat_button;
+  @include button(undecorated);
   min-height: 4px;
   min-width: 4px;
   padding: 0;

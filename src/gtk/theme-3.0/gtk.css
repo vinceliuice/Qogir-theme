@@ -389,19 +389,19 @@ button separator {
   margin: 4px 1px;
 }
 
-.budgie-panel button.flat.launcher, .budgie-panel #tasklist-button:not(.flat), .budgie-popover button.budgie-menu-launcher, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button, button.sidebar-button, button.flat {
+button.flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
   transition: none;
 }
 
-.budgie-panel button.flat.launcher:hover, .budgie-panel #tasklist-button:hover:not(.flat), .budgie-popover button.budgie-menu-launcher:hover, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:hover, button.sidebar-button:hover, button.flat:hover {
+button.flat:hover {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 250ms;
 }
 
-.budgie-panel #tasklist-button:hover:active:not(.flat), .budgie-popover button.budgie-menu-launcher:hover:active, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:hover:active, button.sidebar-button:hover:active, button.flat:hover:active {
+button.flat:hover:active {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -742,7 +742,7 @@ button.font separator, button.file separator {
   box-shadow: none;
 }
 
-.budgie-notification-window button.image-button, .budgie-switcher-window button.image-button, .budgie-osd-window button.image-button, .slate-notification-window button.image-button, .raven .expander-button, .raven button.image-button, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button, button.nautilus-circular-button.image-button,
+.budgie-notification-window button.image-button.close, .budgie-switcher-window button.image-button.close, .budgie-osd-window button.image-button.close, .slate-notification-window button.image-button.close, .raven .expander-button, .raven button.image-button, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button, button.nautilus-circular-button.image-button,
 button.circular-button, .app-notification button.flat, button.close, button.circular {
   min-height: 24px;
   min-width: 24px;
@@ -751,7 +751,7 @@ button.circular-button, .app-notification button.flat, button.close, button.circ
   -gtk-outline-radius: 1000px;
 }
 
-.budgie-notification-window button.image-button label, .budgie-switcher-window button.image-button label, .budgie-osd-window button.image-button label, .slate-notification-window button.image-button label, .raven .expander-button label, .raven button.image-button label, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button label, button.nautilus-circular-button.image-button label,
+.budgie-notification-window button.image-button.close label, .budgie-switcher-window button.image-button.close label, .budgie-osd-window button.image-button.close label, .slate-notification-window button.image-button.close label, .raven .expander-button label, .raven button.image-button label, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button label, button.nautilus-circular-button.image-button label,
 button.circular-button label, .app-notification button.flat label, button.close label, button.circular label {
   padding: 0;
 }
@@ -1285,7 +1285,7 @@ headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.sta
   box-shadow: none;
 }
 
-.linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl), .budgie-notification-window .linked > button, .budgie-switcher-window .linked > button, .budgie-osd-window .linked > button, .slate-notification-window .linked > button, .budgie-settings-window buttonbox.inline-toolbar button, actionbar > revealer > box > viewswitcher > box > button, spinbutton:not(.vertical) button, spinbutton:not(.vertical) entry, .linked:not(.vertical) > entry, .linked:not(.vertical) > entry:focus, .linked:not(.vertical) > button, .linked:not(.vertical) > button:hover, .linked:not(.vertical) > button:active, .linked:not(.vertical) > button:checked {
+.linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl), .budgie-settings-window buttonbox.inline-toolbar button, actionbar > revealer > box > viewswitcher > box > button, spinbutton:not(.vertical) button, spinbutton:not(.vertical) entry, .linked:not(.vertical) > entry, .linked:not(.vertical) > entry:focus, .linked:not(.vertical) > button, .linked:not(.vertical) > button:hover, .linked:not(.vertical) > button:active, .linked:not(.vertical) > button:checked {
   border-radius: 0;
   border-right-style: none;
 }
@@ -1296,18 +1296,18 @@ headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.sta
   border-left-style: none;
 }
 
-.budgie-notification-window .linked > button:first-child, .budgie-switcher-window .linked > button:first-child, .budgie-osd-window .linked > button:first-child, .slate-notification-window .linked > button:first-child, .budgie-settings-window buttonbox.inline-toolbar button:first-child, actionbar > revealer > box > viewswitcher > box > button:first-child, spinbutton:not(.vertical) button:first-child, spinbutton:not(.vertical) entry:first-child, .linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
+.budgie-settings-window buttonbox.inline-toolbar button:first-child, actionbar > revealer > box > viewswitcher > box > button:first-child, spinbutton:not(.vertical) button:first-child, spinbutton:not(.vertical) entry:first-child, .linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 
-.budgie-notification-window .linked > button:last-child, .budgie-switcher-window .linked > button:last-child, .budgie-osd-window .linked > button:last-child, .slate-notification-window .linked > button:last-child, .budgie-settings-window buttonbox.inline-toolbar button:last-child, actionbar > revealer > box > viewswitcher > box > button:last-child, spinbutton:not(.vertical) button:last-child, spinbutton:not(.vertical) entry:last-child, .linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
+.budgie-settings-window buttonbox.inline-toolbar button:last-child, actionbar > revealer > box > viewswitcher > box > button:last-child, spinbutton:not(.vertical) button:last-child, spinbutton:not(.vertical) entry:last-child, .linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   border-right-style: solid;
 }
 
-.budgie-notification-window .linked > button:only-child, .budgie-switcher-window .linked > button:only-child, .budgie-osd-window .linked > button:only-child, .slate-notification-window .linked > button:only-child, .budgie-settings-window buttonbox.inline-toolbar button:only-child, actionbar > revealer > box > viewswitcher > box > button:only-child, spinbutton:not(.vertical) button:only-child, spinbutton:not(.vertical) entry:only-child, .linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
+.budgie-settings-window buttonbox.inline-toolbar button:only-child, actionbar > revealer > box > viewswitcher > box > button:only-child, spinbutton:not(.vertical) button:only-child, spinbutton:not(.vertical) entry:only-child, .linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
   border-radius: 2px;
   border-style: solid;
 }
@@ -4458,6 +4458,9 @@ button.sidebar-button {
   padding: 0;
   border-radius: 100%;
   -gtk-outline-radius: 100%;
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
 }
 
 button.sidebar-button:not(:hover):not(:active) > image {
@@ -7411,6 +7414,9 @@ PanelToplevel.vertical MatePanelAppletFrameDBus {
 }
 
 PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
   min-height: 4px;
   min-width: 4px;
   padding: 0;
@@ -7778,17 +7784,47 @@ MsdOsdWindow.background.osd .progressbar {
   border-radius: 2px;
 }
 
-.drop-shadow button, .raven .raven-header:not(.top) button, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button {
+.raven .raven-header:not(.top) button, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.drop-shadow button:hover, .raven .raven-header:not(.top) button:hover, .budgie-popover:not(.budgie-menu) button.flat:hover:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:hover {
+.raven .raven-header:not(.top) button:hover, .budgie-popover:not(.budgie-menu) button.flat:hover:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:hover {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 250ms;
 }
 
-.drop-shadow button:checked, .raven .raven-header:not(.top) button:checked, .budgie-popover:not(.budgie-menu) button.flat:checked:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:checked, .drop-shadow button:active, .raven .raven-header:not(.top) button:active, .budgie-popover:not(.budgie-menu) button.flat:active:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:active {
+.raven .raven-header:not(.top) button:checked, .budgie-popover:not(.budgie-menu) button.flat:checked:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:checked, .raven .raven-header:not(.top) button:active, .budgie-popover:not(.budgie-menu) button.flat:active:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:active {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.raven .raven-mpris button.image-button {
+  color: #D3DAE3;
+  background: none;
+}
+
+.raven .raven-mpris button.image-button:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.raven .raven-mpris button.image-button:disabled {
+  color: rgba(211, 218, 227, 0.5);
+  background: none;
+}
+
+.raven .raven-mpris button.image-button:active {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.raven .raven-mpris button.image-button:checked {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.raven .raven-mpris button.image-button:checked:disabled {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .budgie-panel #tasklist-button:not(.flat), .budgie-panel button {
@@ -7818,36 +7854,6 @@ MsdOsdWindow.background.osd .progressbar {
 
 .budgie-panel #tasklist-button:checked:disabled:not(.flat), .budgie-panel button:checked:disabled {
   background-color: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.65);
-}
-
-.raven .raven-mpris button.image-button, .budgie-panel .flat#tasklist-button:not(.flat), .budgie-panel button.flat {
-  color: #D3DAE3;
-  background: none;
-}
-
-.raven .raven-mpris button.image-button:hover, .budgie-panel .flat#tasklist-button:hover:not(.flat), .budgie-panel button.flat:hover {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.raven .raven-mpris button.image-button:disabled, .budgie-panel .flat#tasklist-button:disabled:not(.flat), .budgie-panel button.flat:disabled {
-  color: rgba(211, 218, 227, 0.5);
-  background: none;
-}
-
-.raven .raven-mpris button.image-button:active, .budgie-panel .flat#tasklist-button:active:not(.flat), .budgie-panel button.flat:active {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-}
-
-.raven .raven-mpris button.image-button:checked, .budgie-panel .flat#tasklist-button:checked:not(.flat), .budgie-panel button.flat:checked {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-}
-
-.raven .raven-mpris button.image-button:checked:disabled, .budgie-panel .flat#tasklist-button:checked:disabled:not(.flat), .budgie-panel button.flat:checked:disabled {
-  background-color: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.65);
 }
 
@@ -8220,6 +8226,12 @@ MsdOsdWindow.background.osd .progressbar {
   padding: 0;
 }
 
+.budgie-popover button.budgie-menu-launcher {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+}
+
 window.budgie-popover:not(.csd) > frame.container {
   margin: 0 -1px -1px;
 }
@@ -8383,6 +8395,9 @@ window.budgie-popover:not(.csd) > frame.container > border {
 
 .budgie-panel #tasklist-button:not(.flat) {
   padding: 0 4px;
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
   box-shadow: none;
 }
 
@@ -8392,6 +8407,9 @@ window.budgie-popover:not(.csd) > frame.container > border {
 
 .budgie-panel button.flat.launcher {
   padding: 0;
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
 }
 
 .budgie-panel button.flat.launcher:not(:checked) {
@@ -8936,33 +8954,14 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   border-radius: 2px;
 }
 
-.budgie-notification-window button, .budgie-switcher-window button, .budgie-osd-window button, .slate-notification-window button {
-  color: #e0e5eb;
-  outline-offset: -3px;
-  background-color: rgba(40, 42, 51, 0);
-  border-color: rgba(40, 42, 51, 0);
+.budgie-notification-window button.image-button.close, .budgie-switcher-window button.image-button.close, .budgie-osd-window button.image-button.close, .slate-notification-window button.image-button.close {
+  background-clip: border-box;
 }
 
-.budgie-notification-window button:hover, .budgie-switcher-window button:hover, .budgie-osd-window button:hover, .slate-notification-window button:hover {
-  color: #e0e5eb;
-  border-color: rgba(255, 255, 255, 0.12);
-  background-color: #333641;
-}
-
-.budgie-notification-window button:active, .budgie-switcher-window button:active, .budgie-osd-window button:active, .slate-notification-window button:active, .budgie-notification-window button:checked, .budgie-switcher-window button:checked, .budgie-osd-window button:checked, .slate-notification-window button:checked {
-  color: #ffffff;
-  border-color: #68a2e6;
-  background-color: #5294e2;
-}
-
-.budgie-notification-window button:disabled, .budgie-switcher-window button:disabled, .budgie-osd-window button:disabled, .slate-notification-window button:disabled {
-  background-color: rgba(40, 42, 51, 0);
-  border-color: rgba(40, 42, 51, 0);
-}
-
-.budgie-notification-window button:disabled label, .budgie-switcher-window button:disabled label, .budgie-osd-window button:disabled label, .slate-notification-window button:disabled label, .budgie-notification-window button:disabled, .budgie-switcher-window button:disabled, .budgie-osd-window button:disabled, .slate-notification-window button:disabled {
-  color: rgba(224, 229, 235, 0.5);
-  opacity: 1;
+.budgie-notification-window button.image-button.close:not(:hover):not(:active), .budgie-switcher-window button.image-button.close:not(:hover):not(:active), .budgie-osd-window button.image-button.close:not(:hover):not(:active), .slate-notification-window button.image-button.close:not(:hover):not(:active) {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
 }
 
 .budgie-notification .notification-title, .budgie-switcher .notification-title, .slate-notification .notification-title {
@@ -8980,10 +8979,6 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   background-color: #ffffff;
   color: #4a4c59;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15), 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.12);
-}
-
-.drop-shadow .linked > button {
-  border-radius: 2px;
 }
 
 .budgie-run-dialog, .budgie-session-dialog,
