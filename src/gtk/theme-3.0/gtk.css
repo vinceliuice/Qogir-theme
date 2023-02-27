@@ -136,9 +136,7 @@ label:disabled selection {
   color: #a9caf1;
 }
 
-.dim-label, .slate-notification .notification-body,
-.budgie-notification .notification-body,
-.budgie-switcher .notification-body, popover.background label.separator, label.separator {
+.dim-label, .budgie-notification .notification-body, .budgie-switcher .notification-body, .slate-notification .notification-body, popover.background label.separator, label.separator {
   color: rgba(70, 72, 83, 0.55);
 }
 
@@ -391,19 +389,19 @@ button separator {
   margin: 4px 1px;
 }
 
-.budgie-panel button.flat.launcher, .budgie-panel #tasklist-button:not(.flat), button.budgie-menu-launcher, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button, button.sidebar-button, button.flat {
+.budgie-panel button.flat.launcher, .budgie-panel #tasklist-button:not(.flat), .budgie-popover button.budgie-menu-launcher, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button, button.sidebar-button, button.flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
   transition: none;
 }
 
-.budgie-panel button.flat.launcher:hover, .budgie-panel #tasklist-button:hover:not(.flat), button.budgie-menu-launcher:hover, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:hover, button.sidebar-button:hover, button.flat:hover {
+.budgie-panel button.flat.launcher:hover, .budgie-panel #tasklist-button:hover:not(.flat), .budgie-popover button.budgie-menu-launcher:hover, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:hover, button.sidebar-button:hover, button.flat:hover {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 250ms;
 }
 
-.budgie-panel #tasklist-button:hover:active:not(.flat), button.budgie-menu-launcher:hover:active, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:hover:active, button.sidebar-button:hover:active, button.flat:hover:active {
+.budgie-panel #tasklist-button:hover:active:not(.flat), .budgie-popover button.budgie-menu-launcher:hover:active, PanelToplevel.mate-panel-menu-bar > grid.horizontal > button:hover:active, button.sidebar-button:hover:active, button.flat:hover:active {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -744,10 +742,7 @@ button.font separator, button.file separator {
   box-shadow: none;
 }
 
-.slate-notification-window button.image-button,
-.budgie-notification-window button.image-button,
-.budgie-switcher-window button.image-button,
-.budgie-osd-window button.image-button, .raven .expander-button, .raven button.image-button, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button, button.nautilus-circular-button.image-button,
+.budgie-notification-window button.image-button, .budgie-switcher-window button.image-button, .budgie-osd-window button.image-button, .slate-notification-window button.image-button, .raven .expander-button, .raven button.image-button, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button, button.nautilus-circular-button.image-button,
 button.circular-button, .app-notification button.flat, button.close, button.circular {
   min-height: 24px;
   min-width: 24px;
@@ -756,10 +751,7 @@ button.circular-button, .app-notification button.flat, button.close, button.circ
   -gtk-outline-radius: 1000px;
 }
 
-.slate-notification-window button.image-button label,
-.budgie-notification-window button.image-button label,
-.budgie-switcher-window button.image-button label,
-.budgie-osd-window button.image-button label, .raven .expander-button label, .raven button.image-button label, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button label, button.nautilus-circular-button.image-button label,
+.budgie-notification-window button.image-button label, .budgie-switcher-window button.image-button label, .budgie-osd-window button.image-button label, .slate-notification-window button.image-button label, .raven .expander-button label, .raven button.image-button label, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button label, button.nautilus-circular-button.image-button label,
 button.circular-button label, .app-notification button.flat label, button.close label, button.circular label {
   padding: 0;
 }
@@ -1293,7 +1285,7 @@ headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.sta
   box-shadow: none;
 }
 
-.linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl), .budgie-settings-window buttonbox.inline-toolbar button, actionbar > revealer > box > viewswitcher > box > button, spinbutton:not(.vertical) button, spinbutton:not(.vertical) entry, .linked:not(.vertical) > entry, .linked:not(.vertical) > entry:focus, .linked:not(.vertical) > button, .linked:not(.vertical) > button:hover, .linked:not(.vertical) > button:active, .linked:not(.vertical) > button:checked {
+.linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl), .budgie-notification-window .linked > button, .budgie-switcher-window .linked > button, .budgie-osd-window .linked > button, .slate-notification-window .linked > button, .budgie-settings-window buttonbox.inline-toolbar button, actionbar > revealer > box > viewswitcher > box > button, spinbutton:not(.vertical) button, spinbutton:not(.vertical) entry, .linked:not(.vertical) > entry, .linked:not(.vertical) > entry:focus, .linked:not(.vertical) > button, .linked:not(.vertical) > button:hover, .linked:not(.vertical) > button:active, .linked:not(.vertical) > button:checked {
   border-radius: 0;
   border-right-style: none;
 }
@@ -1304,18 +1296,18 @@ headerbar .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.sta
   border-left-style: none;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:first-child, actionbar > revealer > box > viewswitcher > box > button:first-child, spinbutton:not(.vertical) button:first-child, spinbutton:not(.vertical) entry:first-child, .linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
+.budgie-notification-window .linked > button:first-child, .budgie-switcher-window .linked > button:first-child, .budgie-osd-window .linked > button:first-child, .slate-notification-window .linked > button:first-child, .budgie-settings-window buttonbox.inline-toolbar button:first-child, actionbar > revealer > box > viewswitcher > box > button:first-child, spinbutton:not(.vertical) button:first-child, spinbutton:not(.vertical) entry:first-child, .linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:last-child, actionbar > revealer > box > viewswitcher > box > button:last-child, spinbutton:not(.vertical) button:last-child, spinbutton:not(.vertical) entry:last-child, .linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
+.budgie-notification-window .linked > button:last-child, .budgie-switcher-window .linked > button:last-child, .budgie-osd-window .linked > button:last-child, .slate-notification-window .linked > button:last-child, .budgie-settings-window buttonbox.inline-toolbar button:last-child, actionbar > revealer > box > viewswitcher > box > button:last-child, spinbutton:not(.vertical) button:last-child, spinbutton:not(.vertical) entry:last-child, .linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   border-right-style: solid;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:only-child, actionbar > revealer > box > viewswitcher > box > button:only-child, spinbutton:not(.vertical) button:only-child, spinbutton:not(.vertical) entry:only-child, .linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
+.budgie-notification-window .linked > button:only-child, .budgie-switcher-window .linked > button:only-child, .budgie-osd-window .linked > button:only-child, .slate-notification-window .linked > button:only-child, .budgie-settings-window buttonbox.inline-toolbar button:only-child, actionbar > revealer > box > viewswitcher > box > button:only-child, spinbutton:not(.vertical) button:only-child, spinbutton:not(.vertical) entry:only-child, .linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
   border-radius: 2px;
   border-style: solid;
 }
@@ -4173,21 +4165,21 @@ list row {
   padding: 2px;
 }
 
-window.thunar > grid > paned > .sidebar > treeview.has-open-popup.view, .budgie-menu button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, window.thunar > grid > paned > .sidebar > treeview.view:hover, .budgie-menu button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, row.activatable.has-open-popup, row.activatable:hover {
+window.thunar > grid > paned > .sidebar > treeview.has-open-popup.view, .budgie-popover.budgie-menu row.activatable > button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, window.thunar > grid > paned > .sidebar > treeview.view:hover, .budgie-popover.budgie-menu row.activatable > button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, row.activatable.has-open-popup, row.activatable:hover {
   transition: none;
   animation: none;
   background-color: rgba(0, 0, 0, 0.08);
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view:active, .budgie-menu button:active, .nemo-window .nemo-places-sidebar .places-treeview:active, window.thunar > grid > paned > .sidebar > treeview.view:checked, .budgie-menu button:checked, .nemo-window .nemo-places-sidebar .places-treeview:checked, row.activatable:active, row.activatable:checked {
+window.thunar > grid > paned > .sidebar > treeview.view:active, .budgie-popover.budgie-menu row.activatable > button:active, .nemo-window .nemo-places-sidebar .places-treeview:active, window.thunar > grid > paned > .sidebar > treeview.view:checked, .budgie-popover.budgie-menu row.activatable > button:checked, .nemo-window .nemo-places-sidebar .places-treeview:checked, row.activatable:active, row.activatable:checked {
   transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view:disabled, .budgie-menu button:disabled, .nemo-window .nemo-places-sidebar .places-treeview:disabled, row.activatable:disabled {
+window.thunar > grid > paned > .sidebar > treeview.view:disabled, .budgie-popover.budgie-menu row.activatable > button:disabled, .nemo-window .nemo-places-sidebar .places-treeview:disabled, row.activatable:disabled {
   color: rgba(70, 72, 83, 0.55);
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view:disabled image, .budgie-menu button:disabled image, .nemo-window .nemo-places-sidebar .places-treeview:disabled image, row.activatable:disabled image {
+window.thunar > grid > paned > .sidebar > treeview.view:disabled image, .budgie-popover.budgie-menu row.activatable > button:disabled image, .nemo-window .nemo-places-sidebar .places-treeview:disabled image, row.activatable:disabled image {
   color: inherit;
 }
 
@@ -4918,7 +4910,7 @@ headerbar button.titlebutton.close:active, .titlebar button.titlebutton.close:ac
 }
 
 .nemo-window .sidebar .view.cell:selected, .nemo-window .sidebar row.cell:selected, window > hdyleaflet > scrolledwindow > viewport.frame > list > row.activatable:selected, window > leaflet > scrolledwindow > viewport.frame > list > row.activatable:selected, hdyleaflet > box.vertical > scrolledwindow > viewport .sidebar list > row.activatable:selected, hdyleaflet > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected,
-leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected, .polari-room-list .sidebar .activatable:selected, .polari-room-list .sidebar .inactive:selected, .polari-room-list .sidebar .room-list-header:selected, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected, .geary-main-window .geary-main-layout > leaflet > leaflet > box .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected, .sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow treeview.view.sidebar:selected, list.tweak-categories > row.activatable.tweak-category:selected, textview.view.sourceview.gedit-view window#gtk-tooltip treeview.view:selected, list.gedit-document-panel row.activatable:selected, treeview.view.sidebar.source-list:selected, .budgie-menu button:active, .budgie-menu button:checked, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active arrow, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked arrow, .atril-window scrolledwindow.frame > .view:selected, .atril-window scrolledwindow.frame > .view:active,
+leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected, .polari-room-list .sidebar .activatable:selected, .polari-room-list .sidebar .inactive:selected, .polari-room-list .sidebar .room-list-header:selected, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected, .geary-main-window .geary-main-layout > leaflet > leaflet > box .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected, .sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow treeview.view.sidebar:selected, list.tweak-categories > row.activatable.tweak-category:selected, textview.view.sourceview.gedit-view window#gtk-tooltip treeview.view:selected, list.gedit-document-panel row.activatable:selected, treeview.view.sidebar.source-list:selected, .budgie-popover.budgie-menu row.activatable > button:active, .budgie-popover.budgie-menu row.activatable > button:checked, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active arrow, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked arrow, .atril-window scrolledwindow.frame > .view:selected, .atril-window scrolledwindow.frame > .view:active,
 .xreader-window scrolledwindow.frame > .view:selected,
 .xreader-window scrolledwindow.frame > .view:active, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .view:selected, .view:selected:focus,
@@ -4930,12 +4922,12 @@ iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button.has-open-popup:selected, .budgie-menu button:selected:hover, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-popover.budgie-menu row.activatable > button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
   background-color: #5294e2;
 }
 
 row:selected label, label:selected, .nemo-window .sidebar .view.cell:selected, .nemo-window .sidebar row.cell:selected, window > hdyleaflet > scrolledwindow > viewport.frame > list > row.activatable:selected, window > leaflet > scrolledwindow > viewport.frame > list > row.activatable:selected, hdyleaflet > box.vertical > scrolledwindow > viewport .sidebar list > row.activatable:selected, hdyleaflet > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected,
-leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected, .polari-room-list .sidebar .activatable:selected, .polari-room-list .sidebar .inactive:selected, .polari-room-list .sidebar .room-list-header:selected, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected, .geary-main-window .geary-main-layout > leaflet > leaflet > box .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected, .sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow treeview.view.sidebar:selected, list.tweak-categories > row.activatable.tweak-category:selected, textview.view.sourceview.gedit-view window#gtk-tooltip treeview.view:selected, list.gedit-document-panel row.activatable:selected, treeview.view.sidebar.source-list:selected, .budgie-menu button:active, .budgie-menu button:checked, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active arrow, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked arrow, .atril-window scrolledwindow.frame > .view:selected, .atril-window scrolledwindow.frame > .view:active,
+leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:selected, .polari-room-list .sidebar .activatable:selected, .polari-room-list .sidebar .inactive:selected, .polari-room-list .sidebar .room-list-header:selected, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:selected, .geary-main-window .geary-main-layout > leaflet > leaflet > box .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow treeview.view.sidebar:selected, .sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow treeview.view.sidebar:selected, list.tweak-categories > row.activatable.tweak-category:selected, textview.view.sourceview.gedit-view window#gtk-tooltip treeview.view:selected, list.gedit-document-panel row.activatable:selected, treeview.view.sidebar.source-list:selected, .budgie-popover.budgie-menu row.activatable > button:active, .budgie-popover.budgie-menu row.activatable > button:checked, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active arrow, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked arrow, .atril-window scrolledwindow.frame > .view:selected, .atril-window scrolledwindow.frame > .view:active,
 .xreader-window scrolledwindow.frame > .view:selected,
 .xreader-window scrolledwindow.frame > .view:active, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .view:selected, .view:selected:focus,
@@ -4947,12 +4939,12 @@ iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-menu button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, .budgie-menu button.has-open-popup:selected, .budgie-menu button:selected:hover, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-popover.budgie-menu row.activatable > button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
   color: #ffffff;
 }
 
 row:selected label:disabled, label:disabled:selected, .nemo-window .sidebar .view.cell:disabled:selected, .nemo-window .sidebar row.cell:disabled:selected, window > hdyleaflet > scrolledwindow > viewport.frame > list > row.activatable:disabled:selected, window > leaflet > scrolledwindow > viewport.frame > list > row.activatable:disabled:selected, hdyleaflet > box.vertical > scrolledwindow > viewport .sidebar list > row.activatable:disabled:selected, hdyleaflet > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:disabled:selected,
-leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:disabled:selected, .polari-room-list .sidebar .activatable:disabled:selected, .polari-room-list .sidebar .inactive:disabled:selected, .polari-room-list .sidebar .room-list-header:disabled:selected, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:disabled:selected, .geary-main-window .geary-main-layout > leaflet > leaflet > box .geary-folder-frame > scrolledwindow treeview.view.sidebar:disabled:selected, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow treeview.view.sidebar:disabled:selected, .sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow treeview.view.sidebar:disabled:selected, list.tweak-categories > row.activatable.tweak-category:disabled:selected, textview.view.sourceview.gedit-view window#gtk-tooltip treeview.view:disabled:selected, list.gedit-document-panel row.activatable:disabled:selected, treeview.view.sidebar.source-list:disabled:selected, .budgie-menu button:disabled:active, .budgie-menu button:disabled:checked, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button):active, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active arrow:disabled, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button):checked, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked arrow:disabled, .atril-window scrolledwindow.frame > .view:disabled:selected, .atril-window scrolledwindow.frame > .view:disabled:active,
+leaflet.unfolded > stack > frame > grid.vertical > scrolledwindow > viewport.frame > list.contacts-contact-list row.activatable.contact-data-row:disabled:selected, .polari-room-list .sidebar .activatable:disabled:selected, .polari-room-list .sidebar .inactive:disabled:selected, .polari-room-list .sidebar .room-list-header:disabled:selected, window.background.csd > box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.activatable:disabled:selected, .geary-main-window .geary-main-layout > leaflet > leaflet > box .geary-folder-frame > scrolledwindow treeview.view.sidebar:disabled:selected, .sidebar.vertical > paned.geary-sidebar-pane-separator .geary-folder-frame > scrolledwindow treeview.view.sidebar:disabled:selected, .sidebar.vertical > paned.sidebar-pane-separator .folder-frame > scrolledwindow treeview.view.sidebar:disabled:selected, list.tweak-categories > row.activatable.tweak-category:disabled:selected, textview.view.sourceview.gedit-view window#gtk-tooltip treeview.view:disabled:selected, list.gedit-document-panel row.activatable:disabled:selected, treeview.view.sidebar.source-list:disabled:selected, .budgie-popover.budgie-menu row.activatable > button:disabled:active, .budgie-popover.budgie-menu row.activatable > button:disabled:checked, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button):active, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active arrow:disabled, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button):checked, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button):checked arrow:disabled, .atril-window scrolledwindow.frame > .view:disabled:selected, .atril-window scrolledwindow.frame > .view:disabled:active,
 .xreader-window scrolledwindow.frame > .view:disabled:selected,
 .xreader-window scrolledwindow.frame > .view:disabled:active, .caja-desktop > widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .view:disabled:selected,
@@ -4964,7 +4956,7 @@ iconview:disabled:selected:focus, flowbox flowboxchild:disabled:selected, entry 
 modelbutton.flat:disabled:active,
 modelbutton.flat:active arrow:disabled,
 modelbutton.flat:disabled:selected,
-modelbutton.flat:selected arrow:disabled, row:disabled:selected, window.thunar > grid > paned > .sidebar > treeview.view:disabled:selected, .budgie-menu button:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, calendar:disabled:selected {
+modelbutton.flat:selected arrow:disabled, row:disabled:selected, window.thunar > grid > paned > .sidebar > treeview.view:disabled:selected, .budgie-popover.budgie-menu row.activatable > button:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, calendar:disabled:selected {
   color: #a9caf1;
 }
 
@@ -5198,27 +5190,11 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
   padding: 0 6px;
 }
 
-.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body,
-.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body,
-.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body,
-.budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body,
-.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator {
+.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body, .budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body, .budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator {
   color: #b2b6bd;
 }
 
-.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body:hover, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:hover,
-.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body:hover,
-.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body:hover,
-.budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:hover,
-.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body:active, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active,
-.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body:active,
-.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body:active,
-.budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active,
-.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body:checked, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked,
-.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body:checked,
-.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body:checked,
-.budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked,
-.budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:checked {
+.nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body:hover, .budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:hover, .budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body:hover, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:hover, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body:active, .budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active, .budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body:active, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:active, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.dim-label:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-notification .path-buttons-box > box > button > box > label.notification-body:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .budgie-switcher .path-buttons-box > box > button > box > label.notification-body:checked, .budgie-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked, .budgie-switcher .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .slate-notification .path-buttons-box > box > button > box > label.notification-body:checked, .slate-notification .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.notification-body:checked, .nautilus-window headerbar.titlebar.windowhandle .linked.nautilus-path-bar .path-buttons-box > box > button > box > label.separator:checked {
   color: #e0e5eb;
 }
 
@@ -5263,17 +5239,13 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
   text-shadow: none;
 }
 
-.nautilus-canvas-item.dim-label, .slate-notification .nautilus-canvas-item.notification-body,
-.budgie-notification .nautilus-canvas-item.notification-body,
-.budgie-switcher .nautilus-canvas-item.notification-body, label.nautilus-canvas-item.separator, popover.background label.nautilus-canvas-item.separator,
+.nautilus-canvas-item.dim-label, .budgie-notification .nautilus-canvas-item.notification-body, .budgie-switcher .nautilus-canvas-item.notification-body, .slate-notification .nautilus-canvas-item.notification-body, label.nautilus-canvas-item.separator, popover.background label.nautilus-canvas-item.separator,
 .nautilus-list-dim-label,
 .caja-list-dim-label {
   color: #a0a2a8;
 }
 
-.nautilus-canvas-item.dim-label:selected, .slate-notification .nautilus-canvas-item.notification-body:selected,
-.budgie-notification .nautilus-canvas-item.notification-body:selected,
-.budgie-switcher .nautilus-canvas-item.notification-body:selected, label.nautilus-canvas-item.separator:selected, .nautilus-canvas-item.dim-label:selected:focus,
+.nautilus-canvas-item.dim-label:selected, .budgie-notification .nautilus-canvas-item.notification-body:selected, .budgie-switcher .nautilus-canvas-item.notification-body:selected, .slate-notification .nautilus-canvas-item.notification-body:selected, label.nautilus-canvas-item.separator:selected, .nautilus-canvas-item.dim-label:selected:focus,
 .nautilus-list-dim-label:selected,
 .caja-list-dim-label:selected,
 .nautilus-list-dim-label:selected:focus {
@@ -5662,11 +5634,7 @@ button.dzlmenubuttonitem.check label {
   color: #464853;
 }
 
-button.dzlmenubuttonitem.check label.dim-label, button.dzlmenubuttonitem.check .slate-notification label.notification-body, .slate-notification button.dzlmenubuttonitem.check label.notification-body,
-button.dzlmenubuttonitem.check .budgie-notification label.notification-body,
-button.dzlmenubuttonitem.check .budgie-switcher label.notification-body,
-.budgie-notification button.dzlmenubuttonitem.check label.notification-body,
-.budgie-switcher button.dzlmenubuttonitem.check label.notification-body, button.dzlmenubuttonitem.check label.separator {
+button.dzlmenubuttonitem.check label.dim-label, button.dzlmenubuttonitem.check .budgie-notification label.notification-body, button.dzlmenubuttonitem.check .budgie-switcher label.notification-body, .budgie-notification button.dzlmenubuttonitem.check label.notification-body, .budgie-switcher button.dzlmenubuttonitem.check label.notification-body, button.dzlmenubuttonitem.check .slate-notification label.notification-body, .slate-notification button.dzlmenubuttonitem.check label.notification-body, button.dzlmenubuttonitem.check label.separator {
   color: #464853;
 }
 
@@ -7827,32 +7795,32 @@ MsdOsdWindow.background.osd .progressbar {
   color: rgba(255, 255, 255, 0.65);
 }
 
-.raven-mpris button.image-button, .budgie-panel .flat#tasklist-button:not(.flat), .budgie-panel button.flat {
+.raven .raven-mpris button.image-button, .budgie-panel .flat#tasklist-button:not(.flat), .budgie-panel button.flat {
   color: #D3DAE3;
   background: none;
 }
 
-.raven-mpris button.image-button:hover, .budgie-panel .flat#tasklist-button:hover:not(.flat), .budgie-panel button.flat:hover {
+.raven .raven-mpris button.image-button:hover, .budgie-panel .flat#tasklist-button:hover:not(.flat), .budgie-panel button.flat:hover {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.raven-mpris button.image-button:disabled, .budgie-panel .flat#tasklist-button:disabled:not(.flat), .budgie-panel button.flat:disabled {
+.raven .raven-mpris button.image-button:disabled, .budgie-panel .flat#tasklist-button:disabled:not(.flat), .budgie-panel button.flat:disabled {
   color: rgba(211, 218, 227, 0.5);
   background: none;
 }
 
-.raven-mpris button.image-button:active, .budgie-panel .flat#tasklist-button:active:not(.flat), .budgie-panel button.flat:active {
+.raven .raven-mpris button.image-button:active, .budgie-panel .flat#tasklist-button:active:not(.flat), .budgie-panel button.flat:active {
   background-color: rgba(255, 255, 255, 0.3);
   color: #ffffff;
 }
 
-.raven-mpris button.image-button:checked, .budgie-panel .flat#tasklist-button:checked:not(.flat), .budgie-panel button.flat:checked {
+.raven .raven-mpris button.image-button:checked, .budgie-panel .flat#tasklist-button:checked:not(.flat), .budgie-panel button.flat:checked {
   background-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }
 
-.raven-mpris button.image-button:checked:disabled, .budgie-panel .flat#tasklist-button:checked:disabled:not(.flat), .budgie-panel button.flat:checked:disabled {
+.raven .raven-mpris button.image-button:checked:disabled, .budgie-panel .flat#tasklist-button:checked:disabled:not(.flat), .budgie-panel button.flat:checked:disabled {
   background-color: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.65);
 }
@@ -7995,6 +7963,114 @@ MsdOsdWindow.background.osd .progressbar {
   padding: 0;
 }
 
+.budgie-popover.budgie-menu.background {
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.budgie-popover.budgie-menu scrollbar,
+.budgie-popover.budgie-menu entry.search {
+  background-color: transparent;
+}
+
+.budgie-popover.budgie-menu entry.search {
+  padding: 5px 10px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 110%;
+}
+
+.budgie-popover.budgie-menu .categories:dir(ltr) {
+  border-bottom-left-radius: 2px;
+}
+
+.budgie-popover.budgie-menu .categories:dir(rtl) {
+  border-bottom-right-radius: 2px;
+}
+
+.budgie-popover.budgie-menu .categories button.category-button {
+  border: none;
+  border-radius: 0;
+}
+
+.budgie-popover.budgie-menu .categories button.category-button:not(:active):not(:checked):hover {
+  background-color: rgba(70, 72, 83, 0.1);
+}
+
+.budgie-popover.budgie-menu row {
+  padding: 0;
+}
+
+.budgie-popover.budgie-menu row:hover {
+  box-shadow: none;
+}
+
+.budgie-popover.budgie-menu row.activatable > button {
+  min-height: 32px;
+  padding: 0 8px;
+  border-radius: 0;
+  color: #464853;
+  font-weight: normal;
+  border: none;
+}
+
+.budgie-popover.budgie-menu row.activatable > button:disabled {
+  color: rgba(70, 72, 83, 0.55);
+}
+
+.budgie-popover.budgie-menu row.activatable > button:active, .budgie-popover.budgie-menu row.activatable > button:checked {
+  border-color: #2679db;
+}
+
+.budgie-popover.budgie-menu row.activatable > button:checked:disabled {
+  background-color: #5294e2;
+}
+
+.budgie-popover.budgie-menu list.left-overlay-menu {
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 6px;
+  margin: 6px;
+}
+
+.budgie-popover.budgie-menu list.left-overlay-menu > row.activatable {
+  border-radius: 2px;
+}
+
+.budgie-popover.budgie-menu list.left-overlay-menu > row.activatable:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.budgie-popover.budgie-menu list.left-overlay-menu > row.activatable button.menuitem {
+  border-radius: 2px;
+}
+
+.budgie-popover.budgie-menu .budgie-menu-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 3px;
+}
+
+.budgie-popover.budgie-menu .budgie-menu-footer button.flat {
+  padding: 3px;
+  border-radius: 2px;
+}
+
+.budgie-popover.budgie-menu .budgie-menu-footer button.flat.image-button {
+  border-radius: 9999px;
+  padding: 6px;
+  min-height: 16px;
+  min-width: 16px;
+  margin-left: 6px;
+}
+
+.budgie-popover.user-menu {
+  padding: 6px;
+}
+
 .budgie-popover.user-menu frame.container {
   padding: 6px;
 }
@@ -8004,9 +8080,28 @@ MsdOsdWindow.background.osd .progressbar {
   background-color: rgba(0, 0, 0, 0.12);
 }
 
+.budgie-popover.user-menu .content-box {
+  background-color: transparent;
+}
+
+.budgie-popover.user-menu separator {
+  margin: 4px 0;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.budgie-popover.user-menu row {
+  padding: 0;
+  box-shadow: none;
+  background-image: none;
+}
+
 .budgie-popover.sound-popover separator {
   margin: 3px 0;
   background-color: rgba(0, 0, 0, 0.12);
+}
+
+.budgie-popover.sound-popover > .container > box > box {
+  padding-bottom: 6px;
 }
 
 .budgie-popover.sound-popover buttonbox.linked > button {
@@ -8022,6 +8117,10 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-popover.icon-popover frame.container {
+  padding: 6px;
+}
+
+.budgie-popover.places-menu {
   padding: 6px;
 }
 
@@ -8046,6 +8145,40 @@ MsdOsdWindow.background.osd .progressbar {
 
 .budgie-popover.places-menu list > row.activatable, .budgie-popover.places-menu list > row.activatable:hover, .budgie-popover.places-menu list > row.activatable:active, .budgie-popover.places-menu list > row.activatable:selected {
   background: none;
+}
+
+.budgie-popover.places-menu .name-button.text-button {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.budgie-popover.places-menu .name-button.text-button image:dir(ltr) {
+  margin-right: 3px;
+}
+
+.budgie-popover.places-menu .name-button.text-button image:dir(rtl) {
+  margin-left: 3px;
+}
+
+.budgie-popover.places-menu .places-section-header > image:dir(ltr) {
+  margin: 0 -2px 0 6px;
+}
+
+.budgie-popover.places-menu .places-section-header > image:dir(rtl) {
+  margin: 0 6px 0 -2px;
+}
+
+.budgie-popover.places-menu .places-list {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: transparent;
+}
+
+.budgie-popover.places-menu row {
+  padding: 0;
+  box-shadow: none;
+  background-image: none;
 }
 
 .budgie-popover.workspace-popover .container {
@@ -8137,119 +8270,6 @@ window.budgie-popover:not(.csd) > frame.container > border {
   border-radius: 2px;
 }
 
-.budgie-menu.background {
-  padding: 0;
-  background-color: #ffffff;
-}
-
-.budgie-menu scrollbar,
-.budgie-menu entry.search {
-  background-color: transparent;
-}
-
-.budgie-menu entry.search {
-  padding: 5px 10px;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 110%;
-}
-
-.budgie-menu .categories:dir(ltr) {
-  border-bottom-left-radius: 2px;
-}
-
-.budgie-menu .categories:dir(rtl) {
-  border-bottom-right-radius: 2px;
-}
-
-.budgie-menu button {
-  min-height: 32px;
-  padding: 0 8px;
-  border-radius: 0;
-  color: #464853;
-  font-weight: normal;
-  border: none;
-}
-
-.budgie-menu button:disabled {
-  color: rgba(70, 72, 83, 0.55);
-}
-
-.budgie-menu button:active, .budgie-menu button:checked {
-  border-color: #2679db;
-}
-
-.budgie-menu button:checked:disabled {
-  background-color: #5294e2;
-}
-
-.budgie-menu row {
-  padding: 0;
-}
-
-.budgie-menu row:hover {
-  box-shadow: none;
-}
-
-popover.background.user-menu {
-  padding: 8px;
-}
-
-popover.background.user-menu .content-box {
-  background-color: transparent;
-}
-
-popover.background.user-menu separator {
-  margin: 4px 0;
-  background-color: rgba(0, 0, 0, 0.12);
-}
-
-popover.background.user-menu row {
-  padding: 0;
-  box-shadow: none;
-  background-image: none;
-}
-
-popover.background.places-menu {
-  padding: 8px;
-}
-
-popover.background.places-menu .name-button.text-button {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-popover.background.places-menu .name-button.text-button image:dir(ltr) {
-  margin-right: 3px;
-}
-
-popover.background.places-menu .name-button.text-button image:dir(rtl) {
-  margin-left: 3px;
-}
-
-popover.background.places-menu .places-section-header > image:dir(ltr) {
-  margin: 0 -2px 0 5px;
-}
-
-popover.background.places-menu .places-section-header > image:dir(rtl) {
-  margin: 0 5px 0 -2px;
-}
-
-popover.background.places-menu .places-list {
-  margin-top: 4px;
-  padding-top: 4px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: transparent;
-}
-
-popover.background.places-menu row {
-  padding: 0;
-  box-shadow: none;
-  background-image: none;
-}
-
 .budgie-panel {
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
   background-color: #21232b;
@@ -8263,6 +8283,38 @@ popover.background.places-menu row {
 
 .bottom .budgie-panel.dock-mode {
   border-radius: 5px 5px 0 0;
+}
+
+.bottom .budgie-panel.dock-mode .icon-tasklist > box > revealer:first-child > button.launcher {
+  border-top-left-radius: 5px;
+}
+
+.bottom .budgie-panel.dock-mode .icon-tasklist > box > revealer:last-child > button.launcher {
+  border-top-right-radius: 5px;
+}
+
+.left .budgie-panel.dock-mode {
+  border-radius: 0 5px 5px 0;
+}
+
+.left .budgie-panel.dock-mode .icon-tasklist .launcher:first-child {
+  border-top-right-radius: 5px;
+}
+
+.left .budgie-panel.dock-mode .icon-tasklist .launcher:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+.right .budgie-panel.dock-mode {
+  border-radius: 5px 0 0 5px;
+}
+
+.right .budgie-panel.dock-mode .icon-tasklist .launcher:first-child {
+  border-top-left-radius: 5px;
+}
+
+.right .budgie-panel.dock-mode .icon-tasklist .launcher:last-child {
+  border-bottom-left-radius: 5px;
 }
 
 .budgie-panel button {
@@ -8518,10 +8570,6 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   margin-bottom: -10px;
 }
 
-.raven stackswitcher {
-  padding: 0 8px 12px 8px;
-}
-
 .raven button.image-button:active, .raven button.image-button:checked {
   background-clip: border-box;
   border-color: #2679db;
@@ -8536,16 +8584,13 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   margin-top: -6px;
 }
 
-.raven .raven-header:not(.top) button {
+.raven .raven-header:not(.top) button.image-button {
+  border-radius: 9999px;
+  -gtk-outline-radius: 9999px;
   min-height: 28px;
   min-width: 28px;
   margin: 0;
   padding: 0;
-}
-
-.raven .raven-header:not(.top) button.image-button {
-  border-radius: 100px;
-  -gtk-outline-radius: 100px;
 }
 
 .raven .raven-header:not(.top) button.flat:active, .raven .raven-header:not(.top) button.flat:checked {
@@ -8672,6 +8717,46 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   font-size: smaller;
 }
 
+.raven .audio-widget .raven-background .devices-list {
+  padding: 6px;
+}
+
+.raven .audio-widget .raven-background .devices-list > row {
+  border-radius: 2px;
+}
+
+.raven .audio-widget .raven-background .devices-list > row:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.raven .audio-widget .raven-background stackswitcher {
+  padding: 0 6px 6px;
+}
+
+.raven .raven-mpris {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+.raven .raven-mpris label {
+  min-height: 24px;
+}
+
+.raven .raven-mpris button.image-button {
+  padding: 6px;
+  border: none;
+}
+
+.raven image.raven-mpris {
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(70, 72, 83, 0.6);
+  border-radius: 3px;
+}
+
+.raven .raven-mpris-controls > button {
+  padding: 6px;
+}
+
 calendar.raven-calendar {
   margin: 2px 0;
   padding: 2px;
@@ -8695,20 +8780,6 @@ window.sound-popover.background scale.horizontal.marks-after mark label {
   font-size: 0;
 }
 
-.raven-mpris {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
-}
-
-.raven-mpris label {
-  min-height: 24px;
-}
-
-.raven-mpris button.image-button {
-  padding: 6px;
-  border: none;
-}
-
 box.vertical > stack > box.vertical > .raven-background > viewport.frame {
   padding: 0;
 }
@@ -8719,7 +8790,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame list {
 
 box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable {
   margin-left: -8px;
-  margin-right: -2px;
+  margin-right: -6px;
   background-color: transparent;
 }
 
@@ -8761,7 +8832,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 }
 
 box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list {
-  border-radius: 2px;
+  border-radius: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
@@ -8832,68 +8903,42 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   padding-left: 8px;
 }
 
-.slate-notification-window,
-.budgie-notification-window,
-.budgie-switcher-window,
-.budgie-osd-window {
+.budgie-notification-window, .budgie-switcher-window, .budgie-osd-window, .slate-notification-window {
   background-color: transparent;
   background-image: none;
   border-radius: 2px;
 }
 
-.slate-notification-window button,
-.budgie-notification-window button,
-.budgie-switcher-window button,
-.budgie-osd-window button {
+.budgie-notification-window button, .budgie-switcher-window button, .budgie-osd-window button, .slate-notification-window button {
   color: #e0e5eb;
   outline-offset: -3px;
   background-color: rgba(40, 42, 51, 0);
   border-color: rgba(40, 42, 51, 0);
 }
 
-.slate-notification-window button:hover,
-.budgie-notification-window button:hover,
-.budgie-switcher-window button:hover,
-.budgie-osd-window button:hover {
+.budgie-notification-window button:hover, .budgie-switcher-window button:hover, .budgie-osd-window button:hover, .slate-notification-window button:hover {
   color: #e0e5eb;
   border-color: rgba(255, 255, 255, 0.12);
   background-color: #333641;
 }
 
-.slate-notification-window button:active, .slate-notification-window button:checked,
-.budgie-notification-window button:active,
-.budgie-switcher-window button:active,
-.budgie-osd-window button:active,
-.budgie-notification-window button:checked,
-.budgie-switcher-window button:checked,
-.budgie-osd-window button:checked {
+.budgie-notification-window button:active, .budgie-switcher-window button:active, .budgie-osd-window button:active, .slate-notification-window button:active, .budgie-notification-window button:checked, .budgie-switcher-window button:checked, .budgie-osd-window button:checked, .slate-notification-window button:checked {
   color: #ffffff;
   border-color: #68a2e6;
   background-color: #5294e2;
 }
 
-.slate-notification-window button:disabled,
-.budgie-notification-window button:disabled,
-.budgie-switcher-window button:disabled,
-.budgie-osd-window button:disabled {
+.budgie-notification-window button:disabled, .budgie-switcher-window button:disabled, .budgie-osd-window button:disabled, .slate-notification-window button:disabled {
   background-color: rgba(40, 42, 51, 0);
   border-color: rgba(40, 42, 51, 0);
 }
 
-.slate-notification-window button:disabled label, .slate-notification-window button:disabled,
-.budgie-notification-window button:disabled label,
-.budgie-switcher-window button:disabled label,
-.budgie-osd-window button:disabled label,
-.budgie-notification-window button:disabled,
-.budgie-switcher-window button:disabled,
-.budgie-osd-window button:disabled {
+.budgie-notification-window button:disabled label, .budgie-switcher-window button:disabled label, .budgie-osd-window button:disabled label, .slate-notification-window button:disabled label, .budgie-notification-window button:disabled, .budgie-switcher-window button:disabled, .budgie-osd-window button:disabled, .slate-notification-window button:disabled {
   color: rgba(224, 229, 235, 0.5);
   opacity: 1;
 }
 
-.slate-notification .notification-title,
-.budgie-notification .notification-title,
-.budgie-switcher .notification-title {
+.budgie-notification .notification-title, .budgie-switcher .notification-title, .slate-notification .notification-title {
   font-size: 120%;
 }
 
@@ -8902,12 +8947,12 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 }
 
 .drop-shadow {
-  margin: 5px 9px;
-  padding: 8px;
-  border-radius: 2px;
-  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.15);
-  background-color: #282A33;
-  color: #e0e5eb;
+  margin: 8px 12px;
+  padding: 6px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #4a4c59;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15), 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
 .drop-shadow .linked > button {
@@ -8916,18 +8961,18 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 
 .budgie-run-dialog, .budgie-session-dialog,
 .budgie-polkit-dialog {
-  border-radius: 2px;
   background-color: #fafbfc;
 }
 
-.background.budgie-run-dialog, .background.budgie-session-dialog,
-.background.budgie-polkit-dialog {
+.budgie-run-dialog, .budgie-session-dialog,
+.budgie-polkit-dialog, .budgie-run-dialog decoration, .budgie-session-dialog decoration,
+.budgie-polkit-dialog decoration {
   border-radius: 2px;
 }
 
-.budgie-run-dialog decoration, .budgie-session-dialog decoration,
-.budgie-polkit-dialog decoration {
-  border-radius: 2px;
+.budgie-run-dialog > box > grid, .budgie-session-dialog > box > grid,
+.budgie-polkit-dialog > box > grid {
+  padding: 24px;
 }
 
 .budgie-session-dialog buttonbox.linked.horizontal > button,
@@ -8978,6 +9023,10 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   color: #F04A50;
 }
 
+.budgie-polkit-dialog > box > grid {
+  padding: 24px 24px 0;
+}
+
 .budgie-run-dialog {
   background-color: #ffffff;
 }
@@ -8994,11 +9043,7 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
   border: none;
 }
 
-.budgie-run-dialog list .dim-label, .budgie-run-dialog list label.separator, .budgie-run-dialog list .slate-notification .notification-body, .slate-notification .budgie-run-dialog list .notification-body,
-.budgie-run-dialog list .budgie-notification .notification-body,
-.budgie-notification .budgie-run-dialog list .notification-body,
-.budgie-run-dialog list .budgie-switcher .notification-body,
-.budgie-switcher .budgie-run-dialog list .notification-body {
+.budgie-run-dialog list .dim-label, .budgie-run-dialog list label.separator, .budgie-run-dialog list .budgie-notification .notification-body, .budgie-notification .budgie-run-dialog list .notification-body, .budgie-run-dialog list .slate-notification .notification-body, .slate-notification .budgie-run-dialog list .notification-body, .budgie-run-dialog list .budgie-switcher .notification-body, .budgie-switcher .budgie-run-dialog list .notification-body {
   opacity: 1;
 }
 

@@ -201,16 +201,133 @@
 
   &.budgie-menu {
     .container { padding: 0; }
+
+    &.background {
+      padding: 0;
+      background-color: $base_color;
+    }
+
+    scrollbar,
+    entry.search { background-color: transparent; }
+
+    entry.search {
+      // margin: $cont_padding $cont_padding 0 $cont_padding;
+      padding: 5px 10px;
+      border: none;
+      border-bottom: 1px solid $borders_color;
+      border-radius: 0;
+      box-shadow: none;
+      font-size: 110%;
+      // &:focus { @include entry(focus); }
+    }
+
+    .categories {
+      &:dir(ltr) { border-bottom-left-radius: $bt_radius; }
+      &:dir(rtl) { border-bottom-right-radius: $bt_radius; }
+
+      button.category-button {
+        border: none;
+        border-radius: 0;
+
+        &:not(:active):not(:checked):hover {
+          background-color: rgba($fg_color, 0.1);
+        }
+      }
+    }
+
+    row {
+      padding: 0;
+
+      &:hover { box-shadow: none; }
+
+      &.activatable > button {
+        @extend %row_activatable;
+
+        min-height: 32px;
+        padding: 0 8px;
+        border-radius: 0;
+        color: $fg_color;
+        font-weight: normal;
+        border: none;
+
+        &:disabled { color: $insensitive_fg_color; }
+
+        &:active, &:checked {
+          @extend %selected_items;
+          border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
+        }
+
+        &:checked:disabled { background-color: $selected_bg_color; } // overriding
+      }
+    }
+
+    list.left-overlay-menu {
+      border-radius: $material_radius;
+      border: 1px solid $borders_color;
+      box-shadow: 0 2px 8px 0 if($variant=='light', rgba(black, 0.1), rgba(black, 0.15));
+      background-color: $base_color;
+      padding: 6px;
+      margin: 6px;
+
+      > row.activatable {
+        border-radius: 2px;
+
+        &:not(:last-child) {
+          margin-bottom: 3px;
+        }
+
+        button.menuitem {
+          border-radius: 2px;
+        }
+      }
+    }
+
+    .budgie-menu-footer {
+      border-top: 1px solid $borders_color;
+      padding: 3px;
+
+      button.flat {
+        padding: 3px;
+        border-radius: 2px;
+
+        &.image-button {
+          border-radius: $circular_radius;
+          padding: 6px;
+          min-height: 16px;
+          min-width: 16px;
+          margin-left: 6px;
+        }
+      }
+    }
   }
 
   &.user-menu {
+    padding: 6px;
+
     frame.container { padding: 6px; }
 
     separator { margin: 4px 0; background-color: $borders_color; }
+
+    .content-box { background-color: transparent; }
+
+    separator { margin: 4px 0; background-color: $borders_color; }
+
+    row {
+      padding: 0;
+      box-shadow: none;
+      background-image: none;
+    }
   }
 
   &.sound-popover {
-    separator { margin: 3px 0; background-color: $borders_color; }
+    separator {
+      margin: 3px 0;
+      background-color: $borders_color;
+    }
+
+    > .container > box > box {
+      padding-bottom: 6px;
+    }
 
     buttonbox.linked > button {
       border-color: $borders_color;
@@ -230,6 +347,8 @@
   }
 
   &.places-menu {
+    padding: 6px;
+
     frame.container { padding: 6px; }
 
     .places-list:not(.always-expand) {
@@ -251,6 +370,35 @@
         background: none;
       }
     }
+
+    .name-button.text-button {
+      // padding: 4px 8px;
+      padding-left: 8px;
+      padding-right: 8px;
+
+      image {
+        &:dir(ltr) { margin-right: 8px - 5px; }
+        &:dir(rtl) { margin-left: 8px - 5px; }
+      }
+    }
+
+    .places-section-header > image {
+      &:dir(ltr) { margin: 0 -2px 0 6px; }
+      &:dir(rtl) { margin: 0 6px 0 -2px; }
+    }
+
+    .places-list {
+      margin-top: 4px;
+      padding-top: 4px;
+      border-top: 1px solid $borders_color;
+      background-color: transparent;
+    }
+
+    row {
+      padding: 0;
+      box-shadow: none;
+      background-image: none;
+    }
   }
 
   &.workspace-popover {
@@ -259,6 +407,11 @@
     separator { margin: 4px 0; }
 
     flowboxchild { padding: 0; }
+  }
+
+  // Menu Button
+  button.budgie-menu-launcher {
+    @extend %flat_button;
   }
 }
 
@@ -331,133 +484,6 @@ window.budgie-popover:not(.csd) {
   }
 }
 
-// Budgie Menu
-.budgie-menu {
-  &.background {
-    padding: 0;
-    background-color: $base_color;
-  }
-
-  scrollbar,
-  entry.search { background-color: transparent; }
-
-  entry.search {
-    // margin: $cont_padding $cont_padding 0 $cont_padding;
-    padding: 5px 10px;
-    border: none;
-    border-bottom: 1px solid $borders_color;
-    border-radius: 0;
-    box-shadow: none;
-    font-size: 110%;
-    // &:focus { @include entry(focus); }
-  }
-
-  .categories {
-    &:dir(ltr) { border-bottom-left-radius: $bt_radius; }
-    &:dir(rtl) { border-bottom-right-radius: $bt_radius; }
-  }
-
-  button {
-    @extend %row_activatable;
-
-    min-height: 32px;
-    padding: 0 8px;
-    border-radius: 0;
-    color: $fg_color;
-    font-weight: normal;
-    border: none;
-
-    &:disabled { color: $insensitive_fg_color; }
-
-    &:active, &:checked {
-      @extend %selected_items;
-      border-color: if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
-    }
-
-    &:checked:disabled { background-color: $selected_bg_color; } // overriding
-  }
-
-  row {
-    padding: 0;
-
-    &:hover { box-shadow: none; }
-  }
-}
-
-// Menu Button
-button.budgie-menu-launcher {
-  // padding: 0 2px;
-  @extend %flat_button;
-}
-
-// User Menu
-popover.background.user-menu {
-  padding: 8px;
-
-  .content-box { background-color: transparent; }
-
-  separator { margin: 4px 0; background-color: $borders_color; }
-
-  row {
-    padding: 0;
-    box-shadow: none;
-    background-image: none;
-  }
-}
-
-// Places Menu
-popover.background.places-menu {
-  padding: 8px;
-
-  // FIXME: untested
-  .message-bar {
-    // margin-bottom: 4px;
-  }
-
-  .name-button.text-button {
-    // padding: 4px 8px;
-    padding-left: 8px;
-    padding-right: 8px;
-
-    image {
-      &:dir(ltr) { margin-right: 8px - 5px; }
-      &:dir(rtl) { margin-left: 8px - 5px; }
-    }
-  }
-
-  // FIXME: untested
-  .unmount-button {
-    // padding: ($medium_size - 24px) / 2;
-  }
-
-  .places-section-header > image {
-    &:dir(ltr) { margin: 0 8px - 10px 0 8px - 3px; }
-    &:dir(rtl) { margin: 0 8px - 3px 0 8px - 10px; }
-  }
-
-  .places-list {
-    margin-top: 4px;
-    padding-top: 4px;
-    border-top: 1px solid $borders_color;
-    background-color: transparent;
-  }
-
-  row {
-    padding: 0;
-    box-shadow: none;
-    background-image: none;
-  }
-
-  // FIXME: untested
-  .unlock-area {
-    entry {
-    }
-
-    button {
-    }
-  }
-}
-
 // Panel
 .budgie-panel {
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
@@ -470,6 +496,39 @@ popover.background.places-menu {
   .bottom & {
     &.dock-mode {
       border-radius: 5px 5px 0 0;
+
+      .icon-tasklist {
+        > box > revealer {
+          &:first-child > button.launcher { border-top-left-radius: 5px; }
+          &:last-child > button.launcher { border-top-right-radius: 5px; }
+        }
+      }
+    }
+  }
+
+  .left & {
+    &.dock-mode {
+      border-radius: 0 5px 5px 0;
+
+      .icon-tasklist {
+        .launcher {
+          &:first-child { border-top-right-radius: 5px; }
+          &:last-child { border-bottom-right-radius: 5px; }
+        }
+      }
+    }
+  }
+
+  .right & {
+    &.dock-mode {
+      border-radius: 5px 0 0 5px;
+
+      .icon-tasklist {
+        .launcher {
+          &:first-child { border-top-left-radius: 5px; }
+          &:last-child { border-bottom-left-radius: 5px; }
+        }
+      }
     }
   }
 
@@ -661,10 +720,6 @@ button.raven-trigger {
   // for <10.4
   > stack { margin-bottom: -10px; }
 
-  // > stack > box:last-child > stack { margin-top: -6px; }
-
-  stackswitcher { padding: 0 8px 12px 8px; }
-
   button.image-button {
     @extend %circular_button;
 
@@ -683,14 +738,14 @@ button.raven-trigger {
 
       button {
         @extend %budgie_button_transition;
-        min-height: 28px;
-        min-width: 28px;
-        margin: 0;
-        padding: 0;
 
         &.image-button {
-          border-radius: 100px;
-          -gtk-outline-radius: 100px;
+          border-radius: $circular_radius;
+          -gtk-outline-radius: $circular_radius;
+          min-height: 28px;
+          min-width: 28px;
+          margin: 0;
+          padding: 0;
         }
 
         &.flat {
@@ -786,9 +841,6 @@ button.raven-trigger {
         border-radius: 0;
       }
     }
-
-    // for <10.4
-    button.combo { }
   }
 
   scrolledwindow.raven-background { border-bottom-style: none; }
@@ -810,6 +862,50 @@ button.raven-trigger {
   }
 
   .option-subtitle { font-size: smaller; }
+
+  .audio-widget {
+    .raven-background {
+      .devices-list {
+        padding: 6px;
+
+        > row {
+          border-radius: 2px;
+
+          &:not(:last-child) {
+            margin-bottom: 3px;
+          }
+        }
+      }
+
+      stackswitcher {
+        padding: 0 6px 6px;
+      }
+    }
+  }
+
+  // MPRIS Applet
+  .raven-mpris {
+    background-color: rgba(black, 0.5);
+    color: $selected_fg_color;
+
+    label { min-height: 24px; }
+
+    button.image-button {
+      padding: $cont_padding;
+      border: none;
+      @extend %budgie_button_flat;
+    }
+  }
+
+  image.raven-mpris {
+    background-color: $borders_color;
+    color: $sec_fg_color;
+    border-radius: 3px;
+  }
+
+  .raven-mpris-controls > button {
+    padding: $cont_padding;
+  }
 }
 
 // Calendar
@@ -853,23 +949,8 @@ window.sound-popover.background {
   }
 }
 
-// MPRIS Applet
-.raven-mpris {
-  background-color: rgba(black, 0.5);
-  color: $selected_fg_color;
-
-  label { min-height: 24px; }
-
-  button.image-button {
-    padding: $cont_padding;
-    border: none;
-    @extend %budgie_button_flat;
-  }
-}
-
 // notification list
 box.vertical > stack > box.vertical {
-
   > .raven-background > viewport.frame {
     padding: 0; // reset padding for full-width list node
 
@@ -877,7 +958,7 @@ box.vertical > stack > box.vertical {
 
     > list > row.activatable {
       margin-left: -8px;
-      margin-right: -2px;
+      margin-right: -6px;
       background-color: transparent;
 
       > grid > *, // legacy
@@ -904,12 +985,13 @@ box.vertical > stack > box.vertical {
 
       // sub-list rows grouping
       list {
-        border-radius: $bt_radius;
+        border-radius: 0;
         border-top: 1px solid $borders_color;
         border-bottom: 1px solid $borders_color;
 
         > row.activatable {
           border-bottom: 1px solid $borders_color;
+
           &:last-child { border-bottom: none; }
 
           &:selected {
@@ -967,7 +1049,6 @@ box.vertical > stack > box.vertical {
 }
 
 // Notifications
-%budgie_notification_window,
 .budgie-notification-window {
   background-color: transparent;
   background-image: none;
@@ -984,9 +1065,12 @@ box.vertical > stack > box.vertical {
   button.image-button { // 'close'
     @extend %circular_button;
   }
+
+  .linked > button {
+    @extend %linked;
+  }
 }
 
-%budgie_notification,
 .budgie-notification {
   .notification-title { font-size: 120%; }
 
@@ -1014,14 +1098,14 @@ box.vertical > stack > box.vertical {
 }
 
 .drop-shadow {
-  margin: 5px 9px;
-  padding: 8px;
-  border-radius: $bt_radius;
-  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent,
-              0 3px 3px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.12));
-
-  background-color: $header_bg;
-  color: $header_fg;
+  margin: 8px 12px;
+  padding: $cont_padding;
+  border-radius: $material_radius;
+  background-color: $base_color;
+  color: $text_color;
+  box-shadow: 0 2px 5px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.12)),
+              0 4px 8px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.12)),
+              0 0 0 1px $borders_color;
 
   button { @extend %budgie_button_transition; }
 
@@ -1029,11 +1113,13 @@ box.vertical > stack > box.vertical {
 }
 
 %budgie_dialog {
-  border-radius: $bt_radius;
   background-color: $bg_color;
 
-  &.background {border-radius: $bt_radius; }
-  decoration { border-radius: $bt_radius; }
+  &, &.background, decoration { border-radius: $bt_radius; }
+
+  > box > grid {
+    padding: 24px;
+  }
 }
 
 // Session Dialog
@@ -1080,6 +1166,10 @@ box.vertical > stack > box.vertical {
 
   .message { color: gtkalpha(currentColor, 0.6); }
   .failure { color: $destructive_color; }
+
+  > box > grid {
+    padding: 24px 24px 0;
+  }
 }
 
 // Run Dialog

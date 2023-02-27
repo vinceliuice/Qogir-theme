@@ -501,7 +501,7 @@ MsdOsdWindow {
 // use budgie-style OSDs
 .slate-notification {
   &-window {
-    @extend %budgie_notification_window;
+    @extend .budgie-notification-window;
 
     .drop-shadow {
       margin: 4px 6px 10px; // enlarge the shadow area
@@ -509,6 +509,6 @@ MsdOsdWindow {
     }
   }
 
-  @extend %budgie_notification;
+  @extend .budgie-notification;
   border-radius: $bt_radius;
 }
