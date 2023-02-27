@@ -8609,10 +8609,6 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   padding: 3px;
 }
 
-.raven .raven-header:not(.top) {
-  margin-top: -6px;
-}
-
 .raven .raven-header:not(.top) button.image-button {
   border-radius: 9999px;
   -gtk-outline-radius: 9999px;
@@ -8748,7 +8744,6 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 
 .raven .audio-widget .raven-background .devices-list {
   padding: 6px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .raven .audio-widget .raven-background .devices-list > row {

@@ -735,8 +735,6 @@ button.raven-trigger {
     padding: 3px;
 
     &:not(.top) {
-      margin-top: -6px; // remove extra spaces, but not perfect :(
-
       button {
         @extend %budgie_button_transition;
 
@@ -868,7 +866,6 @@ button.raven-trigger {
     .raven-background {
       .devices-list {
         padding: 6px;
-        border-bottom: 1px solid $borders_color;
 
         > row {
           border-radius: 2px;
