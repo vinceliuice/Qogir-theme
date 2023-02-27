@@ -8071,6 +8071,7 @@ MsdOsdWindow.background.osd .progressbar {
   min-height: 16px;
   min-width: 16px;
   margin-left: 6px;
+  background-clip: border-box;
 }
 
 .budgie-popover.user-menu {
