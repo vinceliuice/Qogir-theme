@@ -8842,10 +8842,7 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 }
 
 .raven .mpris-widget .raven-background .raven-mpris-controls {
-  background-color: rgba(0, 0, 0, 0.35);
-  border-radius: 9999px;
   margin-top: 3px;
-  padding: 3px;
 }
 
 .raven .mpris-widget .raven-background .raven-mpris-controls > button {
