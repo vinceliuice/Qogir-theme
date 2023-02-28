@@ -542,8 +542,8 @@ window.budgie-popover:not(.csd) {
     @extend %budgie_panel_button;
   }
 
-  &.horizontal button { padding: 0 4px; }
-  &.vertical button { padding: 4px 0; }
+  &.horizontal button { padding: 0 6px; }
+  &.vertical button { padding: 6px 0; }
 
   separator { background-color: rgba($panel_fg, 0.12); }
 
@@ -585,6 +585,35 @@ window.budgie-popover:not(.csd) {
 
       &:hover, &:active { color: rgba($panel_fg, 0.8); }
       &:disabled { color: rgba($panel_fg, 0.5); }
+    }
+  }
+
+  // Add padding for panel indicators icons
+  > box > widget > widget {
+    > image, // normal
+    > stack > image, // Screenshot
+    > box > image { // Places
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+
+    > box { // keyboard Layout
+      > widget > image { margin-left: 6px; }
+      > stack > widget > label { margin-right: 6px; }
+    }
+
+    > box > widget > widget > image { // Status
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+  }
+
+  // Time label
+  .budgie-clock-applet,
+  .budgie-calendar-applet {
+    > widget > box {
+      padding-left: 3px;
+      padding-right: 3px;
     }
   }
 }
@@ -885,7 +914,7 @@ button.raven-trigger {
   // MPRIS Applet
   .raven-mpris {
     background-color: rgba(black, 0.5);
-    color: $selected_fg_color;
+    color: white;
 
     label { min-height: 24px; }
 
@@ -896,14 +925,45 @@ button.raven-trigger {
     }
   }
 
-  image.raven-mpris {
-    background-color: $borders_color;
-    color: $sec_fg_color;
-    border-radius: 3px;
-  }
+  .mpris-widget {
+    .raven-header {
+      background-color: rgba(black, 0.75);
+      color: white;
 
-  .raven-mpris-controls > button {
-    padding: $cont_padding;
+      button.image-button {
+        border: none;
+        @extend %budgie_panel_button_flat;
+      }
+    }
+
+    .raven-background {
+      background-color: rgba(black, 0.65);
+      color: white;
+      border: none;
+
+      image.raven-mpris {
+        background-color: rgba(white, 0.1);
+        color: rgba(white, 0.65);
+        border-radius: 3px;
+      }
+
+      .raven-mpris-controls {
+        background-color: rgba(black, 0.35);
+        border-radius: $circular_radius;
+        margin-top: 3px;
+        padding: 3px;
+
+        > button {
+          padding: $cont_padding;
+          border: none;
+          @extend %budgie_panel_button_flat;
+
+          &:not(:first-child):not(:last-child):not(:hover):not(:active) {
+            background-color: rgba(white, 0.06);
+          }
+        }
+      }
+    }
   }
 }
 

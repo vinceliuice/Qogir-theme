@@ -7797,32 +7797,32 @@ MsdOsdWindow.background.osd .progressbar {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.raven .raven-mpris button.image-button {
+.raven .mpris-widget .raven-background .raven-mpris-controls > button, .raven .mpris-widget .raven-header button.image-button, .raven .raven-mpris button.image-button {
   color: #D3DAE3;
   background: none;
 }
 
-.raven .raven-mpris button.image-button:hover {
+.raven .mpris-widget .raven-background .raven-mpris-controls > button:hover, .raven .mpris-widget .raven-header button.image-button:hover, .raven .raven-mpris button.image-button:hover {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.raven .raven-mpris button.image-button:disabled {
+.raven .mpris-widget .raven-background .raven-mpris-controls > button:disabled, .raven .mpris-widget .raven-header button.image-button:disabled, .raven .raven-mpris button.image-button:disabled {
   color: rgba(211, 218, 227, 0.5);
   background: none;
 }
 
-.raven .raven-mpris button.image-button:active {
+.raven .mpris-widget .raven-background .raven-mpris-controls > button:active, .raven .mpris-widget .raven-header button.image-button:active, .raven .raven-mpris button.image-button:active {
   background-color: rgba(255, 255, 255, 0.3);
   color: #ffffff;
 }
 
-.raven .raven-mpris button.image-button:checked {
+.raven .mpris-widget .raven-background .raven-mpris-controls > button:checked, .raven .mpris-widget .raven-header button.image-button:checked, .raven .raven-mpris button.image-button:checked {
   background-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }
 
-.raven .raven-mpris button.image-button:checked:disabled {
+.raven .mpris-widget .raven-background .raven-mpris-controls > button:checked:disabled, .raven .mpris-widget .raven-header button.image-button:checked:disabled, .raven .raven-mpris button.image-button:checked:disabled {
   background-color: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.65);
 }
@@ -8365,11 +8365,11 @@ window.budgie-popover:not(.csd) > frame.container > border {
 }
 
 .budgie-panel.horizontal button {
-  padding: 0 4px;
+  padding: 0 6px;
 }
 
 .budgie-panel.vertical button {
-  padding: 4px 0;
+  padding: 6px 0;
 }
 
 .budgie-panel separator {
@@ -8422,6 +8422,32 @@ window.budgie-popover:not(.csd) > frame.container > border {
 
 .budgie-panel button.flat.launcher:not(:checked):disabled {
   color: rgba(211, 218, 227, 0.5);
+}
+
+.budgie-panel > box > widget > widget > image,
+.budgie-panel > box > widget > widget > stack > image,
+.budgie-panel > box > widget > widget > box > image {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.budgie-panel > box > widget > widget > box > widget > image {
+  margin-left: 6px;
+}
+
+.budgie-panel > box > widget > widget > box > stack > widget > label {
+  margin-right: 6px;
+}
+
+.budgie-panel > box > widget > widget > box > widget > widget > image {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.budgie-panel .budgie-clock-applet > widget > box,
+.budgie-panel .budgie-calendar-applet > widget > box {
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .top window#ValaPanel.background button.flat.-panel-button, window#ValaPanel.background .top button.flat.-panel-button,
@@ -8776,7 +8802,7 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
 
 .raven .raven-mpris {
   background-color: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
+  color: white;
 }
 
 .raven .raven-mpris label {
@@ -8788,14 +8814,41 @@ button.raven-trigger:hover, button.raven-trigger:active, button.raven-trigger:ch
   border: none;
 }
 
-.raven image.raven-mpris {
-  background-color: rgba(0, 0, 0, 0.12);
-  color: rgba(70, 72, 83, 0.6);
+.raven .mpris-widget .raven-header {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+
+.raven .mpris-widget .raven-header button.image-button {
+  border: none;
+}
+
+.raven .mpris-widget .raven-background {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  border: none;
+}
+
+.raven .mpris-widget .raven-background image.raven-mpris {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.65);
   border-radius: 3px;
 }
 
-.raven .raven-mpris-controls > button {
+.raven .mpris-widget .raven-background .raven-mpris-controls {
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 9999px;
+  margin-top: 3px;
+  padding: 3px;
+}
+
+.raven .mpris-widget .raven-background .raven-mpris-controls > button {
   padding: 6px;
+  border: none;
+}
+
+.raven .mpris-widget .raven-background .raven-mpris-controls > button:not(:first-child):not(:last-child):not(:hover):not(:active) {
+  background-color: rgba(255, 255, 255, 0.06);
 }
 
 calendar.raven-calendar {
