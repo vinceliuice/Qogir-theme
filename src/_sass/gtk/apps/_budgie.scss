@@ -595,39 +595,6 @@ window.budgie-popover:not(.csd) {
       &:disabled { color: rgba($panel_fg, 0.5); }
     }
   }
-
-  // Add padding for panel indicators icons
-  > box > widget > widget {
-    > image, // normal
-    > stack > image, // Screenshot
-    > box > image { // Places
-      margin-left: 6px;
-      margin-right: 6px;
-    }
-
-    > box > image + label { // Reset for mailneg
-      margin-left: -4px;
-    }
-
-    > box { // keyboard Layout
-      > widget > image { margin-left: 6px; }
-      > stack > widget > label { margin-right: 6px; }
-    }
-
-    > box > widget > widget > image { // Status
-      margin-left: 2px;
-      margin-right: 2px;
-    }
-  }
-
-  // Time label
-  .budgie-clock-applet,
-  .budgie-calendar-applet {
-    > widget > box {
-      padding-left: 3px;
-      padding-right: 3px;
-    }
-  }
 }
 
 %underscores {
