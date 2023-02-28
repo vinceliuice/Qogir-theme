@@ -98,9 +98,13 @@
   background-color: if($variant=='light', $base_color, $bg_color);
   box-shadow: 0 3px 5px if($variant == 'light', rgba(black, 0.12), rgba(black, 0.1)), 0 0 0 1px $borders_color;
 
-  .container {
-    padding: 0;
+  frame.container {
+    padding: 6px;
     border: none;
+
+    .container {
+      padding: 0;
+    }
   }
 
   border { border: none; }
@@ -115,6 +119,15 @@
         border: none;
         box-shadow: none;
       }
+    }
+  }
+
+  viewport.frame > list > row.activatable {
+    border-radius: $bt_radius;
+
+    button {
+      border: none;
+      background-color: transparent;
     }
   }
 
@@ -303,12 +316,6 @@
   }
 
   &.user-menu {
-    padding: 6px;
-
-    frame.container { padding: 6px; }
-
-    separator { margin: 4px 0; background-color: $borders_color; }
-
     .content-box { background-color: transparent; }
 
     separator { margin: 4px 0; background-color: $borders_color; }
@@ -336,22 +343,23 @@
   }
 
   &.caffeine-popover {
-    frame.container { padding: 6px; }
+    frame.container .container { padding: 6px; }
   }
 
   &.night-light-indicator {
-    frame.container { padding: 6px; }
+    .view-header {
+      padding-left: 6px;
+      color: $alt_fg_color;
+    }
   }
 
   &.icon-popover {
-    frame.container { padding: 6px; }
+    separator {
+      margin: 3px 0;
+    }
   }
 
   &.places-menu {
-    padding: 6px;
-
-    frame.container { padding: 6px; }
-
     .places-list:not(.always-expand) {
       margin-top: 4px;
       padding-top: 4px;
@@ -595,6 +603,10 @@ window.budgie-popover:not(.csd) {
     > box > image { // Places
       margin-left: 6px;
       margin-right: 6px;
+    }
+
+    > box > image + label { // Reset for mailneg
+      margin-left: -4px;
     }
 
     > box { // keyboard Layout

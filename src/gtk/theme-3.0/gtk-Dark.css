@@ -7888,9 +7888,13 @@ MsdOsdWindow.background.osd .progressbar {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
-.budgie-popover .container {
-  padding: 0;
+.budgie-popover frame.container {
+  padding: 6px;
   border: none;
+}
+
+.budgie-popover frame.container .container {
+  padding: 0;
 }
 
 .budgie-popover border {
@@ -7906,6 +7910,15 @@ MsdOsdWindow.background.osd .progressbar {
   background: none;
   border: none;
   box-shadow: none;
+}
+
+.budgie-popover viewport.frame > list > row.activatable {
+  border-radius: 2px;
+}
+
+.budgie-popover viewport.frame > list > row.activatable button {
+  border: none;
+  background-color: transparent;
 }
 
 .budgie-popover treeview.view.sidebar {
@@ -8106,19 +8119,6 @@ MsdOsdWindow.background.osd .progressbar {
   background-clip: border-box;
 }
 
-.budgie-popover.user-menu {
-  padding: 6px;
-}
-
-.budgie-popover.user-menu frame.container {
-  padding: 6px;
-}
-
-.budgie-popover.user-menu separator {
-  margin: 4px 0;
-  background-color: rgba(255, 255, 255, 0.12);
-}
-
 .budgie-popover.user-menu .content-box {
   background-color: transparent;
 }
@@ -8147,24 +8147,17 @@ MsdOsdWindow.background.osd .progressbar {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-.budgie-popover.caffeine-popover frame.container {
+.budgie-popover.caffeine-popover frame.container .container {
   padding: 6px;
 }
 
-.budgie-popover.night-light-indicator frame.container {
-  padding: 6px;
+.budgie-popover.night-light-indicator .view-header {
+  padding-left: 6px;
+  color: rgba(230, 235, 239, 0.75);
 }
 
-.budgie-popover.icon-popover frame.container {
-  padding: 6px;
-}
-
-.budgie-popover.places-menu {
-  padding: 6px;
-}
-
-.budgie-popover.places-menu frame.container {
-  padding: 6px;
+.budgie-popover.icon-popover separator {
+  margin: 3px 0;
 }
 
 .budgie-popover.places-menu .places-list:not(.always-expand) {
@@ -8435,6 +8428,10 @@ window.budgie-popover:not(.csd) > frame.container > border {
 .budgie-panel > box > widget > widget > box > image {
   margin-left: 6px;
   margin-right: 6px;
+}
+
+.budgie-panel > box > widget > widget > box > image + label {
+  margin-left: -4px;
 }
 
 .budgie-panel > box > widget > widget > box > widget > image {
