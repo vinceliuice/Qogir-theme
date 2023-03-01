@@ -8406,36 +8406,6 @@ window.budgie-popover:not(.csd) > frame.container > border {
   color: rgba(211, 218, 227, 0.5);
 }
 
-.budgie-panel > box > widget > widget > image,
-.budgie-panel > box > widget > widget > stack > image,
-.budgie-panel > box > widget > widget > box > image {
-  margin-left: 6px;
-  margin-right: 6px;
-}
-
-.budgie-panel > box > widget > widget > box > image + label {
-  margin-left: -4px;
-}
-
-.budgie-panel > box > widget > widget > box > widget > image {
-  margin-left: 6px;
-}
-
-.budgie-panel > box > widget > widget > box > stack > widget > label {
-  margin-right: 6px;
-}
-
-.budgie-panel > box > widget > widget > box > widget > widget > image {
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
-.budgie-panel .budgie-clock-applet > widget > box,
-.budgie-panel .budgie-calendar-applet > widget > box {
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
 .top window#ValaPanel.background button.flat.-panel-button, window#ValaPanel.background .top button.flat.-panel-button,
 .top window#ValaPanel.background button#tasklist-button.toggle.flat,
 window#ValaPanel.background .top button#tasklist-button.toggle.flat,
