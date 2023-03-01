@@ -69,27 +69,6 @@
   }
 }
 
-.budgie-container { background-color: transparent; }
-
-.budgie-settings-window {
-  list.sidebar {
-    border-radius: 0 0 0 $corner_radius;
-
-    row:not(:hover):not(:selected) {
-      background: none;
-    }
-  }
-
-  buttonbox.inline-toolbar {
-    border-style: none none solid;
-
-    button {
-      @extend %linked;
-      @extend %budgie_button_transition;
-    }
-  }
-}
-
 .budgie-popover {
   margin: 0;
   padding: 0;
@@ -1322,5 +1301,30 @@ box.vertical > stack > box.vertical {
     }
 
     > button.image-button.titlebutton { padding: 0 3px; }
+  }
+}
+
+//
+// Budgie Apps
+//
+
+.budgie-container { background-color: transparent; }
+
+.budgie-settings-window {
+  list.sidebar {
+    border-radius: 0 0 0 $corner_radius;
+
+    row:not(:hover):not(:selected) {
+      background: none;
+    }
+  }
+
+  buttonbox.inline-toolbar {
+    border-style: none none solid;
+
+    button {
+      @extend %linked;
+      @extend %budgie_button_transition;
+    }
   }
 }

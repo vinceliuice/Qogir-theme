@@ -6855,8 +6855,7 @@ window.background.chromium > menu > menuitem accelerator {
 }
 
 window.background > grid.horizontal > grid.horizontal {
-  background-color: #282A33;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
+  background-color: transparent;
 }
 
 window.background > grid.horizontal > grid.horizontal > button.flat.small-button {
@@ -7790,16 +7789,16 @@ MsdOsdWindow.background.osd .progressbar {
   border-radius: 2px;
 }
 
-.raven .raven-header:not(.top) button, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button {
+.budgie-settings-window buttonbox.inline-toolbar button, .raven .raven-header:not(.top) button, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button) {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.raven .raven-header:not(.top) button:hover, .budgie-popover:not(.budgie-menu) button.flat:hover:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:hover {
+.budgie-settings-window buttonbox.inline-toolbar button:hover, .raven .raven-header:not(.top) button:hover, .budgie-popover:not(.budgie-menu) button.flat:hover:not(.image-button) {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 250ms;
 }
 
-.raven .raven-header:not(.top) button:checked, .budgie-popover:not(.budgie-menu) button.flat:checked:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:checked, .raven .raven-header:not(.top) button:active, .budgie-popover:not(.budgie-menu) button.flat:active:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:active {
+.budgie-settings-window buttonbox.inline-toolbar button:checked, .raven .raven-header:not(.top) button:checked, .budgie-popover:not(.budgie-menu) button.flat:checked:not(.image-button), .budgie-settings-window buttonbox.inline-toolbar button:active, .raven .raven-header:not(.top) button:active, .budgie-popover:not(.budgie-menu) button.flat:active:not(.image-button) {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -7861,22 +7860,6 @@ MsdOsdWindow.background.osd .progressbar {
 .budgie-panel #tasklist-button:checked:disabled:not(.flat), .budgie-panel button:checked:disabled {
   background-color: rgba(255, 255, 255, 0.05);
   color: rgba(255, 255, 255, 0.65);
-}
-
-.budgie-container {
-  background-color: transparent;
-}
-
-.budgie-settings-window list.sidebar {
-  border-radius: 0 0 0 0;
-}
-
-.budgie-settings-window list.sidebar row:not(:hover):not(:selected) {
-  background: none;
-}
-
-.budgie-settings-window buttonbox.inline-toolbar {
-  border-style: none none solid;
 }
 
 .budgie-popover {
@@ -9193,6 +9176,22 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 
 .budgie-panel box.titlebar.horizontal > button.image-button.titlebutton {
   padding: 0 3px;
+}
+
+.budgie-container {
+  background-color: transparent;
+}
+
+.budgie-settings-window list.sidebar {
+  border-radius: 0 0 0 0;
+}
+
+.budgie-settings-window list.sidebar row:not(:hover):not(:selected) {
+  background: none;
+}
+
+.budgie-settings-window buttonbox.inline-toolbar {
+  border-style: none none solid;
 }
 
 .xfce4-panel button, .xfce4-panel button.flat, .mate-panel-menu-bar button,
