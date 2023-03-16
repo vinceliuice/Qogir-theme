@@ -69,27 +69,6 @@
   }
 }
 
-.budgie-container { background-color: transparent; }
-
-.budgie-settings-window {
-  list.sidebar {
-    border-radius: 0 0 0 $corner_radius;
-
-    row:not(:hover):not(:selected) {
-      background: none;
-    }
-  }
-
-  buttonbox.inline-toolbar {
-    border-style: none none solid;
-
-    button {
-      @extend %linked;
-      @extend %budgie_button_transition;
-    }
-  }
-}
-
 .budgie-popover {
   margin: 0;
   padding: 0;
@@ -593,6 +572,39 @@ window.budgie-popover:not(.csd) {
 
       &:hover, &:active { color: rgba($panel_fg, 0.8); }
       &:disabled { color: rgba($panel_fg, 0.5); }
+    }
+  }
+
+  // Add padding for panel indicators icons
+  > box > widget > widget {
+    > image, // normal
+    > stack > image, // Screenshot
+    > box > image { // Places
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+
+    > box > image + label { // Reset for mailneg
+      margin-left: -4px;
+    }
+
+    > box { // keyboard Layout
+      > widget > image { margin-left: 6px; }
+      > stack > widget > label { margin-right: 6px; }
+    }
+
+    > box > widget > widget > image { // Status
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+  }
+
+  // Time label
+  .budgie-clock-applet,
+  .budgie-calendar-applet {
+    > widget > box {
+      padding-left: 3px;
+      padding-right: 3px;
     }
   }
 }
@@ -1289,5 +1301,30 @@ box.vertical > stack > box.vertical {
     }
 
     > button.image-button.titlebutton { padding: 0 3px; }
+  }
+}
+
+//
+// Budgie Apps
+//
+
+.budgie-container { background-color: transparent; }
+
+.budgie-settings-window {
+  list.sidebar {
+    border-radius: 0 0 0 $corner_radius;
+
+    row:not(:hover):not(:selected) {
+      background: none;
+    }
+  }
+
+  buttonbox.inline-toolbar {
+    border-style: none none solid;
+
+    button {
+      @extend %linked;
+      @extend %budgie_button_transition;
+    }
   }
 }
