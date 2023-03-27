@@ -885,19 +885,19 @@ button.raven-trigger {
   .audio-widget {
     .raven-background {
       .devices-list {
-        padding: 6px;
+        padding: $cont_padding;
 
         > row {
           border-radius: 2px;
 
           &:not(:last-child) {
-            margin-bottom: 3px;
+            margin-bottom: $cont_padding / 2;
           }
         }
       }
 
       stackswitcher {
-        padding: 6px;
+        padding: $cont_padding;
       }
     }
   }
@@ -994,7 +994,7 @@ window.sound-popover.background {
 
     mark {
       // hide label for vertically centered troughs
-      label { font-size: 0; }
+      // label { font-size: 0; }
     }
   }
 }

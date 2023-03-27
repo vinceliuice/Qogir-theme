@@ -6832,35 +6832,36 @@ window.background.chromium > menu > menuitem accelerator {
   color: rgba(70, 72, 83, 0.45);
 }
 
-window.background > grid.horizontal > grid.horizontal {
-  background-color: transparent;
+window.background:not(.solid-csd):not(.csd) > grid.horizontal > widget + grid.horizontal {
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
-window.background > grid.horizontal > grid.horizontal > button.flat.small-button {
+window.background:not(.solid-csd):not(.csd) > grid.horizontal > widget + grid.horizontal > button.flat.small-button {
   color: #4a4c59;
   border: none;
   border-radius: 50px;
 }
 
-window.background > grid.horizontal > grid.horizontal > button.flat.small-button:hover {
+window.background:not(.solid-csd):not(.csd) > grid.horizontal > widget + grid.horizontal > button.flat.small-button:hover {
   background-color: rgba(74, 76, 89, 0.25);
 }
 
-window.background > grid.horizontal > grid.horizontal > button.flat.small-button:active, window.background > grid.horizontal > grid.horizontal > button.flat.small-button:checked {
+window.background:not(.solid-csd):not(.csd) > grid.horizontal > widget + grid.horizontal > button.flat.small-button:active, window.background:not(.solid-csd):not(.csd) > grid.horizontal > widget + grid.horizontal > button.flat.small-button:checked {
   background-color: #5294e2;
   color: #ffffff;
 }
 
-window.background > grid.horizontal > grid.horizontal > button.flat.small-button:disabled {
+window.background:not(.solid-csd):not(.csd) > grid.horizontal > widget + grid.horizontal > button.flat.small-button:disabled {
   color: rgba(74, 76, 89, 0.6);
 }
 
-window.background:not(.solid-csd) > notebook:not(.frame) {
+window.background:not(.solid-csd):not(.csd) > notebook:not(.frame) {
   border: 0 none transparent;
   background-color: #ffffff;
 }
 
-window.background:not(.solid-csd) > notebook:not(.frame) > stack {
+window.background:not(.solid-csd):not(.csd) > notebook:not(.frame) > stack {
   border: none;
   box-shadow: none;
 }
@@ -8828,11 +8829,6 @@ box.audio-widget scale.horizontal.marks-after,
 window.sound-popover.background scale.horizontal.marks-after {
   padding-top: 0;
   padding-bottom: 0;
-}
-
-box.audio-widget scale.horizontal.marks-after mark label,
-window.sound-popover.background scale.horizontal.marks-after mark label {
-  font-size: 0;
 }
 
 box.vertical > stack > box.vertical > .raven-background > viewport.frame {
