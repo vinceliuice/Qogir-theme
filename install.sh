@@ -434,7 +434,7 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
     -l|--libadwaita)
-      libadwaita="true"
+      libadwaita='true'
       shift
       ;;
     -r|--remove|-u|--uninstall)
@@ -741,6 +741,7 @@ if [[ "${gdm:-}" == 'true' && "${remove:-}" != 'true' && "$UID" -eq "$ROOT_UID" 
     echo -e 'Error: To install a gdm theme you can only select one color'
     exit 1
   fi
+
   if [[ "${#themes[@]}" -gt 1 ]]; then
     echo -e 'Error: To install a gdm theme you can only select one theme'
     exit 1

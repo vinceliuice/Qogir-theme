@@ -4362,6 +4362,10 @@ messagedialog.csd.background {
   border: none;
 }
 
+.aboutdialog.background.csd {
+  border-radius: 0 0 0 0;
+}
+
 filechooser .dialog-action-box {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }

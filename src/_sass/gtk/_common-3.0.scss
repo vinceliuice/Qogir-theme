@@ -3310,6 +3310,12 @@ messagedialog { // Message Dialog styling
   }
 }
 
+.aboutdialog {
+  &.background.csd {
+    border-radius: 0 0 $corner_radius $corner_radius;
+  }
+}
+
 //
 // Filechooser
 //
