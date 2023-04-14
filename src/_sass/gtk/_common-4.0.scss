@@ -1423,7 +1423,8 @@ headerbar {
   // Reset margins for buttons inside menubutton
   menubutton > button,
   spinbutton > button,
-  splitbutton > button {
+  splitbutton > button,
+  splitbutton > menubutton {
     margin-top: 0;
     margin-bottom: 0;
   }
