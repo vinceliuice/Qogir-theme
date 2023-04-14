@@ -15,8 +15,8 @@
 
 .quick-toggle {
   border-radius: $material_radius;
-  min-width: 12em;
-  max-width: 12em;
+  min-width: auto;
+  max-width: auto;
   min-height: 40px;
   border: 1px solid $borders_color;
   @extend %button;
@@ -31,7 +31,6 @@
   &:rtl > StBoxLayout { padding-right: $cont_padding * 2.5; }
 
   .quick-toggle-label { font-weight: bold; }
-  .quick-toggle-icon, .quick-toggle-arrow { icon-size: 16px; }
 }
 
 .quick-menu-toggle {
@@ -40,7 +39,7 @@
 
   .quick-toggle-arrow {
     background-color: rgba($fg_color, 0.06) !important;
-    padding: $cont_padding $cont_padding * 1.75;
+    padding: $cont_padding $cont_padding * 1;
 
     &:active, &:checked {
       background-color: rgba($fg_color, 0.12) !important;
