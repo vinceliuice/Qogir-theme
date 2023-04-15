@@ -1,0 +1,77 @@
+/* App Grid */
+
+// app icons
+.icon-grid {
+  row-spacing: $cont_padding * 2;
+  column-spacing: $cont_padding * 2;
+  max-row-spacing: $cont_padding * 12;
+  max-column-spacing: $cont_padding * 12;
+  page-padding-top: $cont_padding * 4;
+  page-padding-bottom: $cont_padding * 4;
+  page-padding-left: $cont_padding * 2;
+  page-padding-right: $cont_padding * 2;
+}
+
+// App Grid pagination indicators
+.page-indicator {
+  padding: 15px 12px 30px;
+
+  .page-indicator-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px; // the same as height&width
+    background-color: white;
+  }
+}
+
+.apps-scroll-view {
+  padding: 0;
+}
+
+.page-navigation-hint {
+  width: 300px;
+
+  &.dnd {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &.next:ltr,
+  &.previous:rtl {
+    background-gradient-start: rgba(255, 255, 255, 0.05);
+    background-gradient-end: transparent;
+    background-gradient-direction: horizontal;
+    border-radius: 15px 0px 0px 15px;
+  }
+
+  &.previous:ltr,
+  &.next:rtl {
+    background-gradient-start: transparent;
+    background-gradient-end: rgba(255, 255, 255, 0.05);
+    background-gradient-direction: horizontal;
+    border-radius: 0px 15px 15px 0px;
+  }
+}
+
+.page-navigation-arrow {
+  margin: 6px;
+  padding: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: $circular_radius;
+  color: rgba(white, 0.8);
+
+  &:insensitive {
+    background-color: rgba(white, 0.1);
+    color: rgba(white, 0.25);
+  }
+
+  &:hover {
+    background-color: rgba(white, 0.12);
+    color: white;
+  }
+
+  &:active {
+    background-color: rgba(white, 0.2);
+    color: white;
+  }
+}

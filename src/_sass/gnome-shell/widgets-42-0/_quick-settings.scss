@@ -15,8 +15,8 @@
 
 .quick-toggle {
   border-radius: $material_radius;
-  min-width: auto;
-  max-width: auto;
+  min-width: 12em;
+  max-width: 12em;
   min-height: 40px;
   border: 1px solid $borders_color;
   @extend %button;
@@ -86,6 +86,7 @@
   border-radius: $material_radius !important;
   padding: $cont_padding * 2 0 !important;
   margin: $cont_padding * 2 $cont_padding * 3 + 1px 0 !important;
+  border: if($variant == 'light', 0, 1px) solid $borders_color !important;
 
   .popup-menu-item {
     border-radius: 0 !important;

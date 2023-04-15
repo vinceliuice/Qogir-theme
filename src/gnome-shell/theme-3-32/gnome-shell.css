@@ -118,6 +118,7 @@
   color: #464853;
 }
 
+/* General Typography */
 .shell-link {
   color: #2679db;
 }
@@ -2178,8 +2179,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-folder-dialog .folder-name-container .edit-folder-button {
   text-shadow: none;
   color: #D3DAE3;
-  border: 1px solid #333641;
-  background-color: #282A33;
+  border: 1px solid transparent;
+  background-color: transparent;
   box-shadow: none;
   padding: 0;
   width: 36px;
@@ -3239,8 +3240,8 @@ StWidget.focused .app-well-app-running-dot {
   background-clip: padding-box;
   text-shadow: none;
   color: #D3DAE3;
-  border: 1px solid #333641;
-  background-color: #282A33;
+  border: 1px solid transparent;
+  background-color: transparent;
   box-shadow: none;
   border-color: rgba(0, 0, 0, 0.75);
 }

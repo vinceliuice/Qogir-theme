@@ -1,0 +1,8 @@
+$variant: 'light';
+$titlebar: 'dark';
+
+@import '../../_sass/colors'; //use gtk colors
+@import '../../_sass/variables';
+@import '../../_sass/gnome-shell/drawing';
+@import '../../_sass/gnome-shell/widgets-44-0';
+@import '../../_sass/gnome-shell/extensions-40-0';
