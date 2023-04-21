@@ -136,7 +136,7 @@ sudo snap connect [other snap]:gtk-3-themes qogir-themes:gtk-3-themes
 ```
 To connect the theme to all apps which have available plugs to gtk-common-themes you can run:
 ```
-for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i orchis-themes:gtk-3-themes; done
+for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i qogir-themes:gtk-3-themes; done
 ```
 ```
 for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i qogir-themes:icon-themes; done
