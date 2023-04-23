@@ -700,7 +700,7 @@ toolbar.inline-toolbar toolbutton {
     > button:checked + #{$_uncolored_button}:disabled,
     > button.suggested-action + #{$_uncolored_button}:disabled,
     > button.destructive-action + #{$_uncolored_button}:disabled,
-    > entry + #{$_uncolored_button}:disabled:not(:only-child), { box-shadow: none; }
+    > entry + #{$_uncolored_button}:disabled:not(:only-child) { box-shadow: none; }
 
     @if $vert=='true' {
       > #{$_uncolored_button}:last-child:disabled,
@@ -761,7 +761,7 @@ toolbar.inline-toolbar toolbutton {
     > button:checked + #{$_uncolored_button}:disabled,
     > button.suggested-action + #{$_uncolored_button}:disabled,
     > button.destructive-action + #{$_uncolored_button}:disabled,
-    > entry + #{$_uncolored_button}:disabled:not(:only-child), { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
+    > entry + #{$_uncolored_button}:disabled:not(:only-child) { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
 
     > button:active + #{$_uncolored_button}:hover,
     > button:checked + #{$_uncolored_button}:hover,
@@ -1883,8 +1883,6 @@ treeview.view {
   rubberband { @extend rubberband; }                    // to avoid borders being overridden by the previously set props
 
   acceleditor > label { background-color: $selected_bg_color; }
-
-  .background:not(.csd) &:not(:selected):not(.progressbar):not(.expander):not(.trough):not(.separator):hover { background-color: if($variant == 'light', mix(black, $base_color, 8%), mix(white, $base_color, 6%)); }
 
   &:selected {
     &, &:focus {
