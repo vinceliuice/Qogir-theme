@@ -490,14 +490,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 6px;
   padding: 6px;
   color: rgba(70, 72, 83, 0.75) !important;
-  border-radius: 0;
+  border-radius: 0 !important;
+  border: none !important;
 }
 
 .popup-menu-item:checked {
   background-color: #f7f7f7 !important;
-  box-shadow: inset 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.12) !important;
   color: #464853 !important;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 .popup-menu-item:hover, .popup-menu-item:focus, .popup-menu-item.selected {
@@ -529,9 +530,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-sub-menu {
   background-color: #f7f7f7 !important;
-  border: none;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
-  border-radius: 0;
+  border: none !important;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12) !important;
+  border-radius: 0 !important;
+}
+
+.popup-sub-menu .popup-menu-item {
+  background-color: transparent;
 }
 
 .popup-menu-ornament {
@@ -1121,7 +1126,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Media Controls */
 .message-media-control {
-  margin: 28px 4px !important;
+  margin: 24px 4px !important;
   padding: 0 10px !important;
   color: rgba(70, 72, 83, 0.75);
   border-radius: 9999px;

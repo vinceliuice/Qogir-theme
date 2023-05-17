@@ -724,9 +724,9 @@ uninstall_theme() {
 if [[ "${gdm:-}" != 'true' && "${remove:-}" != 'true' ]]; then
   install_theme
 
-   if [[ "$libadwaita" == 'true' ]]; then
-     uninstall_link && link_theme
-   fi
+  if [[ "$libadwaita" == 'true' ]]; then
+    uninstall_link && link_theme
+  fi
 fi
 
 if [[ "${gdm:-}" != 'true' && "${remove:-}" == 'true' ]]; then
