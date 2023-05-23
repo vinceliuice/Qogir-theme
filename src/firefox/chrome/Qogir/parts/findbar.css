@@ -4,6 +4,8 @@
 
 findbar {
 	position: relative;
+	background: var(--gnome-toolbar-background) !important;
+	border-top: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 
 findbar label, findbar description {
@@ -11,12 +13,14 @@ findbar label, findbar description {
 }
 
 .findbar-container {
+	margin-inline-start: 8px;
 	padding: 6px !important;
 	display: flex;
 	justify-content: flex-start;
 	position: relative;
 	flex-direction: row;
 	width: calc(100% - 42px);
+	height: auto !important;
 }
 
 hbox[anonid="findbar-textbox-wrapper"] {
@@ -27,7 +31,7 @@ hbox[anonid="findbar-textbox-wrapper"] {
 	margin-right: auto !important;
 }
 
-.findbar-find-status, .found-matches {	
+.findbar-find-status, .found-matches {
 	margin-right: 6px !important;
 	padding: 7px 0;
 }

@@ -6,17 +6,16 @@
 /* Style menus */
 menupopup {
 	-moz-appearance: none !important;
-	--panel-background: transparent !important;
-	--panel-border-color: transparent !important;
+	--panel-background: var(--gnome-menu-background) !important;
+	--panel-border-color: var(--gnome-menu-border-color) !important;
+	--panel-border-radius: 3px !important;
+	--panel-padding: 6px 0 !important;
+	--panel-shadow: var(--gnome-popover-shadow) !important;
+	--panel-shadow-margin: 3px 6px 8px !important;
 	--arrowpanel-border-radius: 3px !important;
 	--arrowpanel-background: var(--gnome-menu-background) !important;
 	--arrowpanel-border-color: var(--gnome-menu-border-color) !important;
-	background: var(--gnome-menu-background) !important;
-	border: 1px solid var(--gnome-menu-border-color) !important;
-	border-radius: 3px !important;
-	padding: 4px 0 !important;
 	color: var(--gnome-toolbar-color) !important;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
 }
 
 panel {
@@ -24,19 +23,24 @@ panel {
 	--panel-border-color: var(--gnome-menu-border-color) !important;
 }
 
+.panel-arrowcontent {
+	border: none !important;
+}
+
 :is(menupopup, panel)[type="arrow"] {
 	--panel-border-radius: 3px !important;
-	--panel-padding: 4px !important;
+	--panel-padding: 6px !important;
 }
 
 :is(panel, menupopup)::part(content) {
 	border: none !important;
 }
 
-#PlacesToolbar menupopup[placespopup="true"]::part(content), #PlacesToolbar menupopup[placespopup="true"]::part(arrowscrollbox), #PlacesToolbar menupopup {
-	background: none !important;
-	padding: 3px 4px 6px !important;
-	margin: 0 0 0 -6px !important;
+#PlacesToolbar menupopup[placespopup="true"]::part(content),
+#PlacesToolbar menupopup[placespopup="true"]::part(arrowscrollbox),
+#PlacesToolbar menupopup {
+	padding: 0 !important;
+	margin: -2px 0 0 -6px !important;
 	border: none !important;
 	box-shadow: none !important;
 }

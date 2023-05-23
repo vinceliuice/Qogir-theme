@@ -70,7 +70,7 @@ toolbarspring {
 	border: 0 !important;
 }
 
-.urlbarView-row-inner, .urlbarView-no-wrap  {
+.urlbarView-row-inner, .urlbarView-no-wrap {
 	align-items: center !important;
 }
 .urlbarView-row-inner {
@@ -146,4 +146,8 @@ toolbarspring {
 .searchbar-search-button:hover:active .searchbar-search-icon {
 	background-color: transparent !important;
 	fill-opacity: 1 !important;
+}
+
+.urlbar-page-action, #urlbar-go-button, .search-go-button {
+	padding: 5px !important;
 }

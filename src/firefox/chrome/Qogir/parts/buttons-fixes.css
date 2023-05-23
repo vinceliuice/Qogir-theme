@@ -99,7 +99,6 @@
 	margin: 6px !important;
 }
 
-/* */
 #appMenu-popup .panel-banner-item[notificationid="update-restart"]::after {
 	display: none !important;
 }
@@ -139,6 +138,11 @@
 #viewButton {
 	margin: 0 !important;
 	margin-inline-start: 6px !important;
+}
+
+/* Sidebar header button sizing */
+#sidebar-switcher-target {
+	flex: unset !important;
 }
 
 /* Menulist */
