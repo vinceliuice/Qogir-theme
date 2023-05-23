@@ -2041,7 +2041,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-close:active, .screenshot-ui-close-button:active {
-  background-color: #aa323a;
+  background-color: #9c4247;
 }
 
 .app-folder-dialog .folder-name-container .folder-name-entry,

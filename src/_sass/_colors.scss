@@ -120,7 +120,7 @@ $wm_borders: if($variant == 'light', darken($base_color, 35%), darken($base_colo
 // Close
 $wm_button_close_bg: if($variant == 'light' and $titlebar == 'light', #f46067, #cc575d);
 $wm_button_close_hover_bg: if($variant == 'light' and $titlebar == 'light', #f68086, #d7787d);
-$wm_button_close_active_bg: if($variant == 'light' and $titlebar == 'light', #f13039, #be3841);
+$wm_button_close_active_bg: if($variant == 'light' and $titlebar == 'light', #d05258, #ae4a4f);
 
 $wm_icon_close_bg: if($variant == 'light' and $titlebar == 'light',#F8F8F9 , #2f343f);
 

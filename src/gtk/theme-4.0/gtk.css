@@ -5461,7 +5461,7 @@ headerbar windowcontrols > button.close:hover {
 }
 
 headerbar windowcontrols > button.close:active {
-  background-color: #be3841;
+  background-color: #ae4a4f;
   color: white;
 }
 
@@ -6936,7 +6936,7 @@ preferencesgroup > box button.background-preview-button.toggle:checked {
 @define-color wm_border #a6a6a6;
 @define-color wm_button_close_bg #cc575d;
 @define-color wm_button_close_hover_bg #d7787d;
-@define-color wm_button_close_active_bg #be3841;
+@define-color wm_button_close_active_bg #ae4a4f;
 @define-color wm_icon_close_bg #2f343f;
 @define-color wm_button_hover_bg #454C5C;
 @define-color wm_button_active_bg #5294e2;

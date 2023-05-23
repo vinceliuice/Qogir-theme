@@ -4888,7 +4888,7 @@ headerbar button.titlebutton.close:hover, .titlebar button.titlebutton.close:hov
 }
 
 headerbar button.titlebutton.close:active, .titlebar button.titlebutton.close:active {
-  background-color: #f13039;
+  background-color: #d05258;
   color: white;
 }
 
@@ -11245,7 +11245,7 @@ window > hdyleaflet > scrolledwindow > viewport.frame > list > row.activatable .
 @define-color wm_border #a6a6a6;
 @define-color wm_button_close_bg #f46067;
 @define-color wm_button_close_hover_bg #f68086;
-@define-color wm_button_close_active_bg #f13039;
+@define-color wm_button_close_active_bg #d05258;
 @define-color wm_icon_close_bg #F8F8F9;
 @define-color wm_button_hover_bg #fdfdfd;
 @define-color wm_button_active_bg #5294e2;

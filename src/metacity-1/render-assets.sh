@@ -4,11 +4,15 @@ INKSCAPE="/usr/bin/inkscape"
 OPTIPNG="/usr/bin/optipng"
 INDEX="assets.txt"
 
-for color in '' '-light'; do
-  for win in '' '-win'; do
+OPEN_DIR=$(cd $(dirname $0) && pwd)
+
+for color in '' '-Light'; do
+  for win in '' '-Win'; do
 
   ASSETS_DIR="assets${color}${win}"
   SRC_FILE="assets${color}${win}.svg"
+
+  mkdir -p $ASSETS_DIR
 
   for i in `cat $INDEX`
   do
@@ -28,6 +32,7 @@ for color in '' '-light'; do
 done
 
 links() {
+(
 ln -s close.png close_focused.png
 ln -s close.png close_focused_normal.png
 ln -s close_focused_prelight.png close_unfocused_prelight.png
@@ -56,22 +61,20 @@ ln -s menu.png menu_focused.png
 ln -s menu.png menu_focused_normal.png
 ln -s menu_focused_prelight.png menu_unfocused_prelight.png
 ln -s menu_focused_pressed.png menu_unfocused_pressed.png
+)
 }
 
 # links
-cd assets
+cd "$OPEN_DIR/assets"
 links
 
-cd ..
-cd assets-light
+cd "$OPEN_DIR/assets-Light"
 links
 
-cd ..
-cd assets-win
+cd "$OPEN_DIR/assets-Win"
 links
 
-cd ..
-cd assets-light-win
+cd "$OPEN_DIR/assets-Light-Win"
 links
 
 exit 0

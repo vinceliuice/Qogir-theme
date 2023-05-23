@@ -2,20 +2,20 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="360"
    height="200"
    viewBox="0 0 95.249997 52.916668"
    version="1.1"
    id="svg424"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="assets.svg">
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="assets.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs418" />
   <sodipodi:namedview
@@ -25,20 +25,23 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4"
-     inkscape:cx="303.1262"
-     inkscape:cy="133.10921"
+     inkscape:zoom="2"
+     inkscape:cx="363.75"
+     inkscape:cy="114.5"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
-     showgrid="true"
+     showgrid="false"
      showguides="false"
      inkscape:snap-global="true"
      units="px"
-     inkscape:window-width="1920"
-     inkscape:window-height="1022"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1">
+     inkscape:window-width="1637"
+     inkscape:window-height="750"
+     inkscape:window-x="17"
+     inkscape:window-y="123"
+     inkscape:window-maximized="0"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
     <inkscape:grid
        type="xygrid"
        id="grid658" />
@@ -149,7 +152,7 @@
          height="23"
          width="23"
          id="rect577"
-         style="opacity:1;fill:#ff5555;fill-opacity:1;stroke:none;stroke-width:0.92000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+         style="opacity:1;fill:#d7787d;fill-opacity:1;stroke:none;stroke-width:0.92000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
       <path
          inkscape:connector-curvature="0"
          id="rect579"
@@ -159,7 +162,7 @@
     <g
        id="minimize_unfocused"
        transform="matrix(0.26458333,0,0,0.26458333,33.866669,436.86874)"
-       style="display:inline;opacity:0.5"
+       style="display:inline;opacity:0.35"
        inkscape:label="#g630">
       <rect
          ry="11.5"
@@ -181,7 +184,7 @@
     <g
        id="maximize_unfocused"
        transform="matrix(0.26458333,0,0,0.26458333,34.660419,437.13332)"
-       style="display:inline;opacity:0.5"
+       style="display:inline;opacity:0.35"
        inkscape:label="#g636">
       <rect
          style="opacity:0;fill:#1f1f1f;fill-opacity:0.09803922;stroke:none;stroke-width:0.92000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
@@ -201,7 +204,7 @@
     <g
        id="unmaximize_unfocused"
        transform="matrix(0.26458333,0,0,0.26458333,34.395834,437.13332)"
-       style="display:inline;opacity:0.5"
+       style="display:inline;opacity:0.35"
        inkscape:label="#g642">
       <rect
          ry="11.5"
@@ -221,7 +224,7 @@
     <g
        id="close_unfocused"
        transform="matrix(0.26458333,0,0,0.26458333,34.131252,437.13332)"
-       style="display:inline;opacity:0.5"
+       style="display:inline;opacity:0.35"
        inkscape:label="#g648">
       <rect
          ry="11.5"
@@ -305,7 +308,7 @@
        id="close_focused_pressed"
        inkscape:label="#g672">
       <rect
-         style="opacity:1;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.92000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         style="opacity:1;fill:#ae4a4f;fill-opacity:1;stroke:none;stroke-width:0.92000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect668"
          width="23"
          height="23"
@@ -402,7 +405,7 @@
     <g
        id="shade_unfocused"
        inkscape:label="#g1011"
-       style="opacity:0.5">
+       style="opacity:0.35">
       <rect
          style="opacity:0;fill:#1f1f1f;fill-opacity:0.09803922;stroke:none;stroke-width:0.24341667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect532"
@@ -474,7 +477,7 @@
     <g
        id="unshade_unfocused"
        inkscape:label="#g1015"
-       style="opacity:0.5">
+       style="opacity:0.35">
       <rect
          transform="scale(1,-1)"
          ry="3.0427084"
@@ -584,7 +587,7 @@
        id="menu"
        transform="translate(-61.118747,201.3479)"
        inkscape:label="#g1600"
-       style="opacity:0.05">
+       style="opacity:1">
       <rect
          transform="scale(1,-1)"
          ry="3.0427084"
@@ -603,7 +606,7 @@
     <g
        id="menu_unfocused"
        inkscape:label="#g1019"
-       style="opacity:0.05">
+       style="opacity:0.35">
       <rect
          transform="scale(1,-1)"
          style="opacity:0;fill:#1f1f1f;fill-opacity:0.09803922;stroke:none;stroke-width:0.24341667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
