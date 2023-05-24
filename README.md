@@ -7,11 +7,6 @@ horst3180 - Arc gtk theme: https://github.com/horst3180/Arc-theme
 
 ![1](https://github.com/vinceliuice/Qogir-theme/blob/images/screenshots/screenshot01.png?raw=true)
 
-## NOTICE
-
-In Gnome 42 can not use `Qogir-dark` theme, so I renamed all `*-dark` themes to `*-Dark`
-So you need to remove all old themes and reinstall the last version 
-
 ## Info
 
 ### GTK+ 3.20 or later
@@ -112,34 +107,6 @@ All variants are available via Flathub:
 ```
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gtk.Gtk3theme.Qogir{,-dark,-light,-win,-manjaro, ...}
-```
-
-### On Snapcraft
-
-<a href="https://snapcraft.io/qogir-themes">
-<img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
-</a>
-
-The snap contains all flavours of the GTK and icon themes. To connect the theme to other snap packages, please run:
-
-```
-sudo snap connect [other snap]:gtk-3-themes qogir-themes:gtk-3-themes
-```
-
-```
-sudo snap connect [other snap]:icon-themes qogir-themes:icon-themes
-```
-
-To connect the theme to an app run:
-```
-sudo snap connect [other snap]:gtk-3-themes qogir-themes:gtk-3-themes
-```
-To connect the theme to all apps which have available plugs to gtk-common-themes you can run:
-```
-for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i qogir-themes:gtk-3-themes; done
-```
-```
-for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i qogir-themes:icon-themes; done
 ```
 
 ### Install on FreeBSD
