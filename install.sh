@@ -104,7 +104,7 @@ install() {
   echo "[X-GNOME-Metatheme]"                                                      >> ${THEME_DIR}/index.theme
   echo "GtkTheme=${name}${theme}${color}"                                         >> ${THEME_DIR}/index.theme
   echo "MetacityTheme=${name}${theme}${color}"                                    >> ${THEME_DIR}/index.theme
-  echo "IconTheme=${name}${theme}${ELSE_DARK}"                                    >> ${THEME_DIR}/index.theme
+  echo "IconTheme=${name}${theme,,}${ELSE_DARK,,}"                                >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita"                                                      >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close"                                >> ${THEME_DIR}/index.theme
 
