@@ -4163,21 +4163,21 @@ list row {
   padding: 2px;
 }
 
-window.thunar > grid > paned > .sidebar > treeview.has-open-popup.view, .budgie-popover.budgie-menu row.activatable > button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, window.thunar > grid > paned > .sidebar > treeview.view:hover, .budgie-popover.budgie-menu row.activatable > button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, row.activatable.has-open-popup, row.activatable:hover {
+window.thunar > grid > paned .sidebar > treeview.has-open-popup.view, .budgie-popover.budgie-menu row.activatable > button.has-open-popup, .nemo-window .nemo-places-sidebar .has-open-popup.places-treeview, window.thunar > grid > paned .sidebar > treeview.view:hover, .budgie-popover.budgie-menu row.activatable > button:hover, .nemo-window .nemo-places-sidebar .places-treeview:hover, row.activatable.has-open-popup, row.activatable:hover {
   transition: none;
   animation: none;
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view:active, .budgie-popover.budgie-menu row.activatable > button:active, .nemo-window .nemo-places-sidebar .places-treeview:active, window.thunar > grid > paned > .sidebar > treeview.view:checked, .budgie-popover.budgie-menu row.activatable > button:checked, .nemo-window .nemo-places-sidebar .places-treeview:checked, row.activatable:active, row.activatable:checked {
+window.thunar > grid > paned .sidebar > treeview.view:active, .budgie-popover.budgie-menu row.activatable > button:active, .nemo-window .nemo-places-sidebar .places-treeview:active, window.thunar > grid > paned .sidebar > treeview.view:checked, .budgie-popover.budgie-menu row.activatable > button:checked, .nemo-window .nemo-places-sidebar .places-treeview:checked, row.activatable:active, row.activatable:checked {
   transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view:disabled, .budgie-popover.budgie-menu row.activatable > button:disabled, .nemo-window .nemo-places-sidebar .places-treeview:disabled, row.activatable:disabled {
+window.thunar > grid > paned .sidebar > treeview.view:disabled, .budgie-popover.budgie-menu row.activatable > button:disabled, .nemo-window .nemo-places-sidebar .places-treeview:disabled, row.activatable:disabled {
   color: rgba(230, 235, 239, 0.45);
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view:disabled image, .budgie-popover.budgie-menu row.activatable > button:disabled image, .nemo-window .nemo-places-sidebar .places-treeview:disabled image, row.activatable:disabled image {
+window.thunar > grid > paned .sidebar > treeview.view:disabled image, .budgie-popover.budgie-menu row.activatable > button:disabled image, .nemo-window .nemo-places-sidebar .places-treeview:disabled image, row.activatable:disabled image {
   color: inherit;
 }
 
@@ -4927,7 +4927,7 @@ iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-popover.budgie-menu row.activatable > button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned .sidebar > treeview.view:selected, .budgie-popover.budgie-menu row.activatable > button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
   background-color: #5294e2;
 }
 
@@ -4944,7 +4944,7 @@ iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned > .sidebar > treeview.view:selected, .budgie-popover.budgie-menu row.activatable > button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, window.thunar > grid > paned .sidebar > treeview.view:selected, .budgie-popover.budgie-menu row.activatable > button:selected, .nemo-window .nemo-places-sidebar .places-treeview:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar:selected {
   color: #ffffff;
 }
 
@@ -4961,7 +4961,7 @@ iconview:disabled:selected:focus, flowbox flowboxchild:disabled:selected, entry 
 modelbutton.flat:disabled:active,
 modelbutton.flat:active arrow:disabled,
 modelbutton.flat:disabled:selected,
-modelbutton.flat:selected arrow:disabled, row:disabled:selected, window.thunar > grid > paned > .sidebar > treeview.view:disabled:selected, .budgie-popover.budgie-menu row.activatable > button:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, calendar:disabled:selected {
+modelbutton.flat:selected arrow:disabled, row:disabled:selected, window.thunar > grid > paned .sidebar > treeview.view:disabled:selected, .budgie-popover.budgie-menu row.activatable > button:disabled:selected, .nemo-window .nemo-places-sidebar .places-treeview:disabled:selected, calendar:disabled:selected {
   color: #a9caf1;
 }
 
@@ -9327,17 +9327,17 @@ window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
   color: #e6ebef;
 }
 
-window.thunar > grid > paned > .sidebar {
+window.thunar > grid > paned .sidebar {
   border-top: none;
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view {
+window.thunar > grid > paned .sidebar > treeview.view {
   background-color: #32343D;
   color: rgba(230, 235, 239, 0.75);
   -gtk-icon-style: symbolic;
 }
 
-window.thunar > grid > paned > .sidebar > treeview.view:not(:selected):hover {
+window.thunar > grid > paned .sidebar > treeview.view:not(:selected):hover {
   color: #e6ebef;
   background-color: #44464f;
 }

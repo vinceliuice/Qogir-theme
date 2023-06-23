@@ -140,7 +140,7 @@ window#whiskermenu-window {
 //
 
 window.thunar {
-  > grid > paned > .sidebar {
+  > grid > paned .sidebar {
     border-top: none;
 
     > treeview.view {
