@@ -2141,14 +2141,14 @@ menu,
     // border: 1px solid $borders_color;
 
     &.top {
-      margin-top: -4px;
+      margin-top: -6px;
       border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
 
     &.bottom {
-      margin-top: 8px;
-      margin-bottom: -12px;
+      margin-top: 12px;
+      margin-bottom: -18px;
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
