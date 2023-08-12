@@ -1,0 +1,114 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Reorder toolbars */
+#navigator-toolbox #titlebar {
+	-moz-box-ordinal-group: 0;
+	order: 0;
+}
+#navigator-toolbox #nav-bar {
+	-moz-box-ordinal-group: 1;
+	order: 1;
+}
+#navigator-toolbox #PersonalToolbar {
+	-moz-box-ordinal-group: 2;
+	order: 2;
+}
+#navigator-toolbox #TabsToolbar {
+	-moz-box-ordinal-group: 100;
+	order: 100;
+}
+
+/* Remove right padding at nav-bar */
+:root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
+	padding-right: 0px !important;
+}
+
+/* Window buttons: at least 1 button */
+@media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
+	:root[tabsintitlebar]:not([inFullscreen]) #TabsToolbar {
+		padding-right: 50px !important;
+	}
+}
+/* Window buttons: at least 2 buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+       (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+       (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+	:root[tabsintitlebar]:not([inFullscreen]) #TabsToolbar {
+		padding-right: 90px !important;
+	}
+}
+/* Window buttons: 3 buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+	:root[tabsintitlebar]:not([inFullscreen]) #TabsToolbar {
+		padding-right: 130px !important;
+	}
+}
+
+/* Left window buttons */
+@media (-moz-gtk-csd-reversed-placement) {
+	:root[tabsintitlebar]:not([inFullscreen]) #TabsToolbar {
+		padding-right: 0 !important;
+	}
+
+	/* Window buttons box */
+	:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container {
+		left: 6px;
+		right: auto;
+	}
+
+	/* Window controls: at least 1 button */
+	@media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
+		:root[tabsintitlebar]:not([inFullscreen]) #TabsToolbar {
+			padding-left: 50px !important;
+		}
+	}
+	/* Window controls: at least 2 buttons */
+	@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+				 (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+				 (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+		:root[tabsintitlebar]:not([inFullscreen]) #TabsToolbar {
+			padding-left: 90px !important;
+		}
+	}
+	/* Window controls: 3 buttons */
+	@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+		:root[tabsintitlebar]:not([inFullscreen]) #TabsToolbar {
+			padding-left: 130px !important;
+		}
+	}
+}
+
+/* Remove left padding at nav-bar */
+:root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
+	padding-left: 0px !important;
+}
+
+/* Fullscreen headerbar padding for 1 button */
+:root[tabsintitlebar][inFullscreen] #TabsToolbar {
+	padding-right: 50px !important;
+}
+:root[tabsintitlebar][inFullscreen] #nav-bar {
+	padding-right: 0px !important;
+}
+
+/* Tabs bar height */
+#tabbrowser-tabs,
+#tabbrowser-tabs arrowscrollbox {
+	height: 39px !important;
+	min-height: 39px !important;
+}
+tab > stack {
+	height: 39px !important;
+	min-height: 39px !important;
+}
+/* Tabs bar buttons */
+#TabsToolbar {
+	--toolbarbutton-inner-padding: 0 !important;
+}
+#TabsToolbar .toolbarbutton-1 {
+	padding: 0 !important;
+	max-height: 34px !important;
+	min-height: 34px !important;
+	min-width: 35px !important;
+	margin: 2px 0 3px 2px !important;
+}

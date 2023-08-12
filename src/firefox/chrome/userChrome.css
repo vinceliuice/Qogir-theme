@@ -37,6 +37,9 @@
 /* Make all tab icons look kinda like symbolic icons */
 /*@import "Qogir/symbolic-tab-icons.css"; /**/
 
+/* Move tabs to titlebar */
+@import "Qogir/top-tab-bottom-search.css"; /**/
+
 /* Import a custom stylesheet
  * Everything you add in your customChrome.css file (it doesn't exist by
  * default) will be included here and preserved between updates, so you can move
