@@ -1885,13 +1885,11 @@ treeview.view {
   acceleditor > label { background-color: $selected_bg_color; }
 
   &:selected {
-    &, &:focus {
-      border-radius: 0;
-      border-left-color: mix($selected_fg_color, $selected_bg_color, 50%);
-      border-top-color: transparentize($fg_color, 0.9);   // doesn't work unfortunately
+    border-radius: 0;
+    border-left-color: mix($selected_fg_color, $selected_bg_color, 50%);
+    border-top-color: transparentize($fg_color, 0.9);   // doesn't work unfortunately
 
-      @extend %selected_items;
-    }
+    &, &:focus, &:backdrop { @extend %selected_items; }
   }
 
   &:disabled {

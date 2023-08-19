@@ -922,6 +922,7 @@ stack#conversation_viewer {
     > leaflet > leaflet > box { // 40.0
       .geary-conversation-frame { // center
         margin: -1px 0;
+
         treeview.view {
           &:hover { background-color: mix($fg_color, $base_color, 15%); }
 
@@ -941,12 +942,6 @@ stack#conversation_viewer {
         > border { @extend  %folder_frame_border; }
         > scrolledwindow { @extend %folder_frame; }
       }
-
-      // > revealer > components-conversation-actions {
-      //   background-color: $bg_color;
-      //   color: $fg_color;
-      //   border-top: 1px solid $solid_borders_color;
-      // }
 
       separator { background: none; }
 
@@ -973,6 +968,16 @@ stack#conversation_viewer {
         }
       }
     }
+  }
+}
+
+.geary-main-layout > leaflet > leaflet { // 43.0
+  > box.vertical:first-child > headerbar.titlebar {
+    @extend %side_headerbar;
+  }
+
+  treeview.view.sidebar {
+    @extend %side_views;
   }
 }
 
