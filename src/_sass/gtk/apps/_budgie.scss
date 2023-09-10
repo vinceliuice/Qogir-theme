@@ -1163,6 +1163,15 @@ box.vertical > stack > box.vertical {
   }
 }
 
+// power dialog window
+window.budgie-power-dialog {
+  background-color: $base_color;
+  border-radius: $material_radius;
+
+  &.background.csd,
+  decoration { border-radius: $material_radius; }
+}
+
 // Session Dialog
 .budgie-session-dialog,
 .budgie-polkit-dialog {
@@ -1235,7 +1244,6 @@ box.vertical > stack > box.vertical {
 
   scrolledwindow { border-top: 1px solid $borders_color; }
 }
-
 
 // pixel-saver(?) applet
 .budgie-panel box.titlebar {
