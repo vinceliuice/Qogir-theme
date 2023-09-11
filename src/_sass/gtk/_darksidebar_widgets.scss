@@ -102,43 +102,12 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   }
 }
 
-%side_titlebutton {
-  button.titlebutton {
-    @each $k in ('close', 'maximize', 'minimize', 'restore') {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}-dark#{$asset_suffix_win}.png'),
-                                                     url('assets/titlebutton-#{$k}#{$m}-dark#{$asset_suffix_win}@2.png'));
-        }
-      }
-    }
-  }
-}
-
-%side_max_titlebutton {
-  button.titlebutton {
-    @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}-dark#{$asset_suffix_win}.png'),
-                                                      url('assets/titlebutton-restore#{$m}-dark#{$asset_suffix_win}@2.png'));
-      }
-    }
-  }
-}
-
 %side_headerbar {
   color: $side_theme_fg;
   background-color: $side_theme_bg;
   background-image: image($side_theme_bg);
   border: none;
   box-shadow: none;
-
-  @extend %side_titlebutton;
-
-  .fullscreen &,
-  .maximized & {
-    > box.left.horizontal {
-      @extend %side_max_titlebutton;
-    }
-  }
 
   button:not(.titlebutton) {
     color: $side_theme_fg;
@@ -155,6 +124,8 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   }
 
   button.titlebutton {
+    color: $side_theme_fg;
+
     &.appmenu { // appmenu button
       border: none;
       min-height: 30px;
@@ -174,6 +145,29 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 
       &:checked, &:active {
         background-color: rgba($side_theme_fg, 0.25);
+      }
+    }
+
+    &.maximize, &.minimize {
+      &:hover {
+        background-color: rgba($side_theme_fg, 0.1);
+      }
+
+      &:active {
+        background-color: rgba($side_theme_fg, 0.2);
+        color: white;
+      }
+    }
+
+    &.close {
+      &:hover {
+        background-color: $wm_button_close_hover_bg;
+        color: white;
+      }
+
+      &:active {
+        background-color: $wm_button_close_active_bg;
+        color: white;
       }
     }
   }
@@ -456,15 +450,6 @@ window.org-gnome-gedit {
   }
 }
 
-window.fullscreen.org-gnome-gedit,
-window.maximized.org-gnome-gedit {
-  > .titlebar > headerbar:first-child {
-    > box.left.horizontal {
-      @extend %side_max_titlebutton;
-    }
-  }
-}
-
 .open-document-selector-treeview.view { // Popover menu view
   padding: 3px $cont_padding 3px $cont_padding;
   border-color: $borders_color;  // disable borders, making them transparent doesn't work for some reason
@@ -614,13 +599,6 @@ list#AutostartListBoxTweakGroup {
 // Themed left side headerbar
 .titlebar > headerbar.titlebar.tweak-titlebar-left {
   @extend %side_headerbar;
-
-  .fullscreen &,
-  .maximized & {
-    > box.left.horizontal {
-      @extend %side_max_titlebutton;
-    }
-  }
 }
 
 // Themed left sidebar
@@ -675,27 +653,6 @@ window.background.csd {
       border-right-style: if($variant == 'light', none, solid);
       background: none;
       min-width: 0;
-    }
-  }
-
-  &.fullscreen,
-  &.maximized {
-    > box.titlebar.horizontal {
-      > headerbar:first-child {
-        > box.left.horizontal {
-          @extend %side_max_titlebutton;
-        }
-      }
-    }
-
-    > headerbar.titlebar { // gnome 3.32
-      > box.horizontal > headerbar:first-child,
-      > hdyleaflet > headerbar:first-child,
-      > leaflet > headerbar:first-child {
-        > box.left.horizontal {
-          @extend %side_max_titlebutton;
-        }
-      }
     }
   }
 
@@ -841,17 +798,6 @@ window.geary-main-window {
     margin: 0 -10px 0 0;
     border-right: if($variant == 'light', none, 1px solid $solid_borders_color);
     background: none;
-  }
-}
-
-window#GearyMainWindow.fullscreen,
-window#GearyMainWindow.maximized {
-  .geary-titlebar-left {
-    &, &.geary-titlebar {
-      > box.left.horizontal {
-        @extend %side_max_titlebutton;
-      }
-    }
   }
 }
 
@@ -1167,13 +1113,6 @@ leaflet.unfolded {  // > 3.38
         color: transparent;
         background-color: transparent;
       }
-    }
-
-    @extend %side_titlebutton;
-
-    .fullscreen &,
-    .maximized & {
-      @extend %side_max_titlebutton;
     }
   }
 }
