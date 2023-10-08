@@ -572,7 +572,7 @@ install_css_deps() {
       read -p "[ trusted ] specify the root password : " -t 20 -s
       [[ -n "$REPLY" ]] && {
         echo "\n running: sudo apt install sassc "
-        sudo -S <<< $REPLY apt install sassc
+        sudo -S <<< $REPLY apt install --assume-yes sassc
       }|| {
         echo  "\n Operation canceled  Bye"
         exit 1
