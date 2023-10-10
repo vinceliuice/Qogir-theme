@@ -554,16 +554,16 @@ function has_command() {
 
 install_css_deps() {
   if [ ! "$(which sassc 2> /dev/null)" ]; then
-    echo "\n sassc needs to be installed to generate the css."
+    echo -e "\n sassc needs to be installed to generate the css."
 
     if has_command zypper; then
 
       read -p "[ trusted ] specify the root password : " -t 20 -s
       [[ -n "$REPLY" ]] && {
-        echo "\n running: sudo zypper in sassc "
+        echo -e "\n running: sudo zypper in sassc "
         sudo -S <<< $REPLY zypper in sassc
       }|| {
-        echo  "\n Operation canceled  Bye"
+        echo -e "\n Operation canceled  Bye"
         exit 1
       }
 
@@ -571,10 +571,10 @@ install_css_deps() {
 
       read -p "[ trusted ] specify the root password : " -t 20 -s
       [[ -n "$REPLY" ]] && {
-        echo "\n running: sudo apt install sassc "
-        sudo -S <<< $REPLY apt install sassc
+        echo -e "\n running: sudo apt install --assume-yes sassc "
+        sudo -S <<< $REPLY apt install --assume-yes sassc
       }|| {
-        echo  "\n Operation canceled  Bye"
+        echo -e "\n Operation canceled  Bye"
         exit 1
       }
 
@@ -582,10 +582,10 @@ install_css_deps() {
 
       read -p "[ trusted ] specify the root password : " -t 20 -s
       [[ -n "$REPLY" ]] && {
-        echo "\n running: sudo dnf install sassc "
+        echo -e "\n running: sudo dnf install sassc "
         sudo -S <<< $REPLY dnf install sassc
       }|| {
-        echo  "\n Operation canceled  Bye"
+        echo -e "\n Operation canceled  Bye"
         exit 1
       }
 
@@ -593,10 +593,10 @@ install_css_deps() {
 
       read -p "[ trusted ] specify the root password : " -t 20 -s
       [[ -n "$REPLY" ]] && {
-        echo "\n running: sudo yum install sassc "
+        echo -e "\n running: sudo yum install sassc "
         sudo -S <<< $REPLY yum install sassc
       }|| {
-        echo  "\n Operation canceled  Bye"
+        echo -e "\n Operation canceled  Bye"
         exit 1
       }
 
@@ -604,10 +604,10 @@ install_css_deps() {
 
       read -p "[ trusted ] specify the root password : " -t 20 -s
       [[ -n "$REPLY" ]] && {
-        echo "\n running: sudo pacman -S --noconfirm sassc "
+        echo -e "\n running: sudo pacman -S --noconfirm sassc "
         sudo -S <<< $REPLY pacman -S --noconfirm sassc
       }|| {
-        echo  "\n Operation canceled  Bye"
+        echo -e "\n Operation canceled  Bye"
         exit 1
       }
 
