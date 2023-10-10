@@ -684,6 +684,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 16px;
 }
 
+.calendar-day,
 .calendar-day-base {
   font-size: 90%;
   text-align: center;
@@ -697,22 +698,41 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: transparent;
 }
 
-.calendar-day-base:hover, .calendar-day-base:focus {
+.calendar-day:hover, .calendar-day:focus,
+.calendar-day-base:hover,
+.calendar-day-base:focus {
   background-color: #eaeef2;
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-.calendar-day-base:active, .calendar-day-base:checked, .calendar-day-base:selected {
+.calendar-day:active, .calendar-day:checked, .calendar-day:selected,
+.calendar-day-base:active,
+.calendar-day-base:checked,
+.calendar-day-base:selected {
   color: #464853;
   background-color: #dae2e9;
   border: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
+.calendar-day.calendar-day-heading,
 .calendar-day-base.calendar-day-heading {
   color: rgba(70, 72, 83, 0.75);
   margin-top: 1em;
   font-size: 80%;
+}
+
+.calendar-day.calendar-weekend,
+.calendar-day-base.calendar-weekend {
+  color: rgba(70, 72, 83, 0.55);
+}
+
+.calendar-day.calendar-other-month,
+.calendar-day-base.calendar-other-month {
+  color: rgba(70, 72, 83, 0.55) !important;
+  font-weight: normal;
 }
 
 .calendar-day {
@@ -749,6 +769,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #ffffff;
   background-color: #5294e2;
   border: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .calendar-day-with-events {
@@ -1930,22 +1952,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: transparent;
 }
 
-#panel #panelActivities.panel-button > * {
-  background-image: url("assets/activities.svg");
-  width: 24px;
-  height: 24px;
-  background-color: transparent !important;
-  background-gradient-direction: none !important;
-  border: none;
-  color: transparent;
+#panel #panelActivities.panel-button {
+  -natural-hpadding: 16px;
 }
 
-#panel #panelActivities.panel-button:hover {
-  background-color: rgba(211, 218, 227, 0.05) !important;
+#panel #panelActivities.panel-button StBoxLayout {
+  spacing: 6px;
 }
 
-#panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:focus {
-  background-color: rgba(211, 218, 227, 0.1) !important;
+#panel #panelActivities.panel-button .workspace-dot {
+  border-radius: 999px;
+  min-width: 8px;
+  min-height: 8px;
+  background-color: #D3DAE3;
 }
 
 /* Activities Ripple */
@@ -3401,7 +3420,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .quick-settings {
   padding: 12px !important;
-  border-radius: 14px !important;
+  border-radius: 3px !important;
   margin-top: 6px !important;
 }
 

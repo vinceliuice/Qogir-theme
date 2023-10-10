@@ -154,21 +154,34 @@
 
 // Activities button
 #panel #panelActivities.panel-button {
-  > * {
-    background-image: url("assets/activities.svg");
-    width: 24px;
-    height: 24px;
-    background-color: transparent !important;
-    background-gradient-direction: none !important;
-    border: none;
-    color: transparent;
+  // > * {
+  //   background-image: url("assets/activities.svg");
+  //   width: 24px;
+  //   height: 24px;
+  //   background-color: transparent !important;
+  //   background-gradient-direction: none !important;
+  //   border: none;
+  //   color: transparent;
+  // }
+
+  // &:hover {
+  //   background-color: rgba($panel_fg, 0.05) !important;
+  // }
+
+  // &:active, &:focus {
+  //   background-color: rgba($panel_fg, 0.1) !important;
+  // }
+
+  -natural-hpadding: 16px;
+
+  & StBoxLayout {
+    spacing: 6px;
   }
 
-  &:hover {
-    background-color: rgba($panel_fg, 0.05) !important;
-  }
-
-  &:active, &:focus {
-    background-color: rgba($panel_fg, 0.1) !important;
+  & .workspace-dot {
+    border-radius: 999px;
+    min-width: 8px;
+    min-height: 8px;
+    background-color: $panel_fg;
   }
 }

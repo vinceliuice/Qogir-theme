@@ -64,6 +64,11 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     background-color: mix($side_theme_alt_fg, $side_theme_bg, 10%);
   }
 
+  &:active {
+    color: $side_theme_fg;
+    background-color: mix($side_theme_fg, $side_theme_bg, 15%);
+  }
+
   &:disabled, label:disabled {
     color: rgba($side_theme_alt_fg, 0.35);
   }
@@ -602,12 +607,13 @@ list#AutostartListBoxTweakGroup {
 }
 
 // Themed left sidebar
-list.tweak-categories {
+list.tweak-categories,
+leaflet > box > scrolledwindow > viewport > list.navigation-sidebar {
   @extend %side_background;
 
-  separator { background: none; }
+  > separator { background: none; }
 
-  > row.activatable.tweak-category {
+  > row.activatable {
     @extend %side_views;
   }
 }
