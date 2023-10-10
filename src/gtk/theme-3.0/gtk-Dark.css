@@ -4080,6 +4080,7 @@ scrolledwindow undershoot.top {
   background-origin: content-box;
   background-position: center top;
   border: none;
+  box-shadow: none;
 }
 
 scrolledwindow undershoot.bottom {
@@ -4091,6 +4092,7 @@ scrolledwindow undershoot.bottom {
   background-origin: content-box;
   background-position: center bottom;
   border: none;
+  box-shadow: none;
 }
 
 scrolledwindow undershoot.left {
@@ -4102,6 +4104,7 @@ scrolledwindow undershoot.left {
   background-origin: content-box;
   background-position: left center;
   border: none;
+  box-shadow: none;
 }
 
 scrolledwindow undershoot.right {
@@ -4113,6 +4116,7 @@ scrolledwindow undershoot.right {
   background-origin: content-box;
   background-position: right center;
   border: none;
+  box-shadow: none;
 }
 
 scrolledwindow junction {

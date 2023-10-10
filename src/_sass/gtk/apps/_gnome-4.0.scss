@@ -27,7 +27,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     box-shadow: none;
   }
 
-  &:active, &:checked {
+  &:active, &:checked, &:selected {
     color: $selected_fg_color;
     background-color: $selected_bg_color;
   }
@@ -188,18 +188,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 
 .nautilus-window {
   headerbar {
-    * { // reset
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    padding-left: 38px;
-    @extend %headerbar_image; // Set nautilus headerbar mountain icon
-
-    &, &:backdrop {
-      box-shadow: inset 0 -1px if($variant=='light', rgba($dark_sidebar_icon_bg, 0.15), $dark_sidebar_icon_bg),
-                  inset 38px 0 0 0 transparent;
-    }
+    entry { margin: 0; } // Why need this ?
 
     splitbutton {
       border-radius: $bt_radius + 2px;
@@ -218,7 +207,21 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     }
   }
 
-  flap.unfolded {
+  > contents > toastoverlay headerbar,
+  .sidebar-pane headerbar {
+    color: $alt_fg_color;
+    @extend %headerbar_image; // Set nautilus headerbar mountain icon
+
+    &, &:backdrop {
+      box-shadow: inset 0 -1px if($variant=='light', rgba($dark_sidebar_icon_bg, 0.15), $dark_sidebar_icon_bg),
+                  inset 38px 0 0 0 transparent;
+    }
+  }
+
+  > contents > toastoverlay headerbar { padding-left: 38px; }
+
+  flap.unfolded,
+  .sidebar-pane > toolbarview {
     background-color: $dark_sidebar_bg;
     background-image: image($dark_sidebar_icon_bg);
     background-size: 38px auto;
@@ -246,6 +249,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
         color: $dark_sidebar_fg;
         border-radius: 0;
         padding: 2px 0;
+        background-repeat: no-repeat;
 
         .sidebar-icon { color: transparentize($dark_sidebar_icon_fg, 0.15); }
 
@@ -260,7 +264,9 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
         }
 
         &.has-open-popup,
-        &:hover {
+        &:hover:not(:selected):not(:focus-within) {
+          transition: none;
+          color: $fg_color;
           background-color: transparentize($dark_sidebar_fg, 0.95);
           box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
                       inset 38px 0 0 0 $dark_sidebar_icon_bg;
@@ -324,6 +330,22 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
       separator { background-color: transparent; }
 
       scrollbar { @extend %dark_sidebar_scrollbar; }
+    }
+  }
+
+  .sidebar-pane {
+    &:dir(ltr), &.end:dir(rtl) {
+      &, banner > revealer > widget {
+        box-shadow: none;
+        border-right: if($variant == 'light' and $titlebar == 'dark', none, 1px solid $dark_sidebar_border);
+      }
+    }
+  
+    &:dir(rtl), &.end:dir(ltr) {
+      &, banner > revealer > widget {
+        box-shadow: none;
+        border-left: if($variant == 'light' and $titlebar == 'dark', none, 1px solid $dark_sidebar_border);
+      }
     }
   }
 
@@ -401,8 +423,8 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 
 #NautilusQueryEditor { // search entry
   padding: 2px 2px 2px $cont_padding - 2px;
-  margin-top: $cont_padding;
-  margin-bottom: $cont_padding;
+  margin-top: 6px;
+  margin-bottom: 6px;
   border-radius: $bt_radius;
 
   & > * {
@@ -438,7 +460,7 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   min-height: 0;
   background-color: rgba($header_fg, 0.1);
   border-radius: $bt_radius + 2px;
-  margin: 6px 0;
+  margin: 0;
   padding: 0 1px;
   border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
 
@@ -557,30 +579,56 @@ leaflet.unfolded {
 //
 
 toastoverlay {
-  > leaflet.unfolded {
-    > box:last-child {
-      event.color-light {
-        color: $side_theme_fg;
-      }
+  event.color-light {
+    color: $side_theme_fg;
+  }
 
-      label.weekday {
-        color: rgba($side_theme_fg, 0.35);
-      }
+  label.weekday {
+    color: rgba($side_theme_fg, 0.35);
+  }
 
-      label.weeknum {
-        color: rgba($side_theme_fg, 0.55);
-      }
+  label.weeknum {
+    color: rgba($side_theme_fg, 0.55);
+  }
 
-      widget.current-week {
-        border-radius: 6px;
-        background-color: rgba($side_theme_alt_fg, 0.08);
-      }
-    }
+  widget.current-week {
+    border-radius: 6px;
+    background-color: rgba($side_theme_alt_fg, 0.08);
   }
 
   navigator > button.flat.pill.popup.toggle {
     min-height: 24px;
     min-width: 24px;
     padding: 2px;
+  }
+}
+
+.sidebar-pane {
+  datechooser {
+    color: $side_theme_fg;
+
+    button {
+      @extend %side_buttons;
+    }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: $side_theme_bg;
+        color: $side_theme_fg;
+      }
+    }
+  }
+}
+
+agenda-view list.background {
+  background-color: transparent;
+
+  &, row {
+    color: $side_theme_fg;
+  }
+
+  .dim-label {
+    color: rgba($side_theme_alt_fg, 0.45);
   }
 }
