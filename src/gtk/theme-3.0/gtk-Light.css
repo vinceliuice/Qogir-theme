@@ -742,7 +742,7 @@ button.font separator, button.file separator {
   box-shadow: none;
 }
 
-.budgie-notification-window button.image-button.close, .budgie-switcher-window button.image-button.close, .budgie-osd-window button.image-button.close, .slate-notification-window button.image-button.close, .raven .expander-button, .raven button.image-button, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button, button.nautilus-circular-button.image-button,
+.budgie-notification-window button.image-button.close, .budgie-switcher-window button.image-button.close, .budgie-osd-window button.image-button.close, .slate-notification-window button.image-button.close, .raven-notifications-group list > row button.flat, .raven .expander-button, .raven button.image-button, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button, button.nautilus-circular-button.image-button,
 button.circular-button, .app-notification button.flat, button.close, button.circular {
   min-height: 24px;
   min-width: 24px;
@@ -751,7 +751,7 @@ button.circular-button, .app-notification button.flat, button.close, button.circ
   -gtk-outline-radius: 1000px;
 }
 
-.budgie-notification-window button.image-button.close label, .budgie-switcher-window button.image-button.close label, .budgie-osd-window button.image-button.close label, .slate-notification-window button.image-button.close label, .raven .expander-button label, .raven button.image-button label, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button label, button.nautilus-circular-button.image-button label,
+.budgie-notification-window button.image-button.close label, .budgie-switcher-window button.image-button.close label, .budgie-osd-window button.image-button.close label, .slate-notification-window button.image-button.close label, .raven-notifications-group list > row button.flat label, .raven .expander-button label, .raven button.image-button label, popover.background > scrolledwindow > viewport.frame > list > row.activatable button.page-row-close-button label, button.nautilus-circular-button.image-button label,
 button.circular-button label, .app-notification button.flat label, button.close label, button.circular label {
   padding: 0;
 }
@@ -8951,6 +8951,19 @@ box.vertical > stack > box.vertical > .raven-background > viewport.frame > list 
 
 box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > row.activatable:selected {
   background-color: rgba(82, 148, 226, 0.65);
+}
+
+.raven-notifications-group .raven-notifications-group-header {
+  padding-left: 6px;
+}
+
+.raven-notifications-group list > row {
+  border-radius: 2px;
+  padding: 6px;
+}
+
+.raven-notifications-group list > row .notification-clone {
+  padding-left: 6px;
 }
 
 .devices-list.sound-devices > row.activatable > box.horizontal label {

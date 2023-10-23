@@ -1092,6 +1092,25 @@ box.vertical > stack > box.vertical {
   }
 }
 
+.raven-notifications-group {
+  .raven-notifications-group-header {
+    padding-left: $cont_padding;
+  }
+
+  list > row {
+    border-radius: $bt_radius;
+    padding: $cont_padding;
+
+    .notification-clone {
+      padding-left: $cont_padding;
+    }
+
+    button.flat {
+      @extend %circular_button;
+    }
+  }
+}
+
 .devices-list.sound-devices {
   > row.activatable > box.horizontal {
     label { padding-left: 8px; }
