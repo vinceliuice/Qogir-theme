@@ -3622,14 +3622,22 @@ tooltip {
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
     background-color: lighten($osd_bg_color, 10%);
     background-clip: padding-box;
+    border-radius: $material_radius;
 
     label { padding: 4px; }
   }
 
-  border-radius: $bt_radius;
+  &.background.csd {
+    border-radius: $material_radius;
+    box-shadow: 0 2px 3px rgba(black, 0.25);
+    margin: 0 6px 8px;
+  }
+
   box-shadow: none;
 
-  decoration { background-color: transparent; }
+  decoration {
+    background-color: transparent;
+  }
 
   * { //Yeah this is ugly
     background-color: transparent;
