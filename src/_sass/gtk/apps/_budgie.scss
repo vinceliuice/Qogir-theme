@@ -187,15 +187,17 @@
       border: 1px solid if($variant=='light', $sec_selected_bg_color, $alt_selected_bg_color);
       background-color: $selected_bg_color;
       color: $selected_fg_color;
-
-      &:focus {
-        color: $selected_bg_color;
-        background-color: transparent;
-        border-color: transparent;
-      }
     }
 
     &:disabled { color: $insensitive_fg_color; }
+  }
+
+  carousel button.flat:not(.image-button) {
+    &:active:focused {
+      color: $selected_bg_color;
+      background-color: transparent;
+      border-color: transparent;
+    }
   }
 
   &.budgie-menu {

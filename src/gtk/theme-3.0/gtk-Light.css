@@ -7979,14 +7979,14 @@ MsdOsdWindow.background.osd .progressbar {
   color: #ffffff;
 }
 
-.budgie-popover:not(.budgie-menu) button.flat:not(.image-button):active:focus {
+.budgie-popover:not(.budgie-menu) button.flat:not(.image-button):disabled {
+  color: rgba(70, 72, 83, 0.55);
+}
+
+.budgie-popover carousel button.flat:not(.image-button):active:focused {
   color: #5294e2;
   background-color: transparent;
   border-color: transparent;
-}
-
-.budgie-popover:not(.budgie-menu) button.flat:not(.image-button):disabled {
-  color: rgba(70, 72, 83, 0.55);
 }
 
 .budgie-popover.budgie-menu .container {
