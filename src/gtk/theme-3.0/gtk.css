@@ -8255,45 +8255,32 @@ window.budgie-popover:not(.csd) > frame.container > border {
   border-top-width: 1px;
 }
 
-.workspace-switcher .workspace-item,
-.workspace-switcher .workspace-add-button {
+.workspace-switcher .workspace-item {
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
   border: 0 solid rgba(255, 255, 255, 0.12);
 }
 
-.top .workspace-switcher .workspace-item:dir(ltr), .bottom .workspace-switcher .workspace-item:dir(ltr), .top .workspace-switcher .workspace-add-button:dir(ltr), .bottom .workspace-switcher .workspace-add-button:dir(ltr) {
+.top .workspace-switcher .workspace-item:dir(ltr), .bottom .workspace-switcher .workspace-item:dir(ltr) {
   border-right-width: 1px;
 }
 
-.top .workspace-switcher .workspace-item:dir(rtl), .bottom .workspace-switcher .workspace-item:dir(rtl), .top .workspace-switcher .workspace-add-button:dir(rtl), .bottom .workspace-switcher .workspace-add-button:dir(rtl) {
+.top .workspace-switcher .workspace-item:dir(rtl), .bottom .workspace-switcher .workspace-item:dir(rtl) {
   border-left-width: 1px;
 }
 
-.left .workspace-switcher .workspace-item, .right .workspace-switcher .workspace-item, .left .workspace-switcher .workspace-add-button, .right .workspace-switcher .workspace-add-button {
+.left .workspace-switcher .workspace-item, .right .workspace-switcher .workspace-item {
   border-bottom-width: 1px;
 }
 
-.workspace-switcher .workspace-item {
-  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
-}
-
 .workspace-switcher .workspace-item.current-workspace {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(211, 218, 227, 0.08);
 }
 
 .workspace-switcher .workspace-add-button {
-  background-color: transparent;
-}
-
-.workspace-switcher .workspace-add-button:hover {
-  box-shadow: none;
-}
-
-.workspace-switcher .workspace-add-button:active {
-  background-image: none;
-}
-
-.workspace-switcher .workspace-add-button:active image {
-  margin: 1px 0 -1px;
+  min-height: 24px;
+  min-width: 24px;
+  padding: 0;
+  border-radius: 2px;
 }
 
 .budgie-panel .workspace-switcher .workspace-icon-button {
