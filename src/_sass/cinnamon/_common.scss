@@ -273,7 +273,7 @@ StScrollBar {
   background-color: $menu_bg;
   border: if($variant == 'light', 0, 1px) solid $borders_color;
   padding: 0;
-  margin: 8px;
+  margin: 6px;
   border-radius: $material_radius;
   box-shadow: 0 3px 6px rgba(black, 0.25);
 
@@ -654,6 +654,35 @@ StScrollBar {
   padding: 8px 0;
 }
 
+.calendar-today-home-button,
+.calendar-today-home-button-enabled {
+  margin: 6px 0;
+  padding: 6px;
+  border-radius: $bt_radius;
+}
+
+.calendar-today-home-button-enabled:hover {
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba($fg_color, 0.1);
+  background-gradient-end: rgba($fg_color, 0.1);
+  box-shadow: none;
+}
+
+.calendar-today-day-label {
+  font-size: 1.75em;
+  color: $insensitive_fg_color;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: .1em;
+}
+
+.calendar-today-date-label {
+  font-size: 1.1em;
+  color: $insensitive_fg_color;
+  font-weight: bold;
+  text-align: center;
+}
+
 .calendar-change-month-back,
 .calendar-change-month-forward {
   width: 16px;
@@ -700,6 +729,18 @@ StScrollBar {
   text-align: center;
   color: $fg_color;
   border-radius: $bt_radius;
+}
+
+.calendar-day-event-dot-box {
+  margin-top: 22px;
+  max-rows: 2;
+}
+
+.calendar-day-event-dot {
+  margin: 1px;
+  border-radius: 2px;
+  width: 4px;
+  height: 4px;
 }
 
 .calendar-day-base {
@@ -752,9 +793,143 @@ StScrollBar {
   opacity: 1;
 }
 
+.calendar-not-today {
+  color: $alt_fg_color;
+
+  &:selected {
+    color: $fg_color;
+    font-weight: bold;
+  }
+}
+
 .calendar-week-number {
   color: transparentize($fg_color, 0.3);
   font-size: 80%;
+}
+
+.calendar-events-main-box {
+  height: 300px;
+  margin: 0 0.8em 0 0;
+  padding: 8px;
+  min-width: 350px;
+  border: none;
+  border-radius: $bt_radius;
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba($fg_color, 0.06);
+  background-gradient-end: rgba($fg_color, 0.06);
+  color: $alt_fg_color;
+}
+
+.calendar-events-no-events-button {
+  margin: 6px 0;
+  padding: 6px;
+  border-radius: $bt_radius;
+
+  &:hover {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba($fg_color, 0.1);
+    background-gradient-end: rgba($fg_color, 0.1);
+    box-shadow: none;
+  }
+}
+
+.calendar-events-no-events-icon {
+  color: $insensitive_fg_color;
+}
+
+.calendar-events-no-events-label {
+  font-size: 1.1em;
+  color: $insensitive_fg_color;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.calendar-events-date-label {
+  padding: 3px 0 12px 3px;
+  font-size: 1.1em;
+  color: $alt_fg_color;
+  font-weight: bold;
+  text-align: center;
+}
+
+.calendar-events-event-container {
+  padding: 2px;
+}
+
+.calendar-events-main-box .separator {
+  -margin-horizontal: 1em;
+  -gradient-height: 1px;
+  -gradient-start: $borders_color;
+  -gradient-end: $borders_color;
+}
+
+.calendar-event-button {
+  margin: 6px 0 6px 0;
+  border-radius: $bt_radius;
+
+  &:hover {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba($fg_color, 0.1);;
+    background-gradient-end: rgba($fg_color, 0.1);
+    box-shadow: none;
+  }
+}
+
+.calendar-event-color-strip {
+  width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.calendar-event-row-content {
+  margin: 6px;
+}
+
+.calendar-event-time-past {
+  color: $insensitive_fg_color;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: .6em;
+}
+
+.calendar-event-time-present {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: .6em;
+}
+
+.calendar-event-time-present:all-day {
+  color: rgba($success_color, 0.6);
+}
+
+.calendar-event-time-future {
+  text-align: left;
+  margin-bottom: .6em;
+}
+
+.calendar-event-countdown {
+  color: $insensitive_fg_color;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: .6em;
+}
+
+.calendar-event-countdown:soon {
+  color: white;
+}
+
+.calendar-event-countdown:imminent {
+  color: rgba($warning_color, 0.6);
+}
+
+.calendar-event-countdown:current {
+  color: rgba($success_color, 0.6);
+}
+
+.calendar-event-summary {
+  color: $insensitive_fg_color;
+  text-align: left;
+  width: 200px;
 }
 
 //
@@ -1451,6 +1626,13 @@ StScrollBar {
   }
 
   &-thumbnail-menu {
+    color: $fg_color;
+    background-color: $menu_bg;
+    border: if($variant == 'light', 0, 1px) solid $borders_color;
+    padding: 6px;
+    margin: 6px;
+    border-radius: $material_radius;
+    box-shadow: 0 3px 6px rgba(black, 0.25);
 
     .item-box {
       padding: 6px;
@@ -1460,10 +1642,11 @@ StScrollBar {
       &:outlined {
         padding: 2px;
         border: 2px solid $selected_bg_color;
+        background-color: rgba($selected_bg_color, 0.15);
       }
 
       &:selected {
-        background-color: rgba($selected_fg_color, 0.33);
+        background-color: rgba($fg_color, 0.15);
       }
     }
 
