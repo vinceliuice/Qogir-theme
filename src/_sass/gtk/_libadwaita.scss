@@ -1011,8 +1011,14 @@ toolbarview.undershoot-bottom scrolledwindow {
   }
 }
 
-.top-bar .collapse-spacing {
-  padding: 0;
+.top-bar {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+
+  .collapse-spacing {
+    padding: 0;
+  }
 }
 
 // preferences

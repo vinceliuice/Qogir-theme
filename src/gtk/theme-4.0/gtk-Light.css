@@ -7335,6 +7335,12 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   box-shadow: none;
 }
 
+.top-bar {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
 .top-bar .collapse-spacing {
   padding: 0;
 }
