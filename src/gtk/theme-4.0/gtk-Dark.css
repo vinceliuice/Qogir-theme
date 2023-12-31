@@ -728,35 +728,31 @@ button:drop(active) {
 }
 
 button.osd {
-  color: #D3DAE3;
-  background-color: #282A33;
   border: none;
   box-shadow: none;
-  background-clip: border-box;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
 }
 
 button.osd.image-button {
-  padding: 6px;
+  padding: 3px;
   min-height: 28px;
   min-width: 28px;
 }
 
 button.osd:hover {
-  color: #5294e2;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
 }
 
 button.osd:active, button.osd:checked, button.osd.keyboard-activating {
-  color: #ffffff;
-  border-color: #5294e2;
-  background-color: #5294e2;
-  background-clip: border-box;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
 }
 
 button.osd:disabled {
-  opacity: 1;
-  color: #5b5f68;
-  border-color: #434655;
-  background-color: rgba(51, 54, 65, 0.85);
+  background-color: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .osd .linked:not(.vertical):not(.path-bar) > button:hover:not(:checked):not(:active):not(:only-child), .osd .linked:not(.vertical):not(.path-bar) > button:hover:not(:checked):not(:active) + button:not(:checked):not(:active) {
@@ -6066,6 +6062,14 @@ leaflet.unfolded > box:last-child > headerbar {
 window.dialog > box > stack > box > box > notebook.frame {
   border-width: 0 0 0 1px;
   border-radius: 0;
+}
+
+.background-thumbnail button.osd.remove-button {
+  padding: 0;
+}
+
+navigation-view-page > toolbarview > scrolledwindow > viewport > clamp > box > box > stack > button {
+  margin-top: 12px;
 }
 
 .history-view {

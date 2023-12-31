@@ -508,6 +508,18 @@ window.dialog {
   }
 }
 
+.background-thumbnail {
+  button.osd.remove-button {
+    padding: 0;
+  }
+}
+
+navigation-view-page > toolbarview > scrolledwindow > viewport > clamp > box > box > stack {
+  > button {
+    margin-top: 12px;
+  }
+}
+
 //
 // Calculator
 //

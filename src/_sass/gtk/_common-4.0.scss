@@ -604,21 +604,31 @@ button {
 
   // big standalone buttons like in Documents pager
   &.osd {
-    color: $osd_fg_color;
-    background-color: $osd_bg_color;
     border: none;
     box-shadow: none;
-    background-clip: border-box;
+    background-color: rgba(black, 0.65);
+    color: white;
 
     &.image-button {
-      padding: $cont_padding;
+      padding: $cont_padding / 2;
       min-height: $medium_size;
       min-width: $medium_size;
     }
 
-    &:hover { color: $selected_bg_color; }
-    &:active, &:checked, &.keyboard-activating { @include button(osd-active); }
-    &:disabled { @include button(osd-insensitive); }
+    &:hover {
+      background-color: rgba(black, 0.75);
+      color: white;
+    }
+
+    &:active, &:checked, &.keyboard-activating {
+      background-color: rgba(black, 0.85);
+      color: white;
+    }
+
+    &:disabled {
+      background-color: rgba(black, 0.35);
+      color: rgba(white, 0.45);
+    }
   }
 
   //overlay / OSD style
