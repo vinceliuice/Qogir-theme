@@ -8005,7 +8005,7 @@ MsdOsdWindow.background.osd .progressbar {
   color: rgba(230, 235, 239, 0.45);
 }
 
-.budgie-popover carousel button.flat:not(.image-button):active:focused {
+.budgie-popover carousel button.flat:not(.image-button):active:focus {
   color: #5294e2;
   background-color: transparent;
   border-color: transparent;
