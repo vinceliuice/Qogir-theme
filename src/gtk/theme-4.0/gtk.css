@@ -2075,7 +2075,6 @@ headerbar.selection-mode .selection-menu .arrow {
 
 headerbar.default-decoration {
   min-height: 30px;
-  padding: 0 8px;
 }
 
 headerbar.default-decoration windowcontrols menubutton button {
@@ -5776,9 +5775,6 @@ leaflet.unfolded > box:last-child > headerbar {
 .nautilus-window:not(.view) headerbar,
 .nautilus-window .sidebar-pane headerbar {
   color: rgba(70, 72, 83, 0.75);
-}
-
-.nautilus-window:not(.view) headerbar {
   padding-left: 38px;
 }
 
@@ -6191,6 +6187,544 @@ agenda-view list.background, agenda-view list.background row {
 
 agenda-view list.background .dim-label, agenda-view list.background label.separator, agenda-view list.background entry > text > placeholder, agenda-view list.background spinbutton:not(.vertical) > text > text > placeholder, agenda-view list.background spinbutton.vertical > text > text > placeholder, agenda-view list.background headerbar .subtitle, headerbar agenda-view list.background .subtitle, agenda-view list.background row label.subtitle, row agenda-view list.background label.subtitle, agenda-view list.background row.expander:not(:checked) image.expander-row-arrow, row.expander:not(:checked) agenda-view list.background image.expander-row-arrow {
   color: rgba(246, 246, 251, 0.45);
+}
+
+.details-page {
+  margin: 24px 0px;
+}
+
+.installed-overlay-box {
+  font-size: smaller;
+  background-color: #5294e2;
+  border-radius: 0;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+screenshot-carousel box.frame {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+
+screenshot-carousel button,
+.featured-carousel button {
+  margin: 12px;
+}
+
+.screenshot-image-main .image1,
+.screenshot-image-main .image2 {
+  margin-top: 6px;
+  margin-bottom: 12px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.app-tile-label {
+  font-size: 105%;
+}
+
+.review-textbox {
+  padding: 6px;
+}
+
+.origin-rounded-box {
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 9999px;
+  padding: 4px;
+}
+
+.origin-beta {
+  color: #F27835;
+}
+
+.origin-button > button {
+  padding: 3px 9px;
+}
+
+flowboxchild.card:not(.category-tile) {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
+.category-tile.card {
+  padding: 21px;
+  border: none;
+  border-radius: 2px;
+  min-width: 140px;
+  font-weight: 900;
+  font-size: larger;
+}
+
+.category-tile.card.category-tile-iconless {
+  padding: 9px 15px;
+  min-width: 130px;
+  font-size: 105%;
+  font-weight: normal;
+  box-shadow: none;
+}
+
+.category-tile.card.category-create {
+  background: linear-gradient(180deg, #ce8cd7 0%, #2861c6 100%);
+  color: white;
+}
+
+.category-tile.card.category-create:hover {
+  background: linear-gradient(180deg, shade(#ce8cd7, 1.07) 0%, shade(#2861c6, 1.1) 100%);
+  color: white;
+}
+
+.category-tile.card.category-create:active {
+  background: linear-gradient(180deg, shade(#ce8cd7, 0.95) 0%, shade(#2861c6, 0.95) 100%);
+  color: white;
+}
+
+.category-tile.card.category-develop {
+  background: #5e5c64;
+  color: white;
+}
+
+.category-tile.card.category-develop:hover {
+  background: shade(#5e5c64, 1.2);
+  color: white;
+}
+
+.category-tile.card.category-develop:active {
+  background-color: shade(#5e5c64, 0.95);
+  color: white;
+}
+
+.category-tile.card.category-learn {
+  background: linear-gradient(180deg, #2ec27e 30%, #27a66c 100%);
+  color: white;
+}
+
+.category-tile.card.category-learn:hover {
+  background: linear-gradient(180deg, shade(#2ec27e, 1.06) 30%, shade(#27a66c, 1.06) 100%);
+  color: white;
+}
+
+.category-tile.card.category-learn:active {
+  background: linear-gradient(180deg, shade(#2ec27e, 0.95) 30%, shade(#27a66c, 0.95) 100%);
+  color: white;
+}
+
+.category-tile.card.category-play {
+  background: linear-gradient(75deg, #f9e2a7 0%, #eb5ec3 50%, #6d53e0 100%);
+  color: #393484;
+}
+
+.category-tile.card.category-play:hover {
+  background: linear-gradient(75deg, shade(#f9e2a7, 1.07) 0%, shade(#eb5ec3, 1.07) 50%, shade(#6d53e0, 1.07) 100%);
+  color: #393484;
+}
+
+.category-tile.card.category-play:active {
+  background: linear-gradient(75deg, shade(#f9e2a7, 0.97) 0%, shade(#eb5ec3, 0.95) 50%, shade(#6d53e0, 1.07) 100%);
+  color: #393484;
+}
+
+.category-tile.card.category-socialize {
+  background: linear-gradient(90deg, #ef4e9b 0%, #f77466 100%);
+  color: #fac7d1;
+}
+
+.category-tile.card.category-socialize:hover {
+  background: linear-gradient(90deg, shade(#ef4e9b, 1.08) 0%, shade(#f77466, 1.08) 100%);
+  color: #fac7d1;
+}
+
+.category-tile.card.category-socialize:active {
+  background: linear-gradient(90deg, shade(#ef4e9b, 0.95) 0%, shade(#f77466, 0.95) 100%);
+  color: #fac7d1;
+}
+
+.category-tile.card.category-work {
+  padding: 1px;
+  /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
+  color: #1c71d8;
+  background-color: #fdf8d7;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+  background-size: 10px 10px, 10px 10px;
+  background-position: -1px -4px, center -1px;
+}
+
+.category-tile.card.category-work:hover {
+  color: #1c71d8;
+  background-color: #fefcef;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+}
+
+.category-tile.card.category-work:active {
+  color: #1c71d8;
+  background-color: #fcf4bf;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+}
+
+clamp.medium .category-tile:not(.category-tile-iconless),
+clamp.large .category-tile:not(.category-tile-iconless) {
+  font-size: larger;
+}
+
+.featured-tile {
+  padding: 0;
+  box-shadow: none;
+}
+
+.featured-tile label.title-1 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.featured-tile.narrow label.title-1 {
+  font-size: 16pt;
+}
+
+.application-details-infobar, .application-details-infobar.info {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #464853;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.application-details-infobar.warning {
+  background-color: #F27835;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+@keyframes install-progress-unknown-move {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+.application-details-description .button {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.install-progress {
+  background-image: linear-gradient(to top, #5294e2 2px, alpha(#5294e2,0) 2px);
+  background-repeat: no-repeat;
+  background-position: 0 bottom;
+  background-size: 0;
+  transition: none;
+}
+
+.install-progress:dir(rtl) {
+  background-position: 100% bottom;
+}
+
+.review-row > * {
+  margin: 12px;
+}
+
+.review-row button {
+  font-size: smaller;
+}
+
+.review-row .vote-buttons button {
+  margin-right: -1px;
+}
+
+.review-row .vote-buttons button:not(:first-child) {
+  border-image: linear-gradient(to top, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)) 0 0 0 1/5px 0 5px 1px;
+}
+
+.review-row .vote-buttons button:hover,
+.review-row .vote-buttons button:active,
+.review-row .vote-buttons button:hover + button,
+.review-row .vote-buttons button:active + button {
+  border-image: none;
+}
+
+review-bar {
+  color: rgba(70, 72, 83, 0.55);
+  background-image: none;
+  background-color: rgba(70, 72, 83, 0.2);
+}
+
+.review-histogram star-image {
+  color: rgba(70, 72, 83, 0.55);
+}
+
+.version-arrow-label {
+  font-size: x-small;
+}
+
+.overview-more-button {
+  font-size: smaller;
+  padding: 0 16px;
+}
+
+.app-row-origin-text {
+  font-size: smaller;
+}
+
+.app-listbox-header {
+  padding: 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.image-list {
+  background-color: transparent;
+}
+
+box.star {
+  background-color: transparent;
+  background-image: none;
+}
+
+button.star {
+  outline-offset: 0;
+  background-color: transparent;
+  background-image: none;
+  border-image: none;
+  border-radius: 0;
+  border-width: 0;
+  padding: 0;
+  box-shadow: none;
+  outline-offset: -1px;
+}
+
+.dimmer-label {
+  opacity: 0.25;
+}
+
+.update-failed-details {
+  font-family: Monospace;
+  font-size: smaller;
+  padding: 16px;
+}
+
+.upgrade-banner {
+  padding: 0px;
+  border-radius: 2px;
+  border: none;
+}
+
+.upgrade-banner-background {
+  background: linear-gradient(to bottom, #6dcfa7, #5294e2);
+  color: white;
+}
+
+.upgrade-buttons #button_upgrades_install {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+scrolledwindow.list-page > viewport > clamp > box {
+  margin: 24px 12px;
+  border-spacing: 24px;
+}
+
+.update-preferences preferencesgroup > box > box {
+  margin-top: 18px;
+}
+
+.section > label:not(:first-child) {
+  margin-top: 6px;
+}
+
+.section > box:not(:first-child) {
+  margin-top: 12px;
+}
+
+clamp.status-page {
+  margin: 36px 12px;
+}
+
+clamp.status-page .iconbox {
+  min-height: 128px;
+  min-width: 128px;
+}
+
+clamp.status-page .icon {
+  color: rgba(70, 72, 83, 0.55);
+  min-height: 32px;
+  min-width: 32px;
+}
+
+clamp.status-page .icon:not(:last-child) {
+  margin-bottom: 36px;
+}
+
+clamp.status-page .title:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+app-context-bar .context-tile {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: transparent;
+  border-radius: 0;
+  padding: 24px 12px 21px 12px;
+  outline-offset: 5px;
+  transition-property: outline, outline-offset, background-image;
+  border-bottom: none;
+  border-right: none;
+}
+
+app-context-bar .context-tile:hover {
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+app-context-bar .context-tile.keyboard-activating, app-context-bar .context-tile:active {
+  background-color: rgba(70, 72, 83, 0.2);
+}
+
+app-context-bar .context-tile:focus:focus-visible {
+  outline-offset: -1px;
+}
+
+app-context-bar.horizontal box:first-child .context-tile:first-child, app-context-bar.vertical .context-tile:first-child {
+  border-left: none;
+}
+
+app-context-bar.horizontal .context-tile, app-context-bar.vertical box:first-child .context-tile {
+  border-top: none;
+}
+
+app-context-bar > box:not(:first-child) > button.flat {
+  border-radius: 0;
+}
+
+app-context-bar > box:not(:first-child) > button.flat:last-child {
+  border-radius: 0 2px 2px 0;
+}
+
+app-context-bar > box:first-child > button.flat {
+  border-radius: 0;
+}
+
+app-context-bar > box:first-child > button.flat:first-child {
+  border-radius: 2px 0 0 2px;
+}
+
+app-context-bar > box > button.flat {
+  border-left-color: rgba(0, 0, 0, 0.12);
+}
+
+carousel.card {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.context-tile-lozenge {
+  min-height: 28px;
+  min-width: 28px;
+  padding: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 9999px;
+}
+
+.context-tile-lozenge.large {
+  font-size: 24px;
+  padding: 16px;
+  min-width: 24px;
+  /* 60px minus the left and right padding */
+  min-height: 24px;
+  /* 60px minus the top and bottom padding */
+}
+
+.context-tile-lozenge.wide-image image {
+  margin-top: -28px;
+  margin-bottom: -28px;
+}
+
+.eol-red {
+  font-weight: bold;
+  color: #FC4138;
+}
+
+window.narrow .app-title {
+  font-size: 16pt;
+}
+
+window.narrow .app-developer {
+  font-size: small;
+}
+
+.install-progress-label {
+  font-size: smaller;
+  font-feature-settings: "tnum";
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box {
+  margin: 36px 12px;
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box > clamp:not(:last-child) > box {
+  margin-bottom: 36px;
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .icon:not(:last-child) {
+  margin-bottom: 36px;
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+statuspage.icon-dropshadow image.icon {
+  -gtk-icon-shadow: 0 1px 12px rgba(0, 0, 0, 0.05), 0 -1px rgba(0, 0, 0, 0.05), 1px 0 rgba(0, 0, 0, 0.1), 0 1px rgba(0, 0, 0, 0.3), -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+window.info scrollbar.vertical {
+  margin-top: 48px;
+  background: none;
+  box-shadow: none;
+}
+
+window.info scrollbar.vertical trough {
+  margin-top: 0;
+}
+
+row.app > box.header {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+row.app > box.header {
+  border-spacing: 12px;
+}
+
+row.app > box.header > image {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+row.app label.warning {
+  color: #F27835;
+}
+
+@keyframes pre-delay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    filter: opacity(0%);
+  }
+}
+
+/* Give a fade-in animation to spinners. */
+spinner.fade-in:checked {
+  animation: pre-delay 0.5s linear 1, fade-in 1s linear 1, spin 1s linear infinite;
+  animation-delay: 0s, 0.5s, 0.5s;
 }
 
 avatar {
@@ -7437,6 +7971,139 @@ preferencesgroup > box button.background-preview-button.toggle:active {
 
 preferencesgroup > box button.background-preview-button.toggle:checked {
   outline-color: #5294e2;
+}
+
+themeselector,
+panelthemeselector {
+  margin: 9px;
+}
+
+themeselector checkbutton,
+panelthemeselector checkbutton {
+  padding: 1px;
+  min-height: 44px;
+  min-width: 44px;
+  background-clip: content-box;
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+themeselector checkbutton radio,
+panelthemeselector checkbutton radio {
+  min-height: 16px;
+  min-width: 16px;
+  transform: translate(27px, 14px);
+  padding: 3px;
+}
+
+themeselector checkbutton radio, themeselector checkbutton radio:hover, themeselector checkbutton radio:disabled,
+panelthemeselector checkbutton radio,
+panelthemeselector checkbutton radio:hover,
+panelthemeselector checkbutton radio:disabled {
+  -gtk-icon-source: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+themeselector checkbutton radio:checked, themeselector checkbutton radio:checked:hover, themeselector checkbutton radio:active, themeselector checkbutton radio:active:hover,
+panelthemeselector checkbutton radio:checked,
+panelthemeselector checkbutton radio:checked:hover,
+panelthemeselector checkbutton radio:active,
+panelthemeselector checkbutton radio:active:hover {
+  -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
+  background-image: image(#5294e2);
+  background-color: #5294e2;
+  color: #ffffff;
+}
+
+themeselector checkbutton.follow:checked, themeselector checkbutton.light:checked, themeselector checkbutton.dark:checked,
+panelthemeselector checkbutton.follow:checked,
+panelthemeselector checkbutton.light:checked,
+panelthemeselector checkbutton.dark:checked {
+  box-shadow: inset 0 0 0 2px #5294e2;
+}
+
+themeselector checkbutton.light,
+panelthemeselector checkbutton.light {
+  background-color: #ffffff;
+}
+
+themeselector checkbutton.dark,
+panelthemeselector checkbutton.dark {
+  background-color: #202020;
+}
+
+themeselector checkbutton.follow,
+panelthemeselector checkbutton.follow {
+  background-image: linear-gradient(to bottom right, #fff 49.99%, #202020 50.01%);
+}
+
+themeswitcher {
+  padding: 6px;
+}
+
+themeswitcher .check {
+  min-height: 16px;
+  min-width: 16px;
+  background-color: #5294e2;
+  color: on(#5294e2);
+  padding: 2px;
+  border-radius: 9999px;
+  margin: 3px;
+  -gtk-icon-size: 20px;
+  -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/check-symbolic.svg")), -gtk-recolor(url("assets/scalable/check-symbolic@2.svg")));
+}
+
+themeswitcher .check:hover {
+  background-color: #7eafe9;
+  color: on(#5294e2);
+}
+
+themeswitcher .check:active {
+  background-color: #5294e2;
+  color: on(#5294e2);
+}
+
+themeswitcher checkbutton radio {
+  padding: 0;
+  margin: 2px;
+  min-height: 48px;
+  min-width: 48px;
+}
+
+themeswitcher checkbutton radio, themeswitcher checkbutton radio:active, themeswitcher checkbutton radio:hover {
+  outline-color: rgba(0, 0, 0, 0.12);
+  outline-width: 1px;
+  outline-offset: -1px;
+  outline-style: solid;
+  box-shadow: none;
+}
+
+themeswitcher checkbutton radio, themeswitcher checkbutton radio:hover, themeswitcher checkbutton radio:active, themeswitcher checkbutton radio:checked, themeswitcher checkbutton radio:checked:hover {
+  -gtk-icon-source: none;
+  transition: none;
+  border: none;
+}
+
+themeswitcher checkbutton radio:checked, themeswitcher checkbutton radio:checked:hover, themeswitcher checkbutton radio:active, themeswitcher checkbutton radio:active:hover {
+  box-shadow: inset 0 0 0 2px #5294e2;
+}
+
+themeswitcher checkbutton.system radio, themeswitcher checkbutton.system radio:hover, themeswitcher checkbutton.system radio:active, themeswitcher checkbutton.system radio:checked, themeswitcher checkbutton.system radio:checked:hover {
+  background-image: linear-gradient(-45deg, #242424 49.99%, white 50.01%);
+  background-color: transparent;
+}
+
+themeswitcher checkbutton.light radio, themeswitcher checkbutton.light radio:hover, themeswitcher checkbutton.light radio:active, themeswitcher checkbutton.light radio:checked, themeswitcher checkbutton.light radio:checked:hover {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: white;
+}
+
+themeswitcher checkbutton.dark radio, themeswitcher checkbutton.dark radio:hover, themeswitcher checkbutton.dark radio:active, themeswitcher checkbutton.dark radio:checked, themeswitcher checkbutton.dark radio:checked:hover {
+  color: white;
+  background-image: image(#242424);
+  background-color: transparent;
 }
 
 @define-color theme_fg_color #464853;

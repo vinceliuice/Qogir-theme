@@ -1067,3 +1067,136 @@ preferencesgroup > box {
     }
   }
 }
+
+
+themeselector, // EditorThemeSelector
+panelthemeselector { // BuilderThemeSelector
+  margin: 9px;
+
+  checkbutton {
+    padding: 1px;
+    min-height: 44px;
+    min-width: 44px;
+    background-clip: content-box;
+    border-radius: $circular_radius;
+    box-shadow: inset 0 0 0 1px $borders_color;
+
+    radio {
+      min-height: 16px;
+      min-width: 16px;
+      transform: translate(27px, 14px);
+      padding: 3px;
+
+      &, &:hover, &:disabled {
+        -gtk-icon-source: none;
+        border: none;
+        background: none;
+        box-shadow: none;
+      }
+
+      &:checked, &:checked:hover, &:active, &:active:hover {
+        -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
+        background-image: image($selected_bg_color);
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+      }
+    }
+
+    &.follow:checked,
+    &.light:checked,
+    &.dark:checked {
+      box-shadow: inset 0 0 0 2px $selected_bg_color;
+    }
+
+    &.light {
+      background-color: #ffffff;
+    }
+
+    &.dark {
+      background-color: #202020;
+    }
+
+    &.follow {
+      background-image: linear-gradient(to bottom right, #fff 49.99%, #202020 50.01%);
+    }
+  }
+}
+
+// Gnome Console themeswitcher
+themeswitcher {
+  padding: 6px;
+
+  .check {
+    min-height: 16px;
+    min-width: 16px;
+    background-color: $selected_bg_color;
+    color: on($selected_bg_color);
+    padding: 2px;
+    border-radius: $circular_radius;
+    margin: 3px;
+    -gtk-icon-size: 20px;
+    -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/check-symbolic.svg")),
+                                  -gtk-recolor(url("assets/scalable/check-symbolic@2.svg")));
+
+    &:hover {
+      background-color: lighten($selected_bg_color, 10%);
+      color: on($selected_bg_color);
+    }
+
+    &:active {
+      background-color: $selected_bg_color;
+      color: on($selected_bg_color);
+    }
+  }
+
+  checkbutton {
+    radio {
+      padding: 0;
+      margin: 2px;
+      min-height: 48px;
+      min-width: 48px;
+
+      &, &:active, &:hover {
+        outline-color: $borders_color;
+        outline-width: 1px;
+        outline-offset: -1px;
+        outline-style: solid;
+        box-shadow: none;
+      }
+
+      &, &:hover, &:active, &:checked, &:checked:hover {
+        -gtk-icon-source: none;
+        transition: none;
+        border: none;
+      }
+    }
+
+    radio:checked, radio:active {
+      &, &:hover {
+        box-shadow: inset 0 0 0 2px $selected_bg_color;
+      }
+    }
+
+    &.system radio {
+      &, &:hover, &:active, &:checked, &:checked:hover {
+        background-image: linear-gradient(-45deg, #242424 49.99%, white 50.01%);
+        background-color: transparent;
+      }
+    }
+
+    &.light radio {
+      &, &:hover, &:active, &:checked, &:checked:hover {
+        color: rgba(black, 0.8);
+        background-color: white;
+      }
+    }
+
+    &.dark radio {
+      &, &:hover, &:active, &:checked, &:checked:hover {
+        color: white;
+        background-image: image(#242424);
+        background-color: transparent;
+      }
+    }
+  }
+}

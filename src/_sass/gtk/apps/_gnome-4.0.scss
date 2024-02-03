@@ -210,12 +210,11 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   &:not(.view) headerbar,
   .sidebar-pane headerbar {
     color: $alt_fg_color;
+    padding-left: 38px;
     @extend %headerbar_image; // Set nautilus headerbar mountain icon
   }
 
   &:not(.view) headerbar {
-    padding-left: 38px;
-
     &, &:backdrop {
       box-shadow: inset 0 -1px if($variant=='light', rgba($dark_sidebar_icon_bg, 0.15), $dark_sidebar_icon_bg),
                   inset 38px 0 0 0 transparent;
@@ -645,4 +644,533 @@ agenda-view list.background {
   .dim-label {
     color: rgba($side_theme_alt_fg, 0.45);
   }
+}
+
+//
+// Gnome Software
+//
+
+.details-page {
+  margin: $cont_padding * 4 0px;
+}
+
+.installed-overlay-box {
+  font-size: smaller;
+  background-color: $selected_bg_color;
+  border-radius: 0;
+  color: white;
+  text-shadow: 0 1px 0 rgba(black, 0.2);
+}
+
+screenshot-carousel box.frame {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+
+screenshot-carousel button,
+.featured-carousel button {
+  margin: $cont_padding * 2;
+}
+
+.screenshot-image-main .image1,
+.screenshot-image-main .image2 {
+  margin-top: $cont_padding;
+  margin-bottom: $cont_padding * 2;
+  margin-left: $cont_padding;
+  margin-right: $cont_padding;
+}
+
+.app-tile-label {
+  font-size: 105%;
+}
+
+.review-textbox {
+  padding: $cont_padding;
+}
+
+.origin-rounded-box {
+  background-color: $borders_color;
+  border-radius: $circular_radius;
+  padding: $cont_padding - 2px;
+}
+
+.origin-beta {
+  color: $warning_color;
+}
+
+.origin-button > button {
+  padding: $cont_padding / 2 $cont_padding * 1.5;
+}
+
+flowboxchild.card:not(.category-tile) {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
+.category-tile.card {
+  padding: $cont_padding * 3.5;
+  border: none;
+  border-radius: $bt_radius;
+  min-width: 140px;
+  font-weight: 900;
+  font-size: larger;
+
+  &.category-tile-iconless {
+    padding: $cont_padding * 1.5 $cont_padding * 2.5;
+    min-width: 130px;
+    font-size: 105%;
+    font-weight: normal;
+    box-shadow: none;
+  }
+
+  // Styling for specific category buttons.
+  &.category-create {
+    background: linear-gradient(180deg, #ce8cd7 0%, #2861c6 100%);
+    color: white;
+
+    &:hover {
+      background: linear-gradient(180deg, shade(#ce8cd7, 1.07) 0%, shade(#2861c6, 1.1) 100%);
+      color: white;
+    }
+
+    &:active {
+      background: linear-gradient(180deg, shade(#ce8cd7, .95) 0%, shade(#2861c6, .95) 100%);
+      color: white;
+    }
+  }
+
+  &.category-develop {
+    background: #5e5c64;
+    color: white;
+
+    &:hover {
+      background: shade(#5e5c64, 1.2);
+      color: white;
+    }
+
+    &:active {
+      background-color: shade(#5e5c64, .95);
+      color: white;
+    }
+  }
+
+  &.category-learn {
+    background: linear-gradient(180deg, #2ec27e 30%, #27a66c 100%);
+    color: white;
+
+    &:hover {
+      background: linear-gradient(180deg, shade(#2ec27e, 1.06) 30%, shade(#27a66c, 1.06) 100%);
+      color: white;
+    }
+
+    &:active {
+      background: linear-gradient(180deg, shade(#2ec27e, .95) 30%, shade(#27a66c, .95) 100%);
+      color: white;
+    }
+  }
+
+  &.category-play {
+    background: linear-gradient(75deg, #f9e2a7 0%, #eb5ec3 50%, #6d53e0 100%);
+    color: #393484;
+
+    &:hover {
+      background: linear-gradient(75deg, shade(#f9e2a7, 1.07) 0%, shade(#eb5ec3, 1.07) 50%, shade(#6d53e0, 1.07) 100%);
+      color: #393484;
+    }
+
+    &:active {
+      background: linear-gradient(75deg, shade(#f9e2a7, .97) 0%, shade(#eb5ec3, .95) 50%, shade(#6d53e0, 1.07) 100%);
+      color: #393484;
+    }
+  }
+
+  &.category-socialize {
+    background: linear-gradient(90deg, #ef4e9b 0%, #f77466 100%);
+    color: #fac7d1;
+
+    &:hover {
+      background: linear-gradient(90deg, shade(#ef4e9b, 1.08) 0%, shade(#f77466, 1.08) 100%);
+      color: #fac7d1;
+    }
+
+    &:active {
+      background: linear-gradient(90deg, shade(#ef4e9b, .95) 0%, shade(#f77466, .95) 100%);
+      color: #fac7d1;
+    }
+  }
+
+  &.category-work {
+    padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
+    color: #1c71d8;
+    background-color:#fdf8d7;
+    background-image: linear-gradient($borders_color 1px, transparent 1px),
+             linear-gradient(90deg, $borders_color 1px, transparent 1px);
+    background-size: 10px 10px, 10px 10px;
+    background-position: -1px -4px, center -1px;
+
+    &:hover {
+      color: #1c71d8;
+      background-color: lighten(#fdf8d7, 5%);
+      background-image: linear-gradient($borders_color 1px, transparent 1px),
+               linear-gradient(90deg, $borders_color 1px, transparent 1px);
+    }
+
+    &:active {
+      color: #1c71d8;
+      background-color: darken(#fdf8d7, 5%);
+      background-image: linear-gradient($borders_color 1px, transparent 1px),
+               linear-gradient(90deg, $borders_color 1px, transparent 1px);
+    }
+  }
+}
+
+clamp.medium .category-tile:not(.category-tile-iconless),
+clamp.large .category-tile:not(.category-tile-iconless) {
+  font-size: larger;
+}
+
+// The rest of the featured-tile CSS is loaded at runtime in gs-feature-tile.c
+.featured-tile {
+  padding: 0;
+  box-shadow: none;
+
+  label.title-1 {
+    margin-top: $cont_padding;
+    margin-bottom: $cont_padding;
+  }
+
+  &.narrow label.title-1 {
+    font-size: 16pt;
+  }
+}
+
+.application-details-infobar {
+  &, &.info {
+    background-color: $alt_borders_color;
+    color: $fg_color;
+    border: 1px solid $borders_color;
+  }
+
+  &.warning {
+    background-color: $warning_color;
+    color: white;
+    border: 1px solid $borders_color;
+  }
+}
+
+@keyframes install-progress-unknown-move {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+.application-details-description .button {
+  padding-left: $cont_padding * 4;
+  padding-right: $cont_padding * 4;
+}
+
+.install-progress {
+  background-image: linear-gradient(to top, $selected_bg_color 2px, gtkalpha($selected_bg_color, 0) 2px);
+  background-repeat: no-repeat;
+  background-position: 0 bottom;
+  background-size: 0;
+  transition: none;
+}
+
+.install-progress:dir(rtl) { background-position: 100% bottom; }
+
+.review-row > * {
+  margin: $cont_padding * 2;
+}
+
+.review-row button { font-size: smaller; }
+
+.review-row .vote-buttons button {
+  margin-right: -1px;
+}
+
+// this is the separator between yes and no vote buttons, gtk+ 3.20 only
+.review-row .vote-buttons button:not(:first-child) {
+  border-image: linear-gradient(to top, $borders_color, $borders_color) 0 0 0 1 / 5px 0 5px 1px;
+}
+
+.review-row .vote-buttons button:hover,
+.review-row .vote-buttons button:active,
+.review-row .vote-buttons button:hover + button,
+.review-row .vote-buttons button:active + button {
+  border-image: none;
+}
+
+review-bar {
+  color: $insensitive_fg_color;
+  background-image: none;
+  background-color: rgba($fg_color, 0.2);
+}
+
+.review-histogram star-image {
+  color: $insensitive_fg_color;
+}
+
+.version-arrow-label {
+  font-size: x-small;
+}
+
+.overview-more-button {
+  font-size: smaller;
+  padding: 0 $cont_padding * 2 + 4px;
+}
+
+.app-row-origin-text {
+  font-size: smaller;
+}
+
+.app-listbox-header {
+  padding: $cont_padding;
+  border-bottom: 1px solid $borders_color;
+}
+
+.image-list {
+  background-color: transparent;
+}
+
+box.star {
+  background-color: transparent;
+  background-image: none;
+}
+
+button.star {
+  outline-offset: 0;
+  background-color: transparent;
+  background-image: none;
+  border-image: none;
+  border-radius: 0;
+  border-width: 0;
+  padding: 0;
+  box-shadow: none;
+  outline-offset: -1px;
+}
+
+.dimmer-label {
+  opacity: 0.25;
+}
+
+.update-failed-details {
+  font-family: Monospace;
+  font-size: smaller;
+  padding: $cont_padding * 2 + 4px;
+}
+
+.upgrade-banner {
+  padding: 0px;
+  border-radius: $bt_radius;
+  border: none;
+}
+
+.upgrade-banner-background {
+  background: linear-gradient(to bottom, $success_color, $suggested_color);
+  color: white;
+}
+
+.upgrade-buttons #button_upgrades_install {
+  padding-left: $cont_padding * 2 + 4px;
+  padding-right: $cont_padding * 2 + 4px;
+}
+
+scrolledwindow.list-page > viewport > clamp > box {
+  margin: $cont_padding * 4 $cont_padding * 2;
+  border-spacing: $cont_padding * 4;
+}
+
+.update-preferences preferencesgroup > box > box {
+  margin-top: $cont_padding * 3;
+}
+
+.section > label:not(:first-child) { margin-top: $cont_padding; }
+
+.section > box:not(:first-child) { margin-top: $cont_padding * 2; }
+
+clamp.status-page {
+	margin: $cont_padding * 6 $cont_padding * 2;
+}
+
+clamp.status-page .iconbox {
+  min-height: 128px;
+  min-width: 128px;
+}
+
+clamp.status-page .icon {
+  color: $insensitive_fg_color;
+  min-height: 32px;
+  min-width: 32px;
+}
+
+clamp.status-page .icon:not(:last-child) {
+  margin-bottom: $cont_padding * 6;
+}
+
+clamp.status-page .title:not(:last-child) {
+  margin-bottom: $cont_padding * 2;
+}
+
+app-context-bar {
+  .context-tile {
+    border: 1px solid $borders_color;
+    background-color: transparent;
+    border-radius: 0;
+    padding: $cont_padding * 4 $cont_padding * 2 $cont_padding * 3.5 $cont_padding * 2;
+    outline-offset: 5px;
+    transition-property: outline, outline-offset, background-image;
+    border-bottom: none;
+    border-right: none;
+
+    &:hover {
+      background-image: none;
+      background-color: $borders_color;
+    }
+
+    &.keyboard-activating,
+    &:active {
+      background-color: rgba($fg_color, 0.2);
+    }
+
+    &:focus:focus-visible {
+      outline-offset: -1px;
+    }
+  }
+
+  &.horizontal box:first-child .context-tile:first-child,
+  &.vertical .context-tile:first-child {
+    border-left: none;
+  }
+
+  &.horizontal .context-tile,
+  &.vertical box:first-child .context-tile {
+  	border-top: none;
+  }
+
+  > box:not(:first-child) > button.flat {
+    border-radius: 0;
+
+    &:last-child {
+      border-radius: 0 $bt_radius $bt_radius 0;
+    }
+  }
+
+  > box:first-child > button.flat {
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: $bt_radius 0 0 $bt_radius;
+    }
+  }
+
+  > box > button.flat {
+    border-left-color: $borders_color;
+  }
+}
+
+carousel.card {
+  border: none;
+  background-color: $alt_borders_color;
+}
+
+.context-tile-lozenge {
+  min-height: 28px;
+  min-width: 28px;
+  padding: $cont_padding;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: $circular_radius;
+
+  &.large {
+    font-size: 24px;
+    padding: 16px;
+    min-width: 24px;  /* 60px minus the left and right padding */
+    min-height: 24px;  /* 60px minus the top and bottom padding */
+  }
+
+  &.wide-image image {
+    margin-top: -28px;
+    margin-bottom: -28px;
+  }
+}
+
+.eol-red {
+  font-weight: bold;
+  color: $error_color;
+}
+
+window.narrow .app-title {
+  font-size: 16pt;
+}
+
+window.narrow .app-developer {
+  font-size: small;
+}
+
+.install-progress-label {
+  font-size: smaller;
+  font-feature-settings: "tnum";
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box { margin: $cont_padding * 6 $cont_padding * 2; }
+scrolledwindow.fake-adw-status-page > viewport > box > clamp:not(:last-child) > box { margin-bottom: $cont_padding * 6; }
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .icon:not(:last-child) { margin-bottom: $cont_padding * 6; }
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(:last-child) { margin-bottom: $cont_padding * 2; }
+
+statuspage.icon-dropshadow image.icon {
+	-gtk-icon-shadow: 0 1px 12px rgba(0,0,0,0.05),
+	                  0 -1px rgba(0,0,0,0.05),
+	                  1px 0 rgba(0,0,0,0.1),
+	                  0 1px rgba(0,0,0,0.3),
+	                  -1px 0 rgba(0,0,0,0.1);
+}
+
+window.info scrollbar.vertical {
+  margin-top: 48px;
+  background: none;
+  box-shadow: none;
+}
+
+window.info scrollbar.vertical trough {
+  margin-top: 0;
+}
+
+// GsAppRow
+row.app > box.header {
+  margin-left: $cont_padding * 2;
+  margin-right: $cont_padding * 2;
+}
+
+row.app > box.header {
+  border-spacing: $cont_padding * 2;
+}
+
+row.app > box.header > image {
+  margin-top: $cont_padding * 2;
+  margin-bottom: $cont_padding * 2;
+}
+
+row.app label.warning {
+  color: $warning_color;
+}
+
+// GtkSpinner
+
+// Ensure the spinner is hidden before the animation is triggered.
+@keyframes pre-delay {
+  from { opacity: 0; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { filter: opacity(0%); }
+}
+
+/* Give a fade-in animation to spinners. */
+spinner.fade-in:checked {
+  animation: pre-delay 0.5s linear 1, fade-in 1s linear 1, spin 1s linear infinite;
+  animation-delay: 0s, 0.5s, 0.5s;
 }

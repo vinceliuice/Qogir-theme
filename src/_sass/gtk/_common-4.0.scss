@@ -1497,7 +1497,7 @@ headerbar {
 
   &.default-decoration {
     min-height: 30px;
-    padding: 0 if($titlebutton == 'circle', 8px, 3px);
+    // padding: 0 if($titlebutton == 'circle', 8px, 3px);
 
     windowcontrols {
       menubutton button {
@@ -3353,7 +3353,6 @@ row.expander {
   }
 
   // AdwExpanderRow arrow rotation
-
   image.expander-row-arrow {
     transition: 200ms $ease-out-quad;
     @include margin-start(6px);
