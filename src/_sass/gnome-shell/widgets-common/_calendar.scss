@@ -89,7 +89,15 @@
 
 .calendar-change-month-back,
 .calendar-change-month-forward {
-  padding: 0 1px !important;
+  width: 28px !important;
+  height: 28px !important;
+  padding: 2px !important;
+
+  &, &:focus, &:hover, &:active, &:checked {
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+  }
 
   StIcon { icon-size: 16px; }
 }

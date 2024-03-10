@@ -6208,8 +6208,8 @@ flowboxchild.card:not(.category-tile) {
 
 .category-tile.card {
   padding: 21px;
-  border: none;
-  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
   min-width: 140px;
   font-weight: 900;
   font-size: larger;
@@ -6221,11 +6221,13 @@ flowboxchild.card:not(.category-tile) {
   font-size: 105%;
   font-weight: normal;
   box-shadow: none;
+  border-radius: 2px;
 }
 
 .category-tile.card.category-create {
   background: linear-gradient(180deg, #ce8cd7 0%, #2861c6 100%);
   color: white;
+  border-color: #6c67b3;
 }
 
 .category-tile.card.category-create:hover {
@@ -6241,6 +6243,7 @@ flowboxchild.card:not(.category-tile) {
 .category-tile.card.category-develop {
   background: #5e5c64;
   color: white;
+  border-color: #39373e;
 }
 
 .category-tile.card.category-develop:hover {
@@ -6256,6 +6259,7 @@ flowboxchild.card:not(.category-tile) {
 .category-tile.card.category-learn {
   background: linear-gradient(180deg, #2ec27e 30%, #27a66c 100%);
   color: white;
+  border-color: #239460;
 }
 
 .category-tile.card.category-learn:hover {
@@ -6271,6 +6275,7 @@ flowboxchild.card:not(.category-tile) {
 .category-tile.card.category-play {
   background: linear-gradient(75deg, #f9e2a7 0%, #eb5ec3 50%, #6d53e0 100%);
   color: #393484;
+  border-color: #dba59e;
 }
 
 .category-tile.card.category-play:hover {
@@ -6286,6 +6291,7 @@ flowboxchild.card:not(.category-tile) {
 .category-tile.card.category-socialize {
   background: linear-gradient(90deg, #ef4e9b 0%, #f77466 100%);
   color: #fac7d1;
+  border-color: #bd4a66;
 }
 
 .category-tile.card.category-socialize:hover {

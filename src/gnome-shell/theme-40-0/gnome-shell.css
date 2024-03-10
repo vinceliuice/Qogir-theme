@@ -636,7 +636,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar-change-month-back,
 .calendar-change-month-forward {
-  padding: 0 1px !important;
+  width: 28px !important;
+  height: 28px !important;
+  padding: 2px !important;
+}
+
+.calendar-change-month-back, .calendar-change-month-back:focus, .calendar-change-month-back:hover, .calendar-change-month-back:active, .calendar-change-month-back:checked,
+.calendar-change-month-forward,
+.calendar-change-month-forward:focus,
+.calendar-change-month-forward:hover,
+.calendar-change-month-forward:active,
+.calendar-change-month-forward:checked {
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
 }
 
 .calendar-change-month-back StIcon,
@@ -2174,8 +2187,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-folder-dialog {
-  border-radius: 6px;
-  border: 1px solid #5294e2;
+  border-radius: 9px;
+  border: 1px solid rgba(211, 218, 227, 0.03);
   padding: 6px;
   space: 6px;
   background-color: rgba(40, 42, 51, 0.9);

@@ -711,8 +711,8 @@ flowboxchild.card:not(.category-tile) {
 
 .category-tile.card {
   padding: $cont_padding * 3.5;
-  border: none;
-  border-radius: $bt_radius;
+  border: 1px solid $borders_color;
+  border-radius: $bt_radius * 2;
   min-width: 140px;
   font-weight: 900;
   font-size: larger;
@@ -723,12 +723,14 @@ flowboxchild.card:not(.category-tile) {
     font-size: 105%;
     font-weight: normal;
     box-shadow: none;
+    border-radius: $bt_radius;
   }
 
   // Styling for specific category buttons.
   &.category-create {
     background: linear-gradient(180deg, #ce8cd7 0%, #2861c6 100%);
     color: white;
+    border-color: #6c67b3;
 
     &:hover {
       background: linear-gradient(180deg, shade(#ce8cd7, 1.07) 0%, shade(#2861c6, 1.1) 100%);
@@ -744,6 +746,7 @@ flowboxchild.card:not(.category-tile) {
   &.category-develop {
     background: #5e5c64;
     color: white;
+    border-color: #39373e;
 
     &:hover {
       background: shade(#5e5c64, 1.2);
@@ -759,6 +762,7 @@ flowboxchild.card:not(.category-tile) {
   &.category-learn {
     background: linear-gradient(180deg, #2ec27e 30%, #27a66c 100%);
     color: white;
+    border-color: #239460;
 
     &:hover {
       background: linear-gradient(180deg, shade(#2ec27e, 1.06) 30%, shade(#27a66c, 1.06) 100%);
@@ -774,6 +778,7 @@ flowboxchild.card:not(.category-tile) {
   &.category-play {
     background: linear-gradient(75deg, #f9e2a7 0%, #eb5ec3 50%, #6d53e0 100%);
     color: #393484;
+    border-color: #dba59e;
 
     &:hover {
       background: linear-gradient(75deg, shade(#f9e2a7, 1.07) 0%, shade(#eb5ec3, 1.07) 50%, shade(#6d53e0, 1.07) 100%);
@@ -789,6 +794,7 @@ flowboxchild.card:not(.category-tile) {
   &.category-socialize {
     background: linear-gradient(90deg, #ef4e9b 0%, #f77466 100%);
     color: #fac7d1;
+    border-color: #bd4a66;
 
     &:hover {
       background: linear-gradient(90deg, shade(#ef4e9b, 1.08) 0%, shade(#f77466, 1.08) 100%);
