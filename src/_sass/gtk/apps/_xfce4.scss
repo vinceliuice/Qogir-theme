@@ -163,7 +163,7 @@ window.thunar {
       background-color: $base_color;
       @extend %file_manager_img;
 
-      .view { @extend %view; background-color: transparent; }
+      .view:not(.rubberband) { @extend %view; background-color: transparent; }
 
       widget.view { border-radius: $bt_radius; }
     }

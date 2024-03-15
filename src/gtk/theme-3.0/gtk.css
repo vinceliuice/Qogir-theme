@@ -78,7 +78,7 @@ button.gtkstyle-fallback:active, button.gtkstyle-fallback:checked {
 }
 
 .view,
-window.thunar notebook scrolledwindow.frame.standard-view .view,
+window.thunar notebook scrolledwindow.frame.standard-view .view:not(.rubberband),
 iconview,
 textview text {
   color: #4a4c59;
@@ -86,7 +86,7 @@ textview text {
 }
 
 .view:hover,
-window.thunar notebook scrolledwindow.frame.standard-view .view:hover,
+window.thunar notebook scrolledwindow.frame.standard-view .view:hover:not(.rubberband),
 iconview:hover,
 textview text:hover {
   background-color: rgba(0, 0, 0, 0.08);
@@ -4924,7 +4924,7 @@ leaflet > box > scrolledwindow > viewport > list.navigation-sidebar > row.activa
 .xreader-window scrolledwindow.frame > .view:selected,
 .xreader-window scrolledwindow.frame > .view:active, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .view:selected, .view:selected:focus,
-window.thunar notebook scrolledwindow.frame.standard-view .view:selected,
+window.thunar notebook scrolledwindow.frame.standard-view .view:selected:not(.rubberband),
 textview text:selected,
 textview text:selected:focus, textview text selection:focus, textview text selection,
 iconview:selected,
@@ -4942,7 +4942,7 @@ leaflet > box > scrolledwindow > viewport > list.navigation-sidebar > row.activa
 .xreader-window scrolledwindow.frame > .view:selected,
 .xreader-window scrolledwindow.frame > .view:active, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .view:selected, .view:selected:focus,
-window.thunar notebook scrolledwindow.frame.standard-view .view:selected,
+window.thunar notebook scrolledwindow.frame.standard-view .view:selected:not(.rubberband),
 textview text:selected,
 textview text:selected:focus, textview text selection:focus, textview text selection,
 iconview:selected,
@@ -4960,7 +4960,7 @@ leaflet > box > scrolledwindow > viewport > list.navigation-sidebar > row.activa
 .xreader-window scrolledwindow.frame > .view:disabled:selected,
 .xreader-window scrolledwindow.frame > .view:disabled:active, .caja-desktop > widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .view:disabled:selected,
-window.thunar notebook scrolledwindow.frame.standard-view .view:disabled:selected,
+window.thunar notebook scrolledwindow.frame.standard-view .view:disabled:selected:not(.rubberband),
 textview text:disabled:selected,
 textview text:disabled:selected:focus, textview text selection:disabled,
 iconview:disabled:selected,
@@ -9373,7 +9373,7 @@ window.thunar notebook scrolledwindow.frame.standard-view {
   background-color: #ffffff;
 }
 
-window.thunar notebook scrolledwindow.frame.standard-view .view {
+window.thunar notebook scrolledwindow.frame.standard-view .view:not(.rubberband) {
   background-color: transparent;
 }
 
