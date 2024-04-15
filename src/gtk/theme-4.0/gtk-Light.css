@@ -5912,34 +5912,34 @@ leaflet.unfolded > box:last-child > headerbar {
   border-left: 1px solid #d3e1eb;
 }
 
-.nautilus-window .nautilus-grid-view.view gridview.view {
+.nautilus-window .nautilus-grid-view gridview {
   background-image: none;
 }
 
-.nautilus-window .nautilus-grid-view.view gridview.view child.activatable {
+.nautilus-window .nautilus-grid-view gridview child.activatable {
   border-radius: 4px;
   border: 1px solid transparent;
 }
 
-.nautilus-window .nautilus-grid-view.view gridview.view child.activatable:hover {
+.nautilus-window .nautilus-grid-view gridview child.activatable:hover {
   border-color: rgba(82, 148, 226, 0.65);
   background-color: rgba(82, 148, 226, 0.15);
 }
 
-.nautilus-window .nautilus-grid-view.view gridview.view child.activatable:active {
+.nautilus-window .nautilus-grid-view gridview child.activatable:active {
   border-color: rgba(82, 148, 226, 0.75);
   background-color: rgba(82, 148, 226, 0.25);
   transition: all 180ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.nautilus-window .nautilus-grid-view.view gridview.view child.activatable:selected {
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected {
   border-color: #5294e2;
   background-color: rgba(82, 148, 226, 0.35);
   color: #5294e2;
   transition: all 180ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.nautilus-window .nautilus-grid-view.view gridview.view child.activatable:selected:hover {
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected:hover {
   background-color: rgba(82, 148, 226, 0.42);
 }
 

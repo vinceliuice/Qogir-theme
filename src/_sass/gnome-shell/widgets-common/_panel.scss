@@ -1,9 +1,10 @@
 /* Top Bar */
 
+$panel_height: 2.1em;
+
 #panel {
   font-weight: normal;
-  height: 2.1em;
-  min-height: 27px;
+  height: $panel_height;
   background-color: $panel_bg;
   border: none;
   font-feature-settings: "tnum";
