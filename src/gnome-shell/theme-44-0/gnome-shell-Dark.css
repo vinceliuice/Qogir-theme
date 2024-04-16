@@ -3385,7 +3385,7 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(44, 47, 57, 0.9);
   margin-bottom: 16px;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .dash-item-container > * {

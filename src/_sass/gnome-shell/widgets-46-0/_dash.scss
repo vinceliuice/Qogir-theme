@@ -6,7 +6,7 @@ $dash_background_color: lighten($panel_bg, 5%);
 $dash_placeholder_size: 32px;
 $dash_padding: $base_padding * 2;
 $dash_edge_offset: $base_margin * 3;
-$dash_border_radius: $bt_radius + $dash_padding;
+$dash_border_radius: $bt_radius + $dash_padding - 2px;
 $dash_spacing: $base_margin * 0.5;
 
 // container for the dash
