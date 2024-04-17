@@ -350,8 +350,8 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     }
   }
 
-  .nautilus-grid-view.view {
-    gridview.view {
+  .nautilus-grid-view {
+    gridview {
       @if $background == 'image' {
         @extend %nautilus_background_image;
       } @else {

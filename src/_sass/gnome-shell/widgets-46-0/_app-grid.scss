@@ -1,0 +1,144 @@
+
+/* App Icons */
+
+// Icon tiles in the app grid
+.app-well-app,
+%app-well-app {
+  @extend %overview-icon;
+
+  .overview-icon.overview-icon-with-label {
+    padding: 10px 8px 5px 8px;
+
+    > StBoxLayout {
+      spacing: $cont_padding;
+    }
+  }
+}
+
+/* App Folders */
+.app-well-app.app-folder {
+  background-color: rgba(darken($dark_sidebar_icon_bg, 5%), 0.5);
+  border: 1px solid darken($dark_sidebar_icon_bg, 3%);
+  border-radius: $material_radius;
+
+  &:focus,
+  &:hover {
+    background-color: rgba(lighten($dark_sidebar_icon_bg, 3%), 0.5);
+    border-color: lighten($dark_sidebar_icon_bg, 5%);
+  }
+
+  &:active {
+    background-color: rgba($selected_bg_color, 0.5);
+    border: 1px solid $selected_bg_color;
+  }
+
+  &, &:hover, &:active {
+    .overview-icon {
+      background: none;
+      border: none;
+    }
+  }
+}
+
+// expanded folder
+.app-folder-dialog {
+  border-radius: $material_radius * 3;
+  border: 1px solid rgba($osd_fg_color, 0.03);
+  padding: 6px;
+  space: 6px;
+  background-color: rgba($osd_bg_color, 0.9);
+
+  & .folder-name-container {
+    padding: 12px 18px 0;
+    spacing: 12px;
+
+    & .folder-name-label,
+    & .folder-name-entry {
+      font-size: 16pt;
+      font-weight: bold;
+    }
+
+    & .folder-name-entry {
+      @extend %search_entry;
+      width: 300px;
+    }
+
+    /* FIXME: this is to keep the label in sync with the entry */
+    & .folder-name-label { padding: 5px 7px; color: $selected_fg_color; }
+
+    & .edit-folder-button {
+      @include button(osd);
+      padding: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: $circular_radius;
+
+      & > StIcon { icon-size: 16px }
+
+      &:hover { @include button(osd-hover); }
+      &:active, &:checked { @include button(osd-active); }
+    }
+  }
+
+  & .icon-grid {
+    row-spacing: $cont_padding * 2;
+    column-spacing: $cont_padding * 3;
+    page-padding-top: 0;
+    page-padding-bottom: 0;
+    page-padding-left: 0;
+    page-padding-right: 0;
+  }
+
+  & .page-indicators {
+    margin-bottom: 18px;
+
+    .page-indicator {
+      padding: 15px 12px;
+    }
+  }
+
+  & StButton#vhandle,
+  & StButton#vhandle:hover,
+  & StButton#vhandle:active { background-color: transparent; }
+}
+
+.app-folder-dialog-container {
+  padding: 6px;
+  width: 600px;
+  height: 600px;
+}
+
+// Running app indicator (also shown in dash)
+.app-well-app-running-dot { //running apps indicator
+  width: 12px; height: 2px;
+  border-radius: 0;
+  background-color: $sec_selected_fg_color;
+  margin-bottom: 2px;
+}
+
+StWidget.focused .app-well-app-running-dot {
+  width: 28px; height: 2px;
+  background-color: $selected_bg_color;
+}
+
+// Rename popup for app folders
+.rename-folder-popup {
+  .rename-folder-popup-item {
+    spacing: $cont_padding;
+    &:ltr, &:rtl { padding: 0 $cont_padding * 2; }
+  }
+}
+
+// right-click app menu
+.app-menu,
+.app-well-menu {
+  max-width: 27.25em;
+}
+
+// shutdown and other actions in the grid
+.system-action-icon {
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  border-radius: 99px;
+  icon-size: 48px;
+}

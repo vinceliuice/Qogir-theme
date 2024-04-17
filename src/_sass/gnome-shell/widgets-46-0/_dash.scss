@@ -1,0 +1,36 @@
+/* Dash */
+
+//osd tooltip
+.dash-label {
+  border-radius: $bt_radius;
+  padding: 4px 12px;
+  color: $_shell_fg_color;
+  background-color: rgba(darken($osd_bg_color, 8%), 0.95);
+  text-align: center;
+  border: none;
+  box-shadow: none;
+  -x-offset: 8px;
+  -y-offset: 4px; // distance from the dash edge
+}
+
+// Dash Buttons
+
+.show-apps {
+  .overview-icon {
+    background-color: transparent;
+    border-radius: $bt_radius;
+    // border: 1px solid transparent;
+    color: $panel_fg;
+  }
+
+  &:hover .overview-icon {
+    background-color: rgba(white, 0.1);
+  }
+
+  &:active .overview-icon,
+  &:checked .overview-icon {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    box-shadow: none;
+  }
+}
