@@ -1399,11 +1399,9 @@ StScrollBar {
     padding-right: 30px;
     padding-left: 28px;
     text-align: right;
-    height: 30px;
 
     &:rtl {
       padding-top: 10px;
-      height: 30px;
     }
   }
 
@@ -1417,7 +1415,6 @@ StScrollBar {
 
 #menu-search-entry {
   width: 250px;
-  height: 15px;
   font-weight: normal;
   caret-color: $fg_color;
   margin-right: 6px;
