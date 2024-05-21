@@ -221,6 +221,19 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     }
   }
 
+  .sidebar-pane headerbar { // reset
+    button:not(.suggested-action):not(.destructive-action) {
+      @include button(header-normal);
+      border: 1px solid transparent;
+
+      &:hover { @include button(header-hover); }
+
+      &:checked, &:active { @include button(header-active); }
+
+      &:disabled { @include button(header-insensitive); }
+    }
+  }
+
   flap.unfolded,
   .sidebar-pane > toolbarview {
     background-color: $dark_sidebar_bg;
@@ -580,6 +593,10 @@ leaflet.unfolded {
         }
       }
     }
+  }
+
+  > headerbar.titlebar.tweak-titlebar-left { // Gnome Tweaks
+    @extend %side_headerbar;
   }
 
   > separator, > separator.sidebar {

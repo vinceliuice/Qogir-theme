@@ -117,6 +117,7 @@ flowbox.search-bar {
 
 gridview > child {
   padding: 3px;
+  border-radius: 4px;
 }
 
 gridview > child:focus:focus-visible {
@@ -1774,6 +1775,18 @@ treeview spinbutton:not(.vertical) {
 treeview spinbutton:not(.vertical) > text {
   min-height: 0;
   padding: 1px 2px;
+}
+
+row.spin .suffixes {
+  border-spacing: 0;
+}
+
+row.spin spinbutton {
+  margin: 10px 0;
+}
+
+row.spin spinbutton > button {
+  margin: 0;
 }
 
 dropdown > button > box {
@@ -5598,29 +5611,29 @@ leaflet.unfolded > box:last-child popover.background > contents:disabled, leafle
   background-color: rgba(246, 246, 251, 0.08);
 }
 
-leaflet.unfolded > box:last-child popover.background > contents .button, leaflet.unfolded > box:last-child popover.background > contents button, leaflet.unfolded > box:last-child popover.background > contents modelbutton, leaflet.unfolded > box:last-child popover.background > arrow .button, leaflet.unfolded > box:last-child popover.background > arrow button, leaflet.unfolded > box:last-child popover.background > arrow modelbutton, leaflet.unfolded > box:last-child > headerbar button, .sidebar-pane datechooser button.flat, leaflet.unfolded > box:last-child button.flat {
+leaflet.unfolded > box:last-child popover.background > contents .button, leaflet.unfolded > box:last-child popover.background > contents button, leaflet.unfolded > box:last-child popover.background > contents modelbutton, leaflet.unfolded > box:last-child popover.background > arrow .button, leaflet.unfolded > box:last-child popover.background > arrow button, leaflet.unfolded > box:last-child popover.background > arrow modelbutton, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button, leaflet.unfolded > box:last-child > headerbar button, .sidebar-pane datechooser button.flat, leaflet.unfolded > box:last-child button.flat {
   border: none;
   background: none;
   box-shadow: none;
   color: rgba(246, 246, 251, 0.8);
 }
 
-leaflet.unfolded > box:last-child popover.background > contents .button:hover, leaflet.unfolded > box:last-child popover.background > contents button:hover, leaflet.unfolded > box:last-child popover.background > contents modelbutton:hover, leaflet.unfolded > box:last-child popover.background > arrow .button:hover, leaflet.unfolded > box:last-child popover.background > arrow button:hover, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:hover, leaflet.unfolded > box:last-child > headerbar button:hover, .sidebar-pane datechooser button.flat:hover, leaflet.unfolded > box:last-child button.flat:hover {
+leaflet.unfolded > box:last-child popover.background > contents .button:hover, leaflet.unfolded > box:last-child popover.background > contents button:hover, leaflet.unfolded > box:last-child popover.background > contents modelbutton:hover, leaflet.unfolded > box:last-child popover.background > arrow .button:hover, leaflet.unfolded > box:last-child popover.background > arrow button:hover, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:hover, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:hover, leaflet.unfolded > box:last-child > headerbar button:hover, .sidebar-pane datechooser button.flat:hover, leaflet.unfolded > box:last-child button.flat:hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.15);
 }
 
-leaflet.unfolded > box:last-child popover.background > contents .button:focus, leaflet.unfolded > box:last-child popover.background > contents button:focus, leaflet.unfolded > box:last-child popover.background > contents modelbutton:focus, leaflet.unfolded > box:last-child popover.background > arrow .button:focus, leaflet.unfolded > box:last-child popover.background > arrow button:focus, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:focus, leaflet.unfolded > box:last-child > headerbar button:focus, .sidebar-pane datechooser button.flat:focus, leaflet.unfolded > box:last-child button.flat:focus {
+leaflet.unfolded > box:last-child popover.background > contents .button:focus, leaflet.unfolded > box:last-child popover.background > contents button:focus, leaflet.unfolded > box:last-child popover.background > contents modelbutton:focus, leaflet.unfolded > box:last-child popover.background > arrow .button:focus, leaflet.unfolded > box:last-child popover.background > arrow button:focus, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:focus, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:focus, leaflet.unfolded > box:last-child > headerbar button:focus, .sidebar-pane datechooser button.flat:focus, leaflet.unfolded > box:last-child button.flat:focus {
   color: rgba(246, 246, 251, 0.8);
   box-shadow: none;
 }
 
-leaflet.unfolded > box:last-child popover.background > contents .button:active, leaflet.unfolded > box:last-child popover.background > contents button:active, leaflet.unfolded > box:last-child popover.background > contents modelbutton:active, leaflet.unfolded > box:last-child popover.background > arrow .button:active, leaflet.unfolded > box:last-child popover.background > arrow button:active, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:active, leaflet.unfolded > box:last-child > headerbar button:active, leaflet.unfolded > box:last-child popover.background > contents .button:checked, leaflet.unfolded > box:last-child popover.background > contents button:checked, leaflet.unfolded > box:last-child popover.background > contents modelbutton:checked, leaflet.unfolded > box:last-child popover.background > arrow .button:checked, leaflet.unfolded > box:last-child popover.background > arrow button:checked, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:checked, leaflet.unfolded > box:last-child > headerbar button:checked, .sidebar-pane datechooser button.flat:active, leaflet.unfolded > box:last-child button.flat:active, .sidebar-pane datechooser button.flat:checked, leaflet.unfolded > box:last-child button.flat:checked {
+leaflet.unfolded > box:last-child popover.background > contents .button:active, leaflet.unfolded > box:last-child popover.background > contents button:active, leaflet.unfolded > box:last-child popover.background > contents modelbutton:active, leaflet.unfolded > box:last-child popover.background > arrow .button:active, leaflet.unfolded > box:last-child popover.background > arrow button:active, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:active, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:active, leaflet.unfolded > box:last-child > headerbar button:active, leaflet.unfolded > box:last-child popover.background > contents .button:checked, leaflet.unfolded > box:last-child popover.background > contents button:checked, leaflet.unfolded > box:last-child popover.background > contents modelbutton:checked, leaflet.unfolded > box:last-child popover.background > arrow .button:checked, leaflet.unfolded > box:last-child popover.background > arrow button:checked, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:checked, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:checked, leaflet.unfolded > box:last-child > headerbar button:checked, .sidebar-pane datechooser button.flat:active, leaflet.unfolded > box:last-child button.flat:active, .sidebar-pane datechooser button.flat:checked, leaflet.unfolded > box:last-child button.flat:checked {
   color: #ffffff;
   background-color: #5294e2;
 }
 
-leaflet.unfolded > box:last-child popover.background > contents .button:disabled, leaflet.unfolded > box:last-child popover.background > contents button:disabled, leaflet.unfolded > box:last-child popover.background > contents modelbutton:disabled, leaflet.unfolded > box:last-child popover.background > arrow .button:disabled, leaflet.unfolded > box:last-child popover.background > arrow button:disabled, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:disabled, leaflet.unfolded > box:last-child > headerbar button:disabled, .sidebar-pane datechooser button.flat:disabled, leaflet.unfolded > box:last-child button.flat:disabled {
+leaflet.unfolded > box:last-child popover.background > contents .button:disabled, leaflet.unfolded > box:last-child popover.background > contents button:disabled, leaflet.unfolded > box:last-child popover.background > contents modelbutton:disabled, leaflet.unfolded > box:last-child popover.background > arrow .button:disabled, leaflet.unfolded > box:last-child popover.background > arrow button:disabled, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:disabled, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:disabled, leaflet.unfolded > box:last-child > headerbar button:disabled, .sidebar-pane datechooser button.flat:disabled, leaflet.unfolded > box:last-child button.flat:disabled {
   color: rgba(246, 246, 251, 0.35);
 }
 
@@ -5677,7 +5690,7 @@ leaflet.unfolded > box:last-child list > row:selected:hover {
   border: none;
 }
 
-leaflet.unfolded > box:last-child > headerbar {
+leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > box:last-child > headerbar {
   color: rgba(246, 246, 251, 0.8);
   background-color: #32343D;
   border: none;
@@ -5780,6 +5793,36 @@ leaflet.unfolded > box:last-child > headerbar {
 
 .nautilus-window:not(.view) headerbar, .nautilus-window:not(.view) headerbar:backdrop {
   box-shadow: inset 0 -1px rgba(50, 52, 61, 0.15), inset 38px 0 0 0 transparent;
+}
+
+.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action) {
+  color: #e0e5eb;
+  outline-offset: -3px;
+  background-color: rgba(40, 42, 51, 0);
+  border-color: rgba(40, 42, 51, 0);
+  border: 1px solid transparent;
+}
+
+.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):hover {
+  color: #e0e5eb;
+  border-color: rgba(255, 255, 255, 0.12);
+  background-color: #333641;
+}
+
+.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):checked, .nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):active {
+  color: #ffffff;
+  border-color: #68a2e6;
+  background-color: #5294e2;
+}
+
+.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled {
+  background-color: rgba(40, 42, 51, 0);
+  border-color: rgba(40, 42, 51, 0);
+}
+
+.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled label, .nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled {
+  color: rgba(224, 229, 235, 0.5);
+  opacity: 1;
 }
 
 .nautilus-window flap.unfolded,

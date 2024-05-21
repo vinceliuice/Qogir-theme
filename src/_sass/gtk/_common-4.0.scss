@@ -1193,6 +1193,21 @@ spinbutton {
   font-feature-settings: "tnum";
 }
 
+// Row spin
+row.spin {
+  .suffixes {
+    border-spacing: 0;
+  }
+
+  spinbutton {
+    margin: 10px 0;
+
+    > button {
+      margin: 0;
+    }
+  }
+}
+
 //
 // Comboboxes
 //
