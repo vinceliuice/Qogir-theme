@@ -1,0 +1,111 @@
+/* Search */
+
+// search overview container
+#searchResultsContent {
+  max-width: 1024px;
+  spacing: 8px;
+}
+
+// search results sections "the boxes"
+.search-section {
+  // This should be equal to #searchResultsContent spacing
+  spacing: 8px;
+
+  // separator
+  .search-section-separator {
+    height: 1px;
+    background-color: rgba(white, 0.1);
+  }
+}
+
+// content
+.search-section-content {
+  background-color: transparent;
+  border-radius: $bt_radius;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: $osd_fg_color;
+  padding: 18px;
+  // This is the space between the provider icon and the results container
+  spacing: 8px;
+}
+
+%search-section-content-item {
+  @extend %icon_tile;
+
+  &:focus, &:hover, &:selected {
+    background-color: rgba($selected_bg_color, 0.5);
+    border: 1px solid $selected_bg_color;
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: rgba($selected_bg_color, 0.75);
+    border: 1px solid $selected_bg_color;
+  }
+}
+
+// "no results" text
+.search-statustext {
+  @extend %status_text;
+}
+
+.grid-search-results {
+  spacing: 36px;
+}
+
+// Search results with icons
+.grid-search-result {
+  @extend %app-well-app;
+}
+
+// search result provider
+.search-provider-icon {
+  @extend %search-section-content-item;
+
+  // content
+  .list-search-provider-content {
+    spacing: 12px;
+
+    // provider labels
+    .list-search-provider-details {
+      width: 120px;
+      margin-top: 0;
+      color: rgba(white, 0.65);
+      font-weight: normal;
+    }
+  }
+}
+
+// search results list
+.list-search-results {
+  spacing: 6px;
+}
+
+// search result listitem
+.list-search-result {
+  @extend %search-section-content-item;
+
+  // content
+  .list-search-result-content {
+    spacing: 6px;
+  }
+
+  // list item title (with leading icon)
+  .list-search-result-title {
+    spacing: 12px;
+    font-weight: normal;
+  }
+
+  // list item description
+  .list-search-result-description {
+    color: rgba(white, 0.65);
+  }
+
+  &:active {
+    .list-search-result-description {
+      color: white;
+    }
+  }
+}

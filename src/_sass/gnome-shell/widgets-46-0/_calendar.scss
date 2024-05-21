@@ -1,0 +1,323 @@
+/* Date/Time Menu */
+
+.clock-display-box {
+  spacing: 2px;
+
+  .clock {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+#calendarArea {
+  padding: 12px 0;
+}
+
+.calendar {
+  margin: 0;
+  padding: 6px;
+  box-shadow: none;
+  background: none;
+  border: none;
+  text-shadow: none;
+}
+
+.datemenu-displays-box,
+.message-list-sections {
+  margin: 4px 8px;
+}
+
+.datemenu-calendar-column {
+  spacing: 6px;
+  border: none;
+  padding: 0 6px;
+
+  &:ltr { margin-right: 12px; border-left-width: 0; }
+  &:rtl { margin-left: 12px; border-right-width: 0; }
+
+  .datemenu-displays-section { padding-bottom: 0; }
+  .datemenu-displays-box { spacing: 6px; }
+}
+
+.datemenu-today-button {
+  border-radius: $bt_radius;
+  padding: 4px 8px;
+  margin: 0;
+  border: 1px solid transparentize($base_color, 1);
+  background: none;
+  color: transparentize($fg_color, 0.35);
+  text-shadow: none;
+
+  &:hover, &:focus { @include button(hover); }
+  &:active { @include button(active); }
+
+  // weekday label
+  .day-label {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  // date label
+  .date-label {
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+}
+
+.calendar-month-label {
+  color: $fg_color;
+  font-weight: bold;
+  padding: 8px 0;
+  text-shadow: none;
+  font-size: 1em;
+  // &:focus {}
+}
+
+.pager-button {
+  width: 28px !important;
+  height: 28px !important;
+  margin: 2px !important;
+  padding: 0 !important;
+  border-radius: $circular_radius;
+  background-color: transparent;
+  color: $fg_color;
+
+  &:hover, &:focus { background-color: rgba($fg_color, 0.1); }
+
+  &:active { background-color: rgba($fg_color, 0.15); }
+}
+
+.calendar-change-month-back,
+.calendar-change-month-forward {
+  width: 28px !important;
+  height: 28px !important;
+  padding: 2px !important;
+
+  &, &:focus, &:hover, &:active, &:checked {
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+  }
+
+  StIcon { icon-size: 16px; }
+}
+
+.calendar-day,
+.calendar-day-base {
+  font-size: 90%;
+  text-align: center;
+  width: 2.4em !important;
+  height: 2.4em !important;
+  padding: 0.1em !important;
+  margin: 2px !important;
+  border-radius: $circular_radius;
+  font-feature-settings: "tnum";
+  color: $alt_fg_color;
+  background-color: transparent;
+
+  &:hover, &:focus {
+    background-color: $alt_bg_color;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  &:active, &:checked, &:selected {
+    color: $fg_color;
+    background-color: $sec_bg_color;
+    border: none;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  &.calendar-day-heading {  //day of week heading
+    color: $alt_fg_color;
+    margin-top: 1em;
+    font-size: 80%;
+  }
+
+  &.calendar-weekday {}
+
+  &.calendar-weekend {
+    color: $insensitive_fg_color;
+  }
+
+  &.calendar-other-month {
+    color: $insensitive_fg_color !important;
+    font-weight: normal;
+  }
+}
+
+.calendar-day { //border collapse hack - see calendar.js
+  border-width: 0;
+  color: transparentize($fg_color, 0.2);
+  background-color: transparent;
+
+  &:active, &:checked, &:selected {
+    color: $fg_color;
+    background-color: $sec_bg_color;
+    border: none;
+  }
+}
+
+.calendar-day-top { border-top-width: 0; }
+.calendar-day-left { border-left-width: 0; }
+
+// .calendar-work-day {}
+
+.calendar-nonwork-day {
+  color: $fg_color;
+  font-weight: bold;
+}
+
+.calendar-today,
+.calendar-today:active,
+.calendar-today:selected,
+.calendar-today:focus,
+.calendar-today:hover {
+  font-weight: bold;
+  color: $selected_fg_color;
+  background-color: $selected_bg_color;
+  border: none;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.calendar-day-with-events {
+  font-weight: bold;
+  background-image: url("assets/calendar-today.svg");
+}
+
+.calendar-today.calendar-day-with-events { color: $selected_fg_color; }
+
+.calendar-other-month-day {
+  color: transparentize($fg_color, 0.7);
+  opacity: 1;
+}
+
+.calendar-week-number {
+  font-size: 70%;
+  font-weight: bold;
+  text-align: center;
+  width: 2.3em;
+  height: 2.3em;
+  border-radius: $bt_radius;
+  padding: 0 !important;
+  margin: 6px !important;
+  background-color: rgba($fg_color, 0.1);
+  color: $alt_fg_color;
+}
+
+// buttons under calendar
+.world-clocks-button,
+.weather-button,
+.events-button {
+  border-radius: $bt_radius;
+  padding: 8px 10px;
+  margin: 0;
+  text-shadow: none;
+  @include button(hover);
+
+  &:hover, &:focus {
+    background-color: if($variant=='light', rgba(black, 0.06), rgba(white, 0.1));
+    border: 1px solid if($variant=='light', darken($button_border, 8%), lighten($button_border, 8%));
+  }
+
+  &:active { @include button(active); }
+}
+
+.world-clocks-header,
+.weather-header,
+.message-list-section-title,
+.events-section-title {
+  color: $alt_fg_color;
+  font-weight: bold;
+}
+
+.world-clocks-grid,
+.weather-grid {
+  spacing-rows: 0.4em;
+  spacing-columns: 0.8em;
+}
+
+// World Clock
+.world-clocks-city {
+  color: $sec_fg_color;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.world-clocks-time {
+  color: $sec_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 1.2em;
+}
+
+.world-clocks-timezone {
+  color: $alt_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 0.9em;
+}
+
+// Weather button
+.weather-box {
+  spacing: 0.4em;
+}
+
+.weather-header.location {
+  font-weight: normal;
+  color: transparentize($fg_color, 0.45);
+}
+
+.weather-forecast-icon {
+  icon-size: 2.18em;
+  color: transparentize($fg_color, 0.35);
+}
+
+.weather-forecast-time {
+  color: $sec_fg_color;
+  font-size: 0.8em;
+  font-feature-settings: "tnum";
+  font-weight: normal;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+}
+
+.weather-forecast-temp {
+  font-weight: bold;
+  color: transparentize($fg_color, 0.35);
+  text-shadow: none;
+}
+
+.world-clocks-button:active *,
+.weather-button:active * {
+  color: $selected_fg_color;
+}
+
+// Events button
+.events-button {
+  .events-box {
+    spacing: 6px;
+  }
+
+  .events-list {
+    spacing: 12px;
+    text-shadow: none;
+    color: $sec_fg_color;
+  }
+
+  .events-title {
+    color: $alt_fg_color;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-shadow: none;
+  }
+
+  .event-time {
+    color: $alt_fg_color;
+    font-feature-settings: "tnum";
+  }
+
+  &:active .events-list,
+  &:active .events-title,
+  &:active .event-time { color: white !important; }
+}

@@ -1,0 +1,230 @@
+/* Message List */
+// a.k.a. notifications in the menu
+
+// main list
+.message-list {
+  width: 29em;
+  text-shadow: none;
+  border: solid $borders_color;
+
+  // padding and margins to account for scrollbar
+  &:ltr {
+    margin-left: 0;
+    margin-right: 4px;
+    padding-left: 18px;
+    padding-right: 6px;
+    border-right-width: 1px;
+  }
+
+  &:rtl {
+    margin-right: 0;
+    margin-left: 4px;
+    padding-left: 6px;
+    padding-right: 18px;
+    border-left-width: 1px;
+  }
+
+  .message-list-placeholder {
+    color: $insensitive_fg_color;
+
+    // icon size and color
+    > StIcon {
+      icon-size: 48px; // 48px
+      margin-bottom: 12px;
+      -st-icon-style: symbolic;
+    }
+  }
+}
+
+.message-list-sections {
+  spacing: 6px;
+  margin: 0; // to account for scrollbar
+  padding-bottom: 6px;
+
+  // to account for scrollbar
+  &:ltr { margin-right: 12px; }
+  &:rtl { margin-left: 12px; }
+}
+
+.message-list-section,
+.message-list-section-list {
+  spacing: 6px;
+}
+
+// do-not-disturb + clear button
+.message-list-controls {
+  margin: 0 12px !important;
+  // NOTE: remove the padding if notification_bubble could remove margin for drop shadow
+  padding: 0 6px !important;
+  spacing: 6px !important;
+  font-weight: normal;
+
+  .dnd-button, .button {
+    font-weight: normal;
+  }
+}
+
+// message bubbles
+.message {
+  border-radius: $bt_radius;
+  text-shadow: none;
+  padding: 0 !important;
+  spacing: 6px !important;
+
+  .popup-menu & {
+    box-shadow: none;
+    @include button(hover);
+
+    &:hover, &:focus {
+      background-color: if($variant=='light', rgba(black, 0.06), rgba(white, 0.1));
+      border: 1px solid if($variant=='light', darken($button_border, 8%), lighten($button_border, 8%));
+    }
+
+    &:active {
+      @include button(active);
+
+      .message-content,
+      .message-title,
+      .message-body,
+      .message-secondary-bin > .event-time,
+      .message-close-button,
+      .message-media-control {
+        color: rgba($selected_fg_color, 0.75);
+
+        &:insensitive { color: rgba($selected_fg_color, 0.45); }
+      }
+    }
+  }
+
+  // icon container
+  .message-icon-bin {
+    padding: 18px;
+
+    &:ltr { padding-right: 6px; }
+    &:rtl { padding-left: 6px; }
+
+    // icon size and color
+    > StIcon {
+      icon-size: 32px; // 32px
+      -st-icon-style: symbolic;
+    }
+
+    // fallback
+    > .fallback-app-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  // content
+  .message-content {
+    padding: 9px;
+    spacing: 4px;
+    margin-bottom: 8px;
+    text-shadow: none;
+  }
+
+  // title
+  .message-title {
+    font-weight: bold;
+    text-shadow: none;
+    padding-top: 0.57em;
+  }
+
+  // secondary container in title box
+  .message-secondary-bin {
+    padding: 0 8px;
+
+    // notification time stamp
+    > .event-time {
+      color: transparentize($fg_color, 0.5);
+      @include fontsize($font-size - 2);
+      /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
+      padding-bottom: 0.13em;
+
+      &:ltr { text-align: right; }
+      &:rtl { text-align: left; }
+    }
+  }
+
+  // close button
+  .message-close-button {
+    min-height: 24px !important;
+    min-width: 24px !important;
+    color: $alt_fg_color;
+    border-radius: $circular_radius;
+    padding: 0 !important;
+    magrin: 0 !important;
+
+    StIcon {
+      icon-size: 16px;
+      -st-icon-style: symbolic;
+    }
+
+    &:hover {
+      color: $fg_color;
+      background-color: rgba($fg_color, 0.1);
+    }
+
+    &:active {
+      color: $fg_color;
+      background-color: rgba($fg_color, 0.2);
+    }
+  }
+
+  // body
+  .message-body {
+    color: $alt_fg_color;
+  }
+}
+
+// URLs in messages
+.url-highlighter {
+  link-color: $link_color;
+}
+
+/* Media Controls */
+.message-media-control {
+  margin: 24px 4px !important;
+  padding: 0 10px !important;
+  color: $alt_fg_color;
+  border-radius: $circular_radius;
+
+  &:last-child:ltr { margin-right: 18px !important; }
+  &:last-child:rtl { margin-left: 18px !important; }
+
+  StIcon {
+    icon-size: 16px;
+    -st-icon-style: symbolic;
+  }
+
+  // uses $hover_bg_color since the media controls are in a notification_bubble
+  &:hover {
+    color: $fg_color;
+    background-color: rgba($fg_color, 0.15);
+  }
+
+  &:active {
+    color: $fg_color;
+    background-color: rgba($fg_color, 0.25);
+  }
+
+  &:insensitive { color: $insensitive_fg_color; }
+}
+
+// album-art
+.media-message-cover-icon {
+  icon-size: 48px !important; // 48px
+  border-radius: $bt_radius;
+
+  // when there is no artwork
+  &.fallback {
+    color: $alt_fg_color;
+    background-color: $bg_color;
+    border: none;
+    border-radius: $bt_radius;
+    icon-size: 32px !important;
+    padding: 16px !important;
+    margin: 0 !important;
+  }
+}

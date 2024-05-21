@@ -118,6 +118,7 @@ gridview {
 
   > child {
     padding: 3px;
+    border-radius: $bt_radius * 2;
 
     @include focus-ring();
 
