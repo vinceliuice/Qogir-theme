@@ -3540,6 +3540,10 @@ StWidget.focused .app-well-app-running-dot {
   font-weight: bold;
 }
 
+.quick-toggle .quick-toggle-icon {
+  icon-size: 16px;
+}
+
 .quick-menu-toggle:ltr > StBoxLayout {
   padding-right: 0;
 }

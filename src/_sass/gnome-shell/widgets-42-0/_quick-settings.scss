@@ -31,6 +31,7 @@
   &:rtl > StBoxLayout { padding-right: $cont_padding * 2.5; }
 
   .quick-toggle-label { font-weight: bold; }
+  .quick-toggle-icon { icon-size: $base_icon_size; }
 }
 
 .quick-menu-toggle {
