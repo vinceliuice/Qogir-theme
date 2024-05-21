@@ -1,9 +1,10 @@
 /* Top Bar */
 
+$panel_height: 2.1em;
+
 #panel {
   font-weight: normal;
-  height: 2.1em;
-  min-height: 27px;
+  height: $panel_height;
   background-color: $panel_bg;
   border: none;
   font-feature-settings: "tnum";
@@ -74,6 +75,18 @@
         transition-duration: 0;
         border: none;
         border-radius: 0;
+      }
+
+      &:hover {
+        color: $panel_fg;
+        background-color: rgba($panel_fg, 0.08) !important;
+        box-shadow: none;
+      }
+
+      &:active, &:overview, &:focus, &:checked {
+        color: $panel_fg;
+        background-color: rgba($panel_fg, 0.16) !important;
+        box-shadow: inset 0 -2px 0 $selected_bg_color !important;
       }
 
       &, &:active, &:overview, &:focus, &:checked {

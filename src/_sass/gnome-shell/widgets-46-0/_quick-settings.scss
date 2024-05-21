@@ -1,7 +1,7 @@
 .quick-settings {
-  padding: $cont_padding * 2 !important;
-  border-radius: $material_radius !important;
-  margin-top: $cont_padding !important;
+  padding: $base_padding * 2 !important;
+  border-radius: $material_radius + $base_padding !important;
+  margin-top: $base_padding !important;
 
   .icon-button, .button {
     padding: $cont_padding * 1.75;
@@ -100,8 +100,11 @@
 
   .quick-toggle-arrow {
     padding: $cont_padding $cont_padding * 1.75;
-    border-width: 0;
     @extend %toggle_button;
+
+    &, &:hover, &:active {
+      border-width: 0;
+    }
 
     &:ltr {
       border-radius: 0 $bt_radius $bt_radius 0;
@@ -224,6 +227,12 @@
 }
 
 .device-subtitle { color: transparentize($fg_color, 0.5); }
+
+.keyboard-brightness-level {
+  spacing: $base_padding;
+
+  .button:checked { @extend %default_button; }
+}
 
 // background apps
 

@@ -9,7 +9,7 @@ $notification_banner_width: 34em;
   width: $notification_banner_width;
   color: $fg_color;
   margin: 6px;
-  @extend %bubble-dialog;
+  @extend %bubble_dialog;
 
   .notification-icon { padding: 6px; }
   .notification-content { padding: 6px; spacing: 6px; }

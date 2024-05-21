@@ -9,15 +9,26 @@
   @return unquote("alpha(#{$c},#{$a})");
 }
 
+// Function to convert px values to em
+@function to_em($input, $base: 16px) {
+  // multiplied and divided by 1000 to make up for round() shortcoming
+  $em_value: ($input / $base) * 1.091 * 1000;
+  @return round($em_value) / 1000 * 1em;
+}
+
 $asset_suffix: if($variant == 'dark', '-dark', '');
 $asset_suffix_dark: if($titlebar == 'dark', '-dark', '');
 $asset_suffix_win: if($titlebutton == 'circle', '', '-win');
 
 // sizes
+$font-size: 10;
+
 $small_size: 16px;
 $medium_size: 28px;
 $large_size: 40px;
 
+$base_padding: 6px;         // internal padding of elements
+$base_margin: 4px;          // margin between elements
 $cont_padding: 6px;
 $menuitem_size: 28px;
 
@@ -26,6 +37,20 @@ $bt_radius: if($window == 'round', 4px, 2px);
 $corner_radius: if($window == 'round', 8px, 0);
 $material_radius: if($window == 'round', 8px, 3px);
 $circular_radius: 9999px;
+
+// Fixed icon sizes
+$base_icon_size: 16px;
+$medium_icon_size: $base_icon_size * 1.5; // 24px
+$large_icon_size: $base_icon_size * 2; // 32px
+
+// Scaled values
+// Used in elements that follow text scaling factors
+$scaled_padding: to_em(6px); // same as $base_padding
+
+// Used for symbolic icons that scale
+$scalable_icon_size: to_em(16px);
+$medium_scalable_icon_size: $scalable_icon_size * 1.5;
+$large_scalable_icon_size: $scalable_icon_size * 2;
 
 // durations
 $shorter_duration: 180ms;

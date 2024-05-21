@@ -19,50 +19,50 @@
   @if $t==normal {
     color: $text_color;
     background-color: $entry_bg;
-    border: 1px solid $entry_border;
-    box-shadow: inset 0 2px 4px transparentize($entry_bg, 0.95);
+    border: 1px solid $entry_border !important;
+    box-shadow: inset 0 2px 4px transparentize($entry_bg, 0.95) !important;
   }
 
   @if $t==hover {
     color: $fg_color;
     background-color: $entry_bg;
-    border: 1px solid $entry_border;
-    box-shadow: inset 0 2px 4px transparentize($entry_bg, 0.95);
+    border: 1px solid $entry_border !important;
+    box-shadow: inset 0 2px 4px transparentize($entry_bg, 0.95) !important;
   }
 
   @if $t==focus {
     color: $fg_color;
     background-color: $entry_bg;
-    border: 1px solid $selected_bg_color;
-    box-shadow: inset 0 2px 4px transparentize($entry_bg, 0.95);
+    border: 1px solid $selected_bg_color !important;
+    box-shadow: inset 0 2px 4px transparentize($entry_bg, 0.95) !important;
   }
 
   @if $t==insensitive {
     color: $insensitive_fg_color;
     background-color: mix($entry_bg, $bg_color, 55%);
-    border-color: 1px solid mix($entry_border, $bg_color, 55%);
-    box-shadow: inset 0 2px 4px transparentize(mix($entry_bg, $bg_color, 55%), 0.95);
+    border-color: 1px solid mix($entry_border, $bg_color, 55%) !important;
+    box-shadow: inset 0 2px 4px transparentize(mix($entry_bg, $bg_color, 55%), 0.95) !important;
   }
 
   @if $t==osd {
     color: $osd_fg_color;
     background-color: $osd_entry_bg;
-    border: 1px solid $osd_entry_border;
-    box-shadow: inset 0 2px 4px transparentize(black, 0.95);
+    border: 1px solid $osd_entry_border !important;
+    box-shadow: inset 0 2px 4px transparentize(black, 0.95) !important;
   }
 
   @if $t==osd-focus {
     color: $selected_fg_color;
     background-color: $selected_bg_color;
-    border: 1px solid $osd_entry_border;
-    box-shadow: inset 0 2px 4px transparentize(black, 0.95);
+    border: 1px solid $osd_entry_border !important;
+    box-shadow: inset 0 2px 4px transparentize(black, 0.95) !important;
   }
 
   @if $t==osd-insensitive {
     color: transparentize($osd_fg_color, 0.45);
     background-color: transparentize($osd_entry_bg, 0.15);
-    border: 1px solid $osd_entry_border;
-    box-shadow: inset 0 2px 4px transparentize(black, 0.95);
+    border: 1px solid $osd_entry_border !important;
+    box-shadow: inset 0 2px 4px transparentize(black, 0.95) !important;
   }
 }
 
@@ -82,7 +82,7 @@
   //
     color: $tc;
     background-color: $c;
-    border: 1px solid $button_border;
+    border: 1px solid if($tc == $fg_color, $button_border, mix($tc, $c, 12%));
     box-shadow: none;
   }
 
@@ -92,9 +92,8 @@
   //
     color: $tc;
     background-color: $c;
-    border: 1px solid $button_border;
+    border: 1px solid if($tc == $fg_color, $button_border, rgba($fg_color, 0.12));
     box-shadow: none !important;
-    outline: none !important;
   }
 
   @else if $t==focus-hover {
@@ -102,10 +101,9 @@
   // focused button
   //
     color: $tc;
-    background-color: if($variant=='light', rgba(black, 0.03), rgba(white, 0.06));
-    border: 1px solid $selected_bg_color;
+    background-color: if($variant=='light', mix($tc, $c, 3%), mix($tc, $c, 6%));
+    border: 1px solid if($tc == $fg_color, $button_border, mix($tc, $c, 12%));
     box-shadow: none !important;
-    outline: none !important;
   }
 
   @else if $t==hover {
@@ -113,8 +111,8 @@
   // hovered button
   //
     color: $tc;
-    background-color: mix($fg_color, $c, 6%);
-    border: 1px solid if($variant=='light', darken($button_border, 5%), lighten($button_border, 5%));
+    background-color: mix($tc, $c, 6%);
+    border: 1px solid mix($tc, $c, 16%);
     box-shadow: none;
   }
 
@@ -195,6 +193,64 @@
     color: rgba($osd_fg_color, 0.35);
     border-color: lighten($osd_bg_color, 2%);
     background-color: rgba($osd_bg_color, 0.35);
+    box-shadow: none;
+  }
+
+  @if $t==flat {
+    //
+    // flat button
+    //
+    color: $tc;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  
+  @else if $t==flat-focus {
+    //
+    // flat focused button
+    //
+    color: $tc;
+    background-color: rgba($tc, 0.05);
+  }
+  
+  @else if $t==flat-hover {
+    //
+    // flat hovered button
+    //
+    color: $tc;
+    background-color: rgba($tc, 0.1);
+    border: none;
+    box-shadow: none;
+  }
+  
+  @else if $t==flat-active {
+    //
+    // flat pushed button
+    //
+    color: $tc;
+    background-color: rgba($tc, 0.2);
+    border: none;
+    box-shadow: none;
+   }
+  
+  @else if $t==flat-checked {
+    //
+    // flat checked button
+    //
+    color: $tc;
+    background-color: rgba($tc, 0.12);
+    border: none;
+    box-shadow: none;
+  }
+  
+  @else if $t==flat-insensitive {
+    //
+    // flat insensitive button
+    //
+    color: $insensitive_fg_color;
+    background-color: transparent;
+    border: none;
     box-shadow: none;
   }
 }

@@ -3,8 +3,8 @@
 
 // Icon tiles in the app grid
 .app-well-app,
-%app-well-app {
-  @extend %overview-icon;
+%app_well_app {
+  @extend %overview_icon;
 
   .overview-icon.overview-icon-with-label {
     padding: 10px 8px 5px 8px;

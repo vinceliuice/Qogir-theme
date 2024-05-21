@@ -6,9 +6,27 @@
   &:focus { @include button(focus); }
   &:hover { @include button(hover); }
   &:hover:focus { @include button(focus-hover); }
-  &:active, &:active:focus, &:checked { @include button(active); }
+  &:selected, &:active, &:active:focus, &:checked { @include button(active); }
   &:checked:hover { @include button(active-hover); }
   &:insensitive { @include button(insensitive); }
+}
+
+%flat_button {
+  @include button(flat);
+  &:focus { @include button(flat-focus); }
+  &:hover { @include button(flat-hover); }
+  &:insensitive { @include button(flat-insensitive); }
+  &:selected,
+  &:active { @include button(flat-active); }
+  &:checked { @include button(flat-checked); }
+}
+
+%default_button {
+  @include button(normal, $c:$selected_bg_color, $tc:$selected_fg_color);
+  &:focus { @include button(focus, $c:$selected_bg_color, $tc:$selected_fg_color); }
+  &:hover { @include button(hover, $c:$selected_bg_color, $tc:$selected_fg_color); }
+  &:insensitive { @include button(insensitive, $c:$selected_bg_color, $tc:$selected_fg_color); }
+  &:active { @include button(active, $c:$selected_bg_color, $tc:$selected_fg_color); }
 }
 
 %osd_button {
@@ -16,28 +34,46 @@
 
   &:hover, &:hover:focus { @include button(osd-hover); }
   &:focus { @include button(osd-focus); }
-  &:active, &:checked { @include button(osd-active); }
+  &:selected, &:active, &:active:focus, &:checked { @include button(osd-active); }
   &:insensitive { @include button(osd-insensitive); }
 }
 
-%icon_button {
-  border-radius: $circular_radius;
-  border: none;
-  font-weight: bold;
-  padding: $cont_padding * 2;
-
-  & > StIcon { icon-size: 16px; }
-}
-
 .button {
-  min-height: 20px;
-  padding: 5px 32px;
-  transition-duration: 0;
-  border-radius: $bt_radius;
-
   @extend %button;
+  padding: $base_padding * .5 $base_padding * 4;
+  border-radius: $bt_radius;
+  transition: border-width 300ms $ease_out_quad,
+              box-shadow 300ms $ease_out_quad;
+  
+  // default style
+  &.default {
+    @extend %default_button;
+  }
+
+  // flat style
+  &.flat {
+    @extend %flat_button;
+  }
 }
 
 .icon-button {
-  @extend %icon_button; // that's it
+  @extend %button;
+  border-radius: $circular_radius;
+  padding: $scaled_padding * 2;
+  min-height: $scalable_icon_size;
+
+  StIcon {
+    icon-size: $scalable_icon_size;
+    -st-icon-style: symbolic;
+  }
+
+  // default style
+  &.default {
+    @extend %default_button;
+  }
+
+  // flat style
+  &.flat {
+    @extend %flat_button;
+  }
 }
