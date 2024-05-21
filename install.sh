@@ -721,7 +721,7 @@ uninstall_theme() {
   done
 }
 
-./clean-old-theme.sh
+${SRC_DIR}/clean-old-theme.sh
 
 if [[ "${gdm:-}" != 'true' && "${remove:-}" != 'true' ]]; then
   install_theme
