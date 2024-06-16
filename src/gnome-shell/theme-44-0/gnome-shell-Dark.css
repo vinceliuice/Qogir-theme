@@ -1824,6 +1824,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 4px;
   border-radius: 2px;
   border: 1px solid transparent;
+  background-color: transparent;
 }
 
 .switcher-list .item-box:outlined {
