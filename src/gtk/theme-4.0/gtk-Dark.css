@@ -47,6 +47,7 @@ treeview.expander:disabled {
 }
 
 .view,
+dialog-host > dialog.view sheet,
 iconview,
 textview > text {
   color: #e0e5eb;
@@ -54,6 +55,7 @@ textview > text {
 }
 
 .view:disabled,
+dialog-host > dialog.view sheet:disabled,
 iconview:disabled,
 textview > text:disabled {
   color: rgba(230, 235, 239, 0.45);
@@ -180,7 +182,7 @@ label.error:disabled {
   color: rgba(252, 65, 56, 0.5);
 }
 
-.dim-label, row.expander:not(:checked) image.expander-row-arrow, row label.subtitle, popover.background label.separator, headerbar .subtitle, entry > text > placeholder, spinbutton.vertical > text > text > placeholder, spinbutton:not(.vertical) > text > text > placeholder, label.separator {
+.dim-label, row.expander image.expander-row-arrow, row label.subtitle, popover.background label.separator, headerbar .subtitle, entry > text > placeholder, spinbutton.vertical > text > text > placeholder, spinbutton:not(.vertical) > text > text > placeholder, label.separator {
   opacity: 0.55;
   text-shadow: none;
 }
@@ -211,7 +213,7 @@ textview {
   background-color: #282A33;
 }
 
-toast, .osd popover.background > arrow,
+dialog-host > dialog.osd:not(progressbar):not(button):not(menubutton):not(splitbutton) sheet, toast, .osd popover.background > arrow,
 .osd popover.background > contents, popover.background.touch-selection > arrow,
 popover.background.touch-selection > contents, popover.background.magnifier > arrow,
 popover.background.magnifier > contents, toolbar.osd, .osd {
@@ -4400,16 +4402,20 @@ row.expander image.expander-row-arrow:dir(rtl) {
   margin-right: 6px;
 }
 
+row.expander image.expander-row-arrow:dir(ltr) {
+  -gtk-icon-transform: rotate(0.5turn);
+}
+
+row.expander image.expander-row-arrow:dir(rtl) {
+  -gtk-icon-transform: rotate(-0.5turn);
+}
+
+row.expander image.expander-row-arrow:disabled {
+  filter: opacity(0.45);
+}
+
 row.expander:checked image.expander-row-arrow {
   -gtk-icon-transform: rotate(0turn);
-}
-
-row.expander:not(:checked) image.expander-row-arrow:dir(ltr) {
-  -gtk-icon-transform: rotate(-0.25turn);
-}
-
-row.expander:not(:checked) image.expander-row-arrow:dir(rtl) {
-  -gtk-icon-transform: rotate(0.25turn);
 }
 
 row.expander:checked image.expander-row-arrow:not(:disabled) {
@@ -4418,10 +4424,6 @@ row.expander:checked image.expander-row-arrow:not(:disabled) {
 
 .osd row.expander:checked image.expander-row-arrow:not(:disabled) {
   color: inherit;
-}
-
-row.expander image.expander-row-arrow:disabled {
-  filter: opacity(0.45);
 }
 
 /*****************
@@ -5426,6 +5428,8 @@ headerbar windowcontrols > button.close:active {
 }
 
 leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
+dialog-host > dialog.view sheet:selected,
+dialog-host > dialog.view sheet:selected:focus,
 textview > text:selected,
 textview > text:selected:focus, textview > text > selection:focus, textview > text > selection,
 iconview:selected,
@@ -5436,6 +5440,8 @@ treeview.view:selected:focus, row:selected, row.activatable:selected, row.activa
 }
 
 row:selected label, label:selected, leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
+dialog-host > dialog.view sheet:selected,
+dialog-host > dialog.view sheet:selected:focus,
 textview > text:selected,
 textview > text:selected:focus, textview > text > selection:focus, textview > text > selection,
 iconview:selected,
@@ -5446,6 +5452,7 @@ treeview.view:selected:focus, row:selected, row.activatable:selected, row.activa
 }
 
 row:selected label:disabled, label:disabled:selected, leaflet.unfolded > box:last-child list > row:disabled:selected, .view:disabled:selected,
+dialog-host > dialog.view sheet:disabled:selected,
 textview > text:disabled:selected,
 textview > text:disabled:selected:focus, textview > text > selection:disabled,
 iconview:disabled:selected,
@@ -6186,7 +6193,7 @@ agenda-view list.background, agenda-view list.background row {
   color: rgba(246, 246, 251, 0.8);
 }
 
-agenda-view list.background .dim-label, agenda-view list.background label.separator, agenda-view list.background entry > text > placeholder, agenda-view list.background spinbutton:not(.vertical) > text > text > placeholder, agenda-view list.background spinbutton.vertical > text > text > placeholder, agenda-view list.background headerbar .subtitle, headerbar agenda-view list.background .subtitle, agenda-view list.background row label.subtitle, row agenda-view list.background label.subtitle, agenda-view list.background row.expander:not(:checked) image.expander-row-arrow, row.expander:not(:checked) agenda-view list.background image.expander-row-arrow {
+agenda-view list.background .dim-label, agenda-view list.background label.separator, agenda-view list.background entry > text > placeholder, agenda-view list.background spinbutton:not(.vertical) > text > text > placeholder, agenda-view list.background spinbutton.vertical > text > text > placeholder, agenda-view list.background headerbar .subtitle, headerbar agenda-view list.background .subtitle, agenda-view list.background row label.subtitle, row agenda-view list.background label.subtitle, agenda-view list.background row.expander image.expander-row-arrow, row.expander agenda-view list.background image.expander-row-arrow {
   color: rgba(246, 246, 251, 0.45);
 }
 
@@ -7633,7 +7640,7 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   background-color: rgba(246, 246, 251, 0.1);
 }
 
-.sidebar-pane .dim-label, .sidebar-pane label.separator, .sidebar-pane entry > text > placeholder, .sidebar-pane spinbutton:not(.vertical) > text > text > placeholder, .sidebar-pane spinbutton.vertical > text > text > placeholder, .sidebar-pane headerbar .subtitle, headerbar .sidebar-pane .subtitle, .sidebar-pane popover.background label.separator, popover.background .sidebar-pane label.separator, .sidebar-pane row label.subtitle, row .sidebar-pane label.subtitle, .sidebar-pane row.expander:not(:checked) image.expander-row-arrow, row.expander:not(:checked) .sidebar-pane image.expander-row-arrow {
+.sidebar-pane .dim-label, .sidebar-pane label.separator, .sidebar-pane entry > text > placeholder, .sidebar-pane spinbutton:not(.vertical) > text > text > placeholder, .sidebar-pane spinbutton.vertical > text > text > placeholder, .sidebar-pane headerbar .subtitle, headerbar .sidebar-pane .subtitle, .sidebar-pane popover.background label.separator, popover.background .sidebar-pane label.separator, .sidebar-pane row label.subtitle, row .sidebar-pane label.subtitle, .sidebar-pane row.expander image.expander-row-arrow, row.expander .sidebar-pane image.expander-row-arrow {
   color: rgba(246, 246, 251, 0.45);
 }
 
@@ -8111,6 +8118,57 @@ themeswitcher checkbutton.dark radio, themeswitcher checkbutton.dark radio:hover
   color: white;
   background-image: image(#242424);
   background-color: transparent;
+}
+
+banner > revealer > widget {
+  /* There are 2 more instances in _sidebars.css, keep in sync with that */
+  background-color: rgba(82, 148, 226, 0.3);
+  color: #e6ebef;
+  padding: 6px;
+}
+
+banner > revealer > widget:backdrop {
+  background-color: rgba(82, 148, 226, 0.15);
+}
+
+banner > revealer > widget:backdrop > label, banner > revealer > widget:backdrop > button {
+  filter: opacity(0.5);
+}
+
+floating-sheet > dimming {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+floating-sheet > sheet {
+  border-radius: 0;
+  outline: none;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.12), 0 8px 8px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+dialog.bottom-sheet.landscape sheet {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+dialog.bottom-sheet.landscape sheet > outline.flush-left, dialog.bottom-sheet.landscape sheet > outline.flush-right, dialog.bottom-sheet.landscape sheet > outline.flush-left.flush-right {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+dialog-host > dialog.background {
+  background: none;
+}
+
+dialog-host > dialog.background sheet {
+  background-color: #32343D;
+  color: #e6ebef;
+}
+
+dialog-host > dialog.view {
+  background: none;
+}
+
+dialog-host > dialog.osd:not(progressbar):not(button):not(menubutton):not(splitbutton) {
+  background: none;
 }
 
 @define-color theme_fg_color #e6ebef;

@@ -3370,36 +3370,38 @@ row.expander {
 
   // AdwExpanderRow arrow rotation
   image.expander-row-arrow {
+    @extend .dim-label;
+
     transition: 200ms $ease-out-quad;
     @include margin-start(6px);
+
+    &:dir(ltr) {
+      -gtk-icon-transform: rotate(0.5turn);
+    }
+
+    &:dir(rtl) {
+      -gtk-icon-transform: rotate(-0.5turn);
+    }
+
+    &:disabled {
+      filter: opacity(0.45);
+    }
   }
 
   &:checked image.expander-row-arrow {
     -gtk-icon-transform: rotate(0turn);
-  }
 
-  &:not(:checked) image.expander-row-arrow {
-    @extend .dim-label;
-
-    &:dir(ltr) {
-      -gtk-icon-transform: rotate(-0.25turn);
+    &:not(:disabled) {
+      color: $selected_bg_color;
     }
-
-    &:dir(rtl) {
-      -gtk-icon-transform: rotate(0.25turn);
-    }
-  }
-
-  &:checked image.expander-row-arrow:not(:disabled) {
-    color: $selected_bg_color;
   }
 
   .osd &:checked image.expander-row-arrow:not(:disabled) {
     color: inherit;
   }
 
-  image.expander-row-arrow:disabled {
-    filter: opacity(0.45);
+  &.property box > list > row {
+    @extend .property;
   }
 }
 
