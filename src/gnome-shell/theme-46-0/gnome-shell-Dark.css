@@ -2334,7 +2334,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   page-padding-right: 18px;
 }
 
-.overview-tile, .grid-search-result {
+.grid-search-result {
   color: white;
   border-radius: 4px;
   padding: 12px;
@@ -2343,12 +2343,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: transparent;
 }
 
-.overview-tile:hover, .grid-search-result:hover {
+.grid-search-result:hover {
   background-color: rgba(82, 148, 226, 0.5);
   border: 1px solid #5294e2;
 }
 
-.overview-tile:active, .grid-search-result:active, .overview-tile:checked, .grid-search-result:checked {
+.grid-search-result:active, .overview-tile:checked, .grid-search-result:checked {
   background-color: rgba(82, 148, 226, 0.75);
   border: 1px solid #5294e2;
 }
