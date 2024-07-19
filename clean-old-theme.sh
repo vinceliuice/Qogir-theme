@@ -12,7 +12,9 @@ fi
 
 THEME_NAME=Qogir
 THEME_VARIANTS=('' '-manjaro' '-ubuntu')
-COLOR_VARIANTS=('-light' '-dark')
+COLOR_VARIANTS=('' '-light' '-dark')
+N_THEME_VARIANTS=('' '-Manjaro' '-Ubuntu')
+N_COLOR_VARIANTS=('' '-Light' '-Dark')
 
 clean() {
   local dest=${1}
@@ -20,10 +22,10 @@ clean() {
   local theme=${3}
   local color=${4}
 
-  local THEME_DIR=${dest}/${name}${theme}${color}
+  local THEME_DIR="${dest}/${name}${theme}${color}"
 
-  if [[ -d ${THEME_DIR} ]]; then
-    rm -rf ${THEME_DIR}
+  if [[ -d "${THEME_DIR}" ]]; then
+    rm -rf "${THEME_DIR}"{'','-hdpi','-xhdpi'}
     echo -e "Find: ${THEME_DIR} ! removing it ..."
   fi
 }
@@ -32,6 +34,14 @@ clean_theme() {
   for theme in "${themes[@]-${THEME_VARIANTS[@]}}"; do
     for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
       clean "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}"
+    done
+  done
+
+  local dest="$HOME/.themes"
+
+  for theme in "${themes[@]-${N_THEME_VARIANTS[@]}}"; do
+    for color in "${colors[@]-${N_COLOR_VARIANTS[@]}}"; do
+      clean "${dest}" "${name:-${THEME_NAME}}" "${theme}" "${color}"
     done
   done
 }
