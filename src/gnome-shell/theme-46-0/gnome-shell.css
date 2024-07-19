@@ -2368,7 +2368,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-folder {
   background-color: rgba(39, 40, 47, 0.5);
   border: 1px solid #2b2d35;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .app-folder:focus, .app-folder:hover {
@@ -2529,7 +2529,8 @@ StWidget.focused .app-grid-running-dot {
 
 /* Dash */
 #dash {
-  margin-top: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 #dash .dash-background {
@@ -2600,7 +2601,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 #dash .dash-item-container .app-grid-running-dot {
-  margin-bottom: 18px;
+  offset-y: -12px;
 }
 
 #dash .dash-separator {
@@ -3985,6 +3986,7 @@ StWidget.focused .app-grid-running-dot {
   margin: 2px !important;
   border-radius: 0;
   background-color: #5294e2;
+  offset-y: 0 !important;
 }
 
 #dashtodockContainer .dash-item-container > StWidget.focused .app-grid-running-dot {
@@ -3998,7 +4000,7 @@ StWidget.focused .app-grid-running-dot {
   min-width: 1.4em;
   min-height: 1.4em;
   margin: 0;
-  padding: 0;
+  padding: 0.2em;
   border-radius: 9999px;
   font-weight: 700;
   text-align: center;
@@ -4012,6 +4014,10 @@ StWidget.focused .app-grid-running-dot {
 #dashtodockContainer .notification-badge {
   background-color: #5294e2;
   color: #ffffff;
+}
+
+.dash-label.bottom {
+  margin-bottom: 18px !important;
 }
 
 .popup-menu.app-well-menu .popup-menu-item.dashtodock-app-well-preview-menu-item {

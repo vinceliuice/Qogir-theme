@@ -55,7 +55,7 @@ $app_folder_size: 720px;
 .app-folder {
   background-color: rgba(darken($dark_sidebar_icon_bg, 5%), 0.5);
   border: 1px solid darken($dark_sidebar_icon_bg, 3%);
-  border-radius: $material_radius;
+  border-radius: $bt_radius * 2;
 
   &:focus,
   &:hover {
