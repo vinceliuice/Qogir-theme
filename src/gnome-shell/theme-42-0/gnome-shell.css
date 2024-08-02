@@ -4062,3 +4062,40 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(70, 72, 83, 0.75);
   -st-icon-style: symbolic;
 }
+
+.dashtopanelMainPanel {
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.dashtopanelMainPanel .dash-background {
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.dashtopanelMainPanel .app-well-app {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.dashtopanelMainPanel .app-well-app .overview-icon {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.dashtopanelMainPanel .show-apps {
+  color: #D3DAE3 !important;
+  border-radius: 0 !important;
+}
+
+.dashtopanelMainPanel .show-apps:hover {
+  background: rgba(211, 218, 227, 0.1) !important;
+}
+
+.dashtopanelMainPanel .show-apps:active {
+  background: rgba(211, 218, 227, 0.2) !important;
+}

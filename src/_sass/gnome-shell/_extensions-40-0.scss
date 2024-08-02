@@ -129,3 +129,44 @@
     -st-icon-style: symbolic;
   }
 }
+
+//
+// Dash to Panel
+//
+
+.dashtopanelMainPanel {
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  .dash-background {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .app-well-app {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+
+    .overview-icon {
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+    }
+  }
+
+  .show-apps {
+    color: $panel_fg !important;
+    border-radius: 0 !important;
+
+    &:hover {
+      background: rgba($panel_fg, 0.1) !important;
+    }
+
+    &:active {
+      background: rgba($panel_fg, 0.2) !important;
+    }
+  }
+}
