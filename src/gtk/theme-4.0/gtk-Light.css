@@ -4855,7 +4855,7 @@ separator.sidebar {
   color: #464853;
 }
 
-.navigation-sidebar > row:actice {
+.navigation-sidebar > row:active {
   background-color: rgba(70, 72, 83, 0.15);
   color: #464853;
 }
@@ -7731,12 +7731,12 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 }
 
 .sidebar-pane banner > revealer > widget {
-  background-color: gtkmix(#5294e2, #32343D, 30%);
+  background-color: #3c516f;
   color: #4a4c59;
 }
 
 .sidebar-pane banner > revealer > widget:backdrop {
-  background-color: gtkmix(#5294e2, #32343D, 30%);
+  background-color: #3c516f;
 }
 
 .sidebar-pane:dir(ltr), .sidebar-pane:dir(ltr) banner > revealer > widget, .sidebar-pane.end:dir(rtl), .sidebar-pane.end:dir(rtl) banner > revealer > widget {
@@ -7758,7 +7758,7 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .content-pane .sidebar-pane:backdrop,
 .sidebar-pane .content-pane:backdrop {
-  background-color: "default";
+  background-color: #fafbfc;
   transition: background-color 270ms cubic-bezier(0, 0, 0.2, 1);
 }
 
@@ -7890,13 +7890,13 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .content-pane .sidebar-pane banner > revealer > widget,
 .sidebar-pane .content-pane banner > revealer > widget {
-  background-color: gtkmix(#5294e2, #ffffff, 30%);
+  background-color: #cbdff6;
   color: #4a4c59;
 }
 
 .content-pane .sidebar-pane banner > revealer > widget:backdrop,
 .sidebar-pane .content-pane banner > revealer > widget:backdrop {
-  background-color: gtkmix(#5294e2, #ffffff, 30%);
+  background-color: #cbdff6;
 }
 
 .content-pane .sidebar-pane:dir(ltr), .content-pane .sidebar-pane:dir(ltr) banner > revealer > widget, .content-pane .sidebar-pane.end:dir(rtl), .content-pane .sidebar-pane.end:dir(rtl) banner > revealer > widget,
@@ -8057,7 +8057,7 @@ themeswitcher .check {
   min-height: 16px;
   min-width: 16px;
   background-color: #5294e2;
-  color: on(#5294e2);
+  color: #ffffff;
   padding: 2px;
   border-radius: 9999px;
   margin: 3px;
@@ -8067,12 +8067,12 @@ themeswitcher .check {
 
 themeswitcher .check:hover {
   background-color: #7eafe9;
-  color: on(#5294e2);
+  color: #ffffff;
 }
 
 themeswitcher .check:active {
   background-color: #5294e2;
-  color: on(#5294e2);
+  color: #ffffff;
 }
 
 themeswitcher checkbutton radio {

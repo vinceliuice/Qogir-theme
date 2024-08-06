@@ -880,7 +880,7 @@ toolbarview.undershoot-bottom scrolledwindow {
     }
 
     &.undershoot-bottom {
-      @include undershoot-indication(bottom)
+      @include undershoot-indication(bottom);
     }
 
     &.undershoot-start {
@@ -902,11 +902,11 @@ toolbarview.undershoot-bottom scrolledwindow {
   }
 
   banner > revealer > widget {
-    background-color: gtkmix($selected_bg_color, $side_theme_bg, 30%);
+    background-color: mix($selected_bg_color, $side_theme_bg, 30%);
     color: $text_color;
 
     &:backdrop {
-      background-color: gtkmix($selected_bg_color, $side_theme_bg, 30%);
+      background-color: mix($selected_bg_color, $side_theme_bg, 30%);
     }
   }
 
@@ -932,7 +932,7 @@ toolbarview.undershoot-bottom scrolledwindow {
   color: $text_color;
 
   &:backdrop {
-    background-color: $background;
+    background-color: $bg_color;
     transition: background-color $longer_duration $deceleration_curve;
   }
 
@@ -950,7 +950,7 @@ toolbarview.undershoot-bottom scrolledwindow {
     }
 
     &.undershoot-bottom {
-      @include undershoot-indication(bottom)
+      @include undershoot-indication(bottom);
     }
 
     &.undershoot-start {
@@ -972,11 +972,11 @@ toolbarview.undershoot-bottom scrolledwindow {
   }
 
   banner > revealer > widget {
-    background-color: gtkmix($selected_bg_color, $base_color, 30%);
+    background-color: mix($selected_bg_color, $base_color, 30%);
     color: $text_color;
 
     &:backdrop {
-      background-color: gtkmix($selected_bg_color, $base_color, 30%);
+      background-color: mix($selected_bg_color, $base_color, 30%);
     }
   }
 
@@ -1130,7 +1130,7 @@ themeswitcher {
     min-height: 16px;
     min-width: 16px;
     background-color: $selected_bg_color;
-    color: on($selected_bg_color);
+    color: $selected_fg_color;
     padding: 2px;
     border-radius: $circular_radius;
     margin: 3px;
@@ -1140,12 +1140,12 @@ themeswitcher {
 
     &:hover {
       background-color: lighten($selected_bg_color, 10%);
-      color: on($selected_bg_color);
+      color: $selected_fg_color;
     }
 
     &:active {
       background-color: $selected_bg_color;
-      color: on($selected_bg_color);
+      color: $selected_fg_color;
     }
   }
 
