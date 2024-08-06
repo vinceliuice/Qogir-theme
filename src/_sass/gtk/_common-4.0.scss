@@ -978,40 +978,6 @@ headerbar.titlebar {
   box-shadow: none;
 }
 
-// menu buttons
-modelbutton.flat {
-  min-height: 24px;
-  padding-left: 8px;
-  padding-right: 8px;
-  outline-offset: -3px;
-  border-radius: $bt_radius;
-  @extend %undecorated_button;
-  border: none;
-
-  &:checked { color: $fg_color; }
-  &:disabled { color: $insensitive_fg_color; }
-
-  // FIXME: temporary workaround
-  check:last-child,
-  radio:last-child { margin-left: 8px; }
-
-  check:first-child,
-  radio:first-child { margin-right: 8px; }
-}
-
-modelbutton.flat arrow {
-  background: none;
-  min-width: 16px;
-  min-height: 16px;
-  opacity: 0.5; //dim icon
-
-  &:hover, &:selected, &:active, &:focus { background: none; }
-
-  &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
-
-  &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
-}
-
 // oldstyle toolbar buttons
 .toolbar button {
   margin: 2px;
@@ -2220,28 +2186,6 @@ popover.menu {
     margin-right: -6px;
   }
 
-  modelbutton {
-    min-height: 24px;
-    min-width: 38px;
-    padding: 2px 12px;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    color: $fg_color;
-
-    @if $window == 'round' {
-      border-radius: $corner_radius - 3px;
-    } @else {
-      border-radius: $bt_radius;
-    }
-
-    &:hover:not(:focus-visible),
-    &:selected:focus-visible {
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
-    }
-  }
-
   label.title {
     font-weight: bold;
     padding: 4px 28px; //this will fall apart with font sizing
@@ -2332,6 +2276,59 @@ popover.background {
   &.touch-selection,
   &.magnifier {
     button { @extend %osd_button; }
+  }
+}
+
+// menu buttons
+modelbutton.flat {
+  min-height: 24px;
+  min-width: 38px;
+  padding: 2px 12px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: $fg_color;
+  background-color: transparent;
+
+  @if $window == 'round' {
+    border-radius: $corner_radius - 3px;
+  } @else {
+    border-radius: $bt_radius;
+  }
+
+  &:hover:not(:focus-visible),
+  &:selected:focus-visible {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+
+    &:active {
+      color: $selected_fg_color;
+      background-color: mix($fg_color, $selected_bg_color, 10%);
+    }
+  }
+
+  &:disabled {
+    color: $insensitive_fg_color;
+  }
+
+  // FIXME: temporary workaround
+  check:last-child,
+  radio:last-child { margin-left: 8px; }
+
+  check:first-child,
+  radio:first-child { margin-right: 8px; }
+
+  arrow {
+    background: none;
+    min-width: 16px;
+    min-height: 16px;
+    opacity: 0.5; //dim icon
+  
+    &:hover, &:selected, &:active, &:focus { background: none; }
+  
+    &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
+  
+    &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
   }
 }
 
@@ -3241,8 +3238,36 @@ list {
   }
 }
 
+%row_activatable {
+  &:hover {
+    transition: background-color 50ms $ease-out-quad;
+    background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03));
+  }
+
+  &:active {
+    transition: background-color 150ms $ease-out-quad;
+    background-color: if($variant == 'light', rgba(black, 0.12), rgba(white, 0.1));
+  }
+
+  &:checked {
+    background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08));
+  }
+
+  &:disabled {
+    color: $insensitive_fg_color;
+    image { color: inherit; }
+  }
+
+  &:selected {
+    &, &:hover, &:active {
+      @extend %selected_items;
+    }
+  }
+}
+
 row {
   @include focus-ring($offset: -3px);
+  @extend %row_activatable;
 
   label.subtitle {
     font-size: smaller;
@@ -3262,34 +3287,6 @@ row {
       margin-top: 6px;
       margin-bottom: 6px;
       border-spacing: 3px;
-    }
-  }
-
-  &:selected {
-    @extend %selected_items;
-  }
-
-  @at-root %row_activatable, &.activatable {
-    &.has-open-popup,
-    &:hover {
-      transition: none;
-      background-color: if($variant == 'light', rgba(black, 0.05), rgba(white, 0.03));
-    }
-
-    &:active, &:checked {
-      transition: all 150ms $ease-out-quad;
-      background-color: if($variant == 'light', rgba(black, 0.1), rgba(white, 0.08));
-    }
-
-    &:disabled {
-      color: $insensitive_fg_color;
-      image { color: inherit; }
-    }
-
-    &:selected {
-      &, &.has-open-popup, &:hover {
-        @extend %selected_items;
-      }
     }
   }
 

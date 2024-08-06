@@ -823,19 +823,23 @@ toolbarview.undershoot-bottom scrolledwindow {
   }
 
   headerbar {
-    color: $side_theme_fg;
+    color: $side_theme_alt_fg;
 
     button:not(.suggested-action):not(.destructive-action) {
-      color: $side_theme_fg;
+      color: $side_theme_alt_fg;
       border: none;
   
       &:hover {
-        color: $side_theme_alt_fg;
+        color: $side_theme_fg;
         background-color: rgba($side_theme_fg, 0.25);
       }
   
       &:active, &:checked {
         @include button(active);
+      }
+
+      &:disabled {
+        color: rgba($side_theme_fg, 0.45);
       }
     }
   }
@@ -844,17 +848,7 @@ toolbarview.undershoot-bottom scrolledwindow {
     > separator { background: none; }
 
     > row {
-      color: $side_theme_alt_fg;
-
-      &:hover:not(:selected):not(:focus-within) {
-        color: $side_theme_fg;
-        background-color: rgba($side_theme_fg, 0.06);
-        transition: none;
-      }
-
-      &:active, &:active:hover, &:checked {
-        background-color: rgba($side_theme_fg, 0.1);
-      }
+      @extend %side_views;
     }
   }
 
@@ -864,6 +858,14 @@ toolbarview.undershoot-bottom scrolledwindow {
 
   searchbar {
     @extend %side_searchbar;
+  }
+
+  popover {
+    modelbutton.flat {
+      &:disabled, &:disabled label {
+        color: $insensitive_fg_color;
+      }
+    }
   }
 
   toolbarview.undershoot-top scrolledwindow {

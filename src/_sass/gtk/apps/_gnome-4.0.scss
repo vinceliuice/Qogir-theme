@@ -1,25 +1,25 @@
 // Dark sidebar theme apps
 $side_theme_bg: $dark_sidebar_icon_bg;
-$side_theme_fg: rgba($dark_sidebar_icon_fg, 0.8);
-$side_theme_alt_fg: $dark_sidebar_icon_fg;
+$side_theme_fg: $dark_sidebar_icon_fg;
+$side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
 
 %side_background {
-  color: $side_theme_fg;
+  color: $side_theme_alt_fg;
   background-color: $side_theme_bg;
 
   &:disabled, label:disabled {
-    color: rgba($side_theme_alt_fg, 0.35);
+    color: rgba($side_theme_fg, 0.35);
   }
 }
 
 %side_buttons {
-  color: $side_theme_fg;
-  background-color: rgba($dark_sidebar_icon_fg, 0.15);
+  color: $side_theme_alt_fg;
+  background-color: rgba($side_theme_fg, 0.15);
   border: none;
 
   &:hover {
-    color: $side_theme_alt_fg;
-    background-color: rgba($dark_sidebar_icon_fg, 0.25);
+    color: $side_theme_fg;
+    background-color: rgba($side_theme_fg, 0.25);
   }
 
   &:focus {
@@ -33,19 +33,19 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   }
 
   &:disabled {
-    color: rgba($side_theme_alt_fg, 0.35);
-    background-color: rgba($side_theme_alt_fg, 0.08);
+    color: rgba($side_theme_fg, 0.35);
+    background-color: rgba($side_theme_fg, 0.08);
   }
 
   @at-root %side_buttons_flat, &.flat {
     border: none;
     background: none;
     box-shadow: none;
-    color: $side_theme_fg;
+    color: $side_theme_alt_fg;
 
     &:hover {
-      color: $side_theme_alt_fg;
-      background-color: rgba($dark_sidebar_icon_fg, 0.15);
+      color: $side_theme_fg;
+      background-color: rgba($side_theme_fg, 0.15);
     }
 
     &:focus {
@@ -59,50 +59,54 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
     }
 
     &:disabled {
-      color: rgba($side_theme_alt_fg, 0.35);
+      color: rgba($side_theme_fg, 0.35);
     }
   }
 }
 
 %side_views {
-  color: $side_theme_fg;
-  background-color: $side_theme_bg;
+  color: $side_theme_alt_fg;
+  // background-color: $side_theme_bg;
 
   &:hover {
-    color: $side_theme_alt_fg;
-    background-color: mix($side_theme_alt_fg, $side_theme_bg, 10%);
+    transition: background-color 50ms $ease-out-quad;
+    color: $side_theme_fg;
+    background-color: mix($side_theme_fg, $side_theme_bg, 10%);
   }
 
   &:active {
-    color: $side_theme_alt_fg;
-    background-color: mix($side_theme_alt_fg, $side_theme_bg, 16%);
+    transition: background-color 150ms $ease-out-quad;
+    color: $side_theme_fg;
+    background-color: mix($side_theme_fg, $side_theme_bg, 16%);
   }
 
   &:disabled, label:disabled {
-    color: rgba($side_theme_alt_fg, 0.35);
+    color: rgba($side_theme_fg, 0.35);
   }
 
   &:selected {
     @extend %selected_items;
 
-    &:hover { background-color: mix(black, $selected_bg_color, 10%); }
+    &:hover { background-color: mix($side_theme_fg, $selected_bg_color, 6%); }
+    &:active { background-color: mix($side_theme_fg, $selected_bg_color, 12%); }
   }
 }
 
 %side_entry {
-  color: $side_theme_fg;
+  color: $side_theme_alt_fg;
   background-color: rgba($side_theme_fg, 0.1);
   border-color: rgba(white, 0.12);
 
-  image { color: $side_theme_fg; }
+  image { color: $side_theme_alt_fg; }
 
   &:focus-within {
+    color: $side_theme_fg;
     background-color: rgba($side_theme_fg, 0.12);
     border-color: $selected_bg_color;
   }
 
   &:disabled, label:disabled, image:disabled {
-    color: rgba($side_theme_alt_fg, 0.35);
+    color: rgba($side_theme_fg, 0.35);
   }
 }
 
@@ -112,13 +116,14 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
   border: none;
 
   > revealer > box {
+    color: $side_theme_alt_fg;
     background-color: $side_theme_bg;
     border: none;
   }
 }
 
 %side_headerbar {
-  color: $side_theme_fg;
+  color: $side_theme_alt_fg;
   background-color: $side_theme_bg;
   border: none;
   box-shadow: none;
@@ -277,7 +282,6 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
           padding-left: 20px;
         }
 
-        &.has-open-popup,
         &:hover:not(:selected):not(:focus-within) {
           transition: none;
           color: $fg_color;
@@ -292,7 +296,6 @@ $side_theme_alt_fg: $dark_sidebar_icon_fg;
 
         &:active { transition: box-shadow 0.2s; }
 
-        &:selected.has-open-popup,
         &:selected, &:selected:hover, &:active:hover {
           box-shadow: inset 38px 0 0 0 $selected_bg_color;
           background-color: rgba($selected_bg_color, 0.0);
@@ -568,7 +571,7 @@ leaflet.unfolded {
     }
 
     list, .view {
-      color: $side_theme_fg;
+      color: $side_theme_alt_fg;
       background-color: transparent;
     }
 
@@ -610,7 +613,7 @@ leaflet.unfolded {
 
 toastoverlay {
   event.color-light {
-    color: $side_theme_fg;
+    color: $side_theme_alt_fg;
   }
 
   label.weekday {
@@ -623,7 +626,7 @@ toastoverlay {
 
   widget.current-week {
     border-radius: 6px;
-    background-color: rgba($side_theme_alt_fg, 0.08);
+    background-color: rgba($side_theme_fg, 0.08);
   }
 
   navigator > button.flat.pill.popup.toggle {
@@ -635,7 +638,7 @@ toastoverlay {
 
 .sidebar-pane {
   datechooser {
-    color: $side_theme_fg;
+    color: $side_theme_alt_fg;
 
     button {
       @extend %side_buttons;
@@ -655,11 +658,11 @@ agenda-view list.background {
   background-color: transparent;
 
   &, row {
-    color: $side_theme_fg;
+    color: $side_theme_alt_fg;
   }
 
   .dim-label {
-    color: rgba($side_theme_alt_fg, 0.45);
+    color: rgba($side_theme_fg, 0.45);
   }
 }
 

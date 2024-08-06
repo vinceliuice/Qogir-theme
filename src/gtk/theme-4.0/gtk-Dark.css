@@ -1462,57 +1462,11 @@ spinbutton.vertical > button:only-child, spinbutton.vertical > text:only-child, 
 tabbar tab button.image-button:active,
 dnd tab button.image-button:active, tabbar tab button.image-button:hover,
 dnd tab button.image-button:hover, .app-notification button.flat:disabled, .app-notification button.flat, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.flat:hover, button.link, button.link:hover, button.link:active, button.link:checked, popover.menu box.circular-buttons button.circular.image-button.model,
-list > row button.image-button:not(.flat):not(.up):not(.down), modelbutton.flat {
+list > row button.image-button:not(.flat):not(.up):not(.down) {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
   box-shadow: none;
-}
-
-modelbutton.flat {
-  min-height: 24px;
-  padding-left: 8px;
-  padding-right: 8px;
-  outline-offset: -3px;
-  border-radius: 2px;
-  border: none;
-}
-
-modelbutton.flat:checked {
-  color: #e6ebef;
-}
-
-modelbutton.flat:disabled {
-  color: rgba(230, 235, 239, 0.45);
-}
-
-modelbutton.flat check:last-child,
-modelbutton.flat radio:last-child {
-  margin-left: 8px;
-}
-
-modelbutton.flat check:first-child,
-modelbutton.flat radio:first-child {
-  margin-right: 8px;
-}
-
-modelbutton.flat arrow {
-  background: none;
-  min-width: 16px;
-  min-height: 16px;
-  opacity: 0.5;
-}
-
-modelbutton.flat arrow:hover, modelbutton.flat arrow:selected, modelbutton.flat arrow:active, modelbutton.flat arrow:focus {
-  background: none;
-}
-
-modelbutton.flat arrow.left {
-  -gtk-icon-source: -gtk-icontheme("go-previous-symbolic");
-}
-
-modelbutton.flat arrow.right {
-  -gtk-icon-source: -gtk-icontheme("go-next-symbolic");
 }
 
 .toolbar button {
@@ -2908,22 +2862,6 @@ popover.menu check.right {
   margin-right: -6px;
 }
 
-popover.menu modelbutton {
-  min-height: 24px;
-  min-width: 38px;
-  padding: 2px 12px;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  color: #e6ebef;
-  border-radius: 2px;
-}
-
-popover.menu modelbutton:hover:not(:focus-visible), popover.menu modelbutton:selected:focus-visible {
-  color: #ffffff;
-  background-color: #5294e2;
-}
-
 popover.menu label.title {
   font-weight: bold;
   padding: 4px 28px;
@@ -3006,6 +2944,61 @@ popover.background.touch-selection > contents, popover.background.magnifier > ar
 popover.background.magnifier > contents {
   padding: 0;
   margin: 0;
+}
+
+modelbutton.flat {
+  min-height: 24px;
+  min-width: 38px;
+  padding: 2px 12px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: #e6ebef;
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+modelbutton.flat:hover:not(:focus-visible), modelbutton.flat:selected:focus-visible {
+  color: #ffffff;
+  background-color: #5294e2;
+}
+
+modelbutton.flat:hover:not(:focus-visible):active, modelbutton.flat:selected:focus-visible:active {
+  color: #ffffff;
+  background-color: #619de3;
+}
+
+modelbutton.flat:disabled {
+  color: rgba(230, 235, 239, 0.45);
+}
+
+modelbutton.flat check:last-child,
+modelbutton.flat radio:last-child {
+  margin-left: 8px;
+}
+
+modelbutton.flat check:first-child,
+modelbutton.flat radio:first-child {
+  margin-right: 8px;
+}
+
+modelbutton.flat arrow {
+  background: none;
+  min-width: 16px;
+  min-height: 16px;
+  opacity: 0.5;
+}
+
+modelbutton.flat arrow:hover, modelbutton.flat arrow:selected, modelbutton.flat arrow:active, modelbutton.flat arrow:focus {
+  background: none;
+}
+
+modelbutton.flat arrow.left {
+  -gtk-icon-source: -gtk-icontheme("go-previous-symbolic");
+}
+
+modelbutton.flat arrow.right {
+  -gtk-icon-source: -gtk-icontheme("go-next-symbolic");
 }
 
 magnifier {
@@ -4276,6 +4269,28 @@ list.separators:not(.horizontal) > row:not(.separator) {
   border-bottom: 1px solid #42444b;
 }
 
+row:hover {
+  transition: background-color 50ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+row:active {
+  transition: background-color 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+row:checked {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+row:disabled {
+  color: rgba(230, 235, 239, 0.45);
+}
+
+row:disabled image {
+  color: inherit;
+}
+
 row:focus:focus-visible {
   outline-color: alpha(currentcolor,0.3);
   outline-offset: -3px;
@@ -4301,24 +4316,6 @@ row > box.header > box.title {
   margin-top: 6px;
   margin-bottom: 6px;
   border-spacing: 3px;
-}
-
-row.activatable.has-open-popup, row.activatable:hover {
-  transition: none;
-  background-color: rgba(255, 255, 255, 0.03);
-}
-
-row.activatable:active, row.activatable:checked {
-  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-row.activatable:disabled {
-  color: rgba(230, 235, 239, 0.45);
-}
-
-row.activatable:disabled image {
-  color: inherit;
 }
 
 row.combo listview.inline {
@@ -5427,7 +5424,7 @@ headerbar windowcontrols > button.close:active {
   color: white;
 }
 
-leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
+.sidebar-pane .navigation-sidebar > row:selected, leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
 dialog-host > dialog.view sheet:selected,
 dialog-host > dialog.view sheet:selected:focus,
 textview > text:selected,
@@ -5435,11 +5432,11 @@ textview > text:selected:focus, textview > text > selection:focus, textview > te
 iconview:selected,
 iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, columnview.view:selected, columnview.view:selected:focus,
 treeview.view:selected,
-treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
+treeview.view:selected:focus, row:selected, row:selected:hover, row:selected:active, calendar > grid > label.day-number:selected {
   background-color: #5294e2;
 }
 
-row:selected label, label:selected, leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
+row:selected label, label:selected, .sidebar-pane .navigation-sidebar > row:selected, leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
 dialog-host > dialog.view sheet:selected,
 dialog-host > dialog.view sheet:selected:focus,
 textview > text:selected,
@@ -5447,7 +5444,7 @@ textview > text:selected:focus, textview > text > selection:focus, textview > te
 iconview:selected,
 iconview:selected:focus, flowbox > flowboxchild:selected, gridview > child:selected, entry > text > selection:focus, entry > text > selection, spinbutton:not(.vertical) > text > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, columnview.view:selected, columnview.view:selected:focus,
 treeview.view:selected,
-treeview.view:selected:focus, row:selected, row.activatable:selected, row.activatable.has-open-popup:selected, row.activatable:selected:hover, calendar > grid > label.day-number:selected {
+treeview.view:selected:focus, row:selected, row:selected:hover, row:selected:active, calendar > grid > label.day-number:selected {
   color: #ffffff;
 }
 
@@ -5456,7 +5453,7 @@ dialog-host > dialog.view sheet:disabled:selected,
 textview > text:disabled:selected,
 textview > text:disabled:selected:focus, textview > text > selection:disabled,
 iconview:disabled:selected,
-iconview:disabled:selected:focus, flowbox > flowboxchild:disabled:selected, gridview > child:disabled:selected, entry > text > selection:disabled, spinbutton:not(.vertical) > text > text > selection:disabled, spinbutton.vertical > text > text > selection:disabled, spinbutton.vertical > text > selection:disabled, row:disabled:selected, calendar > grid > label.day-number:disabled:selected {
+iconview:disabled:selected:focus, flowbox > flowboxchild:disabled:selected, gridview > child:disabled:selected, entry > text > selection:disabled, spinbutton:not(.vertical) > text > text > selection:disabled, spinbutton.vertical > text > text > selection:disabled, spinbutton.vertical > text > selection:disabled, row:disabled:selected, row:disabled:selected:hover, row:disabled:selected:active, calendar > grid > label.day-number:disabled:selected {
   color: #a9caf1;
 }
 
@@ -5562,7 +5559,7 @@ leaflet.unfolded > box:last-child popover.background > contents:disabled, leafle
 }
 
 .sidebar-pane datechooser button:focus, leaflet.unfolded > box:last-child button:focus {
-  color: rgba(246, 246, 251, 0.8);
+  color: #F6F6FB;
   box-shadow: none;
 }
 
@@ -5589,7 +5586,7 @@ leaflet.unfolded > box:last-child popover.background > contents .button:hover, l
 }
 
 leaflet.unfolded > box:last-child popover.background > contents .button:focus, leaflet.unfolded > box:last-child popover.background > contents button:focus, leaflet.unfolded > box:last-child popover.background > contents modelbutton:focus, leaflet.unfolded > box:last-child popover.background > arrow .button:focus, leaflet.unfolded > box:last-child popover.background > arrow button:focus, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:focus, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:focus, leaflet.unfolded > box:last-child > headerbar button:focus, .sidebar-pane datechooser button.flat:focus, leaflet.unfolded > box:last-child button.flat:focus {
-  color: rgba(246, 246, 251, 0.8);
+  color: #F6F6FB;
   box-shadow: none;
 }
 
@@ -5602,27 +5599,32 @@ leaflet.unfolded > box:last-child popover.background > contents .button:disabled
   color: rgba(246, 246, 251, 0.35);
 }
 
-leaflet.unfolded > box:last-child list > row {
+.sidebar-pane .navigation-sidebar > row, leaflet.unfolded > box:last-child list > row {
   color: rgba(246, 246, 251, 0.8);
-  background-color: #32343D;
 }
 
-leaflet.unfolded > box:last-child list > row:hover {
+.sidebar-pane .navigation-sidebar > row:hover, leaflet.unfolded > box:last-child list > row:hover {
+  transition: background-color 50ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: #F6F6FB;
   background-color: #464750;
 }
 
-leaflet.unfolded > box:last-child list > row:active {
+.sidebar-pane .navigation-sidebar > row:active, leaflet.unfolded > box:last-child list > row:active {
+  transition: background-color 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: #F6F6FB;
   background-color: #51535b;
 }
 
-leaflet.unfolded > box:last-child list > row:disabled, leaflet.unfolded > box:last-child list > row label:disabled {
+.sidebar-pane .navigation-sidebar > row:disabled, leaflet.unfolded > box:last-child list > row:disabled, .sidebar-pane .navigation-sidebar > row label:disabled, leaflet.unfolded > box:last-child list > row label:disabled {
   color: rgba(246, 246, 251, 0.35);
 }
 
-leaflet.unfolded > box:last-child list > row:selected:hover {
-  background-color: #4a85cb;
+.sidebar-pane .navigation-sidebar > row:selected:hover, leaflet.unfolded > box:last-child list > row:selected:hover {
+  background-color: #5c9ae4;
+}
+
+.sidebar-pane .navigation-sidebar > row:selected:active, leaflet.unfolded > box:last-child list > row:selected:active {
+  background-color: #66a0e5;
 }
 
 .sidebar-pane entry, leaflet.unfolded > box:last-child entry {
@@ -5636,6 +5638,7 @@ leaflet.unfolded > box:last-child list > row:selected:hover {
 }
 
 .sidebar-pane entry:focus-within, leaflet.unfolded > box:last-child entry:focus-within {
+  color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.12);
   border-color: #5294e2;
 }
@@ -5651,6 +5654,7 @@ leaflet.unfolded > box:last-child list > row:selected:hover {
 }
 
 .sidebar-pane searchbar > revealer > box, leaflet.unfolded > box:last-child searchbar > revealer > box {
+  color: rgba(246, 246, 251, 0.8);
   background-color: #32343D;
   border: none;
 }
@@ -5845,8 +5849,7 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   padding-left: 20px;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row.has-open-popup, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:hover:not(:selected):not(:focus-within),
-.nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row.has-open-popup,
+.nautilus-window flap.unfolded > placessidebar row.sidebar-row:hover:not(:selected):not(:focus-within),
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:hover:not(:selected):not(:focus-within) {
   transition: none;
   color: #e6ebef;
@@ -5866,8 +5869,7 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   transition: box-shadow 0.2s;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected.has-open-popup, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected:hover, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:active:hover,
-.nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected.has-open-popup,
+.nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected:hover, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:active:hover,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected:hover,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:active:hover {
@@ -5878,8 +5880,7 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   background-position: 42px center;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected.has-open-popup .sidebar-label, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected .sidebar-label, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected:hover .sidebar-label, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:active:hover .sidebar-label,
-.nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected.has-open-popup .sidebar-label,
+.nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected .sidebar-label, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected:hover .sidebar-label, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:active:hover .sidebar-label,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected .sidebar-label,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected:hover .sidebar-label,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:active:hover .sidebar-label {
@@ -6182,7 +6183,7 @@ toastoverlay navigator > button.flat.pill.popup.toggle {
 .sidebar-pane datechooser popover > arrow,
 .sidebar-pane datechooser popover > contents {
   background-color: #32343D;
-  color: rgba(246, 246, 251, 0.8);
+  color: #F6F6FB;
 }
 
 agenda-view list.background {
@@ -7583,7 +7584,7 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 }
 
 .sidebar-pane {
-  color: rgba(246, 246, 251, 0.8);
+  color: #F6F6FB;
   background-color: #32343D;
 }
 
@@ -7622,26 +7623,20 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   box-shadow: none;
 }
 
+.sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled {
+  color: rgba(246, 246, 251, 0.45);
+}
+
 .sidebar-pane .navigation-sidebar > separator {
   background: none;
 }
 
-.sidebar-pane .navigation-sidebar > row {
-  color: #F6F6FB;
-}
-
-.sidebar-pane .navigation-sidebar > row:hover:not(:selected):not(:focus-within) {
-  color: rgba(246, 246, 251, 0.8);
-  background-color: rgba(246, 246, 251, 0.06);
-  transition: none;
-}
-
-.sidebar-pane .navigation-sidebar > row:active, .sidebar-pane .navigation-sidebar > row:active:hover, .sidebar-pane .navigation-sidebar > row:checked {
-  background-color: rgba(246, 246, 251, 0.1);
-}
-
 .sidebar-pane .dim-label, .sidebar-pane label.separator, .sidebar-pane entry > text > placeholder, .sidebar-pane spinbutton:not(.vertical) > text > text > placeholder, .sidebar-pane spinbutton.vertical > text > text > placeholder, .sidebar-pane headerbar .subtitle, headerbar .sidebar-pane .subtitle, .sidebar-pane popover.background label.separator, popover.background .sidebar-pane label.separator, .sidebar-pane row label.subtitle, row .sidebar-pane label.subtitle, .sidebar-pane row.expander image.expander-row-arrow, row.expander .sidebar-pane image.expander-row-arrow {
   color: rgba(246, 246, 251, 0.45);
+}
+
+.sidebar-pane modelbutton.flat:disabled, .sidebar-pane modelbutton.flat:disabled label {
+  color: rgba(230, 235, 239, 0.45);
 }
 
 .sidebar-pane toolbarview.undershoot-top scrolledwindow > undershoot.top {
