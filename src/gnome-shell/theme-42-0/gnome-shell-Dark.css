@@ -1992,6 +1992,48 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
+#panel .panel-button.screen-recording-indicator StIcon, #panel .panel-button.screen-sharing-indicator StIcon {
+  icon-size: 1.091em;
+}
+
+#panel .panel-button.screen-recording-indicator {
+  transition-duration: 150ms;
+  font-weight: bold;
+  color: #D3DAE3;
+  background-color: #FC4138;
+}
+
+#panel .panel-button.screen-recording-indicator:focus, #panel .panel-button.screen-recording-indicator:hover {
+  background-color: #fc5951;
+}
+
+#panel .panel-button.screen-recording-indicator:active, #panel .panel-button.screen-recording-indicator:checked {
+  background-color: #fd6c65;
+}
+
+#panel .panel-button.screen-recording-indicator:active:hover, #panel .panel-button.screen-recording-indicator:checked:hover {
+  background-color: #fd766f;
+}
+
+#panel .panel-button.screen-sharing-indicator {
+  transition-duration: 150ms;
+  font-weight: bold;
+  color: #D3DAE3;
+  background-color: #F27835;
+}
+
+#panel .panel-button.screen-sharing-indicator:focus, #panel .panel-button.screen-sharing-indicator:hover {
+  background-color: #f4884d;
+}
+
+#panel .panel-button.screen-sharing-indicator:active, #panel .panel-button.screen-sharing-indicator:checked {
+  background-color: #f59560;
+}
+
+#panel .panel-button.screen-sharing-indicator:active:hover, #panel .panel-button.screen-sharing-indicator:checked:hover {
+  background-color: #f59b6a;
+}
+
 #panel.unlock-screen, #panel.login-screen, #panel.lock-screen, #panel:overview {
   background: none;
   color: #f2f4f7;
@@ -1999,6 +2041,44 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel.unlock-screen .panel-button:hover.clock-display .clock, #panel.unlock-screen .panel-button:active.clock-display .clock, #panel.unlock-screen .panel-button:overview.clock-display .clock, #panel.unlock-screen .panel-button:focus.clock-display .clock, #panel.unlock-screen .panel-button:checked.clock-display .clock, #panel.login-screen .panel-button:hover.clock-display .clock, #panel.login-screen .panel-button:active.clock-display .clock, #panel.login-screen .panel-button:overview.clock-display .clock, #panel.login-screen .panel-button:focus.clock-display .clock, #panel.login-screen .panel-button:checked.clock-display .clock, #panel.lock-screen .panel-button:hover.clock-display .clock, #panel.lock-screen .panel-button:active.clock-display .clock, #panel.lock-screen .panel-button:overview.clock-display .clock, #panel.lock-screen .panel-button:focus.clock-display .clock, #panel.lock-screen .panel-button:checked.clock-display .clock, #panel:overview .panel-button:hover.clock-display .clock, #panel:overview .panel-button:active.clock-display .clock, #panel:overview .panel-button:overview.clock-display .clock, #panel:overview .panel-button:focus.clock-display .clock, #panel:overview .panel-button:checked.clock-display .clock {
   box-shadow: none;
+}
+
+#panel.unlock-screen .panel-button .panel-button.screen-recording-indicator, #panel.login-screen .panel-button .panel-button.screen-recording-indicator, #panel.lock-screen .panel-button .panel-button.screen-recording-indicator, #panel:overview .panel-button .panel-button.screen-recording-indicator {
+  transition-duration: 150ms;
+  font-weight: bold;
+  color: #D3DAE3;
+  background-color: #FC4138;
+}
+
+#panel.unlock-screen .panel-button .panel-button.screen-recording-indicator:focus, #panel.unlock-screen .panel-button .panel-button.screen-recording-indicator:hover, #panel.login-screen .panel-button .panel-button.screen-recording-indicator:focus, #panel.login-screen .panel-button .panel-button.screen-recording-indicator:hover, #panel.lock-screen .panel-button .panel-button.screen-recording-indicator:focus, #panel.lock-screen .panel-button .panel-button.screen-recording-indicator:hover, #panel:overview .panel-button .panel-button.screen-recording-indicator:focus, #panel:overview .panel-button .panel-button.screen-recording-indicator:hover {
+  background-color: #fc5951;
+}
+
+#panel.unlock-screen .panel-button .panel-button.screen-recording-indicator:active, #panel.unlock-screen .panel-button .panel-button.screen-recording-indicator:checked, #panel.login-screen .panel-button .panel-button.screen-recording-indicator:active, #panel.login-screen .panel-button .panel-button.screen-recording-indicator:checked, #panel.lock-screen .panel-button .panel-button.screen-recording-indicator:active, #panel.lock-screen .panel-button .panel-button.screen-recording-indicator:checked, #panel:overview .panel-button .panel-button.screen-recording-indicator:active, #panel:overview .panel-button .panel-button.screen-recording-indicator:checked {
+  background-color: #fd6c65;
+}
+
+#panel.unlock-screen .panel-button .panel-button.screen-recording-indicator:active:hover, #panel.unlock-screen .panel-button .panel-button.screen-recording-indicator:checked:hover, #panel.login-screen .panel-button .panel-button.screen-recording-indicator:active:hover, #panel.login-screen .panel-button .panel-button.screen-recording-indicator:checked:hover, #panel.lock-screen .panel-button .panel-button.screen-recording-indicator:active:hover, #panel.lock-screen .panel-button .panel-button.screen-recording-indicator:checked:hover, #panel:overview .panel-button .panel-button.screen-recording-indicator:active:hover, #panel:overview .panel-button .panel-button.screen-recording-indicator:checked:hover {
+  background-color: #fd766f;
+}
+
+#panel.unlock-screen .panel-button .panel-button.screen-sharing-indicator, #panel.login-screen .panel-button .panel-button.screen-sharing-indicator, #panel.lock-screen .panel-button .panel-button.screen-sharing-indicator, #panel:overview .panel-button .panel-button.screen-sharing-indicator {
+  transition-duration: 150ms;
+  font-weight: bold;
+  color: #D3DAE3;
+  background-color: #F27835;
+}
+
+#panel.unlock-screen .panel-button .panel-button.screen-sharing-indicator:focus, #panel.unlock-screen .panel-button .panel-button.screen-sharing-indicator:hover, #panel.login-screen .panel-button .panel-button.screen-sharing-indicator:focus, #panel.login-screen .panel-button .panel-button.screen-sharing-indicator:hover, #panel.lock-screen .panel-button .panel-button.screen-sharing-indicator:focus, #panel.lock-screen .panel-button .panel-button.screen-sharing-indicator:hover, #panel:overview .panel-button .panel-button.screen-sharing-indicator:focus, #panel:overview .panel-button .panel-button.screen-sharing-indicator:hover {
+  background-color: #f4884d;
+}
+
+#panel.unlock-screen .panel-button .panel-button.screen-sharing-indicator:active, #panel.unlock-screen .panel-button .panel-button.screen-sharing-indicator:checked, #panel.login-screen .panel-button .panel-button.screen-sharing-indicator:active, #panel.login-screen .panel-button .panel-button.screen-sharing-indicator:checked, #panel.lock-screen .panel-button .panel-button.screen-sharing-indicator:active, #panel.lock-screen .panel-button .panel-button.screen-sharing-indicator:checked, #panel:overview .panel-button .panel-button.screen-sharing-indicator:active, #panel:overview .panel-button .panel-button.screen-sharing-indicator:checked {
+  background-color: #f59560;
+}
+
+#panel.unlock-screen .panel-button .panel-button.screen-sharing-indicator:active:hover, #panel.unlock-screen .panel-button .panel-button.screen-sharing-indicator:checked:hover, #panel.login-screen .panel-button .panel-button.screen-sharing-indicator:active:hover, #panel.login-screen .panel-button .panel-button.screen-sharing-indicator:checked:hover, #panel.lock-screen .panel-button .panel-button.screen-sharing-indicator:active:hover, #panel.lock-screen .panel-button .panel-button.screen-sharing-indicator:checked:hover, #panel:overview .panel-button .panel-button.screen-sharing-indicator:active:hover, #panel:overview .panel-button .panel-button.screen-sharing-indicator:checked:hover {
+  background-color: #f59b6a;
 }
 
 #panel .panel-status-indicators-box,
@@ -2010,8 +2090,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 0;
 }
 
-#panel .screencast-indicator,
-#panel .remote-access-indicator {
+#panel .privacy-indicator,
+#panel .remote-access-indicator,
+#panel .screencast-indicator {
   color: #F27835;
 }
 

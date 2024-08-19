@@ -99,6 +99,9 @@ $menu_bg: if($variant=='light', $base_color, $bg_color);
 $panel_bg: #21232b;
 $panel_fg: $osd_fg_color;
 
+$privacy_indicator_color: $warning_color;
+$recording_indicator_color: $error_color;
+
 $dash_bg: $dark_sidebar_icon_bg;
 $dash_fg: $osd_fg_color;
 

@@ -118,6 +118,22 @@ $panel_height: 2.1em;
       -st-icon-style: symbolic;
       // dimensions of the icon are hardcoded
     }
+
+    // screen activity indicators
+    &.screen-recording-indicator,
+    &.screen-sharing-indicator {
+      StIcon {
+        icon-size: $scalable_icon_size;
+      }
+    }
+
+    &.screen-recording-indicator {
+      @include panel_button($bg:$recording_indicator_color, $style: filled);
+    }
+
+    &.screen-sharing-indicator {
+      @include panel_button($bg:$privacy_indicator_color, $style: filled);
+    }
   }
 
   // lock & login screen styles
@@ -136,6 +152,16 @@ $panel_height: 2.1em;
           }
         }
       }
+
+      .panel-button {
+        &.screen-recording-indicator {
+          @include panel_button($bg:$recording_indicator_color, $style: filled);
+        }
+
+        &.screen-sharing-indicator {
+          @include panel_button($bg:$privacy_indicator_color, $style: filled);
+        }
+      }
     }
   }
 
@@ -150,8 +176,11 @@ $panel_height: 2.1em;
   }
 
   // indicator for active
-  .screencast-indicator,
-  .remote-access-indicator { color: $warning_color; }
+  .privacy-indicator,
+  .remote-access-indicator,
+  .screencast-indicator {
+    color: $privacy_indicator_color;
+  }
 
   .popup-menu-arrow {
     width: 0;
