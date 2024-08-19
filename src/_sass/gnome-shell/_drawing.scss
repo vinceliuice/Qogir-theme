@@ -205,7 +205,7 @@
     border: none;
     box-shadow: none;
   }
-  
+
   @else if $t==flat-focus {
     //
     // flat focused button
@@ -213,7 +213,7 @@
     color: $tc;
     background-color: rgba($tc, 0.05);
   }
-  
+
   @else if $t==flat-hover {
     //
     // flat hovered button
@@ -223,7 +223,7 @@
     border: none;
     box-shadow: none;
   }
-  
+
   @else if $t==flat-active {
     //
     // flat pushed button
@@ -233,7 +233,7 @@
     border: none;
     box-shadow: none;
    }
-  
+
   @else if $t==flat-checked {
     //
     // flat checked button
@@ -243,7 +243,7 @@
     border: none;
     box-shadow: none;
   }
-  
+
   @else if $t==flat-insensitive {
     //
     // flat insensitive button
@@ -252,5 +252,46 @@
     background-color: transparent;
     border: none;
     box-shadow: none;
+  }
+}
+
+// Panel menu/button drawing function
+@mixin panel_button($bg:$panel_fg, $fg:$panel_fg, $style: null) {
+  //
+  // $bg:    background color, derived from $panel_fg
+  // $fg:    foreground color, also derived from $panel
+  // $style: can be set to 'filled' if button uses a colored background
+  //
+
+  transition-duration: 150ms;
+
+  font-weight: bold;
+  color: $fg;
+
+  // background fill defines
+  $fill:              transparent;
+  $hover_fill:        transparentize($fg, .83);
+  $active_fill:       transparentize($fg, .72);
+  $active_hover_fill: transparentize($fg, .68);
+
+  @if $style == 'filled' {
+    $fill:              $bg;
+    $hover_fill:        if($variant == 'light', darken($bg, 5%), lighten($bg, 5%));
+    $active_fill:       if($variant == 'light', darken($bg, 9%), lighten($bg, 9%));
+    $active_hover_fill: if($variant == 'light', darken($bg, 11%), lighten($bg, 11%));
+  }
+
+  background-color: $fill;
+
+  &:focus, &:hover {
+    background-color: $hover_fill;
+  }
+
+  &:active, &:checked  {
+    background-color: $active_fill;
+
+    &:hover{
+      background-color: $active_hover_fill;
+    }
   }
 }
