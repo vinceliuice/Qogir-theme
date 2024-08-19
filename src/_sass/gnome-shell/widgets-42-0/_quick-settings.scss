@@ -41,6 +41,7 @@
   .quick-toggle-arrow {
     background-color: rgba($fg_color, 0.06) !important;
     padding: $cont_padding $cont_padding * 1;
+    icon-size: 16px;
 
     &:active, &:checked {
       background-color: rgba($fg_color, 0.12) !important;

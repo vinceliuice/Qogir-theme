@@ -3556,6 +3556,7 @@ StWidget.focused .app-well-app-running-dot {
 .quick-menu-toggle .quick-toggle-arrow {
   background-color: rgba(70, 72, 83, 0.06) !important;
   padding: 6px 6px;
+  icon-size: 16px;
 }
 
 .quick-menu-toggle .quick-toggle-arrow:active, .quick-menu-toggle .quick-toggle-arrow:checked {
