@@ -804,6 +804,8 @@ toolbarview.undershoot-bottom scrolledwindow {
 // Sidebar
 .unfolded stacksidebar.sidebar { border: none; }
 
+$side_border: rgba($side_theme_fg, 0.12);
+
 .sidebar-pane {
   color: $side_theme_fg;
   background-color: $side_theme_bg;
@@ -869,30 +871,30 @@ toolbarview.undershoot-bottom scrolledwindow {
   }
 
   toolbarview.undershoot-top scrolledwindow {
-    @include undershoot-indication(top);
+    @include undershoot-indication(top, $bc: $side_border, $style: 'solid');
   }
 
   toolbarview.undershoot-bottom scrolledwindow {
-    @include undershoot-indication(bottom);
+    @include undershoot-indication(bottom, $bc: $side_border, $style: 'solid');
   }
 
   scrolledwindow {
     &.undershoot-top {
-      @include undershoot-indication(top);
+      @include undershoot-indication(top, $bc: $side_border, $style: 'solid');
     }
 
     &.undershoot-bottom {
-      @include undershoot-indication(bottom);
+      @include undershoot-indication(bottom, $bc: $side_border, $style: 'solid');
     }
 
     &.undershoot-start {
-      &:dir(ltr) { @include undershoot-indication(left); }
-      &:dir(rtl) { @include undershoot-indication(right); }
+      &:dir(ltr) { @include undershoot-indication(left, $bc: $side_border, $style: 'solid'); }
+      &:dir(rtl) { @include undershoot-indication(right, $bc: $side_border, $style: 'solid'); }
     }
 
     &.undershoot-end {
-      &:dir(ltr) { @include undershoot-indication(right); }
-      &:dir(rtl) { @include undershoot-indication(left); }
+      &:dir(ltr) { @include undershoot-indication(right, $bc: $side_border, $style: 'solid'); }
+      &:dir(rtl) { @include undershoot-indication(left, $bc: $side_border, $style: 'solid'); }
     }
   }
 
@@ -938,34 +940,6 @@ toolbarview.undershoot-bottom scrolledwindow {
     transition: background-color $longer_duration $deceleration_curve;
   }
 
-  toolbarview.undershoot-top scrolledwindow {
-    @include undershoot-indication(top);
-  }
-
-  toolbarview.undershoot-bottom scrolledwindow {
-    @include undershoot-indication(bottom);
-  }
-
-  scrolledwindow {
-    &.undershoot-top {
-      @include undershoot-indication(top);
-    }
-
-    &.undershoot-bottom {
-      @include undershoot-indication(bottom);
-    }
-
-    &.undershoot-start {
-      &:dir(ltr) { @include undershoot-indication(left); }
-      &:dir(rtl) { @include undershoot-indication(right); }
-    }
-
-    &.undershoot-end {
-      &:dir(ltr) { @include undershoot-indication(right); }
-      &:dir(rtl) { @include undershoot-indication(left); }
-    }
-  }
-
   flap,
   leaflet,
   navigation-view,
@@ -993,6 +967,38 @@ toolbarview.undershoot-bottom scrolledwindow {
     &, banner > revealer > widget {
       box-shadow: none;
       border-left: 1px solid $borders_color;
+    }
+  }
+}
+
+.content-pane .sidebar-pane,
+.sidebar-pane .content-pane,
+.content-pane {
+  toolbarview.undershoot-top scrolledwindow {
+    @include undershoot-indication(top, $style: 'solid');
+  }
+
+  toolbarview.undershoot-bottom scrolledwindow {
+    @include undershoot-indication(bottom, $style: 'solid');
+  }
+
+  scrolledwindow {
+    &.undershoot-top {
+      @include undershoot-indication(top, $style: 'solid');
+    }
+
+    &.undershoot-bottom {
+      @include undershoot-indication(bottom, $style: 'solid');
+    }
+
+    &.undershoot-start {
+      &:dir(ltr) { @include undershoot-indication(left, $style: 'solid'); }
+      &:dir(rtl) { @include undershoot-indication(right, $style: 'solid'); }
+    }
+
+    &.undershoot-end {
+      &:dir(ltr) { @include undershoot-indication(right, $style: 'solid'); }
+      &:dir(rtl) { @include undershoot-indication(left, $style: 'solid'); }
     }
   }
 }

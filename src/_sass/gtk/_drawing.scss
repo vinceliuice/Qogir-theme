@@ -410,7 +410,7 @@
   box-shadow: none;
 }
 
-@mixin undershoot-indication($p, $c: $undershoot_shade_color, $neighbor: false, $style: default) {
+@mixin undershoot-indication($p, $c: $undershoot_shade_color, $bc: $borders_color, $neighbor: false, $style: default) {
 //
 // undershoot
 //
@@ -443,7 +443,7 @@
   }
 
   #{$_selector} undershoot.#{$p} {
-    box-shadow: if($style == 'compact', none, inset $_border_pos $borders_color);
+    box-shadow: if($style == 'default', none, inset $_border_pos $bc);
     background: linear-gradient(to $_direction, gtkalpha($c, .25), transparent 6px);
   }
 }

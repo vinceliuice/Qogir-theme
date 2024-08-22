@@ -1921,8 +1921,8 @@ path-bar > button {
 //
 columnview.view,
 treeview.view {
-  border-left-color: $solid_borders_color;   // this is actually the tree lines color,
-  border-top-color: $solid_borders_color;         // while this is the grid lines color, better then nothing
+  border-left-color: $solid_borders_color; // this is actually the tree lines color,
+  border-top-color: $solid_borders_color; // while this is the grid lines color, better then nothing
 
   @include focus-ring($offset: -3px)
 
@@ -2018,31 +2018,42 @@ treeview.view {
 
   > header {
     > button {
-      $_column_header_color: mix($fg_color, $base_color, 80%);
-
       min-height: 0;
       min-width: 0;
       padding: 3px $cont_padding;
       font-weight: bold;
-      color: $_column_header_color;
+      color: $alt_fg_color;
       background-color: $base_color;
       background-image: none;
-      border-style: none solid none none;
+      background-clip: padding-box;
+      border-style: none solid solid none;
+      border-bottom: 1px solid $borders_color;
       border-radius: 0;
       border-image: linear-gradient(to bottom,
                                     $base_color 20%,
-                                    transparentize(if($variant == 'light', black, white), 0.89) 20%,
-                                    transparentize(if($variant == 'light', black, white), 0.89) 80%,
+                                    $borders_color 20%,
+                                    $borders_color 80%,
                                     $base_color 80%) 0 1 0 0 / 0 1px 0 0 stretch;
 
-      &:hover { color: $selected_bg_color; }
-      &:active { color: $fg_color; }
+      label { color: $alt_fg_color; }
+
+      &:hover {
+        color: $selected_bg_color;
+        label { color: $selected_bg_color; }
+      }
+
+      &:active {
+        color: $fg_color;
+        label { color: $selected_bg_color; }
+      }
 
       &:active, &:hover { background-color: $base_color; }
 
       &:disabled {
         border-color: $bg_color;
         background-image: none;
+
+        label { color: $insensitive_fg_color; }
       }
 
       &:last-child {
@@ -2283,7 +2294,7 @@ popover.background {
 modelbutton.flat {
   min-height: 24px;
   min-width: 38px;
-  padding: 2px 12px;
+  padding: 2px 8px;
   border: none;
   outline: none;
   box-shadow: none;
@@ -2313,10 +2324,10 @@ modelbutton.flat {
 
   // FIXME: temporary workaround
   check:last-child,
-  radio:last-child { margin-left: 8px; }
+  radio:last-child { margin-left: 8px; margin-right: -2px; }
 
   check:first-child,
-  radio:first-child { margin-right: 8px; }
+  radio:first-child { margin-right: 8px; margin-left: -2px; }
 
   arrow {
     background: none;
