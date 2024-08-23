@@ -336,13 +336,13 @@ install_gdm() {
 
   [[ "${gcolor}" == '-Light' ]] && local ELSE_LIGHT="${gcolor}"
   [[ "${gcolor}" == '-Dark' ]] && local ELSE_DARK="${gcolor}"
-  [[ "${window}" == 'round' ]] && local window='-Round'
+  [[ "${window}" == 'round' ]] && local WM_CORNER='-Round'
 
-  local THEME_TEMP="/tmp/${1}${2}${3}"
+  local THEME_TEMP="/tmp/${1}${2}${WM_CORNER}${3}"
 
   theme_tweaks && install_gdm_deps && install_theme_color
 
-  echo -e "\nInstall ${1}${2}${3} GDM Theme..."
+  echo -e "\nInstall ${1}${2}${WM_CORNER}${3} GDM Theme..."
 
   rm -rf "${THEME_TEMP}"
   mkdir -p                                                                                  "${THEME_TEMP}/gnome-shell"
