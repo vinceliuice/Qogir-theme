@@ -626,7 +626,9 @@ link_libadwaita() {
   local theme="${3}"
   local lcolor="${4}"
 
-  local THEME_DIR="${1}/${2}${3}${4}"
+  [[ "${window}" == 'round' ]] && local WM_CORNER='-Round'
+
+  local THEME_DIR=${dest}/${name}${theme}${WM_CORNER}${lcolor}
 
   echo -e "\nLink '$THEME_DIR/gtk-4.0' to '${HOME}/.config/gtk-4.0' for libadwaita..."
 
