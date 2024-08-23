@@ -1305,11 +1305,29 @@ headerbar {
     }
   }
 
-  &.default-decoration,
-  &.default-decoration:backdrop {
+  &.default-decoration {
     background-color: $header_bg;
     border-bottom-width: 0;
     box-shadow: none;
+
+    &:backdrop {
+      background-color: $header_bg;
+    }
+
+    > button.titlebutton {
+      border: none;
+
+      @if $titlebutton == 'circle' {
+        min-height: 24px;
+        min-width: 24px;
+        padding: 0;
+        margin: 0 3px;
+      } @else {
+        min-width: $large_size;
+        min-height: 30px;
+        margin: 0 -3px;
+      }
+    }
 
     .tiled &,
     .maximized &,

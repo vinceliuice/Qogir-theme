@@ -34,8 +34,9 @@ $menuitem_size: 28px;
 
 // radiuses
 $bt_radius: if($window == 'round', 4px, 2px);
-$corner_radius: if($window == 'round', 8px, 0);
-$material_radius: if($window == 'round', 8px, 3px);
+$wm_radius: $bt_radius + $cont_padding;
+$corner_radius: if($window == 'round', $wm_radius, 0);
+$material_radius: if($window == 'round', $wm_radius, 3px);
 $circular_radius: 9999px;
 
 // Fixed icon sizes

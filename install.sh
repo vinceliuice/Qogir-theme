@@ -8,6 +8,8 @@ if [[ "$UID" -eq "$ROOT_UID" ]]; then
   DEST_DIR="/usr/share/themes"
 elif [[ -n "$XDG_DATA_HOME" ]]; then
   DEST_DIR="$XDG_DATA_HOME/themes"
+elif [[ -d "$HOME/.themes" ]]; then
+  DEST_DIR="$HOME/.themes"
 elif [[ -d "$HOME/.local/share/themes" ]]; then
   DEST_DIR="$HOME/.local/share/themes"
 else
@@ -104,13 +106,13 @@ install() {
 
   echo "[Desktop Entry]"                                                          >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme"                                                   >> ${THEME_DIR}/index.theme
-  echo "Name=${name}${theme}${WM_CORNER}${color}"                                    >> ${THEME_DIR}/index.theme
+  echo "Name=${name}${theme}${WM_CORNER}${color}"                                 >> ${THEME_DIR}/index.theme
   echo "Comment=An Clean Gtk+ theme based on Flat Design"                         >> ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8"                                                           >> ${THEME_DIR}/index.theme
   echo ""                                                                         >> ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]"                                                      >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=${name}${theme}${WM_CORNER}${color}"                                >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=${name}${theme}${WM_CORNER}${color}"                           >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=${name}${theme}${WM_CORNER}${color}"                             >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=${name}${theme}${WM_CORNER}${color}"                        >> ${THEME_DIR}/index.theme
   echo "IconTheme=${name}${theme}${ELSE_DARK}"                                    >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita"                                                      >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close"                                >> ${THEME_DIR}/index.theme
@@ -219,8 +221,8 @@ install() {
     cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}-Win/*.png                    ${THEME_DIR}/metacity-1
     cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-Win.xml                         ${THEME_DIR}/metacity-1/metacity-theme-3.xml
   else
-    cp -r ${SRC_DIR}/src/metacity-1/assets${WM_CORNER}                                  ${THEME_DIR}/metacity-1/assets
-    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3${WM_CORNER}.xml                    ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+    cp -r ${SRC_DIR}/src/metacity-1/assets${WM_CORNER}                               ${THEME_DIR}/metacity-1/assets
+    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3${WM_CORNER}.xml                 ${THEME_DIR}/metacity-1/metacity-theme-3.xml
   fi
 
   cp -r ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                         ${THEME_DIR}/metacity-1/thumbnail.png
@@ -248,7 +250,7 @@ install_xfwm() {
   [[ ${screen} != '' && -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
   # XFWM4
-  mkdir -p                                                                           ${THEME_DIR}/xfwm4
+  mkdir -p                                                                              ${THEME_DIR}/xfwm4
 
   if [[ "$square" == 'true' ]]; then
     cp -r ${SRC_DIR}/src/xfwm4/themerc-Win${WM_CORNER}${ELSE_LIGHT}                     ${THEME_DIR}/xfwm4/themerc
@@ -268,7 +270,7 @@ uninstall() {
 
   local THEME_DIR=${dest}/${name}${theme}${color}${screen}
 
-  [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR" && echo -e "Uninstalling "$THEME_DIR" ..."
+  [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR"{'','-hdpi','-xhdpi'} && echo -e "Uninstalling "$THEME_DIR" ..."
 }
 
 # GDM Theme
@@ -515,14 +517,17 @@ while [[ $# -gt 0 ]]; do
         case "${tweak}" in
           image)
             image='true'
+            echo -e "Install Nautilus with background image version ...\n"
             shift
             ;;
           round)
             window='round'
+            echo -e "Install Round window version ...\n"
             shift
             ;;
           square)
             square='true'
+            echo -e "Install Square titlebutton version ...\n"
             shift
             ;;
           -*|--*)
@@ -644,17 +649,14 @@ tweaks_temp() {
 
 install_image() {
   sed -i "/\$background:/s/default/image/" ${SRC_DIR}/src/_sass/_tweaks-temp.scss
-  echo -e "Install Nautilus with background image version ..."
 }
 
 install_win_titlebutton() {
   sed -i "/\$titlebutton:/s/circle/square/" ${SRC_DIR}/src/_sass/_tweaks-temp.scss
-  echo -e "Install Square titlebutton version ..."
 }
 
 install_round_window() {
   sed -i "/\$window:/s/default/round/" ${SRC_DIR}/src/_sass/_tweaks-temp.scss
-  echo -e "Install Round window version ..."
 }
 
 install_theme_color() {

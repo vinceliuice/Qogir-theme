@@ -5448,6 +5448,11 @@ headerbar windowcontrols > button.close:active {
   color: white;
 }
 
+headerbar.default-decoration windowcontrols > button.close, headerbar.default-decoration windowcontrols > button.maximize, headerbar.default-decoration windowcontrols > button.minimize {
+  min-width: 24px;
+  min-height: 24px;
+}
+
 .sidebar-pane .navigation-sidebar > row:selected, leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
 dialog-host > dialog.view sheet:selected,
 dialog-host > dialog.view sheet:selected:focus,

@@ -1807,13 +1807,25 @@ headerbar:not(.csd).default-decoration > button.titlebutton {
   margin: 0 3px;
 }
 
-headerbar.default-decoration, headerbar.default-decoration:backdrop {
+headerbar.default-decoration {
   background-color: #ffffff;
   border-bottom-width: 0;
   box-shadow: none;
 }
 
-.tiled headerbar.default-decoration, .maximized headerbar.default-decoration, .fullscreen headerbar.default-decoration, .tiled headerbar.default-decoration:backdrop, .maximized headerbar.default-decoration:backdrop, .fullscreen headerbar.default-decoration:backdrop {
+headerbar.default-decoration:backdrop {
+  background-color: #ffffff;
+}
+
+headerbar.default-decoration > button.titlebutton {
+  border: none;
+  min-height: 24px;
+  min-width: 24px;
+  padding: 0;
+  margin: 0 3px;
+}
+
+.tiled headerbar.default-decoration, .maximized headerbar.default-decoration, .fullscreen headerbar.default-decoration {
   box-shadow: none;
 }
 
@@ -10215,7 +10227,7 @@ leaflet > box > scrolledwindow > viewport > list.navigation-sidebar > row.activa
   background-color: #4a85cb;
 }
 
-hdyleaflet > box.vertical > searchbar, .polari-entry-area, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar,
+hdyleaflet > box.vertical > searchbar, .polari-entry-area, .geary-main-layout > leaflet > leaflet searchbar, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar,
 window.geary-main-window > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar,
 window.geary-main-window > box.vertical > paned > box.vertical > searchbar,
 window.background.csd > hdyleaflet > box.vertical > searchbar,
@@ -10225,7 +10237,7 @@ window.background.csd > leaflet > box.vertical > searchbar, window.background.cs
   border: none;
 }
 
-hdyleaflet > box.vertical > searchbar > revealer > box, .polari-entry-area > revealer > box, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar > revealer > box,
+hdyleaflet > box.vertical > searchbar > revealer > box, .polari-entry-area > revealer > box, .geary-main-layout > leaflet > leaflet searchbar > revealer > box, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar > revealer > box,
 window.geary-main-window > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar > revealer > box, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar > revealer > box,
 window.geary-main-window > box.vertical > paned > box.vertical > searchbar > revealer > box,
 window.background.csd > hdyleaflet > box.vertical > searchbar > revealer > box,
@@ -10234,7 +10246,7 @@ window.background.csd > leaflet > box.vertical > searchbar > revealer > box, win
   border: none;
 }
 
-hdyleaflet > box.vertical > searchbar entry, .polari-entry-area entry, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry,
+hdyleaflet > box.vertical > searchbar entry, .polari-entry-area entry, .geary-main-layout > leaflet > leaflet searchbar entry, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry,
 window.geary-main-window > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry,
 window.geary-main-window > box.vertical > paned > box.vertical > searchbar entry,
 window.background.csd > hdyleaflet > box.vertical > searchbar entry,
@@ -10243,7 +10255,7 @@ window.background.csd > leaflet > box.vertical > searchbar entry, window.backgro
   background-color: rgba(246, 246, 251, 0.1);
 }
 
-hdyleaflet > box.vertical > searchbar entry image, .polari-entry-area entry image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image,
+hdyleaflet > box.vertical > searchbar entry image, .polari-entry-area entry image, .geary-main-layout > leaflet > leaflet searchbar entry image, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image,
 window.geary-main-window > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image,
 window.geary-main-window > box.vertical > paned > box.vertical > searchbar entry image,
 window.background.csd > hdyleaflet > box.vertical > searchbar entry image,
@@ -10251,7 +10263,7 @@ window.background.csd > leaflet > box.vertical > searchbar entry image, window.b
   color: rgba(246, 246, 251, 0.8);
 }
 
-hdyleaflet > box.vertical > searchbar entry:focus, .polari-entry-area entry:focus, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:focus,
+hdyleaflet > box.vertical > searchbar entry:focus, .polari-entry-area entry:focus, .geary-main-layout > leaflet > leaflet searchbar entry:focus, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:focus,
 window.geary-main-window > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:focus, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:focus,
 window.geary-main-window > box.vertical > paned > box.vertical > searchbar entry:focus,
 window.background.csd > hdyleaflet > box.vertical > searchbar entry:focus,
@@ -10259,15 +10271,15 @@ window.background.csd > leaflet > box.vertical > searchbar entry:focus, window.b
   background-color: rgba(246, 246, 251, 0.12);
 }
 
-hdyleaflet > box.vertical > searchbar entry:disabled, .polari-entry-area entry:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:disabled,
+hdyleaflet > box.vertical > searchbar entry:disabled, .polari-entry-area entry:disabled, .geary-main-layout > leaflet > leaflet searchbar entry:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:disabled,
 window.geary-main-window > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry:disabled, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry:disabled,
 window.geary-main-window > box.vertical > paned > box.vertical > searchbar entry:disabled,
 window.background.csd > hdyleaflet > box.vertical > searchbar entry:disabled,
-window.background.csd > leaflet > box.vertical > searchbar entry:disabled, window.background.csd > box.horizontal > box.vertical > searchbar entry:disabled, hdyleaflet > box.vertical > searchbar entry label:disabled, .polari-entry-area entry label:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry label:disabled,
+window.background.csd > leaflet > box.vertical > searchbar entry:disabled, window.background.csd > box.horizontal > box.vertical > searchbar entry:disabled, hdyleaflet > box.vertical > searchbar entry label:disabled, .polari-entry-area entry label:disabled, .geary-main-layout > leaflet > leaflet searchbar entry label:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry label:disabled,
 window.geary-main-window > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry label:disabled, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry label:disabled,
 window.geary-main-window > box.vertical > paned > box.vertical > searchbar entry label:disabled,
 window.background.csd > hdyleaflet > box.vertical > searchbar entry label:disabled,
-window.background.csd > leaflet > box.vertical > searchbar entry label:disabled, window.background.csd > box.horizontal > box.vertical > searchbar entry label:disabled, hdyleaflet > box.vertical > searchbar entry image:disabled, .polari-entry-area entry image:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image:disabled,
+window.background.csd > leaflet > box.vertical > searchbar entry label:disabled, window.background.csd > box.horizontal > box.vertical > searchbar entry label:disabled, hdyleaflet > box.vertical > searchbar entry image:disabled, .polari-entry-area entry image:disabled, .geary-main-layout > leaflet > leaflet searchbar entry image:disabled, window#GearyMainWindow > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image:disabled,
 window.geary-main-window > overlay > box.vertical > paned.horizontal > box.sidebar.vertical > searchbar entry image:disabled, window#GearyMainWindow > box.vertical > paned > box.vertical > searchbar entry image:disabled,
 window.geary-main-window > box.vertical > paned > box.vertical > searchbar entry image:disabled,
 window.background.csd > hdyleaflet > box.vertical > searchbar entry image:disabled,

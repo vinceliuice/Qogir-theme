@@ -25,8 +25,12 @@ clean() {
   local THEME_DIR="${dest}/${name}${theme}${color}"
 
   if [[ -d "${THEME_DIR}" ]]; then
-    rm -rf "${THEME_DIR}"{'','-hdpi','-xhdpi'}
-    echo -e "Find: ${THEME_DIR} ! removing it ..."
+    if [[ "${theme}" == '' && "${color}" == '' ]]; then
+      nothing='true'
+    else
+      rm -rf "${THEME_DIR}"{'','-hdpi','-xhdpi'}
+      echo -e "Find: ${THEME_DIR} ! removing it ..."
+    fi
   fi
 }
 
@@ -37,7 +41,7 @@ clean_theme() {
     done
   done
 
-  local dest="$HOME/.themes"
+  local dest="$HOME/.local/share/themes"
 
   for theme in "${themes[@]-${N_THEME_VARIANTS[@]}}"; do
     for color in "${colors[@]-${N_COLOR_VARIANTS[@]}}"; do

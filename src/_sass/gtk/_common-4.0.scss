@@ -2127,7 +2127,7 @@ popover.menu {
   padding: 0;
 
   &.background separator {
-    margin: 3px 0;
+    margin: $cont_padding / 2 0;
     background-color: $menu_bg;
   }
 
@@ -2159,11 +2159,11 @@ popover.menu {
   }
 
   box.circular-buttons {
-    padding: 6px;
+    padding: $cont_padding;
 
     button.circular.image-button.model {
       @extend %list_button;
-      padding: 6px;
+      padding: $cont_padding;
 
       &:focus {
         background-color: rgba($fg_color, 0.1);
@@ -2213,26 +2213,17 @@ popover.background {
   font: initial; // Decouple the font of popovers from their entry/textvie
   background-color: transparent;
 
-  > arrow,
+  > arrow { border: 1px solid $borders_color; }
+
   > contents {
-    padding: 6px;
-    background-clip: border-box;
+    padding: $cont_padding;
+    background-clip: padding-box;
     background-color: $_popover_bg;
     border-radius: $material_radius;
-    border: 1px solid $borders_color;
-    box-shadow: 0 2px 8px 0 if($variant=='light', rgba(black, 0.1), rgba(black, 0.15));
+    border: none;
+    box-shadow: 0 2px 8px 0 if($variant=='light', rgba(black, 0.1), rgba(black, 0.15)), 0 0 0 1px $borders_color;
     color: $text_color;
-  }
 
-  separator { background-color: $_popover_bg; }
-
-  label.separator {
-    @extend .dim-label;
-
-    color: $fg_color;
-  }
-
-  > contents {
     > list,
     > .view,
     > toolbar {
@@ -2241,7 +2232,14 @@ popover.background {
     }
 
     separator {
-      margin: 3px;
+      margin: $cont_padding / 2 0;
+      background-color: $_popover_bg;
+    }
+
+    label.separator {
+      @extend .dim-label;
+  
+      color: $fg_color;
     }
 
     list {
@@ -2251,7 +2249,8 @@ popover.background {
 
       > row {
         margin: 0;
-        padding: 3px 6px;
+        min-height: 24px;
+        padding: 2px 8px;
         border-radius: $bt_radius;
       }
     }
@@ -2266,6 +2265,8 @@ popover.background {
 
       > row {
         margin: 0;
+        min-height: 24px;
+        padding: 2px 8px;
         border-radius: $bt_radius;
       }
     }
@@ -2300,12 +2301,7 @@ modelbutton.flat {
   box-shadow: none;
   color: $fg_color;
   background-color: transparent;
-
-  @if $window == 'round' {
-    border-radius: $corner_radius - 3px;
-  } @else {
-    border-radius: $bt_radius;
-  }
+  border-radius: $bt_radius;
 
   &:hover:not(:focus-visible),
   &:selected:focus-visible {
@@ -4447,25 +4443,6 @@ window {
 //
 
 %csd_titlebutton {
-  @if $titlebutton == 'square' {
-    &.default-decoration {
-      windowcontrols > button {
-        &.close, &.maximize, &.minimize {
-          min-width: $large_size;
-          min-height: 30px;
-        }
-      }
-    }
-
-    > windowhandle box.end > windowcontrols {
-      margin-right: -$cont_padding;
-    }
-
-    > windowhandle box.start > windowcontrols {
-      margin-left: -$cont_padding;
-    }
-  }
-
   windowcontrols > button { // csd titlebuttons
     margin: 0;
     padding: 0;
@@ -4503,6 +4480,34 @@ window {
       &:active {
         background-color: $wm_button_close_active_bg;
         color: white;
+      }
+    }
+  }
+
+  @if $titlebutton == 'square' {
+    &.default-decoration {
+      windowcontrols > button {
+        &.close, &.maximize, &.minimize {
+          min-width: $large_size;
+          min-height: 30px;
+        }
+      }
+    }
+
+    > windowhandle box.end > windowcontrols {
+      margin-right: -$cont_padding;
+    }
+
+    > windowhandle box.start > windowcontrols {
+      margin-left: -$cont_padding;
+    }
+  } @else {
+    &.default-decoration {
+      windowcontrols > button {
+        &.close, &.maximize, &.minimize {
+          min-width: 24px;
+          min-height: 24px;
+        }
       }
     }
   }
