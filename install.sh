@@ -30,7 +30,7 @@ theme_color='default'
 SASSC_OPT="-M -t expanded"
 
 if [[ "$(command -v gnome-shell)" ]]; then
-  gnome-shell --version
+  echo && gnome-shell --version && echo
   SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
   if [[ "${SHELL_VERSION:-}" -ge "46" ]]; then
     GS_VERSION="46-0"
@@ -44,7 +44,7 @@ if [[ "$(command -v gnome-shell)" ]]; then
     GS_VERSION="3-32"
   fi
 else
-  echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+  echo -e "\n'gnome-shell' not found, using styles for last gnome-shell version available.\n"
   GS_VERSION="46-0"
 fi
 
