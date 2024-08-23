@@ -2,16 +2,18 @@
 <metacity_theme>
 <info>
   <name>Qogir round</name>
-  <author>vinceliucie</author>
+  <author>Vince Liucie</author>
   <copyright>GPL</copyright>
   <date>2021</date>
-  <description>Qogir round Metacity theme</description>
+  <description>Qogir Round Metacity theme</description>
 </info>
 
 <!-- meaningful constants -->
 
 <constant name="C_titlebar_focused" value="gtk:custom(wm_bg,gtk:bg[NORMAL])"/>
 <constant name="C_titlebar_unfocused" value="gtk:custom(wm_unfocused_bg,gtk:bg[NORMAL])"/>
+<constant name="C_border_focused" value="gtk:custom(wm_border,blend/#000000/gtk:bg[NORMAL]/0.5)"/>
+<constant name="C_border_unfocused" value="gtk:custom(wm_border,blend/#000000/gtk:bg[NORMAL]/0.65)"/>
 <constant name="C_highlight_focused" value="gtk:custom(wm_highlight,gtk:base[NORMAL])"/>
 <constant name="C_highlight_unfocused" value="gtk:custom(wm_highlight,gtk:base[NORMAL])"/>
 <constant name="C_title_focused" value="gtk:custom(wm_title,gtk:fg[NORMAL])"/>
@@ -27,7 +29,7 @@
   <distance name="bottom_height" value="0"/>
   <distance name="left_titlebar_edge" value="0"/>
   <distance name="right_titlebar_edge" value="0"/>
-  <distance name="title_vertical_pad" value="13"/>
+  <distance name="title_vertical_pad" value="103"/>
   <border name="title_border" left="10" right="10" top="0" bottom="0"/>
   <border name="button_border" left="0" right="0" top="0" bottom="0"/>
   <aspect_ratio name="button" value="1"/>
@@ -57,7 +59,7 @@
   <distance name="title_vertical_pad" value="8"/>
 </frame_geometry>
 
-<frame_geometry name="border" has_title="false" rounded_top_left="false" rounded_top_right="false" parent="normal">
+<frame_geometry name="border" has_title="false" rounded_top_left="6" rounded_top_right="6" parent="normal">
   <distance name="left_width" value="0"/>
   <distance name="right_width" value="0"/>
   <distance name="bottom_height" value="0"/>
@@ -66,7 +68,7 @@
   <border name="button_border" left="0" right="0" top="0" bottom="0"/>
 </frame_geometry>
 
-<frame_geometry name="borderless" has_title="false" rounded_top_left="false" rounded_top_right="false" parent="normal">
+<frame_geometry name="borderless" has_title="false" rounded_top_left="6" rounded_top_right="6" parent="normal">
   <distance name="left_width" value="0"/>
   <distance name="right_width" value="0"/>
   <distance name="bottom_height" value="0"/>
@@ -75,7 +77,7 @@
   <border name="title_border" left="0" right="0" top="0" bottom="0"/>
 </frame_geometry>
 
-<frame_geometry name="attached" hide_buttons="true" rounded_bottom_left="3" rounded_bottom_right="3" parent="normal">
+<frame_geometry name="attached" hide_buttons="true" rounded_bottom_left="5" rounded_bottom_right="5" parent="normal">
   <distance name="title_vertical_pad" value="4"/>
 </frame_geometry>
 
@@ -137,6 +139,24 @@
 <draw_ops name="titlebar_unfocused">
   <include name="entire_background_unfocused"/>
   <!-- <include name="highlight_unfocused"/> -->
+</draw_ops>
+
+<draw_ops name="rounded_border_focused">
+  <line color="C_border_focused" x1="12" y1="0" x2="width-13" y2="0" />
+  <line color="C_border_focused" x1="0" y1="height-1" x2="width-1" y2="height-1" />
+  <line color="C_border_focused" x1="0" y1="12" x2="0" y2="height-2" />
+  <line color="C_border_focused" x1="width-1" y1="12" x2="width-1" y2="height-2" />
+  <arc color="C_border_focused" x="0" y="0" width="25" height="25"  start_angle="270" extent_angle="90" />
+  <arc color="C_border_focused" x="width-26" y="0" width="25" height="25"  start_angle="0" extent_angle="90" />
+</draw_ops>
+
+<draw_ops name="rounded_border_unfocused">
+  <line color="C_border_unfocused" x1="12" y1="0" x2="width-13" y2="0" />
+  <line color="C_border_unfocused" x1="0" y1="height-1" x2="width-1" y2="height-1" />
+  <line color="C_border_unfocused" x1="0" y1="12" x2="0" y2="height-2" />
+  <line color="C_border_unfocused" x1="width-1" y1="12" x2="width-1" y2="height-2" />
+  <arc color="C_border_unfocused" x="0" y="0" width="25" height="25"  start_angle="270" extent_angle="90" />
+  <arc color="C_border_unfocused" x="width-26" y="0" width="25" height="25"  start_angle="0" extent_angle="90" />
 </draw_ops>
 
 <!-- button icons -->
@@ -388,6 +408,7 @@
   <piece position="entire_background" draw_ops="entire_background_focused"/>
   <piece position="titlebar" draw_ops="titlebar_focused"/>
   <piece position="title" draw_ops="title_focused"/>
+  <piece position="overlay" draw_ops="rounded_border_focused"/>
   <button function="close" state="normal" draw_ops="close_focused"/>
   <button function="close" state="prelight" draw_ops="close_focused_prelight"/>
   <button function="close" state="pressed" draw_ops="close_focused_pressed"/>
@@ -431,6 +452,7 @@
   <piece position="entire_background" draw_ops="entire_background_unfocused"/>
   <piece position="titlebar" draw_ops="titlebar_unfocused"/>
   <piece position="title" draw_ops="title_unfocused"/>
+  <piece position="overlay" draw_ops="rounded_border_unfocused"/>
   <button function="close" state="normal" draw_ops="close_unfocused"/>
   <button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
   <button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>

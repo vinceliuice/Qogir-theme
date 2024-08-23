@@ -88,9 +88,9 @@ install() {
 
   [[ ${color} == '-Dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-Light' ]] && local ELSE_LIGHT=${color}
-  [[ "${window}" == 'round' ]] && local window='-Round'
+  [[ "${window}" == 'round' ]] && local WM_CORNER='-Round'
 
-  local THEME_DIR=${dest}/${name}${theme}${window}${color}
+  local THEME_DIR=${dest}/${name}${theme}${WM_CORNER}${color}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -104,13 +104,13 @@ install() {
 
   echo "[Desktop Entry]"                                                          >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme"                                                   >> ${THEME_DIR}/index.theme
-  echo "Name=${name}${theme}${window}${color}"                                    >> ${THEME_DIR}/index.theme
+  echo "Name=${name}${theme}${WM_CORNER}${color}"                                    >> ${THEME_DIR}/index.theme
   echo "Comment=An Clean Gtk+ theme based on Flat Design"                         >> ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8"                                                           >> ${THEME_DIR}/index.theme
   echo ""                                                                         >> ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]"                                                      >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=${name}${theme}${window}${color}"                                >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=${name}${theme}${window}${color}"                           >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=${name}${theme}${WM_CORNER}${color}"                                >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=${name}${theme}${WM_CORNER}${color}"                           >> ${THEME_DIR}/index.theme
   echo "IconTheme=${name}${theme}${ELSE_DARK}"                                    >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita"                                                      >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close"                                >> ${THEME_DIR}/index.theme
@@ -218,16 +218,14 @@ install() {
   if [[ "$square" == 'true' ]]; then
     cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}-Win/*.png                    ${THEME_DIR}/metacity-1
     cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-Win.xml                         ${THEME_DIR}/metacity-1/metacity-theme-3.xml
-    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}-Win.xml            ${THEME_DIR}/metacity-1/metacity-theme-1.xml
   else
-    cp -r ${SRC_DIR}/src/metacity-1/assets${window}                                  ${THEME_DIR}/metacity-1/assets
-    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3${window}.xml                    ${THEME_DIR}/metacity-1/metacity-theme-3.xml
-    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-1${ELSE_LIGHT}${window}.xml       ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+    cp -r ${SRC_DIR}/src/metacity-1/assets${WM_CORNER}                                  ${THEME_DIR}/metacity-1/assets
+    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3${WM_CORNER}.xml                    ${THEME_DIR}/metacity-1/metacity-theme-3.xml
   fi
 
   cp -r ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                         ${THEME_DIR}/metacity-1/thumbnail.png
   cd ${THEME_DIR}/metacity-1
-  ln -s metacity-theme-1.xml metacity-theme-2.xml
+  ln -s metacity-theme-3.xml metacity-theme-1.xml && ln -s metacity-theme-3.xml metacity-theme-2.xml
 
   # OTHER
   cp -r ${SRC_DIR}/src/plank                                                         ${THEME_DIR}
@@ -243,9 +241,9 @@ install_xfwm() {
 
   [[ ${color} == '-Dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-Light' ]] && local ELSE_LIGHT=${color}
-  [[ "${window}" == 'round' ]] && local window='-Round'
+  [[ ${window} == 'round' ]] && local WM_CORNER='-Round'
 
-  local THEME_DIR=${dest}/${name}${window}${color}${screen}
+  local THEME_DIR=${dest}/${name}${WM_CORNER}${color}${screen}
 
   [[ ${screen} != '' && -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -253,11 +251,11 @@ install_xfwm() {
   mkdir -p                                                                           ${THEME_DIR}/xfwm4
 
   if [[ "$square" == 'true' ]]; then
-    cp -r ${SRC_DIR}/src/xfwm4/themerc-Win${window}${ELSE_LIGHT}                     ${THEME_DIR}/xfwm4/themerc
-    cp -r ${SRC_DIR}/src/xfwm4/assets-Win${window}${ELSE_LIGHT}${screen}/*.png       ${THEME_DIR}/xfwm4
+    cp -r ${SRC_DIR}/src/xfwm4/themerc-Win${WM_CORNER}${ELSE_LIGHT}                     ${THEME_DIR}/xfwm4/themerc
+    cp -r ${SRC_DIR}/src/xfwm4/assets-Win${WM_CORNER}${ELSE_LIGHT}${screen}/*.png       ${THEME_DIR}/xfwm4
   else
-    cp -r ${SRC_DIR}/src/xfwm4/themerc${window}${ELSE_LIGHT}                         ${THEME_DIR}/xfwm4/themerc
-    cp -r ${SRC_DIR}/src/xfwm4/assets${window}${ELSE_LIGHT}${screen}/*.png           ${THEME_DIR}/xfwm4
+    cp -r ${SRC_DIR}/src/xfwm4/themerc${WM_CORNER}${ELSE_LIGHT}                         ${THEME_DIR}/xfwm4/themerc
+    cp -r ${SRC_DIR}/src/xfwm4/assets${WM_CORNER}${ELSE_LIGHT}${screen}/*.png           ${THEME_DIR}/xfwm4
   fi
 }
 

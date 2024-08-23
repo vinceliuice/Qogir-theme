@@ -931,6 +931,10 @@ stack#conversation_viewer {
   treeview.view.sidebar {
     @extend %side_views;
   }
+
+  searchbar {
+    @extend %side_searchbar;
+  }
 }
 
 //
