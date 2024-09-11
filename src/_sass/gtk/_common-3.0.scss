@@ -90,14 +90,14 @@ button.gtkstyle-fallback { // For Cinnamon system setting
 
 textview {
   text {
-    @extend %view;
+    color: $text_color;
+    background-color: $base_color;
 
     selection { &:focus, & { @extend %selected_items; } }
   }
+
+  border { background-color: mix($bg_color, $base_color, 50%); }
 }
-
-
-textview border { background-color: mix($bg_color, $base_color, 50%); }
 
 iconview {
   @extend %view;

@@ -79,17 +79,20 @@ button.gtkstyle-fallback:active, button.gtkstyle-fallback:checked {
 
 .view,
 window.thunar notebook scrolledwindow.frame.standard-view .view:not(.rubberband),
-iconview,
-textview text {
+iconview {
   color: #4a4c59;
   background-color: #ffffff;
 }
 
 .view:hover,
 window.thunar notebook scrolledwindow.frame.standard-view .view:hover:not(.rubberband),
-iconview:hover,
-textview text:hover {
+iconview:hover {
   background-color: rgba(0, 0, 0, 0.08);
+}
+
+textview text {
+  color: #4a4c59;
+  background-color: #ffffff;
 }
 
 textview border {
@@ -4920,9 +4923,7 @@ leaflet > box > scrolledwindow > viewport > list.navigation-sidebar > row.activa
 .xreader-window scrolledwindow.frame > .view:selected,
 .xreader-window scrolledwindow.frame > .view:active, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .view:selected, .view:selected:focus,
-window.thunar notebook scrolledwindow.frame.standard-view .view:selected:not(.rubberband),
-textview text:selected,
-textview text:selected:focus, textview text selection:focus, textview text selection,
+window.thunar notebook scrolledwindow.frame.standard-view .view:selected:not(.rubberband), textview text selection:focus, textview text selection,
 iconview:selected,
 iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
 modelbutton.flat:active,
@@ -4938,9 +4939,7 @@ leaflet > box > scrolledwindow > viewport > list.navigation-sidebar > row.activa
 .xreader-window scrolledwindow.frame > .view:selected,
 .xreader-window scrolledwindow.frame > .view:active, .caja-desktop > widget.entry:selected, .caja-desktop > widget.entry:focus:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .view:selected, .view:selected:focus,
-window.thunar notebook scrolledwindow.frame.standard-view .view:selected:not(.rubberband),
-textview text:selected,
-textview text:selected:focus, textview text selection:focus, textview text selection,
+window.thunar notebook scrolledwindow.frame.standard-view .view:selected:not(.rubberband), textview text selection:focus, textview text selection,
 iconview:selected,
 iconview:selected:focus, flowbox flowboxchild:selected, entry selection:focus, entry selection, menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
 modelbutton.flat:active,
@@ -4956,9 +4955,7 @@ leaflet > box > scrolledwindow > viewport > list.navigation-sidebar > row.activa
 .xreader-window scrolledwindow.frame > .view:disabled:selected,
 .xreader-window scrolledwindow.frame > .view:disabled:active, .caja-desktop > widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .view:disabled:selected,
-window.thunar notebook scrolledwindow.frame.standard-view .view:disabled:selected:not(.rubberband),
-textview text:disabled:selected,
-textview text:disabled:selected:focus, textview text selection:disabled,
+window.thunar notebook scrolledwindow.frame.standard-view .view:disabled:selected:not(.rubberband), textview text selection:disabled,
 iconview:disabled:selected,
 iconview:disabled:selected:focus, flowbox flowboxchild:disabled:selected, entry selection:disabled, menuitem.button.flat:disabled:active, menuitem.button.flat:active arrow:disabled, menuitem.button.flat:disabled:selected, menuitem.button.flat:selected arrow:disabled,
 modelbutton.flat:disabled:active,

@@ -1288,6 +1288,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 1em;
 }
 
+.popup-menu-content.kimpanel-popup-content {
+  padding: 6px 5px !important;
+  border-radius: 8px !important;
+}
+
+.popup-menu-content.kimpanel-popup-content .popup-menu-item {
+  border-radius: 2px !important;
+  margin: 0 1px !important;
+}
+
+.kimpanel-candidate-item {
+  border-radius: 2px !important;
+}
+
 /* Notifications & Message Tray */
 .notification-banner {
   min-height: 64px;

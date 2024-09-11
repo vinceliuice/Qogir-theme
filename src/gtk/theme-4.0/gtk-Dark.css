@@ -182,7 +182,7 @@ label.error:disabled {
   color: rgba(252, 65, 56, 0.5);
 }
 
-.dim-label, row.expander image.expander-row-arrow, row label.subtitle, popover.background label.separator, headerbar .subtitle, entry > text > placeholder, spinbutton.vertical > text > text > placeholder, spinbutton:not(.vertical) > text > text > placeholder, label.separator {
+.dim-label, row.expander image.expander-row-arrow, row label.subtitle, popover.background > contents label.separator, headerbar .subtitle, entry > text > placeholder, spinbutton.vertical > text > text > placeholder, spinbutton:not(.vertical) > text > text > placeholder, label.separator {
   opacity: 0.55;
   text-shadow: none;
 }
@@ -2894,23 +2894,18 @@ popover.background {
   background-color: transparent;
 }
 
-popover.background > arrow,
+popover.background > arrow {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 popover.background > contents {
   padding: 6px;
-  background-clip: border-box;
+  background-clip: padding-box;
   background-color: #32343D;
   border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+  border: none;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.12);
   color: #e0e5eb;
-}
-
-popover.background separator {
-  background-color: #32343D;
-}
-
-popover.background label.separator {
-  color: #e6ebef;
 }
 
 popover.background > contents > list,
@@ -2921,7 +2916,12 @@ popover.background > contents > toolbar {
 }
 
 popover.background > contents separator {
-  margin: 3px;
+  margin: 3px 0;
+  background-color: #32343D;
+}
+
+popover.background > contents label.separator {
+  color: #e6ebef;
 }
 
 popover.background > contents list {
@@ -2934,7 +2934,8 @@ popover.background > contents list separator {
 
 popover.background > contents list > row {
   margin: 0;
-  padding: 3px 6px;
+  min-height: 24px;
+  padding: 2px 8px;
   border-radius: 2px;
 }
 
@@ -2953,6 +2954,8 @@ popover.background > contents listview {
 
 popover.background > contents listview > row {
   margin: 0;
+  min-height: 24px;
+  padding: 2px 8px;
   border-radius: 2px;
 }
 
@@ -7660,7 +7663,7 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   background: none;
 }
 
-.sidebar-pane .dim-label, .sidebar-pane label.separator, .sidebar-pane entry > text > placeholder, .sidebar-pane spinbutton:not(.vertical) > text > text > placeholder, .sidebar-pane spinbutton.vertical > text > text > placeholder, .sidebar-pane headerbar .subtitle, headerbar .sidebar-pane .subtitle, .sidebar-pane popover.background label.separator, popover.background .sidebar-pane label.separator, .sidebar-pane row label.subtitle, row .sidebar-pane label.subtitle, .sidebar-pane row.expander image.expander-row-arrow, row.expander .sidebar-pane image.expander-row-arrow {
+.sidebar-pane .dim-label, .sidebar-pane label.separator, .sidebar-pane entry > text > placeholder, .sidebar-pane spinbutton:not(.vertical) > text > text > placeholder, .sidebar-pane spinbutton.vertical > text > text > placeholder, .sidebar-pane headerbar .subtitle, headerbar .sidebar-pane .subtitle, .sidebar-pane popover.background > contents label.separator, popover.background > contents .sidebar-pane label.separator, .sidebar-pane row label.subtitle, row .sidebar-pane label.subtitle, .sidebar-pane row.expander image.expander-row-arrow, row.expander .sidebar-pane image.expander-row-arrow {
   color: rgba(246, 246, 251, 0.45);
 }
 
