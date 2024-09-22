@@ -1469,10 +1469,6 @@ list > row button.image-button:not(.flat):not(.up):not(.down) {
   box-shadow: none;
 }
 
-.toolbar button {
-  margin: 2px;
-}
-
 popover.menu box.circular-buttons button.circular.image-button.model,
 list > row button.image-button:not(.flat):not(.up):not(.down) {
   border: 1px solid rgba(0, 0, 0, 0);
@@ -1843,10 +1839,11 @@ combobox popover .dropdown-searchbar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-toolbar {
-  padding: 4px;
-  border-spacing: 4px;
+.toolbar, toolbar {
+  padding: 3px;
+  border-spacing: 3px;
   background-color: #fafbfc;
+  color: #464853;
 }
 
 toolbar separator {
@@ -1865,18 +1862,19 @@ toolbar.vertical separator {
   background-color: transparent;
 }
 
-toolbar switch,
-toolbar scale,
-toolbar entry,
-toolbar spinbutton,
-toolbar button {
-  margin-right: 1px;
-  margin-bottom: 1px;
-}
-
 toolbar .linked > button,
 toolbar .linked > entry {
   margin-right: 0;
+}
+
+.toolbar {
+  border-spacing: 0;
+  padding: 6px;
+}
+
+.toolbar entry {
+  min-height: 0;
+  padding: 0 8px;
 }
 
 searchbar > revealer > box {
@@ -2727,8 +2725,7 @@ treeview.view > header > button {
   background-color: #ffffff;
   background-image: none;
   background-clip: padding-box;
-  border-style: none solid solid none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-style: none solid none none;
   border-radius: 0;
   border-image: linear-gradient(to bottom, #ffffff 20%, rgba(0, 0, 0, 0.12) 20%, rgba(0, 0, 0, 0.12) 80%, #ffffff 80%) 0 1 0 0/0 1px 0 0 stretch;
 }
@@ -4798,6 +4795,63 @@ window.dialog.message .dialog-action-area button:not(.suggested-action):not(.des
   color: #e0e5eb;
 }
 
+window.messagedialog .response-area > button {
+  padding: 6px 12px;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background-color: #282A33;
+  color: #e0e5eb;
+}
+
+window.messagedialog .response-area > button:hover {
+  background-color: rgba(224, 229, 235, 0.06);
+  border: none;
+  box-shadow: none;
+}
+
+window.messagedialog .response-area > button:active {
+  background-color: rgba(224, 229, 235, 0.15);
+  color: #e0e5eb;
+  border: none;
+  box-shadow: none;
+}
+
+window.messagedialog .response-area > button.suggested {
+  color: #5294e2;
+}
+
+window.messagedialog .response-area > button.suggested:hover {
+  background-color: rgba(82, 148, 226, 0.12);
+}
+
+window.messagedialog .response-area > button.suggested:active {
+  background-color: rgba(82, 148, 226, 0.25);
+}
+
+window.messagedialog .response-area > button.destructive {
+  color: #F04A50;
+}
+
+window.messagedialog .response-area > button.destructive:hover {
+  background-color: rgba(240, 74, 80, 0.12);
+}
+
+window.messagedialog .response-area > button.destructive:active {
+  background-color: rgba(240, 74, 80, 0.25);
+}
+
+window.messagedialog .response-area:not(.compact) > button {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+window.messagedialog .response-area.compact > button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 filechooser .dialog-action-box {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
@@ -6227,8 +6281,8 @@ leaflet.unfolded > separator, leaflet.unfolded > separator.sidebar {
   min-width: 0;
 }
 
-toastoverlay event.color-light {
-  color: rgba(246, 246, 251, 0.8);
+toastoverlay event.dim-label {
+  color: rgba(70, 72, 83, 0.75);
 }
 
 toastoverlay label.weekday {
@@ -6270,6 +6324,10 @@ agenda-view list.background, agenda-view list.background row {
 
 agenda-view list.background .dim-label, agenda-view list.background label.separator, agenda-view list.background entry > text > placeholder, agenda-view list.background spinbutton:not(.vertical) > text > text > placeholder, agenda-view list.background spinbutton.vertical > text > text > placeholder, agenda-view list.background headerbar .subtitle, headerbar agenda-view list.background .subtitle, agenda-view list.background row label.subtitle, row agenda-view list.background label.subtitle, agenda-view list.background row.expander image.expander-row-arrow, row.expander agenda-view list.background image.expander-row-arrow {
   color: rgba(246, 246, 251, 0.45);
+}
+
+agenda-view list.background event.dim-label {
+  color: rgba(246, 246, 251, 0.8);
 }
 
 .details-page {

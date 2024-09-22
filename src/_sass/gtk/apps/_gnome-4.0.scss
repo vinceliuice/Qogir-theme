@@ -612,8 +612,8 @@ leaflet.unfolded {
 //
 
 toastoverlay {
-  event.color-light {
-    color: $side_theme_alt_fg;
+  event.dim-label {
+    color: $alt_fg_color;
   }
 
   label.weekday {
@@ -663,6 +663,10 @@ agenda-view list.background {
 
   .dim-label {
     color: rgba($side_theme_fg, 0.45);
+  }
+
+  event.dim-label {
+    color: $side_theme_alt_fg;
   }
 }
 

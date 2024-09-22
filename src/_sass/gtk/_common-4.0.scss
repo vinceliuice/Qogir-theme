@@ -978,12 +978,6 @@ headerbar.titlebar {
   box-shadow: none;
 }
 
-// oldstyle toolbar buttons
-.toolbar button {
-  margin: 2px;
-  @extend %flat_button;
-}
-
 // list buttons
 %list_button,
 list > row button.image-button:not(.flat):not(.up):not(.down) {
@@ -1284,9 +1278,10 @@ combobox {
 //
 
 %toolbar {
-  padding: 4px;
-  border-spacing: 4px;
+  padding: $cont_padding / 2;
+  border-spacing: $cont_padding / 2;
   background-color: $bg_color;
+  color: $fg_color;
 }
 
 toolbar {
@@ -1302,17 +1297,24 @@ toolbar {
     @extend %osd;
   }
 
-  switch,
-  scale,
-  entry,
-  spinbutton,
+  .linked > button,
+  .linked > entry { margin-right: 0; }
+}
+
+// oldstyle toolbar buttons
+.toolbar {
+  @extend %toolbar;
+  border-spacing: 0;
+  padding: $cont_padding;
+
   button {
-    margin-right: 1px;
-    margin-bottom: 1px;
+    @extend %flat_button;
   }
 
-  .linked > button,
-  .linked > entry { margin-right:0; }
+  entry {
+    min-height: 0;
+    padding: 0 8px;
+  }
 }
 
 searchbar > revealer > box {
@@ -2026,8 +2028,7 @@ treeview.view {
       background-color: $base_color;
       background-image: none;
       background-clip: padding-box;
-      border-style: none solid solid none;
-      border-bottom: 1px solid $borders_color;
+      border-style: none solid none none;
       border-radius: 0;
       border-image: linear-gradient(to bottom,
                                     $base_color 20%,
@@ -3749,6 +3750,67 @@ window.dialog.message { // Message Dialog styling
     &:active, &:checked {
       background-color: rgba($dialog_fg, 0.1);
       color: $dialog_fg;
+    }
+  }
+}
+
+window.messagedialog {
+  .response-area {
+    > button {
+      padding: $cont_padding $cont_padding * 2;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      background-color: $dialog_bg;
+      color: $dialog_fg;
+
+      &:hover {
+        background-color: rgba($dialog_fg, 0.06);
+        border: none;
+        box-shadow: none;
+      }
+
+      &:active {
+        background-color: rgba($dialog_fg, 0.15);
+        color: $dialog_fg;
+        border: none;
+        box-shadow: none;
+      }
+
+      &.suggested {
+        color: $suggested_color;
+
+        &:hover {
+          background-color: rgba($suggested_color, 0.12);
+        }
+  
+        &:active {
+          background-color: rgba($suggested_color, 0.25);
+        }  
+      }
+
+      &.destructive {
+        color: $destructive_color;
+
+        &:hover {
+          background-color: rgba($destructive_color, 0.12);
+        }
+  
+        &:active {
+          background-color: rgba($destructive_color, 0.25);
+        } 
+      }
+    }
+
+    &:not(.compact) > button {
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    &.compact > button {
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
 }
