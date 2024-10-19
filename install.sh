@@ -23,6 +23,9 @@ THEME_VARIANTS=('' '-Manjaro' '-Ubuntu')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 ICON_NAME=''
 
+themes=()
+colors=()
+
 image=''
 window=''
 square=''
@@ -259,18 +262,6 @@ install_xfwm() {
     cp -r ${SRC_DIR}/src/xfwm4/themerc${WM_CORNER}${ELSE_LIGHT}                         ${THEME_DIR}/xfwm4/themerc
     cp -r ${SRC_DIR}/src/xfwm4/assets${WM_CORNER}${ELSE_LIGHT}${screen}/*.png           ${THEME_DIR}/xfwm4
   fi
-}
-
-uninstall() {
-  local dest=${1}
-  local name=${2}
-  local theme=${3}
-  local color=${4}
-  local screen=${5}
-
-  local THEME_DIR=${dest}/${name}${theme}${color}${screen}
-
-  [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR"{'','-hdpi','-xhdpi'} && echo -e "Uninstalling "$THEME_DIR" ..."
 }
 
 # GDM Theme
@@ -553,6 +544,14 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+if [[ "${#themes[@]}" -eq 0 ]] ; then
+  themes=("${THEME_VARIANTS[0]}")
+fi
+
+if [[ "${#colors[@]}" -eq 0 ]] ; then
+  colors=("${COLOR_VARIANTS[@]}")
+fi
+
 # check command avalibility
 function has_command() {
   command -v $1 > /dev/null
@@ -618,6 +617,22 @@ install_css_deps() {
       }
 
     fi
+  fi
+}
+
+uninstall() {
+  local dest="${1}"
+  local name="${2}"
+  local theme="${3}"
+  local window="${4}"
+  local color="${5}"
+  local screen="${6}"
+
+  local THEME_DIR="${dest}/${name}${theme}${window}${color}${screen}"
+
+  if [[ -d "$THEME_DIR" ]]; then
+    rm -rf "$THEME_DIR"
+    echo -e "Uninstalling "$THEME_DIR" ..."
   fi
 }
 
@@ -693,21 +708,21 @@ theme_tweaks() {
 }
 
 link_theme() {
-  for theme in "${themes[@]-${THEME_VARIANTS[0]}}"; do
-    for lcolor in "${lcolors[@]-${COLOR_VARIANTS[1]}}"; do
+  for theme in "${THEME_VARIANTS[0]}"; do
+    for lcolor in "${COLOR_VARIANTS[1]}"; do
       link_libadwaita "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$lcolor"
     done
   done
 }
 
 install_theme() {
-  for theme in "${themes[@]-${THEME_VARIANTS[0]}}"; do
-    for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
+  for theme in "${themes[@]}"; do
+    for color in "${colors[@]}"; do
       install "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${color}" "${icon:-${ICON_NAME}}"
     done
   done
 
-  for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
+  for color in "${colors[@]}"; do
     for screen in '' '-hdpi' '-xhdpi'; do
       install_xfwm "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${color}" "${screen}"
     done
@@ -715,19 +730,43 @@ install_theme() {
 }
 
 uninstall_theme() {
-  for theme in "${themes[@]-${THEME_VARIANTS[@]}}"; do
-    for color in "${colors[@]-${COLOR_VARIANTS[@]}}"; do
-      for screen in '' '-hdpi' '-xhdpi'; do
-        uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${color}" "${screen}"
+  for theme in "${THEME_VARIANTS[@]}"; do
+    for window in '' '-Round'; do
+      for color in "${COLOR_VARIANTS[@]}"; do
+        for screen in '' '-hdpi' '-xhdpi'; do
+          uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${window}" "${color}" "${screen}"
+        done
       done
     done
   done
 }
 
-${SRC_DIR}/clean-old-theme.sh
+clean_theme() {
+  for theme in '' '-manjaro' '-ubuntu'; do
+    for color in '' '-light' '-dark'; do
+      uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${color}"
+    done
+  done
+
+  if [[ "$DEST_DIR" == "$HOME/.themes" ]]; then
+    local dest="$HOME/.local/share/themes"
+  elif [[ "$DEST_DIR" == "$XDG_DATA_HOME/themes" || "$DEST_DIR" == "$HOME/.local/share/themes" ]]; then
+    local dest="$HOME/.themes"
+  fi
+
+  for theme in "${THEME_VARIANTS[@]}"; do
+    for window in '' '-Round'; do
+      for color in "${COLOR_VARIANTS[@]}"; do
+        for screen in '' '-hdpi' '-xhdpi'; do
+          uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${window}" "${color}" "${screen}"
+        done
+      done
+    done
+  done
+}
 
 if [[ "${gdm:-}" != 'true' && "${remove:-}" != 'true' ]]; then
-  install_theme
+  clean_theme && install_theme
 
   if [[ "$libadwaita" == 'true' ]]; then
     uninstall_link && link_theme
