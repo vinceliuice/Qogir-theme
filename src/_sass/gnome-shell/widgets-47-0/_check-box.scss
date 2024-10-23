@@ -1,0 +1,29 @@
+/* Check Boxes */
+
+.check-box {
+  StBoxLayout { spacing: .8em; }
+
+  StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("assets/checkbox-unchecked.svg");
+  }
+
+  &:focus StBin {
+    // Trick due to St limitations. It needs a background to draw a box-shadow
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &:focus StBin { background-image: url("assets/checkbox-unchecked-focused.svg"); }
+  &:checked StBin { background-image: url("assets/checkbox-checked.svg"); }
+  &:focus:checked StBin { background-image: url("assets/checkbox-checked-focused.svg"); }
+
+  StIcon {
+    icon-size: 0;
+    padding: 0;
+    color: transparent !important;
+    border: none  !important;
+    background: none !important;
+  }
+}

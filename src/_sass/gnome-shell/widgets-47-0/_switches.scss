@@ -1,0 +1,44 @@
+/* Switches */
+
+.toggle-switch {
+  width: 50px;
+  height: 20px;
+  color: transparent;
+
+  &, &:hover {
+    background-size: contain;
+    background-image: url("assets/switch-off.svg");
+    background-color: transparent;
+  }
+
+  &:checked, &:checked:hover {
+    background-image: url("assets/switch-on.svg");
+    background-color: transparent;
+    color: transparent;
+  }
+
+  .popup-menu-item:hover &,
+  .popup-menu-item:focus &,
+  .popup-menu-item.selected & {
+    background-image: url("assets/switch-off-selected.svg");
+
+    &:checked { background-image: url("assets/switch-on-selected.svg"); }
+  }
+
+  StIcon {
+    icon-size: 0;
+  }
+
+  .handle {
+    margin: 0;
+    background: none;
+    box-shadow: none;
+    transition-duration: 0;
+  }
+
+  &:checked {
+    .handle {
+      background: none;
+    }
+  }
+}

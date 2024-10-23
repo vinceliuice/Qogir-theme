@@ -75,6 +75,13 @@ $bubble_button_radius: $material_radius - 1px;
   box-shadow: 0 3px 8px -3px rgba(black, 0.35) !important;
 }
 
+%notification_button {
+  padding: $base_padding $base_padding * 2;
+  font-weight: bold;
+  border-radius: $bt_radius;
+  @extend %button;
+}
+
 // osd panels
 %osd_panel {
   color: $osd_fg_color;

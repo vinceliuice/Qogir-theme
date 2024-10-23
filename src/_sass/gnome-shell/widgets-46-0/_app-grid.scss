@@ -86,14 +86,16 @@ $app_folder_size: 720px;
   & .folder-name-container {
     padding: 24px 36px 0;
 
-    & .folder-name-label,
-    & .folder-name-entry {
+    & .folder-name-label {
       @extend %title_1;
     }
 
     & .folder-name-entry {
       @extend %search_entry;
-      width: 12em;
+      @extend %title_3;
+      padding: 3px 9px;
+      height: $search_entry_height + 6px;
+      width: 20em;
     }
 
     & .icon-button {

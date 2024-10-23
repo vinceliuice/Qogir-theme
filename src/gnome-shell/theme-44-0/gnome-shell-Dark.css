@@ -87,7 +87,12 @@ stage {
 }
 
 /* General Typography */
-.quick-toggle-menu .header .title {
+.app-folder-dialog .folder-name-container .folder-name-label {
+  font-weight: 800;
+  font-size: 20pt;
+}
+
+.quick-toggle-menu .header .title, .app-folder-dialog .folder-name-container .folder-name-entry {
   font-weight: 700;
   font-size: 15pt;
 }
@@ -1967,26 +1972,32 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   transition-duration: 150ms;
   text-shadow: none;
   border: none;
+  border-bottom: 2px solid transparent;
   box-shadow: none;
   border-radius: 0;
 }
 
-#panel .panel-button:hover {
+#panel .panel-button:hover, #panel .panel-button:focus {
   color: #D3DAE3;
   background-color: rgba(211, 218, 227, 0.08);
   box-shadow: none;
   border-radius: 0;
 }
 
-#panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
+#panel .panel-button:active, #panel .panel-button:checked {
   color: #D3DAE3;
   background-color: rgba(211, 218, 227, 0.16);
-  box-shadow: inset 0 -2px 0 #5294e2;
+  border-color: #5294e2;
   border-radius: 0;
 }
 
-#panel .panel-button:active > .system-status-icon, #panel .panel-button:overview > .system-status-icon, #panel .panel-button:focus > .system-status-icon, #panel .panel-button:checked > .system-status-icon {
+#panel .panel-button:active > .system-status-icon, #panel .panel-button:checked > .system-status-icon {
   icon-shadow: none;
+}
+
+#panel .panel-button.clock-display {
+  border: none;
+  border-bottom: 2px solid transparent !important;
 }
 
 #panel .panel-button.clock-display .clock {
@@ -1995,19 +2006,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0;
 }
 
-#panel .panel-button.clock-display:hover {
+#panel .panel-button.clock-display:hover, #panel .panel-button.clock-display:focus {
   color: #D3DAE3;
   background-color: rgba(211, 218, 227, 0.08) !important;
   box-shadow: none;
 }
 
-#panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:focus, #panel .panel-button.clock-display:checked {
+#panel .panel-button.clock-display:active, #panel .panel-button.clock-display:checked {
   color: #D3DAE3;
   background-color: rgba(211, 218, 227, 0.16) !important;
-  box-shadow: inset 0 -2px 0 #5294e2 !important;
+  box-shadow: none;
+  border-color: #5294e2 !important;
 }
 
-#panel .panel-button.clock-display .clock, #panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
+#panel .panel-button.clock-display .clock, #panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:hover .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
   background-color: transparent;
   box-shadow: none;
 }
@@ -2237,8 +2249,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-folder-dialog .folder-name-container .folder-name-entry,
 .search-entry {
   width: 320px;
-  padding: 7px 9px;
-  border-radius: 1000px;
+  height: 20px;
+  padding: 6px 9px;
+  border-radius: 9999px;
   color: rgba(230, 235, 239, 0.7);
   background-color: #40424e;
   border: none;
@@ -2247,7 +2260,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-folder-dialog .folder-name-container .folder-name-entry:hover,
 .search-entry:hover {
-  padding: 7px 9px;
   color: #e6ebef;
   background-color: #494c59;
   border: none;
@@ -2265,7 +2277,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-folder-dialog .folder-name-container .folder-name-entry:focus,
 .search-entry:focus {
-  padding: 7px 9px;
   color: #ffffff;
   background-color: #5294e2;
   caret-color: #ffffff;
@@ -2299,6 +2310,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .search-entry .search-entry-icon {
   icon-size: 16px;
   padding: 0 4px;
+  margin-top: 0;
   color: inherit;
 }
 
@@ -2419,21 +2431,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-folder-dialog .folder-name-container {
   padding: 12px 18px 0;
   spacing: 12px;
-  /* FIXME: this is to keep the label in sync with the entry */
-}
-
-.app-folder-dialog .folder-name-container .folder-name-label, .app-folder-dialog .folder-name-container .folder-name-entry {
-  font-size: 16pt;
-  font-weight: bold;
 }
 
 .app-folder-dialog .folder-name-container .folder-name-entry {
-  width: 300px;
-}
-
-.app-folder-dialog .folder-name-container .folder-name-label {
-  padding: 5px 7px;
-  color: #ffffff;
+  padding: 3px 9px;
+  height: 26px;
+  width: 20em;
 }
 
 .app-folder-dialog .folder-name-container .edit-folder-button {

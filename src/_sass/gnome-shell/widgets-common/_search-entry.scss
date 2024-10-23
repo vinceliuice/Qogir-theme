@@ -1,20 +1,20 @@
 // Search entry
 
 $search_entry_width: 320px;
-$search_entry_height: 36px;
+$search_entry_height: 20px;
 
 %search_entry,
 .search-entry {
   width: $search_entry_width;
-  padding: 7px 9px;
-  border-radius: 1000px; // half the height
+  height: $search_entry_height;
+  padding: 6px 9px;
+  border-radius: $circular_radius; // half the height
   color: transparentize($fg_color, 0.3);
   background-color: lighten($bg_color, 6%);
   border: none;
   caret-color: $fg_color;
 
   &:hover {
-    padding: 7px 9px;
     color: $fg_color;
     background-color: lighten($bg_color, 10%);
     border: none;
@@ -27,7 +27,6 @@ $search_entry_height: 36px;
   }
 
   &:focus {
-    padding: 7px 9px;
     color: $selected_fg_color;
     background-color: $selected_bg_color;
     caret-color: $selected_fg_color;
@@ -54,6 +53,7 @@ $search_entry_height: 36px;
   .search-entry-icon {
     icon-size: 16px;
     padding: 0 4px;
+    margin-top: 0;
     color: inherit;
   }
 }
