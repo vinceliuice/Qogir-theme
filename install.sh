@@ -95,7 +95,7 @@ install() {
 
   [[ ${color} == '-Dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-Light' ]] && local ELSE_LIGHT=${color}
-  [[ "${window}" == 'round' ]] && local WM_CORNER='-Round'
+  [[ ${window} == 'round' ]] && local WM_CORNER='-Round'
 
   local THEME_DIR=${dest}/${name}${theme}${WM_CORNER}${color}
 
@@ -626,11 +626,11 @@ uninstall() {
   local dest="${1}"
   local name="${2}"
   local theme="${3}"
-  local window="${4}"
+  local corner="${4}"
   local color="${5}"
   local screen="${6}"
 
-  local THEME_DIR="${dest}/${name}${theme}${window}${color}${screen}"
+  local THEME_DIR="${dest}/${name}${theme}${corner}${color}${screen}"
 
   if [[ -d "$THEME_DIR" ]]; then
     rm -rf "$THEME_DIR"
@@ -733,10 +733,10 @@ install_theme() {
 
 uninstall_theme() {
   for theme in "${THEME_VARIANTS[@]}"; do
-    for window in '' '-Round'; do
+    for corner in '' '-Round'; do
       for color in "${COLOR_VARIANTS[@]}"; do
         for screen in '' '-hdpi' '-xhdpi'; do
-          uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${window}" "${color}" "${screen}"
+          uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${corner}" "${color}" "${screen}"
         done
       done
     done
@@ -744,11 +744,11 @@ uninstall_theme() {
 }
 
 clean_theme() {
-  for theme in '' '-manjaro' '-ubuntu'; do
-    for color in '' '-light' '-dark'; do
-      uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${color}"
-    done
-  done
+#  for theme in '' '-manjaro' '-ubuntu'; do
+#    for color in '' '-light' '-dark'; do
+#      uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${color}"
+#    done
+#  done
 
   if [[ "$DEST_DIR" == "$HOME/.themes" ]]; then
     local dest="$HOME/.local/share/themes"
@@ -757,10 +757,10 @@ clean_theme() {
   fi
 
   for theme in "${THEME_VARIANTS[@]}"; do
-    for window in '' '-Round'; do
+    for corner in '' '-Round'; do
       for color in "${COLOR_VARIANTS[@]}"; do
         for screen in '' '-hdpi' '-xhdpi'; do
-          uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${window}" "${color}" "${screen}"
+          uninstall "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "${theme}" "${corner}" "${color}" "${screen}"
         done
       done
     done
