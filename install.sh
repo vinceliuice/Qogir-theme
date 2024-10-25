@@ -710,8 +710,8 @@ theme_tweaks() {
 }
 
 link_theme() {
-  for theme in "${THEME_VARIANTS[0]}"; do
-    for lcolor in "${COLOR_VARIANTS[1]}"; do
+  for theme in "${themes[@]}"; do
+    for lcolor in "${colors[@]}"; do
       link_libadwaita "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$lcolor"
     done
   done
