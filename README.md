@@ -25,6 +25,10 @@ Fedora/RedHat distros:
 
     dnf install gtk-murrine-engine gtk2-engines
 
+openSUSE/SUSE distros:
+
+    zypper in gtk2-engine-murrine gtk2-engines
+
 Ubuntu/Mint/Debian distros:
 
     sudo apt-get install gtk2-engines-murrine gtk2-engines-pixbuf
