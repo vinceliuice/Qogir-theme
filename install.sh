@@ -25,6 +25,7 @@ ICON_NAME=''
 
 themes=()
 colors=()
+lcolors=()
 
 image=''
 window=''
@@ -554,6 +555,10 @@ if [[ "${#colors[@]}" -eq 0 ]] ; then
   colors=("${COLOR_VARIANTS[@]}")
 fi
 
+if [[ "${#lcolors[@]}" -eq 0 ]] ; then
+  lcolors=("${COLOR_VARIANTS[1]}")
+fi
+
 # check command avalibility
 function has_command() {
   command -v $1 > /dev/null
@@ -711,7 +716,7 @@ theme_tweaks() {
 
 link_theme() {
   for theme in "${themes[@]}"; do
-    for lcolor in "${colors[@]}"; do
+    for lcolor in "${lcolors[@]}"; do
       link_libadwaita "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$lcolor"
     done
   done
