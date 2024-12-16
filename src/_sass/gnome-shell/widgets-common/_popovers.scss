@@ -48,11 +48,12 @@
   padding: 6px;
   color: $alt_fg_color !important;
   border-radius: 0 !important;
-  border: none !important;
+  border-top: none !important;
 
   &:checked {
     background-color: darken($base_color, 3%) !important;
-    box-shadow: inset 0 1px $borders_color !important;
+    border-top: 1px solid $borders_color !important;
+    box-shadow: none !important;
     color: $fg_color !important;
     border-radius: 0 !important;
   }
@@ -85,7 +86,8 @@
 .popup-sub-menu {
   background-color: darken($base_color, 3%) !important;
   border: none !important;
-  box-shadow: inset 0 -1px $borders_color !important;
+  border-bottom: 1px solid $borders_color !important;
+  box-shadow: none !important;
   border-radius: 0 !important;
 
   .popup-menu-item {

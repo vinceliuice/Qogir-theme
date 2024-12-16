@@ -231,6 +231,8 @@ install() {
     cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3${WM_CORNER}.xml                 ${THEME_DIR}/metacity-1/metacity-theme-3.xml
   fi
 
+  sed -i "s/Qogir/${name}${theme}${WM_CORNER}${color}/g"                             ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+
   cp -r ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                         ${THEME_DIR}/metacity-1/thumbnail.png
   cd ${THEME_DIR}/metacity-1
   ln -s metacity-theme-3.xml metacity-theme-1.xml && ln -s metacity-theme-3.xml metacity-theme-2.xml
