@@ -2892,6 +2892,8 @@ popover.background {
 }
 
 popover.background > arrow {
+  background-clip: padding-box;
+  background-color: #32343D;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 

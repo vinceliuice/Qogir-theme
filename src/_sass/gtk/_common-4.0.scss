@@ -2214,7 +2214,11 @@ popover.background {
   font: initial; // Decouple the font of popovers from their entry/textvie
   background-color: transparent;
 
-  > arrow { border: 1px solid $borders_color; }
+  > arrow {
+    background-clip: padding-box;
+    background-color: $_popover_bg;
+    border: 1px solid $borders_color;
+  }
 
   > contents {
     padding: $cont_padding;
