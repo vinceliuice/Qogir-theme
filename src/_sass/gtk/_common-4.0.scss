@@ -3235,7 +3235,11 @@ list {
   background-color: $base_color;
   border-color: $borders_color;
 
-  > row { padding: 2px; }
+  > row {
+    padding: 2px;
+    background-clip: padding-box;
+  }
+
   > row.expander { padding: 0px; }
   > row.expander .row-header { padding: 2px; }
 
@@ -3248,6 +3252,13 @@ list {
   &.separators:not(.horizontal) > row:not(.separator) {
     border-bottom: 1px solid $solid_borders_color;
   }
+}
+
+listview > header {
+  @extend .heading;
+  padding: 2px;
+  padding-top: 18px;
+  padding-bottom: 6px;
 }
 
 %row_activatable {
@@ -3281,6 +3292,7 @@ row {
   @include focus-ring($offset: -3px);
   @extend %row_activatable;
 
+  // AdwActionRow
   label.subtitle {
     font-size: smaller;
     @extend .dim-label;
@@ -3289,6 +3301,7 @@ row {
   > box.header {
     margin-left: 12px;
     margin-right: 12px;
+    border-spacing: 6px;
     min-height: 50px;
 
     > .icon:disabled {
@@ -3299,6 +3312,50 @@ row {
       margin-top: 6px;
       margin-bottom: 6px;
       border-spacing: 3px;
+      padding: 0;
+
+      // Specificity bump for header bar
+      &,
+      > .title,
+      > .subtitle {
+        padding: 0;
+        font-weight: inherit;
+      }
+    }
+
+    > .prefixes,
+    > .suffixes {
+      border-spacing: 6px;
+
+      > .suffixes {
+        border-spacing: 6px;
+      }
+    }
+
+    > .icon,
+    > .prefixes {
+      &:dir(ltr) { margin-right: 6px; }
+      &:dir(rtl) { margin-left: 6px; }
+    }
+  }
+
+  &.property > box.header > box.title > {
+    .title {
+      font-size: smaller;
+      @extend .dim-label;
+    }
+
+    .subtitle {
+      font-size: inherit;
+      opacity: 1;
+    }
+  }
+
+  &.property.monospace {
+    font-family: inherit;
+
+    & > box.header > box.title > .subtitle {
+      font-family: monospace;
     }
   }
 
@@ -3322,6 +3379,134 @@ row {
 
   button:hover &.activatable:hover, button:active &.activatable:hover {
     background-color: transparent;
+  }
+}
+
+/******************************
+ * AdwEntryRow and AdwSpinRow *
+ ******************************/
+
+ row.entry {
+  &:disabled {
+    text {
+      opacity: 0.35;
+    }
+
+    .dim-label, .subtitle {
+      opacity: 1;
+    }
+  }
+
+  > box.header {
+    border-spacing: 0;
+    margin-left: 6px;
+    margin-right: 6px;
+
+    > .editable-area {
+      padding: 0 6px;
+
+      > .edit-icon, > .indicator {
+        min-width: 24px;
+        min-height: 24px;
+        padding: 5px;
+        -gtk-icon-shadow: none;
+      }
+
+      > .edit-icon, > .indicator, > .apply-button {
+        &:dir(ltr) { margin-left: 6px; }
+        &:dir(rtl) { margin-right: 6px; }
+      }
+
+      > .edit-icon:disabled {
+        opacity: 0.45;
+      }
+
+      > .indicator {
+        opacity: 0.65;
+      }
+    }
+
+    > .prefixes {
+      &:dir(ltr) { margin-left: 6px; }
+      &:dir(rtl) { margin-right: 6px; }
+    }
+
+    > .suffixes {
+      &:dir(ltr) { margin-right: 6px; }
+      &:dir(rtl) { margin-left: 6px; }
+    }
+  }
+
+  &.monospace {
+    font-family: inherit;
+
+    text {
+      font-family: monospace;
+    }
+  }
+}
+
+row.spin {
+  spinbutton {
+    background: none;
+    border-spacing: 0;
+    box-shadow: none;
+
+    &, &:focus {
+      outline: none;
+    }
+  }
+}
+
+row.entry,
+row.spin {
+  &:not(:selected).activatable.focused:hover,
+  &:not(:selected).activatable.focused:active {
+    background-color: transparent;
+  }
+
+  @each $e_type in error, warning, success {
+    &.#{$e_type} {
+      color: $selected_bg_color;
+
+      .dim-label, .subtitle {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/***************
+ * AdwComboRow *
+ ***************/
+
+row.combo {
+  image.dropdown-arrow:disabled {
+    filter: Opacity(0.35);
+  }
+
+  listview.inline {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: inherit;
+
+    &, &:disabled {
+      background: none;
+      color: inherit;
+    }
+  }
+
+  popover > contents {
+    min-width: 120px;
+
+    .combo-searchbar {
+      margin: 6px;
+
+      + scrolledwindow {
+        @include undershoot(top);
+      }
+    }
   }
 }
 
@@ -3418,8 +3603,15 @@ row.expander {
  * Boxed Lists *
  *****************/
 
+list.content {
+  @extend %card;
+
+  > row {
+    @extend %boxed_list_row;
+  }
+}
+
 // Deprecated: use .boxed-list instead
-list.content,
 list.boxed-list {
   @extend %card;
 
@@ -3451,6 +3643,69 @@ list.boxed-list {
         border-bottom-left-radius: $bt_radius;
         border-bottom-right-radius: $bt_radius;
         border-bottom-width: 0;
+      }
+    }
+  }
+}
+
+list.boxed-list-separate {
+  background: none;
+  color: $text_color;
+
+  > row {
+    @extend %card;
+
+    &:selected {
+      background-color: gtkalpha(currentColor, .03);
+    }
+
+    border: none;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:not(.expander) {
+      &:not(:selected).activatable {
+        &:hover {
+          background-color: $base_color;
+          background-image: image(color-mix(in srgb, currentColor 3%, transparent));
+        }
+
+        &:active {
+          background-color: $base_color;
+          background-image: image(color-mix(in srgb, currentColor 8%, transparent));
+        }
+
+        &.has-open-popup {
+          background-color: $base_color;
+          background-image: image(color-mix(in srgb, currentColor 3%, transparent));
+        }
+      }
+    }
+
+    &.entry, &.spin {
+      &:not(:selected).activatable.focused:hover,
+      &:not(:selected).activatable.focused:active {
+        background-color: $base_color;
+        background-image: none;
+      }
+    }
+
+    &.expander {
+      row.header {
+        @extend %boxed_list_row;
+        border-top-left-radius: $bt_radius;
+        border-top-right-radius: $bt_radius;
+      }
+
+      &:not(:checked) row.header,
+      &.expander:checked list.nested,
+      &.expander:checked list.nested > row:last-child {
+        border-bottom-left-radius: $bt_radius;
+        border-bottom-right-radius: $bt_radius;
+        border-bottom: none;
       }
     }
   }

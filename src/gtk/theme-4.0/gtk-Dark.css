@@ -182,7 +182,7 @@ label.error:disabled {
   color: rgba(252, 65, 56, 0.5);
 }
 
-.dim-label, row.expander image.expander-row-arrow, row label.subtitle, popover.background > contents label.separator, headerbar .subtitle, entry > text > placeholder, spinbutton.vertical > text > text > placeholder, spinbutton:not(.vertical) > text > text > placeholder, label.separator {
+.dim-label, row.expander image.expander-row-arrow, row.property > box.header > box.title > .title, row.expander.property box > list > row > box.header > box.title > .title, row label.subtitle, popover.background > contents label.separator, headerbar .subtitle, entry > text > placeholder, spinbutton.vertical > text > text > placeholder, spinbutton:not(.vertical) > text > text > placeholder, label.separator {
   opacity: 0.55;
   text-shadow: none;
 }
@@ -290,7 +290,7 @@ spinner:checked:disabled {
   font-size: 13pt;
 }
 
-.heading {
+.heading, listview > header {
   font-weight: 700;
   font-size: 11pt;
 }
@@ -4271,6 +4271,7 @@ list {
 listview > row,
 list > row {
   padding: 2px;
+  background-clip: padding-box;
 }
 
 listview > row.expander,
@@ -4293,6 +4294,12 @@ listview:not(.horizontal) row.separator, listview.separators:not(.horizontal) > 
 list:not(.horizontal) row.separator,
 list.separators:not(.horizontal) > row:not(.separator) {
   border-bottom: 1px solid #42444b;
+}
+
+listview > header {
+  padding: 2px;
+  padding-top: 18px;
+  padding-bottom: 6px;
 }
 
 row:hover {
@@ -4331,6 +4338,7 @@ row label.subtitle {
 row > box.header {
   margin-left: 12px;
   margin-right: 12px;
+  border-spacing: 6px;
   min-height: 50px;
 }
 
@@ -4342,6 +4350,51 @@ row > box.header > box.title {
   margin-top: 6px;
   margin-bottom: 6px;
   border-spacing: 3px;
+  padding: 0;
+}
+
+row > box.header > box.title,
+row > box.header > box.title > .title,
+row > box.header > box.title > .subtitle {
+  padding: 0;
+  font-weight: inherit;
+}
+
+row > box.header > .prefixes,
+row > box.header > .suffixes {
+  border-spacing: 6px;
+}
+
+row > box.header > .prefixes > .suffixes,
+row > box.header > .suffixes > .suffixes {
+  border-spacing: 6px;
+}
+
+row > box.header > .icon:dir(ltr),
+row > box.header > .prefixes:dir(ltr) {
+  margin-right: 6px;
+}
+
+row > box.header > .icon:dir(rtl),
+row > box.header > .prefixes:dir(rtl) {
+  margin-left: 6px;
+}
+
+row.property > box.header > box.title > .title, row.expander.property box > list > row > box.header > box.title > .title {
+  font-size: smaller;
+}
+
+row.property > box.header > box.title > .subtitle, row.expander.property box > list > row > box.header > box.title > .subtitle {
+  font-size: inherit;
+  opacity: 1;
+}
+
+row.property.monospace, row.expander.property box > list > row.monospace {
+  font-family: inherit;
+}
+
+row.property.monospace > box.header > box.title > .subtitle, row.expander.property box > list > row.monospace > box.header > box.title > .subtitle {
+  font-family: monospace;
 }
 
 row.combo listview.inline {
@@ -4364,37 +4417,210 @@ button:hover row.activatable:hover, button:active row.activatable:hover {
   background-color: transparent;
 }
 
-list.content > row, list.content > row.expander row.header,
-list.boxed-list > row,
-list.boxed-list > row.expander row.header, row.expander list.nested > row {
+/******************************
+ * AdwEntryRow and AdwSpinRow *
+ ******************************/
+row.entry:disabled text {
+  opacity: 0.35;
+}
+
+row.entry:disabled .dim-label, row.entry:disabled row.expander image.expander-row-arrow, row.expander row.entry:disabled image.expander-row-arrow, row.entry:disabled label.separator, row.entry:disabled entry > text > placeholder, row.entry:disabled spinbutton:not(.vertical) > text > text > placeholder, row.entry:disabled spinbutton.vertical > text > text > placeholder, row.entry:disabled row.property > box.header > box.title > .title, row.entry:disabled row.expander.property box > list > row > box.header > box.title > .title, row.expander.property row.entry:disabled box > list > row > box.header > box.title > .title, row.entry:disabled .subtitle {
+  opacity: 1;
+}
+
+row.entry > box.header {
+  border-spacing: 0;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+row.entry > box.header > .editable-area {
+  padding: 0 6px;
+}
+
+row.entry > box.header > .editable-area > .edit-icon, row.entry > box.header > .editable-area > .indicator {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 5px;
+  -gtk-icon-shadow: none;
+}
+
+row.entry > box.header > .editable-area > .edit-icon:dir(ltr), row.entry > box.header > .editable-area > .indicator:dir(ltr), row.entry > box.header > .editable-area > .apply-button:dir(ltr) {
+  margin-left: 6px;
+}
+
+row.entry > box.header > .editable-area > .edit-icon:dir(rtl), row.entry > box.header > .editable-area > .indicator:dir(rtl), row.entry > box.header > .editable-area > .apply-button:dir(rtl) {
+  margin-right: 6px;
+}
+
+row.entry > box.header > .editable-area > .edit-icon:disabled {
+  opacity: 0.45;
+}
+
+row.entry > box.header > .editable-area > .indicator {
+  opacity: 0.65;
+}
+
+row.entry > box.header > .prefixes:dir(ltr) {
+  margin-left: 6px;
+}
+
+row.entry > box.header > .prefixes:dir(rtl) {
+  margin-right: 6px;
+}
+
+row.entry > box.header > .suffixes:dir(ltr) {
+  margin-right: 6px;
+}
+
+row.entry > box.header > .suffixes:dir(rtl) {
+  margin-left: 6px;
+}
+
+row.entry.monospace {
+  font-family: inherit;
+}
+
+row.entry.monospace text {
+  font-family: monospace;
+}
+
+row.spin spinbutton {
+  background: none;
+  border-spacing: 0;
+  box-shadow: none;
+}
+
+row.spin spinbutton, row.spin spinbutton:focus {
+  outline: none;
+}
+
+row.entry:not(:selected).activatable.focused:hover, row.entry:not(:selected).activatable.focused:active,
+row.spin:not(:selected).activatable.focused:hover,
+row.spin:not(:selected).activatable.focused:active {
+  background-color: transparent;
+}
+
+row.entry.error,
+row.spin.error {
+  color: #5294e2;
+}
+
+row.entry.error .dim-label, row.entry.error row.expander image.expander-row-arrow, row.expander row.entry.error image.expander-row-arrow, row.entry.error label.separator, row.entry.error entry > text > placeholder, row.entry.error spinbutton:not(.vertical) > text > text > placeholder, row.entry.error spinbutton.vertical > text > text > placeholder, row.entry.error row.property > box.header > box.title > .title, row.entry.error row.expander.property box > list > row > box.header > box.title > .title, row.expander.property row.entry.error box > list > row > box.header > box.title > .title, row.entry.error .subtitle,
+row.spin.error .dim-label,
+row.spin.error row.expander image.expander-row-arrow,
+row.expander row.spin.error image.expander-row-arrow,
+row.spin.error label.separator,
+row.spin.error entry > text > placeholder,
+row.spin.error spinbutton:not(.vertical) > text > text > placeholder,
+row.spin.error spinbutton.vertical > text > text > placeholder,
+row.spin.error row.property > box.header > box.title > .title,
+row.spin.error row.expander.property box > list > row > box.header > box.title > .title,
+row.expander.property row.spin.error box > list > row > box.header > box.title > .title,
+row.spin.error .subtitle {
+  opacity: 1;
+}
+
+row.entry.warning,
+row.spin.warning {
+  color: #5294e2;
+}
+
+row.entry.warning .dim-label, row.entry.warning row.expander image.expander-row-arrow, row.expander row.entry.warning image.expander-row-arrow, row.entry.warning label.separator, row.entry.warning entry > text > placeholder, row.entry.warning spinbutton:not(.vertical) > text > text > placeholder, row.entry.warning spinbutton.vertical > text > text > placeholder, row.entry.warning row.property > box.header > box.title > .title, row.entry.warning row.expander.property box > list > row > box.header > box.title > .title, row.expander.property row.entry.warning box > list > row > box.header > box.title > .title, row.entry.warning .subtitle,
+row.spin.warning .dim-label,
+row.spin.warning row.expander image.expander-row-arrow,
+row.expander row.spin.warning image.expander-row-arrow,
+row.spin.warning label.separator,
+row.spin.warning entry > text > placeholder,
+row.spin.warning spinbutton:not(.vertical) > text > text > placeholder,
+row.spin.warning spinbutton.vertical > text > text > placeholder,
+row.spin.warning row.property > box.header > box.title > .title,
+row.spin.warning row.expander.property box > list > row > box.header > box.title > .title,
+row.expander.property row.spin.warning box > list > row > box.header > box.title > .title,
+row.spin.warning .subtitle {
+  opacity: 1;
+}
+
+row.entry.success,
+row.spin.success {
+  color: #5294e2;
+}
+
+row.entry.success .dim-label, row.entry.success row.expander image.expander-row-arrow, row.expander row.entry.success image.expander-row-arrow, row.entry.success label.separator, row.entry.success entry > text > placeholder, row.entry.success spinbutton:not(.vertical) > text > text > placeholder, row.entry.success spinbutton.vertical > text > text > placeholder, row.entry.success row.property > box.header > box.title > .title, row.entry.success row.expander.property box > list > row > box.header > box.title > .title, row.expander.property row.entry.success box > list > row > box.header > box.title > .title, row.entry.success .subtitle,
+row.spin.success .dim-label,
+row.spin.success row.expander image.expander-row-arrow,
+row.expander row.spin.success image.expander-row-arrow,
+row.spin.success label.separator,
+row.spin.success entry > text > placeholder,
+row.spin.success spinbutton:not(.vertical) > text > text > placeholder,
+row.spin.success spinbutton.vertical > text > text > placeholder,
+row.spin.success row.property > box.header > box.title > .title,
+row.spin.success row.expander.property box > list > row > box.header > box.title > .title,
+row.expander.property row.spin.success box > list > row > box.header > box.title > .title,
+row.spin.success .subtitle {
+  opacity: 1;
+}
+
+/***************
+ * AdwComboRow *
+ ***************/
+row.combo image.dropdown-arrow:disabled {
+  filter: Opacity(0.35);
+}
+
+row.combo listview.inline {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: inherit;
+}
+
+row.combo listview.inline, row.combo listview.inline:disabled {
+  background: none;
+  color: inherit;
+}
+
+row.combo popover > contents {
+  min-width: 120px;
+}
+
+row.combo popover > contents .combo-searchbar {
+  margin: 6px;
+}
+
+row.combo popover > contents .combo-searchbar + scrolledwindow {
+  background-color: transparent;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
+  padding-top: 1px;
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
+  background-origin: content-box;
+  background-position: center top;
+  border: none;
+  box-shadow: none;
+}
+
+list.boxed-list-separate > row.expander row.header, list.boxed-list > row, list.boxed-list > row.expander row.header, list.content > row, row.expander list.nested > row {
   transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-list.content > row:focus:focus-visible, list.content > row.expander row.header:focus:focus-visible,
-list.boxed-list > row:focus:focus-visible,
-list.boxed-list > row.expander row.header:focus:focus-visible, row.expander list.nested > row:focus:focus-visible {
+list.boxed-list-separate > row.expander row.header:focus:focus-visible, list.boxed-list > row:focus:focus-visible, list.boxed-list > row.expander row.header:focus:focus-visible, list.content > row:focus:focus-visible, row.expander list.nested > row:focus:focus-visible {
   outline-color: alpha(currentcolor,0.3);
   outline-offset: -3px;
   outline-style: dashed;
   outline-width: 1px;
 }
 
-list.content > row:not(:selected).activatable:hover, list.content > row.expander row.header:not(:selected).activatable:hover,
-list.boxed-list > row:not(:selected).activatable:hover,
-list.boxed-list > row.expander row.header:not(:selected).activatable:hover, row.expander list.nested > row:not(:selected).activatable:hover {
+list.boxed-list-separate > row.expander row.header:not(:selected).activatable:hover, list.boxed-list > row:not(:selected).activatable:hover, list.boxed-list > row.expander row.header:not(:selected).activatable:hover, list.content > row:not(:selected).activatable:hover, row.expander list.nested > row:not(:selected).activatable:hover {
   background-color: alpha(currentColor,0.03);
 }
 
-list.content > row:not(:selected).activatable:active, list.content > row.expander row.header:not(:selected).activatable:active,
-list.boxed-list > row:not(:selected).activatable:active,
-list.boxed-list > row.expander row.header:not(:selected).activatable:active, row.expander list.nested > row:not(:selected).activatable:active {
+list.boxed-list-separate > row.expander row.header:not(:selected).activatable:active, list.boxed-list > row:not(:selected).activatable:active, list.boxed-list > row.expander row.header:not(:selected).activatable:active, list.content > row:not(:selected).activatable:active, row.expander list.nested > row:not(:selected).activatable:active {
   background-color: alpha(currentColor,0.08);
 }
 
-list.content > row:not(:selected).activatable.has-open-popup, list.content > row.expander row.header:not(:selected).activatable.has-open-popup,
-list.boxed-list > row:not(:selected).activatable.has-open-popup,
-list.boxed-list > row.expander row.header:not(:selected).activatable.has-open-popup, row.expander list.nested > row:not(:selected).activatable.has-open-popup {
+list.boxed-list-separate > row.expander row.header:not(:selected).activatable.has-open-popup, list.boxed-list > row:not(:selected).activatable.has-open-popup, list.boxed-list > row.expander row.header:not(:selected).activatable.has-open-popup, list.content > row:not(:selected).activatable.has-open-popup, row.expander list.nested > row:not(:selected).activatable.has-open-popup {
   background-color: alpha(currentColor,0.03);
 }
 
@@ -4452,27 +4678,68 @@ row.expander:checked image.expander-row-arrow:not(:disabled) {
 /*****************
  * Boxed Lists *
  *****************/
-list.content > row.expander,
 list.boxed-list > row.expander {
   border: none;
 }
 
-list.content > row:first-child, list.content > row:first-child.expander row.header,
-list.boxed-list > row:first-child,
-list.boxed-list > row:first-child.expander row.header {
+list.boxed-list > row:first-child, list.boxed-list > row:first-child.expander row.header {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 
-list.content > row:last-child, list.content > row:last-child.expander:not(:checked), list.content > row:last-child.expander:not(:checked) row.header, list.content > row:last-child.expander:checked list.nested, list.content > row:last-child.expander:checked list.nested > row:last-child,
-list.boxed-list > row:last-child,
-list.boxed-list > row:last-child.expander:not(:checked),
-list.boxed-list > row:last-child.expander:not(:checked) row.header,
-list.boxed-list > row:last-child.expander:checked list.nested,
-list.boxed-list > row:last-child.expander:checked list.nested > row:last-child {
+list.boxed-list > row:last-child, list.boxed-list > row:last-child.expander:not(:checked), list.boxed-list > row:last-child.expander:not(:checked) row.header, list.boxed-list > row:last-child.expander:checked list.nested, list.boxed-list > row:last-child.expander:checked list.nested > row:last-child {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   border-bottom-width: 0;
+}
+
+list.boxed-list-separate {
+  background: none;
+  color: #e0e5eb;
+}
+
+list.boxed-list-separate > row {
+  border: none;
+  margin-bottom: 12px;
+}
+
+list.boxed-list-separate > row:selected {
+  background-color: alpha(currentColor,0.03);
+}
+
+list.boxed-list-separate > row:last-child {
+  margin-bottom: 0;
+}
+
+list.boxed-list-separate > row:not(.expander):not(:selected).activatable:hover {
+  background-color: #282A33;
+  background-image: image(color-mix(in srgb, currentColor 3%, transparent));
+}
+
+list.boxed-list-separate > row:not(.expander):not(:selected).activatable:active {
+  background-color: #282A33;
+  background-image: image(color-mix(in srgb, currentColor 8%, transparent));
+}
+
+list.boxed-list-separate > row:not(.expander):not(:selected).activatable.has-open-popup {
+  background-color: #282A33;
+  background-image: image(color-mix(in srgb, currentColor 3%, transparent));
+}
+
+list.boxed-list-separate > row.entry:not(:selected).activatable.focused:hover, list.boxed-list-separate > row.entry:not(:selected).activatable.focused:active, list.boxed-list-separate > row.spin:not(:selected).activatable.focused:hover, list.boxed-list-separate > row.spin:not(:selected).activatable.focused:active {
+  background-color: #282A33;
+  background-image: none;
+}
+
+list.boxed-list-separate > row.expander row.header {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+list.boxed-list-separate > row.expander:not(:checked) row.header, list.boxed-list-separate > row.expander.expander:checked list.nested, list.boxed-list-separate > row.expander.expander:checked list.nested > row:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom: none;
 }
 
 columnview > listview > row {
@@ -6282,7 +6549,7 @@ agenda-view list.background, agenda-view list.background row {
   color: rgba(246, 246, 251, 0.8);
 }
 
-agenda-view list.background .dim-label, agenda-view list.background label.separator, agenda-view list.background entry > text > placeholder, agenda-view list.background spinbutton:not(.vertical) > text > text > placeholder, agenda-view list.background spinbutton.vertical > text > text > placeholder, agenda-view list.background headerbar .subtitle, headerbar agenda-view list.background .subtitle, agenda-view list.background row label.subtitle, row agenda-view list.background label.subtitle, agenda-view list.background row.expander image.expander-row-arrow, row.expander agenda-view list.background image.expander-row-arrow {
+agenda-view list.background .dim-label, agenda-view list.background label.separator, agenda-view list.background entry > text > placeholder, agenda-view list.background spinbutton:not(.vertical) > text > text > placeholder, agenda-view list.background spinbutton.vertical > text > text > placeholder, agenda-view list.background headerbar .subtitle, headerbar agenda-view list.background .subtitle, agenda-view list.background row label.subtitle, row agenda-view list.background label.subtitle, agenda-view list.background row.property > box.header > box.title > .title, agenda-view list.background row.expander image.expander-row-arrow, row.expander agenda-view list.background image.expander-row-arrow, agenda-view list.background row.expander.property box > list > row > box.header > box.title > .title, row.expander.property agenda-view list.background box > list > row > box.header > box.title > .title {
   color: rgba(246, 246, 251, 0.45);
 }
 
@@ -7282,8 +7549,7 @@ statuspage.compact > scrolledwindow > viewport > box > clamp > box > .title {
   font-size: 18pt;
 }
 
-list.content,
-list.boxed-list, .card {
+list.content, list.boxed-list, list.boxed-list-separate > row, .card {
   color: #e6ebef;
   border-color: rgba(255, 255, 255, 0.12);
   background-color: #2c2f39;
@@ -7293,9 +7559,7 @@ list.boxed-list, .card {
   background-clip: padding-box;
 }
 
-.osd list.content,
-.osd list.boxed-list, list.osd.content,
-list.osd.boxed-list, .osd .card, .card.osd {
+.osd list.content, .osd list.boxed-list, .osd list.boxed-list-separate > row, list.osd.content, list.osd.boxed-list, list.boxed-list-separate > row.osd, .osd .card, .card.osd {
   color: #D3DAE3;
   border-color: #434655;
   background-color: #333641;
@@ -7723,7 +7987,7 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   background: none;
 }
 
-.sidebar-pane .dim-label, .sidebar-pane label.separator, .sidebar-pane entry > text > placeholder, .sidebar-pane spinbutton:not(.vertical) > text > text > placeholder, .sidebar-pane spinbutton.vertical > text > text > placeholder, .sidebar-pane headerbar .subtitle, headerbar .sidebar-pane .subtitle, .sidebar-pane popover.background > contents label.separator, popover.background > contents .sidebar-pane label.separator, .sidebar-pane row label.subtitle, row .sidebar-pane label.subtitle, .sidebar-pane row.expander image.expander-row-arrow, row.expander .sidebar-pane image.expander-row-arrow {
+.sidebar-pane .dim-label, .sidebar-pane label.separator, .sidebar-pane entry > text > placeholder, .sidebar-pane spinbutton:not(.vertical) > text > text > placeholder, .sidebar-pane spinbutton.vertical > text > text > placeholder, .sidebar-pane headerbar .subtitle, headerbar .sidebar-pane .subtitle, .sidebar-pane popover.background > contents label.separator, popover.background > contents .sidebar-pane label.separator, .sidebar-pane row label.subtitle, row .sidebar-pane label.subtitle, .sidebar-pane row.property > box.header > box.title > .title, .sidebar-pane row.expander image.expander-row-arrow, row.expander .sidebar-pane image.expander-row-arrow, .sidebar-pane row.expander.property box > list > row > box.header > box.title > .title, row.expander.property .sidebar-pane box > list > row > box.header > box.title > .title {
   color: rgba(246, 246, 251, 0.45);
 }
 
