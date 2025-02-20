@@ -132,6 +132,9 @@ bash install.sh
 ```
 
 ### Install on AUR
+```sh
+sudo pamac install qogir-gtk-theme
+```
 [AUR](https://aur.archlinux.org/packages/qogir-gtk-theme/)
 
 ## Recommendations
