@@ -149,6 +149,12 @@ bash install.sh
 ### Kde theme
 [Qogir-kde](https://github.com/vinceliuice/Qogir-kde)
 
+### QT 5/6 theme
+[Qogir-qt](https://github.com/pijulius/qogir-adwaita-qt)
+
+### Fluxbox theme
+[Qogir-fluxbox](https://github.com/pijulius/fluxbox-themes)
+
 ### Icon theme
 [Qogir](https://github.com/vinceliuice/Qogir-icon-theme)
 
