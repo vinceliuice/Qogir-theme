@@ -148,7 +148,10 @@ sudo pamac install qogir-gtk-theme
 ### 3. Fluxbox theme
 [Qogir-fluxbox](https://github.com/pijulius/fluxbox-themes)
 
-### 4. Icon theme
+### 4. Rofi theme
+[Qogir-rofi](https://github.com/pijulius/rofi-qogir)
+
+### 5. Icon theme
 [Qogir](https://github.com/vinceliuice/Qogir-icon-theme)
 
 ## Nautilus logos
