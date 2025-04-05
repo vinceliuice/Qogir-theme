@@ -2458,7 +2458,7 @@ StWidget.focused .app-grid-running-dot {
 /* Slider */
 .slider {
   color: #5294e2;
-  -slider-handle-radius: 8px;
+  -slider-handle-radius: 7px;
   -barlevel-height: 2px;
   -barlevel-background-color: rgba(255, 255, 255, 0.12);
   -barlevel-active-background-color: #5294e2;
@@ -3342,6 +3342,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .quick-slider .icon-button, .quick-slider .background-app-item .close-button, .background-app-item .quick-slider .close-button {
+  padding: 6px;
   background-color: transparent;
   color: #e0e5eb !important;
 }

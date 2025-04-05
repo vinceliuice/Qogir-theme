@@ -5460,13 +5460,13 @@ infobar.info > revealer > box selection, infobar.question > revealer > box selec
   background-color: #ffffff;
 }
 
-.nautilus-window .floating-bar button, infobar.info > revealer > box button, infobar.question > revealer > box button, infobar.warning > revealer > box button, infobar.error > revealer > box button {
+.floating-bar button, infobar.info > revealer > box button, infobar.question > revealer > box button, infobar.warning > revealer > box button, infobar.error > revealer > box button {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-.nautilus-window .floating-bar button.flat, infobar.info > revealer > box button.flat, infobar.question > revealer > box button.flat, infobar.warning > revealer > box button.flat, infobar.error > revealer > box button.flat {
+.floating-bar button.flat, infobar.info > revealer > box button.flat, infobar.question > revealer > box button.flat, infobar.warning > revealer > box button.flat, infobar.error > revealer > box button.flat {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -5474,32 +5474,32 @@ infobar.info > revealer > box selection, infobar.question > revealer > box selec
   background-color: rgba(255, 255, 255, 0);
 }
 
-.nautilus-window .floating-bar button.flat:disabled, infobar.info > revealer > box button.flat:disabled, infobar.question > revealer > box button.flat:disabled, infobar.warning > revealer > box button.flat:disabled, infobar.error > revealer > box button.flat:disabled, .nautilus-window .floating-bar button.flat:disabled label, infobar.info > revealer > box button.flat:disabled label, infobar.question > revealer > box button.flat:disabled label, infobar.warning > revealer > box button.flat:disabled label, infobar.error > revealer > box button.flat:disabled label {
+.floating-bar button.flat:disabled, infobar.info > revealer > box button.flat:disabled, infobar.question > revealer > box button.flat:disabled, infobar.warning > revealer > box button.flat:disabled, infobar.error > revealer > box button.flat:disabled, .floating-bar button.flat:disabled label, infobar.info > revealer > box button.flat:disabled label, infobar.question > revealer > box button.flat:disabled label, infobar.warning > revealer > box button.flat:disabled label, infobar.error > revealer > box button.flat:disabled label {
   color: rgba(255, 255, 255, 0.4);
 }
 
-.nautilus-window .floating-bar button:hover, infobar.info > revealer > box button:hover, infobar.question > revealer > box button:hover, infobar.warning > revealer > box button:hover, infobar.error > revealer > box button:hover {
+.floating-bar button:hover, infobar.info > revealer > box button:hover, infobar.question > revealer > box button:hover, infobar.warning > revealer > box button:hover, infobar.error > revealer > box button:hover {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.65);
 }
 
-.nautilus-window .floating-bar button:active, infobar.info > revealer > box button:active, infobar.question > revealer > box button:active, infobar.warning > revealer > box button:active, infobar.error > revealer > box button:active, .nautilus-window .floating-bar button:checked, infobar.info > revealer > box button:checked, infobar.question > revealer > box button:checked, infobar.warning > revealer > box button:checked, infobar.error > revealer > box button:checked {
+.floating-bar button:active, infobar.info > revealer > box button:active, infobar.question > revealer > box button:active, infobar.warning > revealer > box button:active, infobar.error > revealer > box button:active, .floating-bar button:checked, infobar.info > revealer > box button:checked, infobar.question > revealer > box button:checked, infobar.warning > revealer > box button:checked, infobar.error > revealer > box button:checked {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.35);
   border-color: rgba(255, 255, 255, 0.65);
 }
 
-.nautilus-window .floating-bar button:disabled, infobar.info > revealer > box button:disabled, infobar.question > revealer > box button:disabled, infobar.warning > revealer > box button:disabled, infobar.error > revealer > box button:disabled {
+.floating-bar button:disabled, infobar.info > revealer > box button:disabled, infobar.question > revealer > box button:disabled, infobar.warning > revealer > box button:disabled, infobar.error > revealer > box button:disabled {
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-.nautilus-window .floating-bar button:disabled, infobar.info > revealer > box button:disabled, infobar.question > revealer > box button:disabled, infobar.warning > revealer > box button:disabled, infobar.error > revealer > box button:disabled, .nautilus-window .floating-bar button:disabled label, infobar.info > revealer > box button:disabled label, infobar.question > revealer > box button:disabled label, infobar.warning > revealer > box button:disabled label, infobar.error > revealer > box button:disabled label {
+.floating-bar button:disabled, infobar.info > revealer > box button:disabled, infobar.question > revealer > box button:disabled, infobar.warning > revealer > box button:disabled, infobar.error > revealer > box button:disabled, .floating-bar button:disabled label, infobar.info > revealer > box button:disabled label, infobar.question > revealer > box button:disabled label, infobar.warning > revealer > box button:disabled label, infobar.error > revealer > box button:disabled label {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.nautilus-window .floating-bar button:disabled:active, infobar.info > revealer > box button:disabled:active, infobar.question > revealer > box button:disabled:active, infobar.warning > revealer > box button:disabled:active, infobar.error > revealer > box button:disabled:active, .nautilus-window .floating-bar button:disabled:checked, infobar.info > revealer > box button:disabled:checked, infobar.question > revealer > box button:disabled:checked, infobar.warning > revealer > box button:disabled:checked, infobar.error > revealer > box button:disabled:checked {
+.floating-bar button:disabled:active, infobar.info > revealer > box button:disabled:active, infobar.question > revealer > box button:disabled:active, infobar.warning > revealer > box button:disabled:active, infobar.error > revealer > box button:disabled:active, .floating-bar button:disabled:checked, infobar.info > revealer > box button:disabled:checked, infobar.question > revealer > box button:disabled:checked, infobar.warning > revealer > box button:disabled:checked, infobar.error > revealer > box button:disabled:checked {
   color: rgba(255, 255, 255, 0.75);
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.4);
@@ -6130,6 +6130,37 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   background-color: #1c1d23;
 }
 
+.nautilus-window .nautilus-list-view listview.view > row.activatable, .nautilus-window .nautilus-grid-view gridview child.activatable {
+  border: 1px solid transparent;
+}
+
+.nautilus-window .nautilus-list-view listview.view > row.activatable:hover, .nautilus-window .nautilus-grid-view gridview child.activatable:hover {
+  border-color: rgba(82, 148, 226, 0.65);
+  background-color: rgba(82, 148, 226, 0.15);
+}
+
+.nautilus-window .nautilus-list-view listview.view > row.activatable:active, .nautilus-window .nautilus-grid-view gridview child.activatable:active {
+  border-color: rgba(82, 148, 226, 0.75);
+  background-color: rgba(82, 148, 226, 0.25);
+  transition: all 180ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.nautilus-window .nautilus-list-view listview.view > row.activatable:selected, .nautilus-window .nautilus-grid-view gridview child.activatable:selected {
+  border-color: #5294e2;
+  background-color: rgba(82, 148, 226, 0.35);
+  color: #5294e2;
+  transition: all 180ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.nautilus-window .nautilus-list-view listview.view > row.activatable:selected label, .nautilus-window .nautilus-grid-view gridview child.activatable:selected label {
+  color: #5294e2;
+}
+
+.nautilus-window .nautilus-list-view listview.view > row.activatable:selected:hover, .nautilus-window .nautilus-grid-view gridview child.activatable:selected:hover, .nautilus-window .nautilus-list-view listview.view > row.activatable:selected:active, .nautilus-window .nautilus-grid-view gridview child.activatable:selected:active {
+  color: #5294e2;
+  background-color: rgba(82, 148, 226, 0.42);
+}
+
 .nautilus-window headerbar entry {
   margin: 0;
 }
@@ -6370,53 +6401,54 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
 
 .nautilus-window .nautilus-grid-view gridview child.activatable {
   border-radius: 4px;
-  border: 1px solid transparent;
 }
 
-.nautilus-window .nautilus-grid-view gridview child.activatable:hover {
-  border-color: rgba(82, 148, 226, 0.65);
-  background-color: rgba(82, 148, 226, 0.15);
+.nautilus-window .nautilus-list-view {
+  padding: 0;
+  margin: 0;
+  border-spacing: 0;
+  background-color: #ffffff;
 }
 
-.nautilus-window .nautilus-grid-view gridview child.activatable:active {
-  border-color: rgba(82, 148, 226, 0.75);
-  background-color: rgba(82, 148, 226, 0.25);
-  transition: all 180ms cubic-bezier(0, 0, 0.2, 1);
+.nautilus-window .nautilus-list-view listview.view {
+  padding: 0;
+  margin: 0;
+  border-spacing: 0;
 }
 
-.nautilus-window .nautilus-grid-view gridview child.activatable:selected {
-  border-color: #5294e2;
-  background-color: rgba(82, 148, 226, 0.35);
-  color: #5294e2;
-  transition: all 180ms cubic-bezier(0, 0, 0.2, 1);
+.nautilus-window .nautilus-list-view listview.view > row.activatable {
+  padding: 0;
+  margin: 0;
+  border-radius: 2px;
 }
 
-.nautilus-window .nautilus-grid-view gridview child.activatable:selected:hover {
-  background-color: rgba(82, 148, 226, 0.42);
+.nautilus-window .nautilus-list-view listview.view > row.activatable > cell {
+  padding: 0;
+}
+
+.nautilus-window .nautilus-list-view listview.view > row.activatable > cell > widget#NautilusViewCell {
+  padding: 3px 6px;
+}
+
+.nautilus-window .nautilus-list-view listview.view > row.activatable + row {
+  margin-top: 3px;
 }
 
 .nautilus-window placesview label {
   color: rgba(70, 72, 83, 0.75);
 }
 
-.nautilus-window .floating-bar {
+.floating-bar {
   padding: 3px;
+  margin: 3px;
   background-color: #5294e2;
   color: #ffffff;
-  border-radius: 2px 2px 0 0;
+  border-radius: 2px;
   box-shadow: none;
   border: none;
 }
 
-.nautilus-window .floating-bar.bottom.left {
-  border-top-left-radius: 0;
-}
-
-.nautilus-window .floating-bar.bottom.right {
-  border-top-right-radius: 0;
-}
-
-.nautilus-window .floating-bar button {
+.floating-bar button {
   border: none;
   border-radius: 9999px;
   min-height: 0;

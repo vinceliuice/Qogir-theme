@@ -424,7 +424,6 @@ StEntry StLabel.hint-text {
 
 /* Slider */
 .slider {
-  height: 20px;
   color: #282A33;
   -slider-height: 4px;
   -slider-background-color: rgba(255, 255, 255, 0.12);
@@ -3614,6 +3613,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .quick-slider .icon-button, .quick-slider .background-app-item .close-button, .background-app-item .quick-slider .close-button {
+  padding: 6px;
   background-color: transparent;
   color: #e0e5eb !important;
 }

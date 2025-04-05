@@ -10,7 +10,7 @@
     padding: 10px 8px 5px 8px;
 
     > StBoxLayout {
-      spacing: $cont_padding;
+      spacing: $base_padding;
     }
   }
 }
@@ -44,8 +44,8 @@
 .app-folder-dialog {
   border-radius: $material_radius * 3;
   border: 1px solid rgba($osd_fg_color, 0.03);
-  padding: 6px;
-  space: 6px;
+  padding: $base_padding;
+  space: $base_padding;
   background-color: rgba($osd_bg_color, 0.9);
 
   & .folder-name-container {
@@ -79,8 +79,8 @@
   }
 
   & .icon-grid {
-    row-spacing: $cont_padding * 2;
-    column-spacing: $cont_padding * 3;
+    row-spacing: $base_padding * 2;
+    column-spacing: $base_padding * 3;
     page-padding-top: 0;
     page-padding-bottom: 0;
     page-padding-left: 0;
@@ -101,7 +101,7 @@
 }
 
 .app-folder-dialog-container {
-  padding: 6px;
+  padding: $base_padding;
   width: 600px;
   height: 600px;
 }
@@ -122,8 +122,8 @@ StWidget.focused .app-well-app-running-dot {
 // Rename popup for app folders
 .rename-folder-popup {
   .rename-folder-popup-item {
-    spacing: $cont_padding;
-    &:ltr, &:rtl { padding: 0 $cont_padding * 2; }
+    spacing: $base_padding;
+    &:ltr, &:rtl { padding: 0 $base_padding * 2; }
   }
 }
 

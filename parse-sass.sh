@@ -43,6 +43,8 @@ for color in "${_COLOR_D_VARIANTS[@]}"; do
   echo "==> Generating the gnome-shell-46-0${color}.css..."
   sassc $SASSC_OPT src/gnome-shell/theme-47-0/gnome-shell${color}.{scss,css}
   echo "==> Generating the gnome-shell-47-0${color}.css..."
+  sassc $SASSC_OPT src/gnome-shell/theme-48-0/gnome-shell${color}.{scss,css}
+  echo "==> Generating the gnome-shell-48-0${color}.css..."
   sassc $SASSC_OPT src/cinnamon/cinnamon${color}.{scss,css}
   echo "==> Generating the cinnamon${color}.css..."
 done

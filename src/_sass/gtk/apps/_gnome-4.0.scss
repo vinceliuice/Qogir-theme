@@ -191,6 +191,37 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   trough { background-color: darken($dark_sidebar_bg, 5%); }
 }
 
+%nautilus_view {
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: rgba($selected_bg_color, 0.65);
+    background-color: rgba($selected_bg_color, 0.15);
+  }
+
+  &:active {
+    border-color: rgba($selected_bg_color, 0.75);
+    background-color: rgba($selected_bg_color, 0.25);
+    transition: $shorter_transition;
+  }
+
+  &:selected {
+    border-color: $selected_bg_color;
+    background-color: rgba($selected_bg_color, 0.35);
+    color: $selected_bg_color;
+    transition: $shorter_transition;
+
+    label {
+      color: $selected_bg_color;
+    }
+
+    &:hover, &:active {
+      color: $selected_bg_color;
+      background-color: rgba($selected_bg_color, 0.42);
+    }
+  }
+}
+
 .nautilus-window {
   headerbar {
     entry { margin: 0; } // Why need this ?
@@ -376,28 +407,38 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
 
       child.activatable {
         border-radius: $bt_radius * 2;
-        border: 1px solid transparent;
+        @extend %nautilus_view;
+      }
+    }
+  }
 
-        &:hover {
-          border-color: rgba($selected_bg_color, 0.65);
-          background-color: rgba($selected_bg_color, 0.15);
-        }
+  .nautilus-list-view {
+    padding: 0;
+    margin: 0;
+    border-spacing: 0;
+    background-color: $base_color;
 
-        &:active {
-          border-color: rgba($selected_bg_color, 0.75);
-          background-color: rgba($selected_bg_color, 0.25);
-          transition: $shorter_transition;
-        }
+    listview.view {
+      padding: 0;
+      margin: 0;
+      border-spacing: 0;
 
-        &:selected {
-          border-color: $selected_bg_color;
-          background-color: rgba($selected_bg_color, 0.35);
-          color: $selected_bg_color;
-          transition: $shorter_transition;
+      > row.activatable {
+        padding: 0;
+        margin: 0;
+        border-radius: $bt_radius;
+        @extend %nautilus_view;
 
-          &:hover {
-            background-color: rgba($selected_bg_color, 0.42);
+        > cell {
+          padding: 0;
+
+          > widget#NautilusViewCell {
+            padding: $base_padding / 2 $base_padding;
           }
+        }
+
+        + row {
+          margin-top: $base_padding / 2;
         }
       }
     }
@@ -406,28 +447,26 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   placesview {
     label { color: $alt_fg_color; }
   }
+}
 
-  .floating-bar {
-    padding: 3px;
-    background-color: $selected_bg_color;
-    color: $selected_fg_color;
-    border-radius: $bt_radius $bt_radius 0 0;
-    box-shadow: none;
+.floating-bar {
+  padding: 3px;
+  margin: 3px;
+  background-color: $selected_bg_color;
+  color: $selected_fg_color;
+  border-radius: $bt_radius;
+  box-shadow: none;
+  border: none;
+
+  button {
     border: none;
-
-    &.bottom.left { border-top-left-radius: 0; }
-    &.bottom.right { border-top-right-radius: 0; }
-
-    button {
-      border: none;
-      border-radius: $circular_radius;
-      min-height: 0;
-      min-width: 0;
-      padding: 0;
-      margin-right: $cont_padding;
-      -gtk-icon-shadow: none;
-      @extend %selected-button;
-    }
+    border-radius: $circular_radius;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    margin-right: $cont_padding;
+    -gtk-icon-shadow: none;
+    @extend %selected-button;
   }
 }
 

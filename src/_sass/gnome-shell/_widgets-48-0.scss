@@ -1,0 +1,56 @@
+// widgets-common
+@import 'common';
+
+// Primary widgets-common
+@import 'widgets-common/base';
+@import 'widgets-common/entries';
+@import 'widgets-common/buttons';
+@import 'widgets-common/scrollbars';
+// Popovers
+@import 'widgets-common/popovers';
+@import 'widgets-common/ibus-popup';
+// Notifications
+@import 'widgets-common/hotplug';
+// Dialogs
+@import 'widgets-common/network-dialog';
+// OSDs
+@import 'widgets-common/osd';
+@import 'widgets-common/switcher-popup';
+@import 'widgets-common/workspace-switcher';
+// Panel
+@import 'widgets-common/panel';
+@import 'widgets-common/corner-ripple';
+// Overview
+@import 'widgets-common/overview';
+@import 'widgets-common/window-picker';
+@import 'widgets-common/search-entry';
+@import 'widgets-common/workspace-thumbnails';
+// A11y / misc
+@import 'widgets-common/a11y';
+@import 'widgets-common/misc';
+@import 'widgets-common/tiled-previews';
+@import 'widgets-common/keyboard';
+@import 'widgets-common/looking-glass';
+// Lock / login screens
+@import 'widgets-common/login-dialog';
+@import 'widgets-common/screen-shield';
+
+// widgets >= 40
+@import 'widgets-46-0/app-grid';
+@import 'widgets-46-0/dash';
+@import 'widgets-40-0/overview';
+@import 'widgets-40-0/search-entry';
+@import 'widgets-47-0/check-box';
+@import 'widgets-47-0/switches';
+@import 'widgets-47-0/slider';
+@import 'widgets-40-0/window-picker';
+@import 'widgets-40-0/workspace-thumbnails';
+@import 'widgets-42-0/popovers';
+@import 'widgets-46-0/calendar';
+@import 'widgets-48-0/message-list';
+@import 'widgets-47-0/notifications';
+@import 'widgets-48-0/quick-settings';
+@import 'widgets-46-0/search-results';
+@import 'widgets-47-0/dialogs';
+@import 'widgets-42-0/osd';
+@import 'widgets-42-0/screenshot';
