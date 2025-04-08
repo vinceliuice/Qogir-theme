@@ -2560,7 +2560,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 #calendarArea {
-  padding: 6px 10px;
+  padding: 4px 10px;
 }
 
 .datemenu-popover {
@@ -3521,12 +3521,10 @@ StWidget.focused .app-grid-running-dot {
 
 .background-app-item .icon-button:hover, .background-app-item .message-notification-group .message-collapse-button:hover, .message-notification-group .background-app-item .message-collapse-button:hover {
   background-color: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
 }
 
 .background-app-item .icon-button:active, .background-app-item .message-notification-group .message-collapse-button:active, .message-notification-group .background-app-item .message-collapse-button:active {
   background-color: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
 }
 
 .background-app-item:hover .icon-button, .background-app-item:hover .message-notification-group .message-collapse-button, .message-notification-group .background-app-item:hover .message-collapse-button, .background-app-item:focus .icon-button, .background-app-item:focus .message-notification-group .message-collapse-button, .message-notification-group .background-app-item:focus .message-collapse-button, .background-app-item.selected .icon-button, .background-app-item.selected .message-notification-group .message-collapse-button, .message-notification-group .background-app-item.selected .message-collapse-button {
