@@ -243,6 +243,7 @@ install() {
   cp -r ${SRC_DIR}/src/plank                                                         ${THEME_DIR}
   cp -r ${SRC_DIR}/src/unity                                                         ${THEME_DIR}
   cp -r ${SRC_DIR}/src/xfce-notify-4.0                                               ${THEME_DIR}
+  cp -r ${SRC_DIR}/src/labwc/labwc-theme${ELSE_DARK}${ELSE_LIGHT}/                   ${THEME_DIR}/labwc
 }
 
 install_xfwm() {
