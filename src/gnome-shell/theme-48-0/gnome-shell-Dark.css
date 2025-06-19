@@ -2834,9 +2834,8 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .weather-button .weather-box .weather-grid .weather-forecast-time {
-  font-size: 10pt;
-  padding-top: 0.2em;
-  padding-bottom: 0.4em;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .weather-button .weather-box .weather-grid .weather-forecast-icon {
@@ -2846,11 +2845,6 @@ StWidget.focused .app-grid-running-dot {
 
 .weather-button .weather-box .weather-grid .weather-forecast-temp {
   font-weight: bold;
-}
-
-.world-clocks-button:active *,
-.weather-button:active * {
-  color: #ffffff;
 }
 
 .events-button .events-title {
@@ -2877,8 +2871,10 @@ StWidget.focused .app-grid-running-dot {
   font-style: italic;
 }
 
-.events-button:active .events-list, .events-button:active .events-title, .events-button:active .event-time {
-  color: #ffffff !important;
+.world-clocks-button:active *,
+.weather-button:active *,
+.events-button:active * {
+  color: #ffffff;
 }
 
 /* Message List */
@@ -2959,9 +2955,9 @@ StWidget.focused .app-grid-running-dot {
 
 .message-notification-group .message-collapse-button {
   color: #e6ebef;
-  background-color: transparent;
-  padding: 4px !important;
-  border: 4px transparent solid;
+  background-color: rgba(230, 235, 239, 0.05);
+  padding: 8px !important;
+  border: none !important;
 }
 
 .message-notification-group .message-collapse-button:hover {
@@ -2969,7 +2965,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .message-notification-group .message-collapse-button:active {
-  background-color: rgba(230, 235, 239, 0.2);
+  background-color: #5294e2;
 }
 
 .message {
@@ -3150,7 +3146,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .popup-menu .message:hover, .popup-menu .message:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #414452;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 

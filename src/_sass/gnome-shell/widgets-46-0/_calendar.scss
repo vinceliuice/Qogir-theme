@@ -275,9 +275,8 @@
 
       .weather-forecast-time {
         @extend %numeric;
-        @include fontsize(10);
-        padding-top: 0.2em;
-        padding-bottom: 0.4em;
+        padding-top: $base_padding;
+        padding-bottom: $base_padding;
       }
       .weather-forecast-icon {
         icon-size: $large_scalable_icon_size;
@@ -292,11 +291,6 @@
   }
 }
 
-.world-clocks-button:active *,
-.weather-button:active * {
-  color: $selected_fg_color;
-}
-
 // Events button
 .events-button {
   .events-title {
@@ -308,7 +302,7 @@
   .events-list {
     spacing: $base_padding;
     color: $sec_fg_color;
-    
+
       // container for an event
       .event-box {
         spacing: $base_padding;
@@ -324,14 +318,16 @@
           color: $insensitive_fg_color;
         }
       }
-      
+
       .event-placeholder {
         color: $insensitive_fg_color;
         font-style: italic;
       }
   }
+}
 
-  &:active .events-list,
-  &:active .events-title,
-  &:active .event-time { color: $selected_fg_color !important; }
+.world-clocks-button:active *,
+.weather-button:active *,
+.events-button:active * {
+  color: $selected_fg_color;
 }

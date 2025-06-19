@@ -4776,7 +4776,7 @@ window {
       min-height: if($titlebutton == 'circle', 26px, $large_size);
       border: none;
       border-radius: if($titlebutton == 'circle', $circular_radius, 0);
-      margin: if($titlebutton == 'circle', 0 3px, 0);
+      margin: if($titlebutton == 'circle', ($large_size - 26px) / 2 3px, 0);
 
       > image { background: none; }
     }

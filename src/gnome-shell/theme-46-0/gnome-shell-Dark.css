@@ -3104,9 +3104,8 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .weather-button .weather-box .weather-grid .weather-forecast-time {
-  font-size: 10pt;
-  padding-top: 0.2em;
-  padding-bottom: 0.4em;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .weather-button .weather-box .weather-grid .weather-forecast-icon {
@@ -3116,11 +3115,6 @@ StWidget.focused .app-grid-running-dot {
 
 .weather-button .weather-box .weather-grid .weather-forecast-temp {
   font-weight: bold;
-}
-
-.world-clocks-button:active *,
-.weather-button:active * {
-  color: #ffffff;
 }
 
 .events-button .events-title {
@@ -3147,8 +3141,10 @@ StWidget.focused .app-grid-running-dot {
   font-style: italic;
 }
 
-.events-button:active .events-list, .events-button:active .events-title, .events-button:active .event-time {
-  color: #ffffff !important;
+.world-clocks-button:active *,
+.weather-button:active *,
+.events-button:active * {
+  color: #ffffff;
 }
 
 /* Message List */

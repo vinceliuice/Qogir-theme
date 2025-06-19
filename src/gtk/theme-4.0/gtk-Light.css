@@ -5744,7 +5744,7 @@ headerbar windowcontrols > button.close, headerbar windowcontrols > button.maxim
   min-height: 26px;
   border: none;
   border-radius: 9999px;
-  margin: 0 3px;
+  margin: 7px 3px;
 }
 
 headerbar windowcontrols > button.close > image, headerbar windowcontrols > button.maximize > image, headerbar windowcontrols > button.minimize > image {

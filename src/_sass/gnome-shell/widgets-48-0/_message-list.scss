@@ -74,11 +74,12 @@
   .message-collapse-button {
     @extend .icon-button;
     color: $fg_color;
-    background-color: transparent;
-    padding: 4px !important;
-    border: 4px transparent solid;
+    background-color: rgba($fg_color, 0.05);
+    padding: 8px !important;
+    border: none !important;
+
     &:hover { background-color: rgba($fg_color, 0.1); }
-    &:active { background-color: rgba($fg_color, 0.2); }
+    &:active { background-color: $selected_bg_color; }
   }
 }
 
@@ -241,7 +242,7 @@
     @include button(hover);
 
     &:hover, &:focus {
-      background-color: if($variant=='light', rgba(black, 0.06), rgba(white, 0.1));
+      background-color: if($variant == 'light', darken($base_color, 7%), lighten($base_color, 11%));
       border: 1px solid if($variant=='light', darken($button_border, 8%), lighten($button_border, 8%));
     }
 
