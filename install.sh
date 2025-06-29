@@ -239,6 +239,11 @@ install() {
   cd ${THEME_DIR}/metacity-1
   ln -s metacity-theme-3.xml metacity-theme-1.xml && ln -s metacity-theme-3.xml metacity-theme-2.xml
 
+  # Labwc
+  mkdir -p                                                                           ${THEME_DIR}/labwc
+  cp -r ${SRC_DIR}/src/labwc/assets/*                                                ${THEME_DIR}/labwc
+  cp -r ${SRC_DIR}/src/labwc/themerc${ELSE_DARK}${ELSE_LIGHT}                        ${THEME_DIR}/labwc/themerc
+
   # OTHER
   cp -r ${SRC_DIR}/src/plank                                                         ${THEME_DIR}
   cp -r ${SRC_DIR}/src/unity                                                         ${THEME_DIR}
