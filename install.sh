@@ -122,7 +122,7 @@ install() {
   echo "GtkTheme=${name}${theme}${WM_CORNER}${color}"                             >> ${THEME_DIR}/index.theme
   echo "MetacityTheme=${name}${theme}${WM_CORNER}${color}"                        >> ${THEME_DIR}/index.theme
   echo "IconTheme=${name}${theme}${ELSE_DARK}"                                    >> ${THEME_DIR}/index.theme
-  echo "CursorTheme=Adwaita"                                                      >> ${THEME_DIR}/index.theme
+  echo "CursorTheme=${name}${theme}${ELSE_DARK}"                                  >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close"                                >> ${THEME_DIR}/index.theme
 
   # GTK 2.0
@@ -226,16 +226,17 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/metacity-1
 
   if [[ "$square" == 'true' ]]; then
-    cp -r ${SRC_DIR}/src/metacity-1/assets${ELSE_LIGHT}-Win/*.png                    ${THEME_DIR}/metacity-1
+    cp -r ${SRC_DIR}/src/metacity-1/assets-Win${ELSE_LIGHT}/*.png                    ${THEME_DIR}/metacity-1
     cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-Win.xml                         ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+    cp -r ${SRC_DIR}/src/metacity-1/thumbnail-win${ELSE_LIGHT}.png                   ${THEME_DIR}/metacity-1/thumbnail.png
   else
     cp -r ${SRC_DIR}/src/metacity-1/assets${WM_CORNER}                               ${THEME_DIR}/metacity-1/assets
     cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3${WM_CORNER}.xml                 ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+    cp -r ${SRC_DIR}/src/metacity-1/thumbnail${WM_CORNER}${ELSE_LIGHT}.png           ${THEME_DIR}/metacity-1/thumbnail.png
   fi
 
   sed -i "s/Qogir/${name}${theme}${WM_CORNER}${color}/g"                             ${THEME_DIR}/metacity-1/metacity-theme-3.xml
 
-  cp -r ${SRC_DIR}/src/metacity-1/thumbnail${ELSE_LIGHT}.png                         ${THEME_DIR}/metacity-1/thumbnail.png
   cd ${THEME_DIR}/metacity-1
   ln -s metacity-theme-3.xml metacity-theme-1.xml && ln -s metacity-theme-3.xml metacity-theme-2.xml
 

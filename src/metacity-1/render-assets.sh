@@ -6,11 +6,11 @@ INDEX="assets.txt"
 
 OPEN_DIR=$(cd $(dirname $0) && pwd)
 
-for color in '' '-Light'; do
-  for win in '' '-Win'; do
+for win in '' '-Win'; do
+  for color in '' '-Light'; do
 
-  ASSETS_DIR="assets${color}${win}"
-  SRC_FILE="assets${color}${win}.svg"
+  ASSETS_DIR="assets${win}${color}"
+  SRC_FILE="assets${win}${color}.svg"
 
   mkdir -p $ASSETS_DIR
 
