@@ -6063,7 +6063,7 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   box-shadow: none;
 }
 
-.nautilus-window:not(.view) headerbar,
+#NautilusFileChooser .sidebar-pane headerbar,
 .nautilus-window .sidebar-pane headerbar {
   background-image: -gtk-scaled(url("assets/logo.svg"), url("assets/logo@2.svg")), image(#32343D);
   background-repeat: no-repeat;
@@ -6071,7 +6071,9 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   background-position: left center;
 }
 
-#NautilusPathBar > menubutton > button, #NautilusPathBar #NautilusPathButton, .nautilus-window headerbar splitbutton > button, .nautilus-window headerbar splitbutton > menubutton > button {
+#NautilusPathBar > menubutton > button, #NautilusPathBar #NautilusPathButton, #NautilusFileChooser headerbar splitbutton > button, #NautilusFileChooser headerbar splitbutton > menubutton > button,
+.nautilus-window headerbar splitbutton > button,
+.nautilus-window headerbar splitbutton > menubutton > button {
   border-radius: 2px;
   border: none;
   min-height: 22px;
@@ -6079,92 +6081,114 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   padding: 0 6px;
 }
 
-#NautilusPathBar > menubutton > button:hover, #NautilusPathBar #NautilusPathButton:hover, .nautilus-window headerbar splitbutton > button:hover, .nautilus-window headerbar splitbutton > menubutton > button:hover {
+#NautilusPathBar > menubutton > button:hover, #NautilusPathBar #NautilusPathButton:hover, #NautilusFileChooser headerbar splitbutton > button:hover, #NautilusFileChooser headerbar splitbutton > menubutton > button:hover,
+.nautilus-window headerbar splitbutton > button:hover,
+.nautilus-window headerbar splitbutton > menubutton > button:hover {
   color: #e0e5eb;
   background-color: rgba(224, 229, 235, 0.1);
 }
 
-#NautilusPathBar > menubutton > button:active, #NautilusPathBar #NautilusPathButton:active, .nautilus-window headerbar splitbutton > button:active, .nautilus-window headerbar splitbutton > menubutton > button:active {
+#NautilusPathBar > menubutton > button:active, #NautilusPathBar #NautilusPathButton:active, #NautilusFileChooser headerbar splitbutton > button:active, #NautilusFileChooser headerbar splitbutton > menubutton > button:active,
+.nautilus-window headerbar splitbutton > button:active,
+.nautilus-window headerbar splitbutton > menubutton > button:active {
   color: #e0e5eb;
   background-color: rgba(224, 229, 235, 0.2);
 }
 
-#NautilusPathBar > menubutton > button:checked, #NautilusPathBar #NautilusPathButton:checked, .nautilus-window headerbar splitbutton > button:checked, .nautilus-window headerbar splitbutton > menubutton > button:checked {
+#NautilusPathBar > menubutton > button:checked, #NautilusPathBar #NautilusPathButton:checked, #NautilusFileChooser headerbar splitbutton > button:checked, #NautilusFileChooser headerbar splitbutton > menubutton > button:checked,
+.nautilus-window headerbar splitbutton > button:checked,
+.nautilus-window headerbar splitbutton > menubutton > button:checked {
   color: #e0e5eb;
   background-color: rgba(224, 229, 235, 0.15);
 }
 
-.nautilus-window flap.unfolded > placessidebar scrollbar,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar scrollbar,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar scrollbar {
   border-color: rgba(0, 0, 0, 0.12);
 }
 
-.nautilus-window flap.unfolded > placessidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.nautilus-window flap.unfolded > placessidebar scrollbar slider,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar scrollbar slider,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar scrollbar slider {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window flap.unfolded > placessidebar scrollbar slider:hover,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar scrollbar slider:hover,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar scrollbar slider:hover {
   background-color: white;
 }
 
-.nautilus-window flap.unfolded > placessidebar scrollbar slider:hover:active,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar scrollbar slider:hover:active,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar scrollbar slider:hover:active {
   background-color: #5294e2;
 }
 
-.nautilus-window flap.unfolded > placessidebar scrollbar slider:disabled,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar scrollbar slider:disabled,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar scrollbar slider:disabled {
   background-color: transparent;
 }
 
-.nautilus-window flap.unfolded > placessidebar scrollbar trough,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar scrollbar trough,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar scrollbar trough {
   background-color: #1c1d23;
 }
 
-.nautilus-window .nautilus-list-view listview.view > row.activatable, .nautilus-window .nautilus-grid-view gridview child.activatable {
+#NautilusFileChooser .nautilus-list-view listview.view > row.activatable,
+.nautilus-window .nautilus-list-view listview.view > row.activatable, #NautilusFileChooser .nautilus-grid-view gridview child.activatable,
+.nautilus-window .nautilus-grid-view gridview child.activatable {
   border: 1px solid transparent;
 }
 
-.nautilus-window .nautilus-list-view listview.view > row.activatable:hover, .nautilus-window .nautilus-grid-view gridview child.activatable:hover {
+#NautilusFileChooser .nautilus-list-view listview.view > row.activatable:hover,
+.nautilus-window .nautilus-list-view listview.view > row.activatable:hover, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:hover,
+.nautilus-window .nautilus-grid-view gridview child.activatable:hover {
   border-color: rgba(82, 148, 226, 0.65);
   background-color: rgba(82, 148, 226, 0.15);
 }
 
-.nautilus-window .nautilus-list-view listview.view > row.activatable:active, .nautilus-window .nautilus-grid-view gridview child.activatable:active {
+#NautilusFileChooser .nautilus-list-view listview.view > row.activatable:active,
+.nautilus-window .nautilus-list-view listview.view > row.activatable:active, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:active,
+.nautilus-window .nautilus-grid-view gridview child.activatable:active {
   border-color: rgba(82, 148, 226, 0.75);
   background-color: rgba(82, 148, 226, 0.25);
   transition: all 180ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.nautilus-window .nautilus-list-view listview.view > row.activatable:selected, .nautilus-window .nautilus-grid-view gridview child.activatable:selected {
+#NautilusFileChooser .nautilus-list-view listview.view > row.activatable:selected,
+.nautilus-window .nautilus-list-view listview.view > row.activatable:selected, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected {
   border-color: #5294e2;
   background-color: rgba(82, 148, 226, 0.35);
   color: #5294e2;
   transition: all 180ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.nautilus-window .nautilus-list-view listview.view > row.activatable:selected label, .nautilus-window .nautilus-grid-view gridview child.activatable:selected label {
+#NautilusFileChooser .nautilus-list-view listview.view > row.activatable:selected label,
+.nautilus-window .nautilus-list-view listview.view > row.activatable:selected label, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected label,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected label {
   color: #5294e2;
 }
 
-.nautilus-window .nautilus-list-view listview.view > row.activatable:selected:hover, .nautilus-window .nautilus-grid-view gridview child.activatable:selected:hover, .nautilus-window .nautilus-list-view listview.view > row.activatable:selected:active, .nautilus-window .nautilus-grid-view gridview child.activatable:selected:active {
+#NautilusFileChooser .nautilus-list-view listview.view > row.activatable:selected:hover,
+.nautilus-window .nautilus-list-view listview.view > row.activatable:selected:hover, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected:hover,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected:hover, #NautilusFileChooser .nautilus-list-view listview.view > row.activatable:selected:active,
+.nautilus-window .nautilus-list-view listview.view > row.activatable:selected:active, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected:active,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected:active {
   color: #5294e2;
   background-color: rgba(82, 148, 226, 0.42);
 }
 
+#NautilusFileChooser headerbar entry,
 .nautilus-window headerbar entry {
   margin: 0;
 }
 
+#NautilusFileChooser headerbar splitbutton,
 .nautilus-window headerbar splitbutton {
   border-radius: 4px;
   border: 1px solid transparent;
@@ -6172,26 +6196,32 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   min-height: 26px;
 }
 
+#NautilusFileChooser headerbar splitbutton:hover,
 .nautilus-window headerbar splitbutton:hover {
   color: #e0e5eb;
   border-color: rgba(255, 255, 255, 0.12);
   background-color: #333641;
 }
 
-.nautilus-window headerbar splitbutton > button, .nautilus-window headerbar splitbutton > menubutton > button {
+#NautilusFileChooser headerbar splitbutton > button, #NautilusFileChooser headerbar splitbutton > menubutton > button,
+.nautilus-window headerbar splitbutton > button,
+.nautilus-window headerbar splitbutton > menubutton > button {
   margin: 2px 1px;
 }
 
-.nautilus-window:not(.view) headerbar,
+#NautilusFileChooser .sidebar-pane headerbar,
 .nautilus-window .sidebar-pane headerbar {
   color: rgba(70, 72, 83, 0.75);
   padding-left: 38px;
 }
 
-.nautilus-window:not(.view) headerbar, .nautilus-window:not(.view) headerbar:backdrop {
+#NautilusFileChooser .sidebar-pane headerbar, #NautilusFileChooser .sidebar-pane headerbar:backdrop,
+.nautilus-window .sidebar-pane headerbar,
+.nautilus-window .sidebar-pane headerbar:backdrop {
   box-shadow: inset 0 -1px rgba(50, 52, 61, 0.15), inset 38px 0 0 0 transparent;
 }
 
+#NautilusFileChooser .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action),
 .nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action) {
   color: #e0e5eb;
   outline-offset: -3px;
@@ -6200,29 +6230,35 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   border: 1px solid transparent;
 }
 
+#NautilusFileChooser .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):hover,
 .nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):hover {
   color: #e0e5eb;
   border-color: rgba(255, 255, 255, 0.12);
   background-color: #333641;
 }
 
-.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):checked, .nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):active {
+#NautilusFileChooser .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):checked, #NautilusFileChooser .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):active,
+.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):checked,
+.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):active {
   color: #ffffff;
   border-color: #68a2e6;
   background-color: #5294e2;
 }
 
+#NautilusFileChooser .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled,
 .nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled {
   background-color: rgba(40, 42, 51, 0);
   border-color: rgba(40, 42, 51, 0);
 }
 
-.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled label, .nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled {
+#NautilusFileChooser .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled label, #NautilusFileChooser .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled,
+.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled label,
+.nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action):disabled {
   color: rgba(224, 229, 235, 0.5);
   opacity: 1;
 }
 
-.nautilus-window flap.unfolded,
+#NautilusFileChooser .sidebar-pane > toolbarview,
 .nautilus-window .sidebar-pane > toolbarview {
   background-color: #272931;
   background-image: image(#32343D);
@@ -6232,25 +6268,25 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   padding: 0;
 }
 
-.nautilus-window flap.unfolded > separator,
+#NautilusFileChooser .sidebar-pane > toolbarview > separator,
 .nautilus-window .sidebar-pane > toolbarview > separator {
   background-color: #ffffff;
 }
 
-.nautilus-window flap.unfolded > placessidebar,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar {
   background-color: transparent;
   color: #d8dedf;
   padding: 0;
 }
 
-.nautilus-window flap.unfolded > placessidebar list,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar list {
   padding: 0;
   background-color: transparent;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row {
   margin: 0;
   transition: none;
@@ -6260,24 +6296,24 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   background-repeat: no-repeat;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row .sidebar-icon,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row .sidebar-icon,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row .sidebar-icon {
   color: rgba(246, 246, 251, 0.85);
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row image.sidebar-icon,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row image.sidebar-icon,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row image.sidebar-icon {
   padding-right: 2px;
   padding-left: 2px;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row label.sidebar-label,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row label.sidebar-label,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row label.sidebar-label {
   padding-right: 2px;
   padding-left: 20px;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:hover:not(:selected):not(:focus-within),
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:hover:not(:selected):not(:focus-within),
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:hover:not(:selected):not(:focus-within) {
   transition: none;
   color: #464853;
@@ -6285,19 +6321,19 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #32343D;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:disabled, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:disabled label, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:disabled image,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:disabled, #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:disabled label, #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:disabled image,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:disabled,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:disabled label,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:disabled image {
   color: rgba(216, 222, 223, 0.4);
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:active,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:active,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:active {
   transition: box-shadow 0.2s;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected:hover, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:active:hover,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected, #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected:hover, #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:active:hover,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected:hover,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:active:hover {
@@ -6308,14 +6344,14 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   background-position: 42px center;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected .sidebar-label, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected:hover .sidebar-label, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:active:hover .sidebar-label,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected .sidebar-label, #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected:hover .sidebar-label, #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:active:hover .sidebar-label,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected .sidebar-label,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected:hover .sidebar-label,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:active:hover .sidebar-label {
   color: #bcc6c8;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:selected:hover, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:active:hover,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected:hover, #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:active:hover,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:selected:hover,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:active:hover {
   background-color: rgba(216, 222, 223, 0.05);
@@ -6325,12 +6361,12 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   background-position: 42px center;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row button.sidebar-button,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row button.sidebar-button,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row button.sidebar-button {
   color: #d8dedf;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row button.sidebar-button:hover,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row button.sidebar-button:hover,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row button.sidebar-button:hover {
   color: #23242a;
   border-color: rgba(0, 0, 0, 0.12);
@@ -6338,7 +6374,7 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   box-shadow: none;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row button.sidebar-button:active,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row button.sidebar-button:active,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row button.sidebar-button:active {
   color: #ffffff;
   border-color: #2679db;
@@ -6346,63 +6382,74 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   box-shadow: none;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row button.sidebar-button:not(:hover):not(:active) > image,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row button.sidebar-button:not(:hover):not(:active) > image,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row button.sidebar-button:not(:hover):not(:active) > image {
   opacity: 0.5;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row.sidebar-new-bookmark-row,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row.sidebar-new-bookmark-row,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row.sidebar-new-bookmark-row {
   color: #5294e2;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:backdrop,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:backdrop,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:backdrop {
   opacity: 0.75;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:drop(active):not(:disabled), .nautilus-window flap.unfolded > placessidebar row.sidebar-row:drop(active):not(:disabled) label, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:drop(active):not(:disabled) .sidebar-icon,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled), #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled) label, #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled) .sidebar-icon,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled),
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled) label,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled) .sidebar-icon {
   color: #F08437;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:drop(active):not(:disabled):selected,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled):selected,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled):selected {
   background-color: #F08437;
 }
 
-.nautilus-window flap.unfolded > placessidebar row.sidebar-row:drop(active):not(:disabled):selected, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:drop(active):not(:disabled):selected label, .nautilus-window flap.unfolded > placessidebar row.sidebar-row:drop(active):not(:disabled):selected .sidebar-icon,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled):selected, #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled):selected label, #NautilusFileChooser .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled):selected .sidebar-icon,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled):selected,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled):selected label,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar row.sidebar-row:drop(active):not(:disabled):selected .sidebar-icon {
   color: #ffffff;
 }
 
-.nautilus-window flap.unfolded > placessidebar separator,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar separator,
 .nautilus-window .sidebar-pane > toolbarview > placessidebar separator {
   background-color: transparent;
 }
 
-.nautilus-window .sidebar-pane:dir(ltr), .nautilus-window .sidebar-pane:dir(ltr) banner > revealer > widget, .nautilus-window .sidebar-pane.end:dir(rtl), .nautilus-window .sidebar-pane.end:dir(rtl) banner > revealer > widget {
+#NautilusFileChooser .sidebar-pane:dir(ltr), #NautilusFileChooser .sidebar-pane:dir(ltr) banner > revealer > widget, #NautilusFileChooser .sidebar-pane.end:dir(rtl), #NautilusFileChooser .sidebar-pane.end:dir(rtl) banner > revealer > widget,
+.nautilus-window .sidebar-pane:dir(ltr),
+.nautilus-window .sidebar-pane:dir(ltr) banner > revealer > widget,
+.nautilus-window .sidebar-pane.end:dir(rtl),
+.nautilus-window .sidebar-pane.end:dir(rtl) banner > revealer > widget {
   box-shadow: none;
   border-right: none;
 }
 
-.nautilus-window .sidebar-pane:dir(rtl), .nautilus-window .sidebar-pane:dir(rtl) banner > revealer > widget, .nautilus-window .sidebar-pane.end:dir(ltr), .nautilus-window .sidebar-pane.end:dir(ltr) banner > revealer > widget {
+#NautilusFileChooser .sidebar-pane:dir(rtl), #NautilusFileChooser .sidebar-pane:dir(rtl) banner > revealer > widget, #NautilusFileChooser .sidebar-pane.end:dir(ltr), #NautilusFileChooser .sidebar-pane.end:dir(ltr) banner > revealer > widget,
+.nautilus-window .sidebar-pane:dir(rtl),
+.nautilus-window .sidebar-pane:dir(rtl) banner > revealer > widget,
+.nautilus-window .sidebar-pane.end:dir(ltr),
+.nautilus-window .sidebar-pane.end:dir(ltr) banner > revealer > widget {
   box-shadow: none;
   border-left: none;
 }
 
+#NautilusFileChooser .nautilus-grid-view gridview,
 .nautilus-window .nautilus-grid-view gridview {
   background-image: none;
 }
 
+#NautilusFileChooser .nautilus-grid-view gridview child.activatable,
 .nautilus-window .nautilus-grid-view gridview child.activatable {
   border-radius: 4px;
 }
 
+#NautilusFileChooser .nautilus-list-view,
 .nautilus-window .nautilus-list-view {
   padding: 0;
   margin: 0;
@@ -6410,30 +6457,36 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
   background-color: #ffffff;
 }
 
+#NautilusFileChooser .nautilus-list-view listview.view,
 .nautilus-window .nautilus-list-view listview.view {
   padding: 0;
   margin: 0;
   border-spacing: 0;
 }
 
+#NautilusFileChooser .nautilus-list-view listview.view > row.activatable,
 .nautilus-window .nautilus-list-view listview.view > row.activatable {
   padding: 0;
   margin: 0;
   border-radius: 2px;
 }
 
+#NautilusFileChooser .nautilus-list-view listview.view > row.activatable > cell,
 .nautilus-window .nautilus-list-view listview.view > row.activatable > cell {
   padding: 0;
 }
 
+#NautilusFileChooser .nautilus-list-view listview.view > row.activatable > cell > widget#NautilusViewCell,
 .nautilus-window .nautilus-list-view listview.view > row.activatable > cell > widget#NautilusViewCell {
   padding: 3px 6px;
 }
 
+#NautilusFileChooser .nautilus-list-view listview.view > row.activatable + row,
 .nautilus-window .nautilus-list-view listview.view > row.activatable + row {
   margin-top: 3px;
 }
 
+#NautilusFileChooser placesview label,
 .nautilus-window placesview label {
   color: rgba(70, 72, 83, 0.75);
 }
@@ -7325,6 +7378,10 @@ menubutton.pill > button, button.pill {
   min-width: 28px;
   padding: 6px;
   border-radius: 9999px;
+}
+
+menubutton.pill > button.text-button, button.pill.text-button {
+  padding: 0 12px;
 }
 
 button.card {
@@ -8364,6 +8421,12 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 .content-pane headerbar:backdrop {
   background-color: transparent;
   box-shadow: none;
+}
+
+.sidebar-pane .toolbar,
+.content-pane .toolbar {
+  background-color: transparent;
+  border: none;
 }
 
 .top-bar {

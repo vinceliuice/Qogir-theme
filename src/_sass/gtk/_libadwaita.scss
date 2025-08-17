@@ -111,6 +111,10 @@ button {
     min-width: $medium_size;
     padding: $cont_padding;
     border-radius: $circular_radius;
+
+    &.text-button {
+      padding: 0 $cont_padding * 2;
+    }
   }
 
   &.card {
@@ -1016,6 +1020,11 @@ $side_border: rgba($side_theme_fg, 0.12);
       background-color: transparent;
       box-shadow: none;
     }
+  }
+
+  .toolbar {
+    background-color: transparent;
+    border: none;
   }
 }
 

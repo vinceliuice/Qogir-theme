@@ -8,8 +8,8 @@
   border: solid $borders_color;
 
   // padding and margins to account for scrollbar
-  &:ltr { margin-left: 0; margin-right: $base_margin; padding-right: $base_padding; border-right-width: 1px; }
-  &:rtl { margin-right: 0; margin-left: $base_margin; padding-left: $base_padding; border-left-width: 1px; }
+  &:ltr { margin-left: 0; margin-right: $base_padding; padding-right: 0; border-right-width: 1px; }
+  &:rtl { margin-right: 0; margin-left: $base_padding; padding-left: 0; border-left-width: 1px; }
 
   .message-list-placeholder {
     @extend %title_3;
@@ -26,8 +26,8 @@
 
 .message-view {
   // to account for scrollbar
-  &:ltr { margin-right: $base_margin * 3; }
-  &:rtl { margin-left: $base_margin * 3;}
+  &:ltr { margin-right: $base_margin * 3 + $base_padding; padding-left: 0; }
+  &:rtl { margin-left: $base_margin * 3 + $base_padding; padding-right: 0; }
 
   -st-vfade-offset: 68px;
 

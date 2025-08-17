@@ -2886,15 +2886,15 @@ StWidget.focused .app-grid-running-dot {
 
 .message-list:ltr {
   margin-left: 0;
-  margin-right: 4px;
-  padding-right: 6px;
+  margin-right: 6px;
+  padding-right: 0;
   border-right-width: 1px;
 }
 
 .message-list:rtl {
   margin-right: 0;
-  margin-left: 4px;
-  padding-left: 6px;
+  margin-left: 6px;
+  padding-left: 0;
   border-left-width: 1px;
 }
 
@@ -2913,11 +2913,13 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .message-view:ltr {
-  margin-right: 12px;
+  margin-right: 18px;
+  padding-left: 0;
 }
 
 .message-view:rtl {
-  margin-left: 12px;
+  margin-left: 18px;
+  padding-right: 0;
 }
 
 .message-view .message {
