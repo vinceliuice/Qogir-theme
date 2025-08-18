@@ -115,6 +115,10 @@ button {
     &.text-button {
       padding: 0 $cont_padding * 2;
     }
+
+    &.image-text-button {
+      padding: $cont_padding $cont_padding * 2;
+    }
   }
 
   &.card {
@@ -860,10 +864,20 @@ $side_border: rgba($side_theme_fg, 0.12);
 
   .dim-label { color: rgba($side_theme_fg, 0.45); }
 
+  button { @extend %side_buttons; }
+
   entry { @extend %side_entry; }
 
-  searchbar {
-    @extend %side_searchbar;
+  searchbar { @extend %side_searchbar; }
+
+  list {
+    &.boxed-list, &.content {
+      background-color: rgba($side_theme_fg, 0.05);
+    }
+
+    > separator { background-color: transparent; }
+
+    > row { @extend %side_views; }
   }
 
   popover {
@@ -934,7 +948,6 @@ $side_border: rgba($side_theme_fg, 0.12);
 }
 
 /* Middle pane in three-pane setups */
-.content-pane .sidebar-pane,
 .sidebar-pane .content-pane {
   background-color: $base_color;
   color: $text_color;

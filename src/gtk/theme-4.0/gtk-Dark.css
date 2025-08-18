@@ -5779,7 +5779,7 @@ headerbar.default-decoration windowcontrols > button.close, headerbar.default-de
   min-height: 24px;
 }
 
-.sidebar-pane .navigation-sidebar > row:selected, leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
+.sidebar-pane list > row:selected, .sidebar-pane .navigation-sidebar > row:selected, leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
 dialog-host > dialog.view sheet:selected,
 dialog-host > dialog.view sheet:selected:focus,
 textview > text:selected,
@@ -5791,7 +5791,7 @@ treeview.view:selected:focus, row:selected, row:selected:hover, row:selected:act
   background-color: #5294e2;
 }
 
-row:selected label, label:selected, .sidebar-pane .navigation-sidebar > row:selected, leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
+row:selected label, label:selected, .sidebar-pane list > row:selected, .sidebar-pane .navigation-sidebar > row:selected, leaflet.unfolded > box:last-child list > row:selected, .view:selected, .view:selected:focus,
 dialog-host > dialog.view sheet:selected,
 dialog-host > dialog.view sheet:selected:focus,
 textview > text:selected,
@@ -5902,83 +5902,83 @@ leaflet.unfolded > box:last-child popover.background > contents:disabled, leafle
   color: rgba(246, 246, 251, 0.35);
 }
 
-.sidebar-pane datechooser button, leaflet.unfolded > box:last-child button {
+.sidebar-pane button, .sidebar-pane datechooser button, leaflet.unfolded > box:last-child button {
   color: rgba(246, 246, 251, 0.8);
   background-color: rgba(246, 246, 251, 0.15);
   border: none;
 }
 
-.sidebar-pane datechooser button:hover, leaflet.unfolded > box:last-child button:hover {
+.sidebar-pane button:hover, leaflet.unfolded > box:last-child button:hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.25);
 }
 
-.sidebar-pane datechooser button:focus, leaflet.unfolded > box:last-child button:focus {
+.sidebar-pane button:focus, leaflet.unfolded > box:last-child button:focus {
   color: #F6F6FB;
   box-shadow: none;
 }
 
-.sidebar-pane datechooser button:active, leaflet.unfolded > box:last-child button:active, .sidebar-pane datechooser button:checked, leaflet.unfolded > box:last-child button:checked, .sidebar-pane datechooser button:selected, leaflet.unfolded > box:last-child button:selected {
+.sidebar-pane button:active, leaflet.unfolded > box:last-child button:active, .sidebar-pane button:checked, leaflet.unfolded > box:last-child button:checked, .sidebar-pane button:selected, leaflet.unfolded > box:last-child button:selected {
   color: #ffffff;
   background-color: #5294e2;
 }
 
-.sidebar-pane datechooser button:disabled, leaflet.unfolded > box:last-child button:disabled {
+.sidebar-pane button:disabled, leaflet.unfolded > box:last-child button:disabled {
   color: rgba(246, 246, 251, 0.35);
   background-color: rgba(246, 246, 251, 0.08);
 }
 
-leaflet.unfolded > box:last-child popover.background > contents .button, leaflet.unfolded > box:last-child popover.background > contents button, leaflet.unfolded > box:last-child popover.background > contents modelbutton, leaflet.unfolded > box:last-child popover.background > arrow .button, leaflet.unfolded > box:last-child popover.background > arrow button, leaflet.unfolded > box:last-child popover.background > arrow modelbutton, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button, leaflet.unfolded > box:last-child > headerbar button, .sidebar-pane datechooser button.flat, leaflet.unfolded > box:last-child button.flat {
+leaflet.unfolded > box:last-child popover.background > contents .button, leaflet.unfolded > box:last-child popover.background > contents button, leaflet.unfolded > box:last-child popover.background > contents modelbutton, leaflet.unfolded > box:last-child popover.background > arrow .button, leaflet.unfolded > box:last-child popover.background > arrow button, leaflet.unfolded > box:last-child popover.background > arrow modelbutton, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button, leaflet.unfolded > box:last-child > headerbar button, .sidebar-pane button.flat, leaflet.unfolded > box:last-child button.flat {
   border: none;
   background: none;
   box-shadow: none;
   color: rgba(246, 246, 251, 0.8);
 }
 
-leaflet.unfolded > box:last-child popover.background > contents .button:hover, leaflet.unfolded > box:last-child popover.background > contents button:hover, leaflet.unfolded > box:last-child popover.background > contents modelbutton:hover, leaflet.unfolded > box:last-child popover.background > arrow .button:hover, leaflet.unfolded > box:last-child popover.background > arrow button:hover, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:hover, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:hover, leaflet.unfolded > box:last-child > headerbar button:hover, .sidebar-pane datechooser button.flat:hover, leaflet.unfolded > box:last-child button.flat:hover {
+leaflet.unfolded > box:last-child popover.background > contents .button:hover, leaflet.unfolded > box:last-child popover.background > contents button:hover, leaflet.unfolded > box:last-child popover.background > contents modelbutton:hover, leaflet.unfolded > box:last-child popover.background > arrow .button:hover, leaflet.unfolded > box:last-child popover.background > arrow button:hover, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:hover, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:hover, leaflet.unfolded > box:last-child > headerbar button:hover, .sidebar-pane button.flat:hover, leaflet.unfolded > box:last-child button.flat:hover {
   color: #F6F6FB;
   background-color: rgba(246, 246, 251, 0.15);
 }
 
-leaflet.unfolded > box:last-child popover.background > contents .button:focus, leaflet.unfolded > box:last-child popover.background > contents button:focus, leaflet.unfolded > box:last-child popover.background > contents modelbutton:focus, leaflet.unfolded > box:last-child popover.background > arrow .button:focus, leaflet.unfolded > box:last-child popover.background > arrow button:focus, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:focus, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:focus, leaflet.unfolded > box:last-child > headerbar button:focus, .sidebar-pane datechooser button.flat:focus, leaflet.unfolded > box:last-child button.flat:focus {
+leaflet.unfolded > box:last-child popover.background > contents .button:focus, leaflet.unfolded > box:last-child popover.background > contents button:focus, leaflet.unfolded > box:last-child popover.background > contents modelbutton:focus, leaflet.unfolded > box:last-child popover.background > arrow .button:focus, leaflet.unfolded > box:last-child popover.background > arrow button:focus, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:focus, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:focus, leaflet.unfolded > box:last-child > headerbar button:focus, .sidebar-pane button.flat:focus, leaflet.unfolded > box:last-child button.flat:focus {
   color: #F6F6FB;
   box-shadow: none;
 }
 
-leaflet.unfolded > box:last-child popover.background > contents .button:active, leaflet.unfolded > box:last-child popover.background > contents button:active, leaflet.unfolded > box:last-child popover.background > contents modelbutton:active, leaflet.unfolded > box:last-child popover.background > arrow .button:active, leaflet.unfolded > box:last-child popover.background > arrow button:active, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:active, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:active, leaflet.unfolded > box:last-child > headerbar button:active, leaflet.unfolded > box:last-child popover.background > contents .button:checked, leaflet.unfolded > box:last-child popover.background > contents button:checked, leaflet.unfolded > box:last-child popover.background > contents modelbutton:checked, leaflet.unfolded > box:last-child popover.background > arrow .button:checked, leaflet.unfolded > box:last-child popover.background > arrow button:checked, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:checked, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:checked, leaflet.unfolded > box:last-child > headerbar button:checked, .sidebar-pane datechooser button.flat:active, leaflet.unfolded > box:last-child button.flat:active, .sidebar-pane datechooser button.flat:checked, leaflet.unfolded > box:last-child button.flat:checked {
+leaflet.unfolded > box:last-child popover.background > contents .button:active, leaflet.unfolded > box:last-child popover.background > contents button:active, leaflet.unfolded > box:last-child popover.background > contents modelbutton:active, leaflet.unfolded > box:last-child popover.background > arrow .button:active, leaflet.unfolded > box:last-child popover.background > arrow button:active, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:active, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:active, leaflet.unfolded > box:last-child > headerbar button:active, leaflet.unfolded > box:last-child popover.background > contents .button:checked, leaflet.unfolded > box:last-child popover.background > contents button:checked, leaflet.unfolded > box:last-child popover.background > contents modelbutton:checked, leaflet.unfolded > box:last-child popover.background > arrow .button:checked, leaflet.unfolded > box:last-child popover.background > arrow button:checked, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:checked, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:checked, leaflet.unfolded > box:last-child > headerbar button:checked, .sidebar-pane button.flat:active, leaflet.unfolded > box:last-child button.flat:active, .sidebar-pane button.flat:checked, leaflet.unfolded > box:last-child button.flat:checked {
   color: #ffffff;
   background-color: #5294e2;
 }
 
-leaflet.unfolded > box:last-child popover.background > contents .button:disabled, leaflet.unfolded > box:last-child popover.background > contents button:disabled, leaflet.unfolded > box:last-child popover.background > contents modelbutton:disabled, leaflet.unfolded > box:last-child popover.background > arrow .button:disabled, leaflet.unfolded > box:last-child popover.background > arrow button:disabled, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:disabled, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:disabled, leaflet.unfolded > box:last-child > headerbar button:disabled, .sidebar-pane datechooser button.flat:disabled, leaflet.unfolded > box:last-child button.flat:disabled {
+leaflet.unfolded > box:last-child popover.background > contents .button:disabled, leaflet.unfolded > box:last-child popover.background > contents button:disabled, leaflet.unfolded > box:last-child popover.background > contents modelbutton:disabled, leaflet.unfolded > box:last-child popover.background > arrow .button:disabled, leaflet.unfolded > box:last-child popover.background > arrow button:disabled, leaflet.unfolded > box:last-child popover.background > arrow modelbutton:disabled, leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left button:disabled, leaflet.unfolded > box:last-child > headerbar button:disabled, .sidebar-pane button.flat:disabled, leaflet.unfolded > box:last-child button.flat:disabled {
   color: rgba(246, 246, 251, 0.35);
 }
 
-.sidebar-pane .navigation-sidebar > row, leaflet.unfolded > box:last-child list > row {
+.sidebar-pane list > row, .sidebar-pane .navigation-sidebar > row, leaflet.unfolded > box:last-child list > row {
   color: rgba(246, 246, 251, 0.8);
 }
 
-.sidebar-pane .navigation-sidebar > row:hover, leaflet.unfolded > box:last-child list > row:hover {
+.sidebar-pane list > row:hover, .sidebar-pane .navigation-sidebar > row:hover, leaflet.unfolded > box:last-child list > row:hover {
   transition: background-color 50ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: #F6F6FB;
   background-color: #464750;
 }
 
-.sidebar-pane .navigation-sidebar > row:active, leaflet.unfolded > box:last-child list > row:active {
+.sidebar-pane list > row:active, .sidebar-pane .navigation-sidebar > row:active, leaflet.unfolded > box:last-child list > row:active {
   transition: background-color 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: #F6F6FB;
   background-color: #51535b;
 }
 
-.sidebar-pane .navigation-sidebar > row:disabled, leaflet.unfolded > box:last-child list > row:disabled, .sidebar-pane .navigation-sidebar > row label:disabled, leaflet.unfolded > box:last-child list > row label:disabled {
+.sidebar-pane list > row:disabled, .sidebar-pane .navigation-sidebar > row:disabled, leaflet.unfolded > box:last-child list > row:disabled, .sidebar-pane list > row label:disabled, .sidebar-pane .navigation-sidebar > row label:disabled, leaflet.unfolded > box:last-child list > row label:disabled {
   color: rgba(246, 246, 251, 0.35);
 }
 
-.sidebar-pane .navigation-sidebar > row:selected:hover, leaflet.unfolded > box:last-child list > row:selected:hover {
+.sidebar-pane list > row:selected:hover, .sidebar-pane .navigation-sidebar > row:selected:hover, leaflet.unfolded > box:last-child list > row:selected:hover {
   background-color: #5c9ae4;
 }
 
-.sidebar-pane .navigation-sidebar > row:selected:active, leaflet.unfolded > box:last-child list > row:selected:active {
+.sidebar-pane list > row:selected:active, .sidebar-pane .navigation-sidebar > row:selected:active, leaflet.unfolded > box:last-child list > row:selected:active {
   background-color: #66a0e5;
 }
 
@@ -7342,6 +7342,10 @@ menubutton.pill > button.text-button, button.pill.text-button {
   padding: 0 12px;
 }
 
+menubutton.pill > button.image-text-button, button.pill.image-text-button {
+  padding: 6px 12px;
+}
+
 button.card {
   background-clip: padding-box;
   font-weight: inherit;
@@ -8080,6 +8084,14 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   color: rgba(246, 246, 251, 0.45);
 }
 
+.sidebar-pane list.boxed-list, .sidebar-pane list.content {
+  background-color: rgba(246, 246, 251, 0.05);
+}
+
+.sidebar-pane list > separator {
+  background-color: transparent;
+}
+
 .sidebar-pane popover modelbutton.flat:disabled, .sidebar-pane popover modelbutton.flat:disabled label {
   color: rgba(230, 235, 239, 0.45);
 }
@@ -8194,22 +8206,16 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 }
 
 /* Middle pane in three-pane setups */
-.content-pane .sidebar-pane,
 .sidebar-pane .content-pane {
   background-color: #282A33;
   color: #e0e5eb;
 }
 
-.content-pane .sidebar-pane:backdrop,
 .sidebar-pane .content-pane:backdrop {
   background-color: #32343D;
   transition: background-color 270ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.content-pane .sidebar-pane flap > dimming,
-.content-pane .sidebar-pane leaflet > dimming,
-.content-pane .sidebar-pane navigation-view > dimming,
-.content-pane .sidebar-pane overlay-split-view > dimming,
 .sidebar-pane .content-pane flap > dimming,
 .sidebar-pane .content-pane leaflet > dimming,
 .sidebar-pane .content-pane navigation-view > dimming,
@@ -8217,10 +8223,6 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   background: rgba(255, 255, 255, 0.12);
 }
 
-.content-pane .sidebar-pane flap > border,
-.content-pane .sidebar-pane leaflet > border,
-.content-pane .sidebar-pane navigation-view > border,
-.content-pane .sidebar-pane overlay-split-view > border,
 .sidebar-pane .content-pane flap > border,
 .sidebar-pane .content-pane leaflet > border,
 .sidebar-pane .content-pane navigation-view > border,
@@ -8228,10 +8230,6 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   background: none;
 }
 
-.content-pane .sidebar-pane flap > shadow,
-.content-pane .sidebar-pane leaflet > shadow,
-.content-pane .sidebar-pane navigation-view > shadow,
-.content-pane .sidebar-pane overlay-split-view > shadow,
 .sidebar-pane .content-pane flap > shadow,
 .sidebar-pane .content-pane leaflet > shadow,
 .sidebar-pane .content-pane navigation-view > shadow,
@@ -8240,10 +8238,6 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   min-height: 56px;
 }
 
-.content-pane .sidebar-pane flap > shadow.left,
-.content-pane .sidebar-pane leaflet > shadow.left,
-.content-pane .sidebar-pane navigation-view > shadow.left,
-.content-pane .sidebar-pane overlay-split-view > shadow.left,
 .sidebar-pane .content-pane flap > shadow.left,
 .sidebar-pane .content-pane leaflet > shadow.left,
 .sidebar-pane .content-pane navigation-view > shadow.left,
@@ -8251,10 +8245,6 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   background-image: linear-gradient(to right, alpha(rgba(255, 255, 255, 0.12),0.7), alpha(rgba(255, 255, 255, 0.12),0.14) 40px, alpha(rgba(255, 255, 255, 0.12),0) 56px), linear-gradient(to right, alpha(rgba(255, 255, 255, 0.12),0.4), alpha(rgba(255, 255, 255, 0.12),0.14) 7px, alpha(rgba(255, 255, 255, 0.12),0) 24px);
 }
 
-.content-pane .sidebar-pane flap > shadow.right,
-.content-pane .sidebar-pane leaflet > shadow.right,
-.content-pane .sidebar-pane navigation-view > shadow.right,
-.content-pane .sidebar-pane overlay-split-view > shadow.right,
 .sidebar-pane .content-pane flap > shadow.right,
 .sidebar-pane .content-pane leaflet > shadow.right,
 .sidebar-pane .content-pane navigation-view > shadow.right,
@@ -8262,10 +8252,6 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   background-image: linear-gradient(to left, alpha(rgba(255, 255, 255, 0.12),0.7), alpha(rgba(255, 255, 255, 0.12),0.14) 40px, alpha(rgba(255, 255, 255, 0.12),0) 56px), linear-gradient(to left, alpha(rgba(255, 255, 255, 0.12),0.4), alpha(rgba(255, 255, 255, 0.12),0.14) 7px, alpha(rgba(255, 255, 255, 0.12),0) 24px);
 }
 
-.content-pane .sidebar-pane flap > shadow.up,
-.content-pane .sidebar-pane leaflet > shadow.up,
-.content-pane .sidebar-pane navigation-view > shadow.up,
-.content-pane .sidebar-pane overlay-split-view > shadow.up,
 .sidebar-pane .content-pane flap > shadow.up,
 .sidebar-pane .content-pane leaflet > shadow.up,
 .sidebar-pane .content-pane navigation-view > shadow.up,
@@ -8273,10 +8259,6 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   background-image: linear-gradient(to bottom, alpha(rgba(255, 255, 255, 0.12),0.7), alpha(rgba(255, 255, 255, 0.12),0.14) 40px, alpha(rgba(255, 255, 255, 0.12),0) 56px), linear-gradient(to bottom, alpha(rgba(255, 255, 255, 0.12),0.4), alpha(rgba(255, 255, 255, 0.12),0.14) 7px, alpha(rgba(255, 255, 255, 0.12),0) 24px);
 }
 
-.content-pane .sidebar-pane flap > shadow.down,
-.content-pane .sidebar-pane leaflet > shadow.down,
-.content-pane .sidebar-pane navigation-view > shadow.down,
-.content-pane .sidebar-pane overlay-split-view > shadow.down,
 .sidebar-pane .content-pane flap > shadow.down,
 .sidebar-pane .content-pane leaflet > shadow.down,
 .sidebar-pane .content-pane navigation-view > shadow.down,
@@ -8284,31 +8266,21 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   background-image: linear-gradient(to top, alpha(rgba(255, 255, 255, 0.12),0.7), alpha(rgba(255, 255, 255, 0.12),0.14) 40px, alpha(rgba(255, 255, 255, 0.12),0) 56px), linear-gradient(to top, alpha(rgba(255, 255, 255, 0.12),0.4), alpha(rgba(255, 255, 255, 0.12),0.14) 7px, alpha(rgba(255, 255, 255, 0.12),0) 24px);
 }
 
-.content-pane .sidebar-pane banner > revealer > widget,
 .sidebar-pane .content-pane banner > revealer > widget {
   background-color: #354a68;
   color: #e0e5eb;
 }
 
-.content-pane .sidebar-pane banner > revealer > widget:backdrop,
 .sidebar-pane .content-pane banner > revealer > widget:backdrop {
   background-color: #354a68;
 }
 
-.content-pane .sidebar-pane:dir(ltr), .content-pane .sidebar-pane:dir(ltr) banner > revealer > widget, .content-pane .sidebar-pane.end:dir(rtl), .content-pane .sidebar-pane.end:dir(rtl) banner > revealer > widget,
-.sidebar-pane .content-pane:dir(ltr),
-.sidebar-pane .content-pane:dir(ltr) banner > revealer > widget,
-.sidebar-pane .content-pane.end:dir(rtl),
-.sidebar-pane .content-pane.end:dir(rtl) banner > revealer > widget {
+.sidebar-pane .content-pane:dir(ltr), .sidebar-pane .content-pane:dir(ltr) banner > revealer > widget, .sidebar-pane .content-pane.end:dir(rtl), .sidebar-pane .content-pane.end:dir(rtl) banner > revealer > widget {
   box-shadow: none;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.content-pane .sidebar-pane:dir(rtl), .content-pane .sidebar-pane:dir(rtl) banner > revealer > widget, .content-pane .sidebar-pane.end:dir(ltr), .content-pane .sidebar-pane.end:dir(ltr) banner > revealer > widget,
-.sidebar-pane .content-pane:dir(rtl),
-.sidebar-pane .content-pane:dir(rtl) banner > revealer > widget,
-.sidebar-pane .content-pane.end:dir(ltr),
-.sidebar-pane .content-pane.end:dir(ltr) banner > revealer > widget {
+.sidebar-pane .content-pane:dir(rtl), .sidebar-pane .content-pane:dir(rtl) banner > revealer > widget, .sidebar-pane .content-pane.end:dir(ltr), .sidebar-pane .content-pane.end:dir(ltr) banner > revealer > widget {
   box-shadow: none;
   border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
