@@ -3002,21 +3002,24 @@ progressbar {
   &.horizontal {
     > trough {
       min-width: 150px;
-      &, > progress { min-height: 6px; }
+      &, > progress { min-height: 4px; }
     }
   }
 
   &.vertical {
     > trough {
       min-height: 80px;
-      &, > progress { min-width: 6px; }
+      &, > progress { min-width: 4px; }
     }
   }
 
   &.osd {
-    min-width: 3px;
-    min-height: 3px;
     background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
 
     > trough {
       border-style: none;

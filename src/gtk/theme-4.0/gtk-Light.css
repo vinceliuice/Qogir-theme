@@ -3981,7 +3981,7 @@ progressbar.horizontal > trough {
 }
 
 progressbar.horizontal > trough, progressbar.horizontal > trough > progress {
-  min-height: 6px;
+  min-height: 4px;
 }
 
 progressbar.vertical > trough {
@@ -3989,13 +3989,16 @@ progressbar.vertical > trough {
 }
 
 progressbar.vertical > trough, progressbar.vertical > trough > progress {
-  min-width: 6px;
+  min-width: 4px;
 }
 
 progressbar.osd {
-  min-width: 3px;
-  min-height: 3px;
   background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
 }
 
 progressbar.osd > trough {
