@@ -31,6 +31,9 @@ image=''
 window=''
 square=''
 
+WM_CORNER=''
+WM_BUTTON=''
+
 theme_color='default'
 
 SASSC_OPT="-M -t expanded"
@@ -99,6 +102,7 @@ install() {
   [[ ${color} == '-Dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-Light' ]] && local ELSE_LIGHT=${color}
   [[ ${window} == 'round' ]] && local WM_CORNER='-Round'
+  [[ ${square} == 'true' ]] && local WM_BUTTON='-Win'
 
   local THEME_DIR=${dest}/${name}${theme}${WM_CORNER}${color}
 
@@ -226,9 +230,9 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/metacity-1
 
   if [[ "$square" == 'true' ]]; then
-    cp -r ${SRC_DIR}/src/metacity-1/assets-Win${ELSE_LIGHT}/*.png                    ${THEME_DIR}/metacity-1
-    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3-Win.xml                         ${THEME_DIR}/metacity-1/metacity-theme-3.xml
-    cp -r ${SRC_DIR}/src/metacity-1/thumbnail-win${ELSE_LIGHT}.png                   ${THEME_DIR}/metacity-1/thumbnail.png
+    cp -r ${SRC_DIR}/src/metacity-1/assets${WM_BUTTON}${ELSE_LIGHT}/*.png            ${THEME_DIR}/metacity-1
+    cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3${WM_BUTTON}.xml                 ${THEME_DIR}/metacity-1/metacity-theme-3.xml
+    cp -r ${SRC_DIR}/src/metacity-1/thumbnail${WM_BUTTON}${ELSE_LIGHT}.png           ${THEME_DIR}/metacity-1/thumbnail.png
   else
     cp -r ${SRC_DIR}/src/metacity-1/assets${WM_CORNER}                               ${THEME_DIR}/metacity-1/assets
     cp -r ${SRC_DIR}/src/metacity-1/metacity-theme-3${WM_CORNER}.xml                 ${THEME_DIR}/metacity-1/metacity-theme-3.xml
@@ -260,21 +264,16 @@ install_xfwm() {
   [[ ${color} == '-Dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-Light' ]] && local ELSE_LIGHT=${color}
   [[ ${window} == 'round' ]] && local WM_CORNER='-Round'
+  [[ ${square} == 'true' ]] && local WM_BUTTON='-Win'
 
   local THEME_DIR=${dest}/${name}${WM_CORNER}${color}${screen}
 
   [[ ${screen} != '' && -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
   # XFWM4
-  mkdir -p                                                                              ${THEME_DIR}/xfwm4
-
-  if [[ "$square" == 'true' ]]; then
-    cp -r ${SRC_DIR}/src/xfwm4/themerc-Win${WM_CORNER}${ELSE_LIGHT}                     ${THEME_DIR}/xfwm4/themerc
-    cp -r ${SRC_DIR}/src/xfwm4/assets-Win${WM_CORNER}${ELSE_LIGHT}${screen}/*.png       ${THEME_DIR}/xfwm4
-  else
-    cp -r ${SRC_DIR}/src/xfwm4/themerc${WM_CORNER}${ELSE_LIGHT}                         ${THEME_DIR}/xfwm4/themerc
-    cp -r ${SRC_DIR}/src/xfwm4/assets${WM_CORNER}${ELSE_LIGHT}${screen}/*.png           ${THEME_DIR}/xfwm4
-  fi
+  mkdir -p                                                                                     ${THEME_DIR}/xfwm4
+  cp -r ${SRC_DIR}/src/xfwm4/themerc${WM_BUTTON}${WM_CORNER}${ELSE_LIGHT}                      ${THEME_DIR}/xfwm4/themerc
+  cp -r ${SRC_DIR}/src/xfwm4/assets${WM_BUTTON}${WM_CORNER}${ELSE_LIGHT}${screen}/*.png        ${THEME_DIR}/xfwm4
 }
 
 # GDM Theme
