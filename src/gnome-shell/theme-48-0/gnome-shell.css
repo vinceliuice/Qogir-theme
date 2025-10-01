@@ -2564,7 +2564,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .datemenu-popover {
-  border-radius: 8px;
+  border-radius: 3px;
 }
 
 .datemenu-calendar-column {
@@ -2585,7 +2585,7 @@ StWidget.focused .app-grid-running-dot {
 
 .datemenu-today-button {
   padding: 9px;
-  border-radius: 2px;
+  border-radius: 3px;
   margin: 0;
   border: 1px solid rgba(255, 255, 255, 0);
   background: none;
@@ -2735,7 +2735,7 @@ StWidget.focused .app-grid-running-dot {
 .world-clocks-button,
 .weather-button,
 .events-button {
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 8px 10px;
   margin: 4px;
   text-shadow: none;
@@ -2971,7 +2971,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .message {
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 6px;
   margin: 0;
   color: #464853;
@@ -3235,7 +3235,7 @@ StWidget.focused .app-grid-running-dot {
 
 .quick-settings {
   padding: 12px !important;
-  border-radius: 9px !important;
+  border-radius: 15px !important;
   margin-top: 6px !important;
 }
 
@@ -3342,7 +3342,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .quick-toggle-has-menu .quick-toggle:ltr {
-  border-radius: 2px 0 0 2px;
+  border-radius: 3px 0 0 3px;
 }
 
 .quick-toggle-has-menu .quick-toggle:ltr > StBoxLayout {
@@ -3350,7 +3350,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .quick-toggle-has-menu .quick-toggle:rtl {
-  border-radius: 0 2px 2px 0;
+  border-radius: 0 3px 3px 0;
 }
 
 .quick-toggle-has-menu .quick-toggle:rtr > StBoxLayout {
@@ -3358,11 +3358,11 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .quick-toggle-has-menu .quick-toggle:ltr:last-child {
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .quick-toggle-has-menu .quick-toggle:rtl:last-child {
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .quick-toggle-has-menu .quick-toggle-menu-button {
@@ -3371,11 +3371,11 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .quick-toggle-has-menu .quick-toggle-menu-button:ltr {
-  border-radius: 0 2px 2px 0;
+  border-radius: 0 3px 3px 0;
 }
 
 .quick-toggle-has-menu .quick-toggle-menu-button:rtl {
-  border-radius: 2px 0 0 2px;
+  border-radius: 3px 0 0 3px;
 }
 
 .quick-toggle-has-menu .quick-toggle-separator {
@@ -3637,7 +3637,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .modal-dialog {
-  border-radius: 9px;
+  border-radius: 3px;
   box-shadow: none;
   margin: 12px;
   padding: 0;
@@ -3653,7 +3653,7 @@ StWidget.focused .app-grid-running-dot {
   padding: 12px;
   background-color: #202229;
   border-top: 1px solid #434655;
-  border-radius: 0 0 9px 9px;
+  border-radius: 0 0 3px 3px;
 }
 
 .modal-dialog .modal-dialog-button-box .modal-dialog-button {

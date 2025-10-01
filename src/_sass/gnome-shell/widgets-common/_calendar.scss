@@ -40,7 +40,7 @@
 }
 
 .datemenu-today-button {
-  border-radius: $bt_radius;
+  border-radius: $material_radius;
   padding: 4px 8px;
   margin: 0;
   border: 1px solid transparentize($base_color, 1);
@@ -211,7 +211,7 @@
 .world-clocks-button,
 .weather-button,
 .events-button {
-  border-radius: $bt_radius;
+  border-radius: $material_radius;
   padding: 8px 10px;
   margin: 0;
   text-shadow: none;

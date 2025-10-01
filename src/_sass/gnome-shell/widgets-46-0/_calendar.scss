@@ -4,7 +4,7 @@
 }
 
 .datemenu-popover {
-  border-radius: $bt_radius + $base_padding;
+  border-radius: if($window == 'round', $material_radius + $base_padding + $base_margin, $material_radius);
 }
 
 // calendar menu side column
@@ -20,7 +20,7 @@
 // today button (the date)
 .datemenu-today-button {
   padding: $base_padding * 1.5;
-  border-radius: $bt_radius;
+  border-radius: $material_radius;
   margin: 0;
   border: 1px solid transparentize($base_color, 1);
   background: none;
@@ -176,7 +176,7 @@
 .world-clocks-button,
 .weather-button,
 .events-button {
-  border-radius: $bt_radius;
+  border-radius: $material_radius;
   padding: 8px 10px;
   margin: $base_margin;
   text-shadow: none;

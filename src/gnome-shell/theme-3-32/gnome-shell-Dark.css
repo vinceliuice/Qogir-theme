@@ -634,7 +634,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .datemenu-today-button {
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 4px 8px;
   margin: 0;
   border: 1px solid rgba(40, 42, 51, 0);
@@ -837,7 +837,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button,
 .weather-button,
 .events-button {
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 8px 10px;
   margin: 0;
   text-shadow: none;

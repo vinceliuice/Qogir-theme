@@ -2,7 +2,7 @@
 
 .headline { @include fontsize($font-size + 1); }
 
-$modal_radius: $material_radius + $base_padding;
+$modal_radius: if($window =='round', $material_radius + $base_padding * 2, $material_radius);
 
 .modal-dialog {
   @extend %bubble_dialog;

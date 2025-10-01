@@ -1,6 +1,6 @@
 .quick-settings {
   padding: $cont_padding * 2 !important;
-  border-radius: $material_radius !important;
+  border-radius: $material_radius + $cont_padding * 2 !important;
   margin-top: $cont_padding !important;
 
   .icon-button, .button {
@@ -47,8 +47,8 @@
       background-color: rgba($fg_color, 0.12) !important;
     }
 
-    &:ltr { border-radius: 0 $bt_radius $bt_radius 0; }
-    &:rtl { border-radius: $bt_radius 0 0 $bt_radius; }
+    &:ltr { border-radius: 0 $material_radius $material_radius 0; }
+    &:rtl { border-radius: $material_radius 0 0 $material_radius; }
   }
 }
 

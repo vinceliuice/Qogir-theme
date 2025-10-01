@@ -1,6 +1,6 @@
 .quick-settings {
   padding: $cont_padding * 2 !important;
-  border-radius: $material_radius !important;
+  border-radius: $material_radius + $cont_padding * 2 !important;
   margin-top: $cont_padding !important;
 
   .icon-button, .button {
@@ -89,13 +89,13 @@
     max-width: auto;
     border: none !important;
 
-    &:ltr { border-radius: $bt_radius 0 0 $bt_radius; }
+    &:ltr { border-radius: $material_radius 0 0 $material_radius; }
     &:ltr > StBoxLayout { padding-right: $cont_padding * 1.5; }
-    &:rtl { border-radius: 0 $bt_radius $bt_radius 0; }
+    &:rtl { border-radius: 0 $material_radius $material_radius 0; }
     &:rtr > StBoxLayout { padding-left: $cont_padding * 1.5; }
 
-    &:ltr:last-child { border-radius: $bt_radius; }
-    &:rtl:last-child { border-radius: $bt_radius; }
+    &:ltr:last-child { border-radius: $material_radius; }
+    &:rtl:last-child { border-radius: $material_radius; }
   }
 
   .quick-toggle-arrow {
@@ -104,12 +104,12 @@
     @extend %toggle_button;
 
     &:ltr {
-      border-radius: 0 $bt_radius $bt_radius 0;
+      border-radius: 0 $material_radius $material_radius 0;
       border-left-width: 1px;
     }
 
     &:rtl {
-      border-radius: $bt_radius 0 0 $bt_radius;
+      border-radius: $material_radius 0 0 $material_radius;
       border-right-width: 1px;
     }
   }

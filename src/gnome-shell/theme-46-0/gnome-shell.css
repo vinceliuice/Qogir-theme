@@ -2834,7 +2834,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .datemenu-popover {
-  border-radius: 8px;
+  border-radius: 3px;
 }
 
 .datemenu-calendar-column {
@@ -2855,7 +2855,7 @@ StWidget.focused .app-grid-running-dot {
 
 .datemenu-today-button {
   padding: 9px;
-  border-radius: 2px;
+  border-radius: 3px;
   margin: 0;
   border: 1px solid rgba(255, 255, 255, 0);
   background: none;
@@ -3005,7 +3005,7 @@ StWidget.focused .app-grid-running-dot {
 .world-clocks-button,
 .weather-button,
 .events-button {
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 8px 10px;
   margin: 4px;
   text-shadow: none;
@@ -3215,7 +3215,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .message {
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 0;
   margin: 0;
   color: #464853;
@@ -3438,7 +3438,7 @@ StWidget.focused .app-grid-running-dot {
 
 .quick-settings {
   padding: 12px !important;
-  border-radius: 9px !important;
+  border-radius: 15px !important;
   margin-top: 6px !important;
 }
 
@@ -3545,7 +3545,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .quick-menu-toggle .quick-toggle:ltr {
-  border-radius: 2px 0 0 2px;
+  border-radius: 3px 0 0 3px;
 }
 
 .quick-menu-toggle .quick-toggle:ltr > StBoxLayout {
@@ -3553,7 +3553,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .quick-menu-toggle .quick-toggle:rtl {
-  border-radius: 0 2px 2px 0;
+  border-radius: 0 3px 3px 0;
 }
 
 .quick-menu-toggle .quick-toggle:rtr > StBoxLayout {
@@ -3561,11 +3561,11 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .quick-menu-toggle .quick-toggle:ltr:last-child {
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .quick-menu-toggle .quick-toggle:rtl:last-child {
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .quick-menu-toggle .quick-toggle-arrow {
@@ -3577,12 +3577,12 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .quick-menu-toggle .quick-toggle-arrow:ltr {
-  border-radius: 0 2px 2px 0;
+  border-radius: 0 3px 3px 0;
   border-left-width: 1px;
 }
 
 .quick-menu-toggle .quick-toggle-arrow:rtl {
-  border-radius: 2px 0 0 2px;
+  border-radius: 3px 0 0 3px;
   border-right-width: 1px;
 }
 
