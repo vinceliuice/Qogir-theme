@@ -1,8 +1,50 @@
-#! /bin/bash
+#!/bin/bash
+##
+## ** macOS
+##
+## *** install optipng
+## - For optipng install it with brew as follows:
+## % brew install optipng
+##
+## *** install Inkscape
+## - install Inkscape
+##
+## NOTE: If you have installed Inkscape on an other path then the default macOS /Applications path,
+## for example if you have different versions of Inkscape, then you *have to* creat a Unix/Linux Symbol-Link
+## (not a macOS Alias) to point to /Applications folder, like this:
+##   % ln -s /Volumes/Apps/Graphic/inkscape.org/1.4.2/Inkscape.app  /Applications
+##
+## Inkscape is then accessible via command line like:
+##   /Applications/Inkscape.app/Contents/MacOS/inkscape
+## or where ever you installed it.
+## Or make sure INKSCAPE is in your search path.
+##
+## *** Run this script:
+##  % bash ./render-assets.sh
+##
 
-INKSCAPE="/usr/bin/inkscape"
-OPTIPNG="/usr/bin/optipng"
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine="Linux";;
+    Darwin*)    machine="Mac";;
+    CYGWIN*)    machine="Cygwin";;
+    MINGW*)     machine="MinGw";;
+    MSYS_NT*)   machine="MSys";;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+echo "${machine}"
+
+
+if [ "x${machine}" == "xLinux" ]; then
+    INKSCAPE="/usr/bin/inkscape"
+    OPTIPNG="/usr/bin/optipng"
+elif [ "x${machine}" == "xMac" ]; then
+    INKSCAPE="/Applications/Inkscape.app/Contents/MacOS/inkscape"
+    OPTIPNG="/usr/local/bin/optipng"
+fi
+
 INDEX="assets.txt"
+
 
 OPEN_DIR=$(cd $(dirname $0) && pwd)
 
@@ -25,6 +67,10 @@ for win in '' '-Win'; do
                 --export-id-only \
                 --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
       && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+
+    ## Inkscape. Warning: Option --export-png= is deprecated
+    ## --export-type=png
+
   fi
 
   done
