@@ -87,8 +87,13 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   &:selected {
     @extend %selected_items;
 
-    &:hover { background-color: mix($side_theme_fg, $selected_bg_color, 6%); }
-    &:active { background-color: mix($side_theme_fg, $selected_bg_color, 12%); }
+    &:hover {
+      background-color: mix($side_theme_fg, $selected_bg_color, 6%);
+    }
+
+    &:active {
+      background-color: mix($side_theme_fg, $selected_bg_color, 12%);
+    }
   }
 }
 
@@ -97,7 +102,9 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   background-color: rgba($side_theme_fg, 0.1);
   border-color: rgba(white, 0.12);
 
-  image { color: $side_theme_alt_fg; }
+  image {
+    color: $side_theme_alt_fg;
+  }
 
   &:focus-within {
     color: $side_theme_fg;
@@ -128,7 +135,9 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   border: none;
   box-shadow: none;
 
-  button { @extend %side_buttons_flat; }
+  button {
+    @extend %side_buttons_flat;
+  }
 }
 
 
@@ -143,7 +152,7 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
 }
 
 %headerbar_image {
-  background-image: -gtk-scaled(url("assets/logo.svg"),url("assets/logo@2.svg")), image($dark_sidebar_icon_bg);
+  background-image: -gtk-scaled(url("assets/logo.svg"), url("assets/logo@2.svg")), image($dark_sidebar_icon_bg);
   background-repeat: no-repeat;
   background-size: 38px auto;
   background-position: left center;
@@ -183,12 +192,22 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   slider {
     background-color: transparentize(lighten($dark_sidebar_fg, 15%), 0.3);
 
-    &:hover { background-color: lighten($dark_sidebar_fg, 20%); }
-    &:hover:active { background-color: $selected_bg_color; }
-    &:disabled { background-color: transparent; }
+    &:hover {
+      background-color: lighten($dark_sidebar_fg, 20%);
+    }
+
+    &:hover:active {
+      background-color: $selected_bg_color;
+    }
+
+    &:disabled {
+      background-color: transparent;
+    }
   }
 
-  trough { background-color: darken($dark_sidebar_bg, 5%); }
+  trough {
+    background-color: darken($dark_sidebar_bg, 5%);
+  }
 }
 
 %nautilus_view {
@@ -225,7 +244,11 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
 #NautilusFileChooser,
 .nautilus-window {
   headerbar {
-    entry { margin: 0; } // Why need this ?
+    entry {
+      margin: 0;
+    }
+
+    // Why need this ?
 
     splitbutton {
       border-radius: $bt_radius + 2px;
@@ -251,20 +274,28 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
 
     &, &:backdrop {
       box-shadow: inset 0 -1px if($variant=='light', rgba($dark_sidebar_icon_bg, 0.15), $dark_sidebar_icon_bg),
-                  inset 38px 0 0 0 transparent;
+        inset 38px 0 0 0 transparent;
     }
   }
 
-  .sidebar-pane headerbar { // reset
+  .sidebar-pane headerbar {
+
+    // reset
     button:not(.suggested-action):not(.destructive-action) {
       @include button(header-normal);
       border: 1px solid transparent;
 
-      &:hover { @include button(header-hover); }
+      &:hover {
+        @include button(header-hover);
+      }
 
-      &:checked, &:active { @include button(header-active); }
+      &:checked, &:active {
+        @include button(header-active);
+      }
 
-      &:disabled { @include button(header-insensitive); }
+      &:disabled {
+        @include button(header-insensitive);
+      }
     }
   }
 
@@ -277,7 +308,7 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
     padding: 0;
 
     > separator {
-      background-color: if($variant == 'light' and $titlebar == 'dark', $base_color, $dark_sidebar_border);
+      background-color: if($variant =='light' and $titlebar =='dark', $base_color, $dark_sidebar_border);
     }
 
     > placessidebar {
@@ -298,7 +329,9 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
         padding: 2px 0;
         background-repeat: no-repeat;
 
-        .sidebar-icon { color: transparentize($dark_sidebar_icon_fg, 0.15); }
+        .sidebar-icon {
+          color: transparentize($dark_sidebar_icon_fg, 0.15);
+        }
 
         image.sidebar-icon {
           padding-right: 2px;
@@ -315,32 +348,40 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
           color: $fg_color;
           background-color: transparentize($dark_sidebar_fg, 0.95);
           box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
-                      inset 38px 0 0 0 $dark_sidebar_icon_bg;
+            inset 38px 0 0 0 $dark_sidebar_icon_bg;
         }
 
         &:disabled {
-          &, label, image { color: transparentize($dark_sidebar_fg, 0.6); }
+          &, label, image {
+            color: transparentize($dark_sidebar_fg, 0.6);
+          }
         }
 
-        &:active { transition: box-shadow 0.2s; }
+        &:active {
+          transition: box-shadow 0.2s;
+        }
 
         &:selected, &:selected:hover, &:active:hover {
           box-shadow: inset 38px 0 0 0 $selected_bg_color;
           background-color: rgba($selected_bg_color, 0.0);
           background-image: -gtk-scaled(url("assets/selected-dot.png"),
-                                        url("assets/selected-dot@2.png"));
+              url("assets/selected-dot@2.png"));
           background-repeat: no-repeat;
           background-position: 42px center;
-          .sidebar-label { color: $alt_dark_sidebar_fg; }
+
+          .sidebar-label {
+            color: $alt_dark_sidebar_fg;
+          }
+
           // .sidebar-icon { color: inherit; }
         }
 
         &:selected:hover, &:active:hover {
           background-color: transparentize($dark_sidebar_fg, 0.95);
           box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
-                      inset 38px 0 0 0 $selected_bg_color;
+            inset 38px 0 0 0 $selected_bg_color;
           background-image: -gtk-scaled(url("assets/selected-dot.png"),
-                                        url("assets/selected-dot@2.png"));
+              url("assets/selected-dot@2.png"));
           background-repeat: no-repeat;
           background-position: 42px center;
         }
@@ -348,10 +389,19 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
         button.sidebar-button {
           color: $dark_sidebar_fg;
 
-          &:hover { @include button(hover); }
-          &:active { @include button(active); }
+          &:hover {
+            @include button(hover);
+          }
 
-          &:not(:hover):not(:active) > image { opacity: 0.5 };
+          &:active {
+            @include button(active);
+          }
+
+          &:not(:hover):not(:active) > image {
+            opacity: 0.5
+          }
+
+          ;
         }
 
         &.sidebar-new-bookmark-row {
@@ -360,21 +410,32 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
           // .sidebar-icon { color: inherit; }
         }
 
-       &:backdrop { opacity: 0.75; }
+        &:backdrop {
+          opacity: 0.75;
+        }
 
         &:drop(active):not(:disabled) {
-          &, label, .sidebar-icon { color: $drop_target_color; }
+          &, label, .sidebar-icon {
+            color: $drop_target_color;
+          }
 
           &:selected {
-            &, label, .sidebar-icon { color: $selected_fg_color; }
+            &, label, .sidebar-icon {
+              color: $selected_fg_color;
+            }
+
             background-color: $drop_target_color;
           }
         }
       }
 
-      separator { background-color: transparent; }
+      separator {
+        background-color: transparent;
+      }
 
-      scrollbar { @extend %dark_sidebar_scrollbar; }
+      scrollbar {
+        @extend %dark_sidebar_scrollbar;
+      }
     }
   }
 
@@ -382,29 +443,54 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
     &:dir(ltr), &.end:dir(rtl) {
       &, banner > revealer > widget {
         box-shadow: none;
-        border-right: if($variant == 'light' and $titlebar == 'dark', none, 1px solid $dark_sidebar_border);
+        border-right: if($variant =='light' and $titlebar =='dark', none, 1px solid $dark_sidebar_border);
       }
     }
-  
+
     &:dir(rtl), &.end:dir(ltr) {
       &, banner > revealer > widget {
         box-shadow: none;
-        border-left: if($variant == 'light' and $titlebar == 'dark', none, 1px solid $dark_sidebar_border);
+        border-left: if($variant =='light' and $titlebar =='dark', none, 1px solid $dark_sidebar_border);
       }
     }
   }
 
   .nautilus-grid-view {
     gridview {
-      @if $background == 'image' {
+      @if $background =='image' {
         @extend %nautilus_background_image;
-      } @else {
+      }
+
+      @else {
         background-image: none;
       }
 
       child.activatable {
         border-radius: $bt_radius * 2;
+        padding: 0;
         @extend %nautilus_view;
+
+        #NautilusViewCell {
+          padding: $base_padding;
+
+          .icon-ui-labels-box {
+            margin: 0 0 $base_padding * 2;
+            border-spacing: 0;
+          }
+
+          .dim-label {
+            color: $fg_color;
+            margin: 0;
+          }
+        }
+
+        &:selected {
+          #NautilusViewCell {
+            .dim-label {
+              color: $selected_bg_color;
+            }
+          }
+        }
       }
     }
   }
@@ -442,7 +528,9 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   }
 
   placesview {
-    label { color: $alt_fg_color; }
+    label {
+      color: $alt_fg_color;
+    }
   }
 }
 
@@ -474,7 +562,8 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   }
 }
 
-#NautilusQueryEditor { // search entry
+#NautilusQueryEditor {
+  // search entry
   padding: 2px 2px 2px $cont_padding - 2px;
   margin-top: 6px;
   margin-bottom: 6px;
@@ -495,16 +584,18 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
     }
   }
 
-  > text { margin: 0; }
+  > text {
+    margin: 0;
+  }
 
   #NautilusQueryEditorTag {
     border-radius: $circular_radius;
 
     > button {
-     margin: 3px;
-     padding: 0;
-     min-height: 20px;
-     min-width: 20px;
+      margin: 3px;
+      padding: 0;
+      min-height: 20px;
+      min-width: 20px;
     }
   }
 }
@@ -515,7 +606,7 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   border-radius: $bt_radius + 2px;
   margin: 0;
   padding: 0 1px;
-  border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
+  border: 1px solid if($titlebar =='light', rgba(black, 0.12), rgba(white, 0.12));
 
   #NautilusPathButton {
     margin: 2px 1px;
@@ -575,7 +666,9 @@ navigation-view-page > toolbarview > scrolledwindow > viewport > clamp > box > b
 // Calculator
 //
 
-.history-view { background-color: $bg_color; }
+.history-view {
+  background-color: $bg_color;
+}
 
 #displayitem {
   border-top: 1px solid $borders_color;
@@ -611,16 +704,26 @@ leaflet.unfolded {
       background-color: transparent;
     }
 
-    button { @extend %side_buttons; }
+    button {
+      @extend %side_buttons;
+    }
 
-    entry { @extend %side_entry; }
+    entry {
+      @extend %side_entry;
+    }
 
-    searchbar { @extend %side_searchbar; }
+    searchbar {
+      @extend %side_searchbar;
+    }
 
     list {
-      > separator { background-color: transparent; }
+      > separator {
+        background-color: transparent;
+      }
 
-      > row { @extend %side_views; }
+      > row {
+        @extend %side_views;
+      }
     }
 
     popover.background {
@@ -634,12 +737,13 @@ leaflet.unfolded {
     }
   }
 
-  > headerbar.titlebar.tweak-titlebar-left { // Gnome Tweaks
+  > headerbar.titlebar.tweak-titlebar-left {
+    // Gnome Tweaks
     @extend %side_headerbar;
   }
 
   > separator, > separator.sidebar {
-    min-width: if($variant == 'light', 0, 1px);
+    min-width: if($variant =='light', 0, 1px);
   }
 }
 
@@ -681,6 +785,7 @@ toastoverlay {
     }
 
     popover {
+
       > arrow,
       > contents {
         background-color: $side_theme_bg;
@@ -868,11 +973,12 @@ flowboxchild.card:not(.category-tile) {
   }
 
   &.category-work {
-    padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
+    padding: 1px;
+    /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
     color: #1c71d8;
-    background-color:#fdf8d7;
+    background-color: #fdf8d7;
     background-image: linear-gradient($borders_color 1px, transparent 1px),
-             linear-gradient(90deg, $borders_color 1px, transparent 1px);
+      linear-gradient(90deg, $borders_color 1px, transparent 1px);
     background-size: 10px 10px, 10px 10px;
     background-position: -1px -4px, center -1px;
 
@@ -880,14 +986,14 @@ flowboxchild.card:not(.category-tile) {
       color: #1c71d8;
       background-color: lighten(#fdf8d7, 5%);
       background-image: linear-gradient($borders_color 1px, transparent 1px),
-               linear-gradient(90deg, $borders_color 1px, transparent 1px);
+        linear-gradient(90deg, $borders_color 1px, transparent 1px);
     }
 
     &:active {
       color: #1c71d8;
       background-color: darken(#fdf8d7, 5%);
       background-image: linear-gradient($borders_color 1px, transparent 1px),
-               linear-gradient(90deg, $borders_color 1px, transparent 1px);
+        linear-gradient(90deg, $borders_color 1px, transparent 1px);
     }
   }
 }
@@ -927,9 +1033,17 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 }
 
 @keyframes install-progress-unknown-move {
-  0% { background-position: 0%; }
-  50% { background-position: 100%; }
-  100% { background-position: 0%; }
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
 }
 
 .application-details-description .button {
@@ -945,13 +1059,17 @@ clamp.large .category-tile:not(.category-tile-iconless) {
   transition: none;
 }
 
-.install-progress:dir(rtl) { background-position: 100% bottom; }
+.install-progress:dir(rtl) {
+  background-position: 100% bottom;
+}
 
 .review-row > * {
   margin: $cont_padding * 2;
 }
 
-.review-row button { font-size: smaller; }
+.review-row button {
+  font-size: smaller;
+}
 
 .review-row .vote-buttons button {
   margin-right: -1px;
@@ -1053,12 +1171,16 @@ scrolledwindow.list-page > viewport > clamp > box {
   margin-top: $cont_padding * 3;
 }
 
-.section > label:not(:first-child) { margin-top: $cont_padding; }
+.section > label:not(:first-child) {
+  margin-top: $cont_padding;
+}
 
-.section > box:not(:first-child) { margin-top: $cont_padding * 2; }
+.section > box:not(:first-child) {
+  margin-top: $cont_padding * 2;
+}
 
 clamp.status-page {
-	margin: $cont_padding * 6 $cont_padding * 2;
+  margin: $cont_padding * 6 $cont_padding * 2;
 }
 
 clamp.status-page .iconbox {
@@ -1113,7 +1235,7 @@ app-context-bar {
 
   &.horizontal .context-tile,
   &.vertical box:first-child .context-tile {
-  	border-top: none;
+    border-top: none;
   }
 
   > box:not(:first-child) > button.flat {
@@ -1153,8 +1275,10 @@ carousel.card {
   &.large {
     font-size: 24px;
     padding: 16px;
-    min-width: 24px;  /* 60px minus the left and right padding */
-    min-height: 24px;  /* 60px minus the top and bottom padding */
+    min-width: 24px;
+    /* 60px minus the left and right padding */
+    min-height: 24px;
+    /* 60px minus the top and bottom padding */
   }
 
   &.wide-image image {
@@ -1181,17 +1305,28 @@ window.narrow .app-developer {
   font-feature-settings: "tnum";
 }
 
-scrolledwindow.fake-adw-status-page > viewport > box { margin: $cont_padding * 6 $cont_padding * 2; }
-scrolledwindow.fake-adw-status-page > viewport > box > clamp:not(:last-child) > box { margin-bottom: $cont_padding * 6; }
-scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .icon:not(:last-child) { margin-bottom: $cont_padding * 6; }
-scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(:last-child) { margin-bottom: $cont_padding * 2; }
+scrolledwindow.fake-adw-status-page > viewport > box {
+  margin: $cont_padding * 6 $cont_padding * 2;
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box > clamp:not(:last-child) > box {
+  margin-bottom: $cont_padding * 6;
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .icon:not(:last-child) {
+  margin-bottom: $cont_padding * 6;
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(:last-child) {
+  margin-bottom: $cont_padding * 2;
+}
 
 statuspage.icon-dropshadow image.icon {
-	-gtk-icon-shadow: 0 1px 12px rgba(0,0,0,0.05),
-	                  0 -1px rgba(0,0,0,0.05),
-	                  1px 0 rgba(0,0,0,0.1),
-	                  0 1px rgba(0,0,0,0.3),
-	                  -1px 0 rgba(0,0,0,0.1);
+  -gtk-icon-shadow: 0 1px 12px rgba(0, 0, 0, 0.05),
+    0 -1px rgba(0, 0, 0, 0.05),
+    1px 0 rgba(0, 0, 0, 0.1),
+    0 1px rgba(0, 0, 0, 0.3),
+    -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 window.info scrollbar.vertical {
@@ -1227,12 +1362,19 @@ row.app label.warning {
 
 // Ensure the spinner is hidden before the animation is triggered.
 @keyframes pre-delay {
-  from { opacity: 0; }
-  to { opacity: 0; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes fade-in {
-  from { filter: opacity(0%); }
+  from {
+    filter: opacity(0%);
+  }
 }
 
 /* Give a fade-in animation to spinners. */

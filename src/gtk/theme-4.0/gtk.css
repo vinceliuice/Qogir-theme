@@ -133,11 +133,6 @@ gridview > child:selected {
   outline-color: #5294e2;
 }
 
-gridview > child box {
-  border-spacing: 8px;
-  margin: 12px;
-}
-
 coverflow cover {
   color: #4a4c59;
   background-color: #ffffff;
@@ -6450,6 +6445,55 @@ leaflet.unfolded > headerbar.titlebar.tweak-titlebar-left, leaflet.unfolded > bo
 #NautilusFileChooser .nautilus-grid-view gridview child.activatable,
 .nautilus-window .nautilus-grid-view gridview child.activatable {
   border-radius: 4px;
+  padding: 0;
+}
+
+#NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell {
+  padding: 6px;
+}
+
+#NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell .icon-ui-labels-box,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell .icon-ui-labels-box {
+  margin: 0 0 12px;
+  border-spacing: 0;
+}
+
+#NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell .dim-label, #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell label.separator, #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell entry > text > placeholder, #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell spinbutton:not(.vertical) > text > text > placeholder, #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell spinbutton.vertical > text > text > placeholder, #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell headerbar .subtitle, headerbar #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell .subtitle, #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell row label.subtitle, row #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell label.subtitle, #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell row.property > box.header > box.title > .title, #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell row.expander image.expander-row-arrow, row.expander #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell image.expander-row-arrow, #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell row.expander.property box > list > row > box.header > box.title > .title, row.expander.property #NautilusFileChooser .nautilus-grid-view gridview child.activatable #NautilusViewCell box > list > row > box.header > box.title > .title,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell .dim-label,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell label.separator,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell entry > text > placeholder,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell spinbutton:not(.vertical) > text > text > placeholder,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell spinbutton.vertical > text > text > placeholder,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell headerbar .subtitle,
+headerbar .nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell .subtitle,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell row label.subtitle,
+row .nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell label.subtitle,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell row.property > box.header > box.title > .title,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell row.expander image.expander-row-arrow,
+row.expander .nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell image.expander-row-arrow,
+.nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell row.expander.property box > list > row > box.header > box.title > .title,
+row.expander.property .nautilus-window .nautilus-grid-view gridview child.activatable #NautilusViewCell box > list > row > box.header > box.title > .title {
+  color: #464853;
+  margin: 0;
+}
+
+#NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell .dim-label, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell label.separator, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell entry > text > placeholder, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell spinbutton:not(.vertical) > text > text > placeholder, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell spinbutton.vertical > text > text > placeholder, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell headerbar .subtitle, headerbar #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell .subtitle, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell row label.subtitle, row #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell label.subtitle, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell row.property > box.header > box.title > .title, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell row.expander image.expander-row-arrow, row.expander #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell image.expander-row-arrow, #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell row.expander.property box > list > row > box.header > box.title > .title, row.expander.property #NautilusFileChooser .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell box > list > row > box.header > box.title > .title,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell .dim-label,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell label.separator,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell entry > text > placeholder,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell spinbutton:not(.vertical) > text > text > placeholder,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell spinbutton.vertical > text > text > placeholder,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell headerbar .subtitle,
+headerbar .nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell .subtitle,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell row label.subtitle,
+row .nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell label.subtitle,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell row.property > box.header > box.title > .title,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell row.expander image.expander-row-arrow,
+row.expander .nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell image.expander-row-arrow,
+.nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell row.expander.property box > list > row > box.header > box.title > .title,
+row.expander.property .nautilus-window .nautilus-grid-view gridview child.activatable:selected #NautilusViewCell box > list > row > box.header > box.title > .title {
+  color: #5294e2;
 }
 
 #NautilusFileChooser .nautilus-list-view,
