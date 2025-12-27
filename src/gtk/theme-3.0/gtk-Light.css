@@ -1648,6 +1648,10 @@ toolbar.osd.right, .osd.right.inline-toolbar {
   border-width: 0 0 0 1px;
 }
 
+toolbar.toolbar, .toolbar.inline-toolbar {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
 toolbar:not(.inline-toolbar) switch, .inline-toolbar:not(.inline-toolbar) switch,
 toolbar:not(.inline-toolbar) scale,
 .inline-toolbar:not(.inline-toolbar) scale,
@@ -1672,11 +1676,11 @@ toolbar:not(.inline-toolbar) spinbutton > entry,
 
 .primary-toolbar:not(.libreoffice-toolbar) {
   color: #4a4c59;
-  background-color: transparent;
+  background-color: #ffffff;
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-image: linear-gradient(to bottom, #e0e0e0, #e0e0e0) 1 0 1 0;
+  border-image: linear-gradient(to bottom, #e6e6e6, #e6e6e6) 1 0 1 0;
 }
 
 .inline-toolbar {

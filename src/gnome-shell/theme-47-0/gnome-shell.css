@@ -487,32 +487,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-ornament {
   width: 1.2em;
+  icon-size: 16px !important;
 }
 
-.popup-menu-ornament:ltr {
-  text-align: right;
+.popup-ornamented-menu-item:ltr {
+  padding-left: 6px;
 }
 
-.popup-menu-ornament:rtl {
-  text-align: left;
-}
-
-.popup-separator-menu-item {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.popup-separator-menu-item .popup-separator-menu-item-separator {
-  height: 1px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: transparent;
-}
-
-.popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: transparent;
+.popup-ornamented-menu-item:rtl {
+  padding-right: 6px;
 }
 
 .background-menu {

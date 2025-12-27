@@ -1134,6 +1134,10 @@ toolbar {
     &.right { border-width: 0 0 0 1px; }
   }
 
+  &.toolbar {
+    border-top: 1px solid $borders_color;
+  }
+
   &:not(.inline-toolbar) {
     switch,
     scale,
@@ -1150,15 +1154,15 @@ toolbar {
   }
 }
 
-.primary-toolbar:not(.libreoffice-toolbar) {  // LO messes up the toolbar styling, so exclude LO toolbars
-  color: $text_color;
-  background-color: transparent;
+.primary-toolbar:not(.libreoffice-toolbar) {
+  color: $header_fg;
+  background-color: $header_bg;
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-image: linear-gradient(to bottom, $solid_borders_color, $solid_borders_color) 1 0 1 0; //temporary hack for rhythmbox 3.1
+  border-image: linear-gradient(to bottom, $header_border, $header_border) 1 0 1 0; //temporary hack for rhythmbox 3.1
 
-  //&:backdrop { background-color: opacify($header_bg_backdrop, 1); }
+  // &:backdrop { background-color: opacify($header_bg_backdrop, 1); }
 
   separator { @extend %header_separator; }
 }

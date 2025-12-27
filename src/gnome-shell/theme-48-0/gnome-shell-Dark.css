@@ -55,7 +55,7 @@ stage {
   font-size: 13pt;
 }
 
-.background-app-item .title, .message-list-controls, .events-button .events-list .event-box .event-summary, .events-button .events-title, .weather-button .weather-box .weather-header-box .weather-header, .world-clocks-button .world-clocks-header, .calendar .calendar-month-header .calendar-month-label {
+.background-app-item .title, .quick-toggle .quick-toggle-title, .message-list-controls, .events-button .events-list .event-box .event-summary, .events-button .events-title, .weather-button .weather-box .weather-header-box .weather-header, .world-clocks-button .world-clocks-header, .calendar .calendar-month-header .calendar-month-label {
   font-weight: 700;
   font-size: 11pt;
 }
@@ -65,7 +65,7 @@ stage {
   font-size: 9pt;
 }
 
-.background-app-item .subtitle, .message .message-header .message-header-content .event-time, .events-button .events-list .event-box .event-time, .world-clocks-button .world-clocks-grid .world-clocks-timezone {
+.background-app-item .subtitle, .quick-toggle .quick-toggle-subtitle, .message .message-header .message-header-content .event-time, .events-button .events-list .event-box .event-time, .world-clocks-button .world-clocks-grid .world-clocks-timezone {
   font-weight: 400;
   font-size: 9pt;
 }
@@ -487,32 +487,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-ornament {
   width: 1.2em;
+  icon-size: 16px !important;
 }
 
-.popup-menu-ornament:ltr {
-  text-align: right;
+.popup-ornamented-menu-item:ltr {
+  padding-left: 6px;
 }
 
-.popup-menu-ornament:rtl {
-  text-align: left;
-}
-
-.popup-separator-menu-item {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.popup-separator-menu-item .popup-separator-menu-item-separator {
-  height: 1px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: transparent;
-}
-
-.popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: transparent;
+.popup-ornamented-menu-item:rtl {
+  padding-right: 6px;
 }
 
 .background-menu {
@@ -3322,13 +3305,8 @@ StWidget.focused .app-grid-running-dot {
   padding-right: 15px;
 }
 
-.quick-toggle .quick-toggle-title {
-  font-weight: bold;
-}
-
-.quick-toggle StBoxLayout > .quick-toggle-subtitle {
+.quick-toggle .quick-toggle-subtitle {
   font-weight: normal;
-  font-size: 12px;
 }
 
 .quick-toggle .quick-toggle-icon {
@@ -3439,7 +3417,8 @@ StWidget.focused .app-grid-running-dot {
 .quick-toggle-menu .header {
   spacing-rows: 3px;
   spacing-columns: 12px;
-  padding: 0 12px 12px !important;
+  padding-bottom: 12px;
+  padding-left: 12px;
 }
 
 .quick-toggle-menu .header .icon {

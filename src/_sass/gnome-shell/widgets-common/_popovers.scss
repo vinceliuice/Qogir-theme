@@ -98,9 +98,20 @@
 // container for radio and check boxes
 .popup-menu-ornament {
   width: 1.2em;
+  icon-size: 16px !important;
 
-  &:ltr { text-align: right; }
-  &:rtl { text-align: left; }
+  // &:ltr { text-align: right; }
+  // &:rtl { text-align: left; }
+}
+
+.popup-ornamented-menu-item {
+  &:ltr {
+    padding-left: $base_padding;
+  }
+
+  &:rtl {
+    padding-right: $base_padding;
+  }
 }
 
 // separator
