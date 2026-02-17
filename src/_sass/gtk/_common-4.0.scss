@@ -4717,7 +4717,6 @@ window {
               0 8px 8px 0 if($variant == 'light', rgba(black, 0.15), rgba(black, 0.12)),
               0 0 0 1px $borders_color;
   margin: 0;
-  border-radius: $corner_radius;
   transition: $backdrop_transition;
 
   &:backdrop {
