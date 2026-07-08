@@ -555,14 +555,14 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   }
 }
 
-#NautilusViewCell {
+#NautilusViewCell, .nautilus-view-cell {
   clamp box {
     margin: 0;
     border-spacing: 0;
   }
 }
 
-#NautilusQueryEditor {
+#NautilusQueryEditor, .nautilus-query-editor {
   // search entry
   padding: 2px 2px 2px $cont_padding - 2px;
   margin-top: 6px;
@@ -588,7 +588,7 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
     margin: 0;
   }
 
-  #NautilusQueryEditorTag {
+  #NautilusQueryEditorTag, .nautilus-query-editor-tag {
     border-radius: $circular_radius;
 
     > button {
@@ -600,7 +600,7 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   }
 }
 
-#NautilusPathBar {
+#NautilusPathBar, .nautilus-pathbar {
   min-height: 0;
   background-color: rgba($header_fg, 0.1);
   border-radius: $bt_radius + 2px;
@@ -608,7 +608,7 @@ $side_theme_alt_fg: rgba($dark_sidebar_icon_fg, 0.8);
   padding: 0 1px;
   border: 1px solid if($titlebar =='light', rgba(black, 0.12), rgba(white, 0.12));
 
-  #NautilusPathButton {
+  #NautilusPathButton, .nautilus-path-button {
     margin: 2px 1px;
     @extend %nautilus_dir_buttons;
 
