@@ -190,7 +190,8 @@
   color: $text_color !important;
   border-radius: $material_radius !important;
   padding: $base_padding * 2 0 !important;
-  margin: $base_padding * 2 $base_padding * 3 + 1px 0 !important;
+  margin-top: $base_padding * 2;
+  margin-bottom: 0;
   border: if($variant =='light', 0, 1px) solid $borders_color !important;
 
   .popup-menu-item {
